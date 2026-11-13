@@ -1,64 +1,47 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-13T14:58:51.492434+00:00",
+  "attemptedAt": "2026-11-13T15:02:30.640110+00:00",
   "coverage": "Bounded pilot: at most 100 tracked active US postings per employer; up to 20 new candidates per employer per run. Not a complete feed.",
   "sources": {
     "boeing": {
-      "discovered": 1146,
-      "checked": 54,
-      "added": 6,
-      "changed": 2,
+      "discovered": 1173,
+      "checked": 60,
+      "added": 5,
+      "changed": 1,
       "closed": 0,
-      "skipped": 6,
-      "warnings": [
-        {
-          "url": "https://jobs.boeing.com/job/australia/head-of-supply-chain-management/185/103194505200",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/brisbane/electronic-systems-design-engineer/185/103194505168",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/brisbane/software-engineer/185/103194505136",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/amberley/comsec-account-manager-boeing-defence-australia/185/103194505024",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
-        }
-      ],
+      "skipped": 14,
+      "warnings": [],
       "errors": [],
-      "activeTracked": 40,
-      "lastSuccessfulAt": "2026-11-13T14:58:51.492434+00:00"
+      "activeTracked": 45,
+      "lastSuccessfulAt": "2026-11-13T15:02:30.640110+00:00"
     },
     "citigroup": {
       "discovered": 3119,
-      "checked": 31,
-      "added": 6,
-      "changed": 0,
+      "checked": 37,
+      "added": 13,
+      "changed": 2,
       "closed": 0,
-      "skipped": 12,
+      "skipped": 5,
       "warnings": [],
       "errors": [],
-      "activeTracked": 17,
-      "lastSuccessfulAt": "2026-11-13T14:58:51.492434+00:00"
+      "activeTracked": 32,
+      "lastSuccessfulAt": "2026-11-13T15:02:30.640110+00:00"
     },
     "unitedhealth-group": {
-      "discovered": 6527,
-      "checked": 52,
-      "added": 19,
+      "discovered": 6526,
+      "checked": 71,
+      "added": 18,
       "changed": 1,
       "closed": 0,
-      "skipped": 0,
-      "warnings": [
+      "skipped": 2,
+      "warnings": [],
+      "errors": [
         {
-          "url": "https://careers.unitedhealthgroup.com/job/houston/anatomic-and-clinical-pathologist-physician-kelsey-seybold-clinic-central/34088/103220976080",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
+          "url": "https://careers.unitedhealthgroup.com/job/memphis/home-infusion-registered-nurse-rn-part-time-remote/34088/103247948448",
+          "error": "Missing or ambiguous matching JobPosting data"
         }
       ],
-      "errors": [],
-      "activeTracked": 51,
+      "activeTracked": 69,
       "lastSuccessfulAt": "2026-11-13T14:58:51.492434+00:00"
     }
   }
