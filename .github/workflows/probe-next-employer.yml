@@ -1,0 +1,37 @@
+name: Check next employer connection
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/probe-next-employer.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read official Target sample and discovery document
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          try:
+              client=c.Client('corporate.target.com')
+              maps=client.robots.site_maps() or ['https://corporate.target.com/sitemap.xml']
+              status,body=client.get(maps[0])
+              print('DISCOVERY',status,len(body))
+              url='https://corporate.target.com/jobs/w06/25/senior-product-designer,-wild-fable-dresses-woven-tops'
+              status,body=client.get(url)
+              page=c.Page(body)
+              jobs=[j for text in page.scripts for j in c.postings(json.loads(text))]
+              print('TARGET_PROBE',json.dumps({'status':status,'postings':len(jobs),'date':jobs[0].get('datePosted') if jobs else None}))
+          except Exception as error:
+              print('TARGET_PROBE',json.dumps({'error':str(error)}))
+          PY
