@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps and individual official JobPosting structured data for the 17 reviewed employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call the excluded paginated search endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps and individual official JobPosting structured data for the 26 reviewed employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call the excluded paginated search endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -33,3 +33,5 @@ Check `public/data/collection-status.json` and the workflow summary after each r
 
 The source registry records the exact reviewed career host and broad sector group for each employer. Sitemap indexes and translated routes are deduplicated by posting identity, with English preferred. Encoded HTML descriptions are decoded before interpreting labeled work arrangements and pay text. Generic company-wide boilerplate does not establish a role’s arrangement. Location-dependent and period-ambiguous published pay stays visible without inventing a numeric filter value. Independent hosts may collect in parallel, with each host still paced separately. Code pushes refresh existing records; scheduled and manual runs consider new candidates.
 See ARRANGEMENT-REVIEW.md for role declarations, structured location labels, false-positive protections, and bounded remote discovery hints. URL hints prioritize inspection only; they never set a job category or eligibility.
+
+All 52 company feed outcomes and outstanding obstacles are documented in COMPANY-FEED-STATUS.md and public/data/company-feed-status.json. The State-restricted remote filter remains a subset of Remote; it does not relabel those jobs as hybrid.

@@ -57,6 +57,16 @@ test('explicit nationwide remote eligibility matches any valid state; unknown do
   const nationwide=jobs.find(j=>j.requisitionId==='2401855');assert.ok(matchesState(nationwide,'Alaska'));assert.equal(matchesState(nationwide,'Atlantis'),false);
   assert.equal(matchesState({...nationwide,remoteScope:'unknown',eligibleStates:[]},'Florida'),false);
 });
+
+test('state-restricted remote is a subset of Remote and preserves state eligibility',()=>{
+  const result=filterJobs(jobs,filters({arrangement:'remote-state'}),today);
+  assert.ok(result.length>0);assert.ok(result.every(j=>j.arrangement==='remote'&&j.remoteScope==='states'));
+  assert.ok(result.every(j=>filterJobs(jobs,filters({arrangement:'remote'}),today).includes(j)));
+  const florida=filterJobs(jobs,filters({arrangement:'remote-state',state:'Florida'}),today);
+  assert.ok(florida.every(j=>j.eligibleStates.includes('Florida')));
+  assert.deepEqual(readJobFilters('?arrangement=remote-state').arrangement,'remote-state');
+  assert.ok(serializeJobFilters(filters({arrangement:'remote-state'})).includes('arrangement=remote-state'));
+});
 test('pay filters compare posted minimums within the same period and geographic scope',()=>{
   const hourly=jobs.find(j=>j.requisitionId==='2395019');assert.ok(matchesPay(hourly,'hour:15'));assert.equal(matchesPay(hourly,'hour:20'),false);assert.equal(matchesPay(hourly,'year:15000'),false);
   const ai=jobs.find(j=>j.requisitionId==='26995852');assert.ok(matchesPay(ai,'year:150000','New York'));assert.equal(matchesPay(ai,'year:150000','Texas'),false);assert.equal(matchesPay(ai,'year:200000'),false);

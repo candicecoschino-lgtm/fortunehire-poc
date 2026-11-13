@@ -31,7 +31,7 @@ export function matchesState(job,state) {
   return job.locations.some(location=>location.state===state);
 }
 export function filterJobs(jobs,f,today = todayInNewYork()) {
-  return jobs.filter(j=>isCurrent(j,today) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||j.arrangement===f.arrangement) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.sector||j.sector===f.sector) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || matchesPay(j,f.pay,f.state))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
+  return jobs.filter(j=>isCurrent(j,today) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||(f.arrangement==='remote-state'?j.arrangement==='remote'&&j.remoteScope==='states':j.arrangement===f.arrangement)) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.sector||j.sector===f.sector) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || matchesPay(j,f.pay,f.state))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
 }
 export function matchesPay(job,value,state='') {
   const match=/^(year|hour):(\d+)$/.exec(value);

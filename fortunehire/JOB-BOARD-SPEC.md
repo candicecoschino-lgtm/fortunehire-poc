@@ -1,3 +1,5 @@
+> Current scope: 26 connected employers within the 52-company directory. State-restricted remote is a subset of Remote and does not relabel jobs as Hybrid. See COMPANY-FEED-STATUS.md for all outcomes.
+
 # FortuneHire job-board implementation
 
 Current automation behavior is defined in [AUTOMATION.md](AUTOMATION.md). The original manually reviewed collection below is retained as a regression fixture; the live pilot now checks official employer postings automatically.
@@ -18,5 +20,6 @@ Hide closed records, postings past a stated deadline, and entries more than seve
 
 ## UX and validation
 Each role title and View role & apply button links to that exact employer posting. Cards show employer, work arrangement, actual location/eligibility, pay when verified, type, travel and source/review details. No login or resume upload on FortuneHire. Test state + arrangement combinations, nationwide and restricted remote eligibility, pay periods, unknown fields, travel behavior, expired/stale removal, URL state, safe URLs, keyboard operation, mobile overflow, pagination, and exact employer links. Publish through the existing GitHub → Netlify connection and verify the deployed version.
+
 
 

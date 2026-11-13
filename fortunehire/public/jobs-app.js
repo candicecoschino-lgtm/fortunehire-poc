@@ -14,7 +14,7 @@ function card(j,f){
     img.addEventListener('error',()=>{img.remove();monogram.hidden=false;},{once:true});mark.append(img);img.src=new URL(logo.src,import.meta.url).href;
   }
   const text=e('div');const title=e('h3',undefined,'job-title');const titleLink=link(j.title,j.url);titleLink.setAttribute('aria-label',`${j.title} at ${j.companyName} (opens employer posting in a new tab)`);title.append(titleLink);text.append(title,e('div',j.companyName,'job-company'));top.append(mark,text);
-  const badges=e('div',undefined,'job-badges');badges.append(e('span',ARRANGEMENTS[j.arrangement],`job-badge ${j.arrangement}`),e('span',j.employmentType==='Not specified'?'Job type not verified':j.employmentType,'job-badge'));
+  const badges=e('div',undefined,'job-badges');badges.append(e('span',j.arrangement==='remote'&&j.remoteScope==='states'?'Remote · State restricted':ARRANGEMENTS[j.arrangement],`job-badge ${j.arrangement}`),e('span',j.employmentType==='Not specified'?'Job type not verified':j.employmentType,'job-badge'));
   const payScope=j.salary?.scopeStates||j.publishedPay?.scopeStates||[];
   const payApplies=!f.state||!payScope.length||payScope.includes(f.state);
   const payText=salaryText(j);const longPay=!j.salary&&payText.length>220;
@@ -22,7 +22,7 @@ function card(j,f){
   const travel=e('p',j.travelRequired===true?`Travel required · ${j.travelNote}`:j.travelRequired===false?'Travel: employer states none':'Travel: not specified','job-travel');
   const apply=link('View role & apply ↗',j.url);apply.className='career-link';apply.setAttribute('aria-label',`View role and apply: ${j.title} at ${j.companyName} (opens in a new tab)`);
   const details=e('details');details.append(e('summary','Posting details & sources'));
-  const dl=e('dl');for(const [key,val]of [['Industry',j.industry],['Sector',j.sector],['Employer requisition',j.requisitionId],['Posted',j.postedAt?labelDate(j.postedAt):'Not specified'],['Reviewed',labelDate(j.reviewedAt)],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
+  const dl=e('dl');for(const [key,val]of [['Industry',j.industry],['Sector',j.sector],[j.identifierType==='posting-id'?'Employer posting ID':'Employer requisition',j.requisitionId],['Posted',j.postedAt?labelDate(j.postedAt):'Not specified'],['Reviewed',labelDate(j.reviewedAt)],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
   details.append(dl,e('p',j.salaryNote),e('p',j.sourceNote),link('Official posting & application ↗',j.url),e('br'),link('Employer classification source ↗',j.companySource));
   if(longPay&&payApplies)details.prepend(e('p','Full employer-published pay'),e('p',payText));
   a.append(top,badges,e('p',j.locationNote,'job-location'),pay);

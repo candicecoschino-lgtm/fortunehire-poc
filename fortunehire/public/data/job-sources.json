@@ -69,6 +69,42 @@
     "centene": {
       "host": "jobs.centene.com",
       "sector": "Health Care"
+    },
+    "walmart": {
+      "host": "careers.walmart.com",
+      "sector": "Retail"
+    },
+    "disney": {
+      "host": "www.disneycareers.com",
+      "sector": "Entertainment"
+    },
+    "caterpillar": {
+      "host": "careers.caterpillar.com",
+      "sector": "Industrials"
+    },
+    "cisco": {
+      "host": "careers.cisco.com",
+      "sector": "Technology"
+    },
+    "abbott": {
+      "host": "www.jobs.abbott",
+      "sector": "Health Care"
+    },
+    "cencora": {
+      "host": "careers.cencora.com",
+      "sector": "Health Care"
+    },
+    "cvs-health": {
+      "host": "jobs.cvshealth.com",
+      "sector": "Health Care"
+    },
+    "coca-cola": {
+      "host": "coke.wd1.myworkdayjobs.com",
+      "sector": "Consumer Goods"
+    },
+    "pepsico": {
+      "host": "www.pepsicojobs.com",
+      "sector": "Consumer Goods"
     }
   }
 }

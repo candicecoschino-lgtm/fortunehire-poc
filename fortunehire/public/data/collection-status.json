@@ -258,6 +258,184 @@
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+    },
+    "walmart": {
+      "discovered": 15622,
+      "checked": 20,
+      "added": 19,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [
+        {
+          "url": "https://careers.walmart.com/us/en/jobs/R-2708462",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        }
+      ],
+      "errors": [],
+      "activeTracked": 19,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+    },
+    "disney": {
+      "discovered": 552,
+      "checked": 20,
+      "added": 15,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 5,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 15,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+    },
+    "caterpillar": {
+      "discovered": 1044,
+      "checked": 20,
+      "added": 6,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 11,
+      "outsidePostingWindow": 3,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 6,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+    },
+    "cisco": {
+      "discovered": 1457,
+      "checked": 20,
+      "added": 11,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 7,
+      "outsidePostingWindow": 1,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 11,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+    },
+    "abbott": {
+      "discovered": 2305,
+      "checked": 20,
+      "added": 6,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 5,
+      "outsidePostingWindow": 1,
+      "warnings": [
+        {
+          "url": "https://www.jobs.abbott/global/ru/job/31167480/Est%C3%A1gio-em-Marketing-Divis%C3%A3o-de-Eletrofisiologia-EP-S%C3%A3o-Paulo-SP",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        },
+        {
+          "url": "https://www.jobs.abbott/global/ru/job/31166817/Operador-de-Manufactura-I-2do-turno",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        },
+        {
+          "url": "https://www.jobs.abbott/global/ru/job/31166702/Operador-de-Manufactura-I-1er-turno",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        },
+        {
+          "url": "https://www.jobs.abbott/global/ru/job/31166581/Supervisor-de-Consultores-M%C3%A9dicos",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        },
+        {
+          "url": "https://www.jobs.abbott/global/ru/job/31164640/Operador-de-Manufactura-1er-turno",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        },
+        {
+          "url": "https://www.jobs.abbott/global/ru/job/31164108/Operador-de-Manufactura-1er-turno",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        },
+        {
+          "url": "https://www.jobs.abbott/global/ru/job/31163745/Operador-de-Manufactura-1er-turno",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        },
+        {
+          "url": "https://www.jobs.abbott/global/fr/job/31167693/Operador-de-Fabricaci%C3%B3n-Granulador",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        }
+      ],
+      "errors": [],
+      "activeTracked": 6,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+    },
+    "cencora": {
+      "discovered": 1078,
+      "checked": 20,
+      "added": 8,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 9,
+      "outsidePostingWindow": 2,
+      "warnings": [
+        {
+          "url": "https://careers.cencora.com/ca/fr/job/R2615398/Pharmacy-Manager",
+          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        }
+      ],
+      "errors": [],
+      "activeTracked": 8,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+    },
+    "cvs-health": {
+      "discovered": 7114,
+      "checked": 20,
+      "added": 19,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 19,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+    },
+    "coca-cola": {
+      "discovered": 100,
+      "checked": 20,
+      "added": 5,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 15,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 5,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+    },
+    "pepsico": {
+      "discovered": 2576,
+      "checked": 20,
+      "added": 1,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 17,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 1,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:07:39.022934+00:00"
     }
   }
 }

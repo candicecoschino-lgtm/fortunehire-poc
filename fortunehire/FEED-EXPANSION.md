@@ -1,3 +1,5 @@
+> Current status: 26 connected employers; all 52 companies are accounted for in COMPANY-FEED-STATUS.md. The earlier batch notes below are historical.
+
 # Employer feed expansion — November 13, 2026
 
 ## Implementation spec
@@ -74,3 +76,4 @@ The remaining-employer audit inspected published crawler rules, discovery docume
 | Verizon Communications | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
 | Walmart | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
 | Walt Disney | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
+

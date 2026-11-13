@@ -8,6 +8,8 @@ on:
     paths:
       - '.github/workflows/refresh-jobs.yml'
       - 'fortunehire/scripts/collect_jobs.py'
+      - 'fortunehire/scripts/employer_adapters.py'
+      - 'fortunehire/test/test_employer_adapters.py'
       - 'fortunehire/public/data/job-sources.json'
       - 'fortunehire/test/test_collector.py'
 permissions:
@@ -65,6 +67,7 @@ jobs:
         run: |
           echo 'Some employer checks failed. Previous records were retained without changing their freshness dates.'
           exit 1
+
 
 
 

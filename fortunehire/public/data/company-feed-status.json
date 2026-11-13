@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-13T22:27:17.135697+00:00",
+  "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
+  "counts": {
+    "access-restricted": 9,
+    "adapter-needed": 8,
+    "connected": 26,
+    "location-review-needed": 1,
+    "no-eligible-sample": 2,
+    "paused": 1,
+    "retired-discovery": 1,
+    "rules-unresolved": 2,
+    "verification-needed": 2
+  },
+  "companies": [
+    {
+      "companyId": "att",
+      "company": "AT&T",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://www.att.jobs/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "abbott",
+      "company": "Abbott Laboratories",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://www.jobs.abbott/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "abbott",
+        "careerUrl": "https://www.jobs.abbott/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discovered": 2242,
+        "sampleUrl": "https://www.jobs.abbott/global/ru/job/31156314/Territory-Business-Manager-Restora-Nagaur",
+        "sampleStatus": 200,
+        "structured": true,
+        "hasNextData": false,
+        "hasDisneyMetadata": false
+      }
+    },
+    {
+      "companyId": "alphabet",
+      "company": "Alphabet (Google)",
+      "status": "access-restricted",
+      "reason": "Published crawler rules exclude the tested Google career paths.",
+      "nextStep": "Obtain an authorized job feed or employer permission.",
+      "officialCareerUrl": "https://www.google.com/about/careers/applications/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "alphabet",
+        "careerUrl": "https://www.google.com/about/careers/applications/",
+        "landingAllowed": false,
+        "discoveryError": "Crawler rules exclude requested URL"
+      }
+    },
+    {
+      "companyId": "amazon",
+      "company": "Amazon",
+      "status": "adapter-needed",
+      "reason": "Official search page loads, but individual jobs are not in its sitemap; the linked search-data script host returned 403.",
+      "nextStep": "Review a permitted public search interface or an authorized feed.",
+      "officialCareerUrl": "https://www.amazon.jobs/en/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "amazon",
+        "careerUrl": "https://www.amazon.jobs/en/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "apple",
+      "company": "Apple",
+      "status": "rules-unresolved",
+      "reason": "The official jobs-host robots file redirects to a corporate page-not-found destination.",
+      "nextStep": "Resolve the published crawler-policy and search-interface requirements.",
+      "officialCareerUrl": "https://www.apple.com/careers/us/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "apple",
+        "careerUrl": "https://www.apple.com/careers/us/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "bank-of-america",
+      "company": "Bank of America",
+      "status": "no-eligible-sample",
+      "reason": "Of twenty tested candidates, thirteen were outside the 14-day window and seven lacked usable matching posting metadata.",
+      "nextStep": "Review newer individual pages and their publication dates.",
+      "officialCareerUrl": "https://careers.bankofamerica.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "bank-of-america",
+        "careerUrl": "https://careers.bankofamerica.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "boeing",
+      "company": "Boeing",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://jobs.boeing.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "cvs-health",
+      "company": "CVS Health",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://jobs.cvshealth.com/us/en/home",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "cvs-health",
+        "careerUrl": "https://jobs.cvshealth.com/us/en/home",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discovered": 7114,
+        "sampleUrl": "https://jobs.cvshealth.com/us/en/job/R0775025/Store-Associate",
+        "sampleStatus": 200,
+        "structured": true,
+        "hasNextData": false,
+        "hasDisneyMetadata": false
+      }
+    },
+    {
+      "companyId": "cardinal-health",
+      "company": "Cardinal Health",
+      "status": "no-eligible-sample",
+      "reason": "Tested structured pages parsed, but the sampled U.S. postings were outside the 14-day window.",
+      "nextStep": "Improve discovery ordering and verify a recent U.S. sample.",
+      "officialCareerUrl": "https://jobs.cardinalhealth.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "cardinal-health",
+        "careerUrl": "https://jobs.cardinalhealth.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "caterpillar",
+      "company": "Caterpillar",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.caterpillar.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "caterpillar",
+        "careerUrl": "https://careers.caterpillar.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Response exceeds size limit"
+      }
+    },
+    {
+      "companyId": "cencora",
+      "company": "Cencora",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.cencora.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "cencora",
+        "careerUrl": "https://careers.cencora.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discovered": 1078,
+        "sampleUrl": "https://careers.cencora.com/us/en/job/R262436/Technician",
+        "sampleStatus": 200,
+        "structured": true,
+        "hasNextData": false,
+        "hasDisneyMetadata": false
+      }
+    },
+    {
+      "companyId": "centene",
+      "company": "Centene",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://jobs.centene.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "chevron",
+      "company": "Chevron",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.chevron.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "cigna",
+      "company": "Cigna Group",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://jobs.thecignagroup.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "cisco",
+      "company": "Cisco Systems",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.cisco.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "cisco",
+        "careerUrl": "https://careers.cisco.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discovered": 2887,
+        "sampleUrl": "https://careers.cisco.com/ca/fr/job/CISCISGLOBAL2023183EXTERNALFRCA/High-Touch-Operations-Manager-Mandarin-Language-Support",
+        "sampleStatus": 200,
+        "structured": true,
+        "hasNextData": false,
+        "hasDisneyMetadata": false
+      }
+    },
+    {
+      "companyId": "citigroup",
+      "company": "Citigroup",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://jobs.citi.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "coca-cola",
+      "company": "Coca-Cola",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://coke.wd1.myworkdayjobs.com/coca-cola-careers",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "coca-cola",
+        "careerUrl": "https://www.coca-colacompany.com/careers",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "comcast",
+      "company": "Comcast",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://jobs.comcast.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "costco",
+      "company": "Costco Wholesale",
+      "status": "adapter-needed",
+      "reason": "Official career pages did not expose a compatible individual-job discovery feed.",
+      "nextStep": "Review the linked application-system integration.",
+      "officialCareerUrl": "https://www.costco.com/f/-/careers",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "costco",
+        "careerUrl": "https://www.costco.com/f/-/careers",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "dell",
+      "company": "Dell Technologies",
+      "status": "adapter-needed",
+      "reason": "The official site redirects to the Dell Oracle Candidate Experience portal; it does not expose jobs in the tested page or sitemap.",
+      "nextStep": "Implement and verify the permitted public Oracle interface.",
+      "officialCareerUrl": "https://jobs.dell.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "dell",
+        "careerUrl": "https://jobs.dell.com/",
+        "landingAllowed": true,
+        "landingError": "Unexpected source host or protocol",
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "delta",
+      "company": "Delta Air Lines",
+      "status": "verification-needed",
+      "reason": "The officially linked Avature portal returned HTTP 202 without usable job data in this check.",
+      "nextStep": "Review a permitted discovery method and dated job details.",
+      "officialCareerUrl": "https://www.delta.com/us/en/careers/overview",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "delta",
+        "careerUrl": "https://www.delta.com/us/en/careers/overview",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Unexpected sitemap format; manual adapter review required"
+      }
+    },
+    {
+      "companyId": "elevance-health",
+      "company": "Elevance Health",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.elevancehealth.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "fannie-mae",
+      "company": "Fannie Mae",
+      "status": "location-review-needed",
+      "reason": "Linked Workday pages provide incomplete state/location metadata, and generic telecommute metadata conflicts with office-cadence language.",
+      "nextStep": "Verify actual work arrangement and job-state evidence before publishing.",
+      "officialCareerUrl": "https://www.fanniemae.com/careers",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "fannie-mae",
+        "careerUrl": "https://www.fanniemae.com/careers",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "fedex",
+      "company": "FedEx",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.fedex.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "ford",
+      "company": "Ford Motor",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://www.careers.ford.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "general-motors",
+      "company": "General Motors",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://search-careers.gm.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "home-depot",
+      "company": "Home Depot",
+      "status": "access-restricted",
+      "reason": "The directly linked role parses locally, but the GitHub request returned HTTP 403.",
+      "nextStep": "Use an authorized source that works from the scheduled collector.",
+      "officialCareerUrl": "https://careers.homedepot.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "home-depot",
+        "careerUrl": "https://careers.homedepot.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Unexpected source host or protocol"
+      }
+    },
+    {
+      "companyId": "humana",
+      "company": "Humana",
+      "status": "adapter-needed",
+      "reason": "The GitHub sample had nineteen recent candidate pages without matching JobPosting blocks; no eligible role was published.",
+      "nextStep": "Review the active-page format and verify a current role.",
+      "officialCareerUrl": "https://careers.humana.com/us/en",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "humana",
+        "careerUrl": "https://careers.humana.com/us/en",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discovered": 2045,
+        "sampleUrl": "https://careers.humana.com/us/en/job/R-430665/Home-Health-Baylor-Registered-Nurse",
+        "sampleStatus": 200,
+        "structured": true,
+        "hasNextData": false,
+        "hasDisneyMetadata": false
+      }
+    },
+    {
+      "companyId": "ibm",
+      "company": "IBM",
+      "status": "verification-needed",
+      "reason": "The corporate sitemap timed out; the linked careers portal returned HTTP 202 without usable job discovery.",
+      "nextStep": "Review a permitted source with verified publication dates.",
+      "officialCareerUrl": "https://www.ibm.com/careers",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "ibm",
+        "careerUrl": "https://www.ibm.com/careers",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Interrupted employer download after three attempts: The read operation timed out"
+      }
+    },
+    {
+      "companyId": "jpmorgan-chase",
+      "company": "JPMorgan Chase",
+      "status": "access-restricted",
+      "reason": "The Oracle portal linked by JPMorgan returned HTTP 403.",
+      "nextStep": "Obtain an authorized endpoint or employer permission.",
+      "officialCareerUrl": "https://www.jpmorganchase.com/careers",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "jpmorgan-chase",
+        "careerUrl": "https://www.jpmorganchase.com/careers",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "kroger",
+      "company": "Kroger",
+      "status": "adapter-needed",
+      "reason": "The corporate site redirects to the Kroger Oracle portal, which renders search dynamically.",
+      "nextStep": "Implement and verify the permitted public Oracle interface.",
+      "officialCareerUrl": "https://www.thekrogerco.com/careers/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "kroger",
+        "careerUrl": "https://www.thekrogerco.com/careers/",
+        "landingAllowed": true,
+        "landingError": "Unexpected source host or protocol",
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "lowes",
+      "company": "Lowe's",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://talent.lowes.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "mckesson",
+      "company": "McKesson",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.mckesson.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "meta",
+      "company": "Meta Platforms",
+      "status": "access-restricted",
+      "reason": "The GitHub discovery request returned HTTP 403.",
+      "nextStep": "Use an authorized source; do not bypass the denial.",
+      "officialCareerUrl": "https://www.metacareers.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "meta",
+        "careerUrl": "https://www.metacareers.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Employer request failed: HTTP 403"
+      }
+    },
+    {
+      "companyId": "microsoft",
+      "company": "Microsoft",
+      "status": "access-restricted",
+      "reason": "The official Microsoft job portal excludes the tested career route in its crawler rules.",
+      "nextStep": "Obtain an authorized job feed or employer permission.",
+      "officialCareerUrl": "https://careers.microsoft.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "microsoft",
+        "careerUrl": "https://careers.microsoft.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Invalid employer sitemap response"
+      }
+    },
+    {
+      "companyId": "nike",
+      "company": "Nike",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.nike.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "nvidia",
+      "company": "Nvidia",
+      "status": "access-restricted",
+      "reason": "The officially linked NVIDIA jobs portal excludes the tested career route in its crawler rules.",
+      "nextStep": "Obtain an authorized job feed or employer permission.",
+      "officialCareerUrl": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "nvidia",
+        "careerUrl": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Employer request failed: HTTP 504"
+      }
+    },
+    {
+      "companyId": "oracle",
+      "company": "Oracle",
+      "status": "access-restricted",
+      "reason": "Official-host access returned HTTP 403.",
+      "nextStep": "Use an authorized source; do not bypass the denial.",
+      "officialCareerUrl": "https://www.oracle.com/careers/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "oracle",
+        "careerUrl": "https://www.oracle.com/careers/",
+        "accessError": "Employer request failed: HTTP 403"
+      }
+    },
+    {
+      "companyId": "pepsico",
+      "company": "PepsiCo",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://www.pepsicojobs.com/main/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "pepsico",
+        "careerUrl": "https://www.pepsico.com/en/careers",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "phillips-66",
+      "company": "Phillips 66",
+      "status": "adapter-needed",
+      "reason": "Legacy sitemap discovery now works, but twenty sampled pages lacked compatible JobPosting blocks.",
+      "nextStep": "Add a verified individual-page reader with publication-date evidence.",
+      "officialCareerUrl": "https://careers.phillips66.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "phillips-66",
+        "careerUrl": "https://careers.phillips66.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Unexpected sitemap format; manual adapter review required"
+      }
+    },
+    {
+      "companyId": "progressive",
+      "company": "Progressive",
+      "status": "access-restricted",
+      "reason": "Official-host access returned HTTP 403.",
+      "nextStep": "Use an authorized source; do not bypass the denial.",
+      "officialCareerUrl": "https://careers.progressive.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "progressive",
+        "careerUrl": "https://careers.progressive.com/",
+        "accessError": "Employer request failed: HTTP 403"
+      }
+    },
+    {
+      "companyId": "rtx",
+      "company": "RTX",
+      "status": "paused",
+      "reason": "Skipped at the explicit user request after GitHub access denial.",
+      "nextStep": "Leave paused unless the user asks to revisit it.",
+      "officialCareerUrl": "https://careers.rtx.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "salesforce",
+      "company": "Salesforce",
+      "status": "rules-unresolved",
+      "reason": "The career-host robots file redirects to a corporate 404 page.",
+      "nextStep": "Resolve the current public job portal and crawler policy.",
+      "officialCareerUrl": "https://careers.salesforce.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "salesforce",
+        "careerUrl": "https://careers.salesforce.com/",
+        "accessError": "Unexpected source host or protocol"
+      }
+    },
+    {
+      "companyId": "target",
+      "company": "Target",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://corporate.target.com/careers",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "tesla",
+      "company": "Tesla",
+      "status": "access-restricted",
+      "reason": "Official-host access returned HTTP 403.",
+      "nextStep": "Use an authorized source; do not bypass the denial.",
+      "officialCareerUrl": "https://www.tesla.com/careers",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "tesla",
+        "careerUrl": "https://www.tesla.com/careers",
+        "accessError": "Employer request failed: HTTP 403"
+      }
+    },
+    {
+      "companyId": "ups",
+      "company": "UPS",
+      "status": "retired-discovery",
+      "reason": "The published sample contained retired individual-job URLs, including HTTP 410; no current verified posting was collected.",
+      "nextStep": "Verify the replacement discovery source and active individual pages.",
+      "officialCareerUrl": "https://www.jobs-ups.com/us/en",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "ups",
+        "careerUrl": "https://www.jobs-ups.com/us/en",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discovered": 1090,
+        "sampleUrl": "https://www.jobs-ups.com/apac/en/job/R25024037/UPS-Capital-Account-Manager",
+        "sampleStatus": 410,
+        "structured": false,
+        "hasNextData": false,
+        "hasDisneyMetadata": false
+      }
+    },
+    {
+      "companyId": "united-airlines",
+      "company": "United Airlines Holdings",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.united.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "unitedhealth-group",
+      "company": "UnitedHealth Group",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.unitedhealthgroup.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "companyId": "valero",
+      "company": "Valero Energy",
+      "status": "adapter-needed",
+      "reason": "The corporate page links to Taleo roles whose query-based job identifiers need a dedicated reader.",
+      "nextStep": "Implement the permitted Taleo job-detail format with date and location evidence.",
+      "officialCareerUrl": "https://www.valero.com/careers",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "valero",
+        "careerUrl": "https://www.valero.com/careers",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discoveryError": "Sitemap contains no individual job URLs"
+      }
+    },
+    {
+      "companyId": "verizon",
+      "company": "Verizon Communications",
+      "status": "adapter-needed",
+      "reason": "Individual pages are accessible but the reviewed page format lacks the structured posting/date block required by this collector.",
+      "nextStep": "Verify employer publication dates and implement a dedicated reader.",
+      "officialCareerUrl": "https://mycareer.verizon.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "verizon",
+        "careerUrl": "https://mycareer.verizon.com/",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discovered": 1263,
+        "sampleUrl": "https://mycareer.verizon.com/jobs/r-1100648/retail-sales-associate/",
+        "sampleStatus": 200,
+        "structured": false,
+        "hasNextData": false,
+        "hasDisneyMetadata": false
+      }
+    },
+    {
+      "companyId": "walmart",
+      "company": "Walmart",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://careers.walmart.com/us/en/home",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "walmart",
+        "careerUrl": "https://careers.walmart.com/us/en/home",
+        "landingAllowed": true,
+        "landingStatus": 200,
+        "discovered": 15622,
+        "sampleUrl": "https://careers.walmart.com/us/en/jobs/R-1075582",
+        "sampleStatus": 200,
+        "structured": false,
+        "hasNextData": true,
+        "hasDisneyMetadata": false
+      }
+    },
+    {
+      "companyId": "disney",
+      "company": "Walt Disney",
+      "status": "connected",
+      "reason": "Enabled after verified first-party collection and publication validation. Limited sample, not all openings.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
+      "officialCareerUrl": "https://www.disneycareers.com/",
+      "reviewedAt": "2026-11-13",
+      "githubObservation": {
+        "companyId": "disney",
+        "careerUrl": "https://www.disneycareers.com/",
+        "landingAllowed": true,
+        "landingError": "Unexpected source host or protocol",
+        "discovered": 552,
+        "sampleUrl": "https://www.disneycareers.com/en/job/santa-monica/data-engineer-i/391/103264560048",
+        "sampleStatus": 200,
+        "structured": false,
+        "hasNextData": false,
+        "hasDisneyMetadata": true
+      }
+    }
+  ]
+}

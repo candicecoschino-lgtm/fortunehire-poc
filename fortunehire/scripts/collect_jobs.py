@@ -59,6 +59,7 @@ def posting_key(url):
     if '/search/jobdetails/' in path:return path.rstrip('/').rsplit('/',1)[-1]
     if '/en-us/job-detail/' in path:return path.split('/en-us/job-detail/',1)[1].split('/')[0]
     tail=re.split(r'/jobs?/',urllib.parse.urlsplit(url).path,maxsplit=1)[-1].strip('/').split('/')
+    if urllib.parse.urlsplit(url).hostname=='careers.phillips66.com' and len(tail)==2 and tail[-1].isdigit():return tail[-1]
     cisco=re.fullmatch(r'CISCISGLOBAL(\d+)EXTERNAL[A-Z]+',tail[0],re.I)
     if cisco:return cisco[1]
     if re.fullmatch(r'w\d+',tail[0],re.I): return '/'.join(tail)
@@ -248,8 +249,11 @@ def normalize_posting(body, url, company, now):
     url=job_url((source.get('url') or page.canonical).rstrip('/'),host)
     if not isinstance(source.get('title'),str): raise ValueError('Invalid posting title')
     title = html.unescape(source['title']).strip()
-    req = source.get('identifier', {})
-    req = str(req.get('value', '') if isinstance(req, dict) else req).strip()
+    req = source.get('identifier') or {}
+    req = str((req.get('value') or '') if isinstance(req, dict) else (req or '')).strip()
+    identifier_type='requisition'
+    if not req and company=='pepsico' and posting_key(url).isdigit():
+        req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
     locations = [];remote_location_states=[]
@@ -344,11 +348,13 @@ def normalize_posting(body, url, company, now):
     # An explicit employer title qualifier is arrangement evidence, but does
     # not establish nationwide or state eligibility. Description labels win.
     if arrangement=='unknown':
-        qualifier=re.search(r'[\(\[]\s*(Remote|Hybrid|On[- ]?site)\s*[\)\]]|(?:^|\s[-\u2013\u2014]\s)(Remote|Hybrid|On[- ]?site)(?:\s*,[^\n]+)?\s*$',title,re.I)
+        qualifier=re.search(r'[\(\[]\s*(?:US[- ]?)?(Remote|Hybrid|On[- ]?site|Work From Home)(?:\s*,[^)\]]+)?\s*[\)\]]|(?:^|\s[-\u2013\u2014]\s)(Remote|Hybrid|On[- ]?site|Work From Home)(?:\s*,[^\n]+)?\s*[-\u2013\u2014]?\s*$',title,re.I)
         if qualifier:
             kind=next(group for group in qualifier.groups() if group)
-            arrangement={'remote':'remote','hybrid':'hybrid','onsite':'on-site'}[re.sub(r'[- ]','',kind.lower())]
+            arrangement={'remote':'remote','hybrid':'hybrid','onsite':'on-site','workfromhome':'remote'}[re.sub(r'[- ]','',kind.lower())]
             arrangement_evidence='Explicit employer title qualifier: '+qualifier[0].strip()
+        elif company=='cvs-health' and re.match(r'^Remote Call Center\b',title,re.I):
+            arrangement,arrangement_evidence='remote','Explicit employer role title: Remote Call Center'
     if arrangement=='remote' and remote_location_states:
         eligible=sorted(set(eligible+remote_location_states))
     # A posted office address is not evidence of remote eligibility.
@@ -363,7 +369,7 @@ def normalize_posting(body, url, company, now):
     us_allowed=any(value in ('US','USA','UNITED STATES','UNITED STATES OF AMERICA') for value in country_requirements)
     explicit_national=us_allowed and not host.endswith('.myworkdayjobs.com') or bool(national_remote and (not country_requirements or us_allowed))
     remote_scope='states' if eligible else 'nationwide' if arrangement=='remote' and explicit_national and not residency_restricted else 'unknown'
-    if not locations and not eligible: return None
+    if not locations and not eligible and remote_scope!='nationwide': return None
     travel, travel_evidence = None, ''
     no_travel = re.search(r'\b(?:Travel\s*(?:Required)?\s*:\s*(?:None|No)(?!\s+more)|No travel (?:is )?required)\b|\bTravel\s*:\s*0\s*%',page.text,re.I)
     yes_travel = re.search(r'\bTravel\s*:\s*(?:Yes\s*,?\s*)?(?:Up to\s*)?([1-9]\d?(?:\.\d+)?|100)\s*%[^\n]{0,50}',page.text,re.I)
@@ -412,11 +418,15 @@ def normalize_posting(body, url, company, now):
         deadline_note = 'Employer deadline '+deadline+' predates its posting date '+posted+'; deadline requires confirmation.'
         deadline = None
     key = re.sub(r'[^a-z0-9]+','-',req.lower()).strip('-')
+    listed_locations='; '.join(l['city']+', '+l['state'] for l in locations)
+    if remote_scope=='nationwide':location_note='Remote within the U.S.'+(' · Employer-listed locations: '+listed_locations if listed_locations else '')
+    elif arrangement=='remote' and remote_scope=='unknown':location_note='Remote · Eligible states not verified'+(' · Employer-listed locations: '+listed_locations if listed_locations else '')
+    else:location_note=listed_locations or 'Employer specifies eligible states: '+', '.join(eligible)
     return {
-        'id':company+'-'+key, 'companyId':company, 'requisitionId':req, 'title':title, 'url':url,
+        'id':company+'-'+key, 'companyId':company, 'requisitionId':req, 'identifierType':identifier_type, 'title':title, 'url':url,
         'arrangement':arrangement, 'locations':locations,
         'remoteScope':remote_scope, 'eligibleStates':eligible,
-        'locationNote':('Remote within the U.S. · Employer-listed locations: ' if remote_scope=='nationwide' else 'Remote · Eligible states not verified · Employer-listed locations: ' if arrangement=='remote' and remote_scope=='unknown' else '')+('; '.join(l['city']+', '+l['state'] for l in locations) or 'Employer specifies eligible states: '+', '.join(eligible)),
+        'locationNote':location_note,
         'employmentType':employment, 'salary':salary,
         'publishedPay':published_pay,
         'salaryNote':published_pay['note'] if published_pay else 'Structured employer pay for the listed state.' if salary else 'Pay or geographic scope not verified automatically. See employer posting.',
@@ -476,21 +486,31 @@ class Client:
 
 def discover(client):
     ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
+    def sitemap_url(url):
+        parsed=urllib.parse.urlsplit(url)
+        if parsed.scheme=='http' and parsed.hostname==client.host and not parsed.username and parsed.port in (None,80):
+            return urllib.parse.urlunsplit(('https',client.host,parsed.path,parsed.query,''))
+        return url
     # Sitemaps are published discovery documents, not excluded search endpoints.
     published=client.robots.site_maps() if client.robots else None
-    queue=[u for u in (published or ['https://'+client.host+'/sitemap.xml']) if urllib.parse.urlsplit(u).hostname==client.host]
-    seen=set();found={};dates={}
+    queue=[sitemap_url(u) for u in (published or ['https://'+client.host+'/sitemap.xml']) if urllib.parse.urlsplit(u).hostname==client.host]
+    seen=set();found={};dates={};client.discovery_warnings=[]
     while queue and len(seen)<20:
         sitemap=queue.pop(0)
         if sitemap in seen: continue
         seen.add(sitemap)
-        status,body=client.get(sitemap)
+        try:status,body=client.get(sitemap)
+        except ValueError as error:
+            if str(error)!='Unexpected source host or protocol':raise
+            client.discovery_warnings.append({'url':sitemap,'error':'Published map redirects outside the reviewed host; not followed.'})
+            continue
         if status!=200: continue
         try: root=ET.fromstring(body)
         except ET.ParseError as error: raise SourceError('Invalid employer sitemap response') from error
+        ns=root.tag.split('}',1)[0]+'}' if root.tag.startswith('{') else ''
         if root.tag==ns+'sitemapindex':
             children=[entry.findtext(ns+'loc') for entry in root.findall(ns+'sitemap')]
-            children=[u for u in children if u and urllib.parse.urlsplit(u).hostname==client.host]
+            children=[sitemap_url(u) for u in children if u and urllib.parse.urlsplit(u).hostname==client.host]
             children.sort(key=lambda u:('job' not in u.lower(),-language_priority(u),u))
             queue.extend(children)
         elif root.tag==ns+'urlset':
@@ -503,7 +523,7 @@ def discover(client):
                 modified=entry.findtext(ns+'lastmod') or ''
                 dates[key]=max(dates.get(key,''),modified)
         else: raise SourceError('Unexpected sitemap format; manual adapter review required')
-    if not found and client.host in ('jobs.cardinalhealth.com','careers.bankofamerica.com'):
+    if not found and client.host in ('jobs.cardinalhealth.com','careers.bankofamerica.com','careers.homedepot.com'):
         landing='https://'+client.host+'/'
         status,body=client.get(landing)
         if status==200:
@@ -628,6 +648,7 @@ def run(root=ROOT, now=None, max_new=20):
             discovered = discover(client)
             refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,client.get,now,max_new=max_new,discovery_dates=client.discovery_dates)
             result['discoveryLimited']=client.discovery_limited
+            if client.discovery_warnings:result['discoveryWarnings']=client.discovery_warnings
             if not result['errors']:
                 result['lastSuccessfulAt']=now.isoformat()
             else:

@@ -1,29 +1,9 @@
-# FortuneHire continuation — November 13, 2026
+# FortuneHire continuation
 
-## Current status: latest batch supersedes the older notes below
+All 52 companies are accounted for in COMPANY-FEED-STATUS.md and public/data/company-feed-status.json. Twenty-six feeds are enabled; twenty-five need format, eligibility, discovery, or authorized-access work. Keep RTX paused.
 
-Seventeen employers are connected, including Target, General Motors, and Centene. RTX remains paused; thirty-four other employers still need connections. The latest adapters handle plural /jobs/ routes, collision-safe Target keys, GM address arrays and hybrid-work labels, Target U.S. deadline formatting, Centene pay ranges, and explicit remote-state location restrictions. Do not interpret Remote-AZ or Remote-MO as nationwide eligibility from a generic applicant-country field. Multiple Target role/pay bands remain published text rather than one invented numeric range.
+Review each remaining company using its recorded next step. Do not call all 52 job feeds operational. Never fabricate dates, pay, states, or work arrangements; never bypass access denial or crawler rules. State-restricted remote jobs remain Remote and have their own filter option.
 
-Continue auditing missing field formats and expanding coverage within the connected feeds. Investigate the remaining companies in tested batches, retaining the existing limits, lifecycle safeguards, GitHub-access probe, tests, and live checks. Update the source archive and employer-feed audit after each successful release. Walmart, Disney, Verizon, Humana, JPMorgan, and Google remain pending. Skip RTX.
+The newer adapters handle Walmart embedded page data, Disney primary job metadata, Workday requisition identity checks and explicit U.S. location labels, older sitemap namespaces, Cisco locale deduplication, bounded 32 MB XML documents, and reviewed HTTPS sitemap upgrades. PepsiCo canonical posting IDs are labeled as posting IDs rather than internal requisitions. Fannie Mae generic telecommute metadata is not treated as nationwide eligibility.
 
-## Historical notes before this batch
-
-Keep the current 52-company directory. Fourteen employers have enabled bounded job feeds. RTX is paused at the user's request; do not retry or enable it as part of the next batch. Thirty-seven other employers still need connections.
-
-## Current corrections
-
-Job cards now reuse the directory's locally hosted official brand icons, with initials as the failure fallback. Explicit employer title qualifiers such as `(Remote)`, `(Hybrid)`, and `- Onsite` are arrangement evidence when the description and structured data do not already specify an arrangement. A remote qualifier alone never establishes eligible states or nationwide availability. Remote jobs with unknown eligibility say so on the card. Generic phrases such as `Remote Sensing Engineer` do not trigger remote classification.
-
-Regression example: United Airlines requisition WHQ00027058, Analyst - Fraud Operations (Remote), was incorrectly unspecified. Check Remote + United Airlines with no state selection; it should appear. Adding a state requires explicit eligibility evidence, not its Chicago office address.
-
-## Next small employer batch
-
-Target is promising: tested official individual pages expose JobPosting data with USD annual base ranges and recent dates. A bounded GitHub probe is defined in `.github/workflows/probe-next-employer.yml`; inspect its output before activation. Target is not enabled yet. The collector and browser currently accept `/job/` routes, whereas Target uses `/jobs/w06/25/title`. Add plural-route support with a collision-safe full-path key for Target and tests. Review Target's non-ISO deadline format before relying on it. Stage a small sample, validate filters, then activate only after GitHub connectivity succeeds.
-
-General Motors and Centene also expose structured data on `/jobs/` routes, but require additional format and eligibility work. GM has address arrays. Centene's Remote-MO/Remote-AZ labels must not be converted into nationwide eligibility based on a generic U.S. applicant-country field. Earlier samples were older than 14 days; find recent postings through approved discovery.
-
-Walmart, Disney, and Verizon samples returned HTML without usable JobPosting blocks. Dedicated adapters remain pending; do not enable them on the shared collector or assume a paid provider is necessary. Humana and JPMorgan remain priorities for later investigation.
-
-## Release checks
-
-Run Python lifecycle tests, Node filter tests, and production-data validation. Require zero new employer collection errors in GitHub before treating a connection as scheduled-ready. Preserve 14-day posting age, seven-day freshness, twice-daily checks, per-host pacing, 20 new candidates per run, and 100 tracked active jobs per employer. Save a screenshot of the live result and update the source archive after a successful release.
+Keep the 14-day posting window, seven-day freshness limit, per-host pacing, 20 new candidates, 100 active jobs per employer, and failure/closure safeguards. Validate each new source from GitHub before activation.
