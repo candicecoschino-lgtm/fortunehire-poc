@@ -1,4 +1,4 @@
-name: Verify PepsiCo job source
+name: Verify final candidate sources
 on:
   push:
     branches: [verify-all52-20261113]
@@ -14,17 +14,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check official PepsiCo posting
+      - name: Check official PepsiCo and Home Depot postings
         working-directory: fortunehire
         run: |
           python - <<'PY'
           import sys,json
           sys.path.insert(0,'scripts')
           import collect_jobs as c
-          try:
-              client=c.Client('www.pepsicojobs.com')
-              status,body=client.get('https://www.pepsicojobs.com/main/jobs/483193')
-              jobs=[j for script in c.Page(body).scripts for j in c.postings(json.loads(script))]
-              print('PEPSICO_PROBE',json.dumps({'status':status,'postings':len(jobs),'postedAt':jobs[0].get('datePosted') if jobs else None}))
-          except Exception as error:print('PEPSICO_PROBE',json.dumps({'error':str(error)}))
+          sources=[('pepsico','www.pepsicojobs.com','https://www.pepsicojobs.com/main/jobs/483193'),('home-depot','careers.homedepot.com','https://careers.homedepot.com/job/24146260/sr-software-engineer-kotlin-mobile-applications-remote-remote/')]
+          for company,host,url in sources:
+              try:
+                  client=c.Client(host)
+                  status,body=client.get(url)
+                  jobs=[j for script in c.Page(body).scripts for j in c.postings(json.loads(script))]
+                  print('LAST_PROBE',json.dumps({'company':company,'status':status,'postings':len(jobs),'postedAt':jobs[0].get('datePosted') if jobs else None}))
+              except Exception as error:print('LAST_PROBE',json.dumps({'company':company,'error':str(error)}))
           PY
