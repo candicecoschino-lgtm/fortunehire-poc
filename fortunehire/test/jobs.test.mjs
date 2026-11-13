@@ -1,11 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {readJobFilters,serializeJobFilters,filterJobs,validateJobs,matchesState,matchesPay,isCurrent,todayInNewYork,paginateJobs} from '../public/jobs.js';
+import {readJobFilters,serializeJobFilters,filterJobs,validateJobs,matchesState,matchesPay,isCurrent,todayInNewYork,paginateJobs,salaryText} from '../public/jobs.js';
 const companies=JSON.parse(await readFile(new URL('../public/data/companies.json',import.meta.url),'utf8')).companies;
 const data=JSON.parse(await readFile(new URL('./fixtures/reviewed-jobs.json',import.meta.url),'utf8'));
 const jobs=validateJobs(data,companies),today='2026-11-13';
 const filters=extra=>({...readJobFilters(''),...extra});
+
+test('published pay text remains visible without inventing a numeric pay period',()=>{
+  const j={...jobs[0],salary:null,publishedPay:{text:'Primary-location salary range: $170,000 - $300,000',scopeStates:['New York'],note:'Other locations may differ.'}};
+  assert.equal(salaryText(j),j.publishedPay.text);assert.equal(matchesPay(j,'year:100000'),false);
+});
 
 test('current publication dataset validates independently of historical regression fixtures',async()=>{
   const current=JSON.parse(await readFile(new URL('../public/data/jobs.json',import.meta.url),'utf8'));

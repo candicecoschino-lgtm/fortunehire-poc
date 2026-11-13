@@ -47,6 +47,20 @@ class CollectorTests(unittest.TestCase):
         out,state,r=c.reconcile('boeing',out,state,{},lambda u:(410,''),NOW+timedelta(hours=7))
         self.assertEqual(out[0]['status'],'closed');self.assertEqual(r['closed'],1)
 
+    def test_explicit_soft_closed_page_needs_two_checks(self):
+        old=c.normalize_posting(body(),URL,'boeing',NOW)
+        fetch=lambda u:(200,'<main>Sorry, this job is no longer available.</main>')
+        out,state,r=c.reconcile('boeing',[old],{}, {},fetch,NOW)
+        self.assertEqual(out[0]['status'],'reviewed');self.assertFalse(r['errors'])
+        self.assertEqual(r['pendingClosureChecks'],1)
+        out,state,r=c.reconcile('boeing',out,state,{},fetch,NOW+timedelta(hours=7))
+        self.assertEqual(out[0]['status'],'closed')
+
+    def test_canonical_slug_change_keeps_posting_identity(self):
+        canonical=URL.replace('test-engineer','renamed-engineer')
+        j=c.normalize_posting(body(url=canonical),URL,'boeing',NOW)
+        self.assertEqual(j['url'],canonical);self.assertEqual(j['requisitionId'],'TEST-1')
+
     def test_missing_signal_clears_when_job_returns(self):
         old=c.normalize_posting(body(),URL,'boeing',NOW)
         out,state,r=c.reconcile('boeing',[old],{}, {},lambda u:(404,''),NOW)
@@ -137,6 +151,31 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(j['salary']['scopeStates'],['Florida'])
         loc=[{'address':{'addressCountry':'US','addressRegion':'FL','addressLocality':'A'}},{'address':{'addressCountry':'US','addressRegion':'NY','addressLocality':'B'}}]
         self.assertIsNone(c.normalize_posting(body(baseSalary=base,jobLocation=loc),URL,'boeing',NOW)['salary'])
+
+    def test_published_hourly_pay_is_extracted_and_updates(self):
+        text='The hourly pay for this role will range from $18 - $32 per hour based on full-time employment.'
+        j=c.normalize_posting(body(description=text),URL,'boeing',NOW)
+        self.assertEqual(j['salary']['min'],18);self.assertEqual(j['salary']['period'],'hour')
+        self.assertEqual(j['salary']['scopeStates'],['Florida'])
+        changed=c.normalize_posting(body(description=text.replace('$18','$20')),URL,'boeing',NOW)
+        self.assertEqual(changed['salary']['min'],20)
+        self.assertNotEqual(j['sourceHash'],changed['sourceHash'])
+
+    def test_annual_pay_and_ambiguous_multiple_bands(self):
+        text='The annual pay for this role will range from $90,000 - $120,000 per year.'
+        j=c.normalize_posting(body(description=text),URL,'boeing',NOW)
+        self.assertEqual(j['salary']['period'],'year');self.assertEqual(j['salary']['max'],120000)
+        text='Summary pay range Level 2: $90,000 - $120,000\nSummary pay range Level 3: $110,000 - $140,000'
+        # HTML paragraphs preserve independent published band labels.
+        j=c.normalize_posting(body(description='<p>'+text.replace('\n','</p><p>')+'</p>'),URL,'boeing',NOW)
+        self.assertIsNone(j['salary']);self.assertIn('$140,000',j['publishedPay']['text'])
+
+    def test_citi_primary_pay_is_not_applied_to_secondary_state(self):
+        locations=[{'city':'New York','state':'New York'},{'city':'Irving','state':'Texas'}]
+        text='Primary Location:\nNew York New York United States\nPrimary Location Full Time Salary Range:\n$170,000.00 - $300,000.00'
+        salary,published=c.extract_published_pay(text,locations,'citigroup')
+        self.assertIsNone(salary);self.assertEqual(published['scopeStates'],['New York'])
+        self.assertIn('$170,000.00',published['text']);self.assertIn('period',published['note'])
 
 
 if __name__=='__main__': unittest.main()

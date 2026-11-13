@@ -96,6 +96,59 @@ def date_only(value):
     except ValueError: return None
 
 
+MONEY = r'\$\s*\d[\d,]*(?:\.\d{1,2})?'
+PAY_RANGE = re.compile('('+MONEY+r')\s*(?:[-\u2013\u2014]|to)\s*('+MONEY+')', re.I)
+
+
+def extract_published_pay(description, locations, company):
+    """Preserve published ranges even when period/scope cannot support filtering."""
+    states = sorted({loc['state'] for loc in locations})
+    lines = [re.sub(r'\s+',' ',line).strip() for line in description.splitlines() if line.strip()]
+    flat = ' '.join(lines)
+    if company == 'citigroup':
+        primary = re.search(r'Primary Location\s*:\s*([^\n]+)',description,re.I)
+        primary_states = [s for s in sorted(STATES.values(),key=len,reverse=True) if primary and re.search(r'\b'+re.escape(s)+r'\b',primary[1],re.I)]
+        scoped = [s for s in primary_states if s in states]
+        bands = re.findall(r'Primary Location Full Time Salary Range\s*:\s*('+MONEY+r'\s*[-\u2013\u2014]\s*'+MONEY+')',flat,re.I)
+        bands = list(dict.fromkeys(bands))
+        if bands and len(scoped)==1:
+            # This label does not explicitly state the period. Display verbatim;
+            # do not invent an hourly/annual value for the numerical pay filter.
+            return None, {'text':'Primary-location salary range: '+'; '.join(bands),'scopeStates':scoped,'note':'Employer range for '+scoped[0]+'. Other locations may differ. Pay period is not specified in this label.'}
+    evidence = []
+    for i,line in enumerate(lines):
+        if re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay) range for (?:this|the) (?:role|position))\b',line,re.I):
+            context = line
+            if not PAY_RANGE.search(context) and i+1<len(lines): context += ' '+lines[i+1]
+            if PAY_RANGE.search(context): evidence.append(context)
+    evidence = list(dict.fromkeys(evidence))
+    if not evidence: return None, None
+    records=[]
+    for text in evidence:
+        period = 'hour' if re.search(r'\b(?:hourly|per hour|an hour)\b',text,re.I) else 'year' if re.search(r'\b(?:annual|annually|per year|per annum|a year)\b',text,re.I) else None
+        for match in PAY_RANGE.finditer(text):
+            low, high = [float(re.sub(r'[$,\s]','',v)) for v in match.groups()]
+            if not 0<low<=high: continue
+            suffix = ' / hour' if period=='hour' else ' / year' if period=='year' else ''
+            label = text[:match.start()].strip()[-100:]
+            records.append((low,high,period,(label+' '+match[0]+suffix).strip()))
+    if not records: return None,None
+    unique = {(low,high,period) for low,high,period,text in records}
+    published={'text':' | '.join(dict.fromkeys(r[3] for r in records))[:1000],'scopeStates':states,'note':'Employer-published range for listed locations; pay may vary by level or location.'}
+    salary=None
+    if len(unique)==1:
+        low,high,period=next(iter(unique))
+        # Explicit state-specific qualifiers need manual scope review. A generic
+        # role-wide statement can be scoped conservatively to listed states.
+        mentioned={s for s in STATES.values() if any(re.search(r'\b'+re.escape(s)+r'\b',t,re.I) for t in evidence)}
+        if period and states and (not mentioned or mentioned.issubset(set(states))):
+            scope=sorted(mentioned) if mentioned else states
+            salary={'min':low,'max':high,'period':period,'currency':'USD','scopeStates':scope}
+            published['scopeStates']=scope
+    if any(r[2] is None for r in records): published['note']+=' Pay period is not specified for every range.'
+    return salary,published
+
+
 def normalize_posting(body, url, company, now):
     """Only explicit evidence populates filters; uncertainty is preserved."""
     host, sector = SOURCES[company]
@@ -105,9 +158,14 @@ def normalize_posting(body, url, company, now):
     for script in page.scripts:
         try: candidates.extend(postings(json.loads(script)))
         except (ValueError, TypeError): continue
-    matched = [j for j in candidates if str(j.get('url', '')).rstrip('/') == url]
-    if len(matched) != 1: raise ValueError('Missing or ambiguous matching JobPosting data')
+    matched=[]
+    for candidate in candidates:
+        try:
+            if job_url(str(candidate.get('url','')).rstrip('/'),host).rsplit('/',1)[-1]==url.rsplit('/',1)[-1]: matched.append(candidate)
+        except ValueError: pass
+    if len(matched) != 1: raise ValueError('Missing or ambiguous matching JobPosting data; '+str(len(candidates))+' structured candidates found')
     source = matched[0]
+    url=job_url(source['url'].rstrip('/'),host)
     title = html.unescape(str(source.get('title', ''))).strip()
     req = source.get('identifier', {})
     req = str(req.get('value', '') if isinstance(req, dict) else req).strip()
@@ -166,6 +224,10 @@ def normalize_posting(body, url, company, now):
     if base.get('currency') == 'USD' and period and all(isinstance(v,(float,int)) and not isinstance(v,bool) and v>0 for v in [low,high]) and high>=low and len({l['state'] for l in locations})==1:
         salary = {'min':low,'max':high,'period':period,'currency':'USD','scopeStates':[locations[0]['state']]}
         salary_evidence = 'JobPosting.baseSalary; single published state'
+    text_salary, published_pay = extract_published_pay(description,locations,company)
+    if salary is None and text_salary:
+        salary=text_salary
+        salary_evidence='Explicit employer pay text with stated period; scoped to listed or explicitly named states'
     today = now.astimezone(ZoneInfo('America/New_York')).date().isoformat()
     deadline = date_only(source.get('validThrough'))
     deadlines = [deadline] if deadline else []
@@ -187,13 +249,14 @@ def normalize_posting(body, url, company, now):
         'remoteScope':'states' if eligible else 'unknown', 'eligibleStates':eligible,
         'locationNote':'; '.join(l['city']+', '+l['state'] for l in locations) or 'Employer specifies eligible states: '+', '.join(eligible),
         'employmentType':employment, 'salary':salary,
-        'salaryNote':'Structured employer pay for the listed state.' if salary else 'Pay or geographic scope not verified automatically. See employer posting.',
+        'publishedPay':published_pay,
+        'salaryNote':published_pay['note'] if published_pay else 'Structured employer pay for the listed state.' if salary else 'Pay or geographic scope not verified automatically. See employer posting.',
         'travelRequired':travel, 'travelNote':travel_evidence or 'Travel not verified automatically.',
         'postedAt':posted, 'closesAt':deadline,
         'reviewedAt':today, 'status':'closed' if deadline and deadline<today else 'reviewed', 'sector':sector,
         'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' '+deadline_note if deadline_note else ''),
         'checkedAt':now.isoformat(), 'collectionMethod':'official-jobposting-jsonld',
-        'sourceHash':hashlib.sha256(json.dumps({'structured':source,'arrangement':arrangement_evidence,'employmentType':employment,'deadline':deadline},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
+        'sourceHash':hashlib.sha256(json.dumps({'structured':source,'arrangement':arrangement_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
         'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note},
     }
 
@@ -301,6 +364,11 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
             by_id[job['id']] = job
             if job['status']=='closed' and (not existing or existing['status']!='closed'): report['closed'] += 1
         except (ValueError,SourceError,urllib.error.URLError,TimeoutError) as error:
+            if old is not None and isinstance(error,ValueError) and re.search(r'\b(?:Sorry[,!]?\s+(?:this|the)\s+(?:job|position)\s+is\s+no longer available|This\s+(?:job|position)\s+(?:has expired|has been filled|is no longer available))\b',Page(body).text,re.I):
+                first=missing.get(old['id'])
+                if first and (now-datetime.fromisoformat(first)).total_seconds()>=21600: closures.append(old['id'])
+                elif not first: missing[old['id']]=now.isoformat()
+                continue
             if old is None and isinstance(error,ValueError):
                 report['warnings'].append({'url':url,'error':'Candidate quarantined: '+str(error)[:180]})
                 source_state.setdefault('quarantined',{})[url.rsplit('/',1)[-1]]=now.isoformat()
@@ -318,6 +386,7 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
     source_state['rejected'] = {k:v for k,v in rejected.items() if (now-datetime.fromisoformat(v)).days<7}
     source_state['missing'] = {k:v for k,v in missing.items() if k in by_id and by_id[k]['status']!='closed'}
     report['activeTracked'] = sum(j['status']!='closed' for j in by_id.values())
+    report['pendingClosureChecks']=len(source_state['missing'])
     return list(by_id.values()), source_state, report
 
 

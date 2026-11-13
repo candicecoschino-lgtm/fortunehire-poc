@@ -16,6 +16,7 @@ GitHub Actions runs at 10:17 and 22:17 UTC daily and can be run manually through
 - Conflicting dates: a deadline before the employer's own posting date is flagged in the listing's source note, left unverified, and never used to declare the job closed.
 - Failure: preserve the previous record and its last successful check date. Invalid pages and access failures never refresh freshness. Existing seven-day expiry continues to hide stale records.
 - Unknown: do not infer remote eligibility from a job's title or office address, pay scope from another state, or job type from generic benefits language. Conservative extraction means some filters remain unspecified even when a human could interpret the description.
+- Pay: read structured pay and employer-specific published pay paragraphs. Explicit hourly/annual ranges can support numeric filters when their geography is clear. Display other published bands verbatim with their labels and scope, without guessing a period or combining different level/location bands into one numeric range. Citi primary-location ranges never apply to a secondary state. Displayed pay can therefore be available even when a numeric pay filter cannot safely use it.
 - Unsupported new candidates: quarantine without publication and retry after 24 hours. Warnings remain in the public status record. An unparseable existing listing is a check failure and retains its prior successful check date.
 
 ## Validation

@@ -9,14 +9,17 @@ function card(j,f){
   const top=e('div',undefined,'card-top');const monogram=e('span',j.companyName.split(/\s+/).map(s=>s[0]).slice(0,2).join(''),'monogram');monogram.setAttribute('aria-hidden','true');
   const text=e('div');const title=e('h3',undefined,'job-title');const titleLink=link(j.title,j.url);titleLink.setAttribute('aria-label',`${j.title} at ${j.companyName} (opens employer posting in a new tab)`);title.append(titleLink);text.append(title,e('div',j.companyName,'job-company'));top.append(monogram,text);
   const badges=e('div',undefined,'job-badges');badges.append(e('span',ARRANGEMENTS[j.arrangement],`job-badge ${j.arrangement}`),e('span',j.employmentType==='Not specified'?'Job type not verified':j.employmentType,'job-badge'));
-  const payApplies=!f.state||!j.salary?.scopeStates?.length||j.salary.scopeStates.includes(f.state);
+  const payScope=j.salary?.scopeStates||j.publishedPay?.scopeStates||[];
+  const payApplies=!f.state||!payScope.length||payScope.includes(f.state);
   const pay=e('p',payApplies?salaryText(j):'Pay not verified for this location','job-salary');
   const travel=e('p',j.travelRequired===true?`Travel required · ${j.travelNote}`:j.travelRequired===false?'Travel: employer states none':'Travel: not specified','job-travel');
   const apply=link('View role & apply ↗',j.url);apply.className='career-link';apply.setAttribute('aria-label',`View role and apply: ${j.title} at ${j.companyName} (opens in a new tab)`);
   const details=e('details');details.append(e('summary','Posting details & sources'));
   const dl=e('dl');for(const [key,val]of [['Industry',j.industry],['Sector',j.sector],['Employer requisition',j.requisitionId],['Posted',j.postedAt?labelDate(j.postedAt):'Not specified'],['Reviewed',labelDate(j.reviewedAt)],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
   details.append(dl,e('p',j.salaryNote),e('p',j.sourceNote),link('Official posting & application ↗',j.url),e('br'),link('Employer classification source ↗',j.companySource));
-  a.append(top,badges,e('p',j.locationNote,'job-location'),pay,travel,apply,details);return a;
+  a.append(top,badges,e('p',j.locationNote,'job-location'),pay);
+  if(payApplies&&j.publishedPay)a.append(e('p',j.publishedPay.note,'small'));
+  a.append(travel,apply,details);return a;
 }
 function setOptions(id,values){const select=$(id);select.replaceChildren(select.options[0]);for(const [value,label]of values){const o=e('option',label);o.value=value;select.append(o);}select.disabled=false;}
 function restore(){

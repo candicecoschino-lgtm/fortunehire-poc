@@ -38,7 +38,7 @@ jobs:
       - name: Check employer postings
         id: collect
         continue-on-error: true
-        run: python scripts/collect_jobs.py
+        run: python scripts/collect_jobs.py --max-new "${{ github.event_name == 'push' && '0' || '20' }}"
       - name: Validate the publication dataset
         run: node scripts/validate-jobs.mjs
       - name: Record refresh status

@@ -41,7 +41,7 @@ export function paginateJobs(jobs,page,size=12) {
   return {items:jobs.slice((current-1)*size,current*size),page:current,pages,total:jobs.length};
 }
 export function salaryText(job) {
-  if(!job.salary) return 'Pay not verified';
+  if(!job.salary) return job.publishedPay?.text || 'Pay not verified';
   const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:job.salary.currency,maximumFractionDigits:2}).format(n);
   return `${money(job.salary.min)}–${money(job.salary.max)} / ${job.salary.period==='year'?'year':'hour'}`;
 }
@@ -67,6 +67,8 @@ export function validateJobs(data,companies) {
     if(!['reviewed','closed','needs-review'].includes(j.status))throw Error('Invalid review status');
     if(j.salary && (!Number.isFinite(j.salary.min)||!Number.isFinite(j.salary.max)||j.salary.min<=0||j.salary.max<j.salary.min||j.salary.currency!=='USD'||!['year','hour'].includes(j.salary.period)))throw Error('Invalid pay');
     if(j.salary?.scopeStates && (!Array.isArray(j.salary.scopeStates)||j.salary.scopeStates.some(s=>!US_STATES.includes(s))))throw Error('Invalid pay geography');
+    if(j.publishedPay && (typeof j.publishedPay.text!=='string'||!j.publishedPay.text.trim()||j.publishedPay.text.length>1000||typeof j.publishedPay.note!=='string'||!Array.isArray(j.publishedPay.scopeStates)||j.publishedPay.scopeStates.some(s=>!US_STATES.includes(s))))throw Error('Invalid published pay');
   }
   return data.jobs.map(j=>({...j,companyName:employers.get(j.companyId).name,industry:employers.get(j.companyId).industry,companySource:employers.get(j.companyId).profileSource}));
 }
+
