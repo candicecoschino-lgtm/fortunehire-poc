@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "listYear": 2026,
+  "coverage": "Verified starter collection; not all 500 companies.",
+  "companies": [
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "industry": "Internet Services and Retailing",
+      "headquarters": {
+        "city": "Seattle",
+        "state": "Washington"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.amazon.jobs/en/",
+      "profileSource": "https://fortune.com/company/amazon-com/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "industry": "Computers, Office Equipment",
+      "headquarters": {
+        "city": "Cupertino",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.apple.com/careers/us/",
+      "profileSource": "https://fortune.com/company/apple/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "costco",
+      "name": "Costco Wholesale",
+      "industry": "General Merchandisers",
+      "headquarters": {
+        "city": "Issaquah",
+        "state": "Washington"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.costco.com/f/-/careers",
+      "profileSource": "https://fortune.com/company/costco/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "cvs-health",
+      "name": "CVS Health",
+      "industry": "Health Care: Pharmacy and Other Services",
+      "headquarters": {
+        "city": "Woonsocket",
+        "state": "Rhode Island"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.cvshealth.com/us/en/home",
+      "profileSource": "https://fortune.com/company/cvs-health/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "home-depot",
+      "name": "Home Depot",
+      "industry": "Specialty Retailers",
+      "headquarters": {
+        "city": "Atlanta",
+        "state": "Georgia"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.homedepot.com/",
+      "profileSource": "https://fortune.com/company/home-depot/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "ibm",
+      "name": "IBM",
+      "industry": "Information Technology Services",
+      "headquarters": {
+        "city": "Armonk",
+        "state": "New York"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.ibm.com/careers",
+      "profileSource": "https://fortune.com/company/ibm/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "industry": "Commercial Banks",
+      "headquarters": {
+        "city": "New York City",
+        "state": "New York"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.jpmorganchase.com/careers",
+      "profileSource": "https://fortune.com/company/jpmorgan-chase/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "industry": "Computer Software",
+      "headquarters": {
+        "city": "Redmond",
+        "state": "Washington"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.microsoft.com/",
+      "profileSource": "https://fortune.com/company/microsoft/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "target",
+      "name": "Target",
+      "industry": "General Merchandisers",
+      "headquarters": {
+        "city": "Minneapolis",
+        "state": "Minnesota"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://corporate.target.com/careers",
+      "profileSource": "https://fortune.com/company/target/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "industry": "Health Care: Insurance and Managed Care",
+      "headquarters": {
+        "city": "Eden Prairie",
+        "state": "Minnesota"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.unitedhealthgroup.com/",
+      "profileSource": "https://fortune.com/company/unitedhealth-group/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "ups",
+      "name": "UPS",
+      "industry": "Mail, Package, and Freight Delivery",
+      "headquarters": {
+        "city": "Atlanta",
+        "state": "Georgia"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.jobs-ups.com/us/en",
+      "profileSource": "https://fortune.com/company/ups/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "walmart",
+      "name": "Walmart",
+      "industry": "General Merchandisers",
+      "headquarters": {
+        "city": "Bentonville",
+        "state": "Arkansas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.walmart.com/us/en/home",
+      "profileSource": "https://fortune.com/company/walmart/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    }
+  ]
+}

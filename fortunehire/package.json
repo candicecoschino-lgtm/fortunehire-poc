@@ -1,0 +1,8 @@
+{
+  "name": "fortunehire-poc",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node scripts/serve.mjs", "test": "node --test" }
+}
