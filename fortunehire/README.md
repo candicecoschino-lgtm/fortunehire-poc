@@ -1,5 +1,7 @@
 # FortuneHire proof of concept
 
+**Current product:** the main page is now an individual-job board with State and Work arrangement first, plus company, industry, sector, job type, posted minimum pay and travel filtering. See [JOB-BOARD-SPEC.md](JOB-BOARD-SPEC.md) for current behavior and [JOB-DATA-REVIEW.md](JOB-DATA-REVIEW.md) for coverage, sourcing and maintenance. The 50-company directory is preserved at `public/companies.html`. The directory-specific notes below describe that secondary page.
+
 A static, independent employer directory. Search names and combine company, industry, headquarters state, and headquarters city filters. Open the employer's own career page to find jobs and work arrangements. No accounts, personal data, uploads, tracking, job scraping, or remote-work claims.
 
 **Coverage:** 50 reviewed employers from the 2026 Fortune 500. This is an intentionally labeled growing collection, not a complete 500-company directory. Every record links to its company profile, list membership source, reviewed official career destination, and review date. No rankings, financial figures, logos, or descriptions are republished.
