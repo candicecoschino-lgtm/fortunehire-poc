@@ -246,6 +246,8 @@ def normalize_posting(body, url, company, now):
         if state and state not in eligible: eligible.append(state)
     arrangement, arrangement_evidence = 'unknown', ''
     national_remote=re.search(r'You[\u2019\']ll enjoy the flexibility to (?:work remotely|telecommute)\s*\*?\s*from anywhere within the U\.?S\.?',description,re.I)
+    if not national_remote:
+        national_remote=re.search(r'\b(?:remote|virtual)\s+(?:role|position|job)\s+open to candidates (?:located |residing )?anywhere (?:in|within) (?:the )?(?:United States|U\.?S\.?)\b',description,re.I)
     labeled = re.search(r'(?:Remote\s+(?:Job|Type)|Job\s+Type|Workplace\s+Type|Work\s+(?:Arrangement|Location|Type)|Location\s+Type|Role\s+Type)\s*:?\s*(Hybrid|On[- ]?site|Remote)\b', description+'\n'+page.text, re.I)
     if labeled:
         arrangement = {'hybrid':'hybrid','onsite':'on-site','remote':'remote'}[re.sub(r'[- ]','',labeled[1].lower())]
@@ -265,6 +267,28 @@ def normalize_posting(body, url, company, now):
             arrangement_evidence=tag[0]
         remote = national_remote
         if remote: arrangement, arrangement_evidence = 'remote', remote[0]
+    if arrangement=='unknown':
+        # Role declarations, rather than general company policy, technical
+        # skills, recruiting assistants, or remote interviewing language.
+        declaration=re.search(r'\b(?:this|the)\s+(?:(?:position|role|job)\s+(?:is|will be|offers|provides|follows)\s+|is\s+(?:an?\s+)?)(?:(?:an?|fully|100%)\s+)?(remote|hybrid|on[- ]?site|virtual)\s+(?:role|position|job|work (?:arrangement|schedule))\b|\b(?:this|the)\s+(?:position|role|job)\s+(?:is|will be)\s+(?:fully\s+|100%\s+)?(remote|hybrid|on[- ]?site|virtual)(?=[.,;\s]*$|[.,;\n])|\b(On[- ]?site) role in\b',description,re.I|re.M)
+        if declaration:
+            kind=next(group for group in declaration.groups() if group)
+            arrangement={'remote':'remote','virtual':'remote','hybrid':'hybrid','onsite':'on-site'}[re.sub(r'[- ]','',kind.lower())]
+            arrangement_evidence=declaration[0]
+        elif re.search(r'\bThis is a [^.\n]{1,50}-based,\s*hybrid role\b',description,re.I):
+            arrangement='hybrid';arrangement_evidence=re.search(r'\bThis is a [^.\n]{1,50}-based,\s*hybrid role\b',description,re.I)[0]
+        elif re.search(r'\bThis role requires associates to be in-office [1-4] days per week[^\n]*\bvirtual work\b',description,re.I):
+            arrangement='hybrid';arrangement_evidence=re.search(r'\bThis role requires associates to be in-office [1-4] days per week[^\n]*\bvirtual work\b',description,re.I)[0]
+        elif national_remote:
+            arrangement,arrangement_evidence='remote',national_remote[0]
+        else:
+            # Comcast publishes Remote as the job's structured location label.
+            # It is arrangement evidence, not an eligible-state declaration.
+            for loc in as_list(source.get('jobLocation')):
+                address=loc.get('address',{}) if isinstance(loc,dict) else {}
+                if isinstance(address,dict) and str(address.get('addressCountry','')).strip().lower()=='remote':
+                    arrangement,arrangement_evidence='remote','Employer JobPosting jobLocation label: Remote'
+                    break
     # An explicit employer title qualifier is arrangement evidence, but does
     # not establish nationwide or state eligibility. Description labels win.
     if arrangement=='unknown':
@@ -444,6 +468,13 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
     room = max(0, cap-len(active))
     candidates = [(k,u) for k,u in discovered.items() if k not in old_urls and k not in rejected and k not in quarantined]
     candidates.sort(key=lambda pair:((discovery_dates or {}).get(pair[0],''),discovery_priority(pair[0])), reverse=True)
+    # A small discovery allowance prevents the newest general roles from
+    # crowding out remote-labeled routes. URLs only prioritize inspection;
+    # fetched employer evidence still determines arrangement and posting age.
+    hint_count=min(5,max_new//4)
+    hinted=[pair for pair in candidates if re.search(r'(?:/|[-_])remote(?:/|[-_]|$)',urllib.parse.urlsplit(pair[1]).path,re.I)][:hint_count]
+    hinted_keys={pair[0] for pair in hinted}
+    candidates=hinted+[pair for pair in candidates if pair[0] not in hinted_keys]
     reopen = [(discovered[k],j) for k,j in old_urls.items() if j['status']=='closed' and k in discovered and recent_posting(j,now)]
     queue += (reopen+[(u,None) for k,u in candidates])[:min(max_new,room)]
     closures = []

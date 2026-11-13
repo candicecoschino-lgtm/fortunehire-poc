@@ -295,6 +295,37 @@ class CollectorTests(unittest.TestCase):
         j=c.normalize_posting(body(title='Engineer (Remote)',description='Work Type: Hybrid'),URL,'boeing',NOW)
         self.assertEqual(j['arrangement'],'hybrid')
 
+    def test_role_remote_declaration_and_explicit_national_scope(self):
+        j=c.normalize_posting(body(description='This is a remote role open to candidates located anywhere in the United States.'),URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'remote');self.assertEqual(j['remoteScope'],'nationwide')
+        for text in ['This is a virtual position.','This position will be remote.']:
+            j=c.normalize_posting(body(description=text),URL,'boeing',NOW)
+            self.assertEqual(j['arrangement'],'remote');self.assertEqual(j['remoteScope'],'unknown')
+        for text in ['We use a virtual assistant for recruiting.','Build hybrid cloud and remote access services.','Employees may meet remotely for interviews.','We prefer onsite work unless a team is designated virtual.']:
+            self.assertEqual(c.normalize_posting(body(description=text),URL,'boeing',NOW)['arrangement'],'unknown')
+
+    def test_structured_remote_location_label_does_not_invent_states(self):
+        locations=[{'address':{'addressCountry':'US','addressRegion':'VA','addressLocality':'Reston'}},{'address':{'addressCountry':'Remote'}}]
+        j=c.normalize_posting(body(description='Job description.',jobLocation=locations),URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'remote');self.assertEqual(j['remoteScope'],'unknown')
+        self.assertEqual(j['eligibleStates'],[])
+
+    def test_role_office_and_virtual_schedule_is_hybrid(self):
+        for text in ['This is a Chicago-based, hybrid role requiring 2-3 days in office.','Location: This role requires associates to be in-office 3 days per week, combining office engagement with the autonomy of virtual work.']:
+            self.assertEqual(c.normalize_posting(body(description=text),URL,'boeing',NOW)['arrangement'],'hybrid')
+        self.assertEqual(c.normalize_posting(body(description='This role requires associates to be in-office 3 days per week.'),URL,'boeing',NOW)['arrangement'],'unknown')
+
+    def test_remote_discovery_hint_is_bounded_and_not_classification(self):
+        urls={str(i):'https://jobs.boeing.com/job/test/general/185/'+str(i) for i in range(100,110)}
+        remote='https://jobs.boeing.com/job/test/remote-engineer/185/1';urls['1']=remote
+        checked=[]
+        def fetch(url):
+            checked.append(url)
+            return 200,body(url=url,identifier={'value':url.rsplit('/',1)[-1]},description='Role description.')
+        jobs,state,report=c.reconcile('boeing',[],{},urls,fetch,NOW,max_new=4)
+        self.assertEqual(len(checked),4);self.assertIn(remote,checked)
+        self.assertTrue(all(j['arrangement']=='unknown' for j in jobs))
+
     def test_missing_schema_url_requires_matching_canonical_page(self):
         document=body(url=None)+'<link rel="canonical" href="'+URL+'">'
         self.assertEqual(c.normalize_posting(document,URL,'boeing',NOW)['url'],URL)
