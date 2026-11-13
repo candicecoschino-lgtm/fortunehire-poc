@@ -6,7 +6,7 @@ import copy
 import json
 import unittest
 from datetime import datetime, timezone, timedelta
-from unittest.mock import Mock
+from unittest.mock import Mock, MagicMock, patch
 import collect_jobs as c
 
 NOW=datetime(2026,11,13,15,tzinfo=timezone.utc)
@@ -20,6 +20,32 @@ def body(**changes):
 
 
 class CollectorTests(unittest.TestCase):
+    def client_without_network(self):
+        client=c.Client.__new__(c.Client)
+        client.host='jobs.boeing.com';client.delay=0;client.last=0
+        client.robots=c.urllib.robotparser.RobotFileParser();client.robots.parse([])
+        client.opener=Mock()
+        return client
+
+    def test_interrupted_download_retries_then_succeeds(self):
+        client=self.client_without_network()
+        response=MagicMock();response.__enter__.return_value.status=200
+        response.__enter__.return_value.read.return_value=b'complete response'
+        client.opener.open.side_effect=[c.http.client.IncompleteRead(b'partial'),response]
+        with patch('collect_jobs.time.sleep'):
+            self.assertEqual(client.get(URL),(200,'complete response'))
+        self.assertEqual(client.opener.open.call_count,2)
+
+    def test_retry_limit_and_access_denials(self):
+        client=self.client_without_network()
+        client.opener.open.side_effect=c.http.client.IncompleteRead(b'partial')
+        with patch('collect_jobs.time.sleep'),self.assertRaises(c.SourceError): client.get(URL)
+        self.assertEqual(client.opener.open.call_count,3)
+        client=self.client_without_network()
+        client.opener.open.side_effect=c.urllib.error.HTTPError(URL,403,'Denied',{},None)
+        with patch('collect_jobs.time.sleep'),self.assertRaises(c.SourceError): client.get(URL)
+        self.assertEqual(client.opener.open.call_count,1)
+
     def test_initial_import(self):
         jobs,state,r=c.reconcile('boeing',[],{}, {'12345':URL},lambda u:(200,body()),NOW)
         self.assertEqual(r['added'],1)

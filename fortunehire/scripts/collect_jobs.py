@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import copy
 import hashlib
+import http.client
 import html
 from html.parser import HTMLParser
 import json
@@ -297,14 +298,19 @@ class Client:
         time.sleep(max(0, self.last+self.delay-time.monotonic()))
         self.last = time.monotonic()
         req = urllib.request.Request(url, headers={'User-Agent':UA,'Accept':'text/html, application/xml;q=0.9, */*;q=0.8'})
-        try:
-            with self.opener.open(req, timeout=30) as response:
-                raw = response.read(25_000_001)
-                if len(raw)>25_000_000: raise SourceError('Response exceeds size limit')
-                return response.status, raw.decode('utf-8-sig')
-        except urllib.error.HTTPError as error:
-            if error.code in (404,410): return error.code, ''
-            raise SourceError('Employer request failed: HTTP '+str(error.code)) from error
+        for attempt in range(3):
+            try:
+                with self.opener.open(req, timeout=30) as response:
+                    raw = response.read(25_000_001)
+                    if len(raw)>25_000_000: raise SourceError('Response exceeds size limit')
+                    return response.status, raw.decode('utf-8-sig')
+            except urllib.error.HTTPError as error:
+                if error.code in (404,410): return error.code, ''
+                # Never retry access denial or rate limiting.
+                raise SourceError('Employer request failed: HTTP '+str(error.code)) from error
+            except (http.client.IncompleteRead,http.client.RemoteDisconnected,TimeoutError,ConnectionResetError,urllib.error.URLError) as error:
+                if attempt==2: raise SourceError('Interrupted employer download after three attempts: '+str(error)) from error
+                time.sleep(2*(attempt+1))
 
 
 def discover(client):
