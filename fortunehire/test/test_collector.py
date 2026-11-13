@@ -99,8 +99,13 @@ class CollectorTests(unittest.TestCase):
         self.assertIsNone(c.normalize_posting(body(jobLocation=[{'address':{'addressCountry':'CA','addressRegion':'ON','addressLocality':'Toronto'}}]),URL,'boeing',NOW))
 
     def test_explicit_deadline_closes_job(self):
-        j=c.normalize_posting(body(validThrough='2026-11-12'),URL,'boeing',NOW)
+        j=c.normalize_posting(body(validThrough='2026-11-12',datePosted='2026-11-10'),URL,'boeing',NOW)
         self.assertEqual(j['status'],'closed')
+
+    def test_deadline_before_posting_is_not_a_confirmed_closure(self):
+        j=c.normalize_posting(body(validThrough='2026-10-08',datePosted='2026-11-12'),URL,'boeing',NOW)
+        self.assertIsNone(j['closesAt']);self.assertEqual(j['status'],'reviewed')
+        self.assertIn('predates',j['evidence']['deadline'])
 
     def test_description_deadline_and_employer_remote_statement(self):
         j=c.normalize_posting(body(description="You'll enjoy the flexibility to work remotely * from anywhere within the U.S. Applications for this position will be accepted until Nov. 12, 2026"),URL,'boeing',NOW)

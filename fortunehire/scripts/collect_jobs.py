@@ -175,6 +175,11 @@ def normalize_posting(body, url, company, now):
             try: deadlines.append(datetime.strptime(value,fmt).date().isoformat()); break
             except ValueError: pass
     deadline = min(deadlines) if deadlines else None
+    posted = date_only(source.get('datePosted'))
+    deadline_note = ''
+    if deadline and posted and deadline<posted:
+        deadline_note = 'Employer deadline '+deadline+' predates its posting date '+posted+'; deadline requires confirmation.'
+        deadline = None
     key = re.sub(r'[^a-z0-9]+','-',req.lower()).strip('-')
     return {
         'id':company+'-'+key, 'companyId':company, 'requisitionId':req, 'title':title, 'url':url,
@@ -184,12 +189,12 @@ def normalize_posting(body, url, company, now):
         'employmentType':employment, 'salary':salary,
         'salaryNote':'Structured employer pay for the listed state.' if salary else 'Pay or geographic scope not verified automatically. See employer posting.',
         'travelRequired':travel, 'travelNote':travel_evidence or 'Travel not verified automatically.',
-        'postedAt':date_only(source.get('datePosted')), 'closesAt':deadline,
+        'postedAt':posted, 'closesAt':deadline,
         'reviewedAt':today, 'status':'closed' if deadline and deadline<today else 'reviewed', 'sector':sector,
-        'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.',
+        'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' '+deadline_note if deadline_note else ''),
         'checkedAt':now.isoformat(), 'collectionMethod':'official-jobposting-jsonld',
         'sourceHash':hashlib.sha256(json.dumps({'structured':source,'arrangement':arrangement_evidence,'employmentType':employment,'deadline':deadline},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
-        'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence},
+        'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note},
     }
 
 
