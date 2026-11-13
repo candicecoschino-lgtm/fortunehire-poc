@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-13",
+  "logos": {
+    "abbott": {
+      "src": "./assets/company-logos/abbott.png",
+      "sourceUrl": "https://www.abbott.com/etc.clientlibs/corp/abbott-core/clientlibs/favicons/clientlib-favicon-abbottcore/resources/apple-touch-icon-180x180.png",
+      "companyUrl": "https://www.abbott.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "alphabet": {
+      "src": "./assets/company-logos/alphabet.ico",
+      "sourceUrl": "https://www.google.com/favicon.ico",
+      "companyUrl": "https://www.google.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "amazon": {
+      "src": "./assets/company-logos/amazon.ico",
+      "sourceUrl": "https://www.amazon.com/favicon.ico",
+      "companyUrl": "https://www.amazon.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "apple": {
+      "src": "./assets/company-logos/apple.ico",
+      "sourceUrl": "https://www.apple.com/favicon.ico",
+      "companyUrl": "https://www.apple.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "att": {
+      "src": "./assets/company-logos/att.ico",
+      "sourceUrl": "https://www.att.com/favicon.ico",
+      "companyUrl": "https://www.att.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "bank-of-america": {
+      "src": "./assets/company-logos/bank-of-america.png",
+      "sourceUrl": "https://www.bankofamerica.com/homepage/spa-assets/images/assets-images-global-favicon-apple-touch-icon-CSX889b28c.png",
+      "companyUrl": "https://www.bankofamerica.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "boeing": {
+      "src": "./assets/company-logos/boeing.ico",
+      "sourceUrl": "https://www.boeing.com/favicon.ico",
+      "companyUrl": "https://www.boeing.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "cardinal-health": {
+      "src": "./assets/company-logos/cardinal-health.ico",
+      "sourceUrl": "https://activatecdn.azureedge.net/activatedata/35Content/CardinalHealth/favicon.ico",
+      "companyUrl": "https://www.cardinalhealth.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "caterpillar": {
+      "src": "./assets/company-logos/caterpillar.png",
+      "sourceUrl": "https://careers.caterpillar.com/images/favicon.png",
+      "companyUrl": "https://www.caterpillar.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "cencora": {
+      "src": "./assets/company-logos/cencora.png",
+      "sourceUrl": "https://www.cencora.com/-/media/assets/corporate/global/icons/cencora_favicon.png",
+      "companyUrl": "https://www.cencora.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "centene": {
+      "src": "./assets/company-logos/centene.ico",
+      "sourceUrl": "https://www.centene.com/content/dam/centenedotcom/logos/centene-favicon.ico",
+      "companyUrl": "https://www.centene.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "chevron": {
+      "src": "./assets/company-logos/chevron.png",
+      "sourceUrl": "https://tbcdn.talentbrew.com/company/35016/v3_0/img/favicon.png",
+      "companyUrl": "https://www.chevron.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "cigna": {
+      "src": "./assets/company-logos/cigna.ico",
+      "sourceUrl": "https://www.thecignagroup.com/themes/custom/thecignagroup/favicon.ico",
+      "companyUrl": "https://www.thecignagroup.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "cisco": {
+      "src": "./assets/company-logos/cisco.ico",
+      "sourceUrl": "https://www.cisco.com/favicon.ico",
+      "companyUrl": "https://www.cisco.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "citigroup": {
+      "src": "./assets/company-logos/citigroup.ico",
+      "sourceUrl": "https://www.citigroup.com/favicon.ico",
+      "companyUrl": "https://www.citigroup.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "coca-cola": {
+      "src": "./assets/company-logos/coca-cola.png",
+      "sourceUrl": "https://static-p58902-e658605.adobeaemcloud.com/0de0f3c7222d6628ac472f2ee57daa1b9c356ae807c93c786823452fa5edaa4f/resources/favicons/apple-touch-icon.png",
+      "companyUrl": "https://www.coca-colacompany.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "comcast": {
+      "src": "./assets/company-logos/comcast.png",
+      "sourceUrl": "https://tbcdn.talentbrew.com/company/45483/img/favicon/comcast_master_favicon.png",
+      "companyUrl": "https://corporate.comcast.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "costco": {
+      "src": "./assets/company-logos/costco.svg",
+      "sourceUrl": "https://www.costco.com/wcsstore/CostcoGLOBALSAS/images/favicon.svg",
+      "companyUrl": "https://www.costco.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "cvs-health": {
+      "src": "./assets/company-logos/cvs-health.png",
+      "sourceUrl": "https://www.cvshealth.com/favicon.ico",
+      "companyUrl": "https://www.cvshealth.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "dell": {
+      "src": "./assets/company-logos/dell.ico",
+      "sourceUrl": "https://www.dell.com/favicon.ico",
+      "companyUrl": "https://www.dell.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "delta": {
+      "src": "./assets/company-logos/delta.ico",
+      "sourceUrl": "https://www.delta.com/favicon.ico",
+      "companyUrl": "https://www.delta.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "disney": {
+      "src": "./assets/company-logos/disney.png",
+      "sourceUrl": "https://thewaltdisneycompany.com/app/uploads/2026/01/icon-512x512-1.png",
+      "companyUrl": "https://thewaltdisneycompany.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "elevance-health": {
+      "src": "./assets/company-logos/elevance-health.png",
+      "sourceUrl": "https://www.elevancehealth.com/content/dam/elevance-health-non-index/logos/Elevance_Health_Avatar_1200x1200.png",
+      "companyUrl": "https://www.elevancehealth.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "fannie-mae": {
+      "src": "./assets/company-logos/fannie-mae.png",
+      "sourceUrl": "https://www.fanniemae.com/themes/custom/particle/apps/drupal-corp/favicon.ico",
+      "companyUrl": "https://www.fanniemae.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "fedex": {
+      "src": "./assets/company-logos/fedex.ico",
+      "sourceUrl": "https://www.fedex.com/etc.clientlibs/designs/fedex-common/images/resources/fx-favicon.ico",
+      "companyUrl": "https://www.fedex.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "ford": {
+      "src": "./assets/company-logos/ford.ico",
+      "sourceUrl": "https://www.ford.com/favicon.ico",
+      "companyUrl": "https://www.ford.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "general-motors": {
+      "src": "./assets/company-logos/general-motors.png",
+      "sourceUrl": "https://search-careers.gm.com/images/favicon.png",
+      "companyUrl": "https://www.gm.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "home-depot": {
+      "src": "./assets/company-logos/home-depot.ico",
+      "sourceUrl": "https://www.homedepot.com/favicon.ico",
+      "companyUrl": "https://www.homedepot.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "humana": {
+      "src": "./assets/company-logos/humana.png",
+      "sourceUrl": "https://www.humana.com/assets/icons/apple-touch-icon-152x152.png",
+      "companyUrl": "https://www.humana.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "ibm": {
+      "src": "./assets/company-logos/ibm.png",
+      "sourceUrl": "https://www.ibm.com/content/dam/adobe-cms/default-images/apple-touch-icon-76x76.png",
+      "companyUrl": "https://www.ibm.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "jpmorgan-chase": {
+      "src": "./assets/company-logos/jpmorgan-chase.png",
+      "sourceUrl": "https://www.jpmorganchase.com/etc.clientlibs/cws/clientlibs/clientlib-base/resources/jpmc/images/jpmc-favicon-76.png",
+      "companyUrl": "https://www.jpmorganchase.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "kroger": {
+      "src": "./assets/company-logos/kroger.jpg",
+      "sourceUrl": "https://www.thekrogerco.com/wp-content/uploads/2026/06/cropped-Kroger-favicon-180x180.jpg",
+      "companyUrl": "https://www.thekrogerco.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "lowes": {
+      "src": "./assets/company-logos/lowes.png",
+      "sourceUrl": "https://cdn.phenompeople.com/CareerConnectResources/prod/LOWEUS/en_us/desktop/assets/images/m/apple-touch-icon.png?v=1671669556605",
+      "companyUrl": "https://www.lowes.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "mckesson": {
+      "src": "./assets/company-logos/mckesson.ico",
+      "sourceUrl": "https://www.mckesson.com/siteassets/images/z-mckesson-logosicons/favicon.png",
+      "companyUrl": "https://www.mckesson.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "meta": {
+      "src": "./assets/company-logos/meta.svg",
+      "sourceUrl": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+      "companyUrl": "https://about.meta.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "microsoft": {
+      "src": "./assets/company-logos/microsoft.ico",
+      "sourceUrl": "https://www.microsoft.com/favicon.ico?v2",
+      "companyUrl": "https://www.microsoft.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "nike": {
+      "src": "./assets/company-logos/nike.png",
+      "sourceUrl": "https://www.nike.com/apple-touch-icon.png",
+      "companyUrl": "https://www.nike.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "nvidia": {
+      "src": "./assets/company-logos/nvidia.ico",
+      "sourceUrl": "https://www.nvidia.com/favicon.ico",
+      "companyUrl": "https://www.nvidia.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "oracle": {
+      "src": "./assets/company-logos/oracle.ico",
+      "sourceUrl": "https://docs.oracle.com/en/styles/images/favicon.ico",
+      "companyUrl": "https://docs.oracle.com/en/",
+      "reviewedAt": "2026-11-13"
+    },
+    "pepsico": {
+      "src": "./assets/company-logos/pepsico.png",
+      "sourceUrl": "https://www.pepsico.com/apple-touch-icon.png",
+      "companyUrl": "https://www.pepsico.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "phillips-66": {
+      "src": "./assets/company-logos/phillips-66.png",
+      "sourceUrl": "https://www.phillips66.com/wp-content/uploads/sites/2/2022/08/cropped-icon-512.png?w=180",
+      "companyUrl": "https://www.phillips66.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "progressive": {
+      "src": "./assets/company-logos/progressive.png",
+      "sourceUrl": "https://www.progressive.com/apple-touch-icon.png",
+      "companyUrl": "https://www.progressive.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "rtx": {
+      "src": "./assets/company-logos/rtx.png",
+      "sourceUrl": "https://www.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/images/rtx-balck-favicon.png?rev=3da99ab1a2a54dca92c98a2ede690339&rid=e3e3f4840c2742cc9f36e2d33430c8cd",
+      "companyUrl": "https://www.rtx.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "salesforce": {
+      "src": "./assets/company-logos/salesforce.ico",
+      "sourceUrl": "https://www.salesforce.com/c2/public/app/favicon.ico?bc=DB",
+      "companyUrl": "https://www.salesforce.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "target": {
+      "src": "./assets/company-logos/target.png",
+      "sourceUrl": "https://assets.targetimg1.com/static/images/apple-touch-icon-precomposed.png",
+      "companyUrl": "https://www.target.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "tesla": {
+      "src": "./assets/company-logos/tesla.ico",
+      "sourceUrl": "https://ir.tesla.com/themes/custom/tesla_investor_relations/assets/favicon.ico",
+      "companyUrl": "https://ir.tesla.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "united-airlines": {
+      "src": "./assets/company-logos/united-airlines.ico",
+      "sourceUrl": "https://cdn.phenompeople.com/CareerConnectResources/UAIUADUS/en_us/desktop/assets/images/favicon.ico?v=1658572531059",
+      "companyUrl": "https://www.united.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "unitedhealth-group": {
+      "src": "./assets/company-logos/unitedhealth-group.ico",
+      "sourceUrl": "https://www.unitedhealthgroup.com/etc.clientlibs/uhg/clientlibs/clientlib-site/resources/images/favicon.ico",
+      "companyUrl": "https://www.unitedhealthgroup.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "ups": {
+      "src": "./assets/company-logos/ups.ico",
+      "sourceUrl": "https://cdn.phenompeople.com/CareerConnectResources/UPBUPSGLOBAL/en_us/desktop/assets/images/favicon.ico?v=1754475018607",
+      "companyUrl": "https://www.ups.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "valero": {
+      "src": "./assets/company-logos/valero.ico",
+      "sourceUrl": "https://www.valero.com/themes/custom/valero/favicon.ico",
+      "companyUrl": "https://www.valero.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "verizon": {
+      "src": "./assets/company-logos/verizon.ico",
+      "sourceUrl": "https://www.verizon.com/favicon.ico",
+      "companyUrl": "https://www.verizon.com/",
+      "reviewedAt": "2026-11-13"
+    },
+    "walmart": {
+      "src": "./assets/company-logos/walmart.ico",
+      "sourceUrl": "https://www.walmart.com/favicon.ico",
+      "companyUrl": "https://www.walmart.com/",
+      "reviewedAt": "2026-11-13"
+    }
+  },
+  "unavailable": {}
+}
+

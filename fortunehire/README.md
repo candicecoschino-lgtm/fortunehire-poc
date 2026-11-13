@@ -1,5 +1,7 @@
 # FortuneHire proof of concept
 
+**Directory branding:** the company directory uses locally hosted official-site brand icons for all 52 employers. Sources and review dates are recorded in `public/data/company-logos.json` and linked from each card. Icons load as they come into view; company initials remain the fallback if a file is unavailable. The directory makes no external logo-service requests. This visual update does not change job collection.
+
 **Automation pilot:** Boeing, Citi, and UnitedHealth Group now have a first-party sitemap/JobPosting collector, with twice-daily GitHub checks and a bounded U.S. collection. See [AUTOMATION.md](AUTOMATION.md) for limits, lifecycle tests, and the manual-run button. Automation supersedes older manual-maintenance notes for these three employers; the 52-company directory remains separate.
 
 **Current product:** the main page is now an individual-job board with State and Work arrangement first, plus company, industry, sector, job type, posted minimum pay and travel filtering. See [JOB-BOARD-SPEC.md](JOB-BOARD-SPEC.md) for current behavior and [JOB-DATA-REVIEW.md](JOB-DATA-REVIEW.md) for coverage, sourcing and maintenance. The 52-company directory is preserved at `public/companies.html`. The directory-specific notes below describe that secondary page.

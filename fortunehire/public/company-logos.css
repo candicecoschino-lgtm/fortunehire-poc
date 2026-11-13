@@ -1,0 +1,5 @@
+.company-mark{display:grid;place-items:center;flex-shrink:0;width:52px;height:52px;border:1px solid #e3e8e1;border-radius:10px;background:#fff;overflow:hidden}
+.company-mark>*{grid-area:1/1}
+.company-logo{display:block;width:40px;height:40px;object-fit:contain;opacity:0}
+.company-logo.is-loaded{opacity:1}
+
