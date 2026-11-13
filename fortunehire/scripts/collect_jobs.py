@@ -97,7 +97,8 @@ def date_only(value):
 
 
 MONEY = r'\$\s*\d[\d,]*(?:\.\d{1,2})?'
-PAY_RANGE = re.compile('('+MONEY+r')\s*(?:[-\u2013\u2014]|to)\s*('+MONEY+')', re.I)
+PAY_UNIT = r'(?:\s*(?:/\s*(?:hr|hour|yr|year)|per\s+(?:hour|year))\.?)?'
+PAY_RANGE = re.compile('('+MONEY+')'+PAY_UNIT+r'\s*(?:[-\u2013\u2014]|to)\s*('+MONEY+')'+PAY_UNIT, re.I)
 
 
 def extract_published_pay(description, locations, company):
@@ -109,6 +110,8 @@ def extract_published_pay(description, locations, company):
         primary = re.search(r'Primary Location\s*:\s*([^\n]+)',description,re.I)
         primary_states = [s for s in sorted(STATES.values(),key=len,reverse=True) if primary and re.search(r'\b'+re.escape(s)+r'\b',primary[1],re.I)]
         scoped = [s for s in primary_states if s in states]
+        if not scoped and primary:
+            scoped=sorted({loc['state'] for loc in locations if re.search(r'\b'+re.escape(loc['city'])+r'\b',primary[1],re.I)})
         bands = re.findall(r'Primary Location Full Time Salary Range\s*:\s*('+MONEY+r'\s*[-\u2013\u2014]\s*'+MONEY+')',flat,re.I)
         bands = list(dict.fromkeys(bands))
         if bands and len(scoped)==1:
@@ -125,12 +128,17 @@ def extract_published_pay(description, locations, company):
     if not evidence: return None, None
     records=[]
     for text in evidence:
-        period = 'hour' if re.search(r'\b(?:hourly|per hour|an hour)\b',text,re.I) else 'year' if re.search(r'\b(?:annual|annually|per year|per annum|a year)\b',text,re.I) else None
+        hourly=bool(re.search(r'\b(?:hourly|per hour|an hour)\b|/\s*(?:hr|hour)\b',text,re.I))
+        annual=bool(re.search(r'\b(?:annual|annually|per year|per annum|a year)\b|/\s*(?:yr|year)\b',text,re.I))
+        period='hour' if hourly and not annual else 'year' if annual and not hourly else None
         for match in PAY_RANGE.finditer(text):
             low, high = [float(re.sub(r'[$,\s]','',v)) for v in match.groups()]
             if not 0<low<=high: continue
             suffix = ' / hour' if period=='hour' else ' / year' if period=='year' else ''
-            label = text[:match.start()].strip()[-100:]
+            if re.search(r'/\s*(?:hr|hour|yr|year)\b|per\s+(?:hour|year)',match[0],re.I): suffix=''
+            anchors=list(re.finditer(r'\b(?:Summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay) range for (?:this|the) (?:role|position))\b',text[:match.start()],re.I))
+            start=anchors[-1].start() if anchors else match.start()
+            label = text[start:match.start()].strip()[-100:]
             records.append((low,high,period,(label+' '+match[0]+suffix).strip()))
     if not records: return None,None
     unique = {(low,high,period) for low,high,period,text in records}

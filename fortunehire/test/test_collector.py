@@ -161,6 +161,11 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(changed['salary']['min'],20)
         self.assertNotEqual(j['sourceHash'],changed['sourceHash'])
 
+    def test_hourly_unit_between_both_amounts(self):
+        j=c.normalize_posting(body(description='Summary pay range $24.00/hr - $45.13/hr'),URL,'boeing',NOW)
+        self.assertEqual(j['salary']['min'],24);self.assertEqual(j['salary']['max'],45.13)
+        self.assertEqual(j['salary']['period'],'hour')
+
     def test_annual_pay_and_ambiguous_multiple_bands(self):
         text='The annual pay for this role will range from $90,000 - $120,000 per year.'
         j=c.normalize_posting(body(description=text),URL,'boeing',NOW)
@@ -176,6 +181,12 @@ class CollectorTests(unittest.TestCase):
         salary,published=c.extract_published_pay(text,locations,'citigroup')
         self.assertIsNone(salary);self.assertEqual(published['scopeStates'],['New York'])
         self.assertIn('$170,000.00',published['text']);self.assertIn('period',published['note'])
+
+    def test_citi_primary_street_address_matches_listed_city(self):
+        locations=[{'city':'Jersey City','state':'New Jersey'},{'city':'Tampa','state':'Florida'}]
+        text='Primary Location:\n480 WASHINGTON BOULEVARD JERSEY CITY\nPrimary Location Full Time Salary Range:\n$250,000.00 - $500,000.00'
+        salary,published=c.extract_published_pay(text,locations,'citigroup')
+        self.assertEqual(published['scopeStates'],['New Jersey'])
 
 
 if __name__=='__main__': unittest.main()
