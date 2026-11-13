@@ -18,6 +18,7 @@ import urllib.parse
 import urllib.request
 import urllib.robotparser
 import xml.etree.ElementTree as ET
+from employer_adapters import extract as extract_employer_page, Document
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,13 +45,22 @@ def safe_url(url, host):
 
 def job_url(url, host):
     url = safe_url(url, host)
-    if not re.search(r'/jobs?/[^/]+',urllib.parse.urlsplit(url).path) or len(url)>2000:
+    if not re.search(r'/jobs?/[^/]+|/search/jobdetails/[^/]+/[0-9a-fA-F-]{36}$|/en-us/job-detail/[^/]+',urllib.parse.urlsplit(url).path.rstrip('/')) or len(url)>2000:
         raise ValueError('Not an individual employer job URL')
     return url
 
 
 def posting_key(url):
+    path=urllib.parse.urlsplit(url).path
+    if urllib.parse.urlsplit(url).hostname.endswith('.myworkdayjobs.com') and '/job/' in path:
+        req=path.rstrip('/').rsplit('_',1)[-1]
+        if re.fullmatch(r'(?:JR\d+|R-\d+)-\d+',req,re.I):req=req.rsplit('-',1)[0]
+        return req
+    if '/search/jobdetails/' in path:return path.rstrip('/').rsplit('/',1)[-1]
+    if '/en-us/job-detail/' in path:return path.split('/en-us/job-detail/',1)[1].split('/')[0]
     tail=re.split(r'/jobs?/',urllib.parse.urlsplit(url).path,maxsplit=1)[-1].strip('/').split('/')
+    cisco=re.fullmatch(r'CISCISGLOBAL(\d+)EXTERNAL[A-Z]+',tail[0],re.I)
+    if cisco:return cisco[1]
     if re.fullmatch(r'w\d+',tail[0],re.I): return '/'.join(tail)
     if len(tail)>=4 and tail[-1].isdigit() and tail[-2].isdigit(): return tail[-1]
     return re.sub(r'__[a-z]{2}(?:-[a-z]{2})?$','',tail[0],flags=re.I)
@@ -59,6 +69,7 @@ def posting_key(url):
 def discovery_priority(key):
     # Only a discovery preference; the actual employer date controls eligibility.
     if re.fullmatch(r'[0-9A-Fa-f]{24,}',key): return (0,key)
+    if re.fullmatch(r'[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}',key): return (0,'')
     digits=re.findall(r'\d+',key)
     return (1,int(digits[-1])) if digits else (0,key)
 
@@ -165,7 +176,15 @@ def extract_published_pay(description, locations, company, nationwide=False):
             if not re.search(r'\b(?:pay|salary|compensation|earn)\b',line,re.I): continue
             context=line
             if not re.search(r'\$\s*\d|\d[\d,]*(?:\.\d+)?\s+USD\b',context) and i+1<len(lines): context+=' '+lines[i+1]
-            if re.search(r'\$\s*\d|\d[\d,]*(?:\.\d+)?\s+USD\b',context): displayed.append(context)
+            if re.search(r'\$\s*\d|\d[\d,]*(?:\.\d+)?\s+USD\b',context):
+                if len(context)>800:
+                    for money in re.finditer(r'\$\s*\d[\d,.]*|\d[\d,]*(?:\.\d+)?\s+USD\b',context):
+                        prefix=context[max(0,money.start()-140):money.start()]
+                        anchors=list(re.finditer(r'\b(?:pay|salary|compensation|earn)\b',prefix,re.I))
+                        if anchors:
+                            start=max(0,money.start()-140)+anchors[-1].start()
+                            displayed.append(context[start:money.start()+400]);break
+                else:displayed.append(context)
         if displayed:
             return None,{'text':' | '.join(dict.fromkeys(displayed))[:1000],'scopeStates':states,'note':'Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.'}
         return None,None
@@ -210,10 +229,18 @@ def normalize_posting(body, url, company, now):
     for script in page.scripts:
         try: candidates.extend(postings(json.loads(script)))
         except (ValueError, TypeError): continue
+    if not candidates:
+        adapted=extract_employer_page(company,body,url)
+        if adapted:candidates.append(adapted)
     matched=[]
     for candidate in candidates:
         try:
             candidate_url=candidate.get('url') or page.canonical
+            if not candidate_url and host.endswith('.myworkdayjobs.com'):
+                identifier=candidate.get('identifier',{})
+                identifier=str(identifier.get('value','') if isinstance(identifier,dict) else identifier)
+                if identifier and re.search(r'_'+re.escape(identifier)+r'(?:-\d+)?/?$',urllib.parse.urlsplit(url).path,re.I):
+                    candidate={**candidate,'url':url,'_adapter':'workday-public-jobposting'};candidate_url=url
             if posting_key(job_url(str(candidate_url or '').rstrip('/'),host))==posting_key(url): matched.append(candidate)
         except ValueError: pass
     if len(matched) != 1: raise ValueError('Missing or ambiguous matching JobPosting data; '+str(len(candidates))+' structured candidates found')
@@ -239,6 +266,13 @@ def normalize_posting(body, url, company, now):
         city = address.get('addressLocality') or ''
         if not isinstance(city,str): continue
         city=city.strip()
+        if not state and host.endswith('.myworkdayjobs.com'):
+            explicit=re.fullmatch(r'US\s*-\s*([A-Z]{2})\s*-\s*(.+)',city)
+            if explicit and state_name(explicit[1]):state=state_name(explicit[1]);city=explicit[2]
+            elif str(country).upper() in ('US','USA','UNITED STATES','UNITED STATES OF AMERICA'):
+                location_part=urllib.parse.urlsplit(url).path.split('/job/',1)[-1].split('/')[0]
+                explicit=re.fullmatch(r'(.+)-([A-Z]{2})',location_part)
+                if explicit and state_name(explicit[2]):state=state_name(explicit[2])
         if str(country).upper() in ('US', 'USA', 'UNITED STATES', 'UNITED STATES OF AMERICA') and state and city:
             item = {'city': city, 'state': state}
             if item not in locations: locations.append(item)
@@ -259,7 +293,7 @@ def normalize_posting(body, url, company, now):
     if labeled:
         arrangement = {'hybrid':'hybrid','onsite':'on-site','remote':'remote'}[re.sub(r'[- ]','',labeled[1].lower())]
         arrangement_evidence = labeled[0]
-    elif str(source.get('jobLocationType','')).upper() in ('TELECOMMUTE','REMOTE','HYBRID','ON_SITE','ONSITE'):
+    elif company!='fannie-mae' and str(source.get('jobLocationType','')).upper() in ('TELECOMMUTE','REMOTE','HYBRID','ON_SITE','ONSITE'):
         kind=str(source['jobLocationType']).upper()
         arrangement = 'remote' if kind in ('TELECOMMUTE','REMOTE') else 'hybrid' if kind=='HYBRID' else 'on-site'
         arrangement_evidence='JobPosting.jobLocationType='+kind
@@ -327,7 +361,7 @@ def normalize_posting(body, url, company, now):
         named_state=re.search(r'\b(?:'+state_words+r')\b',line,re.I) or re.search(r'\b(?:'+'|'.join(STATES)+r')\b',line)
         if restriction and named_state: residency_restricted=True
     us_allowed=any(value in ('US','USA','UNITED STATES','UNITED STATES OF AMERICA') for value in country_requirements)
-    explicit_national=us_allowed or bool(national_remote and not country_requirements)
+    explicit_national=us_allowed and not host.endswith('.myworkdayjobs.com') or bool(national_remote and (not country_requirements or us_allowed))
     remote_scope='states' if eligible else 'nationwide' if arrangement=='remote' and explicit_national and not residency_restricted else 'unknown'
     if not locations and not eligible: return None
     travel, travel_evidence = None, ''
@@ -388,9 +422,9 @@ def normalize_posting(body, url, company, now):
         'salaryNote':published_pay['note'] if published_pay else 'Structured employer pay for the listed state.' if salary else 'Pay or geographic scope not verified automatically. See employer posting.',
         'travelRequired':travel, 'travelNote':travel_evidence or 'Travel not verified automatically.',
         'postedAt':posted, 'closesAt':deadline,
-        'reviewedAt':today, 'status':'closed' if deadline and deadline<today else 'reviewed', 'sector':sector,
+        'reviewedAt':today, 'status':'closed' if source.get('_employerClosed') or deadline and deadline<today else 'reviewed', 'sector':sector,
         'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' '+deadline_note if deadline_note else ''),
-        'checkedAt':now.isoformat(), 'collectionMethod':'official-jobposting-jsonld',
+        'checkedAt':now.isoformat(), 'collectionMethod':source.get('_adapter') or 'official-jobposting-jsonld',
         'sourceHash':hashlib.sha256(json.dumps({'structured':source,'arrangement':arrangement_evidence,'remoteScope':remote_scope,'travel':travel_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
         'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note},
     }
@@ -427,8 +461,9 @@ class Client:
         for attempt in range(3):
             try:
                 with self.opener.open(req, timeout=30) as response:
-                    raw = response.read(25_000_001)
-                    if len(raw)>25_000_000: raise SourceError('Response exceeds size limit')
+                    limit=32_000_000 if urllib.parse.urlsplit(url).path.endswith('.xml') else 25_000_000
+                    raw = response.read(limit+1)
+                    if len(raw)>limit: raise SourceError('Response exceeds size limit')
                     return response.status, raw.decode('utf-8-sig')
             except urllib.error.HTTPError as error:
                 if error.code in (404,410): return error.code, ''
@@ -461,13 +496,23 @@ def discover(client):
         elif root.tag==ns+'urlset':
             for entry in root.findall(ns+'url'):
                 url=entry.findtext(ns+'loc') or ''
-                if not re.search(r'/jobs?/[^/]+',urllib.parse.urlsplit(url).path): continue
-                url=job_url(url,client.host);key=posting_key(url)
+                try:url=job_url(url,client.host)
+                except ValueError:continue
+                key=posting_key(url)
                 if key not in found or language_priority(url)>language_priority(found[key]): found[key]=url
                 modified=entry.findtext(ns+'lastmod') or ''
                 dates[key]=max(dates.get(key,''),modified)
         else: raise SourceError('Unexpected sitemap format; manual adapter review required')
-    if not found: raise SourceError('Sitemap contains no individual job URLs')
+    if not found and client.host in ('jobs.cardinalhealth.com','careers.bankofamerica.com'):
+        landing='https://'+client.host+'/'
+        status,body=client.get(landing)
+        if status==200:
+            for node in Document(body).nodes:
+                if node['tag']!='a':continue
+                try:url=job_url(urllib.parse.urljoin(landing,node['attrs'].get('href','')),client.host)
+                except ValueError:continue
+                found[posting_key(url)]=url
+    if not found: raise SourceError('Reviewed discovery contains no individual job URLs')
     client.discovery_dates=dates
     client.discovery_limited=bool(queue)
     return found

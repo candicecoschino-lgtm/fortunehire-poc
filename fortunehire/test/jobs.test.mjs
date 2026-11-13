@@ -18,6 +18,8 @@ test('plural official posting routes keep employer ownership and reject search r
   assert.equal(validateJobs({schemaVersion:1,jobs:[sample]},companies).length,1);
   assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...sample,url:'https://corporate.target.com/jobs/'}]},companies));
   assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...sample,url:'https://jobs.centene.com/us/en/jobs/123/test-role'}]},companies));
+  const cardinal={...sample,id:'cardinal-synthetic',companyId:'cardinal-health',url:'https://jobs.cardinalhealth.com/search/jobdetails/test-role/96685732-a40b-4567-be51-238f2e34272c'};
+  assert.equal(validateJobs({schemaVersion:1,jobs:[cardinal]},companies).length,1);
 });
 
 test('publication date window is independent of last successful check date',()=>{
