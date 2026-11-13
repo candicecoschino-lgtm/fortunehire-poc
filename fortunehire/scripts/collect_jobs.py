@@ -277,6 +277,14 @@ def normalize_posting(body, url, company, now):
     if arrangement=='unknown' and company=='general-motors':
         gm_hybrid=re.search(r'\bHybrid Work Policy\s*[-:]\s*[^\n]{0,160}\bin-office\b[^\n]{0,80}\bremote\b',description,re.I)
         if gm_hybrid: arrangement,arrangement_evidence='hybrid',gm_hybrid[0]
+        categorized=re.search(r'\bThis role is categorized as (hybrid|remote|on[- ]?site)\b',description,re.I)
+        if categorized:
+            arrangement={'hybrid':'hybrid','remote':'remote','onsite':'on-site'}[re.sub(r'[- ]','',categorized[1].lower())];arrangement_evidence=categorized[0]
+        onsite=re.search(r'\bThis is an onsite manufacturing engineering role\b|\bOn[- ]?site 5x? days per week\b',description,re.I)
+        if onsite and arrangement=='unknown': arrangement,arrangement_evidence='on-site',onsite[0]
+    if arrangement=='unknown' and company=='target':
+        target_hybrid=re.search(r'\bThis position will operate as a Hybrid/Flex for Your Day work arrangement\b',description,re.I)
+        if target_hybrid: arrangement,arrangement_evidence='hybrid',target_hybrid[0]
     if arrangement=='unknown':
         # Role declarations, rather than general company policy, technical
         # skills, recruiting assistants, or remote interviewing language.

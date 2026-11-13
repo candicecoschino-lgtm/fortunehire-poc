@@ -355,6 +355,13 @@ class CollectorTests(unittest.TestCase):
             j=c.normalize_posting(body(url=url,description='Duties. Hybrid Work Policy - 3 days In-office, 2days remote - Must report to local office.'),url,'general-motors',NOW)
             self.assertEqual(j['arrangement'],'hybrid')
 
+    def test_gm_categorized_roles_and_target_flex_are_explicit(self):
+        cases=[('general-motors','search-careers.gm.com','This role is categorized as hybrid.','hybrid'),('general-motors','search-careers.gm.com','On-site 5x days per week, Mountain View, CA','on-site'),('target','corporate.target.com','This position will operate as a Hybrid/Flex for Your Day work arrangement based on business needs.','hybrid'),('target','corporate.target.com','This position may be considered for a Remote or Hybrid work arrangement.','unknown')]
+        for company,host,description,expected in cases:
+            with patch.dict(c.SOURCES,{company:(host,'Test sector')}):
+                url='https://'+host+'/jobs/test-id/test-role'
+                self.assertEqual(c.normalize_posting(body(url=url,description=description),url,company,NOW)['arrangement'],expected)
+
     def test_missing_schema_url_requires_matching_canonical_page(self):
         document=body(url=None)+'<link rel="canonical" href="'+URL+'">'
         self.assertEqual(c.normalize_posting(document,URL,'boeing',NOW)['url'],URL)
