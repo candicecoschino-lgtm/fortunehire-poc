@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-13T21:58:29.835034+00:00",
+  "attemptedAt": "2026-11-13T22:30:57.142511+00:00",
   "postingWindowDays": 14,
   "coverage": "U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.",
   "sources": {
     "citigroup": {
-      "discovered": 3120,
+      "discovered": 3107,
       "checked": 42,
       "added": 0,
       "changed": 0,
@@ -17,10 +17,10 @@
       "activeTracked": 42,
       "pendingClosureChecks": 2,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "boeing": {
-      "discovered": 1103,
+      "discovered": 1091,
       "checked": 59,
       "added": 0,
       "changed": 0,
@@ -32,7 +32,7 @@
       "activeTracked": 59,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "chevron": {
       "discovered": 162,
@@ -47,13 +47,13 @@
       "activeTracked": 2,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "att": {
       "discovered": 2112,
       "checked": 20,
       "added": 0,
-      "changed": 5,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -62,10 +62,10 @@
       "activeTracked": 20,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "cigna": {
-      "discovered": 517,
+      "discovered": 512,
       "checked": 8,
       "added": 0,
       "changed": 0,
@@ -77,13 +77,13 @@
       "activeTracked": 8,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "comcast": {
-      "discovered": 736,
+      "discovered": 731,
       "checked": 19,
       "added": 0,
-      "changed": 1,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -92,22 +92,22 @@
       "activeTracked": 19,
       "pendingClosureChecks": 1,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "unitedhealth-group": {
-      "discovered": 6541,
+      "discovered": 6546,
       "checked": 89,
       "added": 0,
-      "changed": 0,
+      "changed": 1,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 89,
-      "pendingClosureChecks": 1,
+      "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "elevance-health": {
       "discovered": 248,
@@ -122,7 +122,7 @@
       "activeTracked": 20,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "ford": {
       "discovered": 879,
@@ -137,7 +137,7 @@
       "activeTracked": 15,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "mckesson": {
       "discovered": 647,
@@ -152,10 +152,10 @@
       "activeTracked": 11,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "fedex": {
-      "discovered": 4651,
+      "discovered": 4648,
       "checked": 19,
       "added": 0,
       "changed": 14,
@@ -167,10 +167,10 @@
       "activeTracked": 19,
       "pendingClosureChecks": 2,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "lowes": {
-      "discovered": 4151,
+      "discovered": 4064,
       "checked": 17,
       "added": 0,
       "changed": 0,
@@ -182,10 +182,10 @@
       "activeTracked": 17,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "nike": {
-      "discovered": 1162,
+      "discovered": 1163,
       "checked": 9,
       "added": 0,
       "changed": 0,
@@ -197,7 +197,7 @@
       "activeTracked": 9,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "united-airlines": {
       "discovered": 137,
@@ -212,7 +212,7 @@
       "activeTracked": 20,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "general-motors": {
       "discovered": 681,
@@ -227,13 +227,13 @@
       "activeTracked": 17,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "target": {
       "discovered": 14124,
       "checked": 20,
       "added": 0,
-      "changed": 0,
+      "changed": 1,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -242,7 +242,7 @@
       "activeTracked": 20,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "centene": {
       "discovered": 394,
@@ -257,145 +257,42 @@
       "activeTracked": 18,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T21:58:29.835034+00:00"
-    },
-    "walmart": {
-      "discovered": 15622,
-      "checked": 20,
-      "added": 19,
-      "changed": 0,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 0,
-      "warnings": [
-        {
-          "url": "https://careers.walmart.com/us/en/jobs/R-2708462",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        }
-      ],
-      "errors": [],
-      "activeTracked": 19,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "disney": {
       "discovered": 552,
-      "checked": 20,
-      "added": 15,
+      "checked": 15,
+      "added": 0,
       "changed": 0,
       "closed": 0,
-      "skipped": 5,
+      "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 15,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "caterpillar": {
       "discovered": 1044,
-      "checked": 20,
-      "added": 6,
+      "checked": 6,
+      "added": 0,
       "changed": 0,
       "closed": 0,
-      "skipped": 11,
-      "outsidePostingWindow": 3,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 6,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
-    "cisco": {
-      "discovered": 1457,
-      "checked": 20,
-      "added": 11,
-      "changed": 0,
-      "closed": 0,
-      "skipped": 7,
-      "outsidePostingWindow": 1,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 11,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
-    },
-    "abbott": {
-      "discovered": 2305,
-      "checked": 20,
-      "added": 6,
-      "changed": 0,
-      "closed": 0,
-      "skipped": 5,
-      "outsidePostingWindow": 1,
-      "warnings": [
-        {
-          "url": "https://www.jobs.abbott/global/ru/job/31167480/Est%C3%A1gio-em-Marketing-Divis%C3%A3o-de-Eletrofisiologia-EP-S%C3%A3o-Paulo-SP",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://www.jobs.abbott/global/ru/job/31166817/Operador-de-Manufactura-I-2do-turno",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://www.jobs.abbott/global/ru/job/31166702/Operador-de-Manufactura-I-1er-turno",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://www.jobs.abbott/global/ru/job/31166581/Supervisor-de-Consultores-M%C3%A9dicos",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://www.jobs.abbott/global/ru/job/31164640/Operador-de-Manufactura-1er-turno",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://www.jobs.abbott/global/ru/job/31164108/Operador-de-Manufactura-1er-turno",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://www.jobs.abbott/global/ru/job/31163745/Operador-de-Manufactura-1er-turno",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://www.jobs.abbott/global/fr/job/31167693/Operador-de-Fabricaci%C3%B3n-Granulador",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        }
-      ],
-      "errors": [],
-      "activeTracked": 6,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
-    },
-    "cencora": {
-      "discovered": 1078,
-      "checked": 20,
-      "added": 8,
-      "changed": 0,
-      "closed": 0,
-      "skipped": 9,
-      "outsidePostingWindow": 2,
-      "warnings": [
-        {
-          "url": "https://careers.cencora.com/ca/fr/job/R2615398/Pharmacy-Manager",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        }
-      ],
-      "errors": [],
-      "activeTracked": 8,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
-    },
-    "cvs-health": {
-      "discovered": 7114,
-      "checked": 20,
-      "added": 19,
+    "walmart": {
+      "discovered": 15632,
+      "checked": 19,
+      "added": 0,
       "changed": 0,
       "closed": 0,
       "skipped": 0,
@@ -404,38 +301,98 @@
       "errors": [],
       "activeTracked": 19,
       "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
+    },
+    "cisco": {
+      "discovered": 1460,
+      "checked": 11,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 11,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
+    },
+    "cencora": {
+      "discovered": 1078,
+      "checked": 8,
+      "added": 0,
+      "changed": 1,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 8,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
+    },
+    "abbott": {
+      "discovered": 2283,
+      "checked": 6,
+      "added": 0,
+      "changed": 1,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 6,
+      "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "coca-cola": {
       "discovered": 100,
-      "checked": 20,
-      "added": 5,
+      "checked": 5,
+      "added": 0,
       "changed": 0,
       "closed": 0,
-      "skipped": 15,
+      "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 5,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T22:00:40.854196+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     },
     "pepsico": {
       "discovered": 2576,
-      "checked": 20,
-      "added": 1,
+      "checked": 1,
+      "added": 0,
       "changed": 0,
       "closed": 0,
-      "skipped": 17,
+      "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 1,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-13T22:07:39.022934+00:00"
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
+    },
+    "cvs-health": {
+      "discovered": 7143,
+      "checked": 19,
+      "added": 0,
+      "changed": 2,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 19,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
     }
   }
 }
