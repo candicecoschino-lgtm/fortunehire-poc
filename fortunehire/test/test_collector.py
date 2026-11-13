@@ -166,7 +166,7 @@ class CollectorTests(unittest.TestCase):
         rp=c.urllib.robotparser.RobotFileParser();rp.parse(['User-agent: *','Disallow: /search-jobs/'])
         self.assertFalse(rp.can_fetch(c.UA,'https://jobs.boeing.com/search-jobs/results'))
         self.assertTrue(rp.can_fetch(c.UA,URL))
-        client=Mock(host='jobs.boeing.com');client.get.return_value=(200,'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>'+URL+'</loc></url></urlset>')
+        client=Mock(host='jobs.boeing.com');client.robots=rp;client.get.return_value=(200,'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>'+URL+'</loc></url></urlset>')
         self.assertEqual(c.discover(client),{'12345':URL})
         client.get.return_value=(200,'<html>Maintenance</html>')
         with self.assertRaises(c.SourceError): c.discover(client)
@@ -240,6 +240,54 @@ class CollectorTests(unittest.TestCase):
         out,state,r=c.reconcile('boeing',[old],{}, {},fetch,NOW)
         self.assertEqual(out,[]);fetch.assert_not_called()
 
+    def test_multiple_job_url_formats_and_stable_keys(self):
+        for url,key in [
+            ('https://jobs.boeing.com/en/job/test-city/title/185/12345','12345'),
+            ('https://jobs.boeing.com/us/en/job/JR-12345/test-title','JR-12345'),
+            ('https://jobs.boeing.com/test-title/job/ABCD1234ABCD1234','ABCD1234ABCD1234')]:
+            self.assertEqual(c.posting_key(url),key)
+            j=c.normalize_posting(body(url=url),url,'boeing',NOW)
+            self.assertEqual(j['requisitionId'],'TEST-1')
+
+    def test_sitemap_index_deduplicates_locales_and_prefers_english(self):
+        client=Mock(host='jobs.boeing.com');client.robots=None
+        root='https://jobs.boeing.com/sitemap.xml';child='https://jobs.boeing.com/jobs.xml'
+        fr='https://jobs.boeing.com/ca/fr/job/JR-12345/title'
+        en='https://jobs.boeing.com/us/en/job/JR-12345/title'
+        ns='http://www.sitemaps.org/schemas/sitemap/0.9'
+        documents={root:'<sitemapindex xmlns="'+ns+'"><sitemap><loc>'+child+'</loc></sitemap><sitemap><loc>https://unrelated.example/jobs.xml</loc></sitemap></sitemapindex>',child:'<urlset xmlns="'+ns+'"><url><loc>'+fr+'</loc></url><url><loc>'+en+'</loc><lastmod>2026-11-12</lastmod></url></urlset>'}
+        client.get.side_effect=lambda u:(200,documents[u])
+        self.assertEqual(c.discover(client),{'JR-12345':en})
+        self.assertEqual(client.get.call_count,2)
+
+    def test_opaque_job_keys_can_be_imported_without_integer_conversion(self):
+        url='https://jobs.boeing.com/test-role/job/ABCD1234'
+        out,state,r=c.reconcile('boeing',[],{}, {'ABCD1234':url},lambda u:(200,body(url=url)),NOW)
+        self.assertEqual(r['added'],1);self.assertEqual(len(out),1)
+
+    def test_structured_country_remote_eligibility_and_restrictions(self):
+        j=c.normalize_posting(body(jobLocationType='TELECOMMUTE',applicantLocationRequirements={'@type':'Country','name':'United States'}),URL,'boeing',NOW)
+        self.assertEqual(j['remoteScope'],'nationwide')
+        j=c.normalize_posting(body(jobLocationType='TELECOMMUTE',applicantLocationRequirements={'@type':'Country','name':'United States'},description='This remote role is not available in CA.'),URL,'boeing',NOW)
+        self.assertEqual(j['remoteScope'],'unknown')
+
+    def test_escaped_description_keeps_pay_period_unverified(self):
+        description='&lt;p&gt;The base pay range for this role is $112,480.00 to $146,540.00.&lt;/p&gt;&lt;p&gt;The base salary range/hourly rate listed depends on experience.&lt;/p&gt;'
+        j=c.normalize_posting(body(description=description),URL,'boeing',NOW)
+        self.assertIsNone(j['salary'])
+        self.assertIn('$112,480.00',j['publishedPay']['text'])
+        self.assertNotIn('/ hour',j['publishedPay']['text'])
+
+    def test_explicit_work_type_and_locale_identity(self):
+        j=c.normalize_posting(body(description='&lt;p&gt;Work Type: Hybrid&lt;/p&gt;'),URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'hybrid')
+        self.assertEqual(c.posting_key('https://careers.elevancehealth.com/es-mx/title/job/ABC123__es-mx'),'ABC123')
+        self.assertIn('%C3%A4',c.job_url('https://jobs.boeing.com/job/verkäufer/185/12345','jobs.boeing.com'))
+
+    def test_missing_schema_url_requires_matching_canonical_page(self):
+        document=body(url=None)+'<link rel="canonical" href="'+URL+'">'
+        self.assertEqual(c.normalize_posting(document,URL,'boeing',NOW)['url'],URL)
+        with self.assertRaises(ValueError): c.normalize_posting(body(url=None),URL,'boeing',NOW)
+
 
 if __name__=='__main__': unittest.main()
-

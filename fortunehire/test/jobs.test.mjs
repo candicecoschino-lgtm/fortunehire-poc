@@ -7,6 +7,12 @@ const data=JSON.parse(await readFile(new URL('./fixtures/reviewed-jobs.json',imp
 const jobs=validateJobs(data,companies),today='2026-11-13';
 const filters=extra=>({...readJobFilters(''),...extra});
 
+test('new employer URLs must match that employer reviewed career host',()=>{
+  const sample={...structuredClone(data.jobs[0]),id:'comcast-synthetic',companyId:'comcast',url:'https://jobs.comcast.com/job/test-city/test-role/45483/12345'};
+  assert.equal(validateJobs({schemaVersion:1,jobs:[sample]},companies).length,1);
+  assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...sample,url:'https://jobs.citi.com/job/test-city/test-role/287/12345'}]},companies));
+});
+
 test('publication date window is independent of last successful check date',()=>{
   const j={...jobs[0],reviewedAt:today,closesAt:null};
   assert.ok(isCurrent({...j,postedAt:'2026-10-30'},today));
@@ -72,4 +78,3 @@ test('pagination has no duplicate/missing records and clamps out-of-range pages'
 test('data validation rejects wrong-employer links, unsafe URLs, bogus dates and eligibility',()=>{
   for(const mutate of [d=>d.jobs.push(d.jobs[0]),d=>d.jobs[0].url='javascript:alert(1)',d=>d.jobs[0].url='https://jobs.boeing.com/job/wrong-employer',d=>d.jobs[0].reviewedAt='2026-02-31',d=>d.jobs[0].remoteScope='nationwide',d=>d.jobs[0].locations[0].state='Atlantis',d=>d.jobs[0].salary.min=-1]){const copy=structuredClone(data);mutate(copy);assert.throws(()=>validateJobs(copy,companies));}
 });
-

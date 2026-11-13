@@ -2,13 +2,13 @@
 
 **Directory branding:** the company directory uses locally hosted official-site brand icons for all 52 employers. Sources and review dates are recorded in `public/data/company-logos.json` and linked from each card. Icons load as they come into view; company initials remain the fallback if a file is unavailable. The directory makes no external logo-service requests. This visual update does not change job collection.
 
-**Automation pilot:** Boeing, Citi, and UnitedHealth Group now have a first-party sitemap/JobPosting collector, with twice-daily GitHub checks and a bounded U.S. collection. See [AUTOMATION.md](AUTOMATION.md) for limits, lifecycle tests, and the manual-run button. Automation supersedes older manual-maintenance notes for these three employers; the 52-company directory remains separate.
+**Automation pilot:** 15 reviewed employers have enabled first-party sitemap/JobPosting connections, with twice-daily GitHub checks and bounded U.S. collection. See [FEED-EXPANSION.md](FEED-EXPANSION.md) for the 52-employer audit and [AUTOMATION.md](AUTOMATION.md) for limits and lifecycle behavior. The company directory and connected job coverage are separate.
 
 **Current product:** the main page is now an individual-job board with State and Work arrangement first, plus company, industry, sector, job type, posted minimum pay and travel filtering. See [JOB-BOARD-SPEC.md](JOB-BOARD-SPEC.md) for current behavior and [JOB-DATA-REVIEW.md](JOB-DATA-REVIEW.md) for coverage, sourcing and maintenance. The 52-company directory is preserved at `public/companies.html`. The directory-specific notes below describe that secondary page.
 
-A static, independent employer directory. Search names and combine company, industry, headquarters state, and headquarters city filters. Open the employer's own career page to find jobs and work arrangements. No accounts, personal data, uploads, tracking, job scraping, or remote-work claims.
+A static, independent employer directory. Search names and combine company, industry, headquarters state, and headquarters city filters. Open the employer's own career page to find jobs and work arrangements. No accounts, personal data, uploads, or tracking. Directory filters describe headquarters; job filters use evidence from individual employer postings.
 
-**Coverage:** 52 reviewed employers from the 2026 Fortune 500. This is an intentionally labeled growing collection, not a complete 500-company directory. Every record links to its company profile, list membership source, reviewed official career destination, and review date. No rankings, financial figures, logos, or descriptions are republished.
+**Coverage:** 52 reviewed employers from the 2026 Fortune 500. This is an intentionally labeled growing collection, not a complete 500-company directory. Every record links to its company profile, list membership source, reviewed official career destination, and review date. No rankings, financial figures, or company descriptions are republished. Brand icons are sourced separately as described above.
 
 ## Preview and checks
 
@@ -61,5 +61,4 @@ Before calling the directory complete, verify all 500 records against appropriat
 - `netlify.toml`: publish directory and browser security headers.
 
 GitHub Pages is also compatible when the contents of `public/` are published; Netlify is the primary V1 deployment target. No service-specific API is required.
-
 

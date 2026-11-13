@@ -11,12 +11,14 @@ function card(j,f){
   const badges=e('div',undefined,'job-badges');badges.append(e('span',ARRANGEMENTS[j.arrangement],`job-badge ${j.arrangement}`),e('span',j.employmentType==='Not specified'?'Job type not verified':j.employmentType,'job-badge'));
   const payScope=j.salary?.scopeStates||j.publishedPay?.scopeStates||[];
   const payApplies=!f.state||!payScope.length||payScope.includes(f.state);
-  const pay=e('p',payApplies?salaryText(j):'Pay not verified for this location','job-salary');
+  const payText=salaryText(j);const longPay=!j.salary&&payText.length>220;
+  const pay=e('p',payApplies?payText:'Pay not verified for this location',`job-salary${longPay?' long-pay':''}`);
   const travel=e('p',j.travelRequired===true?`Travel required · ${j.travelNote}`:j.travelRequired===false?'Travel: employer states none':'Travel: not specified','job-travel');
   const apply=link('View role & apply ↗',j.url);apply.className='career-link';apply.setAttribute('aria-label',`View role and apply: ${j.title} at ${j.companyName} (opens in a new tab)`);
   const details=e('details');details.append(e('summary','Posting details & sources'));
   const dl=e('dl');for(const [key,val]of [['Industry',j.industry],['Sector',j.sector],['Employer requisition',j.requisitionId],['Posted',j.postedAt?labelDate(j.postedAt):'Not specified'],['Reviewed',labelDate(j.reviewedAt)],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
   details.append(dl,e('p',j.salaryNote),e('p',j.sourceNote),link('Official posting & application ↗',j.url),e('br'),link('Employer classification source ↗',j.companySource));
+  if(longPay&&payApplies)details.prepend(e('p','Full employer-published pay'),e('p',payText));
   a.append(top,badges,e('p',j.locationNote,'job-location'),pay);
   if(payApplies&&j.publishedPay)a.append(e('p',j.publishedPay.note,'small'));
   a.append(travel,apply,details);return a;
@@ -37,7 +39,7 @@ function render(sync=true){
   $('coverage').textContent=`${visible.length} jobs · ${new Set(visible.map(j=>j.companyId)).size} employers`;
   const last=[...jobs].map(j=>j.reviewedAt).sort().at(-1);
   const failures=Object.values(collection?.sources||{}).filter(s=>s.errors?.length).length;
-  $('scope-note').textContent=collection?`Automated pilot · Posted within 14 days · Boeing, Citi & UnitedHealth Group · Last posting check ${last?labelDate(last):'unavailable'} · Limited coverage.${failures?' Some employer checks failed; previous check dates are retained.':''}`:`Starter collection · Posted within 14 days · Last checked ${last?labelDate(last):'date unavailable'} · Not a complete job feed.`;
+  $('scope-note').textContent=collection?`Automated pilot · ${Object.keys(collection.sources||{}).length} connected employers · Posted within 14 days · Last posting check ${last?labelDate(last):'unavailable'} · Limited coverage.${failures?' Some employer checks failed; previous check dates are retained.':''}`:`Starter collection · Posted within 14 days · Last checked ${last?labelDate(last):'date unavailable'} · Not a complete job feed.`;
   $('empty').hidden=matches.length>0;$('pagination').hidden=page.pages<=1;$('previous-page').disabled=page.page<=1;$('next-page').disabled=page.page>=page.pages;$('page-label').textContent=`Page ${page.page} of ${page.pages}`;
   const active=[];for(const key of ['state','arrangement','company','industry','sector','type','pay'])if(f[key]){const control=$(key);active.push(control.options[control.selectedIndex].textContent);}if(f.q.trim())active.push(`Search: ${f.q.trim()}`);if(f.travel==='exclude')active.push('Confirmed travel-required roles excluded');
   $('active-filters').textContent=active.join(' · ');$('active-filters').hidden=!active.length;
@@ -65,4 +67,3 @@ window.addEventListener('popstate',()=>{if(ready){clearTimeout(pending);restore(
 function refreshFreshness(){if(ready&&todayInNewYork()!==renderedDay)render();}
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshFreshness();});setInterval(refreshFreshness,60000);
 load();
-

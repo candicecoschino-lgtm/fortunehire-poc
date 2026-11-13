@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import copy
 import hashlib
 import http.client
@@ -20,11 +21,8 @@ import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCES = {
-    'boeing': ('jobs.boeing.com', 'Aerospace & Defense'),
-    'citigroup': ('jobs.citi.com', 'Financials'),
-    'unitedhealth-group': ('careers.unitedhealthgroup.com', 'Health Care'),
-}
+REGISTRY=json.loads((ROOT/'public/data/job-sources.json').read_text(encoding='utf-8'))
+SOURCES={key:(value['host'],value['sector']) for key,value in REGISTRY['sources'].items()}
 UA = 'FortuneHirePilot/0.1 (+https://fortunehire.netlify.app/)'
 POSTING_MAX_AGE_DAYS = 14
 STATES = dict(zip(
@@ -41,24 +39,47 @@ def safe_url(url, host):
     p = urllib.parse.urlsplit(url)
     if p.scheme != 'https' or p.netloc != host or p.username or p.password:
         raise ValueError('Unexpected source host or protocol')
-    return urllib.parse.urlunsplit(('https', host, p.path, '', ''))
+    return urllib.parse.urlunsplit(('https', host, urllib.parse.quote(p.path,safe='/%:@!$&\'()*+,;=-._~'), '', ''))
 
 
 def job_url(url, host):
     url = safe_url(url, host)
-    if not re.fullmatch(r'/job/[^/]+/[^/]+/\d+/\d+', urllib.parse.urlsplit(url).path):
+    if not re.search(r'/job/[^/]+',urllib.parse.urlsplit(url).path) or len(url)>2000:
         raise ValueError('Not an individual employer job URL')
     return url
+
+
+def posting_key(url):
+    tail=urllib.parse.urlsplit(url).path.split('/job/',1)[-1].strip('/').split('/')
+    if len(tail)>=4 and tail[-1].isdigit() and tail[-2].isdigit(): return tail[-1]
+    return re.sub(r'__[a-z]{2}(?:-[a-z]{2})?$','',tail[0],flags=re.I)
+
+
+def discovery_priority(key):
+    # Only a discovery preference; the actual employer date controls eligibility.
+    if re.fullmatch(r'[0-9A-Fa-f]{24,}',key): return (0,key)
+    digits=re.findall(r'\d+',key)
+    return (1,int(digits[-1])) if digits else (0,key)
+
+
+def language_priority(url):
+    path=urllib.parse.urlsplit(url).path
+    if re.search(r'/(?:us|global)/en/',path): return 4
+    if path.startswith(('/en/','/en-us/')): return 3
+    if re.match(r'/[a-z]{2}(?:-[a-z]{2})?/',path): return 0
+    return 2
 
 
 class Page(HTMLParser):
     def __init__(self, body):
         super().__init__(convert_charrefs=True)
         self.scripts, self.parts, self.script, self.hidden = [], [], None, 0
+        self.canonical=None
         self.feed(body)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag=='link' and attrs.get('rel','').lower()=='canonical': self.canonical=attrs.get('href')
         if tag == 'script':
             self.script = [] if attrs.get('type', '').lower() == 'application/ld+json' else None
         if tag in ('script', 'style'): self.hidden += 1
@@ -135,7 +156,18 @@ def extract_published_pay(description, locations, company, nationwide=False):
             if not PAY_RANGE.search(context) and i+1<len(lines): context += ' '+lines[i+1]
             if PAY_RANGE.search(context): evidence.append(context)
     evidence = list(dict.fromkeys(evidence))
-    if not evidence: return None, None
+    if not evidence:
+        # Keep published bands visible even when period or geography cannot
+        # safely drive a numeric filter. Never turn target cash into base pay.
+        displayed=[]
+        for i,line in enumerate(lines):
+            if not re.search(r'\b(?:pay|salary|compensation|earn)\b',line,re.I): continue
+            context=line
+            if not re.search(r'\$\s*\d|\d[\d,]*(?:\.\d+)?\s+USD\b',context) and i+1<len(lines): context+=' '+lines[i+1]
+            if re.search(r'\$\s*\d|\d[\d,]*(?:\.\d+)?\s+USD\b',context): displayed.append(context)
+        if displayed:
+            return None,{'text':' | '.join(dict.fromkeys(displayed))[:1000],'scopeStates':states,'note':'Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.'}
+        return None,None
     records=[]
     for text in evidence:
         hourly=bool(re.search(r'\b(?:hourly|per hour|an hour)\b|/\s*(?:hr|hour)\b',text,re.I))
@@ -180,42 +212,57 @@ def normalize_posting(body, url, company, now):
     matched=[]
     for candidate in candidates:
         try:
-            if job_url(str(candidate.get('url','')).rstrip('/'),host).rsplit('/',1)[-1]==url.rsplit('/',1)[-1]: matched.append(candidate)
+            candidate_url=candidate.get('url') or page.canonical
+            if posting_key(job_url(str(candidate_url or '').rstrip('/'),host))==posting_key(url): matched.append(candidate)
         except ValueError: pass
     if len(matched) != 1: raise ValueError('Missing or ambiguous matching JobPosting data; '+str(len(candidates))+' structured candidates found')
     source = matched[0]
-    url=job_url(source['url'].rstrip('/'),host)
-    title = html.unescape(str(source.get('title', ''))).strip()
+    url=job_url((source.get('url') or page.canonical).rstrip('/'),host)
+    if not isinstance(source.get('title'),str): raise ValueError('Invalid posting title')
+    title = html.unescape(source['title']).strip()
     req = source.get('identifier', {})
     req = str(req.get('value', '') if isinstance(req, dict) else req).strip()
     if not title or not req: raise ValueError('Missing title or requisition')
-    description = Page(str(source.get('description', ''))).text
+    description = Page(html.unescape(str(source.get('description', '')))).text
     locations = []
     for loc in as_list(source.get('jobLocation')):
         address = loc.get('address', {}) if isinstance(loc, dict) else {}
+        if not isinstance(address,dict): continue
         country = address.get('addressCountry', '')
         if isinstance(country, dict): country = country.get('name', '')
         state = state_name(address.get('addressRegion'))
-        city = str(address.get('addressLocality', '')).strip()
+        city = address.get('addressLocality') or ''
+        if not isinstance(city,str): continue
+        city=city.strip()
         if str(country).upper() in ('US', 'USA', 'UNITED STATES', 'UNITED STATES OF AMERICA') and state and city:
             item = {'city': city, 'state': state}
             if item not in locations: locations.append(item)
-    eligible = []
+    eligible = [];country_requirements=[]
     for loc in as_list(source.get('applicantLocationRequirements')):
         if not isinstance(loc, dict): continue
+        if loc.get('@type')=='Country':
+            country_requirements.append(str(loc.get('name','')).upper());continue
         state = state_name(loc.get('name'))
         if state and state not in eligible: eligible.append(state)
     arrangement, arrangement_evidence = 'unknown', ''
     national_remote=re.search(r'You[\u2019\']ll enjoy the flexibility to (?:work remotely|telecommute)\s*\*?\s*from anywhere within the U\.?S\.?',description,re.I)
-    labeled = re.search(r'(?:Remote\s+Job|Job\s+Type|Workplace\s+Type|Role\s+Type)\s*:?\s*(Hybrid|On[- ]?site|Remote)\b', page.text, re.I)
+    labeled = re.search(r'(?:Remote\s+(?:Job|Type)|Job\s+Type|Workplace\s+Type|Work\s+(?:Arrangement|Location|Type)|Location\s+Type|Role\s+Type)\s*:?\s*(Hybrid|On[- ]?site|Remote)\b', description+'\n'+page.text, re.I)
     if labeled:
         arrangement = {'hybrid':'hybrid','onsite':'on-site','remote':'remote'}[re.sub(r'[- ]','',labeled[1].lower())]
         arrangement_evidence = labeled[0]
-    elif source.get('jobLocationType') == 'TELECOMMUTE':
-        arrangement, arrangement_evidence = 'remote', 'JobPosting.jobLocationType=TELECOMMUTE'
+    elif str(source.get('jobLocationType','')).upper() in ('TELECOMMUTE','REMOTE','HYBRID','ON_SITE','ONSITE'):
+        kind=str(source['jobLocationType']).upper()
+        arrangement = 'remote' if kind in ('TELECOMMUTE','REMOTE') else 'hybrid' if kind=='HYBRID' else 'on-site'
+        arrangement_evidence='JobPosting.jobLocationType='+kind
     else:
-        onsite = re.search(r'This position is expected to be 100% on[- ]?site', description, re.I)
+        onsite = re.search(r'This (?:position|role) is (?:expected to be 100%|a full[- ]time) on[- ]?site|This is a full[- ]time on[- ]?site role|Required Onsite \d days per week|^Onsite,\s*(?:Monday|Tuesday|Wednesday|Thursday|Friday)', description, re.I|re.M)
         if onsite: arrangement, arrangement_evidence = 'on-site', onsite[0]
+        hybrid=re.search(r'\bThis (?:is a hybrid (?:position|role)|(?:position|role) is hybrid|(?:position|role) (?:follows|provides) a hybrid work (?:schedule|arrangement))\b|\bHybrid Work Model\s*:|\bHybrid:\s*This role requires associates to be in-office',description,re.I)
+        if hybrid: arrangement,arrangement_evidence='hybrid',hybrid[0]
+        tag=re.search(r'#LI-(Onsite|Hybrid|Remote)\b',description,re.I)
+        if tag:
+            arrangement={'onsite':'on-site','hybrid':'hybrid','remote':'remote'}[tag[1].lower()]
+            arrangement_evidence=tag[0]
         remote = national_remote
         if remote: arrangement, arrangement_evidence = 'remote', remote[0]
     # A posted office address is not evidence of remote eligibility.
@@ -224,13 +271,17 @@ def normalize_posting(body, url, company, now):
     residency_restricted=bool(re.search(r'\bwithin\s+\d+\s+miles\b',description,re.I))
     state_words='|'.join(re.escape(s) for s in STATES.values())
     for line in description.splitlines():
-        if re.search(r'\b(?:must|required to|need to)\s+(?:currently\s+)?(?:live|reside|be located|be based)\b|\b(?:limited to|restricted to|excluding|not available in)\b',line,re.I) and re.search(r'\b(?:'+state_words+r')\b',line,re.I): residency_restricted=True
-    remote_scope='states' if eligible else 'nationwide' if arrangement=='remote' and national_remote and not residency_restricted else 'unknown'
+        restriction=re.search(r'\b(?:must(?: not)?|required to|need to)\s+(?:currently\s+)?(?:live|reside|be located|be based)\b|\b(?:limited to|restricted to|excluding|except|not available in|not eligible in|may not be performed in)\b',line,re.I)
+        named_state=re.search(r'\b(?:'+state_words+r')\b',line,re.I) or re.search(r'\b(?:'+'|'.join(STATES)+r')\b',line)
+        if restriction and named_state: residency_restricted=True
+    us_allowed=any(value in ('US','USA','UNITED STATES','UNITED STATES OF AMERICA') for value in country_requirements)
+    explicit_national=us_allowed or bool(national_remote and not country_requirements)
+    remote_scope='states' if eligible else 'nationwide' if arrangement=='remote' and explicit_national and not residency_restricted else 'unknown'
     if not locations and not eligible: return None
     travel, travel_evidence = None, ''
     no_travel = re.search(r'\b(?:Travel\s*(?:Required)?\s*:\s*(?:None|No)(?!\s+more)|No travel (?:is )?required)\b|\bTravel\s*:\s*0\s*%',page.text,re.I)
     yes_travel = re.search(r'\bTravel\s*:\s*(?:Yes\s*,?\s*)?(?:Up to\s*)?([1-9]\d?(?:\.\d+)?|100)\s*%[^\n]{0,50}',page.text,re.I)
-    if not yes_travel: yes_travel=re.search(r'\b(?:Willing(?:ness)?|Ability|Required)\s+to\s+travel\s+(?:nationally\s+)?(?:up to\s+)?([1-9]\d?(?:\.\d+)?|100)\s*%[^\n]{0,50}',description,re.I)
+    if not yes_travel: yes_travel=re.search(r'\b(?:Willing(?:ness)?|Ability|Required)\s+to\s+travel\s+(?:nationally\s+)?(?:up to\s+)?([1-9]\d?(?:\.\d+)?|100)\s*%[^\n]{0,50}|\b(?:up to\s+)?(?:[1-9]\d?|100)\s*%\s+(?:business\s+)?travel\b|\bthis (?:role|position) (?:may need to|requires? you to|requires? occasional) travel\b',description,re.I)
     if no_travel: travel, travel_evidence = False, no_travel[0]
     elif yes_travel: travel, travel_evidence = True, yes_travel[0]
     employment = 'Not specified'
@@ -334,27 +385,45 @@ class Client:
 
 
 def discover(client):
-    status, body = client.get('https://'+client.host+'/sitemap.xml')
-    if status != 200: raise SourceError('Job sitemap unavailable')
-    root = ET.fromstring(body)
     ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
-    if root.tag != ns+'urlset': raise SourceError('Unexpected sitemap format; manual adapter review required')
-    found = {}
-    for entry in root.findall(ns+'url'):
-        url = entry.findtext(ns+'loc') or ''
-        if '/job/' not in url: continue
-        url = job_url(url, client.host)
-        found[url.rsplit('/',1)[-1]] = url
+    # Sitemaps are published discovery documents, not excluded search endpoints.
+    published=client.robots.site_maps() if client.robots else None
+    queue=[u for u in (published or ['https://'+client.host+'/sitemap.xml']) if urllib.parse.urlsplit(u).hostname==client.host]
+    seen=set();found={};dates={}
+    while queue and len(seen)<20:
+        sitemap=queue.pop(0)
+        if sitemap in seen: continue
+        seen.add(sitemap)
+        status,body=client.get(sitemap)
+        if status!=200: continue
+        try: root=ET.fromstring(body)
+        except ET.ParseError as error: raise SourceError('Invalid employer sitemap response') from error
+        if root.tag==ns+'sitemapindex':
+            children=[entry.findtext(ns+'loc') for entry in root.findall(ns+'sitemap')]
+            children=[u for u in children if u and urllib.parse.urlsplit(u).hostname==client.host]
+            children.sort(key=lambda u:('job' not in u.lower(),-language_priority(u),u))
+            queue.extend(children)
+        elif root.tag==ns+'urlset':
+            for entry in root.findall(ns+'url'):
+                url=entry.findtext(ns+'loc') or ''
+                if '/job/' not in url: continue
+                url=job_url(url,client.host);key=posting_key(url)
+                if key not in found or language_priority(url)>language_priority(found[key]): found[key]=url
+                modified=entry.findtext(ns+'lastmod') or ''
+                dates[key]=max(dates.get(key,''),modified)
+        else: raise SourceError('Unexpected sitemap format; manual adapter review required')
     if not found: raise SourceError('Sitemap contains no individual job URLs')
+    client.discovery_dates=dates
+    client.discovery_limited=bool(queue)
     return found
 
 
-def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=100):
+def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=100, discovery_dates=None):
     """Never close by absence from a sitemap or partial crawl."""
     host = SOURCES[company][0]
     previous = [j for j in old_jobs if j['companyId']==company]
     by_id = {j['id']:copy.deepcopy(j) for j in previous if recent_posting(j,now)}
-    old_urls = {j['url'].rsplit('/',1)[-1]:j for j in previous}
+    old_urls = {posting_key(j['url']):j for j in previous}
     source_state = copy.deepcopy(state)
     rejected = source_state.setdefault('rejected', {})
     quarantined = {k:v for k,v in source_state.setdefault('quarantined',{}).items() if (now-datetime.fromisoformat(v)).total_seconds()<86400}
@@ -366,7 +435,7 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
     queue = [(discovered.get(k,j['url']),j) for k,j in old_urls.items() if j['status']!='closed' and recent_posting(j,now)]
     room = max(0, cap-len(active))
     candidates = [(k,u) for k,u in discovered.items() if k not in old_urls and k not in rejected and k not in quarantined]
-    candidates.sort(key=lambda pair:int(pair[0]), reverse=True)
+    candidates.sort(key=lambda pair:((discovery_dates or {}).get(pair[0],''),discovery_priority(pair[0])), reverse=True)
     reopen = [(discovered[k],j) for k,j in old_urls.items() if j['status']=='closed' and k in discovered and recent_posting(j,now)]
     queue += (reopen+[(u,None) for k,u in candidates])[:min(max_new,room)]
     closures = []
@@ -386,13 +455,13 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
             job = normalize_posting(body,url,company,now)
             if job is None:
                 if old: raise ValueError('Previously published job no longer has verified US geography')
-                rejected[url.rsplit('/',1)[-1]] = now.isoformat(); report['skipped'] += 1
+                rejected[posting_key(url)] = now.isoformat(); report['skipped'] += 1
                 continue
             # Requisition identity is stable across title/slug changes.
             if old and old['requisitionId'] != job['requisitionId']: raise ValueError('Requisition identity changed')
             if not recent_posting(job,now):
                 by_id.pop(job['id'],None)
-                rejected[url.rsplit('/',1)[-1]]=now.isoformat()
+                rejected[posting_key(url)]=now.isoformat()
                 report['outsidePostingWindow']+=1
                 continue
             missing.pop(job['id'],None)
@@ -410,7 +479,7 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 continue
             if old is None and isinstance(error,ValueError):
                 report['warnings'].append({'url':url,'error':'Candidate quarantined: '+str(error)[:180]})
-                source_state.setdefault('quarantined',{})[url.rsplit('/',1)[-1]]=now.isoformat()
+                source_state.setdefault('quarantined',{})[posting_key(url)]=now.isoformat()
                 continue
             report['errors'].append({'url':url,'error':str(error)[:200]})
             # Access denial/rate limiting stops this employer; no retries or bypass.
@@ -445,23 +514,33 @@ def run(root=ROOT, now=None, max_new=20):
     report = {'schemaVersion':1,'attemptedAt':now.isoformat(),'postingWindowDays':POSTING_MAX_AGE_DAYS,'coverage':'U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.','sources':{}}
     jobs = data['jobs']
     successes = 0
-    for company,(host,sector) in SOURCES.items():
+    def collect(company):
+        host,sector=SOURCES[company]
         try:
             client = Client(host)
             discovered = discover(client)
-            refreshed, source_state, result = reconcile(company,jobs,state.get(company,{}),discovered,client.get,now,max_new=max_new)
-            jobs = [j for j in jobs if j['companyId']!=company]+refreshed
-            state[company] = source_state
+            refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,client.get,now,max_new=max_new,discovery_dates=client.discovery_dates)
+            result['discoveryLimited']=client.discovery_limited
             if not result['errors']:
-                result['lastSuccessfulAt']=now.isoformat(); successes += 1
+                result['lastSuccessfulAt']=now.isoformat()
             else:
                 result['lastSuccessfulAt']=data.get('automation',{}).get('sources',{}).get(company,{}).get('lastSuccessfulAt')
-            report['sources'][company]=result
+            return company,refreshed,source_state,result
         except Exception as error:
-            report['sources'][company]={'errors':[{'error':str(error)[:300]}],'lastSuccessfulAt':data.get('automation',{}).get('sources',{}).get(company,{}).get('lastSuccessfulAt')}
+            result={'errors':[{'error':str(error)[:300]}],'lastSuccessfulAt':data.get('automation',{}).get('sources',{}).get(company,{}).get('lastSuccessfulAt')}
+            return company,None,None,result
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        for future in as_completed([pool.submit(collect,key) for key in SOURCES]):
+            company,refreshed,source_state,result=future.result()
+            if refreshed is not None:
+                jobs=[j for j in jobs if j['companyId']!=company]+refreshed
+                state[company]=source_state
+            if not result['errors']: successes+=1
+            report['sources'][company]=result
+            print(company+': '+str(result.get('activeTracked','retained'))+' tracked; '+str(len(result['errors']))+' errors',flush=True)
     data['jobs']=sorted(jobs,key=lambda j:j['id'])
     data['automation']=report
-    data['method']='Official employer sitemap discovery and individual JobPosting checks; bounded three-employer pilot.'
+    data['method']='Official employer sitemap discovery and individual JobPosting checks; bounded employer pilot.'
     if successes: data['updatedAt']=now.astimezone(ZoneInfo('America/New_York')).date().isoformat()
     atomic_json(path,data)
     atomic_json(state_path,state)
@@ -477,4 +556,3 @@ if __name__=='__main__':
     args=parser.parse_args()
     if not 0<=args.max_new<=20: parser.error('--max-new must be between 0 and 20')
     raise SystemExit(0 if run(args.root,max_new=args.max_new) else 1)
-

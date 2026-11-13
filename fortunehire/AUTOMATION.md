@@ -1,12 +1,12 @@
 # Official job collection pilot
 
-The collector reads Boeing, Citi, and UnitedHealth Group's published XML sitemaps and individual official JobPosting structured data. It does not call the excluded paginated search endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps and individual official JobPosting structured data for the 15 reviewed employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call the excluded paginated search endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
 Show only employer postings dated within the last 14 days, including a posting exactly 14 days old. Unknown dates and future dates are excluded. This uses the employer's posting date, not a LinkedIn date or the collector's last check. Both collection and browser filtering enforce the window. Aging out is separate from an employer closing a role; window exclusions are counted in the status record. A new review never resets a job's original posting date.
 
-This is a bounded US pilot, not complete coverage of all three employers. Each run considers up to 20 new sitemap candidates per employer and rechecks existing active pilot jobs. Non-US candidates are skipped. There is a cap of 100 tracked active jobs per employer. Sitemap ordering and numeric posting identifiers prioritize discovery; they do not prove posting dates. The published job's date controls the site's date ordering. The status JSON records discovery counts, checks, additions, changes, closures, skipped geography, errors, and last successful checks.
+This is a bounded US pilot, not complete coverage of the connected employers. Each run considers up to 20 new sitemap candidates per employer and rechecks existing active pilot jobs. Non-US candidates are skipped. There is a cap of 100 tracked active jobs per employer. Sitemap ordering and numeric posting identifiers prioritize discovery; they do not prove posting dates. The published job's date controls the site's date ordering. The status JSON records discovery counts, checks, additions, changes, closures, skipped geography, errors, and last successful checks.
 
 GitHub Actions runs at 10:17 and 22:17 UTC daily and can be run manually through **Actions → Refresh official jobs → Run workflow**. Scheduled runs can be delayed by GitHub. It requires no employer credentials or extra dependency packages. The existing Netlify connection publishes data commits. The workflow validates before committing and does not force-push across concurrent user edits.
 
@@ -29,3 +29,6 @@ Run `python -m unittest discover -s test -p 'test_*.py' -v`, `npm test`, and `no
 
 Check `public/data/collection-status.json` and the workflow summary after each run. If coverage is reliable, increase scope deliberately and add adapters rather than removing the pilot limits silently.
 
+## Shared format handling
+
+The source registry records the exact reviewed career host and broad sector group for each employer. Sitemap indexes and translated routes are deduplicated by posting identity, with English preferred. Encoded HTML descriptions are decoded before interpreting labeled work arrangements and pay text. Generic company-wide boilerplate does not establish a role’s arrangement. Location-dependent and period-ambiguous published pay stays visible without inventing a numeric filter value. Independent hosts may collect in parallel, with each host still paced separately. Code pushes refresh existing records; scheduled and manual runs consider new candidates.

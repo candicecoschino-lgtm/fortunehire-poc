@@ -63,8 +63,8 @@ export function validateJobs(data,companies) {
     if(j.remoteScope==='states'&&!j.eligibleStates.length)throw Error('Empty remote eligibility');
     if(j.remoteScope!=='states'&&j.eligibleStates.length)throw Error('Conflicting eligibility');
     if(!validDate(j.reviewedAt)||(j.postedAt!==null&&!validDate(j.postedAt))||(j.closesAt!==null&&!validDate(j.closesAt)))throw Error('Invalid job dates');
-    const officialHosts={'citigroup':'jobs.citi.com','boeing':'jobs.boeing.com','unitedhealth-group':'careers.unitedhealthgroup.com'};
-    const url=new URL(j.url);if(url.protocol!=='https:'||url.username||url.password||url.hostname!==officialHosts[j.companyId]||!url.pathname.includes('/job/'))throw Error('Invalid official job URL');
+    const officialHost=new URL(c.careerUrl).hostname;
+    const url=new URL(j.url);if(url.protocol!=='https:'||url.username||url.password||url.hostname!==officialHost||!url.pathname.includes('/job/'))throw Error('Invalid official job URL');
     if(!['reviewed','closed','needs-review'].includes(j.status))throw Error('Invalid review status');
     if(j.salary && (!Number.isFinite(j.salary.min)||!Number.isFinite(j.salary.max)||j.salary.min<=0||j.salary.max<j.salary.min||j.salary.currency!=='USD'||!['year','hour'].includes(j.salary.period)))throw Error('Invalid pay');
     if(j.salary?.scopeStates && (!Array.isArray(j.salary.scopeStates)||j.salary.scopeStates.some(s=>!US_STATES.includes(s))))throw Error('Invalid pay geography');
@@ -72,4 +72,3 @@ export function validateJobs(data,companies) {
   }
   return data.jobs.map(j=>({...j,companyName:employers.get(j.companyId).name,industry:employers.get(j.companyId).industry,companySource:employers.get(j.companyId).profileSource}));
 }
-
