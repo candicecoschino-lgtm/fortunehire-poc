@@ -19,13 +19,15 @@ function card(j,f){
   const payApplies=!f.state||!payScope.length||payScope.includes(f.state);
   const payText=salaryText(j);const longPay=!j.salary&&payText.length>220;
   const pay=e('p',payApplies?payText:'Pay not verified for this location',`job-salary${longPay?' long-pay':''}`);
+  const locationText=j.arrangement==='remote'&&j.remoteScope==='states'?(j.eligibleStates.length<=4?'Remote in '+j.eligibleStates.join(', '):`Remote in ${j.eligibleStates.length} employer-listed states${f.state?' · Includes '+f.state:''}. See posting details for the full list.`):j.locationNote;
   const travel=e('p',j.travelRequired===true?`Travel required · ${j.travelNote}`:j.travelRequired===false?'Travel: employer states none':'Travel: not specified','job-travel');
   const apply=link('View role & apply ↗',j.url);apply.className='career-link';apply.setAttribute('aria-label',`View role and apply: ${j.title} at ${j.companyName} (opens in a new tab)`);
   const details=e('details');details.append(e('summary','Posting details & sources'));
   const dl=e('dl');for(const [key,val]of [['Industry',j.industry],['Sector',j.sector],[j.identifierType==='posting-id'?'Employer posting ID':'Employer requisition',j.requisitionId],['Posted',j.postedAt?labelDate(j.postedAt):'Not specified'],['Reviewed',labelDate(j.reviewedAt)],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
+  if(j.arrangement==='remote'&&j.remoteScope==='states')dl.append(e('dt','Eligible remote states'),e('dd',j.eligibleStates.join(', ')));
   details.append(dl,e('p',j.salaryNote),e('p',j.sourceNote),link('Official posting & application ↗',j.url),e('br'),link('Employer classification source ↗',j.companySource));
   if(longPay&&payApplies)details.prepend(e('p','Full employer-published pay'),e('p',payText));
-  a.append(top,badges,e('p',j.locationNote,'job-location'),pay);
+  a.append(top,badges,e('p',locationText,'job-location'),pay);
   if(payApplies&&j.publishedPay)a.append(e('p',j.publishedPay.note,'small'));
   a.append(travel,apply,details);return a;
 }
