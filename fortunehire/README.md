@@ -1,5 +1,7 @@
 # FortuneHire proof of concept
 
+**Automation pilot:** Boeing, Citi, and UnitedHealth Group now have a first-party sitemap/JobPosting collector, with twice-daily GitHub checks and a bounded U.S. collection. See [AUTOMATION.md](AUTOMATION.md) for limits, lifecycle tests, and the manual-run button. Automation supersedes older manual-maintenance notes for these three employers; the 50-company directory remains separate.
+
 **Current product:** the main page is now an individual-job board with State and Work arrangement first, plus company, industry, sector, job type, posted minimum pay and travel filtering. See [JOB-BOARD-SPEC.md](JOB-BOARD-SPEC.md) for current behavior and [JOB-DATA-REVIEW.md](JOB-DATA-REVIEW.md) for coverage, sourcing and maintenance. The 50-company directory is preserved at `public/companies.html`. The directory-specific notes below describe that secondary page.
 
 A static, independent employer directory. Search names and combine company, industry, headquarters state, and headquarters city filters. Open the employer's own career page to find jobs and work arrangements. No accounts, personal data, uploads, tracking, job scraping, or remote-work claims.
@@ -57,4 +59,5 @@ Before calling the directory complete, verify all 500 records against appropriat
 - `netlify.toml`: publish directory and browser security headers.
 
 GitHub Pages is also compatible when the contents of `public/` are published; Netlify is the primary V1 deployment target. No service-specific API is required.
+
 

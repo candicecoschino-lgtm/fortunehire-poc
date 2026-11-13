@@ -1,0 +1,115 @@
+"""Synthetic lifecycle fixtures: never published as real jobs."""
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
+import copy
+import json
+import unittest
+from datetime import datetime, timezone, timedelta
+from unittest.mock import Mock
+import collect_jobs as c
+
+NOW=datetime(2026,11,13,15,tzinfo=timezone.utc)
+URL='https://jobs.boeing.com/job/test-city/test-engineer/185/12345'
+
+
+def body(**changes):
+    j={'@type':'JobPosting','title':'Synthetic lifecycle test','identifier':{'value':'TEST-1'},'url':URL,'datePosted':'2026-11-12','description':'<p>This position is expected to be 100% onsite.</p>','jobLocation':[{'address':{'addressCountry':'US','addressRegion':'FL','addressLocality':'Test City'}}]}
+    j.update(changes)
+    return '<script type="application/ld+json">'+json.dumps(j)+'</script>'
+
+
+class CollectorTests(unittest.TestCase):
+    def test_initial_import(self):
+        jobs,state,r=c.reconcile('boeing',[],{}, {'12345':URL},lambda u:(200,body()),NOW)
+        self.assertEqual(r['added'],1)
+        self.assertEqual(jobs[0]['arrangement'],'on-site')
+        self.assertEqual(jobs[0]['locations'][0]['state'],'Florida')
+
+    def test_changed_title_updates_in_place_and_no_duplicates_on_repeat(self):
+        old=c.normalize_posting(body(),URL,'boeing',NOW)
+        out,state,r=c.reconcile('boeing',[old],{}, {'12345':URL},lambda u:(200,body(title='Changed synthetic title')),NOW)
+        self.assertEqual(len(out),1);self.assertEqual(r['changed'],1)
+        self.assertEqual(out[0]['title'],'Changed synthetic title')
+        out,state,r=c.reconcile('boeing',out,state,{'12345':URL},lambda u:(200,body(title='Changed synthetic title')),NOW)
+        self.assertEqual(len(out),1);self.assertEqual(r['added'],0);self.assertEqual(r['changed'],0)
+
+    def test_absence_from_discovery_still_checks_existing_url(self):
+        old=c.normalize_posting(body(),URL,'boeing',NOW)
+        fetch=Mock(return_value=(200,body()))
+        out,state,r=c.reconcile('boeing',[old],{}, {},fetch,NOW)
+        fetch.assert_called_once_with(URL);self.assertEqual(out[0]['status'],'reviewed')
+
+    def test_closed_only_after_two_missing_checks_six_hours_apart(self):
+        old=c.normalize_posting(body(),URL,'boeing',NOW)
+        out,state,r=c.reconcile('boeing',[old],{}, {},lambda u:(404,''),NOW)
+        self.assertEqual(out[0]['status'],'reviewed')
+        out,state,r=c.reconcile('boeing',out,state,{},lambda u:(410,''),NOW+timedelta(hours=7))
+        self.assertEqual(out[0]['status'],'closed');self.assertEqual(r['closed'],1)
+
+    def test_missing_signal_clears_when_job_returns(self):
+        old=c.normalize_posting(body(),URL,'boeing',NOW)
+        out,state,r=c.reconcile('boeing',[old],{}, {},lambda u:(404,''),NOW)
+        out,state,r=c.reconcile('boeing',out,state,{},lambda u:(200,body()),NOW+timedelta(hours=7))
+        self.assertFalse(state['missing']);self.assertEqual(out[0]['status'],'reviewed')
+
+    def test_access_denial_or_bad_html_does_not_refresh_or_delete(self):
+        old=c.normalize_posting(body(),URL,'boeing',NOW)
+        for result in [(200,'<html>Maintenance</html>'),(503,'')]:
+            out,state,r=c.reconcile('boeing',[old],{}, {},lambda u:result,NOW+timedelta(days=1))
+            self.assertEqual(out,[old]);self.assertTrue(r['errors'])
+
+    def test_mass_closure_guard(self):
+        jobs=[]
+        for i in range(8):
+            u=URL[:-5]+str(12345+i)
+            jobs.append(c.normalize_posting(body(url=u,identifier={'value':'TEST-'+str(i)}),u,'boeing',NOW))
+        state={'missing':{j['id']:NOW.isoformat() for j in jobs}}
+        out,state,r=c.reconcile('boeing',jobs,state,{},lambda u:(404,''),NOW+timedelta(hours=7))
+        self.assertTrue(all(j['status']=='reviewed' for j in out));self.assertTrue(r['errors'])
+
+    def test_office_address_or_remote_title_does_not_invent_arrangement(self):
+        j=c.normalize_posting(body(title='Remote synthetic title',description='Office benefits include hybrid options for some roles.'),URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'unknown');self.assertEqual(j['eligibleStates'],[])
+        self.assertIsNone(j['salary']);self.assertIsNone(j['travelRequired'])
+
+    def test_explicit_remote_eligibility_and_labeled_hybrid(self):
+        j=c.normalize_posting(body(jobLocationType='TELECOMMUTE',applicantLocationRequirements=[{'name':'Florida'}]),URL,'boeing',NOW)
+        self.assertEqual(j['remoteScope'],'states');self.assertEqual(j['eligibleStates'],['Florida'])
+        j=c.normalize_posting(body()+'<p>Remote Job: Hybrid</p>',URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'hybrid');self.assertEqual(j['remoteScope'],'unknown')
+
+    def test_wrong_host_identity_or_incomplete_data_rejected(self):
+        with self.assertRaises(ValueError): c.normalize_posting(body(),URL.replace('jobs.boeing.com','evil.example'),'boeing',NOW)
+        with self.assertRaises(ValueError): c.normalize_posting(body(url='https://jobs.boeing.com/job/test/other/185/456'),URL,'boeing',NOW)
+        with self.assertRaises(ValueError): c.normalize_posting(body(identifier={}),URL,'boeing',NOW)
+        self.assertIsNone(c.normalize_posting(body(jobLocation=[{'address':{'addressCountry':'CA','addressRegion':'ON','addressLocality':'Toronto'}}]),URL,'boeing',NOW))
+
+    def test_explicit_deadline_closes_job(self):
+        j=c.normalize_posting(body(validThrough='2026-11-12'),URL,'boeing',NOW)
+        self.assertEqual(j['status'],'closed')
+
+    def test_graph_and_ampersands(self):
+        parsed=json.loads(c.Page(body(title='Research & Development')).scripts[0])
+        wrapped='<script type="application/ld+json">'+json.dumps({'@graph':[parsed]})+'</script>'
+        self.assertEqual(c.normalize_posting(wrapped,URL,'boeing',NOW)['title'],'Research & Development')
+
+    def test_robot_rules_and_sitemap_validation(self):
+        rp=c.urllib.robotparser.RobotFileParser();rp.parse(['User-agent: *','Disallow: /search-jobs/'])
+        self.assertFalse(rp.can_fetch(c.UA,'https://jobs.boeing.com/search-jobs/results'))
+        self.assertTrue(rp.can_fetch(c.UA,URL))
+        client=Mock(host='jobs.boeing.com');client.get.return_value=(200,'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>'+URL+'</loc></url></urlset>')
+        self.assertEqual(c.discover(client),{'12345':URL})
+        client.get.return_value=(200,'<html>Maintenance</html>')
+        with self.assertRaises(c.SourceError): c.discover(client)
+
+    def test_no_location_pay_assumptions(self):
+        base={'currency':'USD','value':{'minValue':20,'maxValue':30,'unitText':'HOUR'}}
+        j=c.normalize_posting(body(baseSalary=base),URL,'boeing',NOW)
+        self.assertEqual(j['salary']['scopeStates'],['Florida'])
+        loc=[{'address':{'addressCountry':'US','addressRegion':'FL','addressLocality':'A'}},{'address':{'addressCountry':'US','addressRegion':'NY','addressLocality':'B'}}]
+        self.assertIsNone(c.normalize_posting(body(baseSalary=base,jobLocation=loc),URL,'boeing',NOW)['salary'])
+
+
+if __name__=='__main__': unittest.main()
+

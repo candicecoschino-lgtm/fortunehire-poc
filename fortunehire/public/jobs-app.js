@@ -2,7 +2,7 @@ import { JOB_KEYS, US_STATES, ARRANGEMENTS, todayInNewYork, readJobFilters, seri
 const $=id=>document.getElementById(id);
 const e=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const link=(text,url)=>{const a=e('a',text);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;};
-let jobs=[],ready=false,currentPage='1',pending,renderedDay='';
+let jobs=[],ready=false,currentPage='1',pending,renderedDay='',collection=null;
 const labelDate=value=>new Date(value+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
 function card(j,f){
   const a=e('article',undefined,'card job-card');
@@ -32,7 +32,9 @@ function render(sync=true){
   $('results').replaceChildren(...page.items.map(j=>card(j,f)));
   $('count').textContent=`${matches.length} matching ${matches.length===1?'job':'jobs'} · ${visible.length} reviewed postings available`;
   $('coverage').textContent=`${visible.length} jobs · ${new Set(visible.map(j=>j.companyId)).size} employers`;
-  const last=[...jobs].map(j=>j.reviewedAt).sort().at(-1);$('scope-note').textContent=`Manually curated starter collection · Last reviewed ${last?labelDate(last):'date unavailable'} · Not a complete job feed.`;
+  const last=[...jobs].map(j=>j.reviewedAt).sort().at(-1);
+  const failures=Object.values(collection?.sources||{}).filter(s=>s.errors?.length).length;
+  $('scope-note').textContent=collection?`Automated pilot · Boeing, Citi & UnitedHealth Group · Last posting check ${last?labelDate(last):'unavailable'} · Limited coverage.${failures?' Some employer checks failed; previous check dates are retained.':''}`:`Manually curated starter collection · Last reviewed ${last?labelDate(last):'date unavailable'} · Not a complete job feed.`;
   $('empty').hidden=matches.length>0;$('pagination').hidden=page.pages<=1;$('previous-page').disabled=page.page<=1;$('next-page').disabled=page.page>=page.pages;$('page-label').textContent=`Page ${page.page} of ${page.pages}`;
   const active=[];for(const key of ['state','arrangement','company','industry','sector','type','pay'])if(f[key]){const control=$(key);active.push(control.options[control.selectedIndex].textContent);}if(f.q.trim())active.push(`Search: ${f.q.trim()}`);if(f.travel==='exclude')active.push('Confirmed travel-required roles excluded');
   $('active-filters').textContent=active.join(' · ');$('active-filters').hidden=!active.length;
@@ -44,7 +46,7 @@ async function load(){
   ready=false;$('error').hidden=true;$('empty').hidden=true;$('results').setAttribute('aria-busy','true');$('count').textContent='Loading jobs…';
   try{
     const responses=await Promise.all(['jobs','companies'].map(name=>fetch(new URL(`./data/${name}.json`,import.meta.url))));if(responses.some(r=>!r.ok))throw Error('Unavailable data');
-    const [data,employers]=await Promise.all(responses.map(r=>r.json()));jobs=validateJobs(data,employers.companies);
+    const [data,employers]=await Promise.all(responses.map(r=>r.json()));jobs=validateJobs(data,employers.companies);collection=data.automation||null;
     setOptions('state',US_STATES.map(s=>[s,s]));
     const companies=[...new Map(jobs.map(j=>[j.companyId,j.companyName]))].sort((a,b)=>a[1].localeCompare(b[1]));setOptions('company',companies);
     for(const k of ['industry','sector'])setOptions(k,[...new Set(jobs.map(j=>j[k]))].sort().map(s=>[s,s]));
