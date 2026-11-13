@@ -28,7 +28,7 @@ jobs:
               if status==200 and not rp.can_fetch('FortuneHirePilot','/search-jobs'):
                   out['blocked_by_robots']=True
                   return out
-              status,body=get('/search-jobs');out['search_status']=status
+              status,body=get('/search-jobs');out['search_status']=status;out['search_preview']=body[:1200]
               m=re.search(r'<(?:section|div)\b[^>]*id="search-results"[^>]*>',body)
               out['search_tag']=m.group(0) if m else None
               links=re.findall(r'href="([^"]*/job/[^"]+)"',body)
@@ -43,9 +43,11 @@ jobs:
                           out['structured'].append({k:v for k,v in j.items() if k!='description'})
                       except Exception as e: out['parse_error']=str(e)
                   out['description_tag']=bool(re.search(r'class="[^"]*ats-description',detail))
-              if m:
+              if False:
                   qs=urllib.parse.urlencode({'CurrentPage':2,'RecordsPerPage':15,'SearchResultsModuleName':'Search Results','SearchType':5,'SortCriteria':5,'SortDirection':1})
                   status,page=get('/search-jobs/results?'+qs);out['pagination_status']=status;out['pagination_preview']=page[:450]
+              for path in ['/sitemap.xml','/sitemap']:
+                  status,body=get(path);out[path]={'status':status,'preview':body[:1600]}
               return out
           with ThreadPoolExecutor(max_workers=3) as pool:
               for out in pool.map(probe,['jobs.boeing.com','jobs.citi.com','careers.unitedhealthgroup.com']):
