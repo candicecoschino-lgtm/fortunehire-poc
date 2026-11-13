@@ -1,0 +1,30 @@
+name: Verify PepsiCo job source
+on:
+  push:
+    branches: [verify-all52-20261113]
+    paths: ['.github/workflows/probe-pepsico.yml']
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check official PepsiCo posting
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          try:
+              client=c.Client('www.pepsicojobs.com')
+              status,body=client.get('https://www.pepsicojobs.com/main/jobs/483193')
+              jobs=[j for script in c.Page(body).scripts for j in c.postings(json.loads(script))]
+              print('PEPSICO_PROBE',json.dumps({'status':status,'postings':len(jobs),'postedAt':jobs[0].get('datePosted') if jobs else None}))
+          except Exception as error:print('PEPSICO_PROBE',json.dumps({'error':str(error)}))
+          PY
