@@ -1,48 +1,46 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-13T15:02:30.640110+00:00",
+  "attemptedAt": "2026-11-13T15:09:35.710620+00:00",
   "coverage": "Bounded pilot: at most 100 tracked active US postings per employer; up to 20 new candidates per employer per run. Not a complete feed.",
   "sources": {
     "boeing": {
-      "discovered": 1173,
-      "checked": 60,
-      "added": 5,
-      "changed": 1,
+      "discovered": 1146,
+      "checked": 45,
+      "added": 0,
+      "changed": 45,
       "closed": 0,
-      "skipped": 14,
+      "skipped": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 45,
-      "lastSuccessfulAt": "2026-11-13T15:02:30.640110+00:00"
+      "pendingClosureChecks": 0,
+      "lastSuccessfulAt": "2026-11-13T15:09:35.710620+00:00"
     },
     "citigroup": {
-      "discovered": 3119,
-      "checked": 37,
-      "added": 13,
-      "changed": 2,
+      "discovered": 3110,
+      "checked": 32,
+      "added": 0,
+      "changed": 32,
       "closed": 0,
-      "skipped": 5,
+      "skipped": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 32,
-      "lastSuccessfulAt": "2026-11-13T15:02:30.640110+00:00"
+      "pendingClosureChecks": 0,
+      "lastSuccessfulAt": "2026-11-13T15:09:35.710620+00:00"
     },
     "unitedhealth-group": {
-      "discovered": 6526,
-      "checked": 71,
-      "added": 18,
-      "changed": 1,
+      "discovered": 6538,
+      "checked": 69,
+      "added": 0,
+      "changed": 69,
       "closed": 0,
-      "skipped": 2,
+      "skipped": 0,
       "warnings": [],
-      "errors": [
-        {
-          "url": "https://careers.unitedhealthgroup.com/job/memphis/home-infusion-registered-nurse-rn-part-time-remote/34088/103247948448",
-          "error": "Missing or ambiguous matching JobPosting data"
-        }
-      ],
+      "errors": [],
       "activeTracked": 69,
-      "lastSuccessfulAt": "2026-11-13T14:58:51.492434+00:00"
+      "pendingClosureChecks": 0,
+      "lastSuccessfulAt": "2026-11-13T15:09:35.710620+00:00"
     }
   }
 }
