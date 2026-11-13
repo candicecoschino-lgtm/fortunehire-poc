@@ -1,57 +1,43 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-13T14:51:43.808988+00:00",
+  "attemptedAt": "2026-11-13T14:55:40.802630+00:00",
   "coverage": "Bounded pilot: at most 100 tracked active US postings per employer; up to 20 new candidates per employer per run. Not a complete feed.",
   "sources": {
     "boeing": {
-      "discovered": 1146,
-      "checked": 28,
-      "added": 8,
-      "changed": 8,
+      "discovered": 1179,
+      "checked": 36,
+      "added": 18,
+      "changed": 16,
       "closed": 0,
-      "skipped": 8,
-      "errors": [
-        {
-          "url": "https://jobs.boeing.com/job/australia/head-of-supply-chain-management/185/103194505200",
-          "error": "Missing or ambiguous matching JobPosting data"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/brisbane/electronic-systems-design-engineer/185/103194505168",
-          "error": "Missing or ambiguous matching JobPosting data"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/brisbane/software-engineer/185/103194505136",
-          "error": "Missing or ambiguous matching JobPosting data"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/amberley/comsec-account-manager-boeing-defence-australia/185/103194505024",
-          "error": "Missing or ambiguous matching JobPosting data"
-        }
-      ],
-      "activeTracked": 16,
-      "lastSuccessfulAt": null
+      "skipped": 2,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 34,
+      "lastSuccessfulAt": "2026-11-13T14:55:40.802630+00:00"
     },
     "citigroup": {
       "discovered": 3110,
       "checked": 30,
-      "added": 0,
+      "added": 3,
       "changed": 10,
-      "closed": 0,
-      "skipped": 19,
+      "closed": 2,
+      "skipped": 16,
+      "warnings": [],
       "errors": [],
-      "activeTracked": 10,
-      "lastSuccessfulAt": "2026-11-13T14:51:43.808988+00:00"
+      "activeTracked": 11,
+      "lastSuccessfulAt": "2026-11-13T14:55:40.802630+00:00"
     },
     "unitedhealth-group": {
       "discovered": 6526,
-      "checked": 24,
-      "added": 8,
-      "changed": 4,
+      "checked": 32,
+      "added": 20,
+      "changed": 12,
       "closed": 0,
-      "skipped": 12,
+      "skipped": 0,
+      "warnings": [],
       "errors": [],
-      "activeTracked": 12,
-      "lastSuccessfulAt": "2026-11-13T14:51:43.808988+00:00"
+      "activeTracked": 32,
+      "lastSuccessfulAt": "2026-11-13T14:55:40.802630+00:00"
     }
   }
 }

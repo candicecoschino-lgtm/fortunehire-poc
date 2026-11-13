@@ -4,12 +4,48 @@
   "method": "Official employer sitemap discovery and individual JobPosting checks; bounded three-employer pilot.",
   "jobs": [
     {
+      "id": "boeing-jr2026522579",
+      "companyId": "boeing",
+      "requisitionId": "JR2026522579",
+      "title": "Govt & Cap Property Spec (Government Property Management)",
+      "url": "https://jobs.boeing.com/job/herndon/govt-and-cap-property-spec-government-property-management/185/103226583728",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Herndon",
+          "state": "Virginia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Herndon, Virginia",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-30",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "d6b27751264029747de96ad0443f7e318617872585c37641fc2b85fbf1c0610c",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
       "id": "boeing-jr2026524201",
       "companyId": "boeing",
       "requisitionId": "JR2026524201",
       "title": "F/A-18 Platform Systems Leader",
       "url": "https://jobs.boeing.com/job/berkeley/f-a-18-platform-systems-leader/185/103216675136",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Berkeley",
@@ -25,16 +61,16 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-26",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "c10f1686acc0c8cd3c814ff1b9a8a5ab0d5bf663780c43d3001f8047fa437783",
+      "sourceHash": "8e1047e992b95645e2e91ff99f1bf3102636684ace491392a1fc74707313c899",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -45,7 +81,7 @@
       "requisitionId": "JR2026524993",
       "title": "Senior Structural & Payloads Design Engineer",
       "url": "https://jobs.boeing.com/job/titusville/senior-structural-and-payloads-design-engineer/185/103087041920",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Titusville",
@@ -61,16 +97,16 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-09",
-      "closesAt": null,
+      "closesAt": "2026-11-24",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "bbce94ab86ba31198ad74fba4d89eafd95d5f8faa10fb58afc76de5995e959bf",
+      "sourceHash": "739b3b62f13290fc5fa874c9124e0cecb33de98f8bb026515d2c972325941dc8",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -81,7 +117,7 @@
       "requisitionId": "JR2026525198",
       "title": "Q/R Support C13",
       "url": "https://jobs.boeing.com/job/huntington-beach/q-r-support-c13/185/103216677280",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Huntington Beach",
@@ -97,16 +133,52 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-20",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "f59a3f05968f8bca640bf4a8a9400adab782e1fb8f3bd977586194b2d1b70f9e",
+      "sourceHash": "139f7ada14bc6cdbcb3a055a751954ddab6b8aec73e7d105d78af10f91d28f19",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026525578",
+      "companyId": "boeing",
+      "requisitionId": "JR2026525578",
+      "title": "Senior Safety Specialist",
+      "url": "https://jobs.boeing.com/job/joint-base-lewis-mcchord/senior-safety-specialist/185/103226586528",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "JB Lewis",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "JB Lewis, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-20",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "fe2049707ecc783f1e73e1aae3563c1d0a02be3f244feb0a190615557d9697e6",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -117,7 +189,7 @@
       "requisitionId": "JR2026526258",
       "title": "Entry Shipping/Receiving Specialist",
       "url": "https://jobs.boeing.com/job/dallas/entry-shipping-receiving-specialist/185/103216681920",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Dallas",
@@ -133,16 +205,52 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-17",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "0a400c0936ac392e0f6b83fd2945865ea520fb4772bec2cc94440d760175d70e",
+      "sourceHash": "0d92cd165bb6ae226175c0806d2bbb58795eafb947e156161344c25332e014b3",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026526264",
+      "companyId": "boeing",
+      "requisitionId": "JR2026526264",
+      "title": "Software Engineer (Associate or Experienced)",
+      "url": "https://jobs.boeing.com/job/kent/software-engineer-associate-or-experienced/185/103226587968",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Kent",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Kent, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-12-07",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "3140b13a9acd3975d1f9e948ed0a7fe53c1e84847dfffbc6be7ccd87d5f60fad",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -153,7 +261,7 @@
       "requisitionId": "JR2026526365",
       "title": "Experienced Earned Value Compliance Analyst",
       "url": "https://jobs.boeing.com/job/mesa/experienced-earned-value-compliance-analyst/185/103087045232",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Mesa",
@@ -185,16 +293,16 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-09",
-      "closesAt": null,
+      "closesAt": "2026-11-18",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "ca7490bec22eb524d32e11adaa9a497bc0752dbf05f5998f6b68d906a65ffd4d",
+      "sourceHash": "37efdc83dcdc10ed89e187761e56e2228ae5ebb561ee1fa55bdf33f1c92a6d8f",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Hybrid",
         "travel": "",
         "salary": ""
       }
@@ -205,7 +313,7 @@
       "requisitionId": "JR2026527351",
       "title": "Support Integration Specialist​ (Logistics Integration) - Associate",
       "url": "https://jobs.boeing.com/job/saint-charles/support-integration-specialist-logistics-integration-associate/185/103216684688",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Saint Charles",
@@ -221,16 +329,52 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-27",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "cc8dedb0f74ccc566dc4bf6b964eeabe147be0cf085a3686878019c53e2007f1",
+      "sourceHash": "576b7e0cf1b6c45daae095889f023c6576a8550cfaa4ceee2066dfbf459e74d6",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527632",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527632",
+      "title": "Equipment Maintenance Spec (Equipment Maintenance)",
+      "url": "https://jobs.boeing.com/job/los-angeles/equipment-maintenance-spec-equipment-maintenance/185/103222129712",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Sylmar",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Sylmar, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-30",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "a440803de6f3951eb715853da3fd77757aba066e3077905b13973a6c86bcaa5c",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -241,7 +385,7 @@
       "requisitionId": "JR2026527688",
       "title": "Senior Factory Automation Electrical Systems Engineer Team Lead",
       "url": "https://jobs.boeing.com/job/berkeley/senior-factory-automation-electrical-systems-engineer-team-lead/185/103216686096",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Berkeley",
@@ -257,16 +401,232 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-12-04",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "7c94e76560b97dc48bb6086bf73077865640e918531d45c0d69da5f689124227",
+      "sourceHash": "41376e39fd622566f3b4cd37e158265f5d0fc5705e6f53c321569b70451a2d14",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527718",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527718",
+      "title": "Next Generation Air Dominance Assembly Manufacturing Engineer - Experienced/Senior",
+      "url": "https://jobs.boeing.com/job/berkeley/next-generation-air-dominance-assembly-manufacturing-engineer-experienced-senior/185/103222130016",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-26",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c1ea3c0e53f0b08d59635d29192d49aa30a95c9939fa7a0a37ecce734a7c960c",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527722",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527722",
+      "title": "DLA/USAF Project Management Specialist (Experienced and Senior)",
+      "url": "https://jobs.boeing.com/job/hazelwood/dla-usaf-project-management-specialist-experienced-and-senior/185/103222130096",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Hazelwood",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Hazelwood, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-30",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "1f1953d706e15ef68dc1302461d51e9b9c5e54d1da0f259d46ee0fbfbb84011f",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527723",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527723",
+      "title": "Next Generation Air Dominance Composite Manufacturing Engineer – Entry Level/Associate",
+      "url": "https://jobs.boeing.com/job/berkeley/next-generation-air-dominance-composite-manufacturing-engineer-entry-level-associate/185/103222130128",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-16",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "02bebab59b1272c50163535cc5eebbb7e89be64c2a565df8b64d8660e1179569",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527728",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527728",
+      "title": "Next Generation Air Dominance Industrial Engineer – Experienced/Senior",
+      "url": "https://jobs.boeing.com/job/berkeley/next-generation-air-dominance-industrial-engineer-experienced-senior/185/103222130208",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-26",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "47154da60ee3301af586f496e5476d3d09cead628376612a3eb8fdd6ad9fd471",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527730",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527730",
+      "title": "Next Generation Air Dominance Composite Industrial Engineer – Entry level/ Associate",
+      "url": "https://jobs.boeing.com/job/berkeley/next-generation-air-dominance-composite-industrial-engineer-entry-level-associate/185/103222130240",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-16",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "17a6700b111a7cb531e84705111236e2016062cbc2546aa7aae41013e782f6be",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527732",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527732",
+      "title": "Next Generation Air Dominance Assembly Industrial Engineer – Entry Level/Associate",
+      "url": "https://jobs.boeing.com/job/berkeley/next-generation-air-dominance-assembly-industrial-engineer-entry-level-associate/185/103222130304",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-16",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "9177b33ca2ab9e9623b407e8e78fd153375a4d6ab09599543837fe06277bc5fc",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -277,7 +637,7 @@
       "requisitionId": "JR2026527843",
       "title": "Mid-Level Guidance Navigation & Control (GNC) Engineer",
       "url": "https://jobs.boeing.com/job/berkeley/mid-level-guidance-navigation-and-control-gnc-engineer/185/103216687008",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Berkeley",
@@ -293,16 +653,120 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-26",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "b3df6137ed30912dd35fbc2a07e4a2d5584c88480ce0f048e7734e981eefa7de",
+      "sourceHash": "098dbf85b8e2217f2cf54aa62cb4a69a1ff2f852843c3d10f242752a17044d4d",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026528169",
+      "companyId": "boeing",
+      "requisitionId": "JR2026528169",
+      "title": "Executive Office Administrator (EOA)",
+      "url": "https://jobs.boeing.com/job/plano/executive-office-administrator-eoa/185/103226591232",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Plano",
+          "state": "Texas"
+        },
+        {
+          "city": "Huntsville",
+          "state": "Alabama"
+        },
+        {
+          "city": "Chicago",
+          "state": "Illinois"
+        },
+        {
+          "city": "Seal Beach",
+          "state": "California"
+        },
+        {
+          "city": "Oklahoma City",
+          "state": "Oklahoma"
+        },
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        },
+        {
+          "city": "Huntington Beach",
+          "state": "California"
+        },
+        {
+          "city": "Long Beach",
+          "state": "California"
+        },
+        {
+          "city": "El Segundo",
+          "state": "California"
+        },
+        {
+          "city": "Wichita",
+          "state": "Kansas"
+        },
+        {
+          "city": "Renton",
+          "state": "Washington"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        },
+        {
+          "city": "Auburn",
+          "state": "Washington"
+        },
+        {
+          "city": "Everett",
+          "state": "Washington"
+        },
+        {
+          "city": "Arlington",
+          "state": "Virginia"
+        },
+        {
+          "city": "Ridley Park",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Mesa",
+          "state": "Arizona"
+        },
+        {
+          "city": "North Charleston",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Plano, Texas; Huntsville, Alabama; Chicago, Illinois; Seal Beach, California; Oklahoma City, Oklahoma; Berkeley, Missouri; Huntington Beach, California; Long Beach, California; El Segundo, California; Wichita, Kansas; Renton, Washington; Seattle, Washington; Auburn, Washington; Everett, Washington; Arlington, Virginia; Ridley Park, Pennsylvania; Mesa, Arizona; North Charleston, South Carolina",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-23",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "42049e5217b86d9e8f622919b8633df9ec25b9fa7d760978161af6a944c1d417",
+      "evidence": {
+        "arrangement": "Role Type Hybrid",
         "travel": "",
         "salary": ""
       }
@@ -313,7 +777,7 @@
       "requisitionId": "JR2026528222",
       "title": "Manufacturing Engineer (Entry-Level or Associate)",
       "url": "https://jobs.boeing.com/job/berkeley/manufacturing-engineer-entry-level-or-associate/185/103216688656",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Berkeley",
@@ -329,16 +793,52 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-18",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "2bfea709ce8ba1b28635ea1810a6793c9d7dc687a3358a9b9e1ac9ce43f0f3b5",
+      "sourceHash": "b1bb394428c43fd77288771489c4cfa76f923c529d5f1333338e0c73b967a77c",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026528569",
+      "companyId": "boeing",
+      "requisitionId": "JR2026528569",
+      "title": "Senior Information Technology Business Partner",
+      "url": "https://jobs.boeing.com/job/north-charleston/senior-information-technology-business-partner/185/103222133472",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "North Charleston",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "North Charleston, South Carolina",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-17",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "1f882f0fabcf0ab5755d94bb538eeea8f6e0b799d4c6924531fe89fba39be531",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -349,7 +849,7 @@
       "requisitionId": "JR2026528668",
       "title": "Senior Network Designer",
       "url": "https://jobs.boeing.com/job/everett/senior-network-designer/185/102958783888",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Everett",
@@ -377,16 +877,16 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-06",
-      "closesAt": null,
+      "closesAt": "2026-11-20",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "390769a156c76b4b339c32ad1424052d62f49e228edee6231593003fd3bd5447",
+      "sourceHash": "424b791df8eb73d60b0edb1c253b0c82aaab3cba8dec46f8c6fe509209fa78ff",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Hybrid",
         "travel": "",
         "salary": ""
       }
@@ -397,7 +897,7 @@
       "requisitionId": "JR2026528674",
       "title": "Test & Evaluation Lab Tech (Electrical/Electronic Equipment) (Mid-Level)",
       "url": "https://jobs.boeing.com/job/kent/test-and-evaluation-lab-tech-electrical-electronic-equipment-mid-level/185/103208150848",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Kent",
@@ -413,16 +913,16 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-16",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "d1d3a9dd3437b11e274ae685a9fa98bdd0dd93446034ca851958094142fdeb95",
+      "sourceHash": "d249d6832a4fb7e1f46affe2cb3c0052bb9da4b2714d885e2fd058ee6056c015",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -433,7 +933,7 @@
       "requisitionId": "JR2026528773",
       "title": "Senior Hardware Asset Management Specialist",
       "url": "https://jobs.boeing.com/job/seattle/senior-hardware-asset-management-specialist/185/103097822096",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Seattle",
@@ -517,16 +1017,16 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-09",
-      "closesAt": null,
+      "closesAt": "2026-11-16",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "a58e2819fc4e4ae07e49d198545cf7c35f5912c791126d21fd10750e1ab347dd",
+      "sourceHash": "c9f9f98126a03ced8d87a6a7c1128d5ec95f126176bc76d235dd3f928ade3959",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Hybrid",
         "travel": "",
         "salary": ""
       }
@@ -537,7 +1037,7 @@
       "requisitionId": "JR2026528792",
       "title": "Business Operations Leader/Chief of Staff – Senior Manager",
       "url": "https://jobs.boeing.com/job/north-charleston/business-operations-leader-chief-of-staff-senior-manager/185/103125008064",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "North Charleston",
@@ -577,16 +1077,108 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-10",
-      "closesAt": null,
+      "closesAt": "2026-11-24",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "bf0bfc2453ffadf6f2955069d408853e163f0d946a0bbd6c4ac01a8232d2c6c9",
+      "sourceHash": "b050ead28e5029de1f70c2a9191c719eaf096ac0fa7678e55bbb464a805bbb09",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Hybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026528826",
+      "companyId": "boeing",
+      "requisitionId": "JR2026528826",
+      "title": "Senior Environmental Remediation Engineer/Scientist",
+      "url": "https://jobs.boeing.com/job/tukwila/senior-environmental-remediation-engineer-scientist/185/103226592640",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Tukwila",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Tukwila, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-12-02",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "7dd4d2e49c5302cf4c0d99874dae5810214d9bfe8bc3217fdb6e38208dc717cf",
+      "evidence": {
+        "arrangement": "Role Type Hybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026528995",
+      "companyId": "boeing",
+      "requisitionId": "JR2026528995",
+      "title": "Senior Technical Integrator",
+      "url": "https://jobs.boeing.com/job/everett/senior-technical-integrator/185/103226593040",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Everett",
+          "state": "Washington"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        },
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        },
+        {
+          "city": "Mesa",
+          "state": "Arizona"
+        },
+        {
+          "city": "Charleston",
+          "state": "South Carolina"
+        },
+        {
+          "city": "Renton",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Everett, Washington; Seattle, Washington; Berkeley, Missouri; Mesa, Arizona; Charleston, South Carolina; Renton, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-27",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "93cac0f8b3bcdf39c74e43a5f9639b81bfbb6d4fe7d11169e9a26767372c1a3a",
+      "evidence": {
+        "arrangement": "Role Type Hybrid",
         "travel": "",
         "salary": ""
       }
@@ -597,7 +1189,7 @@
       "requisitionId": "JR2026529030",
       "title": "Senior Software Asset Management Specialist",
       "url": "https://jobs.boeing.com/job/north-charleston/senior-software-asset-management-specialist/185/103181420224",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "North Charleston",
@@ -637,16 +1229,92 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-11",
-      "closesAt": null,
+      "closesAt": "2026-11-16",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "fd6224507ac3a302869b55671c43fdf677af4fed7609baadc2e11fc09524f278",
+      "sourceHash": "86399ec41e02291dd5f4b3013bdab402ecfab39ead334ff3519f21966ebba2dc",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Hybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026529307",
+      "companyId": "boeing",
+      "requisitionId": "JR2026529307",
+      "title": "Entry-Level Estimator",
+      "url": "https://jobs.boeing.com/job/hazelwood/entry-level-estimator/185/103226593856",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Hazelwood",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Hazelwood, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-27",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "38f1ad8b1f335dc3b3f390d5ad36043dfd18657e99c1e9134f0c804453129375",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026529494",
+      "companyId": "boeing",
+      "requisitionId": "JR2026529494",
+      "title": "Systems Engineer,. Mid-Career",
+      "url": "https://jobs.boeing.com/job/hill-air-force-base/systems-engineer-mid-career/185/103222137888",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Hill AFB",
+          "state": "Utah"
+        },
+        {
+          "city": "Layton",
+          "state": "Utah"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Hill AFB, Utah; Layton, Utah",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-12-04",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "39230f6b61de94aac82e441c7b961f7334965b6fae7cde6aa1775518bdeb10ed",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -657,7 +1325,7 @@
       "requisitionId": "JR2026529517",
       "title": "Quality Engineer (Associate or Mid-Level)",
       "url": "https://jobs.boeing.com/job/huntsville/quality-engineer-associate-or-mid-level/185/103208152528",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Huntsville",
@@ -673,16 +1341,16 @@
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-19",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "54be50f12578a2f023deedfd45e4566efeeca0c82e9e04f81046be2de0270f0f",
+      "sourceHash": "a7855544072d8358424282436bcfac3a839ab4a64e55af4f717a3227c55423bf",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Role Type Onsite",
         "travel": "",
         "salary": ""
       }
@@ -713,17 +1381,89 @@
       "travelRequired": true,
       "travelNote": "Travel: Up to 10% travel may be required",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-23",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "52b99aedf170b6e90d7c4f268466c4f504d5bda59f62f707a4ae61b01f063759",
+      "sourceHash": "b3e071bcdaffd963b42e4c3c132c1a5c171d3b66c718445d65f390bba34f3d23",
       "evidence": {
-        "arrangement": "This position is expected to be 100% onsite",
+        "arrangement": "Role Type Onsite",
         "travel": "Travel: Up to 10% travel may be required",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026529568",
+      "companyId": "boeing",
+      "requisitionId": "JR2026529568",
+      "title": "Associate Modification Project Technical Specialist",
+      "url": "https://jobs.boeing.com/job/victorville/associate-modification-project-technical-specialist/185/103226594448",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Victorville",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Victorville, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-23",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "83bf38d2b6a2a553b2488dba1b7148dc75373d45f8b740f517284cb938535a1e",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026529588",
+      "companyId": "boeing",
+      "requisitionId": "JR2026529588",
+      "title": "Radiation Effects Engineer, Mid-Career or Senior Level",
+      "url": "https://jobs.boeing.com/job/ogden/radiation-effects-engineer-mid-career-or-senior-level/185/103226594480",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Ogden",
+          "state": "Utah"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Ogden, Utah",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2027-01-09",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "0ebfce7371624a849e648a28e23ccbc75c42ecdcdccef0c6a9d63f4ef70bb69a",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
         "salary": ""
       }
     },
@@ -733,7 +1473,7 @@
       "requisitionId": "261002688",
       "title": "Application Support Analyst Officer",
       "url": "https://jobs.citi.com/job/tampa/application-support-analyst-officer/287/103092967104",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Tampa",
@@ -743,22 +1483,22 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Tampa, Florida",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-09",
-      "closesAt": null,
+      "closesAt": "2026-11-16",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "dcbe16fbb2283eaa39d458c37cefd0724f73654787cb154e3b82e0fdd82ca4ff",
+      "sourceHash": "9d47d6d06a9063d6d8775edcc4c7112b54e80c22e710d0e6ef2e21445a34bb4d",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
         "salary": ""
       }
@@ -769,7 +1509,7 @@
       "requisitionId": "261002726",
       "title": "Business Execution- Risk & Controls Lead Analyst | Strategy, IR- Vice President",
       "url": "https://jobs.citi.com/job/new-york/business-execution-risk-and-controls-lead-analyst-strategy-ir-vice-president/287/102816963968",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "New York",
@@ -779,22 +1519,22 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "New York, New York",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-03",
-      "closesAt": null,
+      "closesAt": "2026-11-27",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "69feb33d693693e556b811fe15a534f88882c84dc38691fb69565e286b5e9e31",
+      "sourceHash": "104dca2500c6659cce61dcc09fe4a35c3f2039bdcd37fbe16b6073a065712fca",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
         "salary": ""
       }
@@ -805,7 +1545,7 @@
       "requisitionId": "261003121",
       "title": "Director - Business Execution Lead - Banking Healthcare, Consumer & Retail",
       "url": "https://jobs.citi.com/job/new-york/director-business-execution-lead-banking-healthcare-consumer-and-retail/287/102205682640",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "New York",
@@ -815,7 +1555,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "New York, New York",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
@@ -826,11 +1566,119 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "6accfeca176fec8bc9b13d92caeae1b27c7f6b019e805ffbcc2eea3ec293bcab",
+      "sourceHash": "06db96558d558c9e8ef7488cf36e71e1dfc649d65e8507a96a23a7d6c4a5bddf",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261006155",
+      "companyId": "citigroup",
+      "requisitionId": "261006155",
+      "title": "Senior UI/AI Developer (Angular)",
+      "url": "https://jobs.citi.com/job/jersey-city/senior-ui-ai-developer-angular/287/103241901520",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Jersey City",
+          "state": "New Jersey"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Jersey City, New Jersey",
+      "employmentType": "Full-time",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-20",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "a573c3a8f4c473c05feb2b3ac87fc3f853214bd4d328248f78fbfe5a909a7487",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261006186",
+      "companyId": "citigroup",
+      "requisitionId": "261006186",
+      "title": "Government Affairs Lead for U.S. for Asia Foreign Policy, Senior Vice President",
+      "url": "https://jobs.citi.com/job/washington/government-affairs-lead-for-u-s-for-asia-foreign-policy-senior-vice-president/287/103228227536",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Washington",
+          "state": "District of Columbia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Washington, District of Columbia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-19",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "7cb4b4bb8dbb48b4ba58b1404df38638ee15e1bfbd26a247a2a23d13c7e447ea",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261006192",
+      "companyId": "citigroup",
+      "requisitionId": "261006192",
+      "title": "Government Affairs Lead for U.S. for Europe Foreign Policy, Senior Vice President",
+      "url": "https://jobs.citi.com/job/washington/government-affairs-lead-for-u-s-for-europe-foreign-policy-senior-vice-president/287/103228227696",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Washington",
+          "state": "District of Columbia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Washington, District of Columbia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-19",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "5b4a2085e462841842ac5b0d161c5f529f4fe6c159c3a1e3abae6beacf9ac3c3",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
         "salary": ""
       }
@@ -841,7 +1689,7 @@
       "requisitionId": "261007181",
       "title": "Markets Technology - Site Reliability Engineer, VP",
       "url": "https://jobs.citi.com/job/jersey-city/markets-technology-site-reliability-engineer-vp/287/103207612240",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Jersey City",
@@ -851,22 +1699,22 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Jersey City, New Jersey",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-21",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "e6e800a20937d4516685345845279ec67fe26ec60e2e4cd146c019da3161b582",
+      "sourceHash": "b45935fd49127cb9ddadd86d8ea0ba4e627d8f5ac97e02d0ac1cf179fac86253",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
         "salary": ""
       }
@@ -877,7 +1725,7 @@
       "requisitionId": "261007285",
       "title": "Front Office Business Analyst - Fixed Income Technology - Vice President",
       "url": "https://jobs.citi.com/job/new-york/front-office-business-analyst-fixed-income-technology-vice-president/287/103214414048",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "New York",
@@ -891,22 +1739,22 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "New York, New York; Jersey City, New Jersey",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-19",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "14505dcb1c42da43dd2186b9a81bee55233622538a65690ba6492596343fc200",
+      "sourceHash": "b128083a8dbf9eaa05f04adfad507514b3b5f6c3fbee742ab446621c3200e1d8",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
         "salary": ""
       }
@@ -917,7 +1765,7 @@
       "requisitionId": "261007519",
       "title": "Corporate Banking Analyst - Energy",
       "url": "https://jobs.citi.com/job/houston/corporate-banking-analyst-energy/287/103207612976",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Houston",
@@ -927,22 +1775,22 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Houston, Texas",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-12-15",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "2fbea1676138081207ba947e310cefc65f8fd26b01a8cba49c08c7c713c9ded0",
+      "sourceHash": "ac3b8105e360f777e005bdb421efa7a4b2c48c7a7e3aa18d3307a02641858e6c",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
         "salary": ""
       }
@@ -953,7 +1801,7 @@
       "requisitionId": "261008828",
       "title": "Banking, Client & International Strategy -Managing Director",
       "url": "https://jobs.citi.com/job/new-york/banking-client-and-international-strategy-managing-director/287/103207614272",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "New York",
@@ -963,7 +1811,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "New York, New York",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
@@ -974,11 +1822,11 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "49843e6afbfb07f2296bf096d50d9d273539b2425daab6bd74f94e82618ba680",
+      "sourceHash": "739e4202b14c06fc9b66f766b419d49d8e8325665d633e4698802998b1e11f6a",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
         "salary": ""
       }
@@ -989,7 +1837,7 @@
       "requisitionId": "261009363",
       "title": "Head of Custody Operations and NAM Lead for Investor Services Operations",
       "url": "https://jobs.citi.com/job/new-york/head-of-custody-operations-and-nam-lead-for-investor-services-operations/287/103207614320",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "New York",
@@ -999,22 +1847,22 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "New York, New York",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": null,
+      "closesAt": "2026-11-26",
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "afe5dc8d108160543a8b68fff5ffd826be74d7bf8d1f18b21318dfcb479babe2",
+      "sourceHash": "85b0ca17965a53091d59a9da540b1ddb6c6884169f455634b9e320d86b3e7d66",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
         "salary": ""
       }
@@ -1025,7 +1873,7 @@
       "requisitionId": "26995852",
       "title": "Head of AI Customer Experience",
       "url": "https://jobs.citi.com/job/new-york/head-of-ai-customer-experience/287/102165091024",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "New York",
@@ -1039,22 +1887,22 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "New York, New York; Irving, Texas",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-11",
-      "closesAt": null,
+      "closesAt": "2026-10-08",
       "reviewedAt": "2026-11-13",
-      "status": "reviewed",
+      "status": "closed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "95d59fc23e11937dafeeff7a14b5d706d550f861eef49e8fef0b0e3aea50e9b1",
+      "sourceHash": "6202baa39306040884a58cfc0d75e081cfd562183a206053f4760a29204d5ea7",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
         "salary": ""
       }
@@ -1065,7 +1913,7 @@
       "requisitionId": "26998330",
       "title": "Head of Wealth Investment Planning, Business Process Optimization and Value Assurance, MD, C16",
       "url": "https://jobs.citi.com/job/new-york/head-of-wealth-investment-planning-business-process-optimization-and-value-assurance-md-c16/287/102165091248",
-      "arrangement": "unknown",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "New York",
@@ -1075,22 +1923,130 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "New York, New York",
-      "employmentType": "Not specified",
+      "employmentType": "Full-time",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-11",
+      "closesAt": "2026-10-05",
+      "reviewedAt": "2026-11-13",
+      "status": "closed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "007c6fbb5ca8a9903af37823aca07024ce2aaf5a847784bd1677cd9dd3ae8508",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-1063786",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "1063786",
+      "title": "CNA Hospice Aide",
+      "url": "https://careers.unitedhealthgroup.com/job/harlingen/cna-hospice-aide/34088/103226013968",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Harlingen",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Harlingen, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
       "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
-      "sector": "Financials",
+      "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "9dcc875230cd4fe1b781b9d4acf10fe8a076dd867577960c2cc10c745d7054f7",
+      "sourceHash": "0b69cc5921b244709d32345d9cc8736f5dd5bb1e99894cdffe8d365bff2fe793",
       "evidence": {
         "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2379258",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2379258",
+      "title": "VA DSNP Stars & Quality Performance Lead",
+      "url": "https://careers.unitedhealthgroup.com/job/richmond/va-dsnp-stars-and-quality-performance-lead/34088/103226014640",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Richmond",
+          "state": "Virginia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Richmond, Virginia",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "015d8d96a9f76dfe4a412ae069965875f2dae652df26fe71db76ae71b9e89365",
+      "evidence": {
+        "arrangement": "You'll enjoy the flexibility to work remotely * from anywhere within the U.S.",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2385213",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2385213",
+      "title": "Senior Manager, Software Engineering - Remote",
+      "url": "https://careers.unitedhealthgroup.com/job/eden-prairie/senior-manager-software-engineering-remote/34088/103226013808",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Eden Prairie",
+          "state": "Minnesota"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Eden Prairie, Minnesota",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "2e100bc30238fd5869d3c166775bc2eb189bafb5505e3171ca0d0874faccaf16",
+      "evidence": {
+        "arrangement": "You'll enjoy the flexibility to work remotely * from anywhere within the U.S.",
         "travel": "",
         "salary": ""
       }
@@ -1122,9 +2078,9 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "f4fb60f1d3e6ac527e3c93520f3f800755b56e192a1794e93c6c6071f0ed5e3e",
+      "sourceHash": "6180ef78f2b78cb493a3bbedea5df8d0e560bdf222211831626c127a7f303df6",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1158,9 +2114,9 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "25ce51498b0b383c3e145c70bd37ec03b1d63be760f4c7a96f75f955faa15fb0",
+      "sourceHash": "07f832d6653fc19b808245940eb74e24dd5efa0af506d626d5031f2aca19f183",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1194,9 +2150,193 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "bbbaaeaee3adee46ca27ad6891a4b4a52ee470ffaec08ae1d84c2a9ab0a0fc40",
+      "sourceHash": "e7899eddfcfa58a6ba049b5e77aa24d185ec6e1e4a90c7224003e256e42ef020",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2395108",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2395108",
+      "title": "Home Infusion Registered Nurse (RN) - Part Time",
+      "url": "https://careers.unitedhealthgroup.com/job/raleigh/home-infusion-registered-nurse-rn-part-time/34088/103226014960",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Raleigh",
+          "state": "North Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Raleigh, North Carolina",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "8212877bf91b00eec668f20fb97c1f66d0a27447fb5eb63424e66ec522f43011",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2397460",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2397460",
+      "title": "Baylor Home Health Registered Nurse",
+      "url": "https://careers.unitedhealthgroup.com/job/petersburg/baylor-home-health-registered-nurse/34088/103226013648",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Petersburg",
+          "state": "Virginia"
+        },
+        {
+          "city": "Richmond",
+          "state": "Virginia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Petersburg, Virginia; Richmond, Virginia",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e501c0df8092016eda6b3665e058196ca399f788656599a2cba87706216a4c2f",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2398829",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2398829",
+      "title": "X Ray Tech - Colonial Healthcare",
+      "url": "https://careers.unitedhealthgroup.com/job/sumter/x-ray-tech-colonial-healthcare/34088/103226014896",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Sumter",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Sumter, South Carolina",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "90f6827f1385b62de3b40b81d1fbf87446dab384ac6f1f8737c5a7ef679d95a1",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2400197",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2400197",
+      "title": "Licensed Practical Nurse",
+      "url": "https://careers.unitedhealthgroup.com/job/bloomington/licensed-practical-nurse/34088/103226014384",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Bloomington",
+          "state": "Indiana"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Bloomington, Indiana",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "92c89fe7bea9c28177bd932531df5f3c92e0aab2225334ac220da057a76be5dd",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2400199",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2400199",
+      "title": "Registered Nurse",
+      "url": "https://careers.unitedhealthgroup.com/job/bloomington/registered-nurse/34088/103226013568",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Bloomington",
+          "state": "Indiana"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Bloomington, Indiana",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "5992c8a61ae767abc8f9aa237801441dc82e198e236b7b9a532e3d2ee5e1ed07",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1246,9 +2386,117 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "dab3a84bc45e7c571aa29d0b5695a6b94bef0aeaa48944763d59affd0787c101",
+      "sourceHash": "e856ba4f15eeb59241db8a208dfb8f4ac29e878807c98b5b38a8e0478030ab40",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2400499",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2400499",
+      "title": "LVN I/II/III (Urology) Kelsey-Seybold Clinic: Fort Bend Campus",
+      "url": "https://careers.unitedhealthgroup.com/job/sugar-land/lvn-i-ii-iii-urology-kelsey-seybold-clinic-fort-bend-campus/34088/103226014064",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Sugar Land",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Sugar Land, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "31332a6a74c14eee8919e3330ef82740f021bbcc713ee00cf8b8b79479c50aea",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2400547",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2400547",
+      "title": "Nurse Practitioner/Physician Assistant - Optum CA - El Monte",
+      "url": "https://careers.unitedhealthgroup.com/job/el-monte/nurse-practitioner-physician-assistant-optum-ca-el-monte/34088/103226014736",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "El Monte",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "El Monte, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "a90d43b2f472dd5dad76977bdce3d1172b5244b67d01aa47cbc9db014483527d",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2400673",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2400673",
+      "title": "RN Coordinator - Ortho: Kelsey-Seybold Clinic Fort Bend Campus",
+      "url": "https://careers.unitedhealthgroup.com/job/sugar-land/rn-coordinator-ortho-kelsey-seybold-clinic-fort-bend-campus/34088/103226014144",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Sugar Land",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Sugar Land, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "8b6c2351aafa42aa162b0543bf3bffbe118a10ee9e2902b12f2882f020ca54c7",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1298,9 +2546,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "6548168f40048b921b6f493052d91df0e508116b5038f2b9089a2cc428d0cf03",
+      "sourceHash": "83149c96ad6bf5bc2b154c65ce5182c583fa9a5a5180b7e8e8f728706341e732",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2400927",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2400927",
+      "title": "RN Lead Quality Improvement: Kelsey-Seybold Clinic - Towne Lake",
+      "url": "https://careers.unitedhealthgroup.com/job/glen-flora/rn-lead-quality-improvement-kelsey-seybold-clinic-towne-lake/34088/103226014208",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Glen Flora",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Glen Flora, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "1fce80cc66c0624e6df8f430c532d530ced20859526e718b12c0226c4e915531",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1334,9 +2618,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "be365d72551ed7b1ad49f393b9bf17809663cd74ea400245a9e8513dbbc39899",
+      "sourceHash": "34a027fc2e8840f3d6f153f55e07ccf1053f83fab46142aca540fbedb22e707d",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2401406",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2401406",
+      "title": "RN Case Manager",
+      "url": "https://careers.unitedhealthgroup.com/job/bloomington/rn-case-manager/34088/103226014544",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Bloomington",
+          "state": "Indiana"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Bloomington, Indiana",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "a59e144a24d93082b42d9df6fff9170b9b23b4f10241a83eb8fb10fe87d01240",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1370,9 +2690,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "94d54b147e388768553bd5842c52734bb3620f879731aeaddfe7ae3f73d0d2cd",
+      "sourceHash": "ad46310fc92761e60cac4f40ac45b95ae05889632fe55b089b98cd6bcf0fc018",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2401704",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2401704",
+      "title": "Physical Therapist Assistant - Kissimmee",
+      "url": "https://careers.unitedhealthgroup.com/job/kissimmee/physical-therapist-assistant-kissimmee/34088/103226014816",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Kissimmee",
+          "state": "Florida"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Kissimmee, Florida",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e045780b0fdc3be8c6271b7826863ed88627f0958a0b5758fb419a62aad01f5a",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1396,21 +2752,21 @@
           "state": "Arizona"
         },
         {
-          "city": "Minneapolis",
-          "state": "Minnesota"
+          "city": "Hartford",
+          "state": "Connecticut"
         },
         {
           "city": "Tampa",
           "state": "Florida"
         },
         {
-          "city": "Hartford",
-          "state": "Connecticut"
+          "city": "Minneapolis",
+          "state": "Minnesota"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Dallas, Texas; Phoenix, Arizona; Minneapolis, Minnesota; Tampa, Florida; Hartford, Connecticut",
+      "locationNote": "Dallas, Texas; Phoenix, Arizona; Hartford, Connecticut; Tampa, Florida; Minneapolis, Minnesota",
       "employmentType": "Not specified",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
@@ -1422,9 +2778,9 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "291435e0c1dff1f4c8245877182244d6f978d587c2d43be50d4ed5cedea12e96",
+      "sourceHash": "4341c887a532f0b385c864a81395c9c03343abc74df381f3b9eb7dcd9217e91a",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1458,9 +2814,9 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "d2146de2d0b627ad099d4b76ef24c944582cb7a8216d3e6ce1f6a286807b1c5d",
+      "sourceHash": "c6606e46a13269d1b69518f786818bb2d7562c9f81299a57047b41df0dfd07f6",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1494,9 +2850,9 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "990a5d29c08b3998eab305766b33ce7ff8d03eb2fdf34fd50350d93126fec41d",
+      "sourceHash": "e21a22641c30819ef9693ef83ded8ff46af87a4fa19e115677891bbe60b75b92",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1530,9 +2886,9 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "11d8285a230cca1662442bd1c27ff2ba961e687720422049d601c5da8cdc4747",
+      "sourceHash": "089bf211b688af9d4edcad2b350dbc7641adb0a7effedcc57005f4d37e82f52c",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1566,9 +2922,225 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "2c3b124ecfa27a870e302e70c92d21b4b21be6c2faff469fb9cb1181760e2402",
+      "sourceHash": "d7313b24cb1a171b39b94e3a1ec00b037ed9b51490ea4b26e4222cfd85e4835c",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402485",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402485",
+      "title": "RN-Home Health $10/K BONUS",
+      "url": "https://careers.unitedhealthgroup.com/job/kennewick/rn-home-health-10-k-bonus/34088/103226013024",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Kennewick",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Kennewick, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "f15c8feee275be8d0145572dc3938da8b84ae659c48aec327b984642da4a3838",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402486",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402486",
+      "title": "LPN-Home Health $5/K BONUS",
+      "url": "https://careers.unitedhealthgroup.com/job/kennewick/lpn-home-health-5-k-bonus/34088/103226014320",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Kennewick",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Kennewick, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "8240fc48deaced1dbf8a189f0cf747490ddf825549f5a8562fe2cfe394727685",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402502",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402502",
+      "title": "RN Hospice - Weekend Shift - $10K Sign on Bonus - Leominster, MA",
+      "url": "https://careers.unitedhealthgroup.com/job/leominster/rn-hospice-weekend-shift-10k-sign-on-bonus-leominster-ma/34088/103226013296",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Leominster",
+          "state": "Massachusetts"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Leominster, Massachusetts",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "d9c8e9a0dcb69ff77aaeec71bffdd558268c7a538dde1e5748bbeeaee56f85a4",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402506",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402506",
+      "title": "RN On-Call Weekends Hospice",
+      "url": "https://careers.unitedhealthgroup.com/job/charleston/rn-on-call-weekends-hospice/34088/103226014480",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Charleston",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Charleston, South Carolina",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "ce6b971015d56013d674621f6d86e6f82527f512a06fcf73a5b6daa9709cea14",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402539",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402539",
+      "title": "Physical Therapist Assistant $2500 BONUS",
+      "url": "https://careers.unitedhealthgroup.com/job/kennewick/physical-therapist-assistant-2500-bonus/34088/103226013888",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Kennewick",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Kennewick, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "dc88fff2c0ce117f28b9a65faed1d275559cfe736310e886e54a1bf4eb3713af",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402540",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402540",
+      "title": "Medical Social Worker",
+      "url": "https://careers.unitedhealthgroup.com/job/portland/medical-social-worker/34088/103226013504",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Portland",
+          "state": "Maine"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Portland, Maine",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "6e0edf9c82c77bce6fbc185ee2d2398e59d408cd93625c16feb6dfa793009408",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -1578,58 +3150,44 @@
   ],
   "automation": {
     "schemaVersion": 1,
-    "attemptedAt": "2026-11-13T14:51:43.808988+00:00",
+    "attemptedAt": "2026-11-13T14:55:40.802630+00:00",
     "coverage": "Bounded pilot: at most 100 tracked active US postings per employer; up to 20 new candidates per employer per run. Not a complete feed.",
     "sources": {
       "boeing": {
-        "discovered": 1146,
-        "checked": 28,
-        "added": 8,
-        "changed": 8,
+        "discovered": 1179,
+        "checked": 36,
+        "added": 18,
+        "changed": 16,
         "closed": 0,
-        "skipped": 8,
-        "errors": [
-          {
-            "url": "https://jobs.boeing.com/job/australia/head-of-supply-chain-management/185/103194505200",
-            "error": "Missing or ambiguous matching JobPosting data"
-          },
-          {
-            "url": "https://jobs.boeing.com/job/brisbane/electronic-systems-design-engineer/185/103194505168",
-            "error": "Missing or ambiguous matching JobPosting data"
-          },
-          {
-            "url": "https://jobs.boeing.com/job/brisbane/software-engineer/185/103194505136",
-            "error": "Missing or ambiguous matching JobPosting data"
-          },
-          {
-            "url": "https://jobs.boeing.com/job/amberley/comsec-account-manager-boeing-defence-australia/185/103194505024",
-            "error": "Missing or ambiguous matching JobPosting data"
-          }
-        ],
-        "activeTracked": 16,
-        "lastSuccessfulAt": null
+        "skipped": 2,
+        "warnings": [],
+        "errors": [],
+        "activeTracked": 34,
+        "lastSuccessfulAt": "2026-11-13T14:55:40.802630+00:00"
       },
       "citigroup": {
         "discovered": 3110,
         "checked": 30,
-        "added": 0,
+        "added": 3,
         "changed": 10,
-        "closed": 0,
-        "skipped": 19,
+        "closed": 2,
+        "skipped": 16,
+        "warnings": [],
         "errors": [],
-        "activeTracked": 10,
-        "lastSuccessfulAt": "2026-11-13T14:51:43.808988+00:00"
+        "activeTracked": 11,
+        "lastSuccessfulAt": "2026-11-13T14:55:40.802630+00:00"
       },
       "unitedhealth-group": {
         "discovered": 6526,
-        "checked": 24,
-        "added": 8,
-        "changed": 4,
+        "checked": 32,
+        "added": 20,
+        "changed": 12,
         "closed": 0,
-        "skipped": 12,
+        "skipped": 0,
+        "warnings": [],
         "errors": [],
-        "activeTracked": 12,
-        "lastSuccessfulAt": "2026-11-13T14:51:43.808988+00:00"
+        "activeTracked": 32,
+        "lastSuccessfulAt": "2026-11-13T14:55:40.802630+00:00"
       }
     }
   }
