@@ -7,6 +7,18 @@ const data=JSON.parse(await readFile(new URL('./fixtures/reviewed-jobs.json',imp
 const jobs=validateJobs(data,companies),today='2026-11-13';
 const filters=extra=>({...readJobFilters(''),...extra});
 
+test('publication date window is independent of last successful check date',()=>{
+  const j={...jobs[0],reviewedAt:today,closesAt:null};
+  assert.ok(isCurrent({...j,postedAt:'2026-10-30'},today));
+  for(const postedAt of ['2026-10-29','2026-10-23','2026-11-14',null])assert.equal(isCurrent({...j,postedAt},today),false);
+});
+
+test('national remote role with published salary and required travel filters correctly',()=>{
+  const j={...jobs[0],companyName:'UnitedHealth Group',companyId:'unitedhealth-group',arrangement:'remote',remoteScope:'nationwide',eligibleStates:[],travelRequired:true,salary:{min:112700,max:193200,period:'year',currency:'USD',scopeStates:[]}};
+  assert.equal(filterJobs([j],filters({state:'Florida',arrangement:'remote',pay:'year:100000',travel:'include'}),today).length,1);
+  assert.equal(filterJobs([j],filters({state:'Florida',arrangement:'remote',pay:'year:100000',travel:'exclude'}),today).length,0);
+});
+
 test('published pay text remains visible without inventing a numeric pay period',()=>{
   const j={...jobs[0],salary:null,publishedPay:{text:'Primary-location salary range: $170,000 - $300,000',scopeStates:['New York'],note:'Other locations may differ.'}};
   assert.equal(salaryText(j),j.publishedPay.text);assert.equal(matchesPay(j,'year:100000'),false);

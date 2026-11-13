@@ -149,7 +149,7 @@ class CollectorTests(unittest.TestCase):
 
     def test_description_deadline_and_employer_remote_statement(self):
         j=c.normalize_posting(body(description="You'll enjoy the flexibility to work remotely * from anywhere within the U.S. Applications for this position will be accepted until Nov. 12, 2026"),URL,'boeing',NOW)
-        self.assertEqual(j['arrangement'],'remote');self.assertEqual(j['remoteScope'],'unknown')
+        self.assertEqual(j['arrangement'],'remote');self.assertEqual(j['remoteScope'],'nationwide')
         self.assertEqual(j['status'],'closed');self.assertEqual(j['closesAt'],'2026-11-12')
 
     def test_closed_job_can_reopen_on_positive_posting(self):
@@ -213,6 +213,32 @@ class CollectorTests(unittest.TestCase):
         text='Primary Location:\n480 WASHINGTON BOULEVARD JERSEY CITY\nPrimary Location Full Time Salary Range:\n$250,000.00 - $500,000.00'
         salary,published=c.extract_published_pay(text,locations,'citigroup')
         self.assertEqual(published['scopeStates'],['New Jersey'])
+
+    def test_reported_uhg_wording_extracts_pay_travel_and_national_remote(self):
+        description="<p>You'll enjoy the flexibility to telecommute* from anywhere within the U.S.</p><p>This position is full-time (40 hours per week).</p><p>Must live in a location that can receive an approved internet connection.</p><p>The salary for this role will range from $112,700 - $193,200 annually based on full-time employment.</p>"
+        j=c.normalize_posting(body(description=description)+'<div>Travel: Yes, 50 % of the Time</div>',URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'remote');self.assertEqual(j['remoteScope'],'nationwide')
+        self.assertEqual(j['salary']['min'],112700);self.assertEqual(j['salary']['max'],193200)
+        self.assertEqual(j['salary']['period'],'year');self.assertEqual(j['salary']['scopeStates'],[])
+        self.assertTrue(j['travelRequired']);self.assertIn('50',j['travelNote'])
+        self.assertEqual(j['employmentType'],'Full-time')
+
+    def test_nationwide_phrase_with_actual_residency_restriction_stays_unknown(self):
+        text="<p>You'll enjoy the flexibility to work remotely from anywhere within the U.S.</p><p>Must reside in California.</p>"
+        j=c.normalize_posting(body(description=text),URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'remote');self.assertEqual(j['remoteScope'],'unknown')
+
+    def test_posting_window_exact_boundary_and_unknown_dates(self):
+        for posted,expected in [('2026-10-30',True),('2026-10-29',False),('2026-11-14',False),(None,False)]:
+            self.assertEqual(c.recent_posting({'postedAt':posted},NOW),expected)
+
+    def test_old_posting_is_not_rejuvenated_by_successful_fetch(self):
+        out,state,r=c.reconcile('boeing',[],{}, {'12345':URL},lambda u:(200,body(datePosted='2026-10-23')),NOW)
+        self.assertEqual(out,[]);self.assertEqual(r['outsidePostingWindow'],1);self.assertFalse(r['errors'])
+        old=c.normalize_posting(body(datePosted='2026-10-23'),URL,'boeing',NOW)
+        fetch=Mock(return_value=(200,body()))
+        out,state,r=c.reconcile('boeing',[old],{}, {},fetch,NOW)
+        self.assertEqual(out,[]);fetch.assert_not_called()
 
 
 if __name__=='__main__': unittest.main()

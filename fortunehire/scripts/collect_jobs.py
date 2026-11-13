@@ -26,6 +26,7 @@ SOURCES = {
     'unitedhealth-group': ('careers.unitedhealthgroup.com', 'Health Care'),
 }
 UA = 'FortuneHirePilot/0.1 (+https://fortunehire.netlify.app/)'
+POSTING_MAX_AGE_DAYS = 14
 STATES = dict(zip(
     'AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split(),
     'Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|District of Columbia|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming'.split('|')))
@@ -97,12 +98,20 @@ def date_only(value):
     except ValueError: return None
 
 
+def recent_posting(job, now):
+    posted=date_only(job.get('postedAt'))
+    if not posted: return False
+    today=now.astimezone(ZoneInfo('America/New_York')).date()
+    age=(today-datetime.strptime(posted,'%Y-%m-%d').date()).days
+    return 0<=age<=POSTING_MAX_AGE_DAYS
+
+
 MONEY = r'\$\s*\d[\d,]*(?:\.\d{1,2})?'
 PAY_UNIT = r'(?:\s*(?:/\s*(?:hr|hour|yr|year)|per\s+(?:hour|year))\.?)?'
 PAY_RANGE = re.compile('('+MONEY+')'+PAY_UNIT+r'\s*(?:[-\u2013\u2014]|to)\s*('+MONEY+')'+PAY_UNIT, re.I)
 
 
-def extract_published_pay(description, locations, company):
+def extract_published_pay(description, locations, company, nationwide=False):
     """Preserve published ranges even when period/scope cannot support filtering."""
     states = sorted({loc['state'] for loc in locations})
     lines = [re.sub(r'\s+',' ',line).strip() for line in description.splitlines() if line.strip()]
@@ -121,7 +130,7 @@ def extract_published_pay(description, locations, company):
             return None, {'text':'Primary-location salary range: '+'; '.join(bands),'scopeStates':scoped,'note':'Employer range for '+scoped[0]+'. Other locations may differ. Pay period is not specified in this label.'}
     evidence = []
     for i,line in enumerate(lines):
-        if re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay) range for (?:this|the) (?:role|position))\b',line,re.I):
+        if re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',line,re.I):
             context = line
             if not PAY_RANGE.search(context) and i+1<len(lines): context += ' '+lines[i+1]
             if PAY_RANGE.search(context): evidence.append(context)
@@ -137,7 +146,7 @@ def extract_published_pay(description, locations, company):
             if not 0<low<=high: continue
             suffix = ' / hour' if period=='hour' else ' / year' if period=='year' else ''
             if re.search(r'/\s*(?:hr|hour|yr|year)\b|per\s+(?:hour|year)',match[0],re.I): suffix=''
-            anchors=list(re.finditer(r'\b(?:Summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay) range for (?:this|the) (?:role|position))\b',text[:match.start()],re.I))
+            anchors=list(re.finditer(r'\b(?:Summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',text[:match.start()],re.I))
             start=anchors[-1].start() if anchors else match.start()
             label = text[start:match.start()].strip()[-100:]
             records.append((low,high,period,(label+' '+match[0]+suffix).strip()))
@@ -151,9 +160,10 @@ def extract_published_pay(description, locations, company):
         # role-wide statement can be scoped conservatively to listed states.
         mentioned={s for s in STATES.values() if any(re.search(r'\b'+re.escape(s)+r'\b',t,re.I) for t in evidence)}
         if period and states and (not mentioned or mentioned.issubset(set(states))):
-            scope=sorted(mentioned) if mentioned else states
+            scope=sorted(mentioned) if mentioned else [] if nationwide else states
             salary={'min':low,'max':high,'period':period,'currency':'USD','scopeStates':scope}
             published['scopeStates']=scope
+            if nationwide and not mentioned: published['note']='Employer-published range for this U.S. remote role; actual pay may vary by location.'
     if any(r[2] is None for r in records): published['note']+=' Pay period is not specified for every range.'
     return salary,published
 
@@ -196,6 +206,7 @@ def normalize_posting(body, url, company, now):
         state = state_name(loc.get('name'))
         if state and state not in eligible: eligible.append(state)
     arrangement, arrangement_evidence = 'unknown', ''
+    national_remote=re.search(r'You[\u2019\']ll enjoy the flexibility to (?:work remotely|telecommute)\s*\*?\s*from anywhere within the U\.?S\.?',description,re.I)
     labeled = re.search(r'(?:Remote\s+Job|Job\s+Type|Workplace\s+Type|Role\s+Type)\s*:?\s*(Hybrid|On[- ]?site|Remote)\b', page.text, re.I)
     if labeled:
         arrangement = {'hybrid':'hybrid','onsite':'on-site','remote':'remote'}[re.sub(r'[- ]','',labeled[1].lower())]
@@ -205,14 +216,21 @@ def normalize_posting(body, url, company, now):
     else:
         onsite = re.search(r'This position is expected to be 100% on[- ]?site', description, re.I)
         if onsite: arrangement, arrangement_evidence = 'on-site', onsite[0]
-        remote = re.search(r'You[\u2019\']ll enjoy the flexibility to work remotely\s*\*?\s*from anywhere within the U\.?S\.?', description, re.I)
+        remote = national_remote
         if remote: arrangement, arrangement_evidence = 'remote', remote[0]
     # A posted office address is not evidence of remote eligibility.
     if arrangement != 'remote': eligible = []
+    # Generic internet/home-office requirements do not impose state residency.
+    residency_restricted=bool(re.search(r'\bwithin\s+\d+\s+miles\b',description,re.I))
+    state_words='|'.join(re.escape(s) for s in STATES.values())
+    for line in description.splitlines():
+        if re.search(r'\b(?:must|required to|need to)\s+(?:currently\s+)?(?:live|reside|be located|be based)\b|\b(?:limited to|restricted to|excluding|not available in)\b',line,re.I) and re.search(r'\b(?:'+state_words+r')\b',line,re.I): residency_restricted=True
+    remote_scope='states' if eligible else 'nationwide' if arrangement=='remote' and national_remote and not residency_restricted else 'unknown'
     if not locations and not eligible: return None
     travel, travel_evidence = None, ''
-    no_travel = re.search(r'\b(?:Travel\s*(?:Required)?\s*:\s*(?:None|No|0%)|No travel (?:is )?required)\b', description, re.I)
-    yes_travel = re.search(r'\bTravel\s*:\s*(?:Up to\s*)?([1-9]\d?(?:\.\d+)?|100)%[^\n]{0,100}', description, re.I)
+    no_travel = re.search(r'\b(?:Travel\s*(?:Required)?\s*:\s*(?:None|No)(?!\s+more)|No travel (?:is )?required)\b|\bTravel\s*:\s*0\s*%',page.text,re.I)
+    yes_travel = re.search(r'\bTravel\s*:\s*(?:Yes\s*,?\s*)?(?:Up to\s*)?([1-9]\d?(?:\.\d+)?|100)\s*%[^\n]{0,50}',page.text,re.I)
+    if not yes_travel: yes_travel=re.search(r'\b(?:Willing(?:ness)?|Ability|Required)\s+to\s+travel\s+(?:nationally\s+)?(?:up to\s+)?([1-9]\d?(?:\.\d+)?|100)\s*%[^\n]{0,50}',description,re.I)
     if no_travel: travel, travel_evidence = False, no_travel[0]
     elif yes_travel: travel, travel_evidence = True, yes_travel[0]
     employment = 'Not specified'
@@ -222,6 +240,8 @@ def normalize_posting(body, url, company, now):
     if employment == 'Not specified':
         labeled_type = re.search(r'Time\s+Type\s*:\s*(Full[- ]time|Part[- ]time)', page.text, re.I)
         if labeled_type: employment = 'Full-time' if labeled_type[1].lower().startswith('full') else 'Part-time'
+        explicit_type=re.search(r'\bThis\s+(?:position|role|job)\s+is\s+(?:a\s+)?(full[- ]time|part[- ]time)\b',description,re.I)
+        if explicit_type: employment='Full-time' if explicit_type[1].lower().startswith('full') else 'Part-time'
     # Pay from descriptions can have location-specific ranges. Do not guess scope.
     salary, salary_evidence = None, ''
     base = source.get('baseSalary') or {}
@@ -233,7 +253,7 @@ def normalize_posting(body, url, company, now):
     if base.get('currency') == 'USD' and period and all(isinstance(v,(float,int)) and not isinstance(v,bool) and v>0 for v in [low,high]) and high>=low and len({l['state'] for l in locations})==1:
         salary = {'min':low,'max':high,'period':period,'currency':'USD','scopeStates':[locations[0]['state']]}
         salary_evidence = 'JobPosting.baseSalary; single published state'
-    text_salary, published_pay = extract_published_pay(description,locations,company)
+    text_salary, published_pay = extract_published_pay(description,locations,company,nationwide=remote_scope=='nationwide')
     if salary is None and text_salary:
         salary=text_salary
         salary_evidence='Explicit employer pay text with stated period; scoped to listed or explicitly named states'
@@ -255,8 +275,8 @@ def normalize_posting(body, url, company, now):
     return {
         'id':company+'-'+key, 'companyId':company, 'requisitionId':req, 'title':title, 'url':url,
         'arrangement':arrangement, 'locations':locations,
-        'remoteScope':'states' if eligible else 'unknown', 'eligibleStates':eligible,
-        'locationNote':'; '.join(l['city']+', '+l['state'] for l in locations) or 'Employer specifies eligible states: '+', '.join(eligible),
+        'remoteScope':remote_scope, 'eligibleStates':eligible,
+        'locationNote':('Remote within the U.S. · Employer-listed locations: ' if remote_scope=='nationwide' else '')+('; '.join(l['city']+', '+l['state'] for l in locations) or 'Employer specifies eligible states: '+', '.join(eligible)),
         'employmentType':employment, 'salary':salary,
         'publishedPay':published_pay,
         'salaryNote':published_pay['note'] if published_pay else 'Structured employer pay for the listed state.' if salary else 'Pay or geographic scope not verified automatically. See employer posting.',
@@ -265,7 +285,7 @@ def normalize_posting(body, url, company, now):
         'reviewedAt':today, 'status':'closed' if deadline and deadline<today else 'reviewed', 'sector':sector,
         'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' '+deadline_note if deadline_note else ''),
         'checkedAt':now.isoformat(), 'collectionMethod':'official-jobposting-jsonld',
-        'sourceHash':hashlib.sha256(json.dumps({'structured':source,'arrangement':arrangement_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
+        'sourceHash':hashlib.sha256(json.dumps({'structured':source,'arrangement':arrangement_evidence,'remoteScope':remote_scope,'travel':travel_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
         'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note},
     }
 
@@ -333,21 +353,21 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
     """Never close by absence from a sitemap or partial crawl."""
     host = SOURCES[company][0]
     previous = [j for j in old_jobs if j['companyId']==company]
-    by_id = {j['id']:copy.deepcopy(j) for j in previous}
+    by_id = {j['id']:copy.deepcopy(j) for j in previous if recent_posting(j,now)}
     old_urls = {j['url'].rsplit('/',1)[-1]:j for j in previous}
     source_state = copy.deepcopy(state)
     rejected = source_state.setdefault('rejected', {})
     quarantined = {k:v for k,v in source_state.setdefault('quarantined',{}).items() if (now-datetime.fromisoformat(v)).total_seconds()<86400}
     source_state['quarantined']=quarantined
     missing = source_state.setdefault('missing', {})
-    report = {'discovered':len(discovered),'checked':0,'added':0,'changed':0,'closed':0,'skipped':0,'warnings':[],'errors':[]}
-    active = [j for j in previous if j['status']!='closed']
+    report = {'discovered':len(discovered),'checked':0,'added':0,'changed':0,'closed':0,'skipped':0,'outsidePostingWindow':len(previous)-len(by_id),'warnings':[],'errors':[]}
+    active = [j for j in previous if j['status']!='closed' and recent_posting(j,now)]
     # Existing records are checked even when sitemap discovery stops mentioning them.
-    queue = [(discovered.get(k,j['url']),j) for k,j in old_urls.items() if j['status']!='closed']
+    queue = [(discovered.get(k,j['url']),j) for k,j in old_urls.items() if j['status']!='closed' and recent_posting(j,now)]
     room = max(0, cap-len(active))
     candidates = [(k,u) for k,u in discovered.items() if k not in old_urls and k not in rejected and k not in quarantined]
     candidates.sort(key=lambda pair:int(pair[0]), reverse=True)
-    reopen = [(discovered[k],j) for k,j in old_urls.items() if j['status']=='closed' and k in discovered]
+    reopen = [(discovered[k],j) for k,j in old_urls.items() if j['status']=='closed' and k in discovered and recent_posting(j,now)]
     queue += (reopen+[(u,None) for k,u in candidates])[:min(max_new,room)]
     closures = []
     for url, old in queue:
@@ -370,6 +390,11 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 continue
             # Requisition identity is stable across title/slug changes.
             if old and old['requisitionId'] != job['requisitionId']: raise ValueError('Requisition identity changed')
+            if not recent_posting(job,now):
+                by_id.pop(job['id'],None)
+                rejected[url.rsplit('/',1)[-1]]=now.isoformat()
+                report['outsidePostingWindow']+=1
+                continue
             missing.pop(job['id'],None)
             existing = by_id.get(job['id'])
             if existing:
@@ -417,7 +442,7 @@ def run(root=ROOT, now=None, max_new=20):
     data = json.loads(path.read_text(encoding='utf-8'))
     state_path = root/'automation/state.json'
     state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {}
-    report = {'schemaVersion':1,'attemptedAt':now.isoformat(),'coverage':'Bounded pilot: at most 100 tracked active US postings per employer; up to 20 new candidates per employer per run. Not a complete feed.','sources':{}}
+    report = {'schemaVersion':1,'attemptedAt':now.isoformat(),'postingWindowDays':POSTING_MAX_AGE_DAYS,'coverage':'U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.','sources':{}}
     jobs = data['jobs']
     successes = 0
     for company,(host,sector) in SOURCES.items():
@@ -427,7 +452,7 @@ def run(root=ROOT, now=None, max_new=20):
             refreshed, source_state, result = reconcile(company,jobs,state.get(company,{}),discovered,client.get,now,max_new=max_new)
             jobs = [j for j in jobs if j['companyId']!=company]+refreshed
             state[company] = source_state
-            if result['checked'] and not result['errors']:
+            if not result['errors']:
                 result['lastSuccessfulAt']=now.isoformat(); successes += 1
             else:
                 result['lastSuccessfulAt']=data.get('automation',{}).get('sources',{}).get(company,{}).get('lastSuccessfulAt')

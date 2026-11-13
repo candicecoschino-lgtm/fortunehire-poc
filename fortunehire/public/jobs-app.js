@@ -37,7 +37,7 @@ function render(sync=true){
   $('coverage').textContent=`${visible.length} jobs · ${new Set(visible.map(j=>j.companyId)).size} employers`;
   const last=[...jobs].map(j=>j.reviewedAt).sort().at(-1);
   const failures=Object.values(collection?.sources||{}).filter(s=>s.errors?.length).length;
-  $('scope-note').textContent=collection?`Automated pilot · Boeing, Citi & UnitedHealth Group · Last posting check ${last?labelDate(last):'unavailable'} · Limited coverage.${failures?' Some employer checks failed; previous check dates are retained.':''}`:`Manually curated starter collection · Last reviewed ${last?labelDate(last):'date unavailable'} · Not a complete job feed.`;
+  $('scope-note').textContent=collection?`Automated pilot · Posted within 14 days · Boeing, Citi & UnitedHealth Group · Last posting check ${last?labelDate(last):'unavailable'} · Limited coverage.${failures?' Some employer checks failed; previous check dates are retained.':''}`:`Starter collection · Posted within 14 days · Last checked ${last?labelDate(last):'date unavailable'} · Not a complete job feed.`;
   $('empty').hidden=matches.length>0;$('pagination').hidden=page.pages<=1;$('previous-page').disabled=page.page<=1;$('next-page').disabled=page.page>=page.pages;$('page-label').textContent=`Page ${page.page} of ${page.pages}`;
   const active=[];for(const key of ['state','arrangement','company','industry','sector','type','pay'])if(f[key]){const control=$(key);active.push(control.options[control.selectedIndex].textContent);}if(f.q.trim())active.push(`Search: ${f.q.trim()}`);if(f.travel==='exclude')active.push('Confirmed travel-required roles excluded');
   $('active-filters').textContent=active.join(' · ');$('active-filters').hidden=!active.length;

@@ -21,7 +21,8 @@ export function serializeJobFilters(f) {
 }
 export function isCurrent(job, today = todayInNewYork()) {
   const age=(Date.parse(today+'T12:00:00Z')-Date.parse(job.reviewedAt+'T12:00:00Z'))/86400000;
-  return job.status==='reviewed' && age>=0 && age<=7 && (!job.closesAt || job.closesAt>=today) && (!job.postedAt || job.postedAt<=today);
+  const postingAge=job.postedAt?(Date.parse(today+'T12:00:00Z')-Date.parse(job.postedAt+'T12:00:00Z'))/86400000:NaN;
+  return job.status==='reviewed' && age>=0 && age<=7 && postingAge>=0 && postingAge<=14 && (!job.closesAt || job.closesAt>=today);
 }
 export function matchesState(job,state) {
   if(!state) return true;
