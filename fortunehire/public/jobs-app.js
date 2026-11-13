@@ -2,7 +2,7 @@ import { JOB_KEYS, US_STATES, ARRANGEMENTS, todayInNewYork, readJobFilters, seri
 const $=id=>document.getElementById(id);
 const e=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const link=(text,url)=>{const a=e('a',text);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;};
-let jobs=[],ready=false,currentPage='1',pending;
+let jobs=[],ready=false,currentPage='1',pending,renderedDay='';
 const labelDate=value=>new Date(value+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
 function card(j,f){
   const a=e('article',undefined,'card job-card');
@@ -28,7 +28,7 @@ function restore(){
 function selected(){return {...Object.fromEntries(JOB_KEYS.filter(k=>!['page','travel'].includes(k)).map(k=>[k,$(k).value])),travel:$('include-travel').checked?'include':'exclude',page:currentPage};}
 function render(sync=true){
   if(!ready)return;
-  const f=selected();const today=todayInNewYork();const visible=jobs.filter(j=>isCurrent(j,today));const matches=filterJobs(jobs,f,today);const page=paginateJobs(matches,currentPage);currentPage=String(page.page);f.page=currentPage;
+  const f=selected();const today=todayInNewYork();renderedDay=today;const visible=jobs.filter(j=>isCurrent(j,today));const matches=filterJobs(jobs,f,today);const page=paginateJobs(matches,currentPage);currentPage=String(page.page);f.page=currentPage;
   $('results').replaceChildren(...page.items.map(j=>card(j,f)));
   $('count').textContent=`${matches.length} matching ${matches.length===1?'job':'jobs'} · ${visible.length} reviewed postings available`;
   $('coverage').textContent=`${visible.length} jobs · ${new Set(visible.map(j=>j.companyId)).size} employers`;
@@ -56,5 +56,8 @@ $('filters').addEventListener('submit',event=>{event.preventDefault();change();}
 for(const k of JOB_KEYS.filter(k=>!['q','travel','page'].includes(k)))$(k).addEventListener('change',change);
 $('include-travel').addEventListener('change',change);$('reset').addEventListener('click',reset);$('empty-reset').addEventListener('click',()=>{reset();$('q').focus();});$('retry').addEventListener('click',load);
 for(const [id,delta]of [['previous-page',-1],['next-page',1]])$(id).addEventListener('click',()=>{currentPage=String(Number(currentPage)+delta);render();$('count').tabIndex=-1;$('count').focus();});
-window.addEventListener('popstate',()=>{if(ready){clearTimeout(pending);restore();render(false);}});document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')render();});setInterval(()=>render(),60000);
+window.addEventListener('popstate',()=>{if(ready){clearTimeout(pending);restore();render(false);}});
+function refreshFreshness(){if(ready&&todayInNewYork()!==renderedDay)render();}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshFreshness();});setInterval(refreshFreshness,60000);
 load();
+
