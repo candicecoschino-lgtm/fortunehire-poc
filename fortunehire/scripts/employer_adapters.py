@@ -71,7 +71,24 @@ def disney(document,url):
         if len(parts)==3:locations.append({'address':{'addressLocality':parts[0],'addressRegion':parts[1],'addressCountry':parts[2]}})
     return {'@type':'JobPosting','identifier':req,'title':title,'url':url,'datePosted':posted,'description':text(description),'jobLocation':locations,'_adapter':'disney-page-metadata'}
 
+def phillips(document,url):
+    def prop(name):
+        node=document.find(itemprop=name)
+        return node['attrs'].get('content') or text(node).strip() if node else None
+    def date(value):
+        try:return datetime.strptime(value or '','%a %b %d %H:%M:%S UTC %Y').date().isoformat()
+        except ValueError:return None
+    title=prop('title');description=prop('description');posted=date(prop('datePosted'))
+    posting_id=url.rstrip('/').rsplit('/',1)[-1]
+    if not title or not description or not posted or not posting_id.isdigit():return None
+    deadlines=[d for d in [date(prop('validThrough'))] if d]
+    for match in re.finditer(r'requisition closing date of\s+(\d{1,2}/\d{1,2}/\d{4})',description,re.I):
+        try:deadlines.append(datetime.strptime(match[1],'%m/%d/%Y').date().isoformat())
+        except ValueError:pass
+    return {'@type':'JobPosting','identifier':posting_id,'_identifierType':'posting-id','url':url,'title':title,'description':description,'datePosted':posted,'validThrough':min(deadlines) if deadlines else None,'jobLocation':{'address':{'addressCountry':prop('addressCountry'),'addressRegion':prop('addressRegion'),'addressLocality':prop('addressLocality')}},'_adapter':'phillips66-public-microdata'}
+
 def extract(company,body,url):
-    if company not in ('walmart','disney'):return None
+    if company not in ('walmart','disney','phillips-66'):return None
     document=Document(body)
-    return walmart(document,url) if company=='walmart' else disney(document,url)
+    if company=='walmart':return walmart(document,url)
+    return disney(document,url) if company=='disney' else phillips(document,url)

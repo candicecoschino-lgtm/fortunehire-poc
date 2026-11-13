@@ -98,4 +98,51 @@ class AdapterTests(unittest.TestCase):
         self.assertEqual(len(c.discover(client)),1)
         self.assertEqual(len(client.discovery_warnings),1)
 
+    def test_reviewed_us_posting_dates_are_not_mistaken_for_missing_dates(self):
+        from test_collector import body
+        for company,host,url in [('cardinal-health','jobs.cardinalhealth.com','https://jobs.cardinalhealth.com/search/jobdetails/test/96685732-a40b-4567-be51-238f2e34272c'),('bank-of-america','careers.bankofamerica.com','https://careers.bankofamerica.com/en-us/job-detail/26042384/test')]:
+            with patch.dict(c.SOURCES,{company:(host,'Test sector')}):
+                job=c.normalize_posting(body(url=url,datePosted='11/13/2026'),url,company,NOW)
+                self.assertEqual(job['postedAt'],'2026-11-13');self.assertTrue(c.recent_posting(job,NOW))
+                old=c.normalize_posting(body(url=url,datePosted='10/21/2026'),url,company,NOW)
+                self.assertFalse(c.recent_posting(old,NOW))
+                invalid=c.normalize_posting(body(url=url,datePosted='13/11/2026'),url,company,NOW)
+                self.assertIsNone(invalid['postedAt'])
+
+    def test_bofa_literal_json_newline_preserves_original_description(self):
+        from test_collector import body
+        host='careers.bankofamerica.com';url='https://'+host+'/en-us/job-detail/26042384/test'
+        document=body(url=url,datePosted='11/13/2026',description='Role Type: Hybrid\nOriginal employer wording.').replace('\\n','\n')
+        with patch.dict(c.SOURCES,{'bank-of-america':(host,'Financials')}):
+            job=c.normalize_posting(document,url,'bank-of-america',NOW)
+            self.assertEqual(job['arrangement'],'hybrid');self.assertEqual(job['postedAt'],'2026-11-13')
+
+    def test_cardinal_tenant_identifier_cannot_merge_different_postings(self):
+        from test_collector import body
+        host='jobs.cardinalhealth.com'
+        urls=['https://'+host+'/search/jobdetails/first/96685732-a40b-4567-be51-238f2e34272c','https://'+host+'/search/jobdetails/second/79f329ae-3a47-4203-a0e8-5b3c0f8615b8']
+        with patch.dict(c.SOURCES,{'cardinal-health':(host,'Health Care')}):
+            jobs=[c.normalize_posting(body(url=url,datePosted='11/13/2026',identifier={'value':'SAME-TENANT-ID'}),url,'cardinal-health',NOW) for url in urls]
+            self.assertNotEqual(jobs[0]['id'],jobs[1]['id'])
+            self.assertTrue(all(j['identifierType']=='posting-id' for j in jobs))
+
+    def test_shared_identifier_conflict_does_not_silently_replace_a_job(self):
+        from test_collector import body
+        urls={'12345':'https://jobs.boeing.com/job/test/first/185/12345','12346':'https://jobs.boeing.com/job/test/second/185/12346'}
+        def fetch(url):return 200,body(url=url,identifier={'value':'REUSED-ID'},title='Synthetic '+url.rsplit('/',1)[-1])
+        jobs,state,report=c.reconcile('boeing',[],{},urls,fetch,NOW,max_new=2)
+        self.assertEqual(len(jobs),1);self.assertEqual(report['added'],1)
+        self.assertEqual(len(report['warnings']),1)
+        self.assertIn('Conflicting employer identifier',report['warnings'][0]['error'])
+
+    def test_phillips_microdata_preserves_dates_location_and_identifier_type(self):
+        host='careers.phillips66.com';url='https://'+host+'/job/Test-Role/1450553100/'
+        document='<meta itemprop="datePosted" content="Fri Nov 13 00:00:00 UTC 2026"><meta itemprop="validThrough" content="Sat Nov 28 06:00:00 UTC 2026"><meta itemprop="addressLocality" content="Beaumont"><meta itemprop="addressRegion" content="TX"><meta itemprop="addressCountry" content="US"><span itemprop="title">Synthetic Mechanical Technician</span><span itemprop="description">This is an on-site role. Apply before the requisition closing date of 11/27/2026.</span>'
+        with patch.dict(c.SOURCES,{'phillips-66':(host,'Energy')}):
+            job=c.normalize_posting(document,url,'phillips-66',NOW)
+            self.assertEqual(job['postedAt'],'2026-11-13');self.assertEqual(job['closesAt'],'2026-11-27')
+            self.assertEqual(job['identifierType'],'posting-id');self.assertEqual(job['requisitionId'],'1450553100')
+            self.assertEqual(job['locations'],[{'city':'Beaumont','state':'Texas'}])
+            with self.assertRaises(ValueError):c.normalize_posting(document.replace('Fri Nov 13 00:00:00 UTC 2026','unknown'),url,'phillips-66',NOW)
+
 if __name__=='__main__':unittest.main()

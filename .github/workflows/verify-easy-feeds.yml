@@ -1,0 +1,44 @@
+name: Verify next easy employer feeds
+on:
+  push:
+    branches: [verify-easy-feeds-20261113]
+    paths: ['.github/workflows/verify-easy-feeds.yml']
+permissions:
+  contents: read
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test reviewed source formats
+        working-directory: fortunehire
+        run: python -m unittest discover -s test -p 'test_*.py'
+      - name: Stage official jobs without writing production
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          c.SOURCES={"cardinal-health":["jobs.cardinalhealth.com","Health Care"],"phillips-66":["careers.phillips66.com","Energy"],"bank-of-america":["careers.bankofamerica.com","Financials"]}
+          c.SOURCES={k:tuple(v) for k,v in c.SOURCES.items()}
+          root=Path('easy-feed-staging')
+          (root/'public/data').mkdir(parents=True,exist_ok=True)
+          (root/'automation').mkdir(exist_ok=True)
+          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'updatedAt':'2026-11-13','jobs':[]})
+          c.run(root,max_new=20)
+          data=json.load(open(root/'public/data/jobs.json'))
+          state=json.load(open(root/'automation/state.json'))
+          for job in data['jobs']:print('EASY_STAGE_JOB',json.dumps(job),flush=True)
+          for key,report in data['automation']['sources'].items():print('EASY_STAGE_SOURCE',json.dumps({'companyId':key,'report':report}),flush=True)
+          for key,report in state.items():print('EASY_STAGE_STATE',json.dumps({'companyId':key,'state':report}),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-easy-employer-postings
+          path: fortunehire/easy-feed-staging/

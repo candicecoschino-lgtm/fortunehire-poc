@@ -229,7 +229,12 @@ def normalize_posting(body, url, company, now):
     candidates = []
     for script in page.scripts:
         try: candidates.extend(postings(json.loads(script)))
-        except (ValueError, TypeError): continue
+        except (ValueError, TypeError):
+            # The reviewed BofA publisher emits literal control characters
+            # inside JSON strings. This accepts those strings without edits.
+            if company=='bank-of-america':
+                try:candidates.extend(postings(json.loads(script,strict=False)))
+                except (ValueError,TypeError):pass
     if not candidates:
         adapted=extract_employer_page(company,body,url)
         if adapted:candidates.append(adapted)
@@ -251,7 +256,11 @@ def normalize_posting(body, url, company, now):
     title = html.unescape(source['title']).strip()
     req = source.get('identifier') or {}
     req = str((req.get('value') or '') if isinstance(req, dict) else (req or '')).strip()
-    identifier_type='requisition'
+    identifier_type=source.get('_identifierType','requisition')
+    if company=='cardinal-health':
+        # Cardinal repeats its tenant identifier across different postings.
+        # The reviewed canonical job URL provides the distinct public ID.
+        req=posting_key(url);identifier_type='posting-id'
     if not req and company=='pepsico' and posting_key(url).isdigit():
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
@@ -402,7 +411,7 @@ def normalize_posting(body, url, company, now):
         salary_evidence='Explicit employer pay text with stated period; scoped to listed or explicitly named states'
     today = now.astimezone(ZoneInfo('America/New_York')).date().isoformat()
     deadline = date_only(source.get('validThrough'))
-    if not deadline and company=='target' and source.get('validThrough'):
+    if not deadline and company in ('target','cardinal-health','bank-of-america') and source.get('validThrough'):
         try: deadline=datetime.strptime(str(source['validThrough']),'%m/%d/%Y').date().isoformat()
         except ValueError: pass
     deadlines = [deadline] if deadline else []
@@ -413,6 +422,9 @@ def normalize_posting(body, url, company, now):
             except ValueError: pass
     deadline = min(deadlines) if deadlines else None
     posted = date_only(source.get('datePosted'))
+    if not posted and company in ('cardinal-health','bank-of-america'):
+        try:posted=datetime.strptime(str(source.get('datePosted','')),'%m/%d/%Y').date().isoformat()
+        except ValueError:pass
     deadline_note = ''
     if deadline and posted and deadline<posted:
         deadline_note = 'Employer deadline '+deadline+' predates its posting date '+posted+'; deadline requires confirmation.'
@@ -593,6 +605,10 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 continue
             missing.pop(job['id'],None)
             existing = by_id.get(job['id'])
+            if existing and old is None and posting_key(existing['url'])!=posting_key(job['url']):
+                report['warnings'].append({'url':url,'error':'Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job.'})
+                source_state.setdefault('quarantined',{})[posting_key(url)]=now.isoformat()
+                continue
             if existing:
                 if existing.get('sourceHash') != job['sourceHash']: report['changed'] += 1
             else: report['added'] += 1
