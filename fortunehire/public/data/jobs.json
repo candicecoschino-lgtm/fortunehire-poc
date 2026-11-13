@@ -37,7 +37,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "0a1942d905319525e0d14ec9a572b32e53e7b68f28bc983904f9dd8c2f0eccc8",
       "evidence": {
@@ -81,7 +81,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "00ecf4690e36b020c0dc1f919947bf26c0b072f57b81c66921a15a69259c378f",
       "evidence": {
@@ -125,7 +125,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "d63941a0c75931ccfa3fb57bc996263adf7ac174c7cd1952b57c16f4bcf858f4",
       "evidence": {
@@ -152,9 +152,23 @@
       "eligibleStates": [],
       "locationNote": "Huntington Beach, California",
       "employmentType": "Not specified",
-      "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "salary": {
+        "min": 24.0,
+        "max": 45.13,
+        "period": "hour",
+        "currency": "USD",
+        "scopeStates": [
+          "California"
+        ]
+      },
+      "publishedPay": {
+        "text": "Summary pay range $24.00/hr - $45.13/hr",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
@@ -163,13 +177,13 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "9cc3a847a077aa9ddfc89ed1c159191c2b39a872a107be3ba62e4b81c097e446",
+      "sourceHash": "295472002f3154943459013c2e3bb9e846cbc723bdf6ad57a5918a27eeb64fd5",
       "evidence": {
         "arrangement": "Role Type Onsite",
         "travel": "",
-        "salary": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
         "deadline": ""
       }
     },
@@ -207,7 +221,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "a9c466f7132731d4beff5ead9cf40abb09d74961e5a062e15fc4a85d2530f589",
       "evidence": {
@@ -251,7 +265,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "bb5035cf6d09217f13c0469785a09aee835ab6f16a819e264c4f18b4b0d7912e",
       "evidence": {
@@ -356,7 +370,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "507154a29e54fb0d14c271ed7ea9d915b820978f687277f69a6fd03343ea7f6c",
       "evidence": {
@@ -400,7 +414,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "f01261ea377a3d798c570d8e437191a6818a6fedf4a65b396a776a4be29f92b4",
       "evidence": {
@@ -438,7 +452,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "445acfb5d0aeb27d754ecb65797d3646711f1817e41ddd15c694af20c2b09bea",
       "evidence": {
@@ -482,7 +496,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "204ffde43855012666f369d7ebe82f08f4904b4d0a6c7b919d92d6f780e83566",
       "evidence": {
@@ -589,7 +603,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b3591ab49d5ebc3cb51d0b1687ae1bd0b55254a206625d6e49f08b2f5f9c95a5",
       "evidence": {
@@ -637,7 +651,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "43fb035d65f9ae5bf170846f61f477063330583be7305a935921d6c8faa4cf21",
       "evidence": {
@@ -675,7 +689,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b7dcb50a07de77b090c62fb0f54e5ee7284f511d0ccca624352b6da2b35d18ad",
       "evidence": {
@@ -719,7 +733,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "15e8836d4db6e113e579834cbc3e0c6b595a9f6ebbc9756e66c3fae8cfb29d49",
       "evidence": {
@@ -763,9 +777,9 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "d8ee18201cd8424b76fa691169f4c373fd92500994c000ac137548f98825e2db",
+      "sourceHash": "cc0242e82047c3082a8e0329061f26c9d4a1e3fcbcd181e0e14e5ef4707a747f",
       "evidence": {
         "arrangement": "Role Type Onsite",
         "travel": "",
@@ -807,7 +821,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "ce9360d7a8acea4029412a2661a867ad093782f226d5cf658155bb64c453c2d1",
       "evidence": {
@@ -851,7 +865,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "3991d90e1873556fa9d44e33c1a7ed0d7063f911d64da775bce184047c7bfb7f",
       "evidence": {
@@ -895,7 +909,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "3e968311604ba96e0b77f2fa5e8df9c272f129a738fb0168e1388846ae0c71cd",
       "evidence": {
@@ -939,7 +953,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "cb6f536537920d9bada076d505fada566f39c0c73cea9560f319db291288714d",
       "evidence": {
@@ -983,7 +997,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "45e0cd055a885668007809259548d6588749c7c5b567042472d01dfc585edb49",
       "evidence": {
@@ -1027,7 +1041,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "dc1a21ea98e36fa1c05b557c0bb2c4d257fa68a42218123cf542c3d82b5242ec",
       "evidence": {
@@ -1071,7 +1085,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "4f7eac6b8bb2e1f89539c615c8486b5f36c96739394bd6a384f7ce66d55f869d",
       "evidence": {
@@ -1115,7 +1129,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "f63dad0ee083316d8f7db543cd091ce64ddfb1e0fe363e4bf05edfca5f28c342",
       "evidence": {
@@ -1159,7 +1173,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "6da1c9500e6c5af2ed67720e113f318eb01654b7c8f131d6a527b3c5f3e3b283",
       "evidence": {
@@ -1282,7 +1296,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "c85c5875840ba28e2e66164775b8d0f0dcf2fb6e086801154b61aaed3b85359a",
       "evidence": {
@@ -1326,7 +1340,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "1f7b110e5e799c23c10aeec3f7f2ffd0fb93a757dc670f7bd0788f96859faa24",
       "evidence": {
@@ -1374,7 +1388,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b79c00fb6a8219c9ee7b237903f16b8ec773dac3bdbf83dd262dcd77907d3a11",
       "evidence": {
@@ -1418,7 +1432,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "28655d3167a998db2c96cd20478cedd70ea30f42011964e8a387e65a56977ed0",
       "evidence": {
@@ -1474,7 +1488,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "3183b6386131fce40b8cbc31cde3fd5783ebe049b40242687d96edbe9a94f514",
       "evidence": {
@@ -1518,7 +1532,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "d98e2e99d6fdf0d6b5ffb9522f13d92e22c411af214e9228b6da35111e9bd189",
       "evidence": {
@@ -1640,7 +1654,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "f0a4799056c2e39da3d2462ff1e5048eeb6e57dba00d1efdaf5806c8abef4d8e",
       "evidence": {
@@ -1713,7 +1727,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "1ad938e9f1b95d99a843e6ed588e78e627381b023d9b42e1396b0a3210d3b6cd",
       "evidence": {
@@ -1757,7 +1771,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b1741a3a90643348afd244da40969d614f183371118bf4a7598bdece3fe172cc",
       "evidence": {
@@ -1824,7 +1838,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b4648bfab609b82b3198cab97bf1ff85e21adb4b9e254cc16a91abb7051dfdde",
       "evidence": {
@@ -1896,7 +1910,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "295d138ba62a13efb5d164c350d14a714a4a111694b677c1758728afbcbf4d5b",
       "evidence": {
@@ -1940,7 +1954,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "1778a56e85aa4697163aba5ef6829c8244d34a14f387af57070a306404787b0d",
       "evidence": {
@@ -1984,7 +1998,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "2dda6b58e505de4c6f62dc006f3031743608f2a96ba80969d1b2eeb6ec9ee697",
       "evidence": {
@@ -2028,7 +2042,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "d5c6334faf2134579cafdf80c61628f138a83b56af88b6c03957f5ec50764511",
       "evidence": {
@@ -2072,7 +2086,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "814aad2c2d2e17010e02745aa67bbf4147ae48950484b2c5b49460427409de69",
       "evidence": {
@@ -2120,7 +2134,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "3988880351c240193c5df5a9c3cafb5437b753317a49fae8c80cd7df14e4e161",
       "evidence": {
@@ -2164,7 +2178,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "0ab2551ad814d4a981c743e985b3c20f95cddae71f26478936d05a9025c19984",
       "evidence": {
@@ -2213,7 +2227,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "87f9d524679350f116db40353d14e7bb415da42b6ed0a09fcbd39c619a29bfd5",
       "evidence": {
@@ -2251,7 +2265,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "00615fd27c4acded531fcd461f38e88e993cfe91a298bd5bdfa64ae91acedd79",
       "evidence": {
@@ -2295,7 +2309,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "5bb531114e334ccf0f9ee545f23e8c317fce7c2fecdff794f4b8160ee1770392",
       "evidence": {
@@ -2339,7 +2353,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "391ac06d8d49fa6b8df63bed4177eab9c85b42420a7b7c8f1d4900997f0a43c6",
       "evidence": {
@@ -2383,7 +2397,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "ea6f8f0ab8bc53fd7b775b5679dea7de0f3f44b5dc6c4e6c65d241b550f20331",
       "evidence": {
@@ -2427,7 +2441,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "2765e5e5336e05d38e96d633c88795182f496b2609117ae1c32825b3d20d2d09",
       "evidence": {
@@ -2471,7 +2485,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "4f55193743f49d22d5a04d4f861710648977ce3f97d3b754a911a9ceb3a00f82",
       "evidence": {
@@ -2515,7 +2529,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "c6fd76408a5159ab10af67f1ad2f36e8d2d178237de279ef5feefafb0da3fbd5",
       "evidence": {
@@ -2559,7 +2573,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "fd13711c59e17953eef2c839943904573cf064a55686bff2ca2594af1ee5dfd5",
       "evidence": {
@@ -2603,7 +2617,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "7b05ac066c7884cfbc2503f3ee2fecd742d1648c6c1b80fff81bd30fb5e44a11",
       "evidence": {
@@ -2647,7 +2661,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "da4763a4846653e3a95965a1192b4560fb26412a13994c19abf7565b7a9d78e2",
       "evidence": {
@@ -2691,7 +2705,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "2f64accfca246c9477ea1595129562d9b2840a24882360ec152be031b0d53e14",
       "evidence": {
@@ -2735,7 +2749,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "2077cb7ac9d84d344d8a74f9ba246ce21a1ccf61ec730a023dd65fd7603e9082",
       "evidence": {
@@ -2779,7 +2793,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "5a52ed2a601f0287b07059e7e57f9ad2ace275565ff4f96cadcb0d823d68537e",
       "evidence": {
@@ -2823,7 +2837,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "a0550253ef9b52f72ad68c50b29740c68fc8e746b2e5f7c48f452af3415719b5",
       "evidence": {
@@ -2867,7 +2881,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "e618c42687152194f2c88cf7558a338d0f4515abbdefe779e3dfadc4d0eff1c4",
       "evidence": {
@@ -2911,7 +2925,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "061b62ac43606404cb0513660ae7f35b527aea2b18316d350ffb220a29e6044d",
       "evidence": {
@@ -2959,7 +2973,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "ac68e771f406b4ded256963a71a4d9a1467a10a635af0880576982fb90b98d55",
       "evidence": {
@@ -3003,7 +3017,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "f411c64d2627ef68fa69f9194618dcd8e3b80d68d9b45eec2348c6d4b74acb27",
       "evidence": {
@@ -3043,8 +3057,14 @@
       "locationNote": "Jersey City, New Jersey; Tampa, Florida; Irving, Texas; Jacksonville, Florida",
       "employmentType": "Full-time",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "Primary-location salary range: $250,000.00 - $500,000.00",
+        "scopeStates": [
+          "New Jersey"
+        ],
+        "note": "Employer range for New Jersey. Other locations may differ. Pay period is not specified in this label."
+      },
+      "salaryNote": "Employer range for New Jersey. Other locations may differ. Pay period is not specified in this label.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-13",
@@ -3053,9 +3073,9 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "e451a003a399742e84f5e7cdbcba0d2c25169953d18ca1fb061f52a215ec36d1",
+      "sourceHash": "235ceb613f79b9c5d185f74445712f17ccf9dad80986b5a523916b7bd204f068",
       "evidence": {
         "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
@@ -3097,7 +3117,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "432687a922b0821ff55d927eb10f40a7822fbd2f27afc7b853abf8cadb9b3087",
       "evidence": {
@@ -3141,7 +3161,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "8172a9c522bb803a1079d3de577b65e19a726b55f279a93cca8ebb32ade055f3",
       "evidence": {
@@ -3185,7 +3205,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "d98021a90f80d13ef53654120eb9bf7088318e28b908e3e45b19da41ce56f586",
       "evidence": {
@@ -3229,7 +3249,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "0122ae0b1bafc4d1786360e808ab63a8f2f77bc2f840f2936215ae7bae33a7bb",
       "evidence": {
@@ -3273,7 +3293,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "8350c4d9f1bdfad07b7b51ea8cb919c8d7b33b01307998fcdb08b81a4d1ae86b",
       "evidence": {
@@ -3317,7 +3337,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b1452fe80efb284736ee753b7425d1b52895d3fd608918ddb012e1dd5fc61a67",
       "evidence": {
@@ -3361,7 +3381,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "15ff4b2869861d55fff3225d9a825515af48b7a2d0613939f8772a6170291032",
       "evidence": {
@@ -3405,7 +3425,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "90beadd8c6b0f0514b64c363efd448b5d7613005ba2596993e6b04e16ff2c487",
       "evidence": {
@@ -3449,7 +3469,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "0e44dfea4b3e6a680136c84064e042357800d942b755f12bc9c3880d5016eedd",
       "evidence": {
@@ -3493,7 +3513,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "cab17e1a2c42957607123b76ad33f0c3fa42d458af4dbdb6b7f650bd5c045ca0",
       "evidence": {
@@ -3537,7 +3557,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "d2bd2464a159e4c5a75666cec8f351de72abe3ecdc7e8435575686616261a651",
       "evidence": {
@@ -3581,7 +3601,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "523a65c43334a22a13d9e7982385846e99cf302e451fcc7b2aab7069b4983d58",
       "evidence": {
@@ -3625,7 +3645,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "253e6aea89c36472de492ff2137a7853a3ecffe11ca9fdd375a7b09a3414263b",
       "evidence": {
@@ -3673,7 +3693,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer deadline 2026-10-08 predates its posting date 2026-11-11; deadline requires confirmation.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "8513b9398b92b079ccc50339f2b5266323e245aa2f1d4baa7c2206c82c812b5e",
       "evidence": {
@@ -3717,7 +3737,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer deadline 2026-10-05 predates its posting date 2026-11-11; deadline requires confirmation.",
-      "checkedAt": "2026-11-13T15:09:35.710620+00:00",
+      "checkedAt": "2026-11-13T15:16:31.253840+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "18663418f675282be79f4fbfee6f07bc58965fad9b23504dc013cddb2d9adfb4",
       "evidence": {
@@ -6826,46 +6846,41 @@
   ],
   "automation": {
     "schemaVersion": 1,
-    "attemptedAt": "2026-11-13T15:09:35.710620+00:00",
+    "attemptedAt": "2026-11-13T15:16:31.253840+00:00",
     "coverage": "Bounded pilot: at most 100 tracked active US postings per employer; up to 20 new candidates per employer per run. Not a complete feed.",
     "sources": {
       "boeing": {
-        "discovered": 1146,
+        "discovered": 1092,
         "checked": 45,
         "added": 0,
-        "changed": 45,
+        "changed": 2,
         "closed": 0,
         "skipped": 0,
         "warnings": [],
         "errors": [],
         "activeTracked": 45,
-        "pendingClosureChecks": 0,
-        "lastSuccessfulAt": "2026-11-13T15:09:35.710620+00:00"
+        "pendingClosureChecks": 1,
+        "lastSuccessfulAt": "2026-11-13T15:16:31.253840+00:00"
       },
       "citigroup": {
         "discovered": 3110,
         "checked": 32,
         "added": 0,
-        "changed": 32,
+        "changed": 1,
         "closed": 0,
         "skipped": 0,
         "warnings": [],
         "errors": [],
         "activeTracked": 32,
         "pendingClosureChecks": 0,
-        "lastSuccessfulAt": "2026-11-13T15:09:35.710620+00:00"
+        "lastSuccessfulAt": "2026-11-13T15:16:31.253840+00:00"
       },
       "unitedhealth-group": {
-        "discovered": 6538,
-        "checked": 69,
-        "added": 0,
-        "changed": 69,
-        "closed": 0,
-        "skipped": 0,
-        "warnings": [],
-        "errors": [],
-        "activeTracked": 69,
-        "pendingClosureChecks": 0,
+        "errors": [
+          {
+            "error": "IncompleteRead(284929 bytes read)"
+          }
+        ],
         "lastSuccessfulAt": "2026-11-13T15:09:35.710620+00:00"
       }
     }
