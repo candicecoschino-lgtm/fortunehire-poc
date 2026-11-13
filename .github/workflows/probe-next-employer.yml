@@ -15,23 +15,28 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Read official Target sample and discovery document
+      - name: Inspect official pages without publishing test data
         working-directory: fortunehire
         run: |
           python - <<'PY'
           import sys,json
           sys.path.insert(0,'scripts')
           import collect_jobs as c
-          try:
-              client=c.Client('corporate.target.com')
-              maps=client.robots.site_maps() or ['https://corporate.target.com/sitemap.xml']
-              status,body=client.get(maps[0])
-              print('DISCOVERY',status,len(body))
-              url='https://corporate.target.com/jobs/w06/25/senior-product-designer,-wild-fable-dresses-woven-tops'
-              status,body=client.get(url)
-              page=c.Page(body)
-              jobs=[j for text in page.scripts for j in c.postings(json.loads(text))]
-              print('TARGET_PROBE',json.dumps({'status':status,'postings':len(jobs),'date':jobs[0].get('datePosted') if jobs else None}))
-          except Exception as error:
-              print('TARGET_PROBE',json.dumps({'error':str(error)}))
+          sources=[
+              ('target','corporate.target.com','https://corporate.target.com/jobs/w06/25/senior-product-designer,-wild-fable-dresses-woven-tops'),
+              ('general-motors','search-careers.gm.com','https://search-careers.gm.com/en/jobs/jr-202601927/manufacturing-group-leader-maintenance-fort-wayne/'),
+              ('centene','jobs.centene.com','https://jobs.centene.com/us/en/jobs/1660343/program-specialist-ii/')
+          ]
+          for company,host,url in sources:
+              try:
+                  client=c.Client(host)
+                  maps=client.robots.site_maps() or ['https://'+host+'/sitemap.xml']
+                  status,body=client.get(maps[0])
+                  discovery={'status':status,'bytes':len(body)}
+                  status,body=client.get(url)
+                  page=c.Page(body)
+                  jobs=[j for text in page.scripts for j in c.postings(json.loads(text))]
+                  print('EMPLOYER_PROBE',json.dumps({'company':company,'discovery':discovery,'status':status,'postings':len(jobs)}))
+              except Exception as error:
+                  print('EMPLOYER_PROBE',json.dumps({'company':company,'error':str(error)}))
           PY
