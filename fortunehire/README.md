@@ -2,7 +2,7 @@
 
 **Directory branding:** the company directory uses locally hosted official-site brand icons for all 52 employers. Sources and review dates are recorded in `public/data/company-logos.json` and linked from each card. Icons load as they come into view; company initials remain the fallback if a file is unavailable. The directory makes no external logo-service requests. This visual update does not change job collection.
 
-**Automation pilot:** 15 reviewed employers have enabled first-party sitemap/JobPosting connections, with twice-daily GitHub checks and bounded U.S. collection. See [FEED-EXPANSION.md](FEED-EXPANSION.md) for the 52-employer audit and [AUTOMATION.md](AUTOMATION.md) for limits and lifecycle behavior. The company directory and connected job coverage are separate.
+**Automation pilot:** 14 reviewed employers have enabled first-party sitemap/JobPosting connections, with twice-daily GitHub checks and bounded U.S. collection. See [FEED-EXPANSION.md](FEED-EXPANSION.md) for the 52-employer audit and [AUTOMATION.md](AUTOMATION.md) for limits and lifecycle behavior. The company directory and connected job coverage are separate.
 
 **Current product:** the main page is now an individual-job board with State and Work arrangement first, plus company, industry, sector, job type, posted minimum pay and travel filtering. See [JOB-BOARD-SPEC.md](JOB-BOARD-SPEC.md) for current behavior and [JOB-DATA-REVIEW.md](JOB-DATA-REVIEW.md) for coverage, sourcing and maintenance. The 52-company directory is preserved at `public/companies.html`. The directory-specific notes below describe that secondary page.
 

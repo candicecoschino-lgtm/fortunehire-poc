@@ -1,3 +1,5 @@
+> Current coverage: 14 employers now use automated first-party collection. See FEED-EXPANSION.md and AUTOMATION.md. The original 22 manually reviewed roles described below are historical regression fixtures, not the current production dataset.
+
 # Job data review — November 13, 2026
 
 Historical review of the original 22-posting starter collection. The current automated pilot supersedes this manual maintenance process; see [AUTOMATION.md](AUTOMATION.md), the dated records in `public/data/jobs.json`, and `public/data/collection-status.json` for current coverage and check results.
@@ -28,4 +30,5 @@ To add another employer, extend the employer-specific official-host allowlist in
 ## Validation
 
 19 automated checks cover the existing company directory and new job board, including state/arrangement intersections, actual remote eligibility, unknown states, separate pay periods and pay geography, unknown travel, expired/stale records, date boundaries, query URLs, pagination and unsafe/wrong-employer links. Browser QA additionally checks representative official postings, Florida combinations, pay thresholds, URL reload, pagination, keyboard disclosures, mobile layout and the retained company page.
+
 

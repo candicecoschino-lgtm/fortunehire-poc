@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps and individual official JobPosting structured data for the 15 reviewed employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call the excluded paginated search endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps and individual official JobPosting structured data for the 14 reviewed employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call the excluded paginated search endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 

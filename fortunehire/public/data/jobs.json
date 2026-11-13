@@ -1071,7 +1071,7 @@
       "locationNote": "Huntington Beach, California",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
+        "min": 24,
         "max": 45.13,
         "period": "hour",
         "currency": "USD",
@@ -11110,226 +11110,6 @@
       }
     },
     {
-      "id": "rtx-01888447",
-      "companyId": "rtx",
-      "requisitionId": "01888447",
-      "title": "HSE ESTO Diffuser/Combustor Project Lead (P2)",
-      "url": "https://careers.rtx.com/ca/fr/job/01888447/HSE-ESTO-Diffuser-Combustor-Project-Lead-P2",
-      "arrangement": "on-site",
-      "locations": [
-        {
-          "city": "east hartford",
-          "state": "Connecticut"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "east hartford, Connecticut",
-      "employmentType": "Not specified",
-      "salary": null,
-      "publishedPay": {
-        "text": "The salary range for this role is 68,900 USD - 131,100 USD. The salary range provided is a good faith estimate representative of all experience levels. RTX considers several factors when extending an offer, including but not limited to, the role, function and associated responsibilities, a candidate’s work experience, location, education/training, and key skills.",
-        "scopeStates": [
-          "Connecticut"
-        ],
-        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
-      },
-      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
-      "travelRequired": null,
-      "travelNote": "Travel not verified automatically.",
-      "postedAt": "2026-11-12",
-      "closesAt": null,
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Aerospace & Defense",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T17:14:48.498884+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "71a17cb04077b11b702269c1276ec994118c0930e2ec1224b2075fa38a79d9dd",
-      "evidence": {
-        "arrangement": "Role Type:\nOnsite",
-        "travel": "",
-        "salary": "",
-        "deadline": ""
-      }
-    },
-    {
-      "id": "rtx-01889177",
-      "companyId": "rtx",
-      "requisitionId": "01889177",
-      "title": "Manager - Quality Technician Team",
-      "url": "https://careers.rtx.com/ca/fr/job/01889177/Manager-Quality-Technician-Team",
-      "arrangement": "on-site",
-      "locations": [
-        {
-          "city": "burnsville",
-          "state": "Minnesota"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "burnsville, Minnesota",
-      "employmentType": "Not specified",
-      "salary": null,
-      "publishedPay": {
-        "text": "The salary range for this role is 107,500 USD - 204,500 USD. The salary range provided is a good faith estimate representative of all experience levels. RTX considers several factors when extending an offer, including but not limited to, the role, function and associated responsibilities, a candidate’s work experience, location, education/training, and key skills.",
-        "scopeStates": [
-          "Minnesota"
-        ],
-        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
-      },
-      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
-      "travelRequired": null,
-      "travelNote": "Travel not verified automatically.",
-      "postedAt": "2026-11-13",
-      "closesAt": null,
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Aerospace & Defense",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T17:14:48.498884+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "875faf31a12bd214849ead173f32709d729ee0e6e69646d5790e7cfa9a2e62c1",
-      "evidence": {
-        "arrangement": "Role Type:\nOnsite",
-        "travel": "",
-        "salary": "",
-        "deadline": ""
-      }
-    },
-    {
-      "id": "rtx-01889227",
-      "companyId": "rtx",
-      "requisitionId": "01889227",
-      "title": "Digital Enterprise Architect (Associate Director) - Proposal and Front End of the Business (Hybrid)",
-      "url": "https://careers.rtx.com/ca/fr/job/01889227/Digital-Enterprise-Architect-Associate-Director-Proposal-and-Front-End-of-the-Business-Hybrid",
-      "arrangement": "hybrid",
-      "locations": [
-        {
-          "city": "marlborough",
-          "state": "Massachusetts"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "marlborough, Massachusetts",
-      "employmentType": "Not specified",
-      "salary": null,
-      "publishedPay": {
-        "text": "The salary range for this role is 157,200 USD - 298,800 USD. The salary range provided is a good faith estimate representative of all experience levels. RTX considers several factors when extending an offer, including but not limited to, the role, function and associated responsibilities, a candidate’s work experience, location, education/training, and key skills.",
-        "scopeStates": [
-          "Massachusetts"
-        ],
-        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
-      },
-      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
-      "travelRequired": null,
-      "travelNote": "Travel not verified automatically.",
-      "postedAt": "2026-11-12",
-      "closesAt": null,
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Aerospace & Defense",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T17:14:48.498884+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "92f96538a9c61a234a113932fe12663b435e873f82e8f0e49a7afae807a0e1ab",
-      "evidence": {
-        "arrangement": "Role Type:\nHybrid",
-        "travel": "",
-        "salary": "",
-        "deadline": ""
-      }
-    },
-    {
-      "id": "rtx-01889416",
-      "companyId": "rtx",
-      "requisitionId": "01889416",
-      "title": "Director, Digital Platform & Automation, Hybrid, El Segundo CA",
-      "url": "https://careers.rtx.com/ca/fr/job/01889416/Director-Digital-Platform-Automation-Hybrid-El-Segundo-CA",
-      "arrangement": "hybrid",
-      "locations": [
-        {
-          "city": "el segundo",
-          "state": "California"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "el segundo, California",
-      "employmentType": "Not specified",
-      "salary": null,
-      "publishedPay": {
-        "text": "The salary range for this role is 204,800 USD - 389,200 USD. The salary range provided is a good faith estimate representative of all experience levels. RTX considers several factors when extending an offer, including but not limited to, the role, function and associated responsibilities, a candidate’s work experience, location, education/training, and key skills.",
-        "scopeStates": [
-          "California"
-        ],
-        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
-      },
-      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
-      "travelRequired": null,
-      "travelNote": "Travel not verified automatically.",
-      "postedAt": "2026-11-13",
-      "closesAt": null,
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Aerospace & Defense",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T17:14:48.498884+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "39235dd04faaa50cf953c75c8f27c93ee9066dc7570a84311eba4da600f1b9e6",
-      "evidence": {
-        "arrangement": "Role Type:\nHybrid",
-        "travel": "",
-        "salary": "",
-        "deadline": ""
-      }
-    },
-    {
-      "id": "rtx-01889462",
-      "companyId": "rtx",
-      "requisitionId": "01889462",
-      "title": "Manufacturing Engineer",
-      "url": "https://careers.rtx.com/ca/fr/job/01889462/Manufacturing-Engineer",
-      "arrangement": "on-site",
-      "locations": [
-        {
-          "city": "goleta",
-          "state": "California"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "goleta, California",
-      "employmentType": "Not specified",
-      "salary": null,
-      "publishedPay": {
-        "text": "The salary range for this role is 62,900 USD - 119,700 USD. The salary range provided is a good faith estimate representative of all experience levels. RTX considers several factors when extending an offer, including but not limited to, the role, function and associated responsibilities, a candidate’s work experience, location, education/training, and key skills.",
-        "scopeStates": [
-          "California"
-        ],
-        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
-      },
-      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
-      "travelRequired": null,
-      "travelNote": "Travel not verified automatically.",
-      "postedAt": "2026-11-13",
-      "closesAt": null,
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Aerospace & Defense",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T17:14:48.498884+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "b165e2f2de1b7448c141e30a9afccf84aaebc80930cca89b66083faf7e1a3aea",
-      "evidence": {
-        "arrangement": "Role Type:\nOnsite",
-        "travel": "",
-        "salary": "",
-        "deadline": ""
-      }
-    },
-    {
       "id": "united-airlines-whq00027019",
       "companyId": "united-airlines",
       "requisitionId": "WHQ00027019",
@@ -12226,8 +12006,8 @@
       "locationNote": "Newberry, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 78508.0,
-        "max": 117762.0,
+        "min": 78508,
+        "max": 117762,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -12366,8 +12146,8 @@
       "locationNote": "Harlingen, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 15.0,
-        "max": 17.0,
+        "min": 15,
+        "max": 17,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12462,8 +12242,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Richmond, Virginia",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -12510,8 +12290,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -12558,8 +12338,8 @@
       "locationNote": "Irving, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 60200.0,
-        "max": 107400.0,
+        "min": 60200,
+        "max": 107400,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -12610,8 +12390,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -12702,8 +12482,8 @@
       "locationNote": "Las Vegas, Nevada",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -12762,8 +12542,8 @@
       "locationNote": "Milwaukee, Wisconsin; De Pere, Wisconsin; Wausau, Wisconsin",
       "employmentType": "Not specified",
       "salary": {
-        "min": 22.0,
-        "max": 48.0,
+        "min": 22,
+        "max": 48,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12814,8 +12594,8 @@
       "locationNote": "Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 120100.0,
-        "max": 214500.0,
+        "min": 120100,
+        "max": 214500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -12866,8 +12646,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Boston, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -12914,8 +12694,8 @@
       "locationNote": "Paris, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12966,8 +12746,8 @@
       "locationNote": "Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 134600.0,
-        "max": 230800.0,
+        "min": 134600,
+        "max": 230800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -13018,8 +12798,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -13078,8 +12858,8 @@
       "locationNote": "Dallas, Texas; Las Vegas, Nevada; Minneapolis, Minnesota; Phoenix, Arizona",
       "employmentType": "Full-time",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13136,8 +12916,8 @@
       "locationNote": "Tampa, Florida",
       "employmentType": "Not specified",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13188,8 +12968,8 @@
       "locationNote": "Raleigh, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 41.0,
-        "max": 62.0,
+        "min": 41,
+        "max": 62,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13240,8 +13020,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -13332,8 +13112,8 @@
       "locationNote": "Draper, Utah",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -13384,8 +13164,8 @@
       "locationNote": "Memphis, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13492,8 +13272,8 @@
       "locationNote": "New York, New York; Minneapolis, Minnesota; Jersey City, New Jersey",
       "employmentType": "Full-time",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -13548,8 +13328,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 77000.0,
-        "max": 137600.0,
+        "min": 77000,
+        "max": 137600,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -13692,8 +13472,8 @@
       "locationNote": "Novato, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13744,8 +13524,8 @@
       "locationNote": "Indianapolis, Indiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 29.0,
+        "min": 16,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13796,8 +13576,8 @@
       "locationNote": "Everett, Washington",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13848,8 +13628,8 @@
       "locationNote": "Sumter, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13900,8 +13680,8 @@
       "locationNote": "Westborough, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 29.0,
+        "min": 16,
+        "max": 29,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -13952,7 +13732,7 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Lafayette, Louisiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 33.0,
+        "min": 33,
         "max": 49.5,
         "period": "hour",
         "currency": "USD",
@@ -14044,8 +13824,8 @@
       "locationNote": "Pasadena, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14200,8 +13980,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Hartford, Connecticut; Tampa, Florida; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -14248,8 +14028,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14300,8 +14080,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 20.0,
-        "max": 36.0,
+        "min": 20,
+        "max": 36,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14396,8 +14176,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 35.0,
-        "max": 63.0,
+        "min": 35,
+        "max": 63,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14448,8 +14228,8 @@
       "locationNote": "Fort Worth, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 19.0,
-        "max": 25.0,
+        "min": 19,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14516,8 +14296,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Minneapolis, Minnesota; Tampa, Florida; Hartford, Connecticut",
       "employmentType": "Full-time",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -14564,8 +14344,8 @@
       "locationNote": "Glen Flora, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 35.0,
-        "max": 63.0,
+        "min": 35,
+        "max": 63,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14616,8 +14396,8 @@
       "locationNote": "Rutherford, New Jersey",
       "employmentType": "Not specified",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14668,8 +14448,8 @@
       "locationNote": "Chestnut Hill, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -14802,8 +14582,8 @@
       "locationNote": "Opelika, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 69336.0,
-        "max": 104004.0,
+        "min": 69336,
+        "max": 104004,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -14854,8 +14634,8 @@
       "locationNote": "Pembroke, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 71640.0,
-        "max": 107460.0,
+        "min": 71640,
+        "max": 107460,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -14950,8 +14730,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 60200.0,
-        "max": 107400.0,
+        "min": 60200,
+        "max": 107400,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -15014,8 +14794,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Hartford, Connecticut; Phoenix, Arizona; Tampa, Florida; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": []
@@ -15062,8 +14842,8 @@
       "locationNote": "Greenville, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 75620.0,
-        "max": 113430.0,
+        "min": 75620,
+        "max": 113430,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15114,7 +14894,7 @@
       "locationNote": "Elizabethton, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 22.6,
         "period": "hour",
         "currency": "USD",
@@ -15166,8 +14946,8 @@
       "locationNote": "Sylacauga, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 74376.0,
-        "max": 111564.0,
+        "min": 74376,
+        "max": 111564,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15218,8 +14998,8 @@
       "locationNote": "Sylacauga, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 74376.0,
-        "max": 111564.0,
+        "min": 74376,
+        "max": 111564,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15322,8 +15102,8 @@
       "locationNote": "Bolivia, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 71640.0,
-        "max": 107460.0,
+        "min": 71640,
+        "max": 107460,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15426,7 +15206,7 @@
       "locationNote": "Lexington, Kentucky",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 21.65,
         "period": "hour",
         "currency": "USD",
@@ -15478,8 +15258,8 @@
       "locationNote": "Colorado Springs, Colorado",
       "employmentType": "Not specified",
       "salary": {
-        "min": 44.0,
-        "max": 79.0,
+        "min": 44,
+        "max": 79,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -15530,8 +15310,8 @@
       "locationNote": "Jonesboro, Arkansas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 67104.0,
-        "max": 100656.0,
+        "min": 67104,
+        "max": 100656,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15582,8 +15362,8 @@
       "locationNote": "Dayton, Ohio",
       "employmentType": "Not specified",
       "salary": {
-        "min": 50000.0,
-        "max": 115000.0,
+        "min": 50000,
+        "max": 115000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15766,7 +15546,7 @@
       "locationNote": "Valparaiso, Indiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 26.35,
         "period": "hour",
         "currency": "USD",
@@ -15818,8 +15598,8 @@
       "locationNote": "Leominster, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 87560.0,
-        "max": 131340.0,
+        "min": 87560,
+        "max": 131340,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15922,8 +15702,8 @@
       "locationNote": "Charleston, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 75620.0,
-        "max": 113430.0,
+        "min": 75620,
+        "max": 113430,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16067,8 +15847,8 @@
       "locationNote": "Hartwell, Georgia",
       "employmentType": "Not specified",
       "salary": {
-        "min": 70992.0,
-        "max": 106488.0,
+        "min": 70992,
+        "max": 106488,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16119,7 +15899,7 @@
       "locationNote": "Akron, Ohio",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 23.85,
         "period": "hour",
         "currency": "USD",
@@ -16215,8 +15995,8 @@
       "locationNote": "Portland, Maine",
       "employmentType": "Not specified",
       "salary": {
-        "min": 66400.0,
-        "max": 99600.0,
+        "min": 66400,
+        "max": 99600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16267,8 +16047,8 @@
       "locationNote": "Stafford, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -16319,8 +16099,8 @@
       "locationNote": "Webster, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 32.0,
+        "min": 16,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -16415,8 +16195,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 84744.0,
-        "max": 127116.0,
+        "min": 84744,
+        "max": 127116,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16467,8 +16247,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 44880.0,
-        "max": 67320.0,
+        "min": 44880,
+        "max": 67320,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16519,8 +16299,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 40832.0,
-        "max": 61248.0,
+        "min": 40832,
+        "max": 61248,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16864,14 +16644,6 @@
         "pendingClosureChecks": 0,
         "discoveryLimited": false,
         "lastSuccessfulAt": "2026-11-13T17:22:31.785997+00:00"
-      },
-      "rtx": {
-        "errors": [
-          {
-            "error": "Employer request failed: HTTP 403"
-          }
-        ],
-        "lastSuccessfulAt": "2026-11-13T17:14:48.498884+00:00"
       },
       "nike": {
         "discovered": 1165,

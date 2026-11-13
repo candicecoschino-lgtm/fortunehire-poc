@@ -12,7 +12,7 @@ Acceptance: source host checks, filter regression tests, lifecycle tests, zero c
 
 ## Current coverage
 
-15 connected employers, 37 still requiring an adapter or access investigation. This is sampled coverage, not all openings at each employer. A successful discovery audit does not establish complete coverage or a need for a paid provider.
+14 connected employers, 38 still requiring an adapter or access investigation. This is sampled coverage, not all openings at each employer. A successful discovery audit does not establish complete coverage or a need for a paid provider.
 
 Some pay ranges have no explicit period or contain target incentives or different geographic bands. These remain visible as employer text and cannot drive numeric pay filters. Generic employer-wide remote policies and boilerplate are not role-level work arrangements. Sector values are broad employer groupings used by this prototype, not a licensed investment classification.
 
@@ -63,7 +63,7 @@ The remaining-employer audit inspected published crawler rules, discovery docume
 | PepsiCo | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
 | Phillips 66 | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
 | Progressive | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
-| RTX | Connected — bounded pilot | Monitor field extraction and scheduled refreshes; incomplete coverage. |
+| RTX | Paused — GitHub access blocked | Local collection passed, but GitHub returned HTTP 403. No bypass; investigate an authorized source before enabling scheduled collection. |
 | Salesforce | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
 | Target | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
 | Tesla | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |

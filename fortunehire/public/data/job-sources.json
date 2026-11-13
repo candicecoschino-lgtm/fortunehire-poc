@@ -2,20 +2,61 @@
   "schemaVersion": 1,
   "reviewedAt": "2026-11-13",
   "sources": {
-    "boeing": { "host": "jobs.boeing.com", "sector": "Aerospace & Defense" },
-    "citigroup": { "host": "jobs.citi.com", "sector": "Financials" },
-    "unitedhealth-group": { "host": "careers.unitedhealthgroup.com", "sector": "Health Care" },
-    "att": { "host": "www.att.jobs", "sector": "Communication Services" },
-    "chevron": { "host": "careers.chevron.com", "sector": "Energy" },
-    "cigna": { "host": "jobs.thecignagroup.com", "sector": "Health Care" },
-    "comcast": { "host": "jobs.comcast.com", "sector": "Communication Services" },
-    "elevance-health": { "host": "careers.elevancehealth.com", "sector": "Health Care" },
-    "fedex": { "host": "careers.fedex.com", "sector": "Transportation" },
-    "ford": { "host": "www.careers.ford.com", "sector": "Automotive" },
-    "lowes": { "host": "talent.lowes.com", "sector": "Retail" },
-    "mckesson": { "host": "careers.mckesson.com", "sector": "Health Care" },
-    "nike": { "host": "careers.nike.com", "sector": "Apparel and Footwear" },
-    "rtx": { "host": "careers.rtx.com", "sector": "Aerospace & Defense" },
-    "united-airlines": { "host": "careers.united.com", "sector": "Transportation" }
+    "boeing": {
+      "host": "jobs.boeing.com",
+      "sector": "Aerospace & Defense"
+    },
+    "citigroup": {
+      "host": "jobs.citi.com",
+      "sector": "Financials"
+    },
+    "unitedhealth-group": {
+      "host": "careers.unitedhealthgroup.com",
+      "sector": "Health Care"
+    },
+    "att": {
+      "host": "www.att.jobs",
+      "sector": "Communication Services"
+    },
+    "chevron": {
+      "host": "careers.chevron.com",
+      "sector": "Energy"
+    },
+    "cigna": {
+      "host": "jobs.thecignagroup.com",
+      "sector": "Health Care"
+    },
+    "comcast": {
+      "host": "jobs.comcast.com",
+      "sector": "Communication Services"
+    },
+    "elevance-health": {
+      "host": "careers.elevancehealth.com",
+      "sector": "Health Care"
+    },
+    "fedex": {
+      "host": "careers.fedex.com",
+      "sector": "Transportation"
+    },
+    "ford": {
+      "host": "www.careers.ford.com",
+      "sector": "Automotive"
+    },
+    "lowes": {
+      "host": "talent.lowes.com",
+      "sector": "Retail"
+    },
+    "mckesson": {
+      "host": "careers.mckesson.com",
+      "sector": "Health Care"
+    },
+    "nike": {
+      "host": "careers.nike.com",
+      "sector": "Apparel and Footwear"
+    },
+    "united-airlines": {
+      "host": "careers.united.com",
+      "sector": "Transportation"
+    }
   }
 }

@@ -2,7 +2,7 @@
 
 Coverage now includes 52 reviewed employers from the 2026 Fortune 500. There are 448 companies still to research; this is a curated sample, not a ranked top-50 or complete 500-company directory. Coverage is displayed from the actual dataset length.
 
-Alphabet (Google) and Humana were added on November 13 at the user's request. JPMorgan Chase was already present and was not duplicated. Alphabet is listed once as the Fortune-listed parent; its destination is Google's career portal, not a claim of complete hiring coverage for every Alphabet subsidiary. Humana's official career site redirects to /us/en; its headquarters state is supported by its own corporate filing. Current membership was checked against Fortune's 2026 list. Automated job connections remain in the three-employer pilot while collection quality is stabilized.
+Alphabet (Google) and Humana were added on November 13 at the user's request. JPMorgan Chase was already present and was not duplicated. Alphabet is listed once as the Fortune-listed parent; its destination is Google's career portal, not a claim of complete hiring coverage for every Alphabet subsidiary. Humana's official career site redirects to /us/en; its headquarters state is supported by its own corporate filing. Current membership was checked against Fortune's 2026 list. Automated job connections now cover 14 reviewed employers; see FEED-EXPANSION.md for collection scope and the remaining-employer audit.
 
 Each added record links to its Fortune company profile for metadata and list history, the employer's career destination, and a dated review note. The underlying profile pages include the Fortune 500 list and 2026 history. No ranks, revenue tables, company descriptions, individual jobs, or remote-work claims were imported. New filter choices derive from reviewed metadata.
 
@@ -23,4 +23,5 @@ Eight Node tests cover metadata and source validation, unique IDs, safe URLs inc
 ## Next data milestone
 
 Expand in further reviewed batches, prioritizing the remaining industries and states. Resolve deferred companies before adding them. A full-roster reconciliation must confirm exactly 500 unique employers belonging to the same year's U.S. Fortune 500 list before changing the UI to claim full coverage.
+
 
