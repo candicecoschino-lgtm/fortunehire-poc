@@ -44,13 +44,14 @@ def safe_url(url, host):
 
 def job_url(url, host):
     url = safe_url(url, host)
-    if not re.search(r'/job/[^/]+',urllib.parse.urlsplit(url).path) or len(url)>2000:
+    if not re.search(r'/jobs?/[^/]+',urllib.parse.urlsplit(url).path) or len(url)>2000:
         raise ValueError('Not an individual employer job URL')
     return url
 
 
 def posting_key(url):
-    tail=urllib.parse.urlsplit(url).path.split('/job/',1)[-1].strip('/').split('/')
+    tail=re.split(r'/jobs?/',urllib.parse.urlsplit(url).path,maxsplit=1)[-1].strip('/').split('/')
+    if re.fullmatch(r'w\d+',tail[0],re.I): return '/'.join(tail)
     if len(tail)>=4 and tail[-1].isdigit() and tail[-2].isdigit(): return tail[-1]
     return re.sub(r'__[a-z]{2}(?:-[a-z]{2})?$','',tail[0],flags=re.I)
 
@@ -151,7 +152,7 @@ def extract_published_pay(description, locations, company, nationwide=False):
             return None, {'text':'Primary-location salary range: '+'; '.join(bands),'scopeStates':scoped,'note':'Employer range for '+scoped[0]+'. Other locations may differ. Pay period is not specified in this label.'}
     evidence = []
     for i,line in enumerate(lines):
-        if re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',line,re.I):
+        if re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',line,re.I) or company=='centene' and re.match(r'^Pay Range:\s*\$',line,re.I):
             context = line
             if not PAY_RANGE.search(context) and i+1<len(lines): context += ' '+lines[i+1]
             if PAY_RANGE.search(context): evidence.append(context)
@@ -224,8 +225,12 @@ def normalize_posting(body, url, company, now):
     req = str(req.get('value', '') if isinstance(req, dict) else req).strip()
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    locations = []
+    locations = [];remote_location_states=[]
+    expanded_locations=[]
     for loc in as_list(source.get('jobLocation')):
+        if isinstance(loc,dict):
+            expanded_locations.extend({**loc,'address':address} for address in as_list(loc.get('address')) if isinstance(address,dict))
+    for loc in expanded_locations:
         address = loc.get('address', {}) if isinstance(loc, dict) else {}
         if not isinstance(address,dict): continue
         country = address.get('addressCountry', '')
@@ -237,6 +242,8 @@ def normalize_posting(body, url, company, now):
         if str(country).upper() in ('US', 'USA', 'UNITED STATES', 'UNITED STATES OF AMERICA') and state and city:
             item = {'city': city, 'state': state}
             if item not in locations: locations.append(item)
+            if re.fullmatch(r'Remote[-, ]+(?:'+re.escape(address.get('addressRegion',''))+'|'+re.escape(state)+r'|'+next((code for code,name in STATES.items() if name==state),'')+r')',city,re.I):
+                if state not in remote_location_states: remote_location_states.append(state)
     eligible = [];country_requirements=[]
     for loc in as_list(source.get('applicantLocationRequirements')):
         if not isinstance(loc, dict): continue
@@ -267,6 +274,9 @@ def normalize_posting(body, url, company, now):
             arrangement_evidence=tag[0]
         remote = national_remote
         if remote: arrangement, arrangement_evidence = 'remote', remote[0]
+    if arrangement=='unknown' and company=='general-motors':
+        gm_hybrid=re.search(r'\bHybrid Work Policy\s*[-:]\s*[^\n]{0,160}\bin-office\b[^\n]{0,80}\bremote\b',description,re.I)
+        if gm_hybrid: arrangement,arrangement_evidence='hybrid',gm_hybrid[0]
     if arrangement=='unknown':
         # Role declarations, rather than general company policy, technical
         # skills, recruiting assistants, or remote interviewing language.
@@ -297,6 +307,8 @@ def normalize_posting(body, url, company, now):
             kind=next(group for group in qualifier.groups() if group)
             arrangement={'remote':'remote','hybrid':'hybrid','onsite':'on-site'}[re.sub(r'[- ]','',kind.lower())]
             arrangement_evidence='Explicit employer title qualifier: '+qualifier[0].strip()
+    if arrangement=='remote' and remote_location_states:
+        eligible=sorted(set(eligible+remote_location_states))
     # A posted office address is not evidence of remote eligibility.
     if arrangement != 'remote': eligible = []
     # Generic internet/home-office requirements do not impose state residency.
@@ -342,6 +354,9 @@ def normalize_posting(body, url, company, now):
         salary_evidence='Explicit employer pay text with stated period; scoped to listed or explicitly named states'
     today = now.astimezone(ZoneInfo('America/New_York')).date().isoformat()
     deadline = date_only(source.get('validThrough'))
+    if not deadline and company=='target' and source.get('validThrough'):
+        try: deadline=datetime.strptime(str(source['validThrough']),'%m/%d/%Y').date().isoformat()
+        except ValueError: pass
     deadlines = [deadline] if deadline else []
     for match in re.finditer(r'(?:Applications for this position will be accepted until|Anticipated Posting Close Date\s*:)\s*([A-Za-z]+\.?)\s+(\d{1,2}),?\s+(\d{4})', description+'\n'+page.text, re.I):
         value = match[1].rstrip('.')+' '+match[2]+' '+match[3]
@@ -438,7 +453,7 @@ def discover(client):
         elif root.tag==ns+'urlset':
             for entry in root.findall(ns+'url'):
                 url=entry.findtext(ns+'loc') or ''
-                if '/job/' not in url: continue
+                if not re.search(r'/jobs?/[^/]+',urllib.parse.urlsplit(url).path): continue
                 url=job_url(url,client.host);key=posting_key(url)
                 if key not in found or language_priority(url)>language_priority(found[key]): found[key]=url
                 modified=entry.findtext(ns+'lastmod') or ''

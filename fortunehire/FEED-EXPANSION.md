@@ -12,7 +12,7 @@ Acceptance: source host checks, filter regression tests, lifecycle tests, zero c
 
 ## Current coverage
 
-14 connected employers, 38 still requiring an adapter or access investigation. This is sampled coverage, not all openings at each employer. A successful discovery audit does not establish complete coverage or a need for a paid provider.
+17 connected employers, 35 still requiring an adapter or access investigation. This is sampled coverage, not all openings at each employer. A successful discovery audit does not establish complete coverage or a need for a paid provider.
 
 Some pay ranges have no explicit period or contain target incentives or different geographic bands. These remain visible as employer text and cannot drive numeric pay filters. Generic employer-wide remote policies and boilerplate are not role-level work arrangements. Sector values are broad employer groupings used by this prototype, not a licensed investment classification.
 
@@ -33,7 +33,7 @@ The remaining-employer audit inspected published crawler rules, discovery docume
 | Cardinal Health | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
 | Caterpillar | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
 | Cencora | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
-| Centene | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
+| Centene | Connected — bounded pilot | Verified official discovery and JobPosting; monitor scheduled refreshes. |
 | Chevron | Connected — bounded pilot | Monitor field extraction and scheduled refreshes; incomplete coverage. |
 | Cigna Group | Connected — bounded pilot | Monitor field extraction and scheduled refreshes; incomplete coverage. |
 | Cisco Systems | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
@@ -47,7 +47,7 @@ The remaining-employer audit inspected published crawler rules, discovery docume
 | Fannie Mae | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
 | FedEx | Connected — bounded pilot | Monitor field extraction and scheduled refreshes; incomplete coverage. |
 | Ford Motor | Connected — bounded pilot | Monitor field extraction and scheduled refreshes; incomplete coverage. |
-| General Motors | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
+| General Motors | Connected — bounded pilot | Verified official discovery and JobPosting; monitor scheduled refreshes. |
 | Home Depot | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
 | Humana | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
 | IBM | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
@@ -65,7 +65,7 @@ The remaining-employer audit inspected published crawler rules, discovery docume
 | Progressive | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
 | RTX | Paused — GitHub access blocked | Local collection passed, but GitHub returned HTTP 403. No bypass; investigate an authorized source before enabling scheduled collection. |
 | Salesforce | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
-| Target | Adapter investigation | Reviewed discovery did not provide a compatible individual-posting feed. |
+| Target | Connected — bounded pilot | Verified official discovery and JobPosting; monitor scheduled refreshes. |
 | Tesla | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
 | UPS | Access/discovery investigation | Request, crawler-rule, redirect, or discovery issue; not enabled. |
 | United Airlines Holdings | Connected — bounded pilot | Monitor field extraction and scheduled refreshes; incomplete coverage. |

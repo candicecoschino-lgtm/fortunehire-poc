@@ -326,6 +326,35 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(len(checked),4);self.assertIn(remote,checked)
         self.assertTrue(all(j['arrangement']=='unknown' for j in jobs))
 
+    def test_plural_routes_have_stable_noncolliding_keys(self):
+        first='https://corporate.target.com/jobs/w06/25/designer'
+        second='https://corporate.target.com/jobs/w06/25/different-designer'
+        self.assertEqual(c.job_url(first,'corporate.target.com'),first)
+        self.assertNotEqual(c.posting_key(first),c.posting_key(second))
+        self.assertEqual(c.posting_key('https://search-careers.gm.com/en/jobs/jr-123/engineer/'),'jr-123')
+        with self.assertRaises(ValueError): c.job_url('https://jobs.boeing.com/jobs/','jobs.boeing.com')
+
+    def test_address_array_and_explicit_remote_state_scope(self):
+        j=c.normalize_posting(body(jobLocation={'address':[{'addressCountry':'US','addressRegion':'IN','addressLocality':'Roanoke'}]}),URL,'boeing',NOW)
+        self.assertEqual(j['locations'],[{'city':'Roanoke','state':'Indiana'}])
+        j=c.normalize_posting(body(jobLocationType='TELECOMMUTE',applicantLocationRequirements={'@type':'Country','name':'United States of America'},jobLocation={'address':{'addressCountry':'US','addressRegion':'AZ','addressLocality':'Remote-AZ'}}),URL,'boeing',NOW)
+        self.assertEqual(j['remoteScope'],'states');self.assertEqual(j['eligibleStates'],['Arizona'])
+
+    def test_reviewed_target_deadline_format(self):
+        with patch.dict(c.SOURCES,{'target':('corporate.target.com','Retail')}):
+            url='https://corporate.target.com/jobs/w06/25/test'
+            j=c.normalize_posting(body(url=url,validThrough='11/12/2026'),url,'target',NOW)
+            self.assertEqual(j['closesAt'],'2026-11-12');self.assertEqual(j['status'],'closed')
+
+    def test_reviewed_centene_pay_and_gm_work_policy(self):
+        salary,published=c.extract_published_pay('Pay Range: $100,000.00 - $150,000.00 per year',[{'city':'Remote-AZ','state':'Arizona'}],'centene')
+        self.assertEqual(salary['period'],'year');self.assertEqual(salary['min'],100000)
+        self.assertEqual(salary['scopeStates'],['Arizona'])
+        with patch.dict(c.SOURCES,{'general-motors':('search-careers.gm.com','Automotive')}):
+            url='https://search-careers.gm.com/en/jobs/jr-123/engineer'
+            j=c.normalize_posting(body(url=url,description='Duties. Hybrid Work Policy - 3 days In-office, 2days remote - Must report to local office.'),url,'general-motors',NOW)
+            self.assertEqual(j['arrangement'],'hybrid')
+
     def test_missing_schema_url_requires_matching_canonical_page(self):
         document=body(url=None)+'<link rel="canonical" href="'+URL+'">'
         self.assertEqual(c.normalize_posting(document,URL,'boeing',NOW)['url'],URL)

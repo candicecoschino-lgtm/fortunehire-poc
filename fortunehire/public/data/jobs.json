@@ -1071,7 +1071,7 @@
       "locationNote": "Huntington Beach, California",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
+        "min": 24,
         "max": 45.13,
         "period": "hour",
         "currency": "USD",
@@ -3951,6 +3951,1461 @@
       "sourceHash": "837a9e5409f9e5a808811021895747cecd9663f2c3393d0d11bf542b5106f12a",
       "evidence": {
         "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1673051",
+      "companyId": "centene",
+      "requisitionId": "1673051",
+      "title": "Remote Behavioral Medical Director, Eastern Region",
+      "url": "https://jobs.centene.com/us/en/jobs/1673051/remote-behavioral-medical-director-eastern-region",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-MO",
+          "state": "Missouri"
+        },
+        {
+          "city": "Remote-DE",
+          "state": "Delaware"
+        },
+        {
+          "city": "Remote-GA",
+          "state": "Georgia"
+        },
+        {
+          "city": "Remote-MA",
+          "state": "Massachusetts"
+        },
+        {
+          "city": "Remote-NH",
+          "state": "New Hampshire"
+        },
+        {
+          "city": "Remote-OH",
+          "state": "Ohio"
+        },
+        {
+          "city": "Remote-OK",
+          "state": "Oklahoma"
+        },
+        {
+          "city": "Remote-PA",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Remote-TN",
+          "state": "Tennessee"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Delaware",
+        "Georgia",
+        "Massachusetts",
+        "Missouri",
+        "New Hampshire",
+        "Ohio",
+        "Oklahoma",
+        "Pennsylvania",
+        "Tennessee"
+      ],
+      "locationNote": "Remote-MO, Missouri; Remote-DE, Delaware; Remote-GA, Georgia; Remote-MA, Massachusetts; Remote-NH, New Hampshire; Remote-OH, Ohio; Remote-OK, Oklahoma; Remote-PA, Pennsylvania; Remote-TN, Tennessee",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 215000.0,
+        "max": 408500.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Delaware",
+          "Georgia",
+          "Massachusetts",
+          "Missouri",
+          "New Hampshire",
+          "Ohio",
+          "Oklahoma",
+          "Pennsylvania",
+          "Tennessee"
+        ]
+      },
+      "publishedPay": {
+        "text": "$215,000.00 - $408,500.00 per year",
+        "scopeStates": [
+          "Delaware",
+          "Georgia",
+          "Massachusetts",
+          "Missouri",
+          "New Hampshire",
+          "Ohio",
+          "Oklahoma",
+          "Pennsylvania",
+          "Tennessee"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-03",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "8867f6ff95c8b4457ff86856b6ae123db6ef4ff23ba50305d5f401384d269441",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1673744",
+      "companyId": "centene",
+      "requisitionId": "1673744",
+      "title": "Remote Inpatient Medicare Medical Director",
+      "url": "https://jobs.centene.com/us/en/jobs/1673744/remote-inpatient-medicare-medical-director",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-MO",
+          "state": "Missouri"
+        },
+        {
+          "city": "Remote-FL",
+          "state": "Florida"
+        },
+        {
+          "city": "Remote-WI",
+          "state": "Wisconsin"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Florida",
+        "Missouri",
+        "Wisconsin"
+      ],
+      "locationNote": "Remote-MO, Missouri; Remote-FL, Florida; Remote-WI, Wisconsin",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 215000.0,
+        "max": 408500.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Florida",
+          "Missouri",
+          "Wisconsin"
+        ]
+      },
+      "publishedPay": {
+        "text": "$215,000.00 - $408,500.00 per year",
+        "scopeStates": [
+          "Florida",
+          "Missouri",
+          "Wisconsin"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "cd7e30e6de19afb374ffa9d272cd8d5f281e855d6612081680aa2a157b85eddb",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1673880",
+      "companyId": "centene",
+      "requisitionId": "1673880",
+      "title": "Remote National Medical Director",
+      "url": "https://jobs.centene.com/us/en/jobs/1673880/remote-national-medical-director",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-MO",
+          "state": "Missouri"
+        },
+        {
+          "city": "Remote-AZ",
+          "state": "Arizona"
+        },
+        {
+          "city": "Remote-IA",
+          "state": "Iowa"
+        },
+        {
+          "city": "Remote-IN",
+          "state": "Indiana"
+        },
+        {
+          "city": "Remote-KS",
+          "state": "Kansas"
+        },
+        {
+          "city": "Remote-OK",
+          "state": "Oklahoma"
+        },
+        {
+          "city": "Remote-PA",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Remote-UT",
+          "state": "Utah"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Arizona",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Missouri",
+        "Oklahoma",
+        "Pennsylvania",
+        "Utah"
+      ],
+      "locationNote": "Remote-MO, Missouri; Remote-AZ, Arizona; Remote-IA, Iowa; Remote-IN, Indiana; Remote-KS, Kansas; Remote-OK, Oklahoma; Remote-PA, Pennsylvania; Remote-UT, Utah",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 215000.0,
+        "max": 408500.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Arizona",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Missouri",
+          "Oklahoma",
+          "Pennsylvania",
+          "Utah"
+        ]
+      },
+      "publishedPay": {
+        "text": "$215,000.00 - $408,500.00 per year",
+        "scopeStates": [
+          "Arizona",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Missouri",
+          "Oklahoma",
+          "Pennsylvania",
+          "Utah"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-04",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "55f9cba8af179fd791e8a17954ef3e8fbb39e6222305353fda3ac117a49aa196",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1674605",
+      "companyId": "centene",
+      "requisitionId": "1674605",
+      "title": "Lead IT Portfolio Management Analyst",
+      "url": "https://jobs.centene.com/us/en/jobs/1674605/lead-it-portfolio-management-analyst",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-MO",
+          "state": "Missouri"
+        },
+        {
+          "city": "Remote-IL",
+          "state": "Illinois"
+        },
+        {
+          "city": "Remote-NC",
+          "state": "North Carolina"
+        },
+        {
+          "city": "Remote-NY",
+          "state": "New York"
+        },
+        {
+          "city": "Remote-TX",
+          "state": "Texas"
+        },
+        {
+          "city": "Remote-VA",
+          "state": "Virginia"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Illinois",
+        "Missouri",
+        "New York",
+        "North Carolina",
+        "Texas",
+        "Virginia"
+      ],
+      "locationNote": "Remote-MO, Missouri; Remote-IL, Illinois; Remote-NC, North Carolina; Remote-NY, New York; Remote-TX, Texas; Remote-VA, Virginia",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 121500.0,
+        "max": 224900.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Illinois",
+          "Missouri",
+          "New York",
+          "North Carolina",
+          "Texas",
+          "Virginia"
+        ]
+      },
+      "publishedPay": {
+        "text": "$121,500.00 - $224,900.00 per year",
+        "scopeStates": [
+          "Illinois",
+          "Missouri",
+          "New York",
+          "North Carolina",
+          "Texas",
+          "Virginia"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "d2155a2b11c44c087406d5229e814fc8c56a77186c312825d33c77f363aff720",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1674810",
+      "companyId": "centene",
+      "requisitionId": "1674810",
+      "title": "Supervisor, Operations(Home Infusions)",
+      "url": "https://jobs.centene.com/us/en/jobs/1674810/supervisor-operations-home-infusions",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-FL",
+          "state": "Florida"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Florida"
+      ],
+      "locationNote": "Remote-FL, Florida",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 56200.0,
+        "max": 101000.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Florida"
+        ]
+      },
+      "publishedPay": {
+        "text": "$56,200.00 - $101,000.00 per year",
+        "scopeStates": [
+          "Florida"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "fb5136207d52183c1986af3e43cfe17efc7e7baf4d2428aa1d4c9e64685bfd95",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1675327",
+      "companyId": "centene",
+      "requisitionId": "1675327",
+      "title": "Sales Representative (Medicare)",
+      "url": "https://jobs.centene.com/us/en/jobs/1675327/sales-representative-medicare",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Brooklyn",
+          "state": "New York"
+        },
+        {
+          "city": "Staten Island",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Brooklyn, New York; Staten Island, New York",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "up to 75% travel",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "8b34b4c95503f87d7fd8b265bbb675ebea91c7a3392def4cfc4585d42f5907d5",
+      "evidence": {
+        "arrangement": "",
+        "travel": "up to 75% travel",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1675637",
+      "companyId": "centene",
+      "requisitionId": "1675637",
+      "title": "Compliance & Reporting Specialist",
+      "url": "https://jobs.centene.com/us/en/jobs/1675637/compliance-reporting-specialist",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-SC",
+          "state": "South Carolina"
+        },
+        {
+          "city": "Remote-FL",
+          "state": "Florida"
+        },
+        {
+          "city": "Remote-IL",
+          "state": "Illinois"
+        },
+        {
+          "city": "Remote-MO",
+          "state": "Missouri"
+        },
+        {
+          "city": "Remote-TX",
+          "state": "Texas"
+        },
+        {
+          "city": "Remote-VA",
+          "state": "Virginia"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Florida",
+        "Illinois",
+        "Missouri",
+        "South Carolina",
+        "Texas",
+        "Virginia"
+      ],
+      "locationNote": "Remote-SC, South Carolina; Remote-FL, Florida; Remote-IL, Illinois; Remote-MO, Missouri; Remote-TX, Texas; Remote-VA, Virginia",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 56200.0,
+        "max": 101000.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Florida",
+          "Illinois",
+          "Missouri",
+          "South Carolina",
+          "Texas",
+          "Virginia"
+        ]
+      },
+      "publishedPay": {
+        "text": "$56,200.00 - $101,000.00 per year",
+        "scopeStates": [
+          "Florida",
+          "Illinois",
+          "Missouri",
+          "South Carolina",
+          "Texas",
+          "Virginia"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "4bc5369d38513e263ac683d353943e491e3a064872a4568f159b6f7e61a34492",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1675674",
+      "companyId": "centene",
+      "requisitionId": "1675674",
+      "title": "Manager, Privacy & Security Culture",
+      "url": "https://jobs.centene.com/us/en/jobs/1675674/manager-privacy-security-culture",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-MO",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Missouri"
+      ],
+      "locationNote": "Remote-MO, Missouri",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 107700.0,
+        "max": 199300.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Missouri"
+        ]
+      },
+      "publishedPay": {
+        "text": "$107,700.00 - $199,300.00 per year",
+        "scopeStates": [
+          "Missouri"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "dd6aa3a336223346cf701a605a86b2073dd1ff951d80cce98dd5aeb247814602",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1675868",
+      "companyId": "centene",
+      "requisitionId": "1675868",
+      "title": "Psychologist Reviewer",
+      "url": "https://jobs.centene.com/us/en/jobs/1675868/psychologist-reviewer",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-LA",
+          "state": "Louisiana"
+        },
+        {
+          "city": "Remote-NH",
+          "state": "New Hampshire"
+        },
+        {
+          "city": "Remote-NJ",
+          "state": "New Jersey"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Louisiana",
+        "New Hampshire",
+        "New Jersey"
+      ],
+      "locationNote": "Remote-LA, Louisiana; Remote-NH, New Hampshire; Remote-NJ, New Jersey",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "7e26399ca7bba903de774719b0576d41c3dd2eec228a58006bb19e9378f0d99f",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1675878",
+      "companyId": "centene",
+      "requisitionId": "1675878",
+      "title": "Business Technical Analyst",
+      "url": "https://jobs.centene.com/us/en/jobs/1675878/business-technical-analyst",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-MO",
+          "state": "Missouri"
+        },
+        {
+          "city": "Remote-AL",
+          "state": "Alabama"
+        },
+        {
+          "city": "Remote-AR",
+          "state": "Arkansas"
+        },
+        {
+          "city": "Remote-CT",
+          "state": "Connecticut"
+        },
+        {
+          "city": "Remote-DC",
+          "state": "District of Columbia"
+        },
+        {
+          "city": "Remote-DE",
+          "state": "Delaware"
+        },
+        {
+          "city": "Remote-FL",
+          "state": "Florida"
+        },
+        {
+          "city": "Remote-GA",
+          "state": "Georgia"
+        },
+        {
+          "city": "Remote-IA",
+          "state": "Iowa"
+        },
+        {
+          "city": "Remote-IL",
+          "state": "Illinois"
+        },
+        {
+          "city": "Remote-IN",
+          "state": "Indiana"
+        },
+        {
+          "city": "Remote-KS",
+          "state": "Kansas"
+        },
+        {
+          "city": "Remote-KY",
+          "state": "Kentucky"
+        },
+        {
+          "city": "Remote-LA",
+          "state": "Louisiana"
+        },
+        {
+          "city": "Remote-MA",
+          "state": "Massachusetts"
+        },
+        {
+          "city": "Remote-MD",
+          "state": "Maryland"
+        },
+        {
+          "city": "Remote-ME",
+          "state": "Maine"
+        },
+        {
+          "city": "Remote-MI",
+          "state": "Michigan"
+        },
+        {
+          "city": "Remote-MN",
+          "state": "Minnesota"
+        },
+        {
+          "city": "Remote-MS",
+          "state": "Mississippi"
+        },
+        {
+          "city": "Remote-NC",
+          "state": "North Carolina"
+        },
+        {
+          "city": "Remote-ND",
+          "state": "North Dakota"
+        },
+        {
+          "city": "Remote-NE",
+          "state": "Nebraska"
+        },
+        {
+          "city": "Remote-NH",
+          "state": "New Hampshire"
+        },
+        {
+          "city": "Remote-NJ",
+          "state": "New Jersey"
+        },
+        {
+          "city": "Remote-NY",
+          "state": "New York"
+        },
+        {
+          "city": "Remote-OH",
+          "state": "Ohio"
+        },
+        {
+          "city": "Remote-OK",
+          "state": "Oklahoma"
+        },
+        {
+          "city": "Remote-PA",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Remote-RI",
+          "state": "Rhode Island"
+        },
+        {
+          "city": "Remote-SC",
+          "state": "South Carolina"
+        },
+        {
+          "city": "Remote-SD",
+          "state": "South Dakota"
+        },
+        {
+          "city": "Remote-TN",
+          "state": "Tennessee"
+        },
+        {
+          "city": "Remote-TX",
+          "state": "Texas"
+        },
+        {
+          "city": "Remote-VA",
+          "state": "Virginia"
+        },
+        {
+          "city": "Remote-VT",
+          "state": "Vermont"
+        },
+        {
+          "city": "Remote-WI",
+          "state": "Wisconsin"
+        },
+        {
+          "city": "Remote-WV",
+          "state": "West Virginia"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Alabama",
+        "Arkansas",
+        "Connecticut",
+        "Delaware",
+        "District of Columbia",
+        "Florida",
+        "Georgia",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Nebraska",
+        "New Hampshire",
+        "New Jersey",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Vermont",
+        "Virginia",
+        "West Virginia",
+        "Wisconsin"
+      ],
+      "locationNote": "Remote-MO, Missouri; Remote-AL, Alabama; Remote-AR, Arkansas; Remote-CT, Connecticut; Remote-DC, District of Columbia; Remote-DE, Delaware; Remote-FL, Florida; Remote-GA, Georgia; Remote-IA, Iowa; Remote-IL, Illinois; Remote-IN, Indiana; Remote-KS, Kansas; Remote-KY, Kentucky; Remote-LA, Louisiana; Remote-MA, Massachusetts; Remote-MD, Maryland; Remote-ME, Maine; Remote-MI, Michigan; Remote-MN, Minnesota; Remote-MS, Mississippi; Remote-NC, North Carolina; Remote-ND, North Dakota; Remote-NE, Nebraska; Remote-NH, New Hampshire; Remote-NJ, New Jersey; Remote-NY, New York; Remote-OH, Ohio; Remote-OK, Oklahoma; Remote-PA, Pennsylvania; Remote-RI, Rhode Island; Remote-SC, South Carolina; Remote-SD, South Dakota; Remote-TN, Tennessee; Remote-TX, Texas; Remote-VA, Virginia; Remote-VT, Vermont; Remote-WI, Wisconsin; Remote-WV, West Virginia",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 70100.0,
+        "max": 126200.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Alabama",
+          "Arkansas",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Nebraska",
+          "New Hampshire",
+          "New Jersey",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Ohio",
+          "Oklahoma",
+          "Pennsylvania",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "Vermont",
+          "Virginia",
+          "West Virginia",
+          "Wisconsin"
+        ]
+      },
+      "publishedPay": {
+        "text": "$70,100.00 - $126,200.00 per year",
+        "scopeStates": [
+          "Alabama",
+          "Arkansas",
+          "Connecticut",
+          "Delaware",
+          "District of Columbia",
+          "Florida",
+          "Georgia",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Nebraska",
+          "New Hampshire",
+          "New Jersey",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Ohio",
+          "Oklahoma",
+          "Pennsylvania",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "Vermont",
+          "Virginia",
+          "West Virginia",
+          "Wisconsin"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "eacf02da5776fee28ec7925730f85caa93bffe992090c856a2affe7699e6d430",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1676006",
+      "companyId": "centene",
+      "requisitionId": "1676006",
+      "title": "Member Advocate II",
+      "url": "https://jobs.centene.com/us/en/jobs/1676006/member-advocate-ii",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-WI",
+          "state": "Wisconsin"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Wisconsin"
+      ],
+      "locationNote": "Remote-WI, Wisconsin",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "License/Certification: Valid driver’s license. Insurance producer license preferred.Pay Range: $23.23 - $39.61 per hour",
+        "scopeStates": [
+          "Wisconsin"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "ad53504451fe9663cf552163497bfb0585edd7798af252b9180f231edcb8eaf5",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1676007",
+      "companyId": "centene",
+      "requisitionId": "1676007",
+      "title": "Grievance & Appeals Coordinator I",
+      "url": "https://jobs.centene.com/us/en/jobs/1676007/grievance-appeals-coordinator-i",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-CA",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "California"
+      ],
+      "locationNote": "Remote-CA, California",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 19.43,
+        "max": 32.98,
+        "period": "hour",
+        "currency": "USD",
+        "scopeStates": [
+          "California"
+        ]
+      },
+      "publishedPay": {
+        "text": "$19.43 - $32.98 per hour",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "3655237154d84c8236c4b4dfcdae8d7ffd598d95a189c0783f5821fe39608c14",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1676015",
+      "companyId": "centene",
+      "requisitionId": "1676015",
+      "title": "Provider Engagement Account Manager",
+      "url": "https://jobs.centene.com/us/en/jobs/1676015/provider-engagement-account-manager",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Columbus",
+          "state": "Ohio"
+        },
+        {
+          "city": "Remote-OH",
+          "state": "Ohio"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Ohio"
+      ],
+      "locationNote": "Columbus, Ohio; Remote-OH, Ohio",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Proficient in HEDIS/Quality measures, cost and utilization.Pay Range: $56,200.00 - $101,000.00 per year",
+        "scopeStates": [
+          "Ohio"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c60b66830ceb6dc654aeb8092ece6068b410255d09cd8782b9d9d6bbab8baeac",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1676025",
+      "companyId": "centene",
+      "requisitionId": "1676025",
+      "title": "Senior Manager, Account Relations",
+      "url": "https://jobs.centene.com/us/en/jobs/1676025/senior-manager-account-relations",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-MO",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Missouri"
+      ],
+      "locationNote": "Remote-MO, Missouri",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "3+ years management experience preferred.Pay Range: $102,900.00 - $190,500.00 per year",
+        "scopeStates": [
+          "Missouri"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "43e7abb085b6e2d3f4ac64454e37741f32505f030e0c421a0da855ea03eeade2",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1676047",
+      "companyId": "centene",
+      "requisitionId": "1676047",
+      "title": "Care Navigator - Foster Care",
+      "url": "https://jobs.centene.com/us/en/jobs/1676047/care-navigator-foster-care",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-MO",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Missouri"
+      ],
+      "locationNote": "Remote-MO, Missouri",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 22.94,
+        "max": 38.79,
+        "period": "hour",
+        "currency": "USD",
+        "scopeStates": [
+          "Missouri"
+        ]
+      },
+      "publishedPay": {
+        "text": "$22.94 - $38.79 per hour",
+        "scopeStates": [
+          "Missouri"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "baf1183f151eba789685008f0bd2d7b12e85a05a19a8bbac9a12eded0d28865e",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1676051",
+      "companyId": "centene",
+      "requisitionId": "1676051",
+      "title": "Clinical Revew Clinician - Appeals",
+      "url": "https://jobs.centene.com/us/en/jobs/1676051/clinical-revew-clinician-appeals",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-MI",
+          "state": "Michigan"
+        },
+        {
+          "city": "Remote-AR",
+          "state": "Arkansas"
+        },
+        {
+          "city": "Remote-FL",
+          "state": "Florida"
+        },
+        {
+          "city": "Remote-GA",
+          "state": "Georgia"
+        },
+        {
+          "city": "Remote-IL",
+          "state": "Illinois"
+        },
+        {
+          "city": "Remote-KS",
+          "state": "Kansas"
+        },
+        {
+          "city": "Remote-KY",
+          "state": "Kentucky"
+        },
+        {
+          "city": "Remote-LA",
+          "state": "Louisiana"
+        },
+        {
+          "city": "Remote-MD",
+          "state": "Maryland"
+        },
+        {
+          "city": "Remote-MS",
+          "state": "Mississippi"
+        },
+        {
+          "city": "Remote-NC",
+          "state": "North Carolina"
+        },
+        {
+          "city": "Remote-NE",
+          "state": "Nebraska"
+        },
+        {
+          "city": "Remote-NV",
+          "state": "Nevada"
+        },
+        {
+          "city": "Remote-OH",
+          "state": "Ohio"
+        },
+        {
+          "city": "Remote-PA",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Remote-TX",
+          "state": "Texas"
+        },
+        {
+          "city": "Remote-VA",
+          "state": "Virginia"
+        },
+        {
+          "city": "Remote-WI",
+          "state": "Wisconsin"
+        }
+      ],
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Arkansas",
+        "Florida",
+        "Georgia",
+        "Illinois",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maryland",
+        "Michigan",
+        "Mississippi",
+        "Nebraska",
+        "Nevada",
+        "North Carolina",
+        "Ohio",
+        "Pennsylvania",
+        "Texas",
+        "Virginia",
+        "Wisconsin"
+      ],
+      "locationNote": "Remote-MI, Michigan; Remote-AR, Arkansas; Remote-FL, Florida; Remote-GA, Georgia; Remote-IL, Illinois; Remote-KS, Kansas; Remote-KY, Kentucky; Remote-LA, Louisiana; Remote-MD, Maryland; Remote-MS, Mississippi; Remote-NC, North Carolina; Remote-NE, Nebraska; Remote-NV, Nevada; Remote-OH, Ohio; Remote-PA, Pennsylvania; Remote-TX, Texas; Remote-VA, Virginia; Remote-WI, Wisconsin",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "a433a6b1a3fa1317747ad96c3a3a0d6cbea64bf712a30f07c5b44bf7ccf14582",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1676064",
+      "companyId": "centene",
+      "requisitionId": "1676064",
+      "title": "Senior Provider Engagement Account Manager",
+      "url": "https://jobs.centene.com/us/en/jobs/1676064/senior-provider-engagement-account-manager",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote-WA State",
+          "state": "Washington"
+        },
+        {
+          "city": "Olympia",
+          "state": "Washington"
+        },
+        {
+          "city": "Shelton",
+          "state": "Washington"
+        },
+        {
+          "city": "Tacoma",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Remote-WA State, Washington; Olympia, Washington; Shelton, Washington; Tacoma, Washington",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 70100.0,
+        "max": 126200.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Washington"
+        ]
+      },
+      "publishedPay": {
+        "text": "$70,100.00 - $126,200.00 per year",
+        "scopeStates": [
+          "Washington"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "b77321eaa8e7385ecd3cf5c6ea12d4fecb6d2969c5c596e575b7c5479f27522c",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "centene-1676068",
+      "companyId": "centene",
+      "requisitionId": "1676068",
+      "title": "Receptionist & Administrative Assistant",
+      "url": "https://jobs.centene.com/us/en/jobs/1676068/receptionist-administrative-assistant",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "West Allis",
+          "state": "Wisconsin"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "West Allis, Wisconsin",
+      "employmentType": "Part-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Education/Experience: High school diploma or equivalent. 2+ year previous experience in one or more areas such as receptionist, administrative assistance or customer service. An Associate’s degree in lieu of experience may be considered. Proficiency in Microsoft Office products such as Outlook, Word, Excel and PowerPoint required. Must have strong interpersonal skills and the ability to multi-task or manage incoming calls in in a prompt, courteous manner.Pay Range: $19.43 - $32.98 per hour",
+        "scopeStates": [
+          "Wisconsin"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "a117e1ee3845ec2bf2021fec449fcc90cb7a87e8b905a3c83e6c151df91cf260",
+      "evidence": {
+        "arrangement": "",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -9615,6 +11070,664 @@
       }
     },
     {
+      "id": "general-motors-jr-202623215",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623215",
+      "title": "Senior RF Engineer",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623215/senior-rf-engineer",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Warren",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Warren, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "f6aed0ce835d815ec315d8672f5ee67fb1cd56cdfb9da4d90e6cada1557f92ef",
+      "evidence": {
+        "arrangement": "Hybrid Work Policy - 3 days In-office, 2days remote",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623430",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623430",
+      "title": "Chevrolet District Sales Manager, West Texas",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623430/chevrolet-district-sales-manager-west-texas",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Remote, Texas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "up to 75% travel",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "07a4ac5955b9dad3290281df47375f962fe500b4ca9f9efbb2f216297518701b",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "up to 75% travel",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623500",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623500",
+      "title": "System Integration Engineer",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623500/system-integration-engineer",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Milford",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Milford, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "362579deeef1379171628a1414ee831e9b004fd83edbe8c58d1bf3825281072a",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623505",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623505",
+      "title": "Production Shift Lead",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623505/production-shift-lead",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Wentzville",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Wentzville, Missouri",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e7b593c3972f5c30e5b7b5fe3aa0baf8bcdab517d2898b60d6be6d7b6c219b19",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623563",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623563",
+      "title": "Manufacturing Engineer",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623563/manufacturing-engineer",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Wentzville",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Wentzville, Missouri",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "2d751ce4418017a4409be629369a079c2bec633bdc1fe375ea36247a3caf8549",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623669",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623669",
+      "title": "Industrial Engineer",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623669/industrial-engineer",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Wyoming",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Wyoming, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "4ba3bf5b25c5f997e0a07c9e693f41ed751e344416704b7fbcd703836a548ed7",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623670",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623670",
+      "title": "HRLR Business Partner - Marion, Indiana",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623670/hrlr-business-partner-marion-indiana",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Marion",
+          "state": "Indiana"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Marion, Indiana",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "b997c24243f3dc804a13242b0d5bfd37e1b55eea908f1d8c43cae37aa7ac91b6",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623817",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623817",
+      "title": "Senior Engineer – Program Efficiency and Simplification",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623817/senior-engineer-program-efficiency-and-simplification",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Warren",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Warren, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "38a8da61326e591e305a4050219f6da668ae6b8d7d871279b85d67c393e9e5ff",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623830",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623830",
+      "title": "Senior Robotics Software Engineer – AI-Enabled Manipulation & Industrial Automation",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623830/senior-robotics-software-engineer-ai-enabled-manipulation-industrial-automation",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Mountain View",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Mountain View, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "salary range for this role is $153,200 to $234,100",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "1b0c99d06e243ec05c2379da9d1cb8b095cec58cceb4e4e4a63010f3f0535ec9",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623831",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623831",
+      "title": "Value Chain Engineering- Sr VCE",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623831/value-chain-engineering-sr-vce",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Warren",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Warren, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "336f6c9a315822b91d7aae80333f2621d62a6dc9aec923d6445b6e53d8c5de9c",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623837",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623837",
+      "title": "Technical Integration Lead - CAD",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623837/technical-integration-lead-cad",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Warren",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Warren, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "33d55ce9ddcc586a3e5006b83433523ba89ff51db0d4c6e413421746f9c8cddd",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202623922",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202623922",
+      "title": "Manufacturing Process Engineer - Launch",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202623922/manufacturing-process-engineer-launch",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Romulus",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Romulus, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "24734b222a6741edc84a928e7ea89f53729e483369b6043b97fd4b43568b75fa",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202624008",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202624008",
+      "title": "Paint Maintenance Planner",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202624008/paint-maintenance-planner",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Kansas City",
+          "state": "Kansas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Kansas City, Kansas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "0cae00e7209a7498e5b6c2dfaf65cf620328623f7d08bbee22730865f179ea3d",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202624028",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202624028",
+      "title": "Paint Process Engineer",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202624028/paint-process-engineer",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Kansas City",
+          "state": "Kansas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Kansas City, Kansas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "6204a443de9805a4dbd8e8350c5363a893ec26d6c7a1104d8a32e5075907f77a",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202624129",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202624129",
+      "title": "2027 Summer Intern - Automotive Technician",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202624129/2027-summer-intern-automotive-technician",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Milford",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Milford, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "dab702cbc152a9f37c43ea81363e42dfcc841b2d3f03dd225e28c0c4a7215972",
+      "evidence": {
+        "arrangement": "Work Arrangement : \n \n Onsite",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202624147",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202624147",
+      "title": "Staff AV Behavior Safety Engineering Lead",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202624147/staff-av-behavior-safety-engineering-lead",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Remote",
+          "state": "District of Columbia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Remote, District of Columbia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation : The compensation information is a good faith estimate only. It is based on what a successful applicant might be paid in accordance with applicable state laws. The actual base salary a successful candidate will be offered within this range will vary based on factors relevant to the position, as well as geography of the selected candidate. • The salary range for this role is $185,100 and $284,100. The actual base salary a successful candidate will be offered within this range will vary based on factors relevant to the position. | • The salary range for this role is $185,100 and $284,100. The actual base salary a successful candidate will be offered within this range will vary based on factors relevant to the position.",
+        "scopeStates": [
+          "District of Columbia"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "f5f2e576fda3d6ace659e234c12a62c97364b439aeeebae4ff0de8b5af1d7189",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "general-motors-jr-202624213",
+      "companyId": "general-motors",
+      "requisitionId": "JR-202624213",
+      "title": "Engineering Group - Designers",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202624213/engineering-group-designers",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Warren",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Warren, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Automotive",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "99c1f56a2f603c0f1c2bcab249b34a0de22c84ed25aa4929157988f1fe680543",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
       "id": "lowes-jr-02687093",
       "companyId": "lowes",
       "requisitionId": "JR-02687093",
@@ -11110,6 +13223,926 @@
       }
     },
     {
+      "id": "target-r0000447565",
+      "companyId": "target",
+      "requisitionId": "R0000447565",
+      "title": "Full Time Hourly Warehouse Operations (T3808)",
+      "url": "https://corporate.target.com/jobs/w75/65/full-time-hourly-warehouse-operations-t3808",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Midway",
+          "state": "Georgia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Midway, Georgia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Associate roles starting at $20.05 per hour. The pay range is $20.05 to $22.96 per hour. | Warehouse Worker roles starting at $21.85 per hour. The pay range is $21.85 to $25.02 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Georgia"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "dc98b356763bbb9383dd48e767236d04081e9d1b94e39970bff20c8937151e30",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447577",
+      "companyId": "target",
+      "requisitionId": "R0000447577",
+      "title": "Warehouse Worker - Food Distribution Center (T3727)",
+      "url": "https://corporate.target.com/jobs/w75/77/warehouse-worker-food-distribution-center-t3727",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Thornton",
+          "state": "Colorado"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Thornton, Colorado",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Worker roles starting at $25.20 per hour. The pay range is $25.20 to $30.09 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Colorado"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2027-02-19",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "0c5277b7234add5a4fda02454cf55a767d1ae0ee2b2ff1755f228a1da4888536",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447598",
+      "companyId": "target",
+      "requisitionId": "R0000447598",
+      "title": "Warehouse Worker - Food Distribution Center (T3735)",
+      "url": "https://corporate.target.com/jobs/w75/98/warehouse-worker-food-distribution-center-t3735",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Windsor",
+          "state": "Connecticut"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Windsor, Connecticut",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Worker roles starting at $24.80 per hour. The pay range is $24.80 to $29.61 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Connecticut"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "04aa795ba710df40e5b341436d62fd9adf65ebfe140335166c4c233699cdbbfc",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447600",
+      "companyId": "target",
+      "requisitionId": "R0000447600",
+      "title": "Warehouse Worker - Food Distribution Center (T3880)",
+      "url": "https://corporate.target.com/jobs/w76/00/warehouse-worker-food-distribution-center-t3880",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "West Jefferson",
+          "state": "Ohio"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "West Jefferson, Ohio",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Worker roles starting at $24.00 per hour. The pay range is $24.00 to $26.86 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Ohio"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "10b96902076af95b870c7526171973e3193c76c56e9aba7625954dbfc147d36d",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447608",
+      "companyId": "target",
+      "requisitionId": "R0000447608",
+      "title": "Warehouse Worker - Food Distribution Center (T3881)",
+      "url": "https://corporate.target.com/jobs/w76/08/warehouse-worker-food-distribution-center-t3881",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Upper Marlboro",
+          "state": "Maryland"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Upper Marlboro, Maryland",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Worker roles starting at $24.25 per hour. The pay range is $24.25 to $28.66 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Maryland"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "b223f2a2dace755196936a7ab5c7427d56efc1de3c4fc8803dd7a404a611608f",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447614",
+      "companyId": "target",
+      "requisitionId": "R0000447614",
+      "title": "Warehouse Worker - Food Distribution Center (T3895)",
+      "url": "https://corporate.target.com/jobs/w76/14/warehouse-worker-food-distribution-center-t3895",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Cedar Falls",
+          "state": "Iowa"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Cedar Falls, Iowa",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Worker roles starting at $22.50 per hour. The pay range is $22.50 to $25.08 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Iowa"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "1a0333ff7b56bf958b0a7162d0711d4b4db6853e7565fb39c63705afa99fb0c7",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447620",
+      "companyId": "target",
+      "requisitionId": "R0000447620",
+      "title": "Seasonal Full Time Hourly Warehouse Associate Openings (T3872)",
+      "url": "https://corporate.target.com/jobs/w76/20/seasonal-full-time-hourly-warehouse-associate-openings-t3872",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Elmhurst",
+          "state": "Illinois"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Elmhurst, Illinois",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Associate roles starting at $22.75 per hour. The pay range is $22.75 to $26.00 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Illinois"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e8d2e523be352ce7a1f65e19390987a6ed6db372d4dd89ca1f694f3215461231",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447625",
+      "companyId": "target",
+      "requisitionId": "R0000447625",
+      "title": "Seasonal Full Time Hourly Warehouse Worker Openings (T9275)",
+      "url": "https://corporate.target.com/jobs/w76/25/seasonal-full-time-hourly-warehouse-worker-openings-t9275",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Joliet",
+          "state": "Illinois"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Joliet, Illinois",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Worker roles starting at $24.50 per hour. The pay range is $24.50 to | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Illinois"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "28905a89d4f9f1ddeefcfa62230c3ef1f4f86b7796c26815f13050b9bc52c320",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447640",
+      "companyId": "target",
+      "requisitionId": "R0000447640",
+      "title": "Full Time Hourly Warehouse Operations Seasonal and Permanent Openings (T3803)",
+      "url": "https://corporate.target.com/jobs/w76/40/full-time-hourly-warehouse-operations-openings-t3803",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Topeka",
+          "state": "Kansas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Topeka, Kansas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Associate roles starting at $20.50 per hour. The pay range is $20.50 to $24.47 per hour. | Warehouse Worker roles starting at $22.50 per hour. The pay range is $22.50 to $27.07 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Kansas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "da2d0e22c01f7740786dbf9c2c83819bd0eb99a594db14ad14d1228a9d057123",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447650",
+      "companyId": "target",
+      "requisitionId": "R0000447650",
+      "title": "Full Time Hourly Warehouse Operations Openings (T3888)",
+      "url": "https://corporate.target.com/jobs/w76/50/full-time-hourly-warehouse-operations-openings-t3888",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Upper Marlboro",
+          "state": "Maryland"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Upper Marlboro, Maryland",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Associate roles starting at $22.85 per hour. The pay range is $22.85 to $27.11 per hour. | Warehouse Worker roles starting at $24.25 per hour. The pay range is $24.25 to $28.66 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Maryland"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-14",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c5cb8139ffc6039c6fa84088cc4dc7d9da12019260377b526fa421d22c3f162c",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447654",
+      "companyId": "target",
+      "requisitionId": "R0000447654",
+      "title": "Full Time Hourly Warehouse Operations Seasonal Openings for Evening/Overnight Shifts (T3857)",
+      "url": "https://corporate.target.com/jobs/w76/54/full-time-hourly-warehouse-operations-seasonal-openings-for-evening-overnight-shifts-t3857",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Logan Township",
+          "state": "New Jersey"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Logan Township, New Jersey",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Associate roles starting at $22.60 per hour. The pay range is $22.60 to $25.85 per hour. | Warehouse Worker roles starting at $24.65 per hour. The pay range is $24.65 to $27.65 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "New Jersey"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-14",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "6030c64675831bddde0e9e98a9d7fcd3c1747a21d55e7d0d0c1ff7eff0fbdc98",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447663",
+      "companyId": "target",
+      "requisitionId": "R0000447663",
+      "title": "Warehouse Worker - Food Distribution Center (T3897)",
+      "url": "https://corporate.target.com/jobs/w76/63/warehouse-worker-food-distribution-center-t3897",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "DENTON",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "DENTON, Texas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Worker roles starting at $22.85 per hour. The pay range is $22.85 to $25.79 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-19",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "bf599c41dfef561c2d6ae7c2e0626f31799cd9406ddffd045f236ea0d2370256",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447665",
+      "companyId": "target",
+      "requisitionId": "R0000447665",
+      "title": "Seasonal Part Time Hourly Warehouse Associate Openings Only (T3863)",
+      "url": "https://corporate.target.com/jobs/w76/65/seasonal-part-time-hourly-warehouse-associate-openings-only-t3863",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "King of Prussia",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "King of Prussia, Pennsylvania",
+      "employmentType": "Part-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Associate roles starting at $22.80 per hour. The pay range is $22.80 to $26.55 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Pennsylvania"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "88e997d854b14ab09d0464019d130114df3d8c865dfec8d6f56859bb5a763934",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000447667",
+      "companyId": "target",
+      "requisitionId": "R0000447667",
+      "title": "Seasonal Full Time Hourly Warehouse Associate Openings (T3863)",
+      "url": "https://corporate.target.com/jobs/w76/67/seasonal-full-time-hourly-warehouse-associate-openings-t3863",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "King of Prussia",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "King of Prussia, Pennsylvania",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Associate roles starting at $22.80 per hour. The pay range is $22.80 to $26.55 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "Pennsylvania"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "3227cb583e3152394ffaaa464c634ea91bb221dc39a814157392ce07ab1bccc0",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000453979",
+      "companyId": "target",
+      "requisitionId": "R0000453979",
+      "title": "Full Time Hourly Warehouse Operations Openings -  $1,000 SIGN ON BONUS (T3802)",
+      "url": "https://corporate.target.com/jobs/w39/79/full-time-hourly-warehouse-operations-openings-$1,000-sign-on-bonus-t3802",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Amsterdam",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Amsterdam, New York",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Warehouse Associate roles starting at $ 21.55 per hour. The pay range is $ 21.55 to $ 25.43 per hour. | Warehouse Worker roles starting at $24.00 per hour. The pay range is $24.00 to $ 28.31 per hour. | You may also earn additional compensation in the form of a shift differential, ranging from $2.00 to $3.50 per hour, based on eligibility.",
+        "scopeStates": [
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "0889dbeffe860ce8dbd142b10c9ea9da159fb23995267d9fdaa54b50cc4590e8",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000475165",
+      "companyId": "target",
+      "requisitionId": "R0000475165",
+      "title": "Lead Applied Data Scientist - Recommendations (Contextual Bandits, Reinforcement Learning) (Remote Eligible)",
+      "url": "https://corporate.target.com/jobs/w51/65/lead-applied-data-scientist-recommendations-contextual-bandits,-reinforcement-learning-remote-e",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Minneapolis",
+          "state": "Minnesota"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Minneapolis, Minnesota",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 132000.0,
+        "max": 238000.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Minnesota"
+        ]
+      },
+      "publishedPay": {
+        "text": "The pay range is $132,000.00 - $238,000.00",
+        "scopeStates": [
+          "Minnesota"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-09",
+      "closesAt": "2026-12-10",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "98d495486dcca5d7c1e7a217319614bfa7902d1260212349557f9c865240cea3",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000475423",
+      "companyId": "target",
+      "requisitionId": "R0000475423",
+      "title": "Principal Engineer - AI Platform (Forward Deployed Engineering and AI Builder Experience) (Remote Eligible)",
+      "url": "https://corporate.target.com/jobs/w54/23/principal-engineer-ai-platform-forward-deployed-engineering-and-ai-builder-experience-remote-el",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Brooklyn Park",
+          "state": "Minnesota"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Brooklyn Park, Minnesota",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 168000.0,
+        "max": 356000.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Minnesota"
+        ]
+      },
+      "publishedPay": {
+        "text": "The pay range is $168,000.00 - $356,000.00",
+        "scopeStates": [
+          "Minnesota"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-09",
+      "closesAt": "2026-12-10",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "5f430a42822f5b2a69bf2296e859238fc4925d8e6b91ec1da63084d7343d2f04",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000479152",
+      "companyId": "target",
+      "requisitionId": "R0000479152",
+      "title": "Director Product Management - Digital Discovery & Experiences (Remote Eligible)",
+      "url": "https://corporate.target.com/jobs/w91/52/director-product-management-digital-discovery-experiences-remote-eligible",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Minneapolis",
+          "state": "Minnesota"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Minneapolis, Minnesota",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 149000.0,
+        "max": 268000.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Minnesota"
+        ]
+      },
+      "publishedPay": {
+        "text": "The pay range is $149,000.00 - $268,000.00",
+        "scopeStates": [
+          "Minnesota"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-10",
+      "closesAt": "2026-11-27",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "bc964398f4a9334a87127165ff42ba0cac2a1e6a5966ea483a8beca6a97a1f80",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000480043",
+      "companyId": "target",
+      "requisitionId": "R0000480043",
+      "title": "Lead Forward Deployed Engineer (FDE) - AI Platforms (ML, LLMs, APIs, ML Ops) (Remote Eligible)",
+      "url": "https://corporate.target.com/jobs/w00/43/lead-forward-deployed-engineer-fde-ai-platforms-ml,-llms,-apis,-ml-ops-remote-eligible",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Brooklyn Park",
+          "state": "Minnesota"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Brooklyn Park, Minnesota",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 132000.0,
+        "max": 238000.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Minnesota"
+        ]
+      },
+      "publishedPay": {
+        "text": "The pay range is $132,000.00 - $238,000.00",
+        "scopeStates": [
+          "Minnesota"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-06",
+      "closesAt": "2026-12-10",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "f7efb1c49f27dba0d7c3dc1ee9b1d988173f23a2458df782ccf20553f69afac1",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "target-r0000480586",
+      "companyId": "target",
+      "requisitionId": "R0000480586",
+      "title": "Senior Account Executive, Roundel - Sports and Electronics (Remote Eligible)",
+      "url": "https://corporate.target.com/jobs/w05/86/senior-account-executive,-roundel-sports-and-electronics-remote-eligible",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Minneapolis",
+          "state": "Minnesota"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Minneapolis, Minnesota",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 132000.0,
+        "max": 238000.0,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "Minnesota"
+        ]
+      },
+      "publishedPay": {
+        "text": "The pay range is $132,000.00 - $238,000.00",
+        "scopeStates": [
+          "Minnesota"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": "2026-11-24",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Retail",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T21:19:33.873674+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "b9c99cfb5b1ac1d24e36f21c9c2e793ad078200c1363df5892260ac4b83bfdcf",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": ""
+      }
+    },
+    {
       "id": "united-airlines-whq00027019",
       "companyId": "united-airlines",
       "requisitionId": "WHQ00027019",
@@ -12006,8 +15039,8 @@
       "locationNote": "Newberry, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 78508.0,
-        "max": 117762.0,
+        "min": 78508,
+        "max": 117762,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -12146,8 +15179,8 @@
       "locationNote": "Harlingen, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 15.0,
-        "max": 17.0,
+        "min": 15,
+        "max": 17,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12242,8 +15275,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Richmond, Virginia",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -12290,8 +15323,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -12338,8 +15371,8 @@
       "locationNote": "Irving, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 60200.0,
-        "max": 107400.0,
+        "min": 60200,
+        "max": 107400,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -12390,8 +15423,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -12482,8 +15515,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Las Vegas, Nevada",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -12542,8 +15575,8 @@
       "locationNote": "Milwaukee, Wisconsin; Wausau, Wisconsin; De Pere, Wisconsin",
       "employmentType": "Not specified",
       "salary": {
-        "min": 22.0,
-        "max": 48.0,
+        "min": 22,
+        "max": 48,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12594,8 +15627,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 120100.0,
-        "max": 214500.0,
+        "min": 120100,
+        "max": 214500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -12646,8 +15679,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Boston, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -12694,8 +15727,8 @@
       "locationNote": "Paris, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12746,8 +15779,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 134600.0,
-        "max": 230800.0,
+        "min": 134600,
+        "max": 230800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -12798,8 +15831,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -12858,8 +15891,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Las Vegas, Nevada; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12916,8 +15949,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Tampa, Florida",
       "employmentType": "Not specified",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12968,8 +16001,8 @@
       "locationNote": "Raleigh, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 41.0,
-        "max": 62.0,
+        "min": 41,
+        "max": 62,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13020,8 +16053,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -13112,8 +16145,8 @@
       "locationNote": "Draper, Utah",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -13164,8 +16197,8 @@
       "locationNote": "Memphis, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13272,8 +16305,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: New York, New York; Jersey City, New Jersey; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -13328,8 +16361,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 77000.0,
-        "max": 137600.0,
+        "min": 77000,
+        "max": 137600,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -13472,8 +16505,8 @@
       "locationNote": "Novato, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13524,8 +16557,8 @@
       "locationNote": "Indianapolis, Indiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 29.0,
+        "min": 16,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13576,8 +16609,8 @@
       "locationNote": "Everett, Washington",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13628,8 +16661,8 @@
       "locationNote": "Sumter, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13680,8 +16713,8 @@
       "locationNote": "Westborough, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 29.0,
+        "min": 16,
+        "max": 29,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -13732,7 +16765,7 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Lafayette, Louisiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 33.0,
+        "min": 33,
         "max": 49.5,
         "period": "hour",
         "currency": "USD",
@@ -13824,8 +16857,8 @@
       "locationNote": "Pasadena, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13980,8 +17013,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Tampa, Florida; Minneapolis, Minnesota; Phoenix, Arizona; Hartford, Connecticut",
       "employmentType": "Full-time",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -14028,8 +17061,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14080,8 +17113,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 20.0,
-        "max": 36.0,
+        "min": 20,
+        "max": 36,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14176,8 +17209,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 35.0,
-        "max": 63.0,
+        "min": 35,
+        "max": 63,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14228,8 +17261,8 @@
       "locationNote": "Fort Worth, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 19.0,
-        "max": 25.0,
+        "min": 19,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14296,8 +17329,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Hartford, Connecticut; Tampa, Florida; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -14344,8 +17377,8 @@
       "locationNote": "Glen Flora, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 35.0,
-        "max": 63.0,
+        "min": 35,
+        "max": 63,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14396,8 +17429,8 @@
       "locationNote": "Rutherford, New Jersey",
       "employmentType": "Not specified",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14448,8 +17481,8 @@
       "locationNote": "Chestnut Hill, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -14582,8 +17615,8 @@
       "locationNote": "Opelika, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 69336.0,
-        "max": 104004.0,
+        "min": 69336,
+        "max": 104004,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -14634,8 +17667,8 @@
       "locationNote": "Pembroke, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 71640.0,
-        "max": 107460.0,
+        "min": 71640,
+        "max": 107460,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -14730,8 +17763,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 60200.0,
-        "max": 107400.0,
+        "min": 60200,
+        "max": 107400,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -14794,8 +17827,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Hartford, Connecticut; Tampa, Florida; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": []
@@ -14842,8 +17875,8 @@
       "locationNote": "Greenville, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 75620.0,
-        "max": 113430.0,
+        "min": 75620,
+        "max": 113430,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -14894,7 +17927,7 @@
       "locationNote": "Elizabethton, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 22.6,
         "period": "hour",
         "currency": "USD",
@@ -14946,8 +17979,8 @@
       "locationNote": "Sylacauga, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 74376.0,
-        "max": 111564.0,
+        "min": 74376,
+        "max": 111564,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -14998,8 +18031,8 @@
       "locationNote": "Sylacauga, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 74376.0,
-        "max": 111564.0,
+        "min": 74376,
+        "max": 111564,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15102,8 +18135,8 @@
       "locationNote": "Bolivia, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 71640.0,
-        "max": 107460.0,
+        "min": 71640,
+        "max": 107460,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15206,7 +18239,7 @@
       "locationNote": "Lexington, Kentucky",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 21.65,
         "period": "hour",
         "currency": "USD",
@@ -15258,8 +18291,8 @@
       "locationNote": "Colorado Springs, Colorado",
       "employmentType": "Not specified",
       "salary": {
-        "min": 44.0,
-        "max": 79.0,
+        "min": 44,
+        "max": 79,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -15310,8 +18343,8 @@
       "locationNote": "Jonesboro, Arkansas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 67104.0,
-        "max": 100656.0,
+        "min": 67104,
+        "max": 100656,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15362,8 +18395,8 @@
       "locationNote": "Dayton, Ohio",
       "employmentType": "Not specified",
       "salary": {
-        "min": 50000.0,
-        "max": 115000.0,
+        "min": 50000,
+        "max": 115000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15546,7 +18579,7 @@
       "locationNote": "Valparaiso, Indiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 26.35,
         "period": "hour",
         "currency": "USD",
@@ -15598,8 +18631,8 @@
       "locationNote": "Leominster, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 87560.0,
-        "max": 131340.0,
+        "min": 87560,
+        "max": 131340,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15702,8 +18735,8 @@
       "locationNote": "Charleston, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 75620.0,
-        "max": 113430.0,
+        "min": 75620,
+        "max": 113430,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15847,8 +18880,8 @@
       "locationNote": "Hartwell, Georgia",
       "employmentType": "Not specified",
       "salary": {
-        "min": 70992.0,
-        "max": 106488.0,
+        "min": 70992,
+        "max": 106488,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -15899,7 +18932,7 @@
       "locationNote": "Akron, Ohio",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 23.85,
         "period": "hour",
         "currency": "USD",
@@ -15995,8 +19028,8 @@
       "locationNote": "Portland, Maine",
       "employmentType": "Not specified",
       "salary": {
-        "min": 66400.0,
-        "max": 99600.0,
+        "min": 66400,
+        "max": 99600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16047,8 +19080,8 @@
       "locationNote": "Stafford, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -16099,8 +19132,8 @@
       "locationNote": "Webster, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 32.0,
+        "min": 16,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -16195,8 +19228,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 84744.0,
-        "max": 127116.0,
+        "min": 84744,
+        "max": 127116,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16247,8 +19280,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 44880.0,
-        "max": 67320.0,
+        "min": 44880,
+        "max": 67320,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16299,8 +19332,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 40832.0,
-        "max": 61248.0,
+        "min": 40832,
+        "max": 61248,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -16689,6 +19722,51 @@
         "pendingClosureChecks": 0,
         "discoveryLimited": false,
         "lastSuccessfulAt": "2026-11-13T21:02:27.162192+00:00"
+      },
+      "general-motors": {
+        "discovered": 681,
+        "checked": 17,
+        "added": 0,
+        "changed": 1,
+        "closed": 0,
+        "skipped": 0,
+        "outsidePostingWindow": 0,
+        "warnings": [],
+        "errors": [],
+        "activeTracked": 17,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": false,
+        "lastSuccessfulAt": "2026-11-13T21:19:33.873674+00:00"
+      },
+      "centene": {
+        "discovered": 392,
+        "checked": 18,
+        "added": 0,
+        "changed": 11,
+        "closed": 0,
+        "skipped": 0,
+        "outsidePostingWindow": 0,
+        "warnings": [],
+        "errors": [],
+        "activeTracked": 18,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": false,
+        "lastSuccessfulAt": "2026-11-13T21:19:33.873674+00:00"
+      },
+      "target": {
+        "discovered": 14124,
+        "checked": 20,
+        "added": 0,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 0,
+        "outsidePostingWindow": 0,
+        "warnings": [],
+        "errors": [],
+        "activeTracked": 20,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": false,
+        "lastSuccessfulAt": "2026-11-13T21:19:33.873674+00:00"
       }
     }
   }

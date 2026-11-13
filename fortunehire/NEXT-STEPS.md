@@ -1,5 +1,13 @@
 # FortuneHire continuation — November 13, 2026
 
+## Current status: latest batch supersedes the older notes below
+
+Seventeen employers are connected, including Target, General Motors, and Centene. RTX remains paused; thirty-four other employers still need connections. The latest adapters handle plural /jobs/ routes, collision-safe Target keys, GM address arrays and hybrid-work labels, Target U.S. deadline formatting, Centene pay ranges, and explicit remote-state location restrictions. Do not interpret Remote-AZ or Remote-MO as nationwide eligibility from a generic applicant-country field. Multiple Target role/pay bands remain published text rather than one invented numeric range.
+
+Continue auditing missing field formats and expanding coverage within the connected feeds. Investigate the remaining companies in tested batches, retaining the existing limits, lifecycle safeguards, GitHub-access probe, tests, and live checks. Update the source archive and employer-feed audit after each successful release. Walmart, Disney, Verizon, Humana, JPMorgan, and Google remain pending. Skip RTX.
+
+## Historical notes before this batch
+
 Keep the current 52-company directory. Fourteen employers have enabled bounded job feeds. RTX is paused at the user's request; do not retry or enable it as part of the next batch. Thirty-seven other employers still need connections.
 
 ## Current corrections

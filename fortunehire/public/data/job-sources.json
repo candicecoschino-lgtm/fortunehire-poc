@@ -57,6 +57,18 @@
     "united-airlines": {
       "host": "careers.united.com",
       "sector": "Transportation"
+    },
+    "target": {
+      "host": "corporate.target.com",
+      "sector": "Retail"
+    },
+    "general-motors": {
+      "host": "search-careers.gm.com",
+      "sector": "Automotive"
+    },
+    "centene": {
+      "host": "jobs.centene.com",
+      "sector": "Health Care"
     }
   }
 }

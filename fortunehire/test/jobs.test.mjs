@@ -13,6 +13,13 @@ test('new employer URLs must match that employer reviewed career host',()=>{
   assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...sample,url:'https://jobs.citi.com/job/test-city/test-role/287/12345'}]},companies));
 });
 
+test('plural official posting routes keep employer ownership and reject search roots',()=>{
+  const sample={...structuredClone(data.jobs[0]),id:'target-synthetic',companyId:'target',url:'https://corporate.target.com/jobs/w06/25/test-role'};
+  assert.equal(validateJobs({schemaVersion:1,jobs:[sample]},companies).length,1);
+  assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...sample,url:'https://corporate.target.com/jobs/'}]},companies));
+  assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...sample,url:'https://jobs.centene.com/us/en/jobs/123/test-role'}]},companies));
+});
+
 test('publication date window is independent of last successful check date',()=>{
   const j={...jobs[0],reviewedAt:today,closesAt:null};
   assert.ok(isCurrent({...j,postedAt:'2026-10-30'},today));
