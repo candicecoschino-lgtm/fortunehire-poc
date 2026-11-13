@@ -363,7 +363,7 @@ def normalize_posting(body, url, company, now):
     us_allowed=any(value in ('US','USA','UNITED STATES','UNITED STATES OF AMERICA') for value in country_requirements)
     explicit_national=us_allowed and not host.endswith('.myworkdayjobs.com') or bool(national_remote and (not country_requirements or us_allowed))
     remote_scope='states' if eligible else 'nationwide' if arrangement=='remote' and explicit_national and not residency_restricted else 'unknown'
-    if not locations and not eligible: return None
+    if not locations and not eligible and remote_scope!='nationwide': return None
     travel, travel_evidence = None, ''
     no_travel = re.search(r'\b(?:Travel\s*(?:Required)?\s*:\s*(?:None|No)(?!\s+more)|No travel (?:is )?required)\b|\bTravel\s*:\s*0\s*%',page.text,re.I)
     yes_travel = re.search(r'\bTravel\s*:\s*(?:Yes\s*,?\s*)?(?:Up to\s*)?([1-9]\d?(?:\.\d+)?|100)\s*%[^\n]{0,50}',page.text,re.I)
@@ -412,11 +412,15 @@ def normalize_posting(body, url, company, now):
         deadline_note = 'Employer deadline '+deadline+' predates its posting date '+posted+'; deadline requires confirmation.'
         deadline = None
     key = re.sub(r'[^a-z0-9]+','-',req.lower()).strip('-')
+    listed_locations='; '.join(l['city']+', '+l['state'] for l in locations)
+    if remote_scope=='nationwide':location_note='Remote within the U.S.'+(' · Employer-listed locations: '+listed_locations if listed_locations else '')
+    elif arrangement=='remote' and remote_scope=='unknown':location_note='Remote · Eligible states not verified'+(' · Employer-listed locations: '+listed_locations if listed_locations else '')
+    else:location_note=listed_locations or 'Employer specifies eligible states: '+', '.join(eligible)
     return {
         'id':company+'-'+key, 'companyId':company, 'requisitionId':req, 'title':title, 'url':url,
         'arrangement':arrangement, 'locations':locations,
         'remoteScope':remote_scope, 'eligibleStates':eligible,
-        'locationNote':('Remote within the U.S. · Employer-listed locations: ' if remote_scope=='nationwide' else 'Remote · Eligible states not verified · Employer-listed locations: ' if arrangement=='remote' and remote_scope=='unknown' else '')+('; '.join(l['city']+', '+l['state'] for l in locations) or 'Employer specifies eligible states: '+', '.join(eligible)),
+        'locationNote':location_note,
         'employmentType':employment, 'salary':salary,
         'publishedPay':published_pay,
         'salaryNote':published_pay['note'] if published_pay else 'Structured employer pay for the listed state.' if salary else 'Pay or geographic scope not verified automatically. See employer posting.',

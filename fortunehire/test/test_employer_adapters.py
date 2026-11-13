@@ -54,4 +54,11 @@ class AdapterTests(unittest.TestCase):
         salary,published=c.extract_published_pay('Job duties. '*150+'Pay Range: United States: 193,000 - 224,000 USD Base pay depends on geography.',[{'city':'Atlanta','state':'Georgia'}],'coca-cola')
         self.assertIsNone(salary);self.assertIn('193,000',published['text']);self.assertNotIn('Job duties',published['text'])
 
+    def test_explicit_national_remote_does_not_require_an_office_address(self):
+        from test_collector import body,URL
+        document=body(jobLocation=[],jobLocationType='TELECOMMUTE',applicantLocationRequirements={'@type':'Country','name':'United States'})
+        job=c.normalize_posting(document,URL,'boeing',NOW)
+        self.assertEqual(job['remoteScope'],'nationwide');self.assertEqual(job['locations'],[])
+        self.assertEqual(job['locationNote'],'Remote within the U.S.')
+
 if __name__=='__main__':unittest.main()
