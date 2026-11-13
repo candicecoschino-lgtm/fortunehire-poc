@@ -1,46 +1,50 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-13T15:23:44.440217+00:00",
-  "coverage": "Bounded pilot: at most 100 tracked active US postings per employer; up to 20 new candidates per employer per run. Not a complete feed.",
+  "attemptedAt": "2026-11-13T15:47:13.291536+00:00",
+  "postingWindowDays": 14,
+  "coverage": "U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.",
   "sources": {
     "boeing": {
       "discovered": 1092,
       "checked": 45,
       "added": 0,
-      "changed": 0,
+      "changed": 44,
       "closed": 0,
       "skipped": 0,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 45,
       "pendingClosureChecks": 1,
-      "lastSuccessfulAt": "2026-11-13T15:23:44.440217+00:00"
+      "lastSuccessfulAt": "2026-11-13T15:47:13.291536+00:00"
     },
     "citigroup": {
       "discovered": 3110,
       "checked": 32,
       "added": 0,
-      "changed": 0,
+      "changed": 32,
       "closed": 0,
       "skipped": 0,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 32,
       "pendingClosureChecks": 0,
-      "lastSuccessfulAt": "2026-11-13T15:23:44.440217+00:00"
+      "lastSuccessfulAt": "2026-11-13T15:47:13.291536+00:00"
     },
     "unitedhealth-group": {
-      "discovered": 6538,
+      "discovered": 6527,
       "checked": 69,
       "added": 0,
-      "changed": 28,
+      "changed": 69,
       "closed": 0,
       "skipped": 0,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 69,
       "pendingClosureChecks": 0,
-      "lastSuccessfulAt": "2026-11-13T15:23:44.440217+00:00"
+      "lastSuccessfulAt": "2026-11-13T15:47:13.291536+00:00"
     }
   }
 }
