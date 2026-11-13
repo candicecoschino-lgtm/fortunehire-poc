@@ -1,5 +1,7 @@
 # Job data review — November 13, 2026
 
+Historical review of the original 22-posting starter collection. The current automated pilot supersedes this manual maintenance process; see [AUTOMATION.md](AUTOMATION.md), the dated records in `public/data/jobs.json`, and `public/data/collection-status.json` for current coverage and check results.
+
 ## Coverage and review method
 
 22 manually reviewed individual postings from Boeing, Citigroup and UnitedHealth Group: 3 on-site, 15 hybrid and 4 remote. This is a small curated proof of concept, not a comprehensive or automatically refreshed feed. All titles and application buttons link to the official individual employer posting, not a generic career landing page.
@@ -26,3 +28,4 @@ To add another employer, extend the employer-specific official-host allowlist in
 ## Validation
 
 19 automated checks cover the existing company directory and new job board, including state/arrangement intersections, actual remote eligibility, unknown states, separate pay periods and pay geography, unknown travel, expired/stale records, date boundaries, query URLs, pagination and unsafe/wrong-employer links. Browser QA additionally checks representative official postings, Florida combinations, pay thresholds, URL reload, pagination, keyboard disclosures, mobile layout and the retained company page.
+

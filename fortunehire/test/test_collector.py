@@ -59,6 +59,19 @@ class CollectorTests(unittest.TestCase):
             out,state,r=c.reconcile('boeing',[old],{}, {},lambda u:result,NOW+timedelta(days=1))
             self.assertEqual(out,[old]);self.assertTrue(r['errors'])
 
+    def test_new_unparseable_candidate_quarantined_without_publication(self):
+        out,state,r=c.reconcile('boeing',[],{}, {'12345':URL},lambda u:(200,'<html>Unsupported format</html>'),NOW)
+        self.assertFalse(out);self.assertFalse(r['errors']);self.assertTrue(r['warnings'])
+        self.assertIn('12345',state['quarantined'])
+        fetch=Mock(return_value=(200,body()))
+        c.reconcile('boeing',[],state,{'12345':URL},fetch,NOW+timedelta(hours=1))
+        fetch.assert_not_called()
+
+    def test_citi_job_type_label_and_visible_changes_affect_hash(self):
+        hybrid=c.normalize_posting(body()+'<h2>Job Type:</h2><span>Hybrid</span>',URL,'boeing',NOW)
+        onsite=c.normalize_posting(body()+'<h2>Job Type:</h2><span>On-site</span>',URL,'boeing',NOW)
+        self.assertEqual(hybrid['arrangement'],'hybrid');self.assertNotEqual(hybrid['sourceHash'],onsite['sourceHash'])
+
     def test_mass_closure_guard(self):
         jobs=[]
         for i in range(8):
@@ -88,6 +101,16 @@ class CollectorTests(unittest.TestCase):
     def test_explicit_deadline_closes_job(self):
         j=c.normalize_posting(body(validThrough='2026-11-12'),URL,'boeing',NOW)
         self.assertEqual(j['status'],'closed')
+
+    def test_description_deadline_and_employer_remote_statement(self):
+        j=c.normalize_posting(body(description="You'll enjoy the flexibility to work remotely * from anywhere within the U.S. Applications for this position will be accepted until Nov. 12, 2026"),URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'remote');self.assertEqual(j['remoteScope'],'unknown')
+        self.assertEqual(j['status'],'closed');self.assertEqual(j['closesAt'],'2026-11-12')
+
+    def test_closed_job_can_reopen_on_positive_posting(self):
+        old=c.normalize_posting(body(validThrough='2026-11-12'),URL,'boeing',NOW)
+        out,state,r=c.reconcile('boeing',[old],{}, {'12345':URL},lambda u:(200,body()),NOW)
+        self.assertEqual(len(out),1);self.assertEqual(out[0]['status'],'reviewed')
 
     def test_graph_and_ampersands(self):
         parsed=json.loads(c.Page(body(title='Research & Development')).scripts[0])

@@ -129,7 +129,7 @@ def normalize_posting(body, url, company, now):
         state = state_name(loc.get('name'))
         if state and state not in eligible: eligible.append(state)
     arrangement, arrangement_evidence = 'unknown', ''
-    labeled = re.search(r'Remote\s+Job\s*:?\s*(Hybrid|On[- ]?site|Remote)\b', page.text, re.I)
+    labeled = re.search(r'(?:Remote\s+Job|Job\s+Type|Workplace\s+Type|Role\s+Type)\s*:?\s*(Hybrid|On[- ]?site|Remote)\b', page.text, re.I)
     if labeled:
         arrangement = {'hybrid':'hybrid','onsite':'on-site','remote':'remote'}[re.sub(r'[- ]','',labeled[1].lower())]
         arrangement_evidence = labeled[0]
@@ -138,6 +138,8 @@ def normalize_posting(body, url, company, now):
     else:
         onsite = re.search(r'This position is expected to be 100% on[- ]?site', description, re.I)
         if onsite: arrangement, arrangement_evidence = 'on-site', onsite[0]
+        remote = re.search(r'You[\u2019\']ll enjoy the flexibility to work remotely\s*\*?\s*from anywhere within the U\.?S\.?', description, re.I)
+        if remote: arrangement, arrangement_evidence = 'remote', remote[0]
     # A posted office address is not evidence of remote eligibility.
     if arrangement != 'remote': eligible = []
     if not locations and not eligible: return None
@@ -150,6 +152,9 @@ def normalize_posting(body, url, company, now):
     raw_type = ' '.join(str(x) for x in as_list(source.get('employmentType'))).lower().replace('_','-')
     for pattern, value in [('full-time','Full-time'),('full time','Full-time'),('part-time','Part-time'),('part time','Part-time'),('contract','Contract'),('temporary','Temporary'),('intern','Internship')]:
         if pattern in raw_type: employment = value; break
+    if employment == 'Not specified':
+        labeled_type = re.search(r'Time\s+Type\s*:\s*(Full[- ]time|Part[- ]time)', page.text, re.I)
+        if labeled_type: employment = 'Full-time' if labeled_type[1].lower().startswith('full') else 'Part-time'
     # Pay from descriptions can have location-specific ranges. Do not guess scope.
     salary, salary_evidence = None, ''
     base = source.get('baseSalary') or {}
@@ -163,6 +168,13 @@ def normalize_posting(body, url, company, now):
         salary_evidence = 'JobPosting.baseSalary; single published state'
     today = now.astimezone(ZoneInfo('America/New_York')).date().isoformat()
     deadline = date_only(source.get('validThrough'))
+    deadlines = [deadline] if deadline else []
+    for match in re.finditer(r'(?:Applications for this position will be accepted until|Anticipated Posting Close Date\s*:)\s*([A-Za-z]+\.?)\s+(\d{1,2}),?\s+(\d{4})', description+'\n'+page.text, re.I):
+        value = match[1].rstrip('.')+' '+match[2]+' '+match[3]
+        for fmt in ('%B %d %Y','%b %d %Y'):
+            try: deadlines.append(datetime.strptime(value,fmt).date().isoformat()); break
+            except ValueError: pass
+    deadline = min(deadlines) if deadlines else None
     key = re.sub(r'[^a-z0-9]+','-',req.lower()).strip('-')
     return {
         'id':company+'-'+key, 'companyId':company, 'requisitionId':req, 'title':title, 'url':url,
@@ -176,7 +188,7 @@ def normalize_posting(body, url, company, now):
         'reviewedAt':today, 'status':'closed' if deadline and deadline<today else 'reviewed', 'sector':sector,
         'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.',
         'checkedAt':now.isoformat(), 'collectionMethod':'official-jobposting-jsonld',
-        'sourceHash':hashlib.sha256(json.dumps(source,sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
+        'sourceHash':hashlib.sha256(json.dumps({'structured':source,'arrangement':arrangement_evidence,'employmentType':employment,'deadline':deadline},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
         'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence},
     }
 
@@ -243,13 +255,15 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
     old_urls = {j['url'].rsplit('/',1)[-1]:j for j in previous}
     source_state = copy.deepcopy(state)
     rejected = source_state.setdefault('rejected', {})
+    quarantined = {k:v for k,v in source_state.setdefault('quarantined',{}).items() if (now-datetime.fromisoformat(v)).total_seconds()<86400}
+    source_state['quarantined']=quarantined
     missing = source_state.setdefault('missing', {})
-    report = {'discovered':len(discovered),'checked':0,'added':0,'changed':0,'closed':0,'skipped':0,'errors':[]}
+    report = {'discovered':len(discovered),'checked':0,'added':0,'changed':0,'closed':0,'skipped':0,'warnings':[],'errors':[]}
     active = [j for j in previous if j['status']!='closed']
     # Existing records are checked even when sitemap discovery stops mentioning them.
     queue = [(discovered.get(k,j['url']),j) for k,j in old_urls.items() if j['status']!='closed']
     room = max(0, cap-len(active))
-    candidates = [(k,u) for k,u in discovered.items() if k not in old_urls and k not in rejected]
+    candidates = [(k,u) for k,u in discovered.items() if k not in old_urls and k not in rejected and k not in quarantined]
     candidates.sort(key=lambda pair:int(pair[0]), reverse=True)
     reopen = [(discovered[k],j) for k,j in old_urls.items() if j['status']=='closed' and k in discovered]
     queue += (reopen+[(u,None) for k,u in candidates])[:min(max_new,room)]
@@ -282,6 +296,10 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
             by_id[job['id']] = job
             if job['status']=='closed' and (not existing or existing['status']!='closed'): report['closed'] += 1
         except (ValueError,SourceError,urllib.error.URLError,TimeoutError) as error:
+            if old is None and isinstance(error,ValueError):
+                report['warnings'].append({'url':url,'error':'Candidate quarantined: '+str(error)[:180]})
+                source_state.setdefault('quarantined',{})[url.rsplit('/',1)[-1]]=now.isoformat()
+                continue
             report['errors'].append({'url':url,'error':str(error)[:200]})
             # Access denial/rate limiting stops this employer; no retries or bypass.
             if isinstance(error,SourceError): break

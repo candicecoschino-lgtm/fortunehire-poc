@@ -15,6 +15,7 @@ GitHub Actions runs at 10:17 and 22:17 UTC daily and can be run manually through
 - Closed: honor structured expiry, or require two HTTP 404/410 checks at least six hours apart. Sitemap absence alone never closes a job. A bulk closure guard retains previous jobs when missing responses could indicate an outage.
 - Failure: preserve the previous record and its last successful check date. Invalid pages and access failures never refresh freshness. Existing seven-day expiry continues to hide stale records.
 - Unknown: do not infer remote eligibility from a job's title or office address, pay scope from another state, or job type from generic benefits language. Conservative extraction means some filters remain unspecified even when a human could interpret the description.
+- Unsupported new candidates: quarantine without publication and retry after 24 hours. Warnings remain in the public status record. An unparseable existing listing is a check failure and retains its prior successful check date.
 
 ## Validation
 
