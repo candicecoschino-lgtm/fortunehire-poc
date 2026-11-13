@@ -1,0 +1,55 @@
+name: Audit remaining official feeds
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/audit-remaining-feeds.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check official employer sources without changing production data
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,urllib.parse
+          from concurrent.futures import ThreadPoolExecutor,as_completed
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          companies=json.load(open('public/data/companies.json'))['companies']
+          enabled=set(c.SOURCES)
+          def check(company):
+              row={'companyId':company['id'],'careerUrl':company['careerUrl']}
+              try:
+                  host=urllib.parse.urlsplit(company['careerUrl']).hostname
+                  client=c.Client(host)
+                  row['landingAllowed']=client.robots.can_fetch(c.UA,company['careerUrl'])
+                  if row['landingAllowed']:
+                      try:
+                          status,body=client.get(company['careerUrl'])
+                          row['landingStatus']=status
+                      except Exception as error:row['landingError']=str(error)
+                  try:
+                      found=c.discover(client);row['discovered']=len(found)
+                      url=next(iter(found.values()));status,body=client.get(url)
+                      row.update(sampleUrl=url,sampleStatus=status,structured=bool(c.Page(body).scripts),hasNextData='__NEXT_DATA__' in body,hasDisneyMetadata='data-tm-job-id' in body)
+                  except Exception as error:row['discoveryError']=str(error)
+              except Exception as error:row['accessError']=str(error)
+              return row
+          rows=[]
+          with ThreadPoolExecutor(max_workers=4) as pool:
+              for future in as_completed([pool.submit(check,x) for x in companies if x['id'] not in enabled and x['id']!='rtx']):
+                  row=future.result();rows.append(row);print('FEED_AUDIT',json.dumps(row),flush=True)
+          with open('feed-audit-result.json','w') as f:json.dump(rows,f,indent=2)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: remaining-employer-access-audit
+          path: fortunehire/feed-audit-result.json
