@@ -5,12 +5,19 @@ import {filterCompanies, normalize, readFilters, serializeFilters, validateData}
 const data=JSON.parse(await readFile(new URL('../public/data/companies.json',import.meta.url),'utf8'));
 test('production records have complete provenance, safe URLs and unique identifiers',()=>{
   assert.equal(validateData(data),data);
-  assert.equal(data.companies.length,50);
+  assert.equal(data.companies.length,52);
   for(const c of data.companies){assert.equal(new URL(c.profileSource).hostname,'fortune.com');assert.equal(c.listYear,2026);}
 });
 test('search ignores surrounding spaces, case and diacritics',()=>{
   assert.equal(normalize('  Résumé  '),'resume');
   assert.deepEqual(filterCompanies(data.companies,{q:'  MICROSOFT  '}).map(c=>c.id),['microsoft']);
+});
+
+test('Google and Alphabet identify one parent company, Humana is included, and JPMorgan is not duplicated',()=>{
+  assert.deepEqual(filterCompanies(data.companies,{q:'Google'}).map(c=>c.id),['alphabet']);
+  assert.deepEqual(filterCompanies(data.companies,{q:'Alphabet'}).map(c=>c.id),['alphabet']);
+  assert.deepEqual(filterCompanies(data.companies,{company:'humana',state:'Kentucky'}).map(c=>c.id),['humana']);
+  assert.deepEqual(filterCompanies(data.companies,{q:'JPMorgan'}).map(c=>c.id),['jpmorgan-chase']);
 });
 test('company, industry, city and state filters intersect',()=>{
   assert.deepEqual(filterCompanies(data.companies,{industry:'General Merchandisers',state:'Washington'}).map(c=>c.id),['costco']);
@@ -45,3 +52,4 @@ test('new industry and headquarters combinations return reviewed additions',()=>
   assert.equal(filterCompanies(data.companies,{company:'mckesson',city:'Irving'}).length,1);
   assert.equal(filterCompanies(data.companies,{company:'caterpillar',city:'Irvine'}).length,0);
 });
+

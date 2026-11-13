@@ -1,12 +1,12 @@
 # FortuneHire proof of concept
 
-**Automation pilot:** Boeing, Citi, and UnitedHealth Group now have a first-party sitemap/JobPosting collector, with twice-daily GitHub checks and a bounded U.S. collection. See [AUTOMATION.md](AUTOMATION.md) for limits, lifecycle tests, and the manual-run button. Automation supersedes older manual-maintenance notes for these three employers; the 50-company directory remains separate.
+**Automation pilot:** Boeing, Citi, and UnitedHealth Group now have a first-party sitemap/JobPosting collector, with twice-daily GitHub checks and a bounded U.S. collection. See [AUTOMATION.md](AUTOMATION.md) for limits, lifecycle tests, and the manual-run button. Automation supersedes older manual-maintenance notes for these three employers; the 52-company directory remains separate.
 
-**Current product:** the main page is now an individual-job board with State and Work arrangement first, plus company, industry, sector, job type, posted minimum pay and travel filtering. See [JOB-BOARD-SPEC.md](JOB-BOARD-SPEC.md) for current behavior and [JOB-DATA-REVIEW.md](JOB-DATA-REVIEW.md) for coverage, sourcing and maintenance. The 50-company directory is preserved at `public/companies.html`. The directory-specific notes below describe that secondary page.
+**Current product:** the main page is now an individual-job board with State and Work arrangement first, plus company, industry, sector, job type, posted minimum pay and travel filtering. See [JOB-BOARD-SPEC.md](JOB-BOARD-SPEC.md) for current behavior and [JOB-DATA-REVIEW.md](JOB-DATA-REVIEW.md) for coverage, sourcing and maintenance. The 52-company directory is preserved at `public/companies.html`. The directory-specific notes below describe that secondary page.
 
 A static, independent employer directory. Search names and combine company, industry, headquarters state, and headquarters city filters. Open the employer's own career page to find jobs and work arrangements. No accounts, personal data, uploads, tracking, job scraping, or remote-work claims.
 
-**Coverage:** 50 reviewed employers from the 2026 Fortune 500. This is an intentionally labeled growing collection, not a complete 500-company directory. Every record links to its company profile, list membership source, reviewed official career destination, and review date. No rankings, financial figures, logos, or descriptions are republished.
+**Coverage:** 52 reviewed employers from the 2026 Fortune 500. This is an intentionally labeled growing collection, not a complete 500-company directory. Every record links to its company profile, list membership source, reviewed official career destination, and review date. No rankings, financial figures, logos, or descriptions are republished.
 
 ## Preview and checks
 
@@ -32,10 +32,10 @@ Quick alternative: drag the **public** folder into Netlify's manual deployment f
 
 ## Deployment smoke checks
 
-- Header and cards load; there are 50 companies with no filters. Check desktop and a narrow phone window.
+- Header and cards load; there are 52 companies with no filters. Check desktop and a narrow phone window.
 - Search `micro` → Microsoft; change case → same result.
 - Clear. Select General Merchandisers + Washington → Costco Wholesale.
-- Select Apple + Minnesota → no results. Clear all filters restores 50 cards.
+- Select Apple + Minnesota → no results. Clear all filters restores 52 cards.
 - Select Atlanta → Coca-Cola, Delta Air Lines, Home Depot and UPS. This is headquarters filtering, not job location filtering.
 - Sort Z–A. Copy the URL into a fresh tab and reload: selections, sorting and results persist.
 - Tab through controls, open a source disclosure with the keyboard, and follow an official career link. It should open a new tab with the employer's site.

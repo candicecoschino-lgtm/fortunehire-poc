@@ -8,7 +8,7 @@ function link(text, url) { const a = element('a', text); a.href = url; a.target 
 function card(c) {
   const article = element('article', undefined, 'card');
   const top = element('div', undefined, 'card-top');
-  const monogram = element('span', c.name.split(/\s+/).map(s=>s[0]).slice(0,2).join(''), 'monogram'); monogram.setAttribute('aria-hidden','true');
+  const monogram = element('span', (c.name.match(/[A-Za-z0-9]+/g)||[]).map(s=>s[0]).slice(0,2).join(''), 'monogram'); monogram.setAttribute('aria-hidden','true');
   const title = element('div'); title.append(element('h3',c.name),element('div', `Fortune 500 · ${c.listYear}`, 'list-year')); top.append(monogram,title);
   const dl = element('dl'); dl.append(element('dt','Industry'),element('dd',c.industry),element('dt','Headquarters'),element('dd',`${c.headquarters.city}, ${c.headquarters.state}`));
   const career = link('Visit official careers ↗',c.careerUrl); career.className = 'career-link'; career.setAttribute('aria-label',`Visit ${c.name} official careers (opens in a new tab)`);
@@ -60,3 +60,4 @@ for (const key of keys.filter(k=>k!=='q')) $(key).addEventListener('change',()=>
 $('reset').addEventListener('click',reset); $('empty-reset').addEventListener('click',()=>{reset();$('q').focus();}); $('retry').addEventListener('click',load);
 window.addEventListener('popstate',()=>{if(ready){clearTimeout(pending);restore();render(false);}});
 load();
+

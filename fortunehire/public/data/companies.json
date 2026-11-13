@@ -1,8 +1,35 @@
 {
   "schemaVersion": 1,
   "listYear": 2026,
-  "coverage": "50 reviewed employers from the 2026 list; 450 remain to be verified.",
+  "coverage": "52 reviewed employers from the 2026 list; 448 remain to be verified. This is a curated sample, not a ranked top-50 list.",
   "companies": [
+    {
+      "id": "alphabet",
+      "name": "Alphabet (Google)",
+      "industry": "Internet Services and Retailing",
+      "headquarters": { "city": "Mountain View", "state": "California" },
+      "listYear": 2026,
+      "careerUrl": "https://www.google.com/about/careers/applications/",
+      "profileSource": "https://fortune.com/company/alphabet/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Alphabet is Google's parent and the Fortune-listed company. This destination is Google's official career portal; other Alphabet businesses may recruit separately. Company and 2026 list membership reviewed; current vacancies are not guaranteed."
+    },
+    {
+      "id": "humana",
+      "name": "Humana",
+      "industry": "Health Care: Insurance and Managed Care",
+      "headquarters": { "city": "Louisville", "state": "Kentucky" },
+      "listYear": 2026,
+      "careerUrl": "https://careers.humana.com/us/en",
+      "profileSource": "https://fortune.com/company/humana/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official employer career destination and 2026 list membership reviewed. Headquarters city and industry checked against Fortune; Kentucky confirmed by the employer. Inclusion does not guarantee a current vacancy.",
+      "supportingSources": [
+        { "label": "Humana headquarters state", "url": "https://assets.humana.com/is/content/humana/Humana%20Comments%20CY%2027%20Advance%20Noticepdf" }
+      ]
+    },
     {
       "id": "abbott",
       "name": "Abbott Laboratories",
@@ -767,3 +794,4 @@
     }
   ]
 }
+
