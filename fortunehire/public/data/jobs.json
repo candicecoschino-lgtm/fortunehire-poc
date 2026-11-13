@@ -1,399 +1,171 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-11-13",
-  "method": "Manually curated official employer postings; no automatic vacancy feed.",
+  "method": "Official employer sitemap discovery and individual JobPosting checks; bounded three-employer pilot.",
   "jobs": [
     {
-      "id": "citigroup-26995852",
-      "companyId": "citigroup",
-      "requisitionId": "26995852",
-      "title": "Head of AI Customer Experience",
-      "url": "https://jobs.citi.com/job/new-york/head-of-ai-customer-experience/287/102165091024",
-      "arrangement": "hybrid",
+      "id": "boeing-jr2026524201",
+      "companyId": "boeing",
+      "requisitionId": "JR2026524201",
+      "title": "F/A-18 Platform Systems Leader",
+      "url": "https://jobs.boeing.com/job/berkeley/f-a-18-platform-systems-leader/185/103216675136",
+      "arrangement": "unknown",
       "locations": [
         {
-          "city": "New York",
-          "state": "New York"
-        },
-        {
-          "city": "Irving",
-          "state": "Texas"
+          "city": "Berkeley",
+          "state": "Missouri"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "New York, New York; Irving, Texas",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 170000,
-        "max": 300000,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "New York"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-11",
-      "closesAt": null,
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
-    },
-    {
-      "id": "citigroup-261003121",
-      "companyId": "citigroup",
-      "requisitionId": "261003121",
-      "title": "Director - Business Execution Lead - Banking Healthcare, Consumer & Retail",
-      "url": "https://jobs.citi.com/job/new-york/director-business-execution-lead-banking-healthcare-consumer-and-retail/287/102205682640",
-      "arrangement": "hybrid",
-      "locations": [
-        {
-          "city": "New York",
-          "state": "New York"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "New York, New York",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 200000,
-        "max": 300000,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "New York"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
-      "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-11",
-      "closesAt": null,
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
-    },
-    {
-      "id": "citigroup-261007285",
-      "companyId": "citigroup",
-      "requisitionId": "261007285",
-      "title": "Front Office Business Analyst - Fixed Income Technology - Vice President",
-      "url": "https://jobs.citi.com/job/new-york/front-office-business-analyst-fixed-income-technology-vice-president/287/103214414048",
-      "arrangement": "hybrid",
-      "locations": [
-        {
-          "city": "New York",
-          "state": "New York"
-        },
-        {
-          "city": "Jersey City",
-          "state": "New Jersey"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "New York, New York; Jersey City, New Jersey",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 129840,
-        "max": 194760,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "New York"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
-      "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": "2026-11-19",
+      "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c10f1686acc0c8cd3c814ff1b9a8a5ab0d5bf663780c43d3001f8047fa437783",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
-      "id": "citigroup-261002688",
-      "companyId": "citigroup",
-      "requisitionId": "261002688",
-      "title": "Application Support Analyst Officer",
-      "url": "https://jobs.citi.com/job/tampa/application-support-analyst-officer/287/103092967104",
-      "arrangement": "hybrid",
+      "id": "boeing-jr2026524993",
+      "companyId": "boeing",
+      "requisitionId": "JR2026524993",
+      "title": "Senior Structural & Payloads Design Engineer",
+      "url": "https://jobs.boeing.com/job/titusville/senior-structural-and-payloads-design-engineer/185/103087041920",
+      "arrangement": "unknown",
       "locations": [
         {
-          "city": "Tampa",
+          "city": "Titusville",
           "state": "Florida"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Tampa, Florida · 3 days in the office and 2 days remote.",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 69050,
-        "max": 96350,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "Florida"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
+      "locationNote": "Titusville, Florida",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-09",
-      "closesAt": "2026-11-16",
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
-    },
-    {
-      "id": "citigroup-261002726",
-      "companyId": "citigroup",
-      "requisitionId": "261002726",
-      "title": "Business Execution - Risk & Controls Lead Analyst | Strategy, IR - Vice President",
-      "url": "https://jobs.citi.com/job/new-york/business-execution-risk-and-controls-lead-analyst-strategy-ir-vice-president/287/102816963968",
-      "arrangement": "hybrid",
-      "locations": [
-        {
-          "city": "New York",
-          "state": "New York"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "New York, New York",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 142320,
-        "max": 213480,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "New York"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
-      "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-03",
-      "closesAt": "2026-11-27",
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
-    },
-    {
-      "id": "citigroup-26998330",
-      "companyId": "citigroup",
-      "requisitionId": "26998330",
-      "title": "Head of Wealth Investment Planning, Business Process Optimization and Value Assurance, MD, C16",
-      "url": "https://jobs.citi.com/job/new-york/head-of-wealth-investment-planning-business-process-optimization-and-value-assurance-md-c16/287/102165091248",
-      "arrangement": "hybrid",
-      "locations": [
-        {
-          "city": "New York",
-          "state": "New York"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "New York, New York",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 250000,
-        "max": 500000,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "New York"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
-      "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-11",
       "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "bbce94ab86ba31198ad74fba4d89eafd95d5f8faa10fb58afc76de5995e959bf",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
-      "id": "citigroup-261009363",
-      "companyId": "citigroup",
-      "requisitionId": "261009363",
-      "title": "Head of Custody Operations and NAM Lead for Investor Services Operations",
-      "url": "https://jobs.citi.com/job/new-york/head-of-custody-operations-and-nam-lead-for-investor-services-operations/287/103207614320",
-      "arrangement": "hybrid",
+      "id": "boeing-jr2026525198",
+      "companyId": "boeing",
+      "requisitionId": "JR2026525198",
+      "title": "Q/R Support C13",
+      "url": "https://jobs.boeing.com/job/huntington-beach/q-r-support-c13/185/103216677280",
+      "arrangement": "unknown",
       "locations": [
         {
-          "city": "New York",
-          "state": "New York"
+          "city": "Huntington Beach",
+          "state": "California"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "New York, New York",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 250000,
-        "max": 500000,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "New York"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
+      "locationNote": "Huntington Beach, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-12",
-      "closesAt": "2026-11-26",
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
-    },
-    {
-      "id": "citigroup-261008828",
-      "companyId": "citigroup",
-      "requisitionId": "261008828",
-      "title": "Banking, Client & International Strategy - Managing Director",
-      "url": "https://jobs.citi.com/job/new-york/banking-client-and-international-strategy-managing-director/287/103207614272",
-      "arrangement": "hybrid",
-      "locations": [
-        {
-          "city": "New York",
-          "state": "New York"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "New York, New York",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 250000,
-        "max": 500000,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "New York"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
-      "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
       "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "f59a3f05968f8bca640bf4a8a9400adab782e1fb8f3bd977586194b2d1b70f9e",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
-      "id": "citigroup-261007519",
-      "companyId": "citigroup",
-      "requisitionId": "261007519",
-      "title": "Corporate Banking Analyst - Energy",
-      "url": "https://jobs.citi.com/job/houston/corporate-banking-analyst-energy/287/103207612976",
-      "arrangement": "hybrid",
+      "id": "boeing-jr2026526258",
+      "companyId": "boeing",
+      "requisitionId": "JR2026526258",
+      "title": "Entry Shipping/Receiving Specialist",
+      "url": "https://jobs.boeing.com/job/dallas/entry-shipping-receiving-specialist/185/103216681920",
+      "arrangement": "unknown",
       "locations": [
         {
-          "city": "Houston",
+          "city": "Dallas",
           "state": "Texas"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Houston, Texas",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 110000,
-        "max": 135000,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "Texas"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
+      "locationNote": "Dallas, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": "2026-12-15",
+      "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "0a400c0936ac392e0f6b83fd2945865ea520fb4772bec2cc94440d760175d70e",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
-      "id": "citigroup-261007181",
-      "companyId": "citigroup",
-      "requisitionId": "261007181",
-      "title": "Markets Technology - Site Reliability Engineer, VP",
-      "url": "https://jobs.citi.com/job/jersey-city/markets-technology-site-reliability-engineer-vp/287/103207612240",
-      "arrangement": "hybrid",
-      "locations": [
-        {
-          "city": "Jersey City",
-          "state": "New Jersey"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "Jersey City, New Jersey",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 142320,
-        "max": 213480,
-        "period": "year",
-        "currency": "USD",
-        "scopeStates": [
-          "New Jersey"
-        ]
-      },
-      "salaryNote": "Published base-pay range for the primary location; other locations may differ.",
-      "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-12",
-      "closesAt": "2026-11-21",
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Financials",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
-    },
-    {
-      "id": "boeing-jr2026529030",
+      "id": "boeing-jr2026526365",
       "companyId": "boeing",
-      "requisitionId": "JR2026529030",
-      "title": "Senior Software Asset Management Specialist",
-      "url": "https://jobs.boeing.com/en/job/north-charleston/senior-software-asset-management-specialist/185/103181420224",
-      "arrangement": "hybrid",
+      "requisitionId": "JR2026526365",
+      "title": "Experienced Earned Value Compliance Analyst",
+      "url": "https://jobs.boeing.com/job/mesa/experienced-earned-value-compliance-analyst/185/103087045232",
+      "arrangement": "unknown",
       "locations": [
         {
-          "city": "North Charleston",
-          "state": "South Carolina"
-        },
-        {
-          "city": "Seattle",
-          "state": "Washington"
+          "city": "Mesa",
+          "state": "Arizona"
         },
         {
           "city": "Everett",
           "state": "Washington"
         },
         {
-          "city": "Plano",
-          "state": "Texas"
+          "city": "Oklahoma City",
+          "state": "Oklahoma"
         },
         {
           "city": "Berkeley",
@@ -402,88 +174,258 @@
         {
           "city": "Hazelwood",
           "state": "Missouri"
-        },
-        {
-          "city": "Mesa",
-          "state": "Arizona"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "North Charleston, South Carolina; Seattle, Washington; Everett, Washington; Plano, Texas; Berkeley, Missouri; Hazelwood, Missouri; Mesa, Arizona",
+      "locationNote": "Mesa, Arizona; Everett, Washington; Oklahoma City, Oklahoma; Berkeley, Missouri; Hazelwood, Missouri",
       "employmentType": "Not specified",
-      "salary": {
-        "min": 148750,
-        "max": 215050,
-        "period": "year",
-        "currency": "USD"
-      },
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-11",
-      "closesAt": "2026-11-16",
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-09",
+      "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "ca7490bec22eb524d32e11adaa9a497bc0752dbf05f5998f6b68d906a65ffd4d",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
-      "id": "boeing-jr2026528792",
+      "id": "boeing-jr2026527351",
       "companyId": "boeing",
-      "requisitionId": "JR2026528792",
-      "title": "Business Operations Leader/Chief of Staff – Senior Manager",
-      "url": "https://jobs.boeing.com/job/north-charleston/business-operations-leader-chief-of-staff-senior-manager/185/103125008064",
-      "arrangement": "hybrid",
+      "requisitionId": "JR2026527351",
+      "title": "Support Integration Specialist​ (Logistics Integration) - Associate",
+      "url": "https://jobs.boeing.com/job/saint-charles/support-integration-specialist-logistics-integration-associate/185/103216684688",
+      "arrangement": "unknown",
       "locations": [
         {
-          "city": "North Charleston",
-          "state": "South Carolina"
+          "city": "Saint Charles",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Saint Charles, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "cc8dedb0f74ccc566dc4bf6b964eeabe147be0cf085a3686878019c53e2007f1",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527688",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527688",
+      "title": "Senior Factory Automation Electrical Systems Engineer Team Lead",
+      "url": "https://jobs.boeing.com/job/berkeley/senior-factory-automation-electrical-systems-engineer-team-lead/185/103216686096",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "7c94e76560b97dc48bb6086bf73077865640e918531d45c0d69da5f689124227",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527843",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527843",
+      "title": "Mid-Level Guidance Navigation & Control (GNC) Engineer",
+      "url": "https://jobs.boeing.com/job/berkeley/mid-level-guidance-navigation-and-control-gnc-engineer/185/103216687008",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "b3df6137ed30912dd35fbc2a07e4a2d5584c88480ce0f048e7734e981eefa7de",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026528222",
+      "companyId": "boeing",
+      "requisitionId": "JR2026528222",
+      "title": "Manufacturing Engineer (Entry-Level or Associate)",
+      "url": "https://jobs.boeing.com/job/berkeley/manufacturing-engineer-entry-level-or-associate/185/103216688656",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "2bfea709ce8ba1b28635ea1810a6793c9d7dc687a3358a9b9e1ac9ce43f0f3b5",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026528668",
+      "companyId": "boeing",
+      "requisitionId": "JR2026528668",
+      "title": "Senior Network Designer",
+      "url": "https://jobs.boeing.com/job/everett/senior-network-designer/185/102958783888",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Everett",
+          "state": "Washington"
         },
         {
           "city": "Seattle",
           "state": "Washington"
         },
         {
-          "city": "Plano",
-          "state": "Texas"
+          "city": "Auburn",
+          "state": "Washington"
         },
         {
-          "city": "Berkeley",
-          "state": "Missouri"
-        },
-        {
-          "city": "Arlington",
-          "state": "Virginia"
-        },
-        {
-          "city": "Hazelwood",
-          "state": "Missouri"
-        },
-        {
-          "city": "Ridley Park",
-          "state": "Pennsylvania"
+          "city": "Renton",
+          "state": "Washington"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "North Charleston, South Carolina; Seattle, Washington; Plano, Texas; Berkeley, Missouri; Arlington, Virginia; Hazelwood, Missouri; Ridley Park, Pennsylvania",
+      "locationNote": "Everett, Washington; Seattle, Washington; Auburn, Washington; Renton, Washington",
       "employmentType": "Not specified",
-      "salary": {
-        "min": 191250,
-        "max": 277150,
-        "period": "year",
-        "currency": "USD"
-      },
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-10",
-      "closesAt": "2026-11-24",
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-06",
+      "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "390769a156c76b4b339c32ad1424052d62f49e228edee6231593003fd3bd5447",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026528674",
+      "companyId": "boeing",
+      "requisitionId": "JR2026528674",
+      "title": "Test & Evaluation Lab Tech (Electrical/Electronic Equipment) (Mid-Level)",
+      "url": "https://jobs.boeing.com/job/kent/test-and-evaluation-lab-tech-electrical-electronic-equipment-mid-level/185/103208150848",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Kent",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Kent, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "d1d3a9dd3437b11e274ae685a9fa98bdd0dd93446034ca851958094142fdeb95",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
       "id": "boeing-jr2026528773",
@@ -491,7 +433,7 @@
       "requisitionId": "JR2026528773",
       "title": "Senior Hardware Asset Management Specialist",
       "url": "https://jobs.boeing.com/job/seattle/senior-hardware-asset-management-specialist/185/103097822096",
-      "arrangement": "hybrid",
+      "arrangement": "unknown",
       "locations": [
         {
           "city": "Seattle",
@@ -570,41 +512,108 @@
       "eligibleStates": [],
       "locationNote": "Seattle, Washington; Huntsville, Alabama; Chicago, Illinois; Seal Beach, California; Oklahoma City, Oklahoma; Huntington Beach, California; Long Beach, California; Berkeley, Missouri; El Segundo, California; Renton, Washington; Auburn, Washington; Everett, Washington; San Antonio, Texas; Plano, Texas; Arlington, Virginia; Ridley Park, Pennsylvania; Mesa, Arizona; North Charleston, South Carolina",
       "employmentType": "Not specified",
-      "salary": {
-        "min": 111350,
-        "max": 173650,
-        "period": "year",
-        "currency": "USD"
-      },
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-09",
-      "closesAt": "2026-11-16",
+      "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "a58e2819fc4e4ae07e49d198545cf7c35f5912c791126d21fd10750e1ab347dd",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
-      "id": "boeing-jr2026526365",
+      "id": "boeing-jr2026528792",
       "companyId": "boeing",
-      "requisitionId": "JR2026526365",
-      "title": "Experienced Earned Value Compliance Analyst",
-      "url": "https://jobs.boeing.com/job/mesa/experienced-earned-value-compliance-analyst/185/103087045232",
-      "arrangement": "hybrid",
+      "requisitionId": "JR2026528792",
+      "title": "Business Operations Leader/Chief of Staff – Senior Manager",
+      "url": "https://jobs.boeing.com/job/north-charleston/business-operations-leader-chief-of-staff-senior-manager/185/103125008064",
+      "arrangement": "unknown",
       "locations": [
         {
-          "city": "Mesa",
-          "state": "Arizona"
+          "city": "North Charleston",
+          "state": "South Carolina"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        },
+        {
+          "city": "Plano",
+          "state": "Texas"
+        },
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        },
+        {
+          "city": "Arlington",
+          "state": "Virginia"
+        },
+        {
+          "city": "Hazelwood",
+          "state": "Missouri"
+        },
+        {
+          "city": "Ridley Park",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "North Charleston, South Carolina; Seattle, Washington; Plano, Texas; Berkeley, Missouri; Arlington, Virginia; Hazelwood, Missouri; Ridley Park, Pennsylvania",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-10",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "bf0bfc2453ffadf6f2955069d408853e163f0d946a0bbd6c4ac01a8232d2c6c9",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026529030",
+      "companyId": "boeing",
+      "requisitionId": "JR2026529030",
+      "title": "Senior Software Asset Management Specialist",
+      "url": "https://jobs.boeing.com/job/north-charleston/senior-software-asset-management-specialist/185/103181420224",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "North Charleston",
+          "state": "South Carolina"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
         },
         {
           "city": "Everett",
           "state": "Washington"
         },
         {
-          "city": "Oklahoma City",
-          "state": "Oklahoma"
+          "city": "Plano",
+          "state": "Texas"
         },
         {
           "city": "Berkeley",
@@ -615,108 +624,79 @@
           "state": "Missouri"
         },
         {
+          "city": "Mesa",
+          "state": "Arizona"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "North Charleston, South Carolina; Seattle, Washington; Everett, Washington; Plano, Texas; Berkeley, Missouri; Hazelwood, Missouri; Mesa, Arizona",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "fd6224507ac3a302869b55671c43fdf677af4fed7609baadc2e11fc09524f278",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026529517",
+      "companyId": "boeing",
+      "requisitionId": "JR2026529517",
+      "title": "Quality Engineer (Associate or Mid-Level)",
+      "url": "https://jobs.boeing.com/job/huntsville/quality-engineer-associate-or-mid-level/185/103208152528",
+      "arrangement": "unknown",
+      "locations": [
+        {
           "city": "Huntsville",
           "state": "Alabama"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Mesa, Arizona; Everett, Washington; Oklahoma City, Oklahoma; Berkeley, Missouri; Hazelwood, Missouri; Huntsville, Alabama",
+      "locationNote": "Huntsville, Alabama",
       "employmentType": "Not specified",
       "salary": null,
-      "salaryNote": "The posting gives different pay ranges by state. See the employer for the range for your location.",
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-09",
-      "closesAt": "2026-11-18",
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Aerospace & Defense",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
-    },
-    {
-      "id": "boeing-jr2026528668",
-      "companyId": "boeing",
-      "requisitionId": "JR2026528668",
-      "title": "Senior Network Designer",
-      "url": "https://jobs.boeing.com/job/everett/senior-network-designer/185/102958783888",
-      "arrangement": "hybrid",
-      "locations": [
-        {
-          "city": "Everett",
-          "state": "Washington"
-        },
-        {
-          "city": "Seattle",
-          "state": "Washington"
-        },
-        {
-          "city": "Auburn",
-          "state": "Washington"
-        },
-        {
-          "city": "Renton",
-          "state": "Washington"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "Everett, Washington; Seattle, Washington; Auburn, Washington; Renton, Washington",
-      "employmentType": "Not specified",
-      "salary": {
-        "min": 158950,
-        "max": 215050,
-        "period": "year",
-        "currency": "USD"
-      },
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
-      "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
-      "postedAt": "2026-11-06",
-      "closesAt": "2026-11-20",
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Aerospace & Defense",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
-    },
-    {
-      "id": "boeing-jr2026526258",
-      "companyId": "boeing",
-      "requisitionId": "JR2026526258",
-      "title": "Entry Shipping/Receiving Specialist",
-      "url": "https://jobs.boeing.com/en/job/dallas/entry-shipping-receiving-specialist/185/103216681920",
-      "arrangement": "on-site",
-      "locations": [
-        {
-          "city": "Coppell",
-          "state": "Texas"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "Coppell, Texas · posting is indexed under Dallas; the description names Coppell.",
-      "employmentType": "Not specified",
-      "salary": null,
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
-      "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
-      "closesAt": "2026-11-17",
+      "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "54be50f12578a2f023deedfd45e4566efeeca0c82e9e04f81046be2de0270f0f",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
       "id": "boeing-jr2026529534",
       "companyId": "boeing",
       "requisitionId": "JR2026529534",
       "title": "Mid-Level Project Management Specialist - CAM",
-      "url": "https://jobs.boeing.com/en/job/titusville/mid-level-project-management-specialist-cam/185/103216695408",
+      "url": "https://jobs.boeing.com/job/titusville/mid-level-project-management-specialist-cam/185/103216695408",
       "arrangement": "on-site",
       "locations": [
         {
-          "city": "Titusville",
+          "city": "Kennedy Space Center",
           "state": "Florida"
         },
         {
@@ -726,161 +706,931 @@
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Titusville, Florida; Huntsville, Alabama",
+      "locationNote": "Kennedy Space Center, Florida; Huntsville, Alabama",
       "employmentType": "Not specified",
-      "salary": {
-        "min": 94350,
-        "max": 127650,
-        "period": "year",
-        "currency": "USD"
-      },
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": true,
-      "travelNote": "Up to 10% travel may be required.",
+      "travelNote": "Travel: Up to 10% travel may be required",
       "postedAt": "2026-11-12",
-      "closesAt": "2026-11-23",
+      "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Aerospace & Defense",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "52b99aedf170b6e90d7c4f268466c4f504d5bda59f62f707a4ae61b01f063759",
+      "evidence": {
+        "arrangement": "This position is expected to be 100% onsite",
+        "travel": "Travel: Up to 10% travel may be required",
+        "salary": ""
+      }
     },
     {
-      "id": "boeing-jr2026524993",
-      "companyId": "boeing",
-      "requisitionId": "JR2026524993",
-      "title": "Senior Structural & Payloads Design Engineer",
-      "url": "https://jobs.boeing.com/job/titusville/senior-structural-and-payloads-design-engineer/185/103087041920",
-      "arrangement": "on-site",
+      "id": "citigroup-261002688",
+      "companyId": "citigroup",
+      "requisitionId": "261002688",
+      "title": "Application Support Analyst Officer",
+      "url": "https://jobs.citi.com/job/tampa/application-support-analyst-officer/287/103092967104",
+      "arrangement": "unknown",
       "locations": [
         {
-          "city": "Titusville",
+          "city": "Tampa",
           "state": "Florida"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Titusville, Florida",
+      "locationNote": "Tampa, Florida",
       "employmentType": "Not specified",
-      "salary": {
-        "min": 126650,
-        "max": 171350,
-        "period": "year",
-        "currency": "USD"
-      },
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
       "travelRequired": null,
-      "travelNote": "Travel not specified in reviewed details.",
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-09",
-      "closesAt": "2026-11-24",
+      "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
-      "sector": "Aerospace & Defense",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "dcbe16fbb2283eaa39d458c37cefd0724f73654787cb154e3b82e0fdd82ca4ff",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261002726",
+      "companyId": "citigroup",
+      "requisitionId": "261002726",
+      "title": "Business Execution- Risk & Controls Lead Analyst | Strategy, IR- Vice President",
+      "url": "https://jobs.citi.com/job/new-york/business-execution-risk-and-controls-lead-analyst-strategy-ir-vice-president/287/102816963968",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-03",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "69feb33d693693e556b811fe15a534f88882c84dc38691fb69565e286b5e9e31",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261003121",
+      "companyId": "citigroup",
+      "requisitionId": "261003121",
+      "title": "Director - Business Execution Lead - Banking Healthcare, Consumer & Retail",
+      "url": "https://jobs.citi.com/job/new-york/director-business-execution-lead-banking-healthcare-consumer-and-retail/287/102205682640",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "6accfeca176fec8bc9b13d92caeae1b27c7f6b019e805ffbcc2eea3ec293bcab",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261007181",
+      "companyId": "citigroup",
+      "requisitionId": "261007181",
+      "title": "Markets Technology - Site Reliability Engineer, VP",
+      "url": "https://jobs.citi.com/job/jersey-city/markets-technology-site-reliability-engineer-vp/287/103207612240",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Jersey City",
+          "state": "New Jersey"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Jersey City, New Jersey",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e6e800a20937d4516685345845279ec67fe26ec60e2e4cd146c019da3161b582",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261007285",
+      "companyId": "citigroup",
+      "requisitionId": "261007285",
+      "title": "Front Office Business Analyst - Fixed Income Technology - Vice President",
+      "url": "https://jobs.citi.com/job/new-york/front-office-business-analyst-fixed-income-technology-vice-president/287/103214414048",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        },
+        {
+          "city": "Jersey City",
+          "state": "New Jersey"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York, New York; Jersey City, New Jersey",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "14505dcb1c42da43dd2186b9a81bee55233622538a65690ba6492596343fc200",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261007519",
+      "companyId": "citigroup",
+      "requisitionId": "261007519",
+      "title": "Corporate Banking Analyst - Energy",
+      "url": "https://jobs.citi.com/job/houston/corporate-banking-analyst-energy/287/103207612976",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "2fbea1676138081207ba947e310cefc65f8fd26b01a8cba49c08c7c713c9ded0",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261008828",
+      "companyId": "citigroup",
+      "requisitionId": "261008828",
+      "title": "Banking, Client & International Strategy -Managing Director",
+      "url": "https://jobs.citi.com/job/new-york/banking-client-and-international-strategy-managing-director/287/103207614272",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "49843e6afbfb07f2296bf096d50d9d273539b2425daab6bd74f94e82618ba680",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261009363",
+      "companyId": "citigroup",
+      "requisitionId": "261009363",
+      "title": "Head of Custody Operations and NAM Lead for Investor Services Operations",
+      "url": "https://jobs.citi.com/job/new-york/head-of-custody-operations-and-nam-lead-for-investor-services-operations/287/103207614320",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "afe5dc8d108160543a8b68fff5ffd826be74d7bf8d1f18b21318dfcb479babe2",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-26995852",
+      "companyId": "citigroup",
+      "requisitionId": "26995852",
+      "title": "Head of AI Customer Experience",
+      "url": "https://jobs.citi.com/job/new-york/head-of-ai-customer-experience/287/102165091024",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        },
+        {
+          "city": "Irving",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York, New York; Irving, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "95d59fc23e11937dafeeff7a14b5d706d550f861eef49e8fef0b0e3aea50e9b1",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-26998330",
+      "companyId": "citigroup",
+      "requisitionId": "26998330",
+      "title": "Head of Wealth Investment Planning, Business Process Optimization and Value Assurance, MD, C16",
+      "url": "https://jobs.citi.com/job/new-york/head-of-wealth-investment-planning-business-process-optimization-and-value-assurance-md-c16/287/102165091248",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "9dcc875230cd4fe1b781b9d4acf10fe8a076dd867577960c2cc10c745d7054f7",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2390041",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2390041",
+      "title": "Clinical Practice Consultant - Las Vegas, NV - Remote",
+      "url": "https://careers.unitedhealthgroup.com/job/las-vegas/clinical-practice-consultant-las-vegas-nv-remote/34088/103236314064",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Las Vegas",
+          "state": "Nevada"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Las Vegas, Nevada",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "f4fb60f1d3e6ac527e3c93520f3f800755b56e192a1794e93c6c6071f0ed5e3e",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2390640",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2390640",
+      "title": "Senior AI/ML Engineer",
+      "url": "https://careers.unitedhealthgroup.com/job/eden-prairie/senior-ai-ml-engineer/34088/103229768992",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Eden Prairie",
+          "state": "Minnesota"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Eden Prairie, Minnesota",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "25ce51498b0b383c3e145c70bd37ec03b1d63be760f4c7a96f75f955faa15fb0",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
       "id": "unitedhealth-group-2395019",
       "companyId": "unitedhealth-group",
       "requisitionId": "2395019",
       "title": "Clinical Administrative Coordinator",
-      "url": "https://careers.unitedhealthgroup.com/job/-/-/34088/103124566672",
-      "arrangement": "remote",
-      "locations": [],
-      "remoteScope": "states",
-      "eligibleStates": [
-        "Florida"
+      "url": "https://careers.unitedhealthgroup.com/job/tampa/clinical-administrative-coordinator/34088/103124566672",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Tampa",
+          "state": "Florida"
+        }
       ],
-      "locationNote": "Remote in the Tampa area, Florida. Must reside within 20 miles of Tampa and within commuting distance of the office.",
-      "employmentType": "Full-time",
-      "salary": {
-        "min": 18,
-        "max": 32,
-        "period": "hour",
-        "currency": "USD"
-      },
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
-      "travelRequired": true,
-      "travelNote": "Up to 10% local travel for quarterly team meetings.",
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Tampa, Florida",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-10",
       "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Health Care",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
-    },
-    {
-      "id": "unitedhealth-group-2401855",
-      "companyId": "unitedhealth-group",
-      "requisitionId": "2401855",
-      "title": "Bilingual English and Spanish Senior Customer Service Representative",
-      "url": "https://careers.unitedhealthgroup.com/en/job/dallas/bilingual-english-and-spanish-senior-customer-service-representative/34088/103166225856",
-      "arrangement": "remote",
-      "locations": [],
-      "remoteScope": "nationwide",
-      "eligibleStates": [],
-      "locationNote": "Remote · employer explicitly permits telecommuting from anywhere within the United States.",
-      "employmentType": "Not specified",
-      "salary": {
-        "min": 18,
-        "max": 32,
-        "period": "hour",
-        "currency": "USD"
-      },
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
-      "travelRequired": false,
-      "travelNote": "Posting states Travel: No.",
-      "postedAt": "2026-11-11",
-      "closesAt": null,
-      "reviewedAt": "2026-11-13",
-      "status": "reviewed",
-      "sector": "Health Care",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "bbbaaeaee3adee46ca27ad6891a4b4a52ee470ffaec08ae1d84c2a9ab0a0fc40",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
       "id": "unitedhealth-group-2400283",
       "companyId": "unitedhealth-group",
       "requisitionId": "2400283",
       "title": "Senior Clinical Quality Analyst",
-      "url": "https://careers.unitedhealthgroup.com/en/job/dallas/senior-clinical-quality-analyst/34088/103166227616",
-      "arrangement": "remote",
-      "locations": [],
-      "remoteScope": "nationwide",
+      "url": "https://careers.unitedhealthgroup.com/job/dallas/senior-clinical-quality-analyst/34088/103166227616",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Dallas",
+          "state": "Texas"
+        },
+        {
+          "city": "Minneapolis",
+          "state": "Minnesota"
+        },
+        {
+          "city": "Tampa",
+          "state": "Florida"
+        },
+        {
+          "city": "Hartford",
+          "state": "Connecticut"
+        },
+        {
+          "city": "Phoenix",
+          "state": "Arizona"
+        }
+      ],
+      "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Remote · employer explicitly permits telecommuting from anywhere within the United States.",
+      "locationNote": "Dallas, Texas; Minneapolis, Minnesota; Tampa, Florida; Hartford, Connecticut; Phoenix, Arizona",
       "employmentType": "Not specified",
       "salary": null,
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
-      "travelRequired": true,
-      "travelNote": "Posting states travel up to 25% of the time.",
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-11",
       "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Health Care",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "dab3a84bc45e7c571aa29d0b5695a6b94bef0aeaa48944763d59affd0787c101",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     },
     {
       "id": "unitedhealth-group-2400751",
       "companyId": "unitedhealth-group",
       "requisitionId": "2400751",
       "title": "Associate Director of Provider Account Management",
-      "url": "https://careers.unitedhealthgroup.com/en/job/dallas/associate-director-of-provider-account-management/34088/103226012960",
-      "arrangement": "remote",
-      "locations": [],
-      "remoteScope": "nationwide",
+      "url": "https://careers.unitedhealthgroup.com/job/dallas/associate-director-of-provider-account-management/34088/103226012960",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Dallas",
+          "state": "Texas"
+        },
+        {
+          "city": "Phoenix",
+          "state": "Arizona"
+        },
+        {
+          "city": "Minneapolis",
+          "state": "Minnesota"
+        },
+        {
+          "city": "Tampa",
+          "state": "Florida"
+        },
+        {
+          "city": "Hartford",
+          "state": "Connecticut"
+        }
+      ],
+      "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Remote within the United States. Must be willing to work Pacific Time business hours.",
+      "locationNote": "Dallas, Texas; Phoenix, Arizona; Minneapolis, Minnesota; Tampa, Florida; Hartford, Connecticut",
       "employmentType": "Not specified",
       "salary": null,
-      "salaryNote": "Published base-pay range; confirm location-specific details with the employer.",
-      "travelRequired": true,
-      "travelNote": "Posting states travel up to 50% of the time.",
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-12",
       "closesAt": null,
       "reviewedAt": "2026-11-13",
       "status": "reviewed",
       "sector": "Health Care",
-      "sourceNote": "Manually reviewed the official individual posting. Employer availability and terms can change."
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "6548168f40048b921b6f493052d91df0e508116b5038f2b9089a2cc428d0cf03",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2401332",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2401332",
+      "title": "Volunteer Manager - Per Diem - Hospice",
+      "url": "https://careers.unitedhealthgroup.com/job/huntingdon/volunteer-manager-per-diem-hospice/34088/103229769264",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Huntingdon",
+          "state": "Tennessee"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Huntingdon, Tennessee",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "be365d72551ed7b1ad49f393b9bf17809663cd74ea400245a9e8513dbbc39899",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2401411",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2401411",
+      "title": "Clinical Manager",
+      "url": "https://careers.unitedhealthgroup.com/job/opelika/clinical-manager/34088/103229768832",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Opelika",
+          "state": "Alabama"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Opelika, Alabama",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "94d54b147e388768553bd5842c52734bb3620f879731aeaddfe7ae3f73d0d2cd",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2401855",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2401855",
+      "title": "Bilingual English and Spanish Senior Customer Service Representative",
+      "url": "https://careers.unitedhealthgroup.com/job/dallas/bilingual-english-and-spanish-senior-customer-service-representative/34088/103166225856",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Dallas",
+          "state": "Texas"
+        },
+        {
+          "city": "Phoenix",
+          "state": "Arizona"
+        },
+        {
+          "city": "Minneapolis",
+          "state": "Minnesota"
+        },
+        {
+          "city": "Tampa",
+          "state": "Florida"
+        },
+        {
+          "city": "Hartford",
+          "state": "Connecticut"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Dallas, Texas; Phoenix, Arizona; Minneapolis, Minnesota; Tampa, Florida; Hartford, Connecticut",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "291435e0c1dff1f4c8245877182244d6f978d587c2d43be50d4ed5cedea12e96",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402059",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402059",
+      "title": "Occupational Therapist",
+      "url": "https://careers.unitedhealthgroup.com/job/sylacauga/occupational-therapist/34088/103229768336",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Sylacauga",
+          "state": "Alabama"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Sylacauga, Alabama",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "d2146de2d0b627ad099d4b76ef24c944582cb7a8216d3e6ce1f6a286807b1c5d",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402060",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402060",
+      "title": "Occupational Therapist",
+      "url": "https://careers.unitedhealthgroup.com/job/sylacauga/occupational-therapist/34088/103229768672",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Sylacauga",
+          "state": "Alabama"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Sylacauga, Alabama",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "990a5d29c08b3998eab305766b33ce7ff8d03eb2fdf34fd50350d93126fec41d",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402075",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402075",
+      "title": "LPN Hospice",
+      "url": "https://careers.unitedhealthgroup.com/job/searcy/lpn-hospice/34088/103229768864",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Searcy",
+          "state": "Arkansas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Searcy, Arkansas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "11d8285a230cca1662442bd1c27ff2ba961e687720422049d601c5da8cdc4747",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402334",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402334",
+      "title": "Afterhours 7/7 RN Hospice",
+      "url": "https://careers.unitedhealthgroup.com/job/jonesboro/afterhours-7-7-rn-hospice/34088/103229768960",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Jonesboro",
+          "state": "Arkansas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Jonesboro, Arkansas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:51:43.808988+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "2c3b124ecfa27a870e302e70c92d21b4b21be6c2faff469fb9cb1181760e2402",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
     }
-  ]
+  ],
+  "automation": {
+    "schemaVersion": 1,
+    "attemptedAt": "2026-11-13T14:51:43.808988+00:00",
+    "coverage": "Bounded pilot: at most 100 tracked active US postings per employer; up to 20 new candidates per employer per run. Not a complete feed.",
+    "sources": {
+      "boeing": {
+        "discovered": 1146,
+        "checked": 28,
+        "added": 8,
+        "changed": 8,
+        "closed": 0,
+        "skipped": 8,
+        "errors": [
+          {
+            "url": "https://jobs.boeing.com/job/australia/head-of-supply-chain-management/185/103194505200",
+            "error": "Missing or ambiguous matching JobPosting data"
+          },
+          {
+            "url": "https://jobs.boeing.com/job/brisbane/electronic-systems-design-engineer/185/103194505168",
+            "error": "Missing or ambiguous matching JobPosting data"
+          },
+          {
+            "url": "https://jobs.boeing.com/job/brisbane/software-engineer/185/103194505136",
+            "error": "Missing or ambiguous matching JobPosting data"
+          },
+          {
+            "url": "https://jobs.boeing.com/job/amberley/comsec-account-manager-boeing-defence-australia/185/103194505024",
+            "error": "Missing or ambiguous matching JobPosting data"
+          }
+        ],
+        "activeTracked": 16,
+        "lastSuccessfulAt": null
+      },
+      "citigroup": {
+        "discovered": 3110,
+        "checked": 30,
+        "added": 0,
+        "changed": 10,
+        "closed": 0,
+        "skipped": 19,
+        "errors": [],
+        "activeTracked": 10,
+        "lastSuccessfulAt": "2026-11-13T14:51:43.808988+00:00"
+      },
+      "unitedhealth-group": {
+        "discovered": 6526,
+        "checked": 24,
+        "added": 8,
+        "changed": 4,
+        "closed": 0,
+        "skipped": 12,
+        "errors": [],
+        "activeTracked": 12,
+        "lastSuccessfulAt": "2026-11-13T14:51:43.808988+00:00"
+      }
+    }
+  }
 }
-
