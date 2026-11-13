@@ -265,6 +265,14 @@ def normalize_posting(body, url, company, now):
             arrangement_evidence=tag[0]
         remote = national_remote
         if remote: arrangement, arrangement_evidence = 'remote', remote[0]
+    # An explicit employer title qualifier is arrangement evidence, but does
+    # not establish nationwide or state eligibility. Description labels win.
+    if arrangement=='unknown':
+        qualifier=re.search(r'[\(\[]\s*(Remote|Hybrid|On[- ]?site)\s*[\)\]]|(?:^|\s[-\u2013\u2014]\s)(Remote|Hybrid|On[- ]?site)(?:\s*,[^\n]+)?\s*$',title,re.I)
+        if qualifier:
+            kind=next(group for group in qualifier.groups() if group)
+            arrangement={'remote':'remote','hybrid':'hybrid','onsite':'on-site'}[re.sub(r'[- ]','',kind.lower())]
+            arrangement_evidence='Explicit employer title qualifier: '+qualifier[0].strip()
     # A posted office address is not evidence of remote eligibility.
     if arrangement != 'remote': eligible = []
     # Generic internet/home-office requirements do not impose state residency.
@@ -327,7 +335,7 @@ def normalize_posting(body, url, company, now):
         'id':company+'-'+key, 'companyId':company, 'requisitionId':req, 'title':title, 'url':url,
         'arrangement':arrangement, 'locations':locations,
         'remoteScope':remote_scope, 'eligibleStates':eligible,
-        'locationNote':('Remote within the U.S. · Employer-listed locations: ' if remote_scope=='nationwide' else '')+('; '.join(l['city']+', '+l['state'] for l in locations) or 'Employer specifies eligible states: '+', '.join(eligible)),
+        'locationNote':('Remote within the U.S. · Employer-listed locations: ' if remote_scope=='nationwide' else 'Remote · Eligible states not verified · Employer-listed locations: ' if arrangement=='remote' and remote_scope=='unknown' else '')+('; '.join(l['city']+', '+l['state'] for l in locations) or 'Employer specifies eligible states: '+', '.join(eligible)),
         'employmentType':employment, 'salary':salary,
         'publishedPay':published_pay,
         'salaryNote':published_pay['note'] if published_pay else 'Structured employer pay for the listed state.' if salary else 'Pay or geographic scope not verified automatically. See employer posting.',

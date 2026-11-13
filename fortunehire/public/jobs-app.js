@@ -2,12 +2,18 @@ import { JOB_KEYS, US_STATES, ARRANGEMENTS, todayInNewYork, readJobFilters, seri
 const $=id=>document.getElementById(id);
 const e=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const link=(text,url)=>{const a=e('a',text);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;};
-let jobs=[],ready=false,currentPage='1',pending,renderedDay='',collection=null;
+let jobs=[],ready=false,currentPage='1',pending,renderedDay='',collection=null,logos={};
 const labelDate=value=>new Date(value+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
 function card(j,f){
   const a=e('article',undefined,'card job-card');
-  const top=e('div',undefined,'card-top');const monogram=e('span',j.companyName.split(/\s+/).map(s=>s[0]).slice(0,2).join(''),'monogram');monogram.setAttribute('aria-hidden','true');
-  const text=e('div');const title=e('h3',undefined,'job-title');const titleLink=link(j.title,j.url);titleLink.setAttribute('aria-label',`${j.title} at ${j.companyName} (opens employer posting in a new tab)`);title.append(titleLink);text.append(title,e('div',j.companyName,'job-company'));top.append(monogram,text);
+  const top=e('div',undefined,'card-top');const mark=e('span',undefined,'company-mark');mark.setAttribute('aria-hidden','true');const monogram=e('span',j.companyName.split(/\s+/).map(s=>s[0]).slice(0,2).join(''),'monogram');mark.append(monogram);
+  const logo=logos[j.companyId];
+  if(logo&&new RegExp(`^\\./assets/company-logos/${j.companyId}\\.(png|ico|jpg|svg)$`).test(logo.src)){
+    const img=e('img',undefined,'company-logo');img.alt='';img.width=40;img.height=40;img.loading='lazy';img.decoding='async';
+    img.addEventListener('load',()=>{monogram.hidden=true;img.classList.add('is-loaded');},{once:true});
+    img.addEventListener('error',()=>{img.remove();monogram.hidden=false;},{once:true});mark.append(img);img.src=new URL(logo.src,import.meta.url).href;
+  }
+  const text=e('div');const title=e('h3',undefined,'job-title');const titleLink=link(j.title,j.url);titleLink.setAttribute('aria-label',`${j.title} at ${j.companyName} (opens employer posting in a new tab)`);title.append(titleLink);text.append(title,e('div',j.companyName,'job-company'));top.append(mark,text);
   const badges=e('div',undefined,'job-badges');badges.append(e('span',ARRANGEMENTS[j.arrangement],`job-badge ${j.arrangement}`),e('span',j.employmentType==='Not specified'?'Job type not verified':j.employmentType,'job-badge'));
   const payScope=j.salary?.scopeStates||j.publishedPay?.scopeStates||[];
   const payApplies=!f.state||!payScope.length||payScope.includes(f.state);
@@ -51,7 +57,7 @@ async function load(){
   ready=false;$('error').hidden=true;$('empty').hidden=true;$('results').setAttribute('aria-busy','true');$('count').textContent='Loading jobs…';
   try{
     const responses=await Promise.all(['jobs','companies'].map(name=>fetch(new URL(`./data/${name}.json`,import.meta.url))));if(responses.some(r=>!r.ok))throw Error('Unavailable data');
-    const [data,employers]=await Promise.all(responses.map(r=>r.json()));jobs=validateJobs(data,employers.companies);collection=data.automation||null;
+    const [data,employers,logoData]=await Promise.all([...responses.map(r=>r.json()),fetch(new URL('./data/company-logos.json',import.meta.url)).then(r=>r.ok?r.json():null).catch(()=>null)]);jobs=validateJobs(data,employers.companies);collection=data.automation||null;logos=logoData?.schemaVersion===1?logoData.logos||{}:{};
     setOptions('state',US_STATES.map(s=>[s,s]));
     const companies=[...new Map(jobs.map(j=>[j.companyId,j.companyName]))].sort((a,b)=>a[1].localeCompare(b[1]));setOptions('company',companies);
     for(const k of ['industry','sector'])setOptions(k,[...new Set(jobs.map(j=>j[k]))].sort().map(s=>[s,s]));

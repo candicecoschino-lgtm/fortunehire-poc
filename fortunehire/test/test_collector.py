@@ -284,6 +284,17 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(c.posting_key('https://careers.elevancehealth.com/es-mx/title/job/ABC123__es-mx'),'ABC123')
         self.assertIn('%C3%A4',c.job_url('https://jobs.boeing.com/job/verkäufer/185/12345','jobs.boeing.com'))
 
+    def test_employer_title_qualifier_does_not_invent_remote_eligibility(self):
+        j=c.normalize_posting(body(title='Analyst - Fraud Operations (Remote)',description='Investigate fraud.'),URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'remote')
+        self.assertEqual(j['remoteScope'],'unknown')
+        self.assertEqual(j['eligibleStates'],[])
+        self.assertIn('Eligible states not verified',j['locationNote'])
+        for title,expected in [('Remote Sensing Engineer','unknown'),('Engineer - Onsite','on-site'),('Director - Hybrid, Seattle','hybrid')]:
+            self.assertEqual(c.normalize_posting(body(title=title,description='Role description.'),URL,'boeing',NOW)['arrangement'],expected)
+        j=c.normalize_posting(body(title='Engineer (Remote)',description='Work Type: Hybrid'),URL,'boeing',NOW)
+        self.assertEqual(j['arrangement'],'hybrid')
+
     def test_missing_schema_url_requires_matching_canonical_page(self):
         document=body(url=None)+'<link rel="canonical" href="'+URL+'">'
         self.assertEqual(c.normalize_posting(document,URL,'boeing',NOW)['url'],URL)
