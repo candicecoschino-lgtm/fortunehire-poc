@@ -15,6 +15,7 @@ function card(c) {
   const details = element('details'); const summary = element('summary','Sources & review date');
   const date = new Date(`${c.reviewedAt}T12:00:00Z`).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'});
   details.append(summary,element('p',`Reviewed ${date}. ${c.verificationNote}`),link('Company data source ↗',c.profileSource),element('br'),link(`${c.listYear} membership source ↗`,c.membershipSource),element('p',`Destination: ${new URL(c.careerUrl).hostname}`));
+  for (const source of c.supportingSources || []) details.append(element('br'),link(`${source.label} ↗`,source.url));
   article.append(top,dl,career,details); return article;
 }
 function options(id, values) {
@@ -47,7 +48,7 @@ async function load() {
     const data = validateData(await response.json()); companies=data.companies;
     options('company', [...companies].sort((a,b)=>a.name.localeCompare(b.name)).map(c=>[c.id,c.name]));
     for (const key of ['industry','state','city']) options(key,[...new Set(companies.map(c=>key==='industry'?c.industry:c.headquarters[key]))].sort().map(s=>[s,s]));
-    $('coverage').textContent=`${companies.length} sourced employers`;
+    $('coverage').textContent=`${companies.length} of 500 employers reviewed`;
     restore(); ready = true; render(false);
   } catch {
     $('results').replaceChildren(); $('count').textContent='Directory unavailable'; $('coverage').textContent='Coverage unavailable'; $('error').hidden=false;

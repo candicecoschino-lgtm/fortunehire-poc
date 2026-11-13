@@ -1,8 +1,23 @@
 {
   "schemaVersion": 1,
   "listYear": 2026,
-  "coverage": "Verified starter collection; not all 500 companies.",
+  "coverage": "50 reviewed employers from the 2026 list; 450 remain to be verified.",
   "companies": [
+    {
+      "id": "abbott",
+      "name": "Abbott Laboratories",
+      "industry": "Medical Products and Equipment",
+      "headquarters": {
+        "city": "Abbott Park",
+        "state": "Illinois"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.jobs.abbott/",
+      "profileSource": "https://fortune.com/company/abbott-laboratories/",
+      "membershipSource": "https://fortune.com/company/abbott-laboratories/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
     {
       "id": "amazon",
       "name": "Amazon",
@@ -34,6 +49,207 @@
       "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
     },
     {
+      "id": "att",
+      "name": "AT&T",
+      "industry": "Telecommunications",
+      "headquarters": {
+        "city": "Dallas",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.att.jobs/",
+      "profileSource": "https://fortune.com/company/att/",
+      "membershipSource": "https://fortune.com/company/att/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "bank-of-america",
+      "name": "Bank of America",
+      "industry": "Commercial Banks",
+      "headquarters": {
+        "city": "Charlotte",
+        "state": "North Carolina"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.bankofamerica.com/",
+      "profileSource": "https://fortune.com/company/bank-of-america-corp/",
+      "membershipSource": "https://fortune.com/company/bank-of-america-corp/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "boeing",
+      "name": "Boeing",
+      "industry": "Aerospace & Defense",
+      "headquarters": {
+        "city": "Arlington",
+        "state": "Virginia"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.boeing.com/",
+      "profileSource": "https://fortune.com/company/boeing/",
+      "membershipSource": "https://fortune.com/company/boeing/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "cardinal-health",
+      "name": "Cardinal Health",
+      "industry": "Wholesalers: Health Care",
+      "headquarters": {
+        "city": "Dublin",
+        "state": "Ohio"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.cardinalhealth.com/",
+      "profileSource": "https://fortune.com/company/cardinal-health/",
+      "membershipSource": "https://fortune.com/company/cardinal-health/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "caterpillar",
+      "name": "Caterpillar",
+      "industry": "Construction and Farm Machinery",
+      "headquarters": {
+        "city": "Irving",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.caterpillar.com/",
+      "profileSource": "https://fortune.com/company/caterpillar/",
+      "membershipSource": "https://fortune.com/company/caterpillar/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official careers reviewed; headquarters city confirmed as Irving in Caterpillar's filing, correcting the profile's spelling.",
+      "supportingSources": [
+        {
+          "label": "Headquarters confirmed in Caterpillar filing",
+          "url": "https://investors.caterpillar.com/files/doc_financials/2022/q4/15f6fc24-86a5-4ab2-8cf9-975ab92f02a2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cencora",
+      "name": "Cencora",
+      "industry": "Wholesalers: Health Care",
+      "headquarters": {
+        "city": "Conshohocken",
+        "state": "Pennsylvania"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.cencora.com/",
+      "profileSource": "https://fortune.com/company/amerisourcebergen/",
+      "membershipSource": "https://fortune.com/company/amerisourcebergen/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "centene",
+      "name": "Centene",
+      "industry": "Health Care: Insurance and Managed Care",
+      "headquarters": {
+        "city": "St. Louis",
+        "state": "Missouri"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.centene.com/",
+      "profileSource": "https://fortune.com/company/centene/",
+      "membershipSource": "https://fortune.com/company/centene/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "chevron",
+      "name": "Chevron",
+      "industry": "Petroleum Refining",
+      "headquarters": {
+        "city": "Houston",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.chevron.com/",
+      "profileSource": "https://fortune.com/company/chevron/",
+      "membershipSource": "https://fortune.com/company/chevron/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "cigna",
+      "name": "Cigna Group",
+      "industry": "Health Care: Pharmacy and Other Services",
+      "headquarters": {
+        "city": "Bloomfield",
+        "state": "Connecticut"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.thecignagroup.com/",
+      "profileSource": "https://fortune.com/company/cigna/",
+      "membershipSource": "https://fortune.com/company/cigna/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "cisco",
+      "name": "Cisco Systems",
+      "industry": "Information Technology",
+      "headquarters": {
+        "city": "San Jose",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.cisco.com/",
+      "profileSource": "https://fortune.com/company/cisco-systems-inc/",
+      "membershipSource": "https://fortune.com/company/cisco-systems-inc/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "citigroup",
+      "name": "Citigroup",
+      "industry": "Commercial Banks",
+      "headquarters": {
+        "city": "New York City",
+        "state": "New York"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.citi.com/",
+      "profileSource": "https://fortune.com/company/citigroup/",
+      "membershipSource": "https://fortune.com/company/citigroup/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "coca-cola",
+      "name": "Coca-Cola",
+      "industry": "Beverages",
+      "headquarters": {
+        "city": "Atlanta",
+        "state": "Georgia"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.coca-colacompany.com/careers",
+      "profileSource": "https://fortune.com/company/coca-cola/",
+      "membershipSource": "https://fortune.com/company/coca-cola/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "comcast",
+      "name": "Comcast",
+      "industry": "Telecommunications",
+      "headquarters": {
+        "city": "Philadelphia",
+        "state": "Pennsylvania"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.comcast.com/",
+      "profileSource": "https://fortune.com/company/comcast/",
+      "membershipSource": "https://fortune.com/company/comcast/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
       "id": "costco",
       "name": "Costco Wholesale",
       "industry": "General Merchandisers",
@@ -62,6 +278,111 @@
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
       "reviewedAt": "2026-11-13",
       "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "industry": "Computers, Office Equipment",
+      "headquarters": {
+        "city": "Round Rock",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.dell.com/",
+      "profileSource": "https://fortune.com/company/dell-technologies/",
+      "membershipSource": "https://fortune.com/company/dell-technologies/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official Dell careers address redirects to its JavaScript-based Dell recruiting portal; a text-only preview may be blank."
+    },
+    {
+      "id": "delta",
+      "name": "Delta Air Lines",
+      "industry": "Airlines",
+      "headquarters": {
+        "city": "Atlanta",
+        "state": "Georgia"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.delta.com/us/en/careers/overview",
+      "profileSource": "https://fortune.com/company/delta-air-lines/",
+      "membershipSource": "https://fortune.com/company/delta-air-lines/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "elevance-health",
+      "name": "Elevance Health",
+      "industry": "Health Care: Insurance and Managed Care",
+      "headquarters": {
+        "city": "Indianapolis",
+        "state": "Indiana"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.elevancehealth.com/",
+      "profileSource": "https://fortune.com/company/elevance-health/",
+      "membershipSource": "https://fortune.com/company/elevance-health/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "fannie-mae",
+      "name": "Fannie Mae",
+      "industry": "Diversified Financials",
+      "headquarters": {
+        "city": "Washington",
+        "state": "District of Columbia"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.fanniemae.com/careers",
+      "profileSource": "https://fortune.com/company/fannie-mae/",
+      "membershipSource": "https://fortune.com/company/fannie-mae/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "fedex",
+      "name": "FedEx",
+      "industry": "Mail, Package, and Freight Delivery",
+      "headquarters": {
+        "city": "Memphis",
+        "state": "Tennessee"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.fedex.com/",
+      "profileSource": "https://fortune.com/company/fedex/",
+      "membershipSource": "https://fortune.com/company/fedex/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "ford",
+      "name": "Ford Motor",
+      "industry": "Motor Vehicles & Parts",
+      "headquarters": {
+        "city": "Dearborn",
+        "state": "Michigan"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.careers.ford.com/",
+      "profileSource": "https://fortune.com/company/ford-motor/",
+      "membershipSource": "https://fortune.com/company/ford-motor/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "general-motors",
+      "name": "General Motors",
+      "industry": "Motor Vehicles & Parts",
+      "headquarters": {
+        "city": "Detroit",
+        "state": "Michigan"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://search-careers.gm.com/",
+      "profileSource": "https://fortune.com/company/general-motors/",
+      "membershipSource": "https://fortune.com/company/general-motors/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
     },
     {
       "id": "home-depot",
@@ -109,6 +430,72 @@
       "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
     },
     {
+      "id": "kroger",
+      "name": "Kroger",
+      "industry": "Food & Drug Stores",
+      "headquarters": {
+        "city": "Cincinnati",
+        "state": "Ohio"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.thekrogerco.com/careers/",
+      "profileSource": "https://fortune.com/company/kroger/",
+      "membershipSource": "https://fortune.com/company/kroger/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "The corporate careers address redirects to Kroger's JavaScript-based recruiting portal; a text-only preview may be blank."
+    },
+    {
+      "id": "lowes",
+      "name": "Lowe's",
+      "industry": "Specialty Retailers",
+      "headquarters": {
+        "city": "Mooresville",
+        "state": "North Carolina"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://talent.lowes.com/",
+      "profileSource": "https://fortune.com/company/lowes/",
+      "membershipSource": "https://fortune.com/company/lowes/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "mckesson",
+      "name": "McKesson",
+      "industry": "Wholesalers: Health Care",
+      "headquarters": {
+        "city": "Irving",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.mckesson.com/",
+      "profileSource": "https://fortune.com/company/mckesson/",
+      "membershipSource": "https://fortune.com/company/mckesson/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official careers reviewed; headquarters city confirmed as Irving by McKesson, correcting the profile's spelling.",
+      "supportingSources": [
+        {
+          "label": "Headquarters confirmed by McKesson",
+          "url": "https://careers.mckesson.com/en/dallas-las-colinas-careers"
+        }
+      ]
+    },
+    {
+      "id": "meta",
+      "name": "Meta Platforms",
+      "industry": "Internet Services and Retailing",
+      "headquarters": {
+        "city": "Menlo Park",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.metacareers.com/",
+      "profileSource": "https://fortune.com/company/facebook/",
+      "membershipSource": "https://fortune.com/company/facebook/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official Meta career site reviewed in the browser; automated text retrieval was rate-limited."
+    },
+    {
       "id": "microsoft",
       "name": "Microsoft",
       "industry": "Computer Software",
@@ -124,6 +511,126 @@
       "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
     },
     {
+      "id": "nike",
+      "name": "Nike",
+      "industry": "Apparel",
+      "headquarters": {
+        "city": "Beaverton",
+        "state": "Oregon"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.nike.com/",
+      "profileSource": "https://fortune.com/company/nike/",
+      "membershipSource": "https://fortune.com/company/nike/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "nvidia",
+      "name": "Nvidia",
+      "industry": "Semiconductors and Other Electronic Components",
+      "headquarters": {
+        "city": "Santa Clara",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+      "profileSource": "https://fortune.com/company/nvidia/",
+      "membershipSource": "https://fortune.com/company/nvidia/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "industry": "Computer Software",
+      "headquarters": {
+        "city": "Austin",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.oracle.com/careers/",
+      "profileSource": "https://fortune.com/company/oracle/",
+      "membershipSource": "https://fortune.com/company/oracle/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "pepsico",
+      "name": "PepsiCo",
+      "industry": "Food Consumer Products",
+      "headquarters": {
+        "city": "Purchase",
+        "state": "New York"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.pepsico.com/en/careers",
+      "profileSource": "https://fortune.com/company/pepsico/",
+      "membershipSource": "https://fortune.com/company/pepsico/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official PepsiCo corporate career page reviewed; it links to PepsiCoJobs, whose automated access is restricted."
+    },
+    {
+      "id": "phillips-66",
+      "name": "Phillips 66",
+      "industry": "Petroleum Refining",
+      "headquarters": {
+        "city": "Houston",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.phillips66.com/",
+      "profileSource": "https://fortune.com/company/phillips/",
+      "membershipSource": "https://fortune.com/company/phillips/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "progressive",
+      "name": "Progressive",
+      "industry": "Insurance: Property & Casualty",
+      "headquarters": {
+        "city": "Mayfield",
+        "state": "Ohio"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.progressive.com/",
+      "profileSource": "https://fortune.com/company/progressive/",
+      "membershipSource": "https://fortune.com/company/progressive/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "rtx",
+      "name": "RTX",
+      "industry": "Aerospace & Defense",
+      "headquarters": {
+        "city": "Arlington",
+        "state": "Virginia"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.rtx.com/",
+      "profileSource": "https://fortune.com/company/raytheon-technologies/",
+      "membershipSource": "https://fortune.com/company/raytheon-technologies/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "industry": "Computer Software",
+      "headquarters": {
+        "city": "San Francisco",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.salesforce.com/",
+      "profileSource": "https://fortune.com/company/salesforce/",
+      "membershipSource": "https://fortune.com/company/salesforce/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
       "id": "target",
       "name": "Target",
       "industry": "General Merchandisers",
@@ -137,6 +644,36 @@
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
       "reviewedAt": "2026-11-13",
       "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "industry": "Motor Vehicles & Parts",
+      "headquarters": {
+        "city": "Austin",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.tesla.com/careers",
+      "profileSource": "https://fortune.com/company/tesla/",
+      "membershipSource": "https://fortune.com/company/tesla/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official Tesla career address reviewed; the job-search interface requires JavaScript."
+    },
+    {
+      "id": "united-airlines",
+      "name": "United Airlines Holdings",
+      "industry": "Airlines",
+      "headquarters": {
+        "city": "Chicago",
+        "state": "Illinois"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.united.com/",
+      "profileSource": "https://fortune.com/company/united-continental-holdings/",
+      "membershipSource": "https://fortune.com/company/united-continental-holdings/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
     },
     {
       "id": "unitedhealth-group",
@@ -169,6 +706,36 @@
       "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
     },
     {
+      "id": "valero",
+      "name": "Valero Energy",
+      "industry": "Petroleum Refining",
+      "headquarters": {
+        "city": "San Antonio",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.valero.com/careers",
+      "profileSource": "https://fortune.com/company/valero-energy/",
+      "membershipSource": "https://fortune.com/company/valero-energy/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "verizon",
+      "name": "Verizon Communications",
+      "industry": "Telecommunications",
+      "headquarters": {
+        "city": "New York City",
+        "state": "New York"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://mycareer.verizon.com/",
+      "profileSource": "https://fortune.com/company/verizon/",
+      "membershipSource": "https://fortune.com/company/verizon/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
       "id": "walmart",
       "name": "Walmart",
       "industry": "General Merchandisers",
@@ -182,6 +749,21 @@
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
       "reviewedAt": "2026-11-13",
       "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+    },
+    {
+      "id": "disney",
+      "name": "Walt Disney",
+      "industry": "Entertainment",
+      "headquarters": {
+        "city": "Burbank",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.disneycareers.com/",
+      "profileSource": "https://fortune.com/company/disney/",
+      "membershipSource": "https://fortune.com/company/disney/",
+      "reviewedAt": "2026-11-13",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
     }
   ]
 }

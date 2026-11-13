@@ -21,3 +21,5 @@ Repository root contains package.json, netlify.toml, README, tests, and public/.
 
 ## Acceptance
 Validate data fields, unique IDs, HTTPS destinations, and source provenance. Test combined filters, reset, case/diacritic normalization, URL state, empty states, sorting, safe rendering, and responsive keyboard operation. Confirm local HTTP delivery. After a deployment URL exists, check assets, filters, reload with query parameters, and several outgoing career links on that deployed URL.
+
+Current data milestone: 50 reviewed employers; 450 remain to be researched. Supporting corporate evidence appears on cards when a profile requires correction.

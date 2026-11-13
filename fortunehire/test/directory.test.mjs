@@ -5,7 +5,7 @@ import {filterCompanies, normalize, readFilters, serializeFilters, validateData}
 const data=JSON.parse(await readFile(new URL('../public/data/companies.json',import.meta.url),'utf8'));
 test('production records have complete provenance, safe URLs and unique identifiers',()=>{
   assert.equal(validateData(data),data);
-  assert.equal(data.companies.length,12);
+  assert.equal(data.companies.length,50);
   for(const c of data.companies){assert.equal(new URL(c.profileSource).hostname,'fortune.com');assert.equal(c.listYear,2026);}
 });
 test('search ignores surrounding spaces, case and diacritics',()=>{
@@ -15,7 +15,7 @@ test('search ignores surrounding spaces, case and diacritics',()=>{
 test('company, industry, city and state filters intersect',()=>{
   assert.deepEqual(filterCompanies(data.companies,{industry:'General Merchandisers',state:'Washington'}).map(c=>c.id),['costco']);
   assert.equal(filterCompanies(data.companies,{company:'target',state:'Washington'}).length,0);
-  assert.equal(filterCompanies(data.companies,{city:'Atlanta',state:'Georgia'}).length,2);
+  assert.deepEqual(filterCompanies(data.companies,{city:'Atlanta',state:'Georgia'}).map(c=>c.id),['coca-cola','delta','home-depot','ups']);
   assert.equal(filterCompanies(data.companies,{company:'apple',q:'apple',city:'Cupertino',state:'California',industry:'Computers, Office Equipment'}).length,1);
 });
 test('empty results, reset and both alphabetical sorts',()=>{
@@ -35,7 +35,13 @@ test('unknown URL selection yields no fabricated matches',()=>{
   assert.equal(filterCompanies(data.companies,readFilters('?company=unknown')).length,0);
 });
 test('malformed sources and duplicate companies are rejected',()=>{
-  for(const modify of [d=>d.companies.push(d.companies[0]),d=>d.companies[0].careerUrl='javascript:alert(1)',d=>d.companies[0].headquarters=null,d=>d.companies[0].listYear=2025]){
+  for(const modify of [d=>d.companies.push(d.companies[0]),d=>d.companies[0].careerUrl='javascript:alert(1)',d=>d.companies[0].headquarters=null,d=>d.companies[0].listYear=2025,d=>d.companies[0].supportingSources=[{label:'source',url:'javascript:alert(1)'}]]){
     const copy=structuredClone(data);modify(copy);assert.throws(()=>validateData(copy));
   }
+});
+test('new industry and headquarters combinations return reviewed additions',()=>{
+  assert.deepEqual(filterCompanies(data.companies,{industry:'Airlines',state:'Illinois'}).map(c=>c.id),['united-airlines']);
+  assert.deepEqual(filterCompanies(data.companies,{industry:'Petroleum Refining',state:'Texas'}).map(c=>c.id),['chevron','phillips-66','valero']);
+  assert.equal(filterCompanies(data.companies,{company:'mckesson',city:'Irving'}).length,1);
+  assert.equal(filterCompanies(data.companies,{company:'caterpillar',city:'Irvine'}).length,0);
 });

@@ -24,6 +24,13 @@ export function validateData(data) {
       const url = new URL(c[field]);
       if (url.protocol !== 'https:' || url.username || url.password) throw new Error('Unsafe URL');
     }
+    if (c.supportingSources !== undefined) {
+      if (!Array.isArray(c.supportingSources)) throw new Error('Invalid supporting sources');
+      for (const source of c.supportingSources) {
+        const url = new URL(source.url);
+        if (typeof source.label !== 'string' || !source.label.trim() || url.protocol !== 'https:' || url.username || url.password) throw new Error('Unsafe supporting source');
+      }
+    }
   }
   return data;
 }

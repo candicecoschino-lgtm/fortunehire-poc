@@ -2,7 +2,7 @@
 
 A static, independent employer directory. Search names and combine company, industry, headquarters state, and headquarters city filters. Open the employer's own career page to find jobs and work arrangements. No accounts, personal data, uploads, tracking, job scraping, or remote-work claims.
 
-**Coverage:** 12 sourced employers from the 2026 Fortune 500. This is an intentionally labeled starter collection, not a complete 500-company directory. Every record links to its company profile, list membership source, reviewed official career destination, and review date. No rankings, financial figures, logos, or descriptions are republished.
+**Coverage:** 50 reviewed employers from the 2026 Fortune 500. This is an intentionally labeled growing collection, not a complete 500-company directory. Every record links to its company profile, list membership source, reviewed official career destination, and review date. No rankings, financial figures, logos, or descriptions are republished.
 
 ## Preview and checks
 
@@ -28,11 +28,11 @@ Quick alternative: drag the **public** folder into Netlify's manual deployment f
 
 ## Deployment smoke checks
 
-- Header and cards load; there are 12 companies with no filters. Check desktop and a narrow phone window.
+- Header and cards load; there are 50 companies with no filters. Check desktop and a narrow phone window.
 - Search `micro` → Microsoft; change case → same result.
 - Clear. Select General Merchandisers + Washington → Costco Wholesale.
-- Select Apple + Minnesota → no results. Clear all filters restores 12 cards.
-- Select Atlanta → Home Depot and UPS. This is headquarters filtering, not job location filtering.
+- Select Apple + Minnesota → no results. Clear all filters restores 50 cards.
+- Select Atlanta → Coca-Cola, Delta Air Lines, Home Depot and UPS. This is headquarters filtering, not job location filtering.
 - Sort Z–A. Copy the URL into a fresh tab and reload: selections, sorting and results persist.
 - Tab through controls, open a source disclosure with the keyboard, and follow an official career link. It should open a new tab with the employer's site.
 - Verify at least Apple, Walmart, and Microsoft career destinations after deployment. Review destinations for all added companies before accepting them.
@@ -55,3 +55,4 @@ Before calling the directory complete, verify all 500 records against appropriat
 - `netlify.toml`: publish directory and browser security headers.
 
 GitHub Pages is also compatible when the contents of `public/` are published; Netlify is the primary V1 deployment target. No service-specific API is required.
+
