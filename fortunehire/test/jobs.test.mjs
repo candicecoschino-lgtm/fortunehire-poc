@@ -72,6 +72,12 @@ test('pay filters compare posted minimums within the same period and geographic 
   const ai=jobs.find(j=>j.requisitionId==='26995852');assert.ok(matchesPay(ai,'year:150000','New York'));assert.equal(matchesPay(ai,'year:150000','Texas'),false);assert.equal(matchesPay(ai,'year:200000'),false);
   assert.equal(matchesPay({...ai,salary:null},'year:50000'),false);
 });
+
+test('a published fixed hourly rate is shown once and stays distinct from annual pay',()=>{
+  const job={...jobs[0],salary:{min:21.5,max:21.5,period:'hour',currency:'USD',scopeStates:['California']}};
+  assert.equal(salaryText(job),'$21.50 / hour');assert.ok(matchesPay(job,'hour:20','California'));
+  assert.equal(matchesPay(job,'hour:25','California'),false);assert.equal(matchesPay(job,'year:20000','California'),false);
+});
 test('excluding travel-required jobs preserves unknowns without calling them travel-free',()=>{
   const result=filterJobs(jobs,filters({state:'Florida',travel:'exclude'}),today);assert.equal(result.length,3);assert.ok(result.some(j=>j.travelRequired===null));assert.ok(result.every(j=>j.travelRequired!==true));
 });

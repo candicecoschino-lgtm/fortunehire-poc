@@ -1,6 +1,6 @@
 # All 52 company feed statuses — November 13, 2026
 
-26 connected; 25 need further work or authorized access; RTX is paused. All 52 are accounted for, but all 52 job feeds are not operational. No access denial or crawler restriction was bypassed. Unverified jobs are not published. See public/data/company-feed-status.json for evidence and next steps.
+29 connected; 22 need further work or authorized access; RTX is paused. Connected feeds have limited samples rather than complete employer coverage. A failed check does not establish a need for a paid provider.
 
 | Company | Status | Reason / next step |
 | --- | --- | --- |
@@ -9,10 +9,10 @@
 | Alphabet (Google) | access-restricted | Published crawler rules exclude the tested Google career paths. Obtain an authorized job feed or employer permission. |
 | Amazon | adapter-needed | Official search page loads, but individual jobs are not in its sitemap; the linked search-data script host returned 403. Review a permitted public search interface or an authorized feed. |
 | Apple | rules-unresolved | The official jobs-host robots file redirects to a corporate page-not-found destination. Resolve the published crawler-policy and search-interface requirements. |
-| Bank of America | no-eligible-sample | Of twenty tested candidates, thirteen were outside the 14-day window and seven lacked usable matching posting metadata. Review newer individual pages and their publication dates. |
+| Bank of America | connected | Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata. Monitor field coverage, freshness, and scheduled refresh results. |
 | Boeing | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | CVS Health | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
-| Cardinal Health | no-eligible-sample | Tested structured pages parsed, but the sampled U.S. postings were outside the 14-day window. Improve discovery ordering and verify a recent U.S. sample. |
+| Cardinal Health | connected | Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata. Monitor field coverage, freshness, and scheduled refresh results. |
 | Caterpillar | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Cencora | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Centene | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
@@ -43,7 +43,7 @@
 | Nvidia | access-restricted | The officially linked NVIDIA jobs portal excludes the tested career route in its crawler rules. Obtain an authorized job feed or employer permission. |
 | Oracle | access-restricted | Official-host access returned HTTP 403. Use an authorized source; do not bypass the denial. |
 | PepsiCo | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
-| Phillips 66 | adapter-needed | Legacy sitemap discovery now works, but twenty sampled pages lacked compatible JobPosting blocks. Add a verified individual-page reader with publication-date evidence. |
+| Phillips 66 | connected | Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata. Monitor field coverage, freshness, and scheduled refresh results. |
 | Progressive | access-restricted | Official-host access returned HTTP 403. Use an authorized source; do not bypass the denial. |
 | RTX | paused | Skipped at the explicit user request after GitHub access denial. Leave paused unless the user asks to revisit it. |
 | Salesforce | rules-unresolved | The career-host robots file redirects to a corporate 404 page. Resolve the current public job portal and crawler policy. |

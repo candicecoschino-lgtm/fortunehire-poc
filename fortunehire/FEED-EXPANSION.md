@@ -1,4 +1,4 @@
-> Current status: 26 connected employers; all 52 companies are accounted for in COMPANY-FEED-STATUS.md. The earlier batch notes below are historical.
+> Current status: 29 connected employers; all 52 companies are accounted for in COMPANY-FEED-STATUS.md. The earlier batch notes below are historical.
 
 # Employer feed expansion — November 13, 2026
 

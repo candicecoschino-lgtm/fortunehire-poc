@@ -118,7 +118,7 @@
       "employmentType": "Not specified",
       "salary": {
         "min": 20.5,
-        "max": 41.0,
+        "max": 41,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -1181,6 +1181,992 @@
       }
     },
     {
+      "id": "bank-of-america-26042385",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042385",
+      "identifierType": "requisition",
+      "title": "Relationship Banker",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042385/relationship-banker-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Grove City",
+          "state": "Ohio"
+        },
+        {
+          "city": "Columbus",
+          "state": "Ohio"
+        },
+        {
+          "city": "Canal Winchester",
+          "state": "Ohio"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Grove City, Ohio; Columbus, Ohio; Canal Winchester, Ohio",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay range $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set. | $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set.",
+        "scopeStates": [
+          "Ohio"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "eea6373d5859d7c6aef3ee1488f4fff70aff6d1dbd3c027f0b1443b4b933ecb2",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042389",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042389",
+      "identifierType": "requisition",
+      "title": "Registered Wealth Management Client Associate",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042389/registered-wealth-management-client-associate-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Florham Park",
+          "state": "New Jersey"
+        },
+        {
+          "city": "Summit",
+          "state": "New Jersey"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Florham Park, New Jersey; Summit, New Jersey",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay range $25.00 - $45.00 hourly pay, offers to be determined based on experience, education and skill set. | $25.00 - $45.00 hourly pay, offers to be determined based on experience, education and skill set.",
+        "scopeStates": [
+          "New Jersey"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": false,
+      "travelNote": "Travel: No",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "66123ff04ca25c3ea971e925ebbc513eb61e6b73fa9fd192805a7f62b1316dff",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: No",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042392",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042392",
+      "identifierType": "requisition",
+      "title": "Merrill Advisor Development Program - Financial Advisor: Fort Worth & Associates",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042392/merrill-advisor-development-program-financial-advisor-fort-worth-associates-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Lubbock",
+          "state": "Texas"
+        },
+        {
+          "city": "Amarillo",
+          "state": "Texas"
+        },
+        {
+          "city": "Abilene",
+          "state": "Texas"
+        },
+        {
+          "city": "Southlake",
+          "state": "Texas"
+        },
+        {
+          "city": "Fort Worth",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Lubbock, Texas; Amarillo, Texas; Abilene, Texas; Southlake, Texas; Fort Worth, Texas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "2b1d1fc3b988b05dc70991693f770e69eae486d1d4a1ec06caeeb56e243aa375",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042395",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042395",
+      "identifierType": "requisition",
+      "title": "Relationship Banker",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042395/relationship-banker-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Seattle, Washington",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay range $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set. | $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set.",
+        "scopeStates": [
+          "Washington"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": false,
+      "travelNote": "Travel: No",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "3065949470a9f0a4ccea30f783f285abc7997abddcbcc29ccfdb4785097286ad",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: No",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042397",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042397",
+      "identifierType": "requisition",
+      "title": "Relationship Banker",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042397/relationship-banker-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Lynnwood",
+          "state": "Washington"
+        },
+        {
+          "city": "Mill Creek",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Lynnwood, Washington; Mill Creek, Washington",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay range $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set. | $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set.",
+        "scopeStates": [
+          "Washington"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": false,
+      "travelNote": "Travel: No",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "f3df1093efac78de6ae43d8dec7ed0fb91632683ee1ff7036fe5b7e98849b4b1",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: No",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042398",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042398",
+      "identifierType": "requisition",
+      "title": "Relationship Banker",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042398/relationship-banker-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Seattle, Washington",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay range $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set. | $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set.",
+        "scopeStates": [
+          "Washington"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": false,
+      "travelNote": "Travel: No",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "6915f216e1a8ce5b2f7cb44979d7438015a3d83b5d9a9ba49db76b110722c704",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: No",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042400",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042400",
+      "identifierType": "requisition",
+      "title": "Relationship Banker - Elmont and Hempstead - Spanish Required",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042400/relationship-banker-elmont-and-hempstead-spanish-required-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Elmont",
+          "state": "New York"
+        },
+        {
+          "city": "Hempstead",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Elmont, New York; Hempstead, New York",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay range $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set. | $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set.",
+        "scopeStates": [
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "1d2ee37cc052165a580fce98b75c9f4c69c97990dc99e3d2791b8685fb8af46d",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042421",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042421",
+      "identifierType": "requisition",
+      "title": "Merrill Advisor Development Program - Financial Advisor: Greater Dallas Market",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042421/merrill-advisor-development-program-financial-advisor-greater-dallas-market-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Flower Mound",
+          "state": "Texas"
+        },
+        {
+          "city": "McKinney",
+          "state": "Texas"
+        },
+        {
+          "city": "Dallas",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Flower Mound, Texas; McKinney, Texas; Dallas, Texas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "610f2922faee9e703cfd3ca8d1ad992925d68fd316029317b7d15feef33e9abd",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042423",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042423",
+      "identifierType": "requisition",
+      "title": "Relationship Banker - PA Central Market",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042423/relationship-banker-pa-central-market-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Philadelphia",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Philadelphia, Pennsylvania",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "42e4ec326a26d839fea265538fef294dafbfc256b70226d07dabfc7ca4d76675",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042425",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042425",
+      "identifierType": "requisition",
+      "title": "Relationship Banker - Maryland South Market",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042425/relationship-banker-maryland-south-market-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "La Plata",
+          "state": "Maryland"
+        },
+        {
+          "city": "Clinton",
+          "state": "Maryland"
+        },
+        {
+          "city": "Mechanicsville",
+          "state": "Maryland"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "La Plata, Maryland; Clinton, Maryland; Mechanicsville, Maryland",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay range $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set. | $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set.",
+        "scopeStates": [
+          "Maryland"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "34f46c2f4702d72242d1850b20bb44e4dac840776325b3dcaee2de0d6962dc5f",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042426",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042426",
+      "identifierType": "requisition",
+      "title": "Relationship Banker - Pa Central Market",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042426/relationship-banker-pa-central-market-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Bensalem",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Philadelphia",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Bensalem, Pennsylvania; Philadelphia, Pennsylvania",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "530d058bb64bb1326e4b5e996a49981c2549902acc6f67a2a235a2492504df50",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042432",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042432",
+      "identifierType": "requisition",
+      "title": "Relationship Banker - PA North Market - Spanish Required",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042432/relationship-banker-pa-north-market-spanish-required-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Lahaska",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Bethlehem",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Allentown",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Lansdale",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Langhorne",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Warrington",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "North Wales",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Feasterville-Trevose",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Doylestown",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Southampton",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Easton",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Newtown",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Whitehall",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Lahaska, Pennsylvania; Bethlehem, Pennsylvania; Allentown, Pennsylvania; Lansdale, Pennsylvania; Langhorne, Pennsylvania; Warrington, Pennsylvania; North Wales, Pennsylvania; Feasterville-Trevose, Pennsylvania; Doylestown, Pennsylvania; Southampton, Pennsylvania; Easton, Pennsylvania; Newtown, Pennsylvania; Whitehall, Pennsylvania",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "479a668ac53ef1c7e241522788fd8759bb85df8c97191563a9083546af8df28e",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042435",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042435",
+      "identifierType": "requisition",
+      "title": "Relationship Banker - Philadelphia Market",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042435/relationship-banker-philadelphia-market-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Philadelphia",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Upper Darby",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Philadelphia, Pennsylvania; Upper Darby, Pennsylvania",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c348ff63f6369ff43d1839462ca55a3f74cfa78395894694775b13df2ac46474",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042438",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042438",
+      "identifierType": "requisition",
+      "title": "Relationship Banker - Philadelphia Market - Spanish Required",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042438/relationship-banker-philadelphia-market-spanish-required-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Philadelphia",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Philadelphia, Pennsylvania",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "6eebe9f9f313c32ab89aabb6fd5dc23cf9604d502d19143699d9aed9ac763e59",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042443",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042443",
+      "identifierType": "requisition",
+      "title": "Wealth Management Client Associate",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042443/wealth-management-client-associate-dallas-texas-united-states",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Dallas",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Dallas, Texas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": false,
+      "travelNote": "Travel: No",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "f1087e0a323be9b780faeda469f254f887965d98b0152ac02212746d6305ccc8",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: No",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042447",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042447",
+      "identifierType": "requisition",
+      "title": "Merrill Advisor Development Program - Financial Advisor: Dallas Market",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042447/merrill-advisor-development-program-financial-advisor-dallas-market-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Dallas",
+          "state": "Texas"
+        },
+        {
+          "city": "Tyler",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Dallas, Texas; Tyler, Texas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "4f345cb97dd4c72282c3c02bf102b4029079ab12a62ef86dc67c582bde1685da",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042453",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042453",
+      "identifierType": "requisition",
+      "title": "Wealth Management Client Associate",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042453/wealth-management-client-associate-walnut-creek-california-united-states",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Walnut Creek",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Walnut Creek, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay range $25.00 - $44.00 hourly pay, offers to be determined based on experience, education and skill set. | $25.00 - $44.00 hourly pay, offers to be determined based on experience, education and skill set.",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": false,
+      "travelNote": "Travel: No",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c16f15ca27ee40f55a90723c07773295d0d0c09974d0b073f0de116c04425bb7",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: No",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042455",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042455",
+      "identifierType": "requisition",
+      "title": "Merrill Advisor Development Program - Financial Advisor: Louisiana/Mississippi Market",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042455/merrill-advisor-development-program-financial-advisor-louisiana-mississippi-market-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "New Orleans",
+          "state": "Louisiana"
+        },
+        {
+          "city": "Biloxi",
+          "state": "Mississippi"
+        },
+        {
+          "city": "Lake Charles",
+          "state": "Louisiana"
+        },
+        {
+          "city": "Ridgeland",
+          "state": "Mississippi"
+        },
+        {
+          "city": "Lafayette",
+          "state": "Louisiana"
+        },
+        {
+          "city": "Baton Rouge",
+          "state": "Louisiana"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New Orleans, Louisiana; Biloxi, Mississippi; Lake Charles, Louisiana; Ridgeland, Mississippi; Lafayette, Louisiana; Baton Rouge, Louisiana",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "fb3aafd9a1953def7d7c5d0a45cdcd5633184fa87b4525dcefaaac9d231ebcf9",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042459",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042459",
+      "identifierType": "requisition",
+      "title": "Relationship Banker - Prince William Market - South VA",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042459/relationship-banker-prince-william-market-south-va-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Springfield",
+          "state": "Virginia"
+        },
+        {
+          "city": "Woodbridge",
+          "state": "Virginia"
+        },
+        {
+          "city": "Alexandria",
+          "state": "Virginia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Springfield, Virginia; Woodbridge, Virginia; Alexandria, Virginia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay range $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set. | $25.00 - $26.77 hourly pay, offers to be determined based on experience, education and skill set.",
+        "scopeStates": [
+          "Virginia"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "ddee5dd5b6da244d83308c4bb1ace781c00ecb47d1289241fcf1b56af01d4b6c",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "bank-of-america-26042463",
+      "companyId": "bank-of-america",
+      "requisitionId": "26042463",
+      "identifierType": "requisition",
+      "title": "Merrill Advisor Development Program - Financial Advisor: Memphis/Little Rock Market",
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26042463/merrill-advisor-development-program-financial-advisor-memphis-little-rock-market-multiple-locations",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Little Rock",
+          "state": "Arkansas"
+        },
+        {
+          "city": "Jonesboro",
+          "state": "Arkansas"
+        },
+        {
+          "city": "Hot Springs",
+          "state": "Arkansas"
+        },
+        {
+          "city": "Memphis",
+          "state": "Tennessee"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Little Rock, Arkansas; Jonesboro, Arkansas; Hot Springs, Arkansas; Memphis, Tennessee",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Yes, 5% of the time",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c8e75180d49423a67145562f74aaab665af463acd699755febabbfb633df636b",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Yes, 5% of the time",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
       "id": "boeing-jr2026522579",
       "companyId": "boeing",
       "requisitionId": "JR2026522579",
@@ -1379,7 +2365,7 @@
       "locationNote": "Huntington Beach, California",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
+        "min": 24,
         "max": 45.13,
         "period": "hour",
         "currency": "USD",
@@ -4320,6 +5306,669 @@
       }
     },
     {
+      "id": "cardinal-health-0252a562-2e5f-46ca-872c-4cfc898b4966",
+      "companyId": "cardinal-health",
+      "requisitionId": "0252a562-2e5f-46ca-872c-4cfc898b4966",
+      "identifierType": "posting-id",
+      "title": "Delivery Driver - Pharmacy Services",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/delivery-driver---pharmacy-services/0252a562-2e5f-46ca-872c-4cfc898b4966",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Sacramento",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Sacramento, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay rate: $21.50 per hour",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "36dbe016a58bddbf982dde231492a888b17430f0bbbe12eb36f06e6b6e41262c",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-0fdc11bc-0b77-475f-b0db-925084fa653d",
+      "companyId": "cardinal-health",
+      "requisitionId": "0fdc11bc-0b77-475f-b0db-925084fa653d",
+      "identifierType": "posting-id",
+      "title": "Lead HVAC Technician",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/lead-hvac-technician/0fdc11bc-0b77-475f-b0db-925084fa653d",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Deland",
+          "state": "Florida"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Deland, Florida",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "72951fb2af89fbd5021624195d1d47d341d237e0fd9cbc33c80ae4167f2ca92b",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-23fecb13-6d74-4eea-b7b8-f0af41722895",
+      "companyId": "cardinal-health",
+      "requisitionId": "23fecb13-6d74-4eea-b7b8-f0af41722895",
+      "identifierType": "posting-id",
+      "title": "Delivery Driver",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/delivery-driver/23fecb13-6d74-4eea-b7b8-f0af41722895",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Miami Lakes",
+          "state": "Florida"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Miami Lakes, Florida",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay Rate: $18.00 per hour",
+        "scopeStates": [
+          "Florida"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "58a6d95c3de4edac4a8443dc1730e935ddbab1ed21fb4ee4734d900a30f03574",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-3b4a5822-f38d-4979-b5e2-b7f59c62af94",
+      "companyId": "cardinal-health",
+      "requisitionId": "3b4a5822-f38d-4979-b5e2-b7f59c62af94",
+      "identifierType": "posting-id",
+      "title": "Senior Specialist, Quality Assurance (Nights)",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/senior-specialist-quality-assurance-nights/3b4a5822-f38d-4979-b5e2-b7f59c62af94",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "East Lansing",
+          "state": "Michigan"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "East Lansing, Michigan",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Anticipated salary range: $68,500.00-$88,020.00",
+        "scopeStates": [
+          "Michigan"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "037bbad905545711ca53bfcf3dc973c7423518e19bda3e3dffeeb8e50f7b96d9",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-45a9b8ec-a227-47f6-afc0-56d4901010fb",
+      "companyId": "cardinal-health",
+      "requisitionId": "45a9b8ec-a227-47f6-afc0-56d4901010fb",
+      "identifierType": "posting-id",
+      "title": "Medical Physicist",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/medical-physicist/45a9b8ec-a227-47f6-afc0-56d4901010fb",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Casper",
+          "state": "Wyoming"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Casper, Wyoming",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Anticipated salary range: $151,700 - $270,860",
+        "scopeStates": [
+          "Wyoming"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "aa7369fc6ae63baa8230a59e622b9e8551b2820e4bea57692cb0b5e04ff2c217",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-5be99fad-c7c8-4d82-ac6f-ba644b6c9d75",
+      "companyId": "cardinal-health",
+      "requisitionId": "5be99fad-c7c8-4d82-ac6f-ba644b6c9d75",
+      "identifierType": "posting-id",
+      "title": "Delivery Driver - Pharmacy Services",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/delivery-driver---pharmacy-services/5be99fad-c7c8-4d82-ac6f-ba644b6c9d75",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Redding",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Redding, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay rate: $20.00 per hour",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "35e7056701e836c24dc7ce70bdcf348483c75ebd370f67f12a8fc50b1b1e8f3a",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-65087a93-00d9-424a-b681-6914b277a2ff",
+      "companyId": "cardinal-health",
+      "requisitionId": "65087a93-00d9-424a-b681-6914b277a2ff",
+      "identifierType": "posting-id",
+      "title": "Medical Dosimetrist-$10,000 Sign On Bonus!",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/medical-dosimetrist-10000-sign-on-bonus/65087a93-00d9-424a-b681-6914b277a2ff",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Casper",
+          "state": "Wyoming"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Casper, Wyoming",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "This full-time position has an anticipated salary range of $96,300 – $159,615 with a $10,000 sign-on bonus! We will consider relocation assistance for this role as well. | Anticipated salary range: $96,300 – $159,615",
+        "scopeStates": [
+          "Wyoming"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "507fa2e1602872caac991eec1489ed80987258d306bcf8c80008bb6e3153f2d1",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-75a10d38-46ca-437a-862f-98ab683199b4",
+      "companyId": "cardinal-health",
+      "requisitionId": "75a10d38-46ca-437a-862f-98ab683199b4",
+      "identifierType": "posting-id",
+      "title": "PRN Hospital Pharmacist",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/prn-hospital-pharmacist/75a10d38-46ca-437a-862f-98ab683199b4",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Reno",
+          "state": "Nevada"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Reno, Nevada",
+      "employmentType": "Part-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay rate: $72.50 per hour.",
+        "scopeStates": [
+          "Nevada"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "8d3ddc321025271802ee1cd25b8137517d8dacdaaaa4dc08a96e65f64ac22a22",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-9ec31428-d32a-48cf-bbd4-4ea4fdd1d31b",
+      "companyId": "cardinal-health",
+      "requisitionId": "9ec31428-d32a-48cf-bbd4-4ea4fdd1d31b",
+      "identifierType": "posting-id",
+      "title": "Delivery Driver",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/delivery-driver/9ec31428-d32a-48cf-bbd4-4ea4fdd1d31b",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Miami Lakes",
+          "state": "Florida"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Miami Lakes, Florida",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay Rate: $18.00 per hour",
+        "scopeStates": [
+          "Florida"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "3f22eced647c729344c9ca40da7e7d79752db8a41801de4c541e255dbf949dcd",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-b05527a2-daa7-4be9-8c2b-c5a0a57eac38",
+      "companyId": "cardinal-health",
+      "requisitionId": "b05527a2-daa7-4be9-8c2b-c5a0a57eac38",
+      "identifierType": "posting-id",
+      "title": "Delivery Driver",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/delivery-driver/b05527a2-daa7-4be9-8c2b-c5a0a57eac38",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Miami Lakes",
+          "state": "Florida"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Miami Lakes, Florida",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay Rate: $18.00 per hour",
+        "scopeStates": [
+          "Florida"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e384e9bcdef560275570d815d3cc745b031770ec056aa84041dc7f947778edd3",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-d168eb71-776c-4e01-b7bd-05540a821470",
+      "companyId": "cardinal-health",
+      "requisitionId": "d168eb71-776c-4e01-b7bd-05540a821470",
+      "identifierType": "posting-id",
+      "title": "Warehouse Associate, 2nd Shift",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/warehouse-associate-2nd-shift/d168eb71-776c-4e01-b7bd-05540a821470",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Columbus",
+          "state": "Ohio"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Columbus, Ohio",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay rate: $22.10 per hour (includes shift differential)",
+        "scopeStates": [
+          "Ohio"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "05d80ab9628eb54a7d408bf76d34a0a7d8fa6e2996d1583f477eb71341292b5e",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-e43cb0ec-dd7f-477e-bcde-2db7aab7fb81",
+      "companyId": "cardinal-health",
+      "requisitionId": "e43cb0ec-dd7f-477e-bcde-2db7aab7fb81",
+      "identifierType": "posting-id",
+      "title": "IV Technician",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/iv-technician/e43cb0ec-dd7f-477e-bcde-2db7aab7fb81",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Fresno",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Fresno, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "57a22625fb3ffd3850aaddd75186f0d829ed19f3144fa181f012618f44219293",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-e87dfed0-4e66-4278-b8f4-54467414b914",
+      "companyId": "cardinal-health",
+      "requisitionId": "e87dfed0-4e66-4278-b8f4-54467414b914",
+      "identifierType": "posting-id",
+      "title": "Warehouse Associate (1st Shift)",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/warehouse-associate-1st-shift/e87dfed0-4e66-4278-b8f4-54467414b914",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Atlanta",
+          "state": "Georgia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Atlanta, Georgia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay rate: $19.00 per hour",
+        "scopeStates": [
+          "Georgia"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e5fc536d0aae0ba38069cef0b1b1e916981bf462ea237456494dc09d98ac2878",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-e9716604-893f-472e-9b47-a9908d6b974e",
+      "companyId": "cardinal-health",
+      "requisitionId": "e9716604-893f-472e-9b47-a9908d6b974e",
+      "identifierType": "posting-id",
+      "title": "Delivery Driver - Pharmacy Services",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/delivery-driver---pharmacy-services/e9716604-893f-472e-9b47-a9908d6b974e",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Suite A",
+          "state": "Nebraska"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Suite A, Nebraska",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Pay rate: $17.50 per hour",
+        "scopeStates": [
+          "Nebraska"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "25e6d6505c811a515bfe275f181bc472350646c168e6dfa4527b2735c0e62d53",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "cardinal-health-f26cd4c4-ca89-465d-a39d-3e52569233bb",
+      "companyId": "cardinal-health",
+      "requisitionId": "f26cd4c4-ca89-465d-a39d-3e52569233bb",
+      "identifierType": "posting-id",
+      "title": "Lab Supervisor",
+      "url": "https://jobs.cardinalhealth.com/search/jobdetails/lab-supervisor/f26cd4c4-ca89-465d-a39d-3e52569233bb",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Casper",
+          "state": "Wyoming"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Casper, Wyoming",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "Anticipated salary range: $68,500 - $107,470",
+        "scopeStates": [
+          "Wyoming"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "aca90f37c3d8bda6239b06cbe87ed27d87fc579483943e56e75bfaa5de0eb1e9",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
       "id": "caterpillar-r0000405326",
       "companyId": "caterpillar",
       "requisitionId": "R0000405326",
@@ -4990,8 +6639,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-DE, Delaware; Remote-GA, Georgia; Remote-MA, Massachusetts; Remote-NH, New Hampshire; Remote-OH, Ohio; Remote-OK, Oklahoma; Remote-PA, Pennsylvania; Remote-TN, Tennessee",
       "employmentType": "Full-time",
       "salary": {
-        "min": 215000.0,
-        "max": 408500.0,
+        "min": 215000,
+        "max": 408500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -5071,8 +6720,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-FL, Florida; Remote-WI, Wisconsin",
       "employmentType": "Full-time",
       "salary": {
-        "min": 215000.0,
-        "max": 408500.0,
+        "min": 215000,
+        "max": 408500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -5165,8 +6814,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-AZ, Arizona; Remote-IA, Iowa; Remote-IN, Indiana; Remote-KS, Kansas; Remote-OK, Oklahoma; Remote-PA, Pennsylvania; Remote-UT, Utah",
       "employmentType": "Full-time",
       "salary": {
-        "min": 215000.0,
-        "max": 408500.0,
+        "min": 215000,
+        "max": 408500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -5259,8 +6908,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-IL, Illinois; Remote-NC, North Carolina; Remote-NY, New York; Remote-TX, Texas; Remote-VA, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 121500.0,
-        "max": 224900.0,
+        "min": 121500,
+        "max": 224900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -5324,8 +6973,8 @@
       "locationNote": "Remote-FL, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -5447,8 +7096,8 @@
       "locationNote": "Remote-SC, South Carolina; Remote-FL, Florida; Remote-IL, Illinois; Remote-MO, Missouri; Remote-TX, Texas; Remote-VA, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -5512,8 +7161,8 @@
       "locationNote": "Remote-MO, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 107700.0,
-        "max": 199300.0,
+        "min": 107700,
+        "max": 199300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -5803,8 +7452,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-AL, Alabama; Remote-AR, Arkansas; Remote-CT, Connecticut; Remote-DC, District of Columbia; Remote-DE, Delaware; Remote-FL, Florida; Remote-GA, Georgia; Remote-IA, Iowa; Remote-IL, Illinois; Remote-IN, Indiana; Remote-KS, Kansas; Remote-KY, Kentucky; Remote-LA, Louisiana; Remote-MA, Massachusetts; Remote-MD, Maryland; Remote-ME, Maine; Remote-MI, Michigan; Remote-MN, Minnesota; Remote-MS, Mississippi; Remote-NC, North Carolina; Remote-ND, North Dakota; Remote-NE, Nebraska; Remote-NH, New Hampshire; Remote-NJ, New Jersey; Remote-NY, New York; Remote-OH, Ohio; Remote-OK, Oklahoma; Remote-PA, Pennsylvania; Remote-RI, Rhode Island; Remote-SC, South Carolina; Remote-SD, South Dakota; Remote-TN, Tennessee; Remote-TX, Texas; Remote-VA, Virginia; Remote-VT, Vermont; Remote-WI, Wisconsin; Remote-WV, West Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -6323,8 +7972,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Remote-WA State, Washington; Olympia, Washington; Shelton, Washington; Tacoma, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -17006,6 +18655,816 @@
       }
     },
     {
+      "id": "phillips-66-1450088500",
+      "companyId": "phillips-66",
+      "requisitionId": "1450088500",
+      "identifierType": "posting-id",
+      "title": "Sr. Commercial Scheduler I, Beaumont Crude",
+      "url": "https://careers.phillips66.com/job/Houston-Sr_-Commercial-Scheduler-I%2C-Beaumont-Crude-TX-77042/1450088500",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $147,600 - $180,400. This role is eligible to participate in the company’s commercial bonus program, offering the opportunity to earn additional compensation based on business and individual performance, in accordance with program guidelines. | This position has a base salary range of $147,600 - $180,400. This role is eligible to participate in the company’s commercial bonus program, offering the opportunity to earn additional compensation based on business and individual performance, in accordance with program guidelines.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-30",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "3d3de34c8064125457d1110e30828af75e401f5cb3db2769c9c9574afed13649",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450089800",
+      "companyId": "phillips-66",
+      "requisitionId": "1450089800",
+      "identifierType": "posting-id",
+      "title": "Commercial Scheduler III, Ponca City Crude",
+      "url": "https://careers.phillips66.com/job/Houston-Commercial-Scheduler-III%2C-Ponca-City-Crude-TX-77042/1450089800",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $125,100 – $152,900. This role is eligible to participate in the company’s commercial bonus program, offering the opportunity to earn additional compensation based on business and individual performance, in accordance with program guidelines. | This position has a base salary range of $125,100 – $152,900. This role is eligible to participate in the company’s commercial bonus program, offering the opportunity to earn additional compensation based on business and individual performance, in accordance with program guidelines.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-30",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "f906986be30adce5ee9748f930220744b1d3ee023c0932f9380ff0cb579ba41e",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450202000",
+      "companyId": "phillips-66",
+      "requisitionId": "1450202000",
+      "identifierType": "posting-id",
+      "title": "Welder, Borger Refinery",
+      "url": "https://careers.phillips66.com/job/Borger-Welder%2C-Borger-Refinery-TX-79007/1450202000",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Borger",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Borger, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "The starting hourly rate ranges from $40.03 to $50.49, depending on skills and experience. Employees have the opportunity to reach the top craft pay of $54.58 per hour within 48 months. | Compensation and Other Info: The starting hourly rate ranges from $40.03 to $50.49, depending on skills and experience. Employees have the opportunity to reach the top craft pay of $54.58 per hour within 48 months. Pay and future pay changes are determined by the Collective Bargaining Agreement. | The starting hourly rate ranges from $40.03 to $50.49, depending on skills and experience. Employees have the opportunity to reach the top craft pay of $54.58 per hour within 48 months. Pay and future pay changes are determined by the Collective Bargaining Agreement.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-19",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "501270ae7984b4c9c54cf010932b4f052363a8052c756f9b65c2436c7d8d1aef",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450248000",
+      "companyId": "phillips-66",
+      "requisitionId": "1450248000",
+      "identifierType": "posting-id",
+      "title": "Sr Controller, Pipeline",
+      "url": "https://careers.phillips66.com/job/Houston-Sr-Controller%2C-Pipeline-TX-77042/1450248000",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $ 104,000 – $156,000. | This position has a base salary range of $ 104,000 – $156,000.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-30",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "3b4b9fe909cefb512a88ad2fb87dcb24ce5702cfe482036e657e510f6db0d5b7",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450261400",
+      "companyId": "phillips-66",
+      "requisitionId": "1450261400",
+      "identifierType": "posting-id",
+      "title": "Commercial Scheduler III, Sweeny Gasoline",
+      "url": "https://careers.phillips66.com/job/Houston-Commercial-Scheduler-III%2C-Sweeny-Gasoline-TX-77042/1450261400",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $125,100 – $152,900. This role is eligible to participate in the company’s commercial bonus program, offering the opportunity to earn additional compensation based on business and individual performance, in accordance with program guidelines. | This position has a base salary range of $125,100 – $152,900. This role is eligible to participate in the company’s commercial bonus program, offering the opportunity to earn additional compensation based on business and individual performance, in accordance with program guidelines.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-30",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "a271c4928223ab82f775860ddc16e2da5f7b2bb8eb9eb343fa793551f97ce97f",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450273700",
+      "companyId": "phillips-66",
+      "requisitionId": "1450273700",
+      "identifierType": "posting-id",
+      "title": "Advisor, Communications and Public Affairs",
+      "url": "https://careers.phillips66.com/job/Houston-Advisor%2C-Communications-and-Public-Affairs-TX-77042/1450273700",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $125,100- $152,900. | This position has a base salary range of $125,100- $152,900.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-21",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "29b0c301605dfe7662aa147a2048216c99db19a082aca4a806f865d9fa30ddfe",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450325300",
+      "companyId": "phillips-66",
+      "requisitionId": "1450325300",
+      "identifierType": "posting-id",
+      "title": "Senior Director, VCO/Plan AI Platform Strategy & Integration",
+      "url": "https://careers.phillips66.com/job/Houston-Senior-Director%2C-VCOPlan-AI-Platform-Strategy-&-Integration-TX-77042/1450325300",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $173,261 - $314,600. | This position has a base salary range of $173,261 - $314,600.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-12-01",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "7283ecce54c4fd7314676a4e74c526593cb93e48c95bc360927f4ba320f6ea4a",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450345000",
+      "companyId": "phillips-66",
+      "requisitionId": "1450345000",
+      "identifierType": "posting-id",
+      "title": "Sr Specialist I, Process Control, Lake Charles Refinery",
+      "url": "https://careers.phillips66.com/job/Westlake-Sr-Specialist-I%2C-Process-Control%2C-Lake-Charles-Refinery-LA-70669/1450345000",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Westlake",
+          "state": "Louisiana"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Westlake, Louisiana",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $141,300 – $172,700 . | This position has a base salary range of $141,300 – $172,700 .",
+        "scopeStates": [
+          "Louisiana"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-12-04",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "268d5845b7acd5f845092cbc634884be427cebf8b7e152014f9878a432e5af7e",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450376900",
+      "companyId": "phillips-66",
+      "requisitionId": "1450376900",
+      "identifierType": "posting-id",
+      "title": "Senior Manager, Digital Change Enablement",
+      "url": "https://careers.phillips66.com/job/Houston-Senior-Manager%2C-Digital-Change-Enablement-TX-77042/1450376900",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $ 180,900 – $221,100 . | This position has a base salary range of $ 180,900 – $221,100 .",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-27",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "fd58c595e769d472742b0947158c2c6845a4306b9a53b5fbf822a54443bcf74f",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450377200",
+      "companyId": "phillips-66",
+      "requisitionId": "1450377200",
+      "identifierType": "posting-id",
+      "title": "Specialist II, Warehouse, Lake Charles Refinery",
+      "url": "https://careers.phillips66.com/job/Westlake-Specialist-II%2C-Warehouse%2C-Lake-Charles-Refinery-LA-70669/1450377200",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Westlake",
+          "state": "Louisiana"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Westlake, Louisiana",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $108,900 - $133,100. | This position has a base salary range of $108,900 - $133,100.",
+        "scopeStates": [
+          "Louisiana"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-27",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "571400df96ade8f609944b7633ca591253b3c8d7f061f4df76d4a025c496be25",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450380400",
+      "companyId": "phillips-66",
+      "requisitionId": "1450380400",
+      "identifierType": "posting-id",
+      "title": "Maintenance & Construction Technician, Goldsmith",
+      "url": "https://careers.phillips66.com/job/Goldsmith-Maintenance-&-Construction-Technician%2C-Goldsmith-TX-79741/1450380400",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Goldsmith",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Goldsmith, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $70,200 – $114,400. | This position has a base salary range of $70,200 – $114,400.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-27",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "d227765891604d0a6b1bb6b48a551cc165db0d983efe87c8370b356f6ef7f92e",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450380600",
+      "companyId": "phillips-66",
+      "requisitionId": "1450380600",
+      "identifierType": "posting-id",
+      "title": "Coordinator I, Enterprise Contractor Management (ECM)",
+      "url": "https://careers.phillips66.com/job/Sweeny-Coordinator-I%2C-Enterprise-Contractor-Management-%28ECM%29-TX-77480/1450380600",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Linden",
+          "state": "New Jersey"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Linden, New Jersey",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $73,800 – $90,200. | This position has a base salary range of $73,800 – $90,200.",
+        "scopeStates": [
+          "New Jersey"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-20",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "a71a9482d58325e2e1026a77aceb51672d036139f75f096993f3fd5905f17d94",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450381900",
+      "companyId": "phillips-66",
+      "requisitionId": "1450381900",
+      "identifierType": "posting-id",
+      "title": "Position Advisor I, Heavies",
+      "url": "https://careers.phillips66.com/job/Houston-Position-Advisor-I%2C-Heavies-TX-77042/1450381900",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $96,300 – $117,700. | This position has a base salary range of $96,300 – $117,700.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-23",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "7ff5ea753a95f285aab8413243a3ce28e956b28c5e2ef341a0f2d0c5fe8e2eab",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450395000",
+      "companyId": "phillips-66",
+      "requisitionId": "1450395000",
+      "identifierType": "posting-id",
+      "title": "Advisor III, Commercial FP&A",
+      "url": "https://careers.phillips66.com/job/Houston-Advisor-III%2C-Commercial-FP&A-TX-77042/1450395000",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $125,100 – $152,900. | This position has a base salary range of $125,100 – $152,900.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-21",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "ba4c6680cc6e1a3ebad9fbdc5b82b7cdc712bdb3c9ddba5413d464c2f1d327e7",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450399900",
+      "companyId": "phillips-66",
+      "requisitionId": "1450399900",
+      "identifierType": "posting-id",
+      "title": "Health & Safety Specialist",
+      "url": "https://careers.phillips66.com/job/Borger-Health-&-Safety-Specialist-TX-79007/1450399900",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Borger",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Borger, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $96,300 - $117,700. | This position has a base salary range of $96,300 - $117,700.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-20",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "5ae8f8f243d5ae609583d675dcfc4d9a1d38977f258ea511be58bd69bb24b3ee",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450515900",
+      "companyId": "phillips-66",
+      "requisitionId": "1450515900",
+      "identifierType": "posting-id",
+      "title": "Senior Account Manager, Strategic Accounts",
+      "url": "https://careers.phillips66.com/job/Houston-Senior-Account-Manager%2C-Strategic-Accounts-TX-77042/1450515900",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Houston",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $160,200 - $195,800. | This position has a base salary range of $160,200 - $195,800.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-21",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "dceb20a8f1d7a8e53ad7e3cebc600f102c3dc5bfc7f766df018c785fd6dbf7a4",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450552500",
+      "companyId": "phillips-66",
+      "requisitionId": "1450552500",
+      "identifierType": "posting-id",
+      "title": "Facility Technician, Chitwood Gas Plant",
+      "url": "https://careers.phillips66.com/job/Ninnekah-Facility-Technician%2C-Chitwood-Gas-Plant-OK-73067/1450552500",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Ninnekah",
+          "state": "Oklahoma"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Ninnekah, Oklahoma",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $74,970 - $113,960. | This position has a base salary range of $74,970 - $113,960.",
+        "scopeStates": [
+          "Oklahoma"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-27",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "4e539ea525eeb642e51d834efc2a01ea9b51c2f7e7b1ebefa428dcb1a2137714",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
+      "id": "phillips-66-1450553100",
+      "companyId": "phillips-66",
+      "requisitionId": "1450553100",
+      "identifierType": "posting-id",
+      "title": "Mechanical Technician, Beaumont, TX",
+      "url": "https://careers.phillips66.com/job/Beaumont-Mechanical-Technician%2C-Beaumont%2C-TX-TX-77705/1450553100",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Beaumont",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Beaumont, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Compensation Range This position has a base salary range of $74,970 – $113,960. | This position has a base salary range of $74,970 – $113,960.",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-27",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T23:39:21.280130+00:00",
+      "collectionMethod": "phillips66-public-microdata",
+      "sourceHash": "08e60b9bcb5e4821ca062891e4fe33143deb800038082f09e862544a757d4aa0",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      }
+    },
+    {
       "id": "target-r0000447565",
       "companyId": "target",
       "requisitionId": "R0000447565",
@@ -17699,8 +20158,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 132000.0,
-        "max": 238000.0,
+        "min": 132000,
+        "max": 238000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -17752,8 +20211,8 @@
       "locationNote": "Brooklyn Park, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 168000.0,
-        "max": 356000.0,
+        "min": 168000,
+        "max": 356000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -17805,8 +20264,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 149000.0,
-        "max": 268000.0,
+        "min": 149000,
+        "max": 268000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -17858,8 +20317,8 @@
       "locationNote": "Brooklyn Park, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 132000.0,
-        "max": 238000.0,
+        "min": 132000,
+        "max": 238000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -17911,8 +20370,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 132000.0,
-        "max": 238000.0,
+        "min": 132000,
+        "max": 238000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -18863,8 +21322,8 @@
       "locationNote": "Newberry, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 78508.0,
-        "max": 117762.0,
+        "min": 78508,
+        "max": 117762,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -19006,8 +21465,8 @@
       "locationNote": "Harlingen, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 15.0,
-        "max": 17.0,
+        "min": 15,
+        "max": 17,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -19104,8 +21563,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Richmond, Virginia",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -19153,8 +21612,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -19202,8 +21661,8 @@
       "locationNote": "Irving, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 60200.0,
-        "max": 107400.0,
+        "min": 60200,
+        "max": 107400,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -19255,8 +21714,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -19349,8 +21808,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Las Vegas, Nevada",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -19410,8 +21869,8 @@
       "locationNote": "Milwaukee, Wisconsin; Wausau, Wisconsin; De Pere, Wisconsin",
       "employmentType": "Not specified",
       "salary": {
-        "min": 22.0,
-        "max": 48.0,
+        "min": 22,
+        "max": 48,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -19463,8 +21922,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 120100.0,
-        "max": 214500.0,
+        "min": 120100,
+        "max": 214500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -19516,8 +21975,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Boston, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -19565,8 +22024,8 @@
       "locationNote": "Paris, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -19618,8 +22077,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 134600.0,
-        "max": 230800.0,
+        "min": 134600,
+        "max": 230800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -19671,8 +22130,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -19732,8 +22191,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Las Vegas, Nevada; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -19791,8 +22250,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Tampa, Florida",
       "employmentType": "Not specified",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -19844,8 +22303,8 @@
       "locationNote": "Raleigh, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 41.0,
-        "max": 62.0,
+        "min": 41,
+        "max": 62,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -19897,8 +22356,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -19991,8 +22450,8 @@
       "locationNote": "Draper, Utah",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -20044,8 +22503,8 @@
       "locationNote": "Memphis, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -20154,8 +22613,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: New York, New York; Jersey City, New Jersey; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -20211,8 +22670,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 77000.0,
-        "max": 137600.0,
+        "min": 77000,
+        "max": 137600,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -20358,8 +22817,8 @@
       "locationNote": "Novato, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -20411,8 +22870,8 @@
       "locationNote": "Indianapolis, Indiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 29.0,
+        "min": 16,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -20464,8 +22923,8 @@
       "locationNote": "Everett, Washington",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -20517,8 +22976,8 @@
       "locationNote": "Sumter, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -20570,8 +23029,8 @@
       "locationNote": "Westborough, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 29.0,
+        "min": 16,
+        "max": 29,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -20623,7 +23082,7 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Lafayette, Louisiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 33.0,
+        "min": 33,
         "max": 49.5,
         "period": "hour",
         "currency": "USD",
@@ -20717,8 +23176,8 @@
       "locationNote": "Pasadena, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -20876,8 +23335,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Tampa, Florida; Minneapolis, Minnesota; Phoenix, Arizona; Hartford, Connecticut",
       "employmentType": "Full-time",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -20925,8 +23384,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -20978,8 +23437,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 20.0,
-        "max": 36.0,
+        "min": 20,
+        "max": 36,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -21076,8 +23535,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 35.0,
-        "max": 63.0,
+        "min": 35,
+        "max": 63,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -21129,8 +23588,8 @@
       "locationNote": "Fort Worth, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 19.0,
-        "max": 25.0,
+        "min": 19,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -21198,8 +23657,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Hartford, Connecticut; Tampa, Florida; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -21247,8 +23706,8 @@
       "locationNote": "Glen Flora, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 35.0,
-        "max": 63.0,
+        "min": 35,
+        "max": 63,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -21300,8 +23759,8 @@
       "locationNote": "Rutherford, New Jersey",
       "employmentType": "Not specified",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -21353,8 +23812,8 @@
       "locationNote": "Chestnut Hill, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -21490,8 +23949,8 @@
       "locationNote": "Opelika, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 69336.0,
-        "max": 104004.0,
+        "min": 69336,
+        "max": 104004,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -21543,8 +24002,8 @@
       "locationNote": "Pembroke, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 71640.0,
-        "max": 107460.0,
+        "min": 71640,
+        "max": 107460,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -21641,8 +24100,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 60200.0,
-        "max": 107400.0,
+        "min": 60200,
+        "max": 107400,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -21706,8 +24165,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Hartford, Connecticut; Tampa, Florida; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": []
@@ -21755,8 +24214,8 @@
       "locationNote": "Greenville, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 75620.0,
-        "max": 113430.0,
+        "min": 75620,
+        "max": 113430,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -21808,7 +24267,7 @@
       "locationNote": "Elizabethton, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 22.6,
         "period": "hour",
         "currency": "USD",
@@ -21861,8 +24320,8 @@
       "locationNote": "Sylacauga, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 74376.0,
-        "max": 111564.0,
+        "min": 74376,
+        "max": 111564,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -21914,8 +24373,8 @@
       "locationNote": "Sylacauga, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 74376.0,
-        "max": 111564.0,
+        "min": 74376,
+        "max": 111564,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -22020,8 +24479,8 @@
       "locationNote": "Bolivia, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 71640.0,
-        "max": 107460.0,
+        "min": 71640,
+        "max": 107460,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -22126,7 +24585,7 @@
       "locationNote": "Lexington, Kentucky",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 21.65,
         "period": "hour",
         "currency": "USD",
@@ -22179,8 +24638,8 @@
       "locationNote": "Colorado Springs, Colorado",
       "employmentType": "Not specified",
       "salary": {
-        "min": 44.0,
-        "max": 79.0,
+        "min": 44,
+        "max": 79,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -22232,8 +24691,8 @@
       "locationNote": "Jonesboro, Arkansas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 67104.0,
-        "max": 100656.0,
+        "min": 67104,
+        "max": 100656,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -22285,8 +24744,8 @@
       "locationNote": "Dayton, Ohio",
       "employmentType": "Not specified",
       "salary": {
-        "min": 50000.0,
-        "max": 115000.0,
+        "min": 50000,
+        "max": 115000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -22473,7 +24932,7 @@
       "locationNote": "Valparaiso, Indiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 26.35,
         "period": "hour",
         "currency": "USD",
@@ -22526,8 +24985,8 @@
       "locationNote": "Leominster, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 87560.0,
-        "max": 131340.0,
+        "min": 87560,
+        "max": 131340,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -22632,8 +25091,8 @@
       "locationNote": "Charleston, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 75620.0,
-        "max": 113430.0,
+        "min": 75620,
+        "max": 113430,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -22780,8 +25239,8 @@
       "locationNote": "Hartwell, Georgia",
       "employmentType": "Not specified",
       "salary": {
-        "min": 70992.0,
-        "max": 106488.0,
+        "min": 70992,
+        "max": 106488,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -22833,7 +25292,7 @@
       "locationNote": "Akron, Ohio",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 23.85,
         "period": "hour",
         "currency": "USD",
@@ -22931,8 +25390,8 @@
       "locationNote": "Portland, Maine",
       "employmentType": "Not specified",
       "salary": {
-        "min": 66400.0,
-        "max": 99600.0,
+        "min": 66400,
+        "max": 99600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -22984,8 +25443,8 @@
       "locationNote": "Stafford, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23037,8 +25496,8 @@
       "locationNote": "Webster, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 32.0,
+        "min": 16,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23135,8 +25594,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 84744.0,
-        "max": 127116.0,
+        "min": 84744,
+        "max": 127116,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -23188,8 +25647,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 44880.0,
-        "max": 67320.0,
+        "min": 44880,
+        "max": 67320,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -23241,8 +25700,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 40832.0,
-        "max": 61248.0,
+        "min": 40832,
+        "max": 61248,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -23437,8 +25896,8 @@
       "locationNote": "VERO BEACH, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23490,8 +25949,8 @@
       "locationNote": "BALTIMORE, Maryland",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
-        "max": 28.0,
+        "min": 20,
+        "max": 28,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23543,8 +26002,8 @@
       "locationNote": "BROOKSVILLE, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65500.0,
-        "max": 98000.0,
+        "min": 65500,
+        "max": 98000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -23596,8 +26055,8 @@
       "locationNote": "LUFKIN, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23649,8 +26108,8 @@
       "locationNote": "GREEN BAY, Wisconsin",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23749,8 +26208,8 @@
       "locationNote": "WAKE FOREST, North Carolina",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23802,8 +26261,8 @@
       "locationNote": "BURLESON, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 29.0,
+        "min": 21,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23855,8 +26314,8 @@
       "locationNote": "TULSA, Oklahoma",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 29.0,
+        "min": 21,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23908,8 +26367,8 @@
       "locationNote": "SAINT LOUIS, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 20.0,
-        "max": 28.0,
+        "min": 20,
+        "max": 28,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23961,8 +26420,8 @@
       "locationNote": "COCOA, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -24014,8 +26473,8 @@
       "locationNote": "FORT WORTH, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -24120,8 +26579,8 @@
       "locationNote": "LANSING, Michigan",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -24173,8 +26632,8 @@
       "locationNote": "CASPER, Wyoming",
       "employmentType": "Full-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -24226,8 +26685,8 @@
       "locationNote": "HOUSTON, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -24279,8 +26738,8 @@
       "locationNote": "LAS VEGAS, Nevada",
       "employmentType": "Full-time",
       "salary": {
-        "min": 22.0,
-        "max": 30.0,
+        "min": 22,
+        "max": 30,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -24332,8 +26791,8 @@
       "locationNote": "EL PASO, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -24385,8 +26844,8 @@
       "locationNote": "GREENSBORO, North Carolina",
       "employmentType": "Part-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -24815,6 +27274,51 @@
         "pendingClosureChecks": 0,
         "discoveryLimited": true,
         "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
+      },
+      "cardinal-health": {
+        "discovered": 868,
+        "checked": 20,
+        "added": 15,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 4,
+        "outsidePostingWindow": 1,
+        "warnings": [],
+        "errors": [],
+        "activeTracked": 15,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": false,
+        "lastSuccessfulAt": "2026-11-13T23:39:21.280130+00:00"
+      },
+      "phillips-66": {
+        "discovered": 82,
+        "checked": 20,
+        "added": 18,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 2,
+        "outsidePostingWindow": 0,
+        "warnings": [],
+        "errors": [],
+        "activeTracked": 18,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": false,
+        "lastSuccessfulAt": "2026-11-13T23:39:21.280130+00:00"
+      },
+      "bank-of-america": {
+        "discovered": 2112,
+        "checked": 20,
+        "added": 20,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 0,
+        "outsidePostingWindow": 0,
+        "warnings": [],
+        "errors": [],
+        "activeTracked": 20,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": false,
+        "lastSuccessfulAt": "2026-11-13T23:39:21.280130+00:00"
       }
     }
   }

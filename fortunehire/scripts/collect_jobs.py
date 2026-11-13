@@ -150,6 +150,13 @@ def extract_published_pay(description, locations, company, nationwide=False):
     states = sorted({loc['state'] for loc in locations})
     lines = [re.sub(r'\s+',' ',line).strip() for line in description.splitlines() if line.strip()]
     flat = ' '.join(lines)
+    if company=='cardinal-health' and len(states)==1:
+        fixed=[(line,re.fullmatch(r'Pay rate:\s*('+MONEY+r')\s+per hour\.?',line,re.I)) for line in lines]
+        fixed=[(line,match) for line,match in fixed if match]
+        rates={float(re.sub(r'[$,\s]','',match[1])) for line,match in fixed}
+        if len(rates)==1:
+            value=next(iter(rates))
+            return {'min':value,'max':value,'period':'hour','currency':'USD','scopeStates':states},{'text':fixed[0][0],'scopeStates':states,'note':'Employer-published fixed hourly rate for the listed state.'}
     if company == 'citigroup':
         primary = re.search(r'Primary Location\s*:\s*([^\n]+)',description,re.I)
         primary_states = [s for s in sorted(STATES.values(),key=len,reverse=True) if primary and re.search(r'\b'+re.escape(s)+r'\b',primary[1],re.I)]
@@ -164,7 +171,7 @@ def extract_published_pay(description, locations, company, nationwide=False):
             return None, {'text':'Primary-location salary range: '+'; '.join(bands),'scopeStates':scoped,'note':'Employer range for '+scoped[0]+'. Other locations may differ. Pay period is not specified in this label.'}
     evidence = []
     for i,line in enumerate(lines):
-        if re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',line,re.I) or company=='centene' and re.match(r'^Pay Range:\s*\$',line,re.I):
+        if re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',line,re.I) or company=='centene' and re.match(r'^Pay Range:\s*\$',line,re.I) or company in ('bank-of-america','cardinal-health') and re.match(r'^(?:Anticipated\s+)?Pay range\b',line,re.I):
             context = line
             if not PAY_RANGE.search(context) and i+1<len(lines): context += ' '+lines[i+1]
             if PAY_RANGE.search(context): evidence.append(context)
@@ -229,7 +236,12 @@ def normalize_posting(body, url, company, now):
     candidates = []
     for script in page.scripts:
         try: candidates.extend(postings(json.loads(script)))
-        except (ValueError, TypeError): continue
+        except (ValueError, TypeError):
+            # The reviewed BofA publisher emits literal control characters
+            # inside JSON strings. This accepts those strings without edits.
+            if company=='bank-of-america':
+                try:candidates.extend(postings(json.loads(script,strict=False)))
+                except (ValueError,TypeError):pass
     if not candidates:
         adapted=extract_employer_page(company,body,url)
         if adapted:candidates.append(adapted)
@@ -251,7 +263,11 @@ def normalize_posting(body, url, company, now):
     title = html.unescape(source['title']).strip()
     req = source.get('identifier') or {}
     req = str((req.get('value') or '') if isinstance(req, dict) else (req or '')).strip()
-    identifier_type='requisition'
+    identifier_type=source.get('_identifierType','requisition')
+    if company=='cardinal-health':
+        # Cardinal repeats its tenant identifier across different postings.
+        # The reviewed canonical job URL provides the distinct public ID.
+        req=posting_key(url);identifier_type='posting-id'
     if not req and company=='pepsico' and posting_key(url).isdigit():
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
@@ -402,7 +418,7 @@ def normalize_posting(body, url, company, now):
         salary_evidence='Explicit employer pay text with stated period; scoped to listed or explicitly named states'
     today = now.astimezone(ZoneInfo('America/New_York')).date().isoformat()
     deadline = date_only(source.get('validThrough'))
-    if not deadline and company=='target' and source.get('validThrough'):
+    if not deadline and company in ('target','cardinal-health','bank-of-america') and source.get('validThrough'):
         try: deadline=datetime.strptime(str(source['validThrough']),'%m/%d/%Y').date().isoformat()
         except ValueError: pass
     deadlines = [deadline] if deadline else []
@@ -413,6 +429,9 @@ def normalize_posting(body, url, company, now):
             except ValueError: pass
     deadline = min(deadlines) if deadlines else None
     posted = date_only(source.get('datePosted'))
+    if not posted and company in ('cardinal-health','bank-of-america'):
+        try:posted=datetime.strptime(str(source.get('datePosted','')),'%m/%d/%Y').date().isoformat()
+        except ValueError:pass
     deadline_note = ''
     if deadline and posted and deadline<posted:
         deadline_note = 'Employer deadline '+deadline+' predates its posting date '+posted+'; deadline requires confirmation.'
@@ -593,6 +612,10 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 continue
             missing.pop(job['id'],None)
             existing = by_id.get(job['id'])
+            if existing and old is None and posting_key(existing['url'])!=posting_key(job['url']):
+                report['warnings'].append({'url':url,'error':'Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job.'})
+                source_state.setdefault('quarantined',{})[posting_key(url)]=now.isoformat()
+                continue
             if existing:
                 if existing.get('sourceHash') != job['sourceHash']: report['changed'] += 1
             else: report['added'] += 1

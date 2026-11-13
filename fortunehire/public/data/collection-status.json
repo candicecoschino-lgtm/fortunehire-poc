@@ -393,6 +393,51 @@
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-13T22:30:57.142511+00:00"
+    },
+    "cardinal-health": {
+      "discovered": 868,
+      "checked": 20,
+      "added": 15,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 4,
+      "outsidePostingWindow": 1,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 15,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T23:39:21.280130+00:00"
+    },
+    "phillips-66": {
+      "discovered": 82,
+      "checked": 20,
+      "added": 18,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 2,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 18,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T23:39:21.280130+00:00"
+    },
+    "bank-of-america": {
+      "discovered": 2112,
+      "checked": 20,
+      "added": 20,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 20,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-13T23:39:21.280130+00:00"
     }
   }
 }

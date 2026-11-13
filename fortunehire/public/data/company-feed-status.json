@@ -1,13 +1,12 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13T22:27:17.135697+00:00",
+  "updatedAt": "2026-11-13T23:44:29.532293+00:00",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 9,
-    "adapter-needed": 8,
-    "connected": 26,
+    "adapter-needed": 7,
+    "connected": 29,
     "location-review-needed": 1,
-    "no-eligible-sample": 2,
     "paused": 1,
     "retired-discovery": 1,
     "rules-unresolved": 2,
@@ -94,12 +93,13 @@
     {
       "companyId": "bank-of-america",
       "company": "Bank of America",
-      "status": "no-eligible-sample",
-      "reason": "Of twenty tested candidates, thirteen were outside the 14-day window and seven lacked usable matching posting metadata.",
-      "nextStep": "Review newer individual pages and their publication dates.",
+      "status": "connected",
+      "reason": "Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
       "officialCareerUrl": "https://careers.bankofamerica.com/",
       "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43528678319",
+      "historicalGithubObservation": {
         "companyId": "bank-of-america",
         "careerUrl": "https://careers.bankofamerica.com/",
         "landingAllowed": true,
@@ -140,12 +140,13 @@
     {
       "companyId": "cardinal-health",
       "company": "Cardinal Health",
-      "status": "no-eligible-sample",
-      "reason": "Tested structured pages parsed, but the sampled U.S. postings were outside the 14-day window.",
-      "nextStep": "Improve discovery ordering and verify a recent U.S. sample.",
+      "status": "connected",
+      "reason": "Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
       "officialCareerUrl": "https://jobs.cardinalhealth.com/",
       "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43528678319",
+      "historicalGithubObservation": {
         "companyId": "cardinal-health",
         "careerUrl": "https://jobs.cardinalhealth.com/",
         "landingAllowed": true,
@@ -565,12 +566,13 @@
     {
       "companyId": "phillips-66",
       "company": "Phillips 66",
-      "status": "adapter-needed",
-      "reason": "Legacy sitemap discovery now works, but twenty sampled pages lacked compatible JobPosting blocks.",
-      "nextStep": "Add a verified individual-page reader with publication-date evidence.",
+      "status": "connected",
+      "reason": "Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata.",
+      "nextStep": "Monitor field coverage, freshness, and scheduled refresh results.",
       "officialCareerUrl": "https://careers.phillips66.com/",
       "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43528678319",
+      "historicalGithubObservation": {
         "companyId": "phillips-66",
         "careerUrl": "https://careers.phillips66.com/",
         "landingAllowed": true,

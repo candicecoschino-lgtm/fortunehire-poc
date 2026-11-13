@@ -105,6 +105,18 @@
     "pepsico": {
       "host": "www.pepsicojobs.com",
       "sector": "Consumer Goods"
+    },
+    "cardinal-health": {
+      "host": "jobs.cardinalhealth.com",
+      "sector": "Health Care"
+    },
+    "phillips-66": {
+      "host": "careers.phillips66.com",
+      "sector": "Energy"
+    },
+    "bank-of-america": {
+      "host": "careers.bankofamerica.com",
+      "sector": "Financials"
     }
   }
 }

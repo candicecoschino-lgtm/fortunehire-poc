@@ -44,7 +44,7 @@ export function paginateJobs(jobs,page,size=12) {
 export function salaryText(job) {
   if(!job.salary) return job.publishedPay?.text || 'Pay not verified';
   const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:job.salary.currency,maximumFractionDigits:2}).format(n);
-  return `${money(job.salary.min)}–${money(job.salary.max)} / ${job.salary.period==='year'?'year':'hour'}`;
+  return `${money(job.salary.min)}${job.salary.min===job.salary.max?'':'–'+money(job.salary.max)} / ${job.salary.period==='year'?'year':'hour'}`;
 }
 function validDate(value){return typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&!Number.isNaN(Date.parse(value))&&new Date(value+'T12:00:00Z').toISOString().slice(0,10)===value;}
 export function validateJobs(data,companies) {
