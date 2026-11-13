@@ -30,7 +30,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "d6b27751264029747de96ad0443f7e318617872585c37641fc2b85fbf1c0610c",
       "evidence": {
@@ -66,7 +66,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "8e1047e992b95645e2e91ff99f1bf3102636684ace491392a1fc74707313c899",
       "evidence": {
@@ -102,7 +102,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "739b3b62f13290fc5fa874c9124e0cecb33de98f8bb026515d2c972325941dc8",
       "evidence": {
@@ -138,12 +138,100 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "139f7ada14bc6cdbcb3a055a751954ddab6b8aec73e7d105d78af10f91d28f19",
       "evidence": {
         "arrangement": "Role Type Onsite",
         "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026525494",
+      "companyId": "boeing",
+      "requisitionId": "JR2026525494",
+      "title": "Senior Project Management Specialist - CAM",
+      "url": "https://jobs.boeing.com/job/colorado-springs/senior-project-management-specialist-cam/185/103187890064",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Colorado Springs",
+          "state": "Colorado"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        },
+        {
+          "city": "Huntsville",
+          "state": "Alabama"
+        },
+        {
+          "city": "Charleston",
+          "state": "South Carolina"
+        },
+        {
+          "city": "Everett",
+          "state": "Washington"
+        },
+        {
+          "city": "Oklahoma City",
+          "state": "Oklahoma"
+        },
+        {
+          "city": "Long Beach",
+          "state": "California"
+        },
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        },
+        {
+          "city": "Arlington",
+          "state": "Virginia"
+        },
+        {
+          "city": "Hazelwood",
+          "state": "Missouri"
+        },
+        {
+          "city": "Ridley Park",
+          "state": "Pennsylvania"
+        },
+        {
+          "city": "Mesa",
+          "state": "Arizona"
+        },
+        {
+          "city": "El Segundo",
+          "state": "California"
+        },
+        {
+          "city": "Renton",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Colorado Springs, Colorado; Seattle, Washington; Huntsville, Alabama; Charleston, South Carolina; Everett, Washington; Oklahoma City, Oklahoma; Long Beach, California; Berkeley, Missouri; Arlington, Virginia; Hazelwood, Missouri; Ridley Park, Pennsylvania; Mesa, Arizona; El Segundo, California; Renton, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: Up to 10% travel may be required",
+      "postedAt": "2026-11-11",
+      "closesAt": "2026-11-22",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e2d33261b205d8a276e7a81b08dfa4463f5d7b2696d0df06895e5cb40039e5c7",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: Up to 10% travel may be required",
         "salary": ""
       }
     },
@@ -174,7 +262,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "fe2049707ecc783f1e73e1aae3563c1d0a02be3f244feb0a190615557d9697e6",
       "evidence": {
@@ -210,7 +298,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "0d92cd165bb6ae226175c0806d2bbb58795eafb947e156161344c25332e014b3",
       "evidence": {
@@ -246,7 +334,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "3140b13a9acd3975d1f9e948ed0a7fe53c1e84847dfffbc6be7ccd87d5f60fad",
       "evidence": {
@@ -298,7 +386,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "37efdc83dcdc10ed89e187761e56e2228ae5ebb561ee1fa55bdf33f1c92a6d8f",
       "evidence": {
@@ -334,7 +422,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "576b7e0cf1b6c45daae095889f023c6576a8550cfaa4ceee2066dfbf459e74d6",
       "evidence": {
@@ -370,9 +458,9 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "a440803de6f3951eb715853da3fd77757aba066e3077905b13973a6c86bcaa5c",
+      "sourceHash": "3de97a8f5b076ba18c5b858b0d975eb1461b7c1cc53c24a708d573e668439648",
       "evidence": {
         "arrangement": "Role Type Onsite",
         "travel": "",
@@ -406,7 +494,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "41376e39fd622566f3b4cd37e158265f5d0fc5705e6f53c321569b70451a2d14",
       "evidence": {
@@ -442,7 +530,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "c1ea3c0e53f0b08d59635d29192d49aa30a95c9939fa7a0a37ecce734a7c960c",
       "evidence": {
@@ -478,9 +566,9 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "1f1953d706e15ef68dc1302461d51e9b9c5e54d1da0f259d46ee0fbfbb84011f",
+      "sourceHash": "a0bb9d0cd13db540b88bfc54abba2b69f7c99d9a9c24d37472f8d339e955f1a4",
       "evidence": {
         "arrangement": "Role Type Onsite",
         "travel": "",
@@ -514,7 +602,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "02bebab59b1272c50163535cc5eebbb7e89be64c2a565df8b64d8660e1179569",
       "evidence": {
@@ -550,7 +638,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "47154da60ee3301af586f496e5476d3d09cead628376612a3eb8fdd6ad9fd471",
       "evidence": {
@@ -586,7 +674,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "17a6700b111a7cb531e84705111236e2016062cbc2546aa7aae41013e782f6be",
       "evidence": {
@@ -622,9 +710,45 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "9177b33ca2ab9e9623b407e8e78fd153375a4d6ab09599543837fe06277bc5fc",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026527762",
+      "companyId": "boeing",
+      "requisitionId": "JR2026527762",
+      "title": "Chinook Technical Integration Manager",
+      "url": "https://jobs.boeing.com/job/ridley-park/chinook-technical-integration-manager/185/103187896304",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Ridley Park",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Ridley Park, Pennsylvania",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": "2026-11-25",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "a2c53e2b139e001f1add361fd5f932a8ab10915d5e6fb076f552c498a4926808",
       "evidence": {
         "arrangement": "Role Type Onsite",
         "travel": "",
@@ -658,7 +782,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "098dbf85b8e2217f2cf54aa62cb4a69a1ff2f852843c3d10f242752a17044d4d",
       "evidence": {
@@ -762,7 +886,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "42049e5217b86d9e8f622919b8633df9ec25b9fa7d760978161af6a944c1d417",
       "evidence": {
@@ -798,9 +922,49 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b1bb394428c43fd77288771489c4cfa76f923c529d5f1333338e0c73b967a77c",
+      "evidence": {
+        "arrangement": "Role Type Onsite",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026528552",
+      "companyId": "boeing",
+      "requisitionId": "JR2026528552",
+      "title": "Quality Engineer  - Millennium Space Systems",
+      "url": "https://jobs.boeing.com/job/el-segundo/quality-engineer-millennium-space-systems/185/103187899408",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "El Segundo",
+          "state": "California"
+        },
+        {
+          "city": "Los Angeles",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "El Segundo, California; Los Angeles, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": "2026-11-16",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "1d32f3de82a4ab8df0d12fdcd298241c1100ef9d5db75b5c92c041652d0af80a",
       "evidence": {
         "arrangement": "Role Type Onsite",
         "travel": "",
@@ -834,7 +998,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "1f882f0fabcf0ab5755d94bb538eeea8f6e0b799d4c6924531fe89fba39be531",
       "evidence": {
@@ -882,7 +1046,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "424b791df8eb73d60b0edb1c253b0c82aaab3cba8dec46f8c6fe509209fa78ff",
       "evidence": {
@@ -918,7 +1082,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "d249d6832a4fb7e1f46affe2cb3c0052bb9da4b2714d885e2fd058ee6056c015",
       "evidence": {
@@ -1022,7 +1186,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "c9f9f98126a03ced8d87a6a7c1128d5ec95f126176bc76d235dd3f928ade3959",
       "evidence": {
@@ -1082,7 +1246,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b050ead28e5029de1f70c2a9191c719eaf096ac0fa7678e55bbb464a805bbb09",
       "evidence": {
@@ -1118,7 +1282,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "7dd4d2e49c5302cf4c0d99874dae5810214d9bfe8bc3217fdb6e38208dc717cf",
       "evidence": {
@@ -1174,7 +1338,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "93cac0f8b3bcdf39c74e43a5f9639b81bfbb6d4fe7d11169e9a26767372c1a3a",
       "evidence": {
@@ -1234,7 +1398,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "86399ec41e02291dd5f4b3013bdab402ecfab39ead334ff3519f21966ebba2dc",
       "evidence": {
@@ -1270,12 +1434,120 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "38f1ad8b1f335dc3b3f390d5ad36043dfd18657e99c1e9134f0c804453129375",
       "evidence": {
         "arrangement": "Role Type Onsite",
         "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026529489",
+      "companyId": "boeing",
+      "requisitionId": "JR2026529489",
+      "title": "Phantom Works Senior Systems Engineer",
+      "url": "https://jobs.boeing.com/job/berkeley/phantom-works-senior-systems-engineer/185/103187902848",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Berkeley",
+          "state": "Missouri"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Berkeley, Missouri",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": "2026-11-15",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c3622303cbfbe8970b26084e121cb3cfdc7c14d0aa16715c818b870ca6473ec7",
+      "evidence": {
+        "arrangement": "Role Type Hybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026529490",
+      "companyId": "boeing",
+      "requisitionId": "JR2026529490",
+      "title": "Software Architect",
+      "url": "https://jobs.boeing.com/job/long-beach/software-architect/185/103187902912",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Long Beach",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Long Beach, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel: 5%",
+      "postedAt": "2026-11-11",
+      "closesAt": "2026-11-16",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "392b772c29474e6bf780bd53bd69d7d15ee68afd1728623209f5212f0a4862f5",
+      "evidence": {
+        "arrangement": "",
+        "travel": "Travel: 5%",
+        "salary": ""
+      }
+    },
+    {
+      "id": "boeing-jr2026529493",
+      "companyId": "boeing",
+      "requisitionId": "JR2026529493",
+      "title": "Embedded Software Engineer",
+      "url": "https://jobs.boeing.com/job/long-beach/embedded-software-engineer/185/103187902976",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Long Beach",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Long Beach, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": true,
+      "travelNote": "Travel:\n\n10%",
+      "postedAt": "2026-11-11",
+      "closesAt": "2026-11-16",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Aerospace & Defense",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "9670047abc4a811f8953c8eb4f82aa22ae2a1dcc1c7383bbca821ec97f0fecf0",
+      "evidence": {
+        "arrangement": "Role Type Hybrid",
+        "travel": "Travel:\n\n10%",
         "salary": ""
       }
     },
@@ -1310,7 +1582,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "39230f6b61de94aac82e441c7b961f7334965b6fae7cde6aa1775518bdeb10ed",
       "evidence": {
@@ -1346,7 +1618,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "a7855544072d8358424282436bcfac3a839ab4a64e55af4f717a3227c55423bf",
       "evidence": {
@@ -1386,7 +1658,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b3e071bcdaffd963b42e4c3c132c1a5c171d3b66c718445d65f390bba34f3d23",
       "evidence": {
@@ -1422,7 +1694,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "83bf38d2b6a2a553b2488dba1b7148dc75373d45f8b740f517284cb938535a1e",
       "evidence": {
@@ -1458,7 +1730,7 @@
       "status": "reviewed",
       "sector": "Aerospace & Defense",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "0ebfce7371624a849e648a28e23ccbc75c42ecdcdccef0c6a9d63f4ef70bb69a",
       "evidence": {
@@ -1494,7 +1766,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "9d47d6d06a9063d6d8775edcc4c7112b54e80c22e710d0e6ef2e21445a34bb4d",
       "evidence": {
@@ -1530,7 +1802,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "104dca2500c6659cce61dcc09fe4a35c3f2039bdcd37fbe16b6073a065712fca",
       "evidence": {
@@ -1566,9 +1838,45 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "06db96558d558c9e8ef7488cf36e71e1dfc649d65e8507a96a23a7d6c4a5bddf",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261003179",
+      "companyId": "citigroup",
+      "requisitionId": "261003179",
+      "title": "Salesforce Marketing Cloud – Application Development Lead Analyst, Vice President",
+      "url": "https://jobs.citi.com/job/irving/salesforce-marketing-cloud-application-development-lead-analyst-vice-president/287/103253762512",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Irving",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Irving, Texas",
+      "employmentType": "Full-time",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-20",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "a38b9a2b6b22215df951671a6d7bd6b1e58a713ea6f0ccdcbd572bc83d66b140",
       "evidence": {
         "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
@@ -1602,7 +1910,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "a573c3a8f4c473c05feb2b3ac87fc3f853214bd4d328248f78fbfe5a909a7487",
       "evidence": {
@@ -1638,7 +1946,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "7cb4b4bb8dbb48b4ba58b1404df38638ee15e1bfbd26a247a2a23d13c7e447ea",
       "evidence": {
@@ -1674,7 +1982,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "5b4a2085e462841842ac5b0d161c5f529f4fe6c159c3a1e3abae6beacf9ac3c3",
       "evidence": {
@@ -1710,7 +2018,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b45935fd49127cb9ddadd86d8ea0ba4e627d8f5ac97e02d0ac1cf179fac86253",
       "evidence": {
@@ -1750,7 +2058,7 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "b128083a8dbf9eaa05f04adfad507514b3b5f6c3fbee742ab446621c3200e1d8",
       "evidence": {
@@ -1786,9 +2094,57 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "ac3b8105e360f777e005bdb421efa7a4b2c48c7a7e3aa18d3307a02641858e6c",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261007681",
+      "companyId": "citigroup",
+      "requisitionId": "261007681",
+      "title": "MCA & Process Management and Automation Lead",
+      "url": "https://jobs.citi.com/job/jersey-city/mca-and-process-management-and-automation-lead/287/103253772304",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Jersey City",
+          "state": "New Jersey"
+        },
+        {
+          "city": "Tampa",
+          "state": "Florida"
+        },
+        {
+          "city": "Irving",
+          "state": "Texas"
+        },
+        {
+          "city": "Jacksonville",
+          "state": "Florida"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Jersey City, New Jersey; Tampa, Florida; Irving, Texas; Jacksonville, Florida",
+      "employmentType": "Full-time",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-20",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "fc0d4cb9c3d7e0adcdff10321a36b31b08063eca6ebe3cbd7b7a39ccc4ed274a",
       "evidence": {
         "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
@@ -1822,9 +2178,81 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "739e4202b14c06fc9b66f766b419d49d8e8325665d633e4698802998b1e11f6a",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261009301",
+      "companyId": "citigroup",
+      "requisitionId": "261009301",
+      "title": "In Business Risk Strat - C12 - NEW YORK",
+      "url": "https://jobs.citi.com/job/new-york/in-business-risk-strat-c12-new-york/287/103253774960",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York, New York",
+      "employmentType": "Full-time",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-20",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "b32a9e48079fb4089aedfd61ecf2510069537f31624ab6dc257c06ec1902a1e8",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261009302",
+      "companyId": "citigroup",
+      "requisitionId": "261009302",
+      "title": "In Business Risk Strat 2 - C12",
+      "url": "https://jobs.citi.com/job/new-york/in-business-risk-strat-2-c12/287/103253774768",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York, New York",
+      "employmentType": "Full-time",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-20",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "009fe5fb77f122e7087ca6574a86a25c35b7145467a399ff913024806835ab23",
       "evidence": {
         "arrangement": "Job Type:\n \n \nHybrid",
         "travel": "",
@@ -1858,11 +2286,83 @@
       "status": "reviewed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "85b0ca17965a53091d59a9da540b1ddb6c6884169f455634b9e320d86b3e7d66",
       "evidence": {
         "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261009758",
+      "companyId": "citigroup",
+      "requisitionId": "261009758",
+      "title": "Senior Mortgage Loan Officer",
+      "url": "https://jobs.citi.com/job/los-angeles/senior-mortgage-loan-officer/287/103221844384",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Los Angeles",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Los Angeles, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": "2026-11-19",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e6bd4b1a321a2960fbd2ece912ad9662509742a2627499160acb04148c6ec565",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "citigroup-261009901",
+      "companyId": "citigroup",
+      "requisitionId": "261009901",
+      "title": "Part-Time Universal Banker (20 Hours) - Plainview Branch",
+      "url": "https://jobs.citi.com/job/plainview/part-time-universal-banker-20-hours-plainview-branch/287/103253784240",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "Plainview",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Plainview, New York",
+      "employmentType": "Part-time",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": "2026-11-20",
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Financials",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "1b73c4e5a324c2816afba785d5d351adf5dbde677af8bfce5fc95a79f9cd99ad",
+      "evidence": {
+        "arrangement": "Job Type:\n \n \nOn-Site",
         "travel": "",
         "salary": ""
       }
@@ -1898,7 +2398,7 @@
       "status": "closed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "6202baa39306040884a58cfc0d75e081cfd562183a206053f4760a29204d5ea7",
       "evidence": {
@@ -1934,11 +2434,83 @@
       "status": "closed",
       "sector": "Financials",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "007c6fbb5ca8a9903af37823aca07024ce2aaf5a847784bd1677cd9dd3ae8508",
       "evidence": {
         "arrangement": "Job Type:\n \n \nHybrid",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-1063695",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "1063695",
+      "title": "OT Occupational Therapist Home Health $15k Sign on",
+      "url": "https://careers.unitedhealthgroup.com/job/newberry/ot-occupational-therapist-home-health-15k-sign-on/34088/103220975952",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Newberry",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Newberry, South Carolina",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "268a229b37b9836da1bab31cebd8658d6b1dee914a491c2f6cea7ae8de4aa649",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-1063747",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "1063747",
+      "title": "Physical Therapy Assistant $10,000 Sign-On Bonus",
+      "url": "https://careers.unitedhealthgroup.com/job/college-station/physical-therapy-assistant-10-000-sign-on-bonus/34088/103220976256",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "College Station",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "College Station, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "5c72fe56828935d363569b47d5e815fbbd5c8998ca406f6749066e9457e4c639",
+      "evidence": {
+        "arrangement": "",
         "travel": "",
         "salary": ""
       }
@@ -1970,7 +2542,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "0b69cc5921b244709d32345d9cc8736f5dd5bb1e99894cdffe8d365bff2fe793",
       "evidence": {
@@ -2006,7 +2578,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "015d8d96a9f76dfe4a412ae069965875f2dae652df26fe71db76ae71b9e89365",
       "evidence": {
@@ -2042,7 +2614,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "2e100bc30238fd5869d3c166775bc2eb189bafb5505e3171ca0d0874faccaf16",
       "evidence": {
@@ -2078,7 +2650,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "6180ef78f2b78cb493a3bbedea5df8d0e560bdf222211831626c127a7f303df6",
       "evidence": {
@@ -2114,9 +2686,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "07f832d6653fc19b808245940eb74e24dd5efa0af506d626d5031f2aca19f183",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2391590",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2391590",
+      "title": "Home Infusion Registered Nurse (RN) Part Time",
+      "url": "https://careers.unitedhealthgroup.com/job/paris/home-infusion-registered-nurse-rn-part-time/34088/103247948256",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Paris",
+          "state": "Tennessee"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Paris, Tennessee",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "40dc617049424073c65f0b3cbc4db1db7046762adf764294c1a8f5bed46b6a0a",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -2150,7 +2758,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "e7899eddfcfa58a6ba049b5e77aa24d185ec6e1e4a90c7224003e256e42ef020",
       "evidence": {
@@ -2186,9 +2794,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "8212877bf91b00eec668f20fb97c1f66d0a27447fb5eb63424e66ec522f43011",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2397047",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2397047",
+      "title": "Home Infusion Registered Nurse (RN) - Part Time - Remote",
+      "url": "https://careers.unitedhealthgroup.com/job/memphis/home-infusion-registered-nurse-rn-part-time-remote/34088/103247948448",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Memphis",
+          "state": "Tennessee"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Memphis, Tennessee",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "babae8b40669cb51964f657aa75e35782bef3a3e7e03757cd377fd2b44c31f96",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -2226,7 +2870,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "e501c0df8092016eda6b3665e058196ca399f788656599a2cba87706216a4c2f",
       "evidence": {
@@ -2262,9 +2906,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "90f6827f1385b62de3b40b81d1fbf87446dab384ac6f1f8737c5a7ef679d95a1",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2400002",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2400002",
+      "title": "Per Diem Ultrasound Technologist I/II/III - Kelsey-Seybold Clinic: Pasadena",
+      "url": "https://careers.unitedhealthgroup.com/job/pasadena/per-diem-ultrasound-technologist-i-ii-iii-kelsey-seybold-clinic-pasadena/34088/103220976416",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Pasadena",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Pasadena, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "9e51a5aa19a14537c680fddba8a92a9e4968088ba64f96813657ccd2012c860d",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -2298,7 +2978,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "92c89fe7bea9c28177bd932531df5f3c92e0aab2225334ac220da057a76be5dd",
       "evidence": {
@@ -2334,7 +3014,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "5992c8a61ae767abc8f9aa237801441dc82e198e236b7b9a532e3d2ee5e1ed07",
       "evidence": {
@@ -2386,9 +3066,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "e856ba4f15eeb59241db8a208dfb8f4ac29e878807c98b5b38a8e0478030ab40",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2400336",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2400336",
+      "title": "Part-Time Radiology Technologist - Kelsey-Seybold Clinic: Fort Bend",
+      "url": "https://careers.unitedhealthgroup.com/job/sugar-land/part-time-radiology-technologist-kelsey-seybold-clinic-fort-bend/34088/103220975984",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Sugar Land",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Sugar Land, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "da6152ff47804941b9c5b36646308420192f06834971812e069325829856b074",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -2422,7 +3138,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "31332a6a74c14eee8919e3330ef82740f021bbcc713ee00cf8b8b79479c50aea",
       "evidence": {
@@ -2458,7 +3174,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "a90d43b2f472dd5dad76977bdce3d1172b5244b67d01aa47cbc9db014483527d",
       "evidence": {
@@ -2494,7 +3210,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "8b6c2351aafa42aa162b0543bf3bffbe118a10ee9e2902b12f2882f020ca54c7",
       "evidence": {
@@ -2546,7 +3262,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "83149c96ad6bf5bc2b154c65ce5182c583fa9a5a5180b7e8e8f728706341e732",
       "evidence": {
@@ -2582,9 +3298,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "1fce80cc66c0624e6df8f430c532d530ced20859526e718b12c0226c4e915531",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2400969",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2400969",
+      "title": "Patient Care Coordinator",
+      "url": "https://careers.unitedhealthgroup.com/job/rutherford/patient-care-coordinator/34088/103220976368",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Rutherford",
+          "state": "New Jersey"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Rutherford, New Jersey",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c9d3dae25cfba3f8e2652f779772c365af1eb687d20ae94a7003520f57c61360",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -2618,7 +3370,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "34a027fc2e8840f3d6f153f55e07ccf1053f83fab46142aca540fbedb22e707d",
       "evidence": {
@@ -2654,7 +3406,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "a59e144a24d93082b42d9df6fff9170b9b23b4f10241a83eb8fb10fe87d01240",
       "evidence": {
@@ -2690,9 +3442,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "ad46310fc92761e60cac4f40ac45b95ae05889632fe55b089b98cd6bcf0fc018",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2401420",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2401420",
+      "title": "HSP RN On-Call",
+      "url": "https://careers.unitedhealthgroup.com/job/pembroke/hsp-rn-on-call/34088/103247948384",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Pembroke",
+          "state": "North Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Pembroke, North Carolina",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "de63bf219c061d0fa0fba14fda58d951a9beff8d9e9aa7c96e6a878f502126f5",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -2726,11 +3514,47 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "e045780b0fdc3be8c6271b7826863ed88627f0958a0b5758fb419a62aad01f5a",
       "evidence": {
         "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2401781",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2401781",
+      "title": "Telephonic Case Manager RN Transplant Medicine - Remote",
+      "url": "https://careers.unitedhealthgroup.com/job/eden-prairie/telephonic-case-manager-rn-transplant-medicine-remote/34088/103220976048",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Eden Prairie",
+          "state": "Minnesota"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Eden Prairie, Minnesota",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "d6d6d8a8cf4fd43bbde11419ff90c97720a43a80287b56180d206e63da6ed6ce",
+      "evidence": {
+        "arrangement": "You'll enjoy the flexibility to work remotely * from anywhere within the U.S.",
         "travel": "",
         "salary": ""
       }
@@ -2752,21 +3576,21 @@
           "state": "Arizona"
         },
         {
-          "city": "Hartford",
-          "state": "Connecticut"
+          "city": "Minneapolis",
+          "state": "Minnesota"
         },
         {
           "city": "Tampa",
           "state": "Florida"
         },
         {
-          "city": "Minneapolis",
-          "state": "Minnesota"
+          "city": "Hartford",
+          "state": "Connecticut"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Dallas, Texas; Phoenix, Arizona; Hartford, Connecticut; Tampa, Florida; Minneapolis, Minnesota",
+      "locationNote": "Dallas, Texas; Phoenix, Arizona; Minneapolis, Minnesota; Tampa, Florida; Hartford, Connecticut",
       "employmentType": "Not specified",
       "salary": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
@@ -2778,9 +3602,81 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "4341c887a532f0b385c864a81395c9c03343abc74df381f3b9eb7dcd9217e91a",
+      "sourceHash": "91f7d87801e4ab1e82a19bd85f650e09f21df9e9b29b7562c4ca63c5aecb51e8",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402026",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402026",
+      "title": "RN On-Call Weekend",
+      "url": "https://careers.unitedhealthgroup.com/job/greenville/rn-on-call-weekend/34088/103247948320",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Greenville",
+          "state": "North Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Greenville, North Carolina",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "67de39b5d7e677cb9f4c768690b2170cce0c3001e5074c17b8d3afd889fa8fe2",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402034",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402034",
+      "title": "Hospice Aide CNA",
+      "url": "https://careers.unitedhealthgroup.com/job/elizabethton/hospice-aide-cna/34088/103220976112",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Elizabethton",
+          "state": "Tennessee"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Elizabethton, Tennessee",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "5ab80ebd0bf5349aa7a4b53228d7bd55c7913d7e11337d9aeccc69d79b148daa",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -2814,7 +3710,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "c6606e46a13269d1b69518f786818bb2d7562c9f81299a57047b41df0dfd07f6",
       "evidence": {
@@ -2850,7 +3746,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "e21a22641c30819ef9693ef83ded8ff46af87a4fa19e115677891bbe60b75b92",
       "evidence": {
@@ -2886,9 +3782,81 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "089bf211b688af9d4edcad2b350dbc7641adb0a7effedcc57005f4d37e82f52c",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402221",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402221",
+      "title": "Hospice Registered Nurse",
+      "url": "https://careers.unitedhealthgroup.com/job/bolivia/hospice-registered-nurse/34088/103247948416",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Bolivia",
+          "state": "North Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Bolivia, North Carolina",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "d72c7c264e768867c35fd510bcdc4735b37ecb12797078b19f0cf1fb8b05ed65",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402327",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402327",
+      "title": "Part-time Float Pharmacist",
+      "url": "https://careers.unitedhealthgroup.com/job/colorado-springs/part-time-float-pharmacist/34088/103220976192",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Colorado Springs",
+          "state": "Colorado"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Colorado Springs, Colorado",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "f3ad6703f58126739ca067a7df02789790fac65e8e1d06f4e49d953dda1e297f",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -2922,7 +3890,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "d7313b24cb1a171b39b94e3a1ec00b037ed9b51490ea4b26e4222cfd85e4835c",
       "evidence": {
@@ -2958,7 +3926,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "f15c8feee275be8d0145572dc3938da8b84ae659c48aec327b984642da4a3838",
       "evidence": {
@@ -2994,9 +3962,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "8240fc48deaced1dbf8a189f0cf747490ddf825549f5a8562fe2cfe394727685",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402487",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402487",
+      "title": "CNA Hospice Aide",
+      "url": "https://careers.unitedhealthgroup.com/job/valparaiso/cna-hospice-aide/34088/103220976160",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Valparaiso",
+          "state": "Indiana"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Valparaiso, Indiana",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "4d771f6ff3fb82cd342bd2ee4e99d9145c8e340353eeebf55505bfadf0527856",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -3030,9 +4034,45 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "d9c8e9a0dcb69ff77aaeec71bffdd558268c7a538dde1e5748bbeeaee56f85a4",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402504",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402504",
+      "title": "Nurse Practitioner Hospice PRN",
+      "url": "https://careers.unitedhealthgroup.com/job/greeneville/nurse-practitioner-hospice-prn/34088/103220976288",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Greeneville",
+          "state": "Tennessee"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Greeneville, Tennessee",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "94a92396ad10fcf00648f195b89e8d08418459ef599779863daebcb1683a91eb",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -3066,9 +4106,81 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "ce6b971015d56013d674621f6d86e6f82527f512a06fcf73a5b6daa9709cea14",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402532",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402532",
+      "title": "Licensed Practical Nurse Home Health",
+      "url": "https://careers.unitedhealthgroup.com/job/lavonia/licensed-practical-nurse-home-health/34088/103220976208",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Lavonia",
+          "state": "Georgia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Lavonia, Georgia",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "e1c0befe252f2cd7c7526375087a584d0de025f806686f09fb44a229af9df9d4",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402534",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402534",
+      "title": "Speech Pathologist Home Health",
+      "url": "https://careers.unitedhealthgroup.com/job/hartwell/speech-pathologist-home-health/34088/103220976320",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Hartwell",
+          "state": "Georgia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Hartwell, Georgia",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "15bf0fd75f4789835f8503838908836015300a3465ac3ff3147d5c76eae5a6b6",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -3102,7 +4214,7 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "dc88fff2c0ce117f28b9a65faed1d275559cfe736310e886e54a1bf4eb3713af",
       "evidence": {
@@ -3138,9 +4250,81 @@
       "status": "reviewed",
       "sector": "Health Care",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-13T14:55:40.802630+00:00",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "6e0edf9c82c77bce6fbc185ee2d2398e59d408cd93625c16feb6dfa793009408",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402613",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402613",
+      "title": "Part-Time Ultrasound Technologist I/II/III - Kelsey-Seybold Clinic: Stafford",
+      "url": "https://careers.unitedhealthgroup.com/job/stafford/part-time-ultrasound-technologist-i-ii-iii-kelsey-seybold-clinic-stafford/34088/103220976336",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Stafford",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Stafford, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "24fe9ec2e6ef8e7ded99704437e02b49ce35a144d504fa284d79cad42da2780c",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": ""
+      }
+    },
+    {
+      "id": "unitedhealth-group-2402635",
+      "companyId": "unitedhealth-group",
+      "requisitionId": "2402635",
+      "title": "Medical Assistant I/II/III - Hematology/Oncology - Kelsey Seybold Clinic: Bay Area Campus",
+      "url": "https://careers.unitedhealthgroup.com/job/webster/medical-assistant-i-ii-iii-hematology-oncology-kelsey-seybold-clinic-bay-area-campus/34088/103220976016",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Webster",
+          "state": "Texas"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Webster, Texas",
+      "employmentType": "Not specified",
+      "salary": null,
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-12",
+      "closesAt": null,
+      "reviewedAt": "2026-11-13",
+      "status": "reviewed",
+      "sector": "Health Care",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-13T14:58:51.492434+00:00",
+      "collectionMethod": "official-jobposting-jsonld",
+      "sourceHash": "c20573962b502f3399d911fcc55bbe3fdf8d2a7dd1d5f7057484914c7cb96e74",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -3150,44 +4334,66 @@
   ],
   "automation": {
     "schemaVersion": 1,
-    "attemptedAt": "2026-11-13T14:55:40.802630+00:00",
+    "attemptedAt": "2026-11-13T14:58:51.492434+00:00",
     "coverage": "Bounded pilot: at most 100 tracked active US postings per employer; up to 20 new candidates per employer per run. Not a complete feed.",
     "sources": {
       "boeing": {
-        "discovered": 1179,
-        "checked": 36,
-        "added": 18,
-        "changed": 16,
+        "discovered": 1146,
+        "checked": 54,
+        "added": 6,
+        "changed": 2,
         "closed": 0,
-        "skipped": 2,
-        "warnings": [],
+        "skipped": 6,
+        "warnings": [
+          {
+            "url": "https://jobs.boeing.com/job/australia/head-of-supply-chain-management/185/103194505200",
+            "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
+          },
+          {
+            "url": "https://jobs.boeing.com/job/brisbane/electronic-systems-design-engineer/185/103194505168",
+            "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
+          },
+          {
+            "url": "https://jobs.boeing.com/job/brisbane/software-engineer/185/103194505136",
+            "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
+          },
+          {
+            "url": "https://jobs.boeing.com/job/amberley/comsec-account-manager-boeing-defence-australia/185/103194505024",
+            "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
+          }
+        ],
         "errors": [],
-        "activeTracked": 34,
-        "lastSuccessfulAt": "2026-11-13T14:55:40.802630+00:00"
+        "activeTracked": 40,
+        "lastSuccessfulAt": "2026-11-13T14:58:51.492434+00:00"
       },
       "citigroup": {
-        "discovered": 3110,
-        "checked": 30,
-        "added": 3,
-        "changed": 10,
-        "closed": 2,
-        "skipped": 16,
+        "discovered": 3119,
+        "checked": 31,
+        "added": 6,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 12,
         "warnings": [],
         "errors": [],
-        "activeTracked": 11,
-        "lastSuccessfulAt": "2026-11-13T14:55:40.802630+00:00"
+        "activeTracked": 17,
+        "lastSuccessfulAt": "2026-11-13T14:58:51.492434+00:00"
       },
       "unitedhealth-group": {
-        "discovered": 6526,
-        "checked": 32,
-        "added": 20,
-        "changed": 12,
+        "discovered": 6527,
+        "checked": 52,
+        "added": 19,
+        "changed": 1,
         "closed": 0,
         "skipped": 0,
-        "warnings": [],
+        "warnings": [
+          {
+            "url": "https://careers.unitedhealthgroup.com/job/houston/anatomic-and-clinical-pathologist-physician-kelsey-seybold-clinic-central/34088/103220976080",
+            "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data"
+          }
+        ],
         "errors": [],
-        "activeTracked": 32,
-        "lastSuccessfulAt": "2026-11-13T14:55:40.802630+00:00"
+        "activeTracked": 51,
+        "lastSuccessfulAt": "2026-11-13T14:58:51.492434+00:00"
       }
     }
   }
