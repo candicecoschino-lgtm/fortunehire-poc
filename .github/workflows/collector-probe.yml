@@ -47,7 +47,7 @@ jobs:
                   qs=urllib.parse.urlencode({'CurrentPage':2,'RecordsPerPage':15,'SearchResultsModuleName':'Search Results','SearchType':5,'SortCriteria':5,'SortDirection':1})
                   status,page=get('/search-jobs/results?'+qs);out['pagination_status']=status;out['pagination_preview']=page[:450]
               for path in ['/sitemap.xml','/sitemap']:
-                  status,body=get(path);out[path]={'status':status,'preview':body[:1600]}
+                  status,body=get(path);out[path]={'status':status,'preview':body[:500],'job_links':len(re.findall(r'<loc>[^<]*/job/',body)),'child_maps':re.findall(r'<loc>([^<]*\\.xml[^<]*)</loc>',body)[:12],'last':body[-500:]}
               return out
           with ThreadPoolExecutor(max_workers=3) as pool:
               for out in pool.map(probe,['jobs.boeing.com','jobs.citi.com','careers.unitedhealthgroup.com']):
