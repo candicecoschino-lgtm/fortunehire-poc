@@ -1,4 +1,4 @@
-name: Inspect Apple public rendered job fields
+name: Decode public Apple role data without executing scripts
 on:
   push:
     paths: ['.github/workflows/review-remaining-public.yml']
@@ -35,12 +35,29 @@ jobs:
               row['roleLinks']=list(dict.fromkeys(n['attrs']['href'] for n in Document(body).nodes if n['tag']=='a' and '/details/' in n['attrs'].get('href','')))[:5]
               row['structuredJobs']=len([j for s in c.Page(body).scripts for j in c.postings(json.loads(s))])
               row['roleMetadata']=[]
+              def decode_fields(body):
+                  found=[]
+                  for n in Document(body).nodes:
+                      if n['tag']!='script':continue
+                      s=''.join(x for x in n['children'] if isinstance(x,str))
+                      prefix='window.__staticRouterHydrationData = JSON.parse('
+                      if not s.startswith(prefix):continue
+                      encoded=json.JSONDecoder().raw_decode(s[len(prefix):])[0]
+                      payload=json.loads(encoded)
+                      def walk(v):
+                          if isinstance(v,dict):
+                              if 'jobNumber' in v:found.append(v);return
+                              for x in v.values():walk(x)
+                          elif isinstance(v,list):
+                              for x in v:walk(x)
+                      walk(payload)
+                  return found
               urls=[u for u in row['roleLinks'] if not u.split('?')[0].endswith('/locationPicker')]
               for link in urls[:2]:
                   url=c.urllib.parse.urljoin('https://jobs.apple.com',link)
                   role_status,role_body=cl.get(url)
                   roles=[{k:v for k,v in j.items() if k not in ('description','responsibilities','qualifications')} for s in c.Page(role_body).scripts for j in c.postings(json.loads(s))]
-                  row['roleMetadata'].append({'url':url,'status':role_status,'canonical':c.Page(role_body).canonical,'postings':roles,'visibleText':__import__('employer_adapters').text(Document(role_body).root)[:24000],'scripts':[{'prefix':''.join(x for x in n['children'] if isinstance(x,str))[:200], 'detailHints': [m.group(0) for m in __import__('re').finditer('.{0,80}(?:postingDate|jobNumber|jobTitle|locationName|countryName|stateName|roleNumber).{0,160}', ''.join(x for x in n['children'] if isinstance(x,str)))][:20]} for n in Document(role_body).nodes if n['tag']=='script' and any('postingDate' in x for x in n['children'] if isinstance(x,str))]})
+                  row['roleMetadata'].append({'url':url,'status':role_status,'canonical':c.Page(role_body).canonical,'postings':roles,'publicJobData':decode_fields(role_body)})
           except Exception as e:row['error']=str(e)
           print('APPLE_REVIEW',json.dumps(row))
           PY
