@@ -375,11 +375,13 @@
         "state": "District of Columbia"
       },
       "listYear": 2026,
-      "careerUrl": "https://www.fanniemae.com/careers",
+      "careerUrl": "https://fanniemae.wd1.myworkdayjobs.com/FannieMaeCareers",
       "profileSource": "https://fortune.com/company/fannie-mae/",
       "membershipSource": "https://fortune.com/company/fannie-mae/",
-      "reviewedAt": "2026-11-13",
-      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+      "reviewedAt": "2026-11-14",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy. Corporate careers links to this official Workday portal; recent individual postings and repeat refresh verified.",
+      "previousCareerUrl": "https://www.fanniemae.com/careers",
+      "verificationSource": "https://www.fanniemae.com/careers"
     },
     {
       "id": "fedex",

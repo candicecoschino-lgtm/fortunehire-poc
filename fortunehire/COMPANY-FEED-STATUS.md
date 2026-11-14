@@ -1,8 +1,8 @@
 # All 52 company feed statuses — November 14, 2026
 
-37 connected; 14 need further integration, source evidence, or authorized access; RTX remains paused. Samples are bounded and do not represent all openings. No employer is classified as requiring a paid provider.
+38 connected; 13 need further integration, source evidence, or authorized access; RTX remains paused. These are bounded samples, not all openings. No employer is classified as requiring a paid provider.
 
-Known health issue: Coca-Cola’s Workday service is unavailable; previous verification dates remain preserved. See collection-status.json for the latest actual result.
+The latest completed full refresh of the previous 37 feeds succeeded with no source errors after Workday recovered. See collection-status.json for current health and per-employer verification times.
 
 | Company | Status | Reason / next step |
 | --- | --- | --- |
@@ -10,7 +10,7 @@ Known health issue: Coca-Cola’s Workday service is unavailable; previous verif
 | Abbott Laboratories | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Alphabet (Google) | access-restricted | Published crawler rules exclude the tested Google career paths. Obtain an authorized job feed or employer permission. |
 | Amazon | connected | Verified public recent-job search, individual role identity, employer posting dates, and independent per-ID refresh. Twenty recent U.S. roles in the initial sample. Monitor the bounded sample, published fields, source health, and scheduled refreshes. |
-| Apple | rules-unresolved | The official jobs-host robots file redirects to a corporate page-not-found destination. Resolve the published crawler-policy and search-interface requirements. |
+| Apple | adapter-needed | Public search and individual role pages return HTTP 200 after following the exact published robots redirects to the corporate HTTP 404. Pages do not expose JobPosting JSON-LD; an employer-specific reader still needs verified posting dates and locations. Complete a reader for the employer-published job fields and verify independent refresh before enabling. |
 | Bank of America | connected | Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata. Monitor field coverage, freshness, and scheduled refresh results. |
 | Boeing | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | CVS Health | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
@@ -26,15 +26,15 @@ Known health issue: Coca-Cola’s Workday service is unavailable; previous verif
 | Comcast | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Costco Wholesale | connected | Date-sorted public search found four recent roles missed by the earlier sitemap sample. Individual employer posting dates were verified; sixteen older candidates stayed excluded. Monitor the bounded sample, published fields, source health, and scheduled refreshes. |
 | Dell Technologies | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
-| Delta Air Lines | verification-needed | The officially linked Avature portal returned HTTP 202 without usable job data in this check. Review a permitted discovery method and dated job details. |
+| Delta Air Lines | verification-needed | November 14 public portal check returned HTTP 202 without usable individual-job links or posting metadata. Verify a usable permitted employer interface with actual posting dates and locations. |
 | Elevance Health | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
-| Fannie Mae | location-review-needed | Linked Workday pages provide incomplete state/location metadata, and generic telecommute metadata conflicts with office-cadence language. Verify actual work arrangement and job-state evidence before publishing. |
+| Fannie Mae | connected | Fourteen recent U.S. jobs collected and refreshed after Workday recovered. Single-office state is preserved from the original employer sitemap URL when the canonical URL omits geography. Explicit annual hiring ranges support pay filters; generic telecommute metadata is not treated as role-level remote evidence. Monitor bounded collection, pay, explicit work arrangements, and source health. |
 | FedEx | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Ford Motor | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | General Motors | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Home Depot | access-restricted | The directly linked role parses locally, but the GitHub request returned HTTP 403. Use an authorized source that works from the scheduled collector. |
 | Humana | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
-| IBM | verification-needed | The corporate public career search displays jobs, but the tested individual career page returned HTTP 202 without usable posting metadata. Verify a permitted individual-job data interface with actual employer posting dates, state evidence, and publication status. |
+| IBM | verification-needed | Corporate career search displays jobs. The tested individual page returns HTTP 202 without usable job metadata. The search client publishes an API template, but its robots URL redirects to an HTML corporate homepage rather than a verified policy. Resolve the published API access policy and verify individual posting dates, states, and status before enabling. |
 | JPMorgan Chase | access-restricted | The Oracle portal linked by JPMorgan returned HTTP 403. Obtain an authorized endpoint or employer permission. |
 | Kroger | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
 | Lowe's | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |

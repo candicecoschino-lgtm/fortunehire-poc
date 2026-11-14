@@ -1,14 +1,12 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T15:01:25.304821+00:00",
+  "updatedAt": "2026-11-14T17:36:08.064344+00:00",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 9,
-    "adapter-needed": 1,
-    "connected": 37,
-    "location-review-needed": 1,
+    "adapter-needed": 2,
+    "connected": 38,
     "paused": 1,
-    "rules-unresolved": 1,
     "verification-needed": 2
   },
   "companies": [
@@ -78,11 +76,11 @@
     {
       "companyId": "apple",
       "company": "Apple",
-      "status": "rules-unresolved",
-      "reason": "The official jobs-host robots file redirects to a corporate page-not-found destination.",
-      "nextStep": "Resolve the published crawler-policy and search-interface requirements.",
+      "status": "adapter-needed",
+      "reason": "Public search and individual role pages return HTTP 200 after following the exact published robots redirects to the corporate HTTP 404. Pages do not expose JobPosting JSON-LD; an employer-specific reader still needs verified posting dates and locations.",
+      "nextStep": "Complete a reader for the employer-published job fields and verify independent refresh before enabling.",
       "officialCareerUrl": "https://www.apple.com/careers/us/",
-      "reviewedAt": "2026-11-13",
+      "reviewedAt": "2026-11-14",
       "githubObservation": {
         "companyId": "apple",
         "careerUrl": "https://www.apple.com/careers/us/",
@@ -263,8 +261,7 @@
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Sitemap contains no individual job URLs"
-      },
-      "latestHealthNote": "November 14 checks returned employer HTTP 503 errors and then the official Workday outage redirect. Previous successful check dates were retained."
+      }
     },
     {
       "companyId": "comcast",
@@ -314,10 +311,10 @@
       "companyId": "delta",
       "company": "Delta Air Lines",
       "status": "verification-needed",
-      "reason": "The officially linked Avature portal returned HTTP 202 without usable job data in this check.",
-      "nextStep": "Review a permitted discovery method and dated job details.",
+      "reason": "November 14 public portal check returned HTTP 202 without usable individual-job links or posting metadata.",
+      "nextStep": "Verify a usable permitted employer interface with actual posting dates and locations.",
       "officialCareerUrl": "https://www.delta.com/us/en/careers/overview",
-      "reviewedAt": "2026-11-13",
+      "reviewedAt": "2026-11-14",
       "githubObservation": {
         "companyId": "delta",
         "careerUrl": "https://www.delta.com/us/en/careers/overview",
@@ -338,11 +335,11 @@
     {
       "companyId": "fannie-mae",
       "company": "Fannie Mae",
-      "status": "location-review-needed",
-      "reason": "Linked Workday pages provide incomplete state/location metadata, and generic telecommute metadata conflicts with office-cadence language.",
-      "nextStep": "Verify actual work arrangement and job-state evidence before publishing.",
-      "officialCareerUrl": "https://www.fanniemae.com/careers",
-      "reviewedAt": "2026-11-13",
+      "status": "connected",
+      "reason": "Fourteen recent U.S. jobs collected and refreshed after Workday recovered. Single-office state is preserved from the original employer sitemap URL when the canonical URL omits geography. Explicit annual hiring ranges support pay filters; generic telecommute metadata is not treated as role-level remote evidence.",
+      "nextStep": "Monitor bounded collection, pay, explicit work arrangements, and source health.",
+      "officialCareerUrl": "https://fanniemae.wd1.myworkdayjobs.com/FannieMaeCareers",
+      "reviewedAt": "2026-11-14",
       "githubObservation": {
         "companyId": "fannie-mae",
         "careerUrl": "https://www.fanniemae.com/careers",
@@ -350,7 +347,8 @@
         "landingStatus": 200,
         "discoveryError": "Sitemap contains no individual job URLs"
       },
-      "latestReviewNote": "November 14 recheck returned HTTP 503. Job-specific state/location and work-arrangement verification is still required after service recovery."
+      "previousReason": "Linked Workday pages provide incomplete state/location metadata, and generic telecommute metadata conflicts with office-cadence language.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43621862191"
     },
     {
       "companyId": "fedex",
@@ -421,8 +419,8 @@
       "companyId": "ibm",
       "company": "IBM",
       "status": "verification-needed",
-      "reason": "The corporate public career search displays jobs, but the tested individual career page returned HTTP 202 without usable posting metadata.",
-      "nextStep": "Verify a permitted individual-job data interface with actual employer posting dates, state evidence, and publication status.",
+      "reason": "Corporate career search displays jobs. The tested individual page returns HTTP 202 without usable job metadata. The search client publishes an API template, but its robots URL redirects to an HTML corporate homepage rather than a verified policy.",
+      "nextStep": "Resolve the published API access policy and verify individual posting dates, states, and status before enabling.",
       "officialCareerUrl": "https://www.ibm.com/careers",
       "reviewedAt": "2026-11-14",
       "githubObservation": {

@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 37 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 38 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -57,3 +57,7 @@ Costco uses the public /api/jobs interface sorted by posted_date, then checks in
 UPS uses employer-published eagerLoadRefineSearch data from the current U.S. search page. UUIDs and canonical UPBUPSGLOBAL identifiers resolve to the same posting; missing requisitions are labeled public posting IDs. Role JobPosting dates control eligibility; the separate dateCreated field is not substituted. A matching jobDetail.openingPayRate with an explicit hourly period and a single U.S. state supports a starting-rate pay filter.
 
 The exact Salesforce robots redirect to its own corporate HTTP 404 page is followed only for robots retrieval, following RFC 9309 sections 2.3.1.2–3: https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1.2 . Job redirects retain the strict host restriction. Its feed stays disabled pending a working integration; access denials are not bypassed.
+
+## Fannie Mae — November 14
+
+For one explicitly U.S. office, retain the state from the employer sitemap URL when the canonical role URL drops it. Keep the employer office name; multiple ambiguous offices remain unpublished. Generic TELECOMMUTE metadata conflicts with the portal’s office policy, so only explicit role labels establish Hybrid or Remote. Annual Pay Range labels may appear inside a paragraph; numeric filtering requires an explicit annual period, one unique range and one state. Initial collection and independent repeat refresh must both pass.

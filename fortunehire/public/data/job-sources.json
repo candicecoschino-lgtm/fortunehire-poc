@@ -149,6 +149,10 @@
     "ups": {
       "host": "www.jobs-ups.com",
       "sector": "Transportation"
+    },
+    "fannie-mae": {
+      "host": "fanniemae.wd1.myworkdayjobs.com",
+      "sector": "Financials"
     }
   }
 }

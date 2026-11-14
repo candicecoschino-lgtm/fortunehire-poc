@@ -642,6 +642,21 @@
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-14T16:37:28.983237+00:00"
+    },
+    "fannie-mae": {
+      "discovered": 66,
+      "checked": 14,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 14,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-14T17:35:09.651844+00:00"
     }
   }
 }
