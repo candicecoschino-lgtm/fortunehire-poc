@@ -1,4 +1,4 @@
-name: Inspect remaining public employer interfaces
+name: Inspect current UPS and IBM discovery
 on:
   push:
     paths: ['.github/workflows/review-remaining-public.yml']
@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Inspect bounded public discovery
+      - name: Read current public search surfaces
         working-directory: fortunehire
         run: |
           python - <<'PY'
@@ -21,33 +21,39 @@ jobs:
           from concurrent.futures import ThreadPoolExecutor
           sys.path.insert(0,'scripts')
           import collect_jobs as c
+          from employer_adapters import Document
           def review(key):
               row={'companyId':key}
               try:
-                  if key=='costco-script':
-                      cl=c.Client('app.jibecdn.com')
-                      status,body=cl.get('https://app.jibecdn.com/prod/search/4.11.226/main.js')
+                  if key=='ups':
+                      cl=c.Client('www.jobs-ups.com')
+                      status,body=cl.get('https://www.jobs-ups.com/us/en/search-results')
                       row.update(status=status,length=len(body))
-                      row['hints']=[body[max(0,m.start()-80):m.end()+200] for m in list(re.finditer(r'api/jobs|posted_date|sortBy',body))[:16]]
-                  else:
-                      host='www.jobs-ups.com'
-                      cl=c.Client(host)
-                      found=c.discover(cl)
-                      row['discovered']=len(found)
-                      pairs=sorted(found.items(),key=lambda p:(cl.discovery_dates.get(p[0],''),c.discovery_priority(p[0])),reverse=True)
-                      us=[p for p in pairs if '/us/en/' in p[1].lower()]
-                      row['usRoutes']=len(us)
-                      c.SOURCES['ups']=(host,'Transportation')
-                      row['samples']=[]
-                      for req,url in us[:3]:
-                          status,body=cl.get(url)
-                          sample={'url':url,'status':status}
+                      urls=list(dict.fromkeys(c.urllib.parse.urljoin('https://www.jobs-ups.com',n['attrs']['href']) for n in Document(body).nodes if n['tag']=='a' and '/us/en/job/' in n['attrs'].get('href','')))
+                      row['linkedJobs']=len(urls);row['samples']=[]
+                      c.SOURCES['ups']=('www.jobs-ups.com','Transportation')
+                      for url in urls[:2]:
+                          status,page=cl.get(url);sample={'url':url,'status':status}
                           try:
-                              j=c.normalize_posting(body,url,'ups',c.datetime.now(c.timezone.utc))
-                              sample.update(parsed=j is not None,posted=j.get('postedAt') if j else None)
+                              job=c.normalize_posting(page,url,'ups',c.datetime.now(c.timezone.utc))
+                              sample['job']={k:job.get(k) for k in ['title','postedAt','locations','arrangement']} if job else None
                           except Exception as e:sample['error']=str(e)
                           row['samples'].append(sample)
+                      marker=re.search(r'phApp.ddo\s*=\s*',body)
+                      if marker:
+                          data=json.JSONDecoder().raw_decode(body[marker.end():])[0]
+                          row['ddoKeys']=list(data)
+                          refine=data.get('refineSearch',{})
+                          row['searchKeys']=list(refine)
+                          data=refine.get('data',{})
+                          row['searchDataKeys']=list(data)
+                          row['firstJob']=[{k:v for k,v in j.items() if k in ['title','jobId','jobSeqNo','postedDate','dateCreated','jobUrl','city','state','country']} for j in data.get('jobs',[])[:1]]
+                  else:
+                      cl=c.Client('www.ibm.com')
+                      status,body=cl.get('https://www.ibm.com/etc.clientlibs/adobe-cms/clientlibs/clientlib-carbon-dynamic-loader.lc-129543326dea1ae3217ba1dabacb1e90-lc.min.js')
+                      row.update(status=status,length=len(body))
+                      row['hints']=[body[max(0,m.start()-90):m.end()+250] for m in list(re.finditer(r'career-search|scoped-no-carbon|careers2',body))[:8]]
               except Exception as e:row['error']=str(e)
               print('PUBLIC_REVIEW',json.dumps(row),flush=True)
-          with ThreadPoolExecutor(max_workers=2) as pool:list(pool.map(review,['costco-script','ups']))
+          with ThreadPoolExecutor(max_workers=2) as pool:list(pool.map(review,['ups','ibm']))
           PY
