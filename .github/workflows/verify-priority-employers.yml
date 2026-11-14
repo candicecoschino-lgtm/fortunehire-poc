@@ -1,0 +1,77 @@
+name: Verify Salesforce official feed and IBM posting availability
+on:
+  push:
+    paths: ['.github/workflows/verify-priority-employers.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test lifecycle and employer readers
+        working-directory: fortunehire
+        run: python -m unittest discover -s test -p 'test_*.py' -v
+      - name: Collect and independently refresh Salesforce sample
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,tempfile
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          c.SOURCES={'salesforce':('salesforce.wd12.myworkdayjobs.com','Technology')}
+          root=Path(tempfile.mkdtemp())
+          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
+          initial=c.run(root,max_new=20)
+          initial_report=json.loads((root/'public/data/collection-status.json').read_text())
+          print('INITIAL_REPORT',json.dumps(initial_report))
+          refreshed=c.run(root,max_new=0)
+          data=json.loads((root/'public/data/jobs.json').read_text())
+          print('STAGE_JOBS',json.dumps(data['jobs']))
+          print('STAGE_SOURCES',json.dumps(data['automation']['sources']))
+          print('STAGE_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
+          assert initial and refreshed, 'A source failed collection or refresh'
+          assert all(any(j['companyId']==key for j in data['jobs']) for key in c.SOURCES), 'A new feed has no verified recent jobs'
+          PY
+
+  review-ibm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify current public IBM role and policy redirects
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,urllib.request
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          class Policy(c.RestrictedRedirect):
+              def redirect_request(self,req,fp,code,msg,headers,newurl):
+                  allowed={('https://www-api.ibm.com/robots.txt','https://www.ibm.com/'),('https://www.ibm.com/','https://www.ibm.com/us-en')}
+                  if self.host=='www-api.ibm.com' and (req.full_url,newurl) in allowed:
+                      return urllib.request.HTTPRedirectHandler.redirect_request(self,req,fp,code,msg,headers,newurl)
+                  return super().redirect_request(req,fp,code,msg,headers,newurl)
+          c.RestrictedRedirect=Policy
+          row={}
+          try:
+              cl=c.Client('www-api.ibm.com')
+              status,body=cl.get('https://www-api.ibm.com/search/api/v1/ibmcom/appid/careers/responseFormat/json?scope=careers2&rmdt=ALL&appid=careers&fr=0&nr=20&page=1&sortby=-dcdate&query=QSL%20Electronics%20Development%20Engineer')
+              row['searchStatus']=status
+              rows=json.loads(body)['resultset']['searchresults']['searchresultlist']
+              row['publicSearchRecords']=[{'title':r['title'],'url':r['url'],'fields':{k:v for d in r['docattributes'] for k,v in d.items() if k in ('dcdate','effectivedate','country','field_keyword_19','field_keyword_21','field_text_01')}} for r in rows[:2]]
+              cl=c.Client('careers.ibm.com')
+              status,body=cl.get('https://careers.ibm.com/en_US/careers/JobDetail?jobId=143353&source=WEB_Search_NA')
+              page=c.Page(body)
+              row.update(roleStatus=status,length=len(body),visibleText=page.text[:1200],postings=[{k:v for k,v in j.items() if k!='description'} for s in page.scripts for j in c.postings(json.loads(s))])
+          except Exception as e:row['error']=str(e)
+          print('IBM_REVIEW',json.dumps(row))
+          PY

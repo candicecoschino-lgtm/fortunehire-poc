@@ -345,6 +345,14 @@ def normalize_posting(body, url, company, now):
         city = address.get('addressLocality') or ''
         if not isinstance(city,str): continue
         city=city.strip()
+        if company=='salesforce' and not state and str(country).upper() in ('US','USA','UNITED STATES','UNITED STATES OF AMERICA'):
+            for named_state in sorted(STATES.values(),key=len,reverse=True):
+                prefix=named_state+' - '
+                if city.startswith(prefix) and city[len(prefix):].strip():
+                    state=named_state;city=city[len(prefix):].strip()
+                    location_evidence='Employer JobPosting U.S. location label: '+address['addressLocality']
+                    if city.casefold()=='remote':remote_location_states.append(state)
+                    break
         if not state and host.endswith('.myworkdayjobs.com'):
             explicit=re.fullmatch(r'US\s*-\s*([A-Z]{2})\s*-\s*(.+)',city)
             if explicit and state_name(explicit[1]):state=state_name(explicit[1]);city=explicit[2]
@@ -375,7 +383,7 @@ def normalize_posting(body, url, company, now):
     if labeled:
         arrangement = {'hybrid':'hybrid','onsite':'on-site','remote':'remote'}[re.sub(r'[- ]','',labeled[1].lower())]
         arrangement_evidence = labeled[0]
-    elif company!='fannie-mae' and str(source.get('jobLocationType','')).upper() in ('TELECOMMUTE','REMOTE','HYBRID','ON_SITE','ONSITE'):
+    elif company not in ('fannie-mae','salesforce') and str(source.get('jobLocationType','')).upper() in ('TELECOMMUTE','REMOTE','HYBRID','ON_SITE','ONSITE'):
         kind=str(source['jobLocationType']).upper()
         arrangement = 'remote' if kind in ('TELECOMMUTE','REMOTE') else 'hybrid' if kind=='HYBRID' else 'on-site'
         arrangement_evidence='JobPosting.jobLocationType='+kind
@@ -439,6 +447,8 @@ def normalize_posting(body, url, company, now):
             arrangement_evidence='Explicit employer title qualifier: '+qualifier[0].strip()
         elif company=='cvs-health' and re.match(r'^Remote Call Center\b',title,re.I):
             arrangement,arrangement_evidence='remote','Explicit employer role title: Remote Call Center'
+    if arrangement=='unknown' and company=='salesforce' and remote_location_states:
+        arrangement,arrangement_evidence='remote','Employer labels the posting location Remote in: '+', '.join(sorted(set(remote_location_states)))
     if arrangement=='remote' and remote_location_states:
         eligible=sorted(set(eligible+remote_location_states))
     # A posted office address is not evidence of remote eligibility.
