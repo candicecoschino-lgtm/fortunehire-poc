@@ -83,6 +83,11 @@ class AdapterTests(unittest.TestCase):
         with patch.dict(c.SOURCES,{'pepsico':('www.pepsicojobs.com','Consumer Goods')}):
             job=c.normalize_posting(body(url=url,identifier=None),url,'pepsico',NOW)
             self.assertEqual(job['requisitionId'],'123');self.assertEqual(job['identifierType'],'posting-id')
+        url='https://careers.costco.com/jobs/123'
+        with patch.dict(c.SOURCES,{'costco':('careers.costco.com','Retail')}):
+            job=c.normalize_posting(body(url=url,identifier=None,datePosted='2025-07-14'),url,'costco',NOW)
+            self.assertEqual(job['identifierType'],'posting-id')
+            self.assertFalse(c.recent_posting(job,NOW))
 
     def test_legacy_sitemap_namespace_and_successfactors_identity(self):
         client=Mock(host='careers.phillips66.com')

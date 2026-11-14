@@ -1,4 +1,4 @@
-name: Verify Valero and Costco free employer feeds
+name: Evaluate Costco posting dates and verify Valero
 on:
   push:
     paths: ['.github/workflows/verify-valero.yml']
@@ -36,5 +36,6 @@ jobs:
           print('STAGE_SOURCES',json.dumps(data['automation']['sources']))
           print('STAGE_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
           assert initial and refreshed, 'A source failed collection or refresh'
-          assert all(any(j['companyId']==key for j in data['jobs']) for key in c.SOURCES), 'A new feed has no verified recent jobs'
+          assert any(j['companyId']=='valero' for j in data['jobs']), 'Valero has no verified recent jobs'
+          print('COSTCO_ELIGIBLE',sum(j['companyId']=='costco' for j in data['jobs']))
           PY

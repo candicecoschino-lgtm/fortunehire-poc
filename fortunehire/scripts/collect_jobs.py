@@ -279,7 +279,7 @@ def normalize_posting(body, url, company, now):
         # Cardinal repeats its tenant identifier across different postings.
         # The reviewed canonical job URL provides the distinct public ID.
         req=posting_key(url);identifier_type='posting-id'
-    if not req and company=='pepsico' and posting_key(url).isdigit():
+    if not req and company in ('pepsico','costco') and posting_key(url).isdigit():
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
