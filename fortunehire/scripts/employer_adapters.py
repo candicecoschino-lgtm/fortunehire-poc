@@ -1,9 +1,10 @@
 """Reviewed first-party page formats. Missing evidence is never synthesized."""
 import json
 import re
+import ast
 from datetime import datetime
 from html.parser import HTMLParser
-from urllib.parse import urlsplit, urljoin
+from urllib.parse import urlsplit, urljoin, parse_qs, unquote
 from zoneinfo import ZoneInfo
 
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
@@ -152,10 +153,36 @@ def oracle(body,url):
         except ValueError:return None
     return {'@type':'JobPosting','identifier':req,'title':source.get('Title'),'url':url,'datePosted':posted,'validThrough':source.get('ExternalPostedEndDate'),'description':description,'employmentType':schedule,'jobLocationType':arrangement,'jobLocation':locations,'_adapter':'oracle-public-requisition-details'}
 
+def valero(document,body,url):
+    history=document.find('input',id='initialHistory')
+    mapping=re.search(r'descRequisition:\s*\{\s*_size:\s*1,.*?_hlid:\s*(\[[^\]]+\])',body,re.S)
+    if not history or not mapping:return None
+    try:fields=ast.literal_eval(mapping[1])
+    except (ValueError,SyntaxError):return None
+    if not isinstance(fields,list) or not all(isinstance(field,str) and re.fullmatch(r'reqlistitem\.[a-z]+',field) for field in fields):return None
+    parts=history['attrs'].get('value','').split('!|!')
+    if len(parts)<3+len(fields) or parts[2]!='descRequisition':return None
+    data={}
+    for field,value in zip(fields,parts[3:3+len(fields)]):
+        if field not in {'reqlistitem.contestnumber','reqlistitem.title','reqlistitem.description','reqlistitem.qualification','reqlistitem.primarylocation','reqlistitem.postingdate','reqlistitem.unpostingdate'}:continue
+        value=unquote(value).removeprefix('!*!').replace('\\:',':')
+        if field in data and data[field]!=value:raise ValueError('Conflicting Taleo display values')
+        data[field]=value
+    req=data.get('reqlistitem.contestnumber')
+    if parse_qs(urlsplit(url).query).get('job')!=[req]:return None
+    def date(value):
+        try:return datetime.strptime(value or '','%b %d, %Y, %I:%M:%S %p').date().isoformat()
+        except ValueError:return None
+    posted=date(data.get('reqlistitem.postingdate'))
+    location=(data.get('reqlistitem.primarylocation') or '').split('-',2)
+    if not posted or len(location)!=3 or location[0]!='US':return None
+    return {'@type':'JobPosting','identifier':req,'url':url,'title':data.get('reqlistitem.title'),'description':data.get('reqlistitem.description','')+'\n'+data.get('reqlistitem.qualification',''),'datePosted':posted,'validThrough':date(data.get('reqlistitem.unpostingdate')),'jobLocation':{'address':{'addressCountry':'US','addressRegion':location[1],'addressLocality':location[2]}},'_adapter':'valero-public-taleo-display-data'}
+
 def extract(company,body,url):
     if company in ('dell','kroger'):return oracle(body,url)
-    if company not in ('walmart','disney','phillips-66','verizon'):return None
+    if company not in ('walmart','disney','phillips-66','verizon','valero'):return None
     document=Document(body)
+    if company=='valero':return valero(document,body,url)
     if company=='verizon':return verizon(document,url)
     if company=='walmart':return walmart(document,url)
     return disney(document,url) if company=='disney' else phillips(document,url)

@@ -45,6 +45,13 @@ def safe_url(url, host):
 
 
 def job_url(url, host):
+    if host=='valero.taleo.net':
+        parsed=urllib.parse.urlsplit(url);base=safe_url(url,host)
+        query=urllib.parse.parse_qs(parsed.query,keep_blank_values=True)
+        identifiers=query.get('job',[])
+        if parsed.path!='/careersection/2/jobdetail.ftl' or len(identifiers)!=1 or not re.fullmatch(r'[A-Za-z0-9]{5,12}',identifiers[0]):
+            raise ValueError('Not an individual Valero job URL')
+        return base+'?'+urllib.parse.urlencode({'job':identifiers[0]})
     url = safe_url(url, host)
     if not re.search(r'/jobs?/[^/]+|/search/jobdetails/[^/]+/[0-9a-fA-F-]{36}$|/en-us/job-detail/[^/]+',urllib.parse.urlsplit(url).path.rstrip('/')) or len(url)>2000:
         raise ValueError('Not an individual employer job URL')
@@ -52,6 +59,8 @@ def job_url(url, host):
 
 
 def posting_key(url):
+    if urllib.parse.urlsplit(url).hostname=='valero.taleo.net':
+        return urllib.parse.parse_qs(urllib.parse.urlsplit(url).query).get('job',[''])[0].upper()
     path=urllib.parse.urlsplit(url).path
     if urllib.parse.urlsplit(url).hostname.endswith('.myworkdayjobs.com') and '/job/' in path:
         req=path.rstrip('/').rsplit('_',1)[-1]
@@ -274,7 +283,7 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details'):
+    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]

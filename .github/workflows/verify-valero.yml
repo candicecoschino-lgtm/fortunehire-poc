@@ -1,0 +1,40 @@
+name: Verify Valero free employer feed
+on:
+  push:
+    paths: ['.github/workflows/verify-valero.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test lifecycle and employer readers
+        working-directory: fortunehire
+        run: python -m unittest discover -s test -p 'test_*.py' -v
+      - name: Collect and refresh Valero isolated sample
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,tempfile
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          c.SOURCES={'valero':('valero.taleo.net','Energy')}
+          root=Path(tempfile.mkdtemp())
+          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
+          initial=c.run(root,max_new=20)
+          initial_report=json.loads((root/'public/data/collection-status.json').read_text())
+          print('INITIAL_REPORT',json.dumps(initial_report))
+          refreshed=c.run(root,max_new=0)
+          data=json.loads((root/'public/data/jobs.json').read_text())
+          print('STAGE_JOBS',json.dumps(data['jobs']))
+          print('STAGE_SOURCES',json.dumps(data['automation']['sources']))
+          print('STAGE_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
+          assert initial and refreshed, 'A source failed collection or refresh'
+          assert all(any(j['companyId']==key for j in data['jobs']) for key in c.SOURCES), 'A new feed has no verified recent jobs'
+          PY

@@ -28,6 +28,13 @@ test('publication date window is independent of last successful check date',()=>
   for(const postedAt of ['2026-10-29','2026-10-23','2026-11-14',null])assert.equal(isCurrent({...j,postedAt},today),false);
 });
 
+test('reviewed Valero query-based application links require one exact job identifier',()=>{
+  const employers=[...companies.filter(c=>c.id!=='valero'),{...companies.find(c=>c.id==='valero'),careerUrl:'https://valero.taleo.net/careersection/2/jobsearch.ftl'}];
+  const j={...structuredClone(data.jobs[0]),id:'valero-synthetic',companyId:'valero',url:'https://valero.taleo.net/careersection/2/jobdetail.ftl?job=2600ABC'};
+  assert.equal(validateJobs({schemaVersion:1,jobs:[j]},employers).length,1);
+  for(const url of [j.url+'&job=OTHER',j.url.replace('jobdetail','jobsearch'),j.url.replace('job=2600ABC','job='),j.url.replace('valero.taleo.net','other.taleo.net'),j.url+'&redirect=elsewhere'])assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,url}]},employers));
+});
+
 test('national remote role with published salary and required travel filters correctly',()=>{
   const j={...jobs[0],companyName:'UnitedHealth Group',companyId:'unitedhealth-group',arrangement:'remote',remoteScope:'nationwide',eligibleStates:[],travelRequired:true,salary:{min:112700,max:193200,period:'year',currency:'USD',scopeStates:[]}};
   assert.equal(filterJobs([j],filters({state:'Florida',arrangement:'remote',pay:'year:100000',travel:'include'}),today).length,1);
