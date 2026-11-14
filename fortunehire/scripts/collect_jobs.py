@@ -46,6 +46,11 @@ def safe_url(url, host):
 
 
 def job_url(url, host):
+    if host=='jobs.apple.com':
+        from apple_public import role_id
+        url=safe_url(url,host)
+        if not role_id(url):raise ValueError('Not an individual Apple job URL')
+        return url
     if host=='valero.taleo.net':
         parsed=urllib.parse.urlsplit(url);base=safe_url(url,host)
         query=urllib.parse.parse_qs(parsed.query,keep_blank_values=True)
@@ -60,6 +65,9 @@ def job_url(url, host):
 
 
 def posting_key(url):
+    if urllib.parse.urlsplit(url).hostname=='jobs.apple.com':
+        from apple_public import role_id
+        return role_id(url) or ''
     if urllib.parse.urlsplit(url).hostname=='valero.taleo.net':
         return urllib.parse.parse_qs(urllib.parse.urlsplit(url).query).get('job',[''])[0].upper()
     path=urllib.parse.urlsplit(url).path
@@ -319,7 +327,7 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page'):
+    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]
@@ -532,6 +540,11 @@ class SourceError(RuntimeError): pass
 class RestrictedRedirect(urllib.request.HTTPRedirectHandler):
     def __init__(self, host): self.host = host
     def redirect_request(self, req, fp, code, msg, headers, newurl):
+        apple_policy={('https://jobs.apple.com/robots.txt','https://apple.com/pagenotfound'),('https://apple.com/pagenotfound','https://www.apple.com/pagenotfound')}
+        if self.host=='jobs.apple.com' and (req.full_url,newurl) in apple_policy:
+            # Exact published robots chain terminates at a corporate HTTP 404.
+            # Individual job requests retain source-host restrictions.
+            return super().redirect_request(req,fp,code,msg,headers,newurl)
         if self.host=='careers.salesforce.com' and req.full_url=='https://careers.salesforce.com/robots.txt' and newurl=='https://www.salesforce.com/404/':
             # RFC 9309 2.3.1.2: follow the published policy redirect.
             # This exact corporate destination returns HTTP 404; job-page

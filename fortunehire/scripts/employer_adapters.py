@@ -207,6 +207,9 @@ def ups_opening_pay(body,posting_id):
     return float(match[1]),raw
 
 def extract(company,body,url):
+    if company=='apple':
+        from apple_public import extract as apple
+        return apple(body,url)
     if company=='amazon':return amazon(body,url)
     if company in ('dell','kroger'):return oracle(body,url)
     if company not in ('walmart','disney','phillips-66','verizon','valero'):return None
