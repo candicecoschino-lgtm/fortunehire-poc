@@ -133,6 +133,10 @@
     "kroger": {
       "host": "www.krogerfamilycareers.com",
       "sector": "Retail"
+    },
+    "valero": {
+      "host": "valero.taleo.net",
+      "sector": "Energy"
     }
   }
 }

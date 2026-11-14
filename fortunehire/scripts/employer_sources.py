@@ -1,6 +1,8 @@
 """Bounded public search interfaces explicitly linked by the employer portals."""
 import json
-from urllib.parse import urlencode, urlsplit
+from urllib.parse import urlencode, urlsplit, parse_qs
+import re
+from employer_adapters import Document
 
 ORACLE = {
     'enterpriseplatform.dell.com': ('enterpriseplatform.dell.com','CX_1001','/hcmUI/CandidateExperience/en/sites/CX_1001'),
@@ -10,6 +12,19 @@ API='/hcmRestApi/resources/11.13.18.05/'
 
 def public_search(client, client_factory):
     """Inspect at most 60 recent results; publishing still checks each job."""
+    if client.host=='valero.taleo.net':
+        landing=client_factory('www.valero.com')
+        status,body=landing.get('https://www.valero.com/careers')
+        if status!=200:raise ValueError('Valero public career links unavailable')
+        found={}
+        for node in Document(body).nodes:
+            if node['tag']!='a':continue
+            parsed=urlsplit(node['attrs'].get('href',''))
+            if parsed.scheme!='https' or parsed.netloc!=client.host or parsed.path!='/careersection/2/jobdetail.ftl':continue
+            values=parse_qs(parsed.query).get('job',[])
+            if len(values)==1 and re.fullmatch(r'[A-Za-z0-9]{5,12}',values[0]):found[values[0].upper()]='https://'+client.host+parsed.path+'?'+urlencode({'job':values[0]})
+        client.discovery_dates={};client.discovery_limited=True;client.discovery_warnings=[]
+        return found
     config=ORACLE.get(client.host)
     if not config:return None
     datahost,site,jobbase=config

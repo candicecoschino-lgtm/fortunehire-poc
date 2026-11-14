@@ -296,11 +296,13 @@
         "state": "Washington"
       },
       "listYear": 2026,
-      "careerUrl": "https://www.costco.com/f/-/careers",
+      "careerUrl": "https://careers.costco.com/",
       "profileSource": "https://fortune.com/company/costco/",
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
-      "reviewedAt": "2026-11-13",
-      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+      "reviewedAt": "2026-11-14",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy. Updated to the employer-linked current U.S. career portal, verified November 14, 2026.",
+      "previousCareerUrl": "https://www.costco.com/f/-/careers",
+      "verificationSource": "https://www.costco.com/career-opportunities.html"
     },
     {
       "id": "cvs-health",
@@ -758,11 +760,13 @@
         "state": "Texas"
       },
       "listYear": 2026,
-      "careerUrl": "https://www.valero.com/careers",
+      "careerUrl": "https://valero.taleo.net/careersection/2/jobsearch.ftl?lang=en",
       "profileSource": "https://fortune.com/company/valero-energy/",
       "membershipSource": "https://fortune.com/company/valero-energy/",
-      "reviewedAt": "2026-11-13",
-      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+      "reviewedAt": "2026-11-14",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy. Updated to the employer-linked current U.S. career portal, verified November 14, 2026.",
+      "previousCareerUrl": "https://www.valero.com/careers",
+      "verificationSource": "https://www.valero.com/careers"
     },
     {
       "id": "verizon",

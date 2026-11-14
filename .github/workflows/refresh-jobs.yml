@@ -11,6 +11,9 @@ on:
       - 'fortunehire/scripts/employer_adapters.py'
       - 'fortunehire/scripts/employer_sources.py'
       - 'fortunehire/test/test_employer_sources.py'
+      - 'fortunehire/test/test_valero.py'
+      - 'fortunehire/scripts/collection_health.py'
+      - 'fortunehire/test/test_collection_health.py'
       - 'fortunehire/test/test_employer_adapters.py'
       - 'fortunehire/public/data/job-sources.json'
       - 'fortunehire/test/test_collector.py'
@@ -66,9 +69,7 @@ jobs:
           fi
       - name: Flag any collection failure
         if: steps.collect.outcome == 'failure'
-        run: |
-          echo 'Some employer checks failed. Previous records were retained without changing their freshness dates.'
-          exit 1
+        run: python scripts/collection_health.py
 
 
 

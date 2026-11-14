@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T12:34:42.979069+00:00",
+  "updatedAt": "2026-11-14T13:52:46.278200+00:00",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 9,
-    "adapter-needed": 3,
-    "connected": 33,
+    "adapter-needed": 2,
+    "connected": 34,
     "location-review-needed": 1,
     "paused": 1,
     "retired-discovery": 1,
@@ -262,7 +262,8 @@
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Sitemap contains no individual job URLs"
-      }
+      },
+      "latestHealthNote": "November 14 production check returned HTTP 503 from the employer service; previous successful check dates were retained."
     },
     {
       "companyId": "comcast",
@@ -277,17 +278,18 @@
       "companyId": "costco",
       "company": "Costco Wholesale",
       "status": "adapter-needed",
-      "reason": "Official career pages did not expose a compatible individual-job discovery feed.",
-      "nextStep": "Review the linked application-system integration.",
-      "officialCareerUrl": "https://www.costco.com/f/-/careers",
-      "reviewedAt": "2026-11-13",
+      "reason": "Current official portal verified. All twenty sampled roles had employer posting dates outside the fourteen-day window; none were published. The separately linked technology portal excludes the requested crawler access.",
+      "nextStep": "Find permitted discovery of recent dated roles or request an authorized feed. No paid-provider requirement has been established.",
+      "officialCareerUrl": "https://careers.costco.com/",
+      "reviewedAt": "2026-11-14",
       "githubObservation": {
         "companyId": "costco",
         "careerUrl": "https://www.costco.com/f/-/careers",
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Sitemap contains no individual job URLs"
-      }
+      },
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43601548760"
     },
     {
       "companyId": "dell",
@@ -662,7 +664,8 @@
         "structured": false,
         "hasNextData": false,
         "hasDisneyMetadata": false
-      }
+      },
+      "latestReviewNote": "November 14 local connection checks were interrupted. Earlier GitHub samples returned retired HTTP 410 pages; replacement discovery remains unverified."
     },
     {
       "companyId": "united-airlines",
@@ -685,12 +688,13 @@
     {
       "companyId": "valero",
       "company": "Valero Energy",
-      "status": "adapter-needed",
-      "reason": "The corporate page links to Taleo roles whose query-based job identifiers need a dedicated reader.",
-      "nextStep": "Implement the permitted Taleo job-detail format with date and location evidence.",
-      "officialCareerUrl": "https://www.valero.com/careers",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "status": "connected",
+      "reason": "Official featured Taleo postings collected and refreshed successfully from GitHub. One recent role; five older featured roles excluded.",
+      "nextStep": "Monitor the limited featured-job sample and review permitted broader discovery.",
+      "officialCareerUrl": "https://valero.taleo.net/careersection/2/jobsearch.ftl?lang=en",
+      "reviewedAt": "2026-11-14",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43601548760",
+      "historicalGithubObservation": {
         "companyId": "valero",
         "careerUrl": "https://www.valero.com/careers",
         "landingAllowed": true,

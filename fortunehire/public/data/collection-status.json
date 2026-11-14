@@ -491,6 +491,21 @@
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+    },
+    "valero": {
+      "discovered": 6,
+      "checked": 1,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 1,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-14T13:49:47.001517+00:00"
     }
   }
 }

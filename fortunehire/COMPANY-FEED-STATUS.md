@@ -1,6 +1,8 @@
 # All 52 company feed statuses — November 14, 2026
 
-33 connected; 18 need further work or authorized access; RTX is paused. Connected feeds have limited samples rather than complete employer coverage. A failed check does not establish a need for a paid provider.
+34 connected; 17 need further work or authorized access; RTX is paused. Connected feeds have limited samples rather than complete employer coverage. A failed check does not establish a need for a paid provider.
+
+Coca-Cola’s November 14 check returned an employer HTTP 503 service error. Its previous successful check dates were retained. Source-health details remain visible on the website and in collection-status.json.
 
 | Company | Status | Reason / next step |
 | --- | --- | --- |
@@ -22,7 +24,7 @@
 | Citigroup | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Coca-Cola | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Comcast | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
-| Costco Wholesale | adapter-needed | Official career pages did not expose a compatible individual-job discovery feed. Review the linked application-system integration. |
+| Costco Wholesale | adapter-needed | Current official portal verified. All twenty sampled roles had employer posting dates outside the fourteen-day window; none were published. The separately linked technology portal excludes the requested crawler access. Find permitted discovery of recent dated roles or request an authorized feed. No paid-provider requirement has been established. |
 | Dell Technologies | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
 | Delta Air Lines | verification-needed | The officially linked Avature portal returned HTTP 202 without usable job data in this check. Review a permitted discovery method and dated job details. |
 | Elevance Health | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
@@ -52,7 +54,7 @@
 | UPS | retired-discovery | The published sample contained retired individual-job URLs, including HTTP 410; no current verified posting was collected. Verify the replacement discovery source and active individual pages. |
 | United Airlines Holdings | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | UnitedHealth Group | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
-| Valero Energy | adapter-needed | The corporate page links to Taleo roles whose query-based job identifiers need a dedicated reader. Implement the permitted Taleo job-detail format with date and location evidence. |
+| Valero Energy | connected | Official featured Taleo postings collected and refreshed successfully from GitHub. One recent role; five older featured roles excluded. Monitor the limited featured-job sample and review permitted broader discovery. |
 | Verizon Communications | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
 | Walmart | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Walt Disney | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
