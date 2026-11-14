@@ -13,6 +13,12 @@ def record(**kw):
 def page(**kw):
  return '<meta property="og:url" content="'+kw.get('url',URL)+'"><h1 class="title">'+kw.get('title','Synthetic support engineer')+'</h1><div id="job-detail-body"><div class="content"><p>'+kw.get('description','Role duties.')+'</p></div></div><aside>Work Type: Remote</aside>'
 class PublicSearchTests(unittest.TestCase):
+ def test_ups_current_search_uses_posting_date_and_real_route_id(self):
+  req='1ece6f35-c3ec-40e5-acc6-5546a27d1eae';cl=Mock(host='www.jobs-ups.com')
+  payload={'eagerLoadRefineSearch':{'totalHits':200,'data':{'jobs':[{'jobId':req,'title':'Synthetic Driver Helper','country':'United States of America','postedDate':'2026-11-13','dateCreated':'2025-01-01'}]}}}
+  cl.get.return_value=(200,'<script>phApp.ddo = '+json.dumps(payload)+';</script>')
+  self.assertEqual(public_search(cl,Mock()),{req:'https://www.jobs-ups.com/us/en/job/'+req+'/Synthetic-Driver-Helper'})
+  self.assertEqual(cl.discovery_dates[req],'2026-11-13');self.assertTrue(cl.discovery_limited)
  def test_reviewed_policy_redirect_does_not_allow_foreign_job_redirects(self):
   redirect=c.RestrictedRedirect('careers.salesforce.com');target='https://www.salesforce.com/404/'
   req=c.urllib.request.Request('https://careers.salesforce.com/robots.txt')

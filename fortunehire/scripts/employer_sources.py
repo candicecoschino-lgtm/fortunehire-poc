@@ -23,6 +23,22 @@ API='/hcmRestApi/resources/11.13.18.05/'
 
 def public_search(client, client_factory):
     """Inspect at most 60 recent results; publishing still checks each job."""
+    if client.host=='www.jobs-ups.com':
+        status,body=client.get('https://www.jobs-ups.com/us/en/search-results')
+        marker=re.search(r'phApp\.ddo\s*=\s*',body)
+        if status!=200 or not marker:raise ValueError('Missing UPS public search data')
+        data=json.JSONDecoder().raw_decode(body[marker.end():])[0].get('eagerLoadRefineSearch',{})
+        rows=data.get('data',{}).get('jobs')
+        if not isinstance(rows,list):raise ValueError('Invalid UPS public search data')
+        found={};dates={}
+        for row in rows[:20]:
+            req=str(row.get('jobId',''));title=row.get('title','')
+            if row.get('country') not in ('US','USA','United States','United States of America') or not re.fullmatch(r'[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}',req) or not isinstance(title,str):continue
+            slug=re.sub(r'[^A-Za-z0-9]+','-',title).strip('-')
+            if not slug:continue
+            found[req]='https://'+client.host+'/us/en/job/'+req+'/'+slug;dates[req]=row.get('postedDate') or ''
+        client.discovery_dates=dates;client.discovery_limited=data.get('totalHits',0)>len(found);client.discovery_warnings=[]
+        return found
     if client.host=='www.amazon.jobs':
         status,body=client.get('https://www.amazon.jobs/en/search.json?'+urlencode({'sort':'recent','result_limit':20,'country[]':'USA'}))
         if status!=200:raise ValueError('Amazon public search unavailable')

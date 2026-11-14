@@ -1,4 +1,4 @@
-name: Verify public search refresh and published pay
+name: Verify Amazon Costco and current UPS discovery
 on:
   push:
     paths: ['.github/workflows/verify-r17-feeds.yml']
@@ -24,7 +24,7 @@ jobs:
           from pathlib import Path
           sys.path.insert(0,'scripts')
           import collect_jobs as c
-          c.SOURCES={'amazon':('www.amazon.jobs','Consumer Discretionary'),'costco':('careers.costco.com','Retail')}
+          c.SOURCES={'amazon':('www.amazon.jobs','Consumer Discretionary'),'costco':('careers.costco.com','Retail'),'ups':('www.jobs-ups.com','Transportation')}
           root=Path(tempfile.mkdtemp())
           c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
           initial=c.run(root,max_new=20)
@@ -42,5 +42,5 @@ jobs:
           assert checked['requisitionId']==sample['requisitionId'], 'Per-ID Amazon refresh did not match'
           print('AMAZON_ID_REFRESH',checked['requisitionId'])
           assert initial and refreshed, 'A source failed collection or refresh'
-          assert all(any(j['companyId']==key for j in data['jobs']) for key in c.SOURCES), 'A new feed has no verified recent jobs'
+          assert all(any(j['companyId']==key for j in data['jobs']) for key in ('amazon','costco')), 'A required new feed has no verified recent jobs'
           PY
