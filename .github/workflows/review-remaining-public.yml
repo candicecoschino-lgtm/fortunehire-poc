@@ -1,4 +1,4 @@
-name: Inspect Apple individual posting metadata
+name: Inspect Apple visible posting dates and locations
 on:
   push:
     paths: ['.github/workflows/review-remaining-public.yml']
@@ -40,7 +40,7 @@ jobs:
                   url=c.urllib.parse.urljoin('https://jobs.apple.com',link)
                   role_status,role_body=cl.get(url)
                   roles=[{k:v for k,v in j.items() if k not in ('description','responsibilities','qualifications')} for s in c.Page(role_body).scripts for j in c.postings(json.loads(s))]
-                  row['roleMetadata'].append({'url':url,'status':role_status,'canonical':c.Page(role_body).canonical,'postings':roles})
+                  row['roleMetadata'].append({'url':url,'status':role_status,'canonical':c.Page(role_body).canonical,'postings':roles,'visibleText':c.Page(role_body).description if False else __import__('re').sub('<[^>]+>',' ',role_body)[-45000:]})
           except Exception as e:row['error']=str(e)
           print('APPLE_REVIEW',json.dumps(row))
           PY
