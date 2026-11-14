@@ -1,4 +1,4 @@
-name: Inspect current UPS and IBM discovery
+name: Inspect current UPS posting metadata
 on:
   push:
     paths: ['.github/workflows/review-remaining-public.yml']
@@ -7,53 +7,27 @@ permissions:
 jobs:
   review:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Read current public search surfaces
+      - name: Read one official posting
         working-directory: fortunehire
         run: |
           python - <<'PY'
-          import sys,json,re
-          from concurrent.futures import ThreadPoolExecutor
+          import sys,json
           sys.path.insert(0,'scripts')
           import collect_jobs as c
           from employer_adapters import Document
-          def review(key):
-              row={'companyId':key}
-              try:
-                  if key=='ups':
-                      cl=c.Client('www.jobs-ups.com')
-                      status,body=cl.get('https://www.jobs-ups.com/us/en/search-results')
-                      row.update(status=status,length=len(body))
-                      urls=list(dict.fromkeys(c.urllib.parse.urljoin('https://www.jobs-ups.com',n['attrs']['href']) for n in Document(body).nodes if n['tag']=='a' and '/us/en/job/' in n['attrs'].get('href','')))
-                      row['linkedJobs']=len(urls);row['samples']=[]
-                      c.SOURCES['ups']=('www.jobs-ups.com','Transportation')
-                      for url in urls[:2]:
-                          status,page=cl.get(url);sample={'url':url,'status':status}
-                          try:
-                              job=c.normalize_posting(page,url,'ups',c.datetime.now(c.timezone.utc))
-                              sample['job']={k:job.get(k) for k in ['title','postedAt','locations','arrangement']} if job else None
-                          except Exception as e:sample['error']=str(e)
-                          row['samples'].append(sample)
-                      marker=re.search(r'phApp.ddo\s*=\s*',body)
-                      if marker:
-                          data=json.JSONDecoder().raw_decode(body[marker.end():])[0]
-                          row['ddoKeys']=list(data)
-                          refine=data.get('eagerLoadRefineSearch',{})
-                          row['searchKeys']=list(refine)
-                          data=refine.get('data',{})
-                          row['searchDataKeys']=list(data)
-                          row['firstJob']=[{k:v for k,v in j.items() if k in ['title','jobId','jobSeqNo','postedDate','dateCreated','jobUrl','city','state','country']} for j in data.get('jobs',[])[:1]]
-                  else:
-                      cl=c.Client('www.ibm.com')
-                      status,body=cl.get('https://www.ibm.com/etc.clientlibs/adobe-cms/clientlibs/clientlib-carbon-dynamic-loader.lc-129543326dea1ae3217ba1dabacb1e90-lc.min.js')
-                      row.update(status=status,length=len(body))
-                      row['hints']=[body[max(0,m.start()-90):m.end()+250] for m in list(re.finditer(r'career|Career|marketplace/static',body))[:8]]
-              except Exception as e:row['error']=str(e)
-              print('PUBLIC_REVIEW',json.dumps(row),flush=True)
-          with ThreadPoolExecutor(max_workers=2) as pool:list(pool.map(review,['ups','ibm']))
+          url='https://www.jobs-ups.com/us/en/job/a60ee55e-ca1a-45cc-869d-d81b579f39f8/Driver-Helper'
+          try:
+              cl=c.Client('www.jobs-ups.com')
+              status,body=cl.get(url)
+              page=c.Page(body)
+              structured=[{k:v for k,v in j.items() if k not in ('description','responsibilities','qualifications')} for s in page.scripts for j in c.postings(json.loads(s))]
+              metas=[n['attrs'] for n in Document(body).nodes if n['tag']=='meta' and n['attrs'].get('property')=='og:url']
+              print('UPS_METADATA',json.dumps({'status':status,'canonical':page.canonical,'metadata':metas,'postings':structured}))
+          except Exception as e:print('UPS_METADATA',json.dumps({'error':str(e)}))
           PY
