@@ -18,6 +18,7 @@ import urllib.parse
 import urllib.request
 import urllib.robotparser
 import xml.etree.ElementTree as ET
+import uuid
 from employer_adapters import extract as extract_employer_page, Document
 from employer_sources import public_search, public_fetch
 from zoneinfo import ZoneInfo
@@ -69,6 +70,10 @@ def posting_key(url):
     if '/search/jobdetails/' in path:return path.rstrip('/').rsplit('/',1)[-1]
     if '/en-us/job-detail/' in path:return path.split('/en-us/job-detail/',1)[1].split('/')[0]
     tail=re.split(r'/jobs?/',urllib.parse.urlsplit(url).path,maxsplit=1)[-1].strip('/').split('/')
+    if urllib.parse.urlsplit(url).hostname=='www.jobs-ups.com':
+        encoded=re.fullmatch(r'UPBUPSGLOBAL([0-9A-Fa-f]{32})EXTERNALENUS',tail[0])
+        try:return str(uuid.UUID(encoded[1] if encoded else tail[0]))
+        except ValueError:pass
     if urllib.parse.urlsplit(url).hostname=='careers.phillips66.com' and len(tail)==2 and tail[-1].isdigit():return tail[-1]
     cisco=re.fullmatch(r'CISCISGLOBAL(\d+)EXTERNAL[A-Z]+',tail[0],re.I)
     if cisco:return cisco[1]
@@ -295,6 +300,8 @@ def normalize_posting(body, url, company, now):
         # The reviewed canonical job URL provides the distinct public ID.
         req=posting_key(url);identifier_type='posting-id'
     if not req and company in ('pepsico','costco') and posting_key(url).isdigit():
+        req=posting_key(url);identifier_type='posting-id'
+    if not req and company=='ups' and re.fullmatch(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}',posting_key(url)):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text

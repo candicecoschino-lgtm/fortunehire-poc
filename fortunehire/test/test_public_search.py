@@ -19,6 +19,14 @@ class PublicSearchTests(unittest.TestCase):
   cl.get.return_value=(200,'<script>phApp.ddo = '+json.dumps(payload)+';</script>')
   self.assertEqual(public_search(cl,Mock()),{req:'https://www.jobs-ups.com/us/en/job/'+req+'/Synthetic-Driver-Helper'})
   self.assertEqual(cl.discovery_dates[req],'2026-11-13');self.assertTrue(cl.discovery_limited)
+ def test_ups_canonical_global_id_and_search_uuid_refer_to_same_posting(self):
+  req='a60ee55e-ca1a-45cc-869d-d81b579f39f8';raw='https://www.jobs-ups.com/us/en/job/'+req+'/Synthetic-Helper'
+  canonical='https://www.jobs-ups.com/us/en/job/UPBUPSGLOBAL'+req.replace('-','').upper()+'EXTERNALENUS/Synthetic-Helper'
+  self.assertEqual(c.posting_key(raw),c.posting_key(canonical))
+  source={'@type':'JobPosting','title':'Synthetic Helper','datePosted':'2026-11-13','employmentType':'part_time','description':'Role description.','jobLocation':{'address':{'addressCountry':'United States of America','addressRegion':'Virginia','addressLocality':'Reston'}}}
+  doc='<link rel="canonical" href="'+canonical+'"><script type="application/ld+json">'+json.dumps(source)+'</script>'
+  with patch.dict(c.SOURCES,{'ups':('www.jobs-ups.com','Transportation')}):
+   job=c.normalize_posting(doc,raw,'ups',NOW);self.assertEqual(job['identifierType'],'posting-id');self.assertEqual(job['requisitionId'],req);self.assertEqual(job['employmentType'],'Part-time')
  def test_reviewed_policy_redirect_does_not_allow_foreign_job_redirects(self):
   redirect=c.RestrictedRedirect('careers.salesforce.com');target='https://www.salesforce.com/404/'
   req=c.urllib.request.Request('https://careers.salesforce.com/robots.txt')
