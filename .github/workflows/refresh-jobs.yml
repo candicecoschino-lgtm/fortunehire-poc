@@ -11,6 +11,7 @@ on:
       - 'fortunehire/scripts/employer_adapters.py'
       - 'fortunehire/scripts/employer_sources.py'
       - 'fortunehire/test/test_employer_sources.py'
+      - 'fortunehire/test/test_public_search.py'
       - 'fortunehire/test/test_valero.py'
       - 'fortunehire/scripts/collection_health.py'
       - 'fortunehire/test/test_collection_health.py'

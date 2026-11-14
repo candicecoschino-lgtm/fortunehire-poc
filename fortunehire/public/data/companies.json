@@ -670,11 +670,13 @@
         "state": "California"
       },
       "listYear": 2026,
-      "careerUrl": "https://careers.salesforce.com/",
+      "careerUrl": "https://www.salesforce.com/company/careers/",
       "profileSource": "https://fortune.com/company/salesforce/",
       "membershipSource": "https://fortune.com/company/salesforce/",
-      "reviewedAt": "2026-11-13",
-      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+      "reviewedAt": "2026-11-14",
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy. Updated to the corporate careers destination published by the former career-host redirect; job feed remains unconnected.",
+      "previousCareerUrl": "https://careers.salesforce.com/",
+      "verificationSource": "https://careers.salesforce.com/"
     },
     {
       "id": "target",

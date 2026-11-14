@@ -1,15 +1,15 @@
 # All 52 company feed statuses — November 14, 2026
 
-34 connected; 17 need further work or authorized access; RTX is paused. Connected feeds have limited samples rather than complete employer coverage. A failed check does not establish a need for a paid provider.
+37 connected; 14 need further integration, source evidence, or authorized access; RTX remains paused. Samples are bounded and do not represent all openings. No employer is classified as requiring a paid provider.
 
-Coca-Cola’s November 14 checks returned employer HTTP 503 service errors and the official tenant-matched Workday outage redirect. Its previous successful check dates were retained. Source-health details remain visible on the website and in collection-status.json.
+Known health issue: Coca-Cola’s Workday service is unavailable; previous verification dates remain preserved. See collection-status.json for the latest actual result.
 
 | Company | Status | Reason / next step |
 | --- | --- | --- |
 | AT&T | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Abbott Laboratories | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Alphabet (Google) | access-restricted | Published crawler rules exclude the tested Google career paths. Obtain an authorized job feed or employer permission. |
-| Amazon | adapter-needed | Official search page loads, but individual jobs are not in its sitemap; the linked search-data script host returned 403. Review a permitted public search interface or an authorized feed. |
+| Amazon | connected | Verified public recent-job search, individual role identity, employer posting dates, and independent per-ID refresh. Twenty recent U.S. roles in the initial sample. Monitor the bounded sample, published fields, source health, and scheduled refreshes. |
 | Apple | rules-unresolved | The official jobs-host robots file redirects to a corporate page-not-found destination. Resolve the published crawler-policy and search-interface requirements. |
 | Bank of America | connected | Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata. Monitor field coverage, freshness, and scheduled refresh results. |
 | Boeing | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
@@ -24,7 +24,7 @@ Coca-Cola’s November 14 checks returned employer HTTP 503 service errors and t
 | Citigroup | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Coca-Cola | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Comcast | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
-| Costco Wholesale | adapter-needed | Current official portal verified. All twenty sampled roles had employer posting dates outside the fourteen-day window; none were published. The separately linked technology portal excludes the requested crawler access. Find permitted discovery of recent dated roles or request an authorized feed. No paid-provider requirement has been established. |
+| Costco Wholesale | connected | Date-sorted public search found four recent roles missed by the earlier sitemap sample. Individual employer posting dates were verified; sixteen older candidates stayed excluded. Monitor the bounded sample, published fields, source health, and scheduled refreshes. |
 | Dell Technologies | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
 | Delta Air Lines | verification-needed | The officially linked Avature portal returned HTTP 202 without usable job data in this check. Review a permitted discovery method and dated job details. |
 | Elevance Health | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
@@ -34,7 +34,7 @@ Coca-Cola’s November 14 checks returned employer HTTP 503 service errors and t
 | General Motors | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Home Depot | access-restricted | The directly linked role parses locally, but the GitHub request returned HTTP 403. Use an authorized source that works from the scheduled collector. |
 | Humana | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
-| IBM | verification-needed | The corporate sitemap timed out; the linked careers portal returned HTTP 202 without usable job discovery. Review a permitted source with verified publication dates. |
+| IBM | verification-needed | The corporate public career search displays jobs, but the tested individual career page returned HTTP 202 without usable posting metadata. Verify a permitted individual-job data interface with actual employer posting dates, state evidence, and publication status. |
 | JPMorgan Chase | access-restricted | The Oracle portal linked by JPMorgan returned HTTP 403. Obtain an authorized endpoint or employer permission. |
 | Kroger | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
 | Lowe's | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
@@ -48,10 +48,10 @@ Coca-Cola’s November 14 checks returned employer HTTP 503 service errors and t
 | Phillips 66 | connected | Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata. Monitor field coverage, freshness, and scheduled refresh results. |
 | Progressive | access-restricted | Official-host access returned HTTP 403. Use an authorized source; do not bypass the denial. |
 | RTX | paused | Skipped at the explicit user request after GitHub access denial. Leave paused unless the user asks to revisit it. |
-| Salesforce | rules-unresolved | The career-host robots file redirects to a corporate 404 page. Resolve the current public job portal and crawler policy. |
+| Salesforce | adapter-needed | The old career host redirects to Salesforce’s current corporate careers site. Its robots redirect was resolved to an explicit corporate HTTP 404; the current jobs UI needs a new integration and its linked search-script request returned HTTP 403. Review a permitted public job-data interface or obtain an authorized employer feed; do not retry the denied script through alternate channels. |
 | Target | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Tesla | access-restricted | Official-host access returned HTTP 403. Use an authorized source; do not bypass the denial. |
-| UPS | retired-discovery | The published sample contained retired individual-job URLs, including HTTP 410; no current verified posting was collected. Verify the replacement discovery source and active individual pages. |
+| UPS | connected | Current U.S. search data replaces the retired sitemap routes. Search UUIDs and canonical global posting IDs are verified as the same role. Six recent postings collected and refreshed. Monitor the bounded sample, published fields, source health, and scheduled refreshes. |
 | United Airlines Holdings | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | UnitedHealth Group | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Valero Energy | connected | Official featured Taleo postings collected and refreshed successfully from GitHub. One recent role; five older featured roles excluded. Monitor the limited featured-job sample and review permitted broader discovery. |

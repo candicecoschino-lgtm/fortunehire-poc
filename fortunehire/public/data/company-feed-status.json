@@ -1,15 +1,14 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T13:52:46.278200+00:00",
+  "updatedAt": "2026-11-14T15:01:25.304821+00:00",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 9,
-    "adapter-needed": 2,
-    "connected": 34,
+    "adapter-needed": 1,
+    "connected": 37,
     "location-review-needed": 1,
     "paused": 1,
-    "retired-discovery": 1,
-    "rules-unresolved": 2,
+    "rules-unresolved": 1,
     "verification-needed": 2
   },
   "companies": [
@@ -61,12 +60,14 @@
     {
       "companyId": "amazon",
       "company": "Amazon",
-      "status": "adapter-needed",
-      "reason": "Official search page loads, but individual jobs are not in its sitemap; the linked search-data script host returned 403.",
-      "nextStep": "Review a permitted public search interface or an authorized feed.",
+      "status": "connected",
+      "reason": "Verified public recent-job search, individual role identity, employer posting dates, and independent per-ID refresh. Twenty recent U.S. roles in the initial sample.",
+      "nextStep": "Monitor the bounded sample, published fields, source health, and scheduled refreshes.",
       "officialCareerUrl": "https://www.amazon.jobs/en/",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "reviewedAt": "2026-11-14",
+      "previousReason": "Official search page loads, but individual jobs are not in its sitemap; the linked search-data script host returned 403.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43607132530",
+      "historicalGithubObservation": {
         "companyId": "amazon",
         "careerUrl": "https://www.amazon.jobs/en/",
         "landingAllowed": true,
@@ -277,19 +278,20 @@
     {
       "companyId": "costco",
       "company": "Costco Wholesale",
-      "status": "adapter-needed",
-      "reason": "Current official portal verified. All twenty sampled roles had employer posting dates outside the fourteen-day window; none were published. The separately linked technology portal excludes the requested crawler access.",
-      "nextStep": "Find permitted discovery of recent dated roles or request an authorized feed. No paid-provider requirement has been established.",
+      "status": "connected",
+      "reason": "Date-sorted public search found four recent roles missed by the earlier sitemap sample. Individual employer posting dates were verified; sixteen older candidates stayed excluded.",
+      "nextStep": "Monitor the bounded sample, published fields, source health, and scheduled refreshes.",
       "officialCareerUrl": "https://careers.costco.com/",
       "reviewedAt": "2026-11-14",
-      "githubObservation": {
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43607132530",
+      "previousReason": "Current official portal verified. All twenty sampled roles had employer posting dates outside the fourteen-day window; none were published. The separately linked technology portal excludes the requested crawler access.",
+      "historicalGithubObservation": {
         "companyId": "costco",
         "careerUrl": "https://www.costco.com/f/-/careers",
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Sitemap contains no individual job URLs"
-      },
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43601548760"
+      }
     },
     {
       "companyId": "dell",
@@ -347,7 +349,8 @@
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Sitemap contains no individual job URLs"
-      }
+      },
+      "latestReviewNote": "November 14 recheck returned HTTP 503. Job-specific state/location and work-arrangement verification is still required after service recovery."
     },
     {
       "companyId": "fedex",
@@ -418,10 +421,10 @@
       "companyId": "ibm",
       "company": "IBM",
       "status": "verification-needed",
-      "reason": "The corporate sitemap timed out; the linked careers portal returned HTTP 202 without usable job discovery.",
-      "nextStep": "Review a permitted source with verified publication dates.",
+      "reason": "The corporate public career search displays jobs, but the tested individual career page returned HTTP 202 without usable posting metadata.",
+      "nextStep": "Verify a permitted individual-job data interface with actual employer posting dates, state evidence, and publication status.",
       "officialCareerUrl": "https://www.ibm.com/careers",
-      "reviewedAt": "2026-11-13",
+      "reviewedAt": "2026-11-14",
       "githubObservation": {
         "companyId": "ibm",
         "careerUrl": "https://www.ibm.com/careers",
@@ -611,11 +614,11 @@
     {
       "companyId": "salesforce",
       "company": "Salesforce",
-      "status": "rules-unresolved",
-      "reason": "The career-host robots file redirects to a corporate 404 page.",
-      "nextStep": "Resolve the current public job portal and crawler policy.",
-      "officialCareerUrl": "https://careers.salesforce.com/",
-      "reviewedAt": "2026-11-13",
+      "status": "adapter-needed",
+      "reason": "The old career host redirects to Salesforce’s current corporate careers site. Its robots redirect was resolved to an explicit corporate HTTP 404; the current jobs UI needs a new integration and its linked search-script request returned HTTP 403.",
+      "nextStep": "Review a permitted public job-data interface or obtain an authorized employer feed; do not retry the denied script through alternate channels.",
+      "officialCareerUrl": "https://www.salesforce.com/company/careers/",
+      "reviewedAt": "2026-11-14",
       "githubObservation": {
         "companyId": "salesforce",
         "careerUrl": "https://careers.salesforce.com/",
@@ -648,12 +651,15 @@
     {
       "companyId": "ups",
       "company": "UPS",
-      "status": "retired-discovery",
-      "reason": "The published sample contained retired individual-job URLs, including HTTP 410; no current verified posting was collected.",
-      "nextStep": "Verify the replacement discovery source and active individual pages.",
+      "status": "connected",
+      "reason": "Current U.S. search data replaces the retired sitemap routes. Search UUIDs and canonical global posting IDs are verified as the same role. Six recent postings collected and refreshed.",
+      "nextStep": "Monitor the bounded sample, published fields, source health, and scheduled refreshes.",
       "officialCareerUrl": "https://www.jobs-ups.com/us/en",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "reviewedAt": "2026-11-14",
+      "latestReviewNote": "November 14 local connection checks were interrupted. Earlier GitHub samples returned retired HTTP 410 pages; replacement discovery remains unverified.",
+      "previousReason": "The published sample contained retired individual-job URLs, including HTTP 410; no current verified posting was collected.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43607132530",
+      "historicalGithubObservation": {
         "companyId": "ups",
         "careerUrl": "https://www.jobs-ups.com/us/en",
         "landingAllowed": true,
@@ -664,8 +670,7 @@
         "structured": false,
         "hasNextData": false,
         "hasDisneyMetadata": false
-      },
-      "latestReviewNote": "November 14 local connection checks were interrupted. Earlier GitHub samples returned retired HTTP 410 pages; replacement discovery remains unverified."
+      }
     },
     {
       "companyId": "united-airlines",

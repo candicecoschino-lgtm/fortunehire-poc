@@ -18,7 +18,8 @@ import urllib.parse
 import urllib.request
 import urllib.robotparser
 import xml.etree.ElementTree as ET
-from employer_adapters import extract as extract_employer_page, Document
+import uuid
+from employer_adapters import extract as extract_employer_page, Document, ups_opening_pay
 from employer_sources import public_search, public_fetch
 from zoneinfo import ZoneInfo
 
@@ -69,6 +70,10 @@ def posting_key(url):
     if '/search/jobdetails/' in path:return path.rstrip('/').rsplit('/',1)[-1]
     if '/en-us/job-detail/' in path:return path.split('/en-us/job-detail/',1)[1].split('/')[0]
     tail=re.split(r'/jobs?/',urllib.parse.urlsplit(url).path,maxsplit=1)[-1].strip('/').split('/')
+    if urllib.parse.urlsplit(url).hostname=='www.jobs-ups.com':
+        encoded=re.fullmatch(r'UPBUPSGLOBAL([0-9A-Fa-f]{32})EXTERNALENUS',tail[0])
+        try:return str(uuid.UUID(encoded[1] if encoded else tail[0]))
+        except ValueError:pass
     if urllib.parse.urlsplit(url).hostname=='careers.phillips66.com' and len(tail)==2 and tail[-1].isdigit():return tail[-1]
     cisco=re.fullmatch(r'CISCISGLOBAL(\d+)EXTERNAL[A-Z]+',tail[0],re.I)
     if cisco:return cisco[1]
@@ -160,6 +165,20 @@ def extract_published_pay(description, locations, company, nationwide=False):
     states = sorted({loc['state'] for loc in locations})
     lines = [re.sub(r'\s+',' ',line).strip() for line in description.splitlines() if line.strip()]
     flat = ' '.join(lines)
+    if company=='amazon' and re.search(r'The base salary range for this position is listed below',flat,re.I):
+        records=[]
+        for line in lines:
+            match=re.fullmatch(r'USA,\s*([A-Z]{2}),\s*(.+?)\s*[-\u2013]\s*([\d,]+(?:\.\d{1,2})?)\s*[-\u2013]\s*([\d,]+(?:\.\d{1,2})?)\s+USD\s+(hourly|annually)',line,re.I)
+            if not match:continue
+            low,high=float(match[3].replace(',','')),float(match[4].replace(',',''))
+            if 0<low<=high:records.append((match,line,low,high))
+        if records:
+            published={'text':' | '.join(line for match,line,low,high in records)[:1000],'scopeStates':sorted({state_name(m[1]) for m,line,low,high in records if state_name(m[1])}),'note':'Employer-published base-pay bands for the named locations; other locations may differ.'}
+            salary=None
+            if len(records)==1:
+                match,line,low,high=records[0];scope=state_name(match[1])
+                if states==[scope] and any(loc['city'].casefold()==match[2].strip().casefold() for loc in locations):salary={'min':low,'max':high,'period':'hour' if match[5].lower()=='hourly' else 'year','currency':'USD','scopeStates':[scope]}
+            return salary,published
     if company=='cardinal-health' and len(states)==1:
         fixed=[(line,re.fullmatch(r'Pay rate:\s*('+MONEY+r')\s+per hour\.?',line,re.I)) for line in lines]
         fixed=[(line,match) for line,match in fixed if match]
@@ -181,7 +200,7 @@ def extract_published_pay(description, locations, company, nationwide=False):
             return None, {'text':'Primary-location salary range: '+'; '.join(bands),'scopeStates':scoped,'note':'Employer range for '+scoped[0]+'. Other locations may differ. Pay period is not specified in this label.'}
     evidence = []
     for i,line in enumerate(lines):
-        employer_label=(company=='verizon' and re.match(r'^The annual salary range for the location',line,re.I) or company=='humana' and not re.search(r'Pay Per Visit/Unit Rate',description,re.I) and re.match(r'^The compensation range below reflects a good faith estimate of starting base pay',line,re.I))
+        employer_label=(company=='verizon' and re.match(r'^The annual salary range for the location',line,re.I) or company=='humana' and not re.search(r'Pay Per Visit/Unit Rate',description,re.I) and re.match(r'^The compensation range below reflects a good faith estimate of starting base pay',line,re.I) or company=='costco' and re.match(r'^Salary Range:\s*\$',line,re.I))
         if employer_label or re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',line,re.I) or company=='centene' and re.match(r'^Pay Range:\s*\$',line,re.I) or company in ('bank-of-america','cardinal-health') and re.match(r'^(?:Anticipated\s+)?Pay range\b',line,re.I):
             context = line
             if not PAY_RANGE.search(context) and i+1<len(lines): context += ' '+lines[i+1]
@@ -244,6 +263,7 @@ def normalize_posting(body, url, company, now):
     host, sector = SOURCES[company]
     url = job_url(url, host)
     page = Page(body)
+    if company=='amazon':page.scripts=[]
     candidates = []
     for script in page.scripts:
         try: candidates.extend(postings(json.loads(script)))
@@ -281,9 +301,11 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not req and company in ('pepsico','costco') and posting_key(url).isdigit():
         req=posting_key(url);identifier_type='posting-id'
+    if not req and company=='ups' and re.fullmatch(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}',posting_key(url)):
+        req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data'):
+    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]
@@ -434,6 +456,13 @@ def normalize_posting(body, url, company, now):
         salary = {'min':low,'max':high,'period':period,'currency':'USD','scopeStates':[locations[0]['state']]}
         salary_evidence = 'JobPosting.baseSalary; single published state'
     text_salary, published_pay = extract_published_pay(description,locations,company,nationwide=remote_scope=='nationwide')
+    if salary is None and company=='ups' and len({loc['state'] for loc in locations})==1:
+        opening=ups_opening_pay(body,req)
+        if opening:
+            rate,raw=opening;scope=[locations[0]['state']]
+            salary={'min':rate,'max':rate,'period':'hour','currency':'USD','scopeStates':scope}
+            salary_evidence='UPS public jobDetail.openingPayRate; matching public posting ID and single U.S. state'
+            published_pay={'text':'Employer opening pay rate: '+raw,'scopeStates':scope,'note':'Employer-published starting hourly rate for the listed location.'}
     if salary is None and text_salary:
         salary=text_salary
         salary_evidence='Explicit employer pay text with stated period; scoped to listed or explicitly named states'
@@ -486,6 +515,11 @@ class SourceError(RuntimeError): pass
 class RestrictedRedirect(urllib.request.HTTPRedirectHandler):
     def __init__(self, host): self.host = host
     def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if self.host=='careers.salesforce.com' and req.full_url=='https://careers.salesforce.com/robots.txt' and newurl=='https://www.salesforce.com/404/':
+            # RFC 9309 2.3.1.2: follow the published policy redirect.
+            # This exact corporate destination returns HTTP 404; job-page
+            # requests retain the strict source-host restriction.
+            return super().redirect_request(req,fp,code,msg,headers,newurl)
         target=urllib.parse.urlsplit(newurl)
         tenant=self.host.split('.')[0]
         if self.host.endswith('.myworkdayjobs.com') and target.scheme=='https' and target.netloc=='www.myworkday.com' and target.path=='/wday/drs/outage' and urllib.parse.parse_qs(target.query).get('t')==[tenant]:

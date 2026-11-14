@@ -137,6 +137,18 @@
     "valero": {
       "host": "valero.taleo.net",
       "sector": "Energy"
+    },
+    "amazon": {
+      "host": "www.amazon.jobs",
+      "sector": "Consumer Discretionary"
+    },
+    "costco": {
+      "host": "careers.costco.com",
+      "sector": "Retail"
+    },
+    "ups": {
+      "host": "www.jobs-ups.com",
+      "sector": "Transportation"
     }
   }
 }

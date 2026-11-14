@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 34 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 37 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -47,3 +47,13 @@ Valero uses the query-based public Taleo job ID. Display fields are read from th
 Workflow health: an explicit upstream HTTP 5xx response or a tenant-matched official Workday outage redirect produces a warning and remains in the published source-error report and site banner. It retains previous job verification dates. Authentication/access problems, identity errors, missing diagnostics, failed tests, and invalid publication data still fail their checks. This separates employer availability from code/data validation without claiming every source refreshed successfully.
 
 Workday outage redirects are recognized only for the exact HTTPS vendor outage host/path and matching employer tenant. They are never followed. All other cross-host/protocol redirects remain rejected; a generic empty discovery result remains a failure requiring investigation.
+
+## Additional public searches — November 14
+
+Amazon uses the credential-free public /en/search.json recent-results interface and an independent base_query job-ID lookup for older tracked roles. Every record is checked against the individual role page’s ID and title; metadata title whitespace is normalized. Posting dates come from the employer’s posted_date value, never updated_time. Pay is taken from the scoped role page, because search descriptions omit some pay information. Explicit single-location USD hourly/annual base bands support numeric filtering; mixed locations and pay components remain text. An office-location type is not used to invent a work arrangement.
+
+Costco uses the public /api/jobs interface sorted by posted_date, then checks individual JobPosting dates. The earlier sitemap sample consisted of older evergreen roles; sorting by genuine posting date found four eligible roles. Explicit hourly Salary Range labels support pay filtering; experience/year-dependent intern wages remain text.
+
+UPS uses employer-published eagerLoadRefineSearch data from the current U.S. search page. UUIDs and canonical UPBUPSGLOBAL identifiers resolve to the same posting; missing requisitions are labeled public posting IDs. Role JobPosting dates control eligibility; the separate dateCreated field is not substituted. A matching jobDetail.openingPayRate with an explicit hourly period and a single U.S. state supports a starting-rate pay filter.
+
+The exact Salesforce robots redirect to its own corporate HTTP 404 page is followed only for robots retrieval, following RFC 9309 sections 2.3.1.2–3: https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1.2 . Job redirects retain the strict host restriction. Its feed stays disabled pending a working integration; access denials are not bypassed.
