@@ -1,4 +1,4 @@
-name: Inspect Apple public job discovery after policy resolution
+name: Inspect Apple public search discovery
 on:
   push:
     paths: ['.github/workflows/review-remaining-public.yml']
@@ -20,6 +20,7 @@ jobs:
           import sys,json,urllib.request,xml.etree.ElementTree as ET
           sys.path.insert(0,'scripts')
           import collect_jobs as c
+          from employer_adapters import Document
           class ApplePolicy(c.RestrictedRedirect):
               def redirect_request(self,req,fp,code,msg,headers,newurl):
                   allowed={('https://jobs.apple.com/robots.txt','https://apple.com/pagenotfound'),('https://apple.com/pagenotfound','https://www.apple.com/pagenotfound')}
@@ -30,9 +31,9 @@ jobs:
           row={'companyId':'apple'}
           try:
               cl=c.Client('jobs.apple.com');row['policyResolved']=True
-              status,body=cl.get('https://jobs.apple.com/sitemap.xml');row['sitemapStatus']=status;row['sitemapPrefix']=body[:160]
-              if status==200:
-                  root=ET.fromstring(body);row['root']=root.tag;row['urls']=[n.text for n in root.iter() if n.tag.endswith('loc')][:3]
+              status,body=cl.get('https://jobs.apple.com/en-us/search');row['searchStatus']=status
+              row['roleLinks']=list(dict.fromkeys(n['attrs']['href'] for n in Document(body).nodes if n['tag']=='a' and '/details/' in n['attrs'].get('href','')))[:5]
+              row['structuredJobs']=len([j for s in c.Page(body).scripts for j in c.postings(json.loads(s))])
           except Exception as e:row['error']=str(e)
           print('APPLE_REVIEW',json.dumps(row))
           PY
