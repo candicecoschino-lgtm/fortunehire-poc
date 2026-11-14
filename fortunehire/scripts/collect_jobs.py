@@ -195,7 +195,7 @@ def extract_published_pay(description, locations, company, nationwide=False):
             return None, {'text':'Primary-location salary range: '+'; '.join(bands),'scopeStates':scoped,'note':'Employer range for '+scoped[0]+'. Other locations may differ. Pay period is not specified in this label.'}
     evidence = []
     for i,line in enumerate(lines):
-        employer_label=(company=='verizon' and re.match(r'^The annual salary range for the location',line,re.I) or company=='humana' and not re.search(r'Pay Per Visit/Unit Rate',description,re.I) and re.match(r'^The compensation range below reflects a good faith estimate of starting base pay',line,re.I))
+        employer_label=(company=='verizon' and re.match(r'^The annual salary range for the location',line,re.I) or company=='humana' and not re.search(r'Pay Per Visit/Unit Rate',description,re.I) and re.match(r'^The compensation range below reflects a good faith estimate of starting base pay',line,re.I) or company=='costco' and re.match(r'^Salary Range:\s*\$',line,re.I))
         if employer_label or re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',line,re.I) or company=='centene' and re.match(r'^Pay Range:\s*\$',line,re.I) or company in ('bank-of-america','cardinal-health') and re.match(r'^(?:Anticipated\s+)?Pay range\b',line,re.I):
             context = line
             if not PAY_RANGE.search(context) and i+1<len(lines): context += ' '+lines[i+1]
@@ -501,6 +501,11 @@ class SourceError(RuntimeError): pass
 class RestrictedRedirect(urllib.request.HTTPRedirectHandler):
     def __init__(self, host): self.host = host
     def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if self.host=='careers.salesforce.com' and req.full_url=='https://careers.salesforce.com/robots.txt' and newurl=='https://www.salesforce.com/404/':
+            # RFC 9309 2.3.1.2: follow the published policy redirect.
+            # This exact corporate destination returns HTTP 404; job-page
+            # requests retain the strict source-host restriction.
+            return super().redirect_request(req,fp,code,msg,headers,newurl)
         target=urllib.parse.urlsplit(newurl)
         tenant=self.host.split('.')[0]
         if self.host.endswith('.myworkdayjobs.com') and target.scheme=='https' and target.netloc=='www.myworkday.com' and target.path=='/wday/drs/outage' and urllib.parse.parse_qs(target.query).get('t')==[tenant]:

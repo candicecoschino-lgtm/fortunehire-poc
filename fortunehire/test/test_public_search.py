@@ -13,6 +13,13 @@ def record(**kw):
 def page(**kw):
  return '<meta property="og:url" content="'+kw.get('url',URL)+'"><h1 class="title">'+kw.get('title','Synthetic support engineer')+'</h1><div id="job-detail-body"><div class="content"><p>'+kw.get('description','Role duties.')+'</p></div></div><aside>Work Type: Remote</aside>'
 class PublicSearchTests(unittest.TestCase):
+ def test_reviewed_policy_redirect_does_not_allow_foreign_job_redirects(self):
+  redirect=c.RestrictedRedirect('careers.salesforce.com');target='https://www.salesforce.com/404/'
+  req=c.urllib.request.Request('https://careers.salesforce.com/robots.txt')
+  self.assertEqual(redirect.redirect_request(req,None,301,'Moved',{},target).full_url,target)
+  for url in ['https://careers.salesforce.com/en/jobs/123/role','https://careers.salesforce.com/']:
+   with self.assertRaises(ValueError):redirect.redirect_request(c.urllib.request.Request(url),None,301,'Moved',{},target)
+  with self.assertRaises(ValueError):redirect.redirect_request(req,None,301,'Moved',{},'https://other.example/robots.txt')
  def test_amazon_search_is_bounded_us_only_and_uses_real_posting_dates(self):
   cl=Mock(host='www.amazon.jobs');cl.get.return_value=(200,json.dumps({'error':None,'hits':200,'jobs':[record(),record(id_icims='999',job_path='/en/jobs/999/foreign',country_code='IND'),record(id_icims='OTHER')]}))
   self.assertEqual(public_search(cl,Mock()),{'12345':URL});self.assertEqual(cl.discovery_dates['12345'],'2026-11-14');self.assertTrue(cl.discovery_limited)
@@ -43,4 +50,8 @@ class PublicSearchTests(unittest.TestCase):
   cl=Mock(host='careers.costco.com');cl.get.return_value=(200,json.dumps({'totalCount':19000,'jobs':[{'data':{'req_id':'123','slug':'123','country':'United States','posted_date':'2026-11-12'}},{'data':{'req_id':'456','slug':'789','country':'United States'}}]}))
   self.assertEqual(public_search(cl,Mock()),{'123':'https://careers.costco.com/jobs/123'});self.assertEqual(cl.discovery_dates['123'],'2026-11-12');self.assertTrue(cl.discovery_limited)
   self.assertIn('posted_date',cl.get.call_args.args[0])
+ def test_costco_explicit_hourly_range_supports_pay_filter_but_year_bands_do_not(self):
+  loc=[{'city':'Test City','state':'Washington'}]
+  salary,pay=c.extract_published_pay('Salary Range: $21.00/hr - $32.90/hr',loc,'costco');self.assertEqual(salary['period'],'hour');self.assertEqual(salary['min'],21)
+  salary,pay=c.extract_published_pay('Salary Range: 1st year intern $25/hr',loc,'costco');self.assertIsNone(salary)
 if __name__=='__main__':unittest.main()

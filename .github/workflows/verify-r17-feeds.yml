@@ -1,4 +1,4 @@
-name: Verify Amazon title normalization and Costco public feeds
+name: Verify public search refresh and published pay
 on:
   push:
     paths: ['.github/workflows/verify-r17-feeds.yml']
@@ -35,6 +35,12 @@ jobs:
           print('STAGE_JOBS',json.dumps(data['jobs']))
           print('STAGE_SOURCES',json.dumps(data['automation']['sources']))
           print('STAGE_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
+          sample=next(j for j in data['jobs'] if j['companyId']=='amazon')
+          client=c.Client('www.amazon.jobs')
+          status,body=c.public_fetch(client,sample['url'],c.Client)
+          checked=c.normalize_posting(body,sample['url'],'amazon',c.datetime.now(c.timezone.utc))
+          assert checked['requisitionId']==sample['requisitionId'], 'Per-ID Amazon refresh did not match'
+          print('AMAZON_ID_REFRESH',checked['requisitionId'])
           assert initial and refreshed, 'A source failed collection or refresh'
           assert all(any(j['companyId']==key for j in data['jobs']) for key in c.SOURCES), 'A new feed has no verified recent jobs'
           PY
