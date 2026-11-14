@@ -1,4 +1,4 @@
-name: Verify Fannie Mae after Workday recovery
+name: Verify Fannie Mae published annual salary ranges
 on:
   push:
     paths: ['.github/workflows/verify-workday-recovery.yml']

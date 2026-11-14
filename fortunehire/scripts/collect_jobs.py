@@ -165,6 +165,19 @@ def extract_published_pay(description, locations, company, nationwide=False):
     states = sorted({loc['state'] for loc in locations})
     lines = [re.sub(r'\s+',' ',line).strip() for line in description.splitlines() if line.strip()]
     flat = ' '.join(lines)
+    if company=='fannie-mae':
+        bands=[]
+        for line in lines:
+            match=re.search(r'^(?:Target\s+)?Pay Range:\s*\$([\d,]+(?:\.\d{1,2})?)\s*[-\u2013\u2014]\s*\$?([\d,]+(?:\.\d{1,2})?)\s+(?:a|per)\s+year\b',line,re.I)
+            if match:
+                low,high=float(match[1].replace(',','')),float(match[2].replace(',',''))
+                if 0<low<=high:bands.append((low,high,match[0]))
+        if bands:
+            published={'text':' | '.join(dict.fromkeys(b[2] for b in bands))[:1000],'scopeStates':states,'note':'Employer-published annual hiring-pay range for the listed office; incentives may be separate.'}
+            unique={(low,high) for low,high,label in bands}
+            if len(unique)==1 and len(states)==1:
+                low,high=next(iter(unique));return {'min':low,'max':high,'period':'year','currency':'USD','scopeStates':states},published
+            return None,published
     if company=='amazon' and re.search(r'The base salary range for this position is listed below',flat,re.I):
         records=[]
         for line in lines:
