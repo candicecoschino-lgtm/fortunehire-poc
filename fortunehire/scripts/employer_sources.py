@@ -4,7 +4,14 @@ import html
 from urllib.parse import urlencode, urlsplit, parse_qs
 import re
 from employer_adapters import Document, text
-from datetime import datetime
+from datetime import datetime,timezone,timedelta
+
+def salesforce_rows(body):
+    data=json.loads(body);rows=data.get('Report_Entry')
+    if not isinstance(rows,list) or data.get('Count')!=len(rows) or data.get('Total_Jobs')!=len(rows):raise ValueError('Incomplete Salesforce public job snapshot')
+    stamp=datetime.fromisoformat(data.get('Fetch_Timestamp',''))
+    if stamp.tzinfo is None or not timedelta(0)<=datetime.now(timezone.utc)-stamp<=timedelta(hours=24):raise ValueError('Salesforce public job snapshot is stale or future-dated')
+    return rows
 
 def amazon_rows(body):
     data=json.loads(body)
@@ -23,6 +30,19 @@ API='/hcmRestApi/resources/11.13.18.05/'
 
 def public_search(client, client_factory):
     """Inspect at most 60 recent results; publishing still checks each job."""
+    if client.host=='salesforce.wd12.myworkdayjobs.com':
+        data_client=client_factory('a.sfdcstatic.com')
+        status,body=data_client.get('https://a.sfdcstatic.com/digital/xsf/careers/prod/jobs_1.json')
+        if status!=200:raise ValueError('Salesforce public job snapshot unavailable')
+        found={};dates={}
+        for row in salesforce_rows(body):
+            if not isinstance(row,dict) or not any(country in ('United States','United States of America','US','USA') for country in row.get('Countries',[])):continue
+            req=row.get('Job_Requisition_Ref_ID','');url=row.get('External_Job_Posting_Site','');p=urlsplit(url)
+            if not re.fullmatch(r'JR\d+',req) or p.scheme!='https' or p.netloc!=client.host or p.query or p.fragment or not re.fullmatch(r'/External_Career_Site/job/[^/]+/[^/]+_'+re.escape(req),p.path):continue
+            if req in found and found[req]!=url:raise ValueError('Conflicting Salesforce public posting identity')
+            found[req]=url;dates[req]=row.get('External_Job_Posting_Start_Date','')
+        client.discovery_dates=dates;client.discovery_limited=False;client.discovery_warnings=[]
+        return found
     if client.host=='jobs.apple.com':
         from apple_public import role_id
         from urllib.parse import urljoin

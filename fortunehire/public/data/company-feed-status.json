@@ -1,13 +1,12 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T19:11:46.987478+00:00",
+  "updatedAt": "2026-11-14T19:44:00.136144+00:00",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
-    "access-restricted": 9,
-    "adapter-needed": 1,
-    "connected": 39,
+    "access-restricted": 10,
+    "connected": 40,
     "paused": 1,
-    "verification-needed": 2
+    "verification-needed": 1
   },
   "companies": [
     {
@@ -312,8 +311,8 @@
       "companyId": "delta",
       "company": "Delta Air Lines",
       "status": "verification-needed",
-      "reason": "November 14 public portal check returned HTTP 202 without usable individual-job links or posting metadata.",
-      "nextStep": "Verify a usable permitted employer interface with actual posting dates and locations.",
+      "reason": "Delta’s official corporate careers page currently announces career-site maintenance, slow responses and possible outages. The linked job portal returns unusable HTTP 202 responses; the latest external fetch also returned HTTP 406.",
+      "nextStep": "Recheck after the employer’s maintenance ends or obtain a permitted feed with individual posting dates and locations.",
       "officialCareerUrl": "https://www.delta.com/us/en/careers/overview",
       "reviewedAt": "2026-11-14",
       "githubObservation": {
@@ -322,7 +321,9 @@
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Unexpected sitemap format; manual adapter review required"
-      }
+      },
+      "latestReviewNote": "Employer maintenance notice: https://www.delta.com/us/en/careers/overview",
+      "latestVerificationUrl": "https://www.delta.com/us/en/careers/overview"
     },
     {
       "companyId": "elevance-health",
@@ -419,9 +420,9 @@
     {
       "companyId": "ibm",
       "company": "IBM",
-      "status": "verification-needed",
-      "reason": "Corporate career search displays jobs. The tested individual page returns HTTP 202 without usable job metadata. The search client publishes an API template, but its robots URL redirects to an HTML corporate homepage rather than a verified policy.",
-      "nextStep": "Resolve the published API access policy and verify individual posting dates, states, and status before enabling.",
+      "status": "access-restricted",
+      "reason": "Public corporate search API returns full job descriptions and employer dates. Its exact robots redirect chain was resolved and parsed using the published rules. However, a current individual application page returns HTTP 202 with an explicit robot-verification challenge to the automated collector, both locally and on GitHub. Search metadata alone does not supply verified state-level job geography.",
+      "nextStep": "Obtain an employer-permitted interface with job-specific U.S. states and current posting status before enabling; do not bypass the robot-verification challenge.",
       "officialCareerUrl": "https://www.ibm.com/careers",
       "reviewedAt": "2026-11-14",
       "githubObservation": {
@@ -430,7 +431,8 @@
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Interrupted employer download after three attempts: The read operation timed out"
-      }
+      },
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43633427843"
     },
     {
       "companyId": "jpmorgan-chase",
@@ -613,16 +615,18 @@
     {
       "companyId": "salesforce",
       "company": "Salesforce",
-      "status": "adapter-needed",
-      "reason": "The old career host redirects to Salesforce’s current corporate careers site. Its robots redirect was resolved to an explicit corporate HTTP 404; the current jobs UI needs a new integration and its linked search-script request returned HTTP 403.",
-      "nextStep": "Review a permitted public job-data interface or obtain an authorized employer feed; do not retry the denied script through alternate channels.",
-      "officialCareerUrl": "https://www.salesforce.com/company/careers/",
+      "status": "connected",
+      "reason": "Public corporate jobs page loads a credential-free Salesforce CDN snapshot containing official Workday application links. Twenty recent U.S. postings passed individual-page verification and independent refresh, including three state-restricted Remote roles and one explicit Hybrid role. Generic TELECOMMUTE metadata is ignored; explicit U.S. state/city labels supply geography.",
+      "nextStep": "Monitor snapshot freshness and completeness, bounded collection, published pay, work-arrangement evidence and closures.",
+      "officialCareerUrl": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site",
       "reviewedAt": "2026-11-14",
       "githubObservation": {
         "companyId": "salesforce",
         "careerUrl": "https://careers.salesforce.com/",
         "accessError": "Unexpected source host or protocol"
-      }
+      },
+      "previousReason": "The old career host redirects to Salesforce’s current corporate careers site. Its robots redirect was resolved to an explicit corporate HTTP 404; the current jobs UI needs a new integration and its linked search-script request returned HTTP 403.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43633427843"
     },
     {
       "companyId": "target",

@@ -13,6 +13,7 @@ on:
       - 'fortunehire/scripts/apple_public.py'
       - 'fortunehire/test/test_apple.py'
       - 'fortunehire/test/test_fannie.py'
+      - 'fortunehire/test/test_salesforce.py'
       - 'fortunehire/test/test_employer_sources.py'
       - 'fortunehire/test/test_public_search.py'
       - 'fortunehire/test/test_valero.py'

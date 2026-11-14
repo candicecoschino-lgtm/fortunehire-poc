@@ -588,6 +588,21 @@
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-14T19:13:09.413795+00:00"
+    },
+    "salesforce": {
+      "discovered": 479,
+      "checked": 20,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 20,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-14T19:41:38.658363+00:00"
     }
   }
 }

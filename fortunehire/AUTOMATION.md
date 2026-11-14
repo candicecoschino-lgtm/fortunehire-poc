@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 39 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 40 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -65,3 +65,11 @@ For one explicitly U.S. office, retain the state from the employer sitemap URL w
 ## Apple — November 14
 
 Read direct public /en-us/details/<job-location-id>/<slug> links from the search page. Decode the literal JSON string assigned to __staticRouterHydrationData with JSON parsers; never execute employer JavaScript. Match the full jobNumber and selectedLocation.postingIdentifier. Require an active U.S. city/state and the matching location-specific postingPostLocationData.en_US entry. Ignore changing general postingDateMeta/longPostingDate fields. Country-wide retail pipelines are excluded. Include only selected-office pay and deadline footers. Do not infer Remote from homeOffice or annual pay from the size of a dollar range. Exact robots-only corporate redirect hops end at verified HTTP 404; job redirects remain host-restricted.
+
+## Salesforce — November 14
+
+The public corporate careers page loads https://a.sfdcstatic.com/digital/xsf/careers/prod/jobs_1.json. This complete credential-free employer snapshot supplies requisition IDs, original posting dates, countries and exact Workday application URLs. Require matching Count/Total_Jobs/entry count and a snapshot fetched within 24 hours. Validate the Salesforce tenant and requisition in every URL. Use snapshot dates only to prioritize discovery; individual Workday JobPosting dates control publication. Initial collection and independent repeat refresh each checked twenty jobs without errors or warnings.
+
+Parse explicit U.S. state/city labels such as New York - New York. Generic TELECOMMUTE tags are not enough to label these roles remote. An explicit Texas - Remote location establishes state-restricted Remote eligibility; role declarations establish Hybrid or On-site. Office addresses alone do not establish remote eligibility. Keep multiple location-dependent pay bands as published text when they cannot support one numeric range.
+
+IBM research resolved the published two-hop robots redirect using RFC 9309 sections 2.3.1.2 and 2.3.1.5: https://www.rfc-editor.org/rfc/rfc9309.html . The API search works but individual role requests receive an explicit robot-verification challenge; IBM remains disabled. Delta remains disabled during its announced career-site maintenance.

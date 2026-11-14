@@ -157,6 +157,10 @@
     "apple": {
       "host": "jobs.apple.com",
       "sector": "Technology"
+    },
+    "salesforce": {
+      "host": "salesforce.wd12.myworkdayjobs.com",
+      "sector": "Technology"
     }
   }
 }

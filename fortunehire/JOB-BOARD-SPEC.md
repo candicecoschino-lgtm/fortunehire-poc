@@ -1,10 +1,10 @@
-> Current scope: 39 connected employers within the 52-company directory. State-restricted remote is a subset of Remote and does not relabel jobs as Hybrid. See COMPANY-FEED-STATUS.md for all outcomes.
+> Current scope: 40 connected employers within the 52-company directory. State-restricted remote is a subset of Remote and does not relabel jobs as Hybrid. See COMPANY-FEED-STATUS.md for all outcomes.
 
 # FortuneHire job-board implementation
 
 Current automation behavior is defined in [AUTOMATION.md](AUTOMATION.md). The original manually reviewed collection below is retained as a regression fixture; the live pilot now checks official employer postings automatically.
 
-The main page lists individual U.S. roles, not employers. The existing 52-company directory remains at companies.html. The connected job collection now covers 39 employers, with evidence-based work arrangements and explicit national/state-restricted remote eligibility. See COMPANY-FEED-STATUS.md for current outcomes and FEED-EXPANSION.md for the expansion plan.
+The main page lists individual U.S. roles, not employers. The existing 52-company directory remains at companies.html. The connected job collection now covers 40 employers, with evidence-based work arrangements and explicit national/state-restricted remote eligibility. See COMPANY-FEED-STATUS.md for current outcomes and FEED-EXPANSION.md for the expansion plan.
 
 ## Filtering contract
 - Primary: state, then work arrangement (All / On-site / Hybrid / Remote / Not specified).
