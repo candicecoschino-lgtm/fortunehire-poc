@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-14T13:33:58.942835+00:00",
+  "attemptedAt": "2026-11-14T13:54:23.358424+00:00",
   "postingWindowDays": 14,
   "coverage": "U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.",
   "sources": {
     "citigroup": {
       "discovered": 3107,
-      "checked": 49,
+      "checked": 47,
       "added": 0,
       "changed": 0,
-      "closed": 2,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -17,7 +17,7 @@
       "activeTracked": 47,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "boeing": {
       "discovered": 1167,
@@ -32,10 +32,10 @@
       "activeTracked": 76,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "att": {
-      "discovered": 2113,
+      "discovered": 2112,
       "checked": 36,
       "added": 0,
       "changed": 0,
@@ -47,7 +47,7 @@
       "activeTracked": 36,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "chevron": {
       "discovered": 162,
@@ -62,14 +62,14 @@
       "activeTracked": 10,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "unitedhealth-group": {
       "discovered": 6528,
-      "checked": 99,
+      "checked": 98,
       "added": 0,
-      "changed": 5,
-      "closed": 1,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -77,7 +77,7 @@
       "activeTracked": 98,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "cigna": {
       "discovered": 529,
@@ -92,14 +92,14 @@
       "activeTracked": 14,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "comcast": {
-      "discovered": 733,
-      "checked": 36,
+      "discovered": 743,
+      "checked": 35,
       "added": 0,
       "changed": 0,
-      "closed": 1,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -107,7 +107,7 @@
       "activeTracked": 35,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "elevance-health": {
       "discovered": 252,
@@ -122,13 +122,13 @@
       "activeTracked": 40,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "ford": {
       "discovered": 873,
       "checked": 32,
       "added": 0,
-      "changed": 1,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -137,14 +137,14 @@
       "activeTracked": 32,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "fedex": {
       "discovered": 4603,
-      "checked": 35,
+      "checked": 32,
       "added": 0,
       "changed": 27,
-      "closed": 3,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -152,7 +152,7 @@
       "activeTracked": 32,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "mckesson": {
       "discovered": 645,
@@ -167,7 +167,7 @@
       "activeTracked": 22,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "nike": {
       "discovered": 1165,
@@ -182,7 +182,22 @@
       "activeTracked": 22,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
+    },
+    "united-airlines": {
+      "discovered": 123,
+      "checked": 23,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 23,
+      "pendingClosureChecks": 2,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "lowes": {
       "discovered": 3690,
@@ -197,22 +212,22 @@
       "activeTracked": 37,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
-    "united-airlines": {
-      "discovered": 123,
-      "checked": 24,
+    "target": {
+      "discovered": 14124,
+      "checked": 38,
       "added": 0,
-      "changed": 8,
-      "closed": 1,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
-      "activeTracked": 23,
-      "pendingClosureChecks": 2,
+      "activeTracked": 38,
+      "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "general-motors": {
       "discovered": 681,
@@ -227,22 +242,7 @@
       "activeTracked": 37,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
-    },
-    "target": {
-      "discovered": 14124,
-      "checked": 38,
-      "added": 0,
-      "changed": 0,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 1,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 38,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "centene": {
       "discovered": 394,
@@ -257,7 +257,7 @@
       "activeTracked": 37,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "caterpillar": {
       "discovered": 1044,
@@ -272,7 +272,7 @@
       "activeTracked": 17,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "disney": {
       "discovered": 545,
@@ -287,7 +287,7 @@
       "activeTracked": 24,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "walmart": {
       "discovered": 15622,
@@ -302,28 +302,13 @@
       "activeTracked": 39,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
-    },
-    "cisco": {
-      "discovered": 1463,
-      "checked": 27,
-      "added": 0,
-      "changed": 1,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 27,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "cencora": {
       "discovered": 1070,
       "checked": 11,
       "added": 0,
-      "changed": 3,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -332,30 +317,45 @@
       "activeTracked": 11,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
-    },
-    "coca-cola": {
-      "errors": [
-        {
-          "error": "Employer request failed: HTTP 503"
-        }
-      ],
-      "lastSuccessfulAt": "2026-11-13T23:47:09.265749+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "abbott": {
-      "discovered": 2334,
+      "discovered": 2303,
       "checked": 7,
       "added": 0,
       "changed": 1,
       "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 1,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 7,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
+    },
+    "coca-cola": {
+      "errors": [
+        {
+          "error": "Reviewed discovery contains no individual job URLs"
+        }
+      ],
+      "lastSuccessfulAt": "2026-11-13T23:47:09.265749+00:00"
+    },
+    "cisco": {
+      "discovered": 1463,
+      "checked": 27,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 27,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "pepsico": {
       "discovered": 2653,
@@ -370,7 +370,7 @@
       "activeTracked": 1,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "cardinal-health": {
       "discovered": 868,
@@ -385,28 +385,28 @@
       "activeTracked": 30,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "cvs-health": {
-      "discovered": 7828,
+      "discovered": 7667,
       "checked": 25,
       "added": 0,
-      "changed": 2,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 2,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 25,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "phillips-66": {
-      "discovered": 82,
+      "discovered": 85,
       "checked": 37,
       "added": 0,
-      "changed": 1,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -415,13 +415,13 @@
       "activeTracked": 37,
       "pendingClosureChecks": 1,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "verizon": {
-      "discovered": 1265,
+      "discovered": 1242,
       "checked": 20,
       "added": 0,
-      "changed": 20,
+      "changed": 12,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -430,7 +430,7 @@
       "activeTracked": 20,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "bank-of-america": {
       "discovered": 2112,
@@ -445,7 +445,7 @@
       "activeTracked": 40,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "humana": {
       "discovered": 1860,
@@ -460,22 +460,22 @@
       "activeTracked": 19,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
-    "kroger": {
-      "discovered": 20,
-      "checked": 20,
+    "valero": {
+      "discovered": 6,
+      "checked": 1,
       "added": 0,
-      "changed": 0,
+      "changed": 1,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
-      "activeTracked": 20,
+      "activeTracked": 1,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
     "dell": {
       "discovered": 17,
@@ -490,11 +490,11 @@
       "activeTracked": 17,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-14T13:33:58.942835+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     },
-    "valero": {
-      "discovered": 6,
-      "checked": 1,
+    "kroger": {
+      "discovered": 20,
+      "checked": 20,
       "added": 0,
       "changed": 0,
       "closed": 0,
@@ -502,10 +502,10 @@
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
-      "activeTracked": 1,
+      "activeTracked": 20,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-14T13:49:47.001517+00:00"
+      "lastSuccessfulAt": "2026-11-14T13:54:23.358424+00:00"
     }
   }
 }
