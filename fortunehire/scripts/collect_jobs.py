@@ -327,7 +327,7 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting'):
+    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]
@@ -345,6 +345,7 @@ def normalize_posting(body, url, company, now):
         city = address.get('addressLocality') or ''
         if not isinstance(city,str): continue
         city=city.strip()
+        if company=='salesforce' and city.startswith('Washington D.C. - '):city='District of Columbia - '+city.split(' - ',1)[1]
         if company=='salesforce' and not state and str(country).upper() in ('US','USA','UNITED STATES','UNITED STATES OF AMERICA'):
             for named_state in sorted(STATES.values(),key=len,reverse=True):
                 prefix=named_state+' - '
@@ -447,8 +448,12 @@ def normalize_posting(body, url, company, now):
             arrangement_evidence='Explicit employer title qualifier: '+qualifier[0].strip()
         elif company=='cvs-health' and re.match(r'^Remote Call Center\b',title,re.I):
             arrangement,arrangement_evidence='remote','Explicit employer role title: Remote Call Center'
-    if arrangement=='unknown' and company=='salesforce' and remote_location_states:
-        arrangement,arrangement_evidence='remote','Employer labels the posting location Remote in: '+', '.join(sorted(set(remote_location_states)))
+    if company=='salesforce':
+        model=source.get('_salesforceRemoteType','')
+        mapped={'Office - Flexible':'hybrid','Office - Assigned':'on-site','Office - Based':'on-site','Remote - Home Based':'remote','Remote Home-Based':'remote'}.get(model)
+        if mapped:
+            if arrangement in ('unknown',mapped):arrangement,arrangement_evidence=mapped,'Employer role remoteType='+model
+            else:arrangement,arrangement_evidence='unknown','Conflicting employer work setting '+model+' and role declaration: '+arrangement_evidence
     if arrangement=='remote' and remote_location_states:
         eligible=sorted(set(eligible+remote_location_states))
     # A posted office address is not evidence of remote eligibility.
@@ -537,7 +542,7 @@ def normalize_posting(body, url, company, now):
         'travelRequired':travel, 'travelNote':travel_evidence or 'Travel not verified automatically.',
         'postedAt':posted, 'closesAt':deadline,
         'reviewedAt':today, 'status':'closed' if source.get('_employerClosed') or deadline and deadline<today else 'reviewed', 'sector':sector,
-        'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' '+deadline_note if deadline_note else ''),
+        'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' Employer work setting: '+source['_salesforceRemoteType']+'. Location labels containing Remote do not override this setting.' if company=='salesforce' and source.get('_salesforceRemoteType') else '')+(' '+deadline_note if deadline_note else ''),
         'checkedAt':now.isoformat(), 'collectionMethod':source.get('_adapter') or 'official-jobposting-jsonld',
         'sourceHash':hashlib.sha256(json.dumps({'structured':source,'locations':locations,'arrangement':arrangement_evidence,'remoteScope':remote_scope,'travel':travel_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
         'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note,**({'location':location_evidence} if location_evidence else {})},
