@@ -1,4 +1,4 @@
-name: Inspect current UPS posting metadata
+name: Inspect current UPS pay fields
 on:
   push:
     paths: ['.github/workflows/review-remaining-public.yml']
@@ -28,6 +28,10 @@ jobs:
               page=c.Page(body)
               structured=[{k:v for k,v in j.items() if k not in ('description','responsibilities','qualifications')} for s in page.scripts for j in c.postings(json.loads(s))]
               metas=[n['attrs'] for n in Document(body).nodes if n['tag']=='meta' and n['attrs'].get('property')=='og:url']
+              marker=c.re.search(r'phApp.ddo\s*=\s*',body)
+              data=json.JSONDecoder().raw_decode(body[marker.end():])[0] if marker else {}
+              detail=data.get('jobDetail',{}).get('data',{}).get('job',{})
+              print('UPS_PAY',json.dumps({'ddoKeys':list(data),'jobKeys':list(detail),'pay':{k:v for k,v in detail.items() if c.re.search('salary|pay|compensation',k,c.re.I)}}))
               print('UPS_METADATA',json.dumps({'status':status,'canonical':page.canonical,'metadata':metas,'postings':structured}))
           except Exception as e:print('UPS_METADATA',json.dumps({'error':str(e)}))
           PY
