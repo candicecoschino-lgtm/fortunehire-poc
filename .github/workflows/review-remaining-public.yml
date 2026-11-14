@@ -43,7 +43,7 @@ jobs:
                       if marker:
                           data=json.JSONDecoder().raw_decode(body[marker.end():])[0]
                           row['ddoKeys']=list(data)
-                          refine=data.get('refineSearch',{})
+                          refine=data.get('eagerLoadRefineSearch',{})
                           row['searchKeys']=list(refine)
                           data=refine.get('data',{})
                           row['searchDataKeys']=list(data)
@@ -52,7 +52,7 @@ jobs:
                       cl=c.Client('www.ibm.com')
                       status,body=cl.get('https://www.ibm.com/etc.clientlibs/adobe-cms/clientlibs/clientlib-carbon-dynamic-loader.lc-129543326dea1ae3217ba1dabacb1e90-lc.min.js')
                       row.update(status=status,length=len(body))
-                      row['hints']=[body[max(0,m.start()-90):m.end()+250] for m in list(re.finditer(r'career-search|scoped-no-carbon|careers2',body))[:8]]
+                      row['hints']=[body[max(0,m.start()-90):m.end()+250] for m in list(re.finditer(r'career|Career|marketplace/static',body))[:8]]
               except Exception as e:row['error']=str(e)
               print('PUBLIC_REVIEW',json.dumps(row),flush=True)
           with ThreadPoolExecutor(max_workers=2) as pool:list(pool.map(review,['ups','ibm']))
