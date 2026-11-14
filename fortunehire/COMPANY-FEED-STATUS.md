@@ -1,6 +1,6 @@
-# All 52 company feed statuses — November 13, 2026
+# All 52 company feed statuses — November 14, 2026
 
-29 connected; 22 need further work or authorized access; RTX is paused. Connected feeds have limited samples rather than complete employer coverage. A failed check does not establish a need for a paid provider.
+33 connected; 18 need further work or authorized access; RTX is paused. Connected feeds have limited samples rather than complete employer coverage. A failed check does not establish a need for a paid provider.
 
 | Company | Status | Reason / next step |
 | --- | --- | --- |
@@ -23,7 +23,7 @@
 | Coca-Cola | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Comcast | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Costco Wholesale | adapter-needed | Official career pages did not expose a compatible individual-job discovery feed. Review the linked application-system integration. |
-| Dell Technologies | adapter-needed | The official site redirects to the Dell Oracle Candidate Experience portal; it does not expose jobs in the tested page or sitemap. Implement and verify the permitted public Oracle interface. |
+| Dell Technologies | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
 | Delta Air Lines | verification-needed | The officially linked Avature portal returned HTTP 202 without usable job data in this check. Review a permitted discovery method and dated job details. |
 | Elevance Health | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Fannie Mae | location-review-needed | Linked Workday pages provide incomplete state/location metadata, and generic telecommute metadata conflicts with office-cadence language. Verify actual work arrangement and job-state evidence before publishing. |
@@ -31,10 +31,10 @@
 | Ford Motor | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | General Motors | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Home Depot | access-restricted | The directly linked role parses locally, but the GitHub request returned HTTP 403. Use an authorized source that works from the scheduled collector. |
-| Humana | adapter-needed | The GitHub sample had nineteen recent candidate pages without matching JobPosting blocks; no eligible role was published. Review the active-page format and verify a current role. |
+| Humana | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
 | IBM | verification-needed | The corporate sitemap timed out; the linked careers portal returned HTTP 202 without usable job discovery. Review a permitted source with verified publication dates. |
 | JPMorgan Chase | access-restricted | The Oracle portal linked by JPMorgan returned HTTP 403. Obtain an authorized endpoint or employer permission. |
-| Kroger | adapter-needed | The corporate site redirects to the Kroger Oracle portal, which renders search dynamically. Implement and verify the permitted public Oracle interface. |
+| Kroger | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
 | Lowe's | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | McKesson | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Meta Platforms | access-restricted | The GitHub discovery request returned HTTP 403. Use an authorized source; do not bypass the denial. |
@@ -53,6 +53,6 @@
 | United Airlines Holdings | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | UnitedHealth Group | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Valero Energy | adapter-needed | The corporate page links to Taleo roles whose query-based job identifiers need a dedicated reader. Implement the permitted Taleo job-detail format with date and location evidence. |
-| Verizon Communications | adapter-needed | Individual pages are accessible but the reviewed page format lacks the structured posting/date block required by this collector. Verify employer publication dates and implement a dedicated reader. |
+| Verizon Communications | connected | Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings. Monitor scheduled refreshes, field coverage, and source changes. |
 | Walmart | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Walt Disney | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |

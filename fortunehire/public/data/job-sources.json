@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-13",
+  "reviewedAt": "2026-11-14",
   "sources": {
     "boeing": {
       "host": "jobs.boeing.com",
@@ -117,6 +117,22 @@
     "bank-of-america": {
       "host": "careers.bankofamerica.com",
       "sector": "Financials"
+    },
+    "humana": {
+      "host": "careers.humana.com",
+      "sector": "Health Care"
+    },
+    "verizon": {
+      "host": "mycareer.verizon.com",
+      "sector": "Communication Services"
+    },
+    "dell": {
+      "host": "enterpriseplatform.dell.com",
+      "sector": "Technology"
+    },
+    "kroger": {
+      "host": "www.krogerfamilycareers.com",
+      "sector": "Retail"
     }
   }
 }

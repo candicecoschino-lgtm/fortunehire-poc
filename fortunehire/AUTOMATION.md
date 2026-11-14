@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps and individual official JobPosting structured data for the 29 reviewed employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call the excluded paginated search endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps and individual official JobPosting structured data for the 33 reviewed employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call the excluded paginated search endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -35,3 +35,9 @@ The source registry records the exact reviewed career host and broad sector grou
 See ARRANGEMENT-REVIEW.md for role declarations, structured location labels, false-positive protections, and bounded remote discovery hints. URL hints prioritize inspection only; they never set a job category or eligibility.
 
 All 52 company feed outcomes and outstanding obstacles are documented in COMPANY-FEED-STATUS.md and public/data/company-feed-status.json. The State-restricted remote filter remains a subset of Remote; it does not relabel those jobs as hybrid.
+
+## November 14 public portal readers
+
+Humana uses its current canonical JobPosting pages. Verizon reads the public server-rendered role metadata and scoped description, using DisplayDate rather than UpdateDate. Explicit role work-model statements drive arrangement; mobile/field work is not automatically hybrid. Dell and Kroger use the credential-free public Oracle search and individual requisition details linked by their career portals. Discovery reads at most 60 recent candidates and retains only U.S. rows; every selected job page is checked separately. Kroger’s separately reviewed Oracle data host has its own crawler-rule check and pacing. Never use internal qualifications or responsibilities in published descriptions. External posting timestamps with an explicit offset are converted to the site’s New York calendar date.
+
+Humana’s explicitly labeled annual base range can drive the pay filter; mixed per-visit compensation remains text. Verizon’s explicit annual location range can drive it. Missing periods and ambiguous scopes remain unverified.

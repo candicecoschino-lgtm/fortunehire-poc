@@ -1,11 +1,11 @@
 # FortuneHire continuation
 
-29 employer feeds are enabled. 22 companies need format, eligibility, discovery, or authorized-access work. Keep RTX paused. All 52 reviewed statuses and next steps are in COMPANY-FEED-STATUS.md and public/data/company-feed-status.json.
+33 employer feeds enabled. 18 companies need further format, discovery, eligibility, or authorized-access work; keep RTX paused. The current 52-company report is COMPANY-FEED-STATUS.md and public/data/company-feed-status.json.
 
-Latest additions: Cardinal Health, Bank of America, and Phillips 66. The first two use reviewed U.S. month/day/year dates. Bank of America emits literal newlines in some JSON strings; only its reader accepts those strings without editing values. Cardinal repeats a tenant identifier across jobs, so canonical public posting IDs are used and labeled as posting IDs. Phillips 66 has public HTML microdata, including explicit UTC posting/deadline dates. Its earlier stated application closing date takes precedence when supplied.
+Latest verified additions: Humana (19), Verizon (20), Dell (17), Kroger (20). The isolated GitHub test collected and refreshed all four successfully: run 43595161694. They are limited samples, not full employer feeds.
 
-A shared collision guard quarantines new candidates with conflicting identifiers instead of replacing an existing job. Fixed published hourly rates are represented as equal minimum and maximum values and displayed once. Do not invent annual periods for salary bands without an explicit period.
+Continue with Fannie Mae’s job-specific office/state evidence and current public discovery, Valero’s Taleo detail reader (query identifiers and encoded display data), UPS replacement discovery, and unresolved public crawler rules for Apple and Salesforce. Oracle public search is now available as a reviewed adapter for Dell and Kroger; do not reuse it against previously denied JPMorgan or Oracle hosts without authorized access.
 
-Prioritize the remaining easiest readers next, including the Fannie Mae location/work-arrangement review and permitted alternative discovery methods. Do not bypass HTTP denials or crawler exclusions, and do not relabel state-restricted remote jobs as hybrid.
+The overnight Coca-Cola source returned HTTP 521 on November 14; check the latest production refresh status rather than assuming every historical connection is currently healthy. HTTP denials and robots exclusions are never bypassed.
 
-Keep the 14-day posting window, seven-day freshness limit, per-host pacing, twenty new candidates and one hundred active jobs per employer, and closure safeguards. Verify every new source from GitHub before enabling it; update the status report and source archive after release.
+Keep the 14-day posting window, seven-day verification freshness limit, 20 new candidates/100 active jobs per employer, distinct job identity checks, closure safeguards, state-restricted Remote category, and first-party evidence for all filters.

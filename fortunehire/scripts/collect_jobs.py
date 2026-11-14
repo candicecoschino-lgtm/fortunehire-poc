@@ -19,6 +19,7 @@ import urllib.request
 import urllib.robotparser
 import xml.etree.ElementTree as ET
 from employer_adapters import extract as extract_employer_page, Document
+from employer_sources import public_search, public_fetch
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -171,7 +172,8 @@ def extract_published_pay(description, locations, company, nationwide=False):
             return None, {'text':'Primary-location salary range: '+'; '.join(bands),'scopeStates':scoped,'note':'Employer range for '+scoped[0]+'. Other locations may differ. Pay period is not specified in this label.'}
     evidence = []
     for i,line in enumerate(lines):
-        if re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',line,re.I) or company=='centene' and re.match(r'^Pay Range:\s*\$',line,re.I) or company in ('bank-of-america','cardinal-health') and re.match(r'^(?:Anticipated\s+)?Pay range\b',line,re.I):
+        employer_label=(company=='verizon' and re.match(r'^The annual salary range for the location',line,re.I) or company=='humana' and not re.search(r'Pay Per Visit/Unit Rate',description,re.I) and re.match(r'^The compensation range below reflects a good faith estimate of starting base pay',line,re.I))
+        if employer_label or re.search(r'\b(?:summary pay range|(?:annual|hourly) pay for this role|(?:salary|pay)(?: range)? for (?:this|the) (?:role|position))\b',line,re.I) or company=='centene' and re.match(r'^Pay Range:\s*\$',line,re.I) or company in ('bank-of-america','cardinal-health') and re.match(r'^(?:Anticipated\s+)?Pay range\b',line,re.I):
             context = line
             if not PAY_RANGE.search(context) and i+1<len(lines): context += ' '+lines[i+1]
             if PAY_RANGE.search(context): evidence.append(context)
@@ -272,6 +274,10 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
+    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details'):
+        # These readers already isolate the individual role. Navigation,
+        # suggested jobs and footer labels cannot populate its filters.
+        page.parts=[description]
     locations = [];remote_location_states=[]
     expanded_locations=[]
     for loc in as_list(source.get('jobLocation')):
@@ -328,6 +334,12 @@ def normalize_posting(body, url, company, now):
             arrangement_evidence=tag[0]
         remote = national_remote
         if remote: arrangement, arrangement_evidence = 'remote', remote[0]
+    if arrangement=='unknown' and company=='verizon':
+        role=re.search(r"\bIn this (remote|hybrid) role\b|\bIn this (worksite-based) role, you[\u2019']ll work onsite at a defined location",description,re.I)
+        if role:
+            kind=next(group for group in role.groups() if group)
+            arrangement={'remote':'remote','hybrid':'hybrid','worksite-based':'on-site'}[kind.lower()]
+            arrangement_evidence=role[0]
     if arrangement=='unknown' and company=='general-motors':
         gm_hybrid=re.search(r'\bHybrid Work Policy\s*[-:]\s*[^\n]{0,160}\bin-office\b[^\n]{0,80}\bremote\b',description,re.I)
         if gm_hybrid: arrangement,arrangement_evidence='hybrid',gm_hybrid[0]
@@ -504,6 +516,10 @@ class Client:
 
 
 def discover(client):
+    special=public_search(client,Client)
+    if special is not None:
+        if not special:raise SourceError('Public employer search contains no verified U.S. job URLs')
+        return special
     ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
     def sitemap_url(url):
         parsed=urllib.parse.urlsplit(url)
@@ -669,7 +685,7 @@ def run(root=ROOT, now=None, max_new=20):
         try:
             client = Client(host)
             discovered = discover(client)
-            refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,client.get,now,max_new=max_new,discovery_dates=client.discovery_dates)
+            refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,lambda url:public_fetch(client,url,Client),now,max_new=max_new,discovery_dates=client.discovery_dates)
             result['discoveryLimited']=client.discovery_limited
             if client.discovery_warnings:result['discoveryWarnings']=client.discovery_warnings
             if not result['errors']:

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13T23:44:29.532293+00:00",
+  "updatedAt": "2026-11-14T12:34:42.979069+00:00",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 9,
-    "adapter-needed": 7,
-    "connected": 29,
+    "adapter-needed": 3,
+    "connected": 33,
     "location-review-needed": 1,
     "paused": 1,
     "retired-discovery": 1,
@@ -292,12 +292,13 @@
     {
       "companyId": "dell",
       "company": "Dell Technologies",
-      "status": "adapter-needed",
-      "reason": "The official site redirects to the Dell Oracle Candidate Experience portal; it does not expose jobs in the tested page or sitemap.",
-      "nextStep": "Implement and verify the permitted public Oracle interface.",
-      "officialCareerUrl": "https://jobs.dell.com/",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "status": "connected",
+      "reason": "Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings.",
+      "nextStep": "Monitor scheduled refreshes, field coverage, and source changes.",
+      "officialCareerUrl": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+      "reviewedAt": "2026-11-14",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43595161694",
+      "historicalGithubObservation": {
         "companyId": "dell",
         "careerUrl": "https://jobs.dell.com/",
         "landingAllowed": true,
@@ -392,12 +393,13 @@
     {
       "companyId": "humana",
       "company": "Humana",
-      "status": "adapter-needed",
-      "reason": "The GitHub sample had nineteen recent candidate pages without matching JobPosting blocks; no eligible role was published.",
-      "nextStep": "Review the active-page format and verify a current role.",
+      "status": "connected",
+      "reason": "Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings.",
+      "nextStep": "Monitor scheduled refreshes, field coverage, and source changes.",
       "officialCareerUrl": "https://careers.humana.com/us/en",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "reviewedAt": "2026-11-14",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43595161694",
+      "historicalGithubObservation": {
         "companyId": "humana",
         "careerUrl": "https://careers.humana.com/us/en",
         "landingAllowed": true,
@@ -445,12 +447,13 @@
     {
       "companyId": "kroger",
       "company": "Kroger",
-      "status": "adapter-needed",
-      "reason": "The corporate site redirects to the Kroger Oracle portal, which renders search dynamically.",
-      "nextStep": "Implement and verify the permitted public Oracle interface.",
-      "officialCareerUrl": "https://www.thekrogerco.com/careers/",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "status": "connected",
+      "reason": "Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings.",
+      "nextStep": "Monitor scheduled refreshes, field coverage, and source changes.",
+      "officialCareerUrl": "https://www.krogerfamilycareers.com/en/sites/CX_2001",
+      "reviewedAt": "2026-11-14",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43595161694",
+      "historicalGithubObservation": {
         "companyId": "kroger",
         "careerUrl": "https://www.thekrogerco.com/careers/",
         "landingAllowed": true,
@@ -698,12 +701,13 @@
     {
       "companyId": "verizon",
       "company": "Verizon Communications",
-      "status": "adapter-needed",
-      "reason": "Individual pages are accessible but the reviewed page format lacks the structured posting/date block required by this collector.",
-      "nextStep": "Verify employer publication dates and implement a dedicated reader.",
+      "status": "connected",
+      "reason": "Collected and refreshed recent official postings successfully from GitHub. Limited sample, not all openings.",
+      "nextStep": "Monitor scheduled refreshes, field coverage, and source changes.",
       "officialCareerUrl": "https://mycareer.verizon.com/",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "reviewedAt": "2026-11-14",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43595161694",
+      "historicalGithubObservation": {
         "companyId": "verizon",
         "careerUrl": "https://mycareer.verizon.com/",
         "landingAllowed": true,

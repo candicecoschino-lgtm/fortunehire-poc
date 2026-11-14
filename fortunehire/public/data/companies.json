@@ -326,11 +326,13 @@
         "state": "Texas"
       },
       "listYear": 2026,
-      "careerUrl": "https://jobs.dell.com/",
+      "careerUrl": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/CX_1001",
       "profileSource": "https://fortune.com/company/dell-technologies/",
       "membershipSource": "https://fortune.com/company/dell-technologies/",
-      "reviewedAt": "2026-11-13",
-      "verificationNote": "Official Dell careers address redirects to its JavaScript-based Dell recruiting portal; a text-only preview may be blank."
+      "reviewedAt": "2026-11-14",
+      "verificationNote": "Official Dell careers address redirects to its JavaScript-based Dell recruiting portal; a text-only preview may be blank. Official career destination follows the employer-linked Oracle Candidate Experience portal, verified November 14, 2026.",
+      "previousCareerUrl": "https://jobs.dell.com/",
+      "verificationSource": "https://jobs.dell.com/"
     },
     {
       "id": "delta",
@@ -476,11 +478,13 @@
         "state": "Ohio"
       },
       "listYear": 2026,
-      "careerUrl": "https://www.thekrogerco.com/careers/",
+      "careerUrl": "https://www.krogerfamilycareers.com/en/sites/CX_2001",
       "profileSource": "https://fortune.com/company/kroger/",
       "membershipSource": "https://fortune.com/company/kroger/",
-      "reviewedAt": "2026-11-13",
-      "verificationNote": "The corporate careers address redirects to Kroger's JavaScript-based recruiting portal; a text-only preview may be blank."
+      "reviewedAt": "2026-11-14",
+      "verificationNote": "The corporate careers address redirects to Kroger's JavaScript-based recruiting portal; a text-only preview may be blank. Official career destination follows the employer-linked Oracle Candidate Experience portal, verified November 14, 2026.",
+      "previousCareerUrl": "https://www.thekrogerco.com/careers/",
+      "verificationSource": "https://www.thekrogerco.com/careers/"
     },
     {
       "id": "lowes",

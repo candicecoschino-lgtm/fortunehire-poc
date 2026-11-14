@@ -3,6 +3,8 @@ import json
 import re
 from datetime import datetime
 from html.parser import HTMLParser
+from urllib.parse import urlsplit, urljoin
+from zoneinfo import ZoneInfo
 
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 class Document(HTMLParser):
@@ -87,8 +89,73 @@ def phillips(document,url):
         except ValueError:pass
     return {'@type':'JobPosting','identifier':posting_id,'_identifierType':'posting-id','url':url,'title':title,'description':description,'datePosted':posted,'validThrough':min(deadlines) if deadlines else None,'jobLocation':{'address':{'addressCountry':prop('addressCountry'),'addressRegion':prop('addressRegion'),'addressLocality':prop('addressLocality')}},'_adapter':'phillips66-public-microdata'}
 
+def verizon(document,url):
+    # Read JSON arguments in the server-rendered stream without executing JS.
+    parts=[]
+    for node in document.nodes:
+        if node['tag']!='script':continue
+        script=''.join(x for x in node['children'] if isinstance(x,str))
+        prefix='self.__next_f.push('
+        if not script.startswith(prefix):continue
+        try:value=json.JSONDecoder().raw_decode(script[len(prefix):])[0]
+        except (ValueError,TypeError):continue
+        if isinstance(value,list) and len(value)==2 and value[0]==1 and isinstance(value[1],str):parts.append(value[1])
+    matches=[];req=urlsplit(url).path.strip('/').split('/')[1]
+    def walk(value,depth=0):
+        if depth>40:return
+        if isinstance(value,dict):
+            if str(value.get('Id','')).lower()==req.lower() and 'DisplayDate' in value:matches.append(value)
+            for child in value.values():walk(child,depth+1)
+        elif isinstance(value,list):
+            for child in value:walk(child,depth+1)
+        elif isinstance(value,str) and value.startswith(('{','[')):
+            try:walk(json.loads(value),depth+1)
+            except ValueError:pass
+    for line in ''.join(parts).splitlines():
+        try:walk(json.loads(line.partition(':')[2]))
+        except ValueError:pass
+    unique={json.dumps(value,sort_keys=True):value for value in matches}
+    if len(unique)!=1:return None
+    source=next(iter(unique.values()))
+    if not any(urlsplit(urljoin(url,row.get('Url',''))).path.rstrip('/')==urlsplit(url).path.rstrip('/') for row in source.get('Urls',[])):return None
+    page=document.find(**{'data-testid':'job-page','data-job-id':source['Id']})
+    if not page:return None
+    def descendants(node):
+        if isinstance(node,dict):
+            yield node
+            for child in node['children']:yield from descendants(child)
+    descriptions=[node for node in descendants(page) if node['attrs'].get('class')=='wysiwyg']
+    if len(descriptions)!=1:return None
+    return {'@type':'JobPosting','url':url,'identifier':source.get('Reference'),'title':source.get('Title'),'description':text(descriptions[0]),'datePosted':source.get('DisplayDate'),'validThrough':source.get('DueDate'),'jobLocation':[{'address':{'addressLocality':loc.get('City'),'addressRegion':loc.get('Region'),'addressCountry':loc.get('Country')}} for loc in source.get('Locations',[])],'_adapter':'verizon-public-page-data'}
+
+def oracle(body,url):
+    try:items=json.loads(body).get('items',[])
+    except (ValueError,AttributeError):return None
+    req=urlsplit(url).path.rstrip('/').rsplit('/',1)[-1]
+    if len(items)!=1 or str(items[0].get('Id',''))!=req:return None
+    source=items[0]
+    if not source.get('ExternalPostedStartDate') or not source.get('ExternalDescriptionStr'):return None
+    locations=[]
+    for loc in (source.get('workLocation') or [])+(source.get('otherWorkLocations') or []):
+        locations.append({'address':{'addressLocality':loc.get('TownOrCity'),'addressRegion':loc.get('Region2'),'addressCountry':loc.get('Country')}})
+    description='\n'.join(str(source.get(key) or '') for key in ('ExternalDescriptionStr','ExternalQualificationsStr','ExternalResponsibilitiesStr'))
+    schedule={'Full time':'FULL_TIME','Part time':'PART_TIME'}.get(source.get('JobSchedule'))
+    arrangement={'ORA_ON_SITE':'ON_SITE','ORA_HYBRID':'HYBRID','ORA_REMOTE':'REMOTE'}.get(source.get('WorkplaceTypeCode'))
+    # Plain public labels also occur when the corresponding code is absent.
+    arrangement=arrangement or {'On-site':'ON_SITE','Hybrid':'HYBRID','Remote':'REMOTE'}.get(source.get('WorkplaceType'))
+    posted=source['ExternalPostedStartDate']
+    if 'T' in posted:
+        try:
+            timestamp=datetime.fromisoformat(posted.replace('Z','+00:00'))
+            if timestamp.tzinfo is None:return None
+            posted=timestamp.astimezone(ZoneInfo('America/New_York')).date().isoformat()
+        except ValueError:return None
+    return {'@type':'JobPosting','identifier':req,'title':source.get('Title'),'url':url,'datePosted':posted,'validThrough':source.get('ExternalPostedEndDate'),'description':description,'employmentType':schedule,'jobLocationType':arrangement,'jobLocation':locations,'_adapter':'oracle-public-requisition-details'}
+
 def extract(company,body,url):
-    if company not in ('walmart','disney','phillips-66'):return None
+    if company in ('dell','kroger'):return oracle(body,url)
+    if company not in ('walmart','disney','phillips-66','verizon'):return None
     document=Document(body)
+    if company=='verizon':return verizon(document,url)
     if company=='walmart':return walmart(document,url)
     return disney(document,url) if company=='disney' else phillips(document,url)

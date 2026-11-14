@@ -9,6 +9,8 @@ on:
       - '.github/workflows/refresh-jobs.yml'
       - 'fortunehire/scripts/collect_jobs.py'
       - 'fortunehire/scripts/employer_adapters.py'
+      - 'fortunehire/scripts/employer_sources.py'
+      - 'fortunehire/test/test_employer_sources.py'
       - 'fortunehire/test/test_employer_adapters.py'
       - 'fortunehire/public/data/job-sources.json'
       - 'fortunehire/test/test_collector.py'
