@@ -2,7 +2,17 @@
 import json
 from urllib.parse import urlencode, urlsplit, parse_qs
 import re
-from employer_adapters import Document
+from employer_adapters import Document, text
+from datetime import datetime
+
+def amazon_rows(body):
+    data=json.loads(body)
+    if data.get('error') or not isinstance(data.get('jobs'),list):raise ValueError('Invalid Amazon public search result')
+    return data
+
+def amazon_id(path):
+    match=re.fullmatch(r'/en/jobs/(\d+)/[^/?]+/?',path)
+    return match[1] if match else None
 
 ORACLE = {
     'enterpriseplatform.dell.com': ('enterpriseplatform.dell.com','CX_1001','/hcmUI/CandidateExperience/en/sites/CX_1001'),
@@ -12,6 +22,30 @@ API='/hcmRestApi/resources/11.13.18.05/'
 
 def public_search(client, client_factory):
     """Inspect at most 60 recent results; publishing still checks each job."""
+    if client.host=='www.amazon.jobs':
+        status,body=client.get('https://www.amazon.jobs/en/search.json?'+urlencode({'sort':'recent','result_limit':20,'country[]':'USA'}))
+        if status!=200:raise ValueError('Amazon public search unavailable')
+        data=amazon_rows(body);found={};dates={};records={}
+        for row in data['jobs'][:20]:
+            req=str(row.get('id_icims',''));path=row.get('job_path','')
+            if row.get('country_code') not in ('US','USA') or amazon_id(path)!=req:continue
+            found[req]='https://'+client.host+path;records[req]=row
+            try:dates[req]=datetime.strptime(row.get('posted_date',''),'%B %d, %Y').date().isoformat()
+            except ValueError:dates[req]=''
+        client.amazon_records=records;client.discovery_dates=dates;client.discovery_limited=data.get('hits',0)>len(found);client.discovery_warnings=[]
+        return found
+    if client.host=='careers.costco.com':
+        status,body=client.get('https://careers.costco.com/api/jobs?'+urlencode({'sortBy':'posted_date','descending':'true','limit':20,'page':1}))
+        if status!=200:raise ValueError('Costco public search unavailable')
+        data=json.loads(body)
+        if not isinstance(data.get('jobs'),list):raise ValueError('Invalid Costco public search result')
+        found={};dates={}
+        for wrapper in data['jobs'][:20]:
+            row=wrapper.get('data',{});req=str(row.get('req_id',''));slug=str(row.get('slug',''))
+            if not req.isdigit() or req!=slug or row.get('country') not in ('United States','USA','US'):continue
+            found[req]='https://'+client.host+'/jobs/'+req;dates[req]=row.get('posted_date') or ''
+        client.discovery_dates=dates;client.discovery_limited=data.get('totalCount',0)>len(found);client.discovery_warnings=[]
+        return found
     if client.host=='valero.taleo.net':
         landing=client_factory('www.valero.com')
         status,body=landing.get('https://www.valero.com/careers')
@@ -52,6 +86,25 @@ def public_search(client, client_factory):
 def public_fetch(client, url, client_factory):
     """Check the public job URL, then read its employer-published details."""
     status,body=client.get(url)
+    if client.host=='www.amazon.jobs' and status==200:
+        req=amazon_id(urlsplit(url).path)
+        if not req:raise ValueError('Invalid Amazon individual posting route')
+        record=getattr(client,'amazon_records',{}).get(req)
+        if record is None:
+            search_status,search_body=client.get('https://'+client.host+'/en/search.json?'+urlencode({'base_query':req}))
+            if search_status!=200:raise ValueError('Amazon posting lookup unavailable')
+            matches=[row for row in amazon_rows(search_body)['jobs'] if str(row.get('id_icims',''))==req and amazon_id(row.get('job_path',''))==req]
+            if len(matches)!=1:raise ValueError('Missing or ambiguous Amazon posting lookup')
+            record=matches[0]
+        doc=Document(body);title=doc.find('h1',**{'class':'title'});identity=doc.find('meta',property='og:url');scope=doc.find(id='job-detail-body')
+        def descendants(node):
+            if isinstance(node,dict):
+                yield node
+                for child in node['children']:yield from descendants(child)
+        contents=[node for node in descendants(scope) if node['attrs'].get('class')=='content']
+        if not title or not identity or amazon_id(urlsplit(identity['attrs'].get('content','')).path)!=req or text(title).strip()!=record.get('title') or len(contents)!=1:
+            raise ValueError('Conflicting Amazon page and public search identity')
+        return 200,json.dumps({'amazonPosting':record,'pageDescription':text(contents[0]),'pageTitle':text(title).strip(),'pageUrl':identity['attrs']['content']})
     config=ORACLE.get(client.host)
     if not config or status!=200:return status,body
     datahost,site,jobbase=config

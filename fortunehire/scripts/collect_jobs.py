@@ -160,6 +160,20 @@ def extract_published_pay(description, locations, company, nationwide=False):
     states = sorted({loc['state'] for loc in locations})
     lines = [re.sub(r'\s+',' ',line).strip() for line in description.splitlines() if line.strip()]
     flat = ' '.join(lines)
+    if company=='amazon' and re.search(r'The base salary range for this position is listed below',flat,re.I):
+        records=[]
+        for line in lines:
+            match=re.fullmatch(r'USA,\s*([A-Z]{2}),\s*(.+?)\s*[-\u2013]\s*([\d,]+(?:\.\d{1,2})?)\s*[-\u2013]\s*([\d,]+(?:\.\d{1,2})?)\s+USD\s+(hourly|annually)',line,re.I)
+            if not match:continue
+            low,high=float(match[3].replace(',','')),float(match[4].replace(',',''))
+            if 0<low<=high:records.append((match,line,low,high))
+        if records:
+            published={'text':' | '.join(line for match,line,low,high in records)[:1000],'scopeStates':sorted({state_name(m[1]) for m,line,low,high in records if state_name(m[1])}),'note':'Employer-published base-pay bands for the named locations; other locations may differ.'}
+            salary=None
+            if len(records)==1:
+                match,line,low,high=records[0];scope=state_name(match[1])
+                if states==[scope] and any(loc['city'].casefold()==match[2].strip().casefold() for loc in locations):salary={'min':low,'max':high,'period':'hour' if match[5].lower()=='hourly' else 'year','currency':'USD','scopeStates':[scope]}
+            return salary,published
     if company=='cardinal-health' and len(states)==1:
         fixed=[(line,re.fullmatch(r'Pay rate:\s*('+MONEY+r')\s+per hour\.?',line,re.I)) for line in lines]
         fixed=[(line,match) for line,match in fixed if match]
@@ -244,6 +258,7 @@ def normalize_posting(body, url, company, now):
     host, sector = SOURCES[company]
     url = job_url(url, host)
     page = Page(body)
+    if company=='amazon':page.scripts=[]
     candidates = []
     for script in page.scripts:
         try: candidates.extend(postings(json.loads(script)))
@@ -283,7 +298,7 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data'):
+    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]

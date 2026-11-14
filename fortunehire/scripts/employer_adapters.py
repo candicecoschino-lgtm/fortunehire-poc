@@ -178,7 +178,24 @@ def valero(document,body,url):
     if not posted or len(location)!=3 or location[0]!='US':return None
     return {'@type':'JobPosting','identifier':req,'url':url,'title':data.get('reqlistitem.title'),'description':data.get('reqlistitem.description','')+'\n'+data.get('reqlistitem.qualification',''),'datePosted':posted,'validThrough':date(data.get('reqlistitem.unpostingdate')),'jobLocation':{'address':{'addressCountry':'US','addressRegion':location[1],'addressLocality':location[2]}},'_adapter':'valero-public-taleo-display-data'}
 
+def amazon(body,url):
+    try:data=json.loads(body);source=data['amazonPosting']
+    except (ValueError,KeyError,TypeError):return None
+    req=urlsplit(url).path.strip('/').split('/')[2]
+    if str(source.get('id_icims',''))!=req or data.get('pageTitle')!=source.get('title'):return None
+    try:posted=datetime.strptime(source.get('posted_date',''),'%B %d, %Y').date().isoformat()
+    except ValueError:return None
+    locations=[]
+    for raw in source.get('locations',[]):
+        try:loc=json.loads(raw) if isinstance(raw,str) else raw
+        except ValueError:continue
+        if isinstance(loc,dict):locations.append({'address':{'addressCountry':loc.get('countryIso2a') or loc.get('normalizedCountryCode'),'addressRegion':loc.get('normalizedStateName') or loc.get('region'),'addressLocality':loc.get('city') or loc.get('normalizedCityName')}})
+    if not locations and source.get('country_code') in ('US','USA'):
+        locations.append({'address':{'addressCountry':source['country_code'],'addressRegion':source.get('state'),'addressLocality':source.get('city')}})
+    return {'@type':'JobPosting','identifier':req,'_identifierType':'posting-id','url':data.get('pageUrl'),'title':source.get('title'),'datePosted':posted,'description':data.get('pageDescription',''),'jobLocation':locations,'employmentType':{'full-time':'FULL_TIME','part-time':'PART_TIME'}.get(source.get('job_schedule_type')),'_adapter':'amazon-public-search-and-role-page'}
+
 def extract(company,body,url):
+    if company=='amazon':return amazon(body,url)
     if company in ('dell','kroger'):return oracle(body,url)
     if company not in ('walmart','disney','phillips-66','verizon','valero'):return None
     document=Document(body)
