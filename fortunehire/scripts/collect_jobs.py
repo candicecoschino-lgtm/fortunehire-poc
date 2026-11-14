@@ -262,6 +262,7 @@ def normalize_posting(body, url, company, now):
     """Only explicit evidence populates filters; uncertainty is preserved."""
     host, sector = SOURCES[company]
     url = job_url(url, host)
+    requested_url=url
     page = Page(body)
     if company=='amazon':page.scripts=[]
     candidates = []
@@ -309,7 +310,7 @@ def normalize_posting(body, url, company, now):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]
-    locations = [];remote_location_states=[]
+    locations = [];remote_location_states=[];location_evidence=''
     expanded_locations=[]
     for loc in as_list(source.get('jobLocation')):
         if isinstance(loc,dict):
@@ -326,10 +327,13 @@ def normalize_posting(body, url, company, now):
         if not state and host.endswith('.myworkdayjobs.com'):
             explicit=re.fullmatch(r'US\s*-\s*([A-Z]{2})\s*-\s*(.+)',city)
             if explicit and state_name(explicit[1]):state=state_name(explicit[1]);city=explicit[2]
-            elif str(country).upper() in ('US','USA','UNITED STATES','UNITED STATES OF AMERICA'):
-                location_part=urllib.parse.urlsplit(url).path.split('/job/',1)[-1].split('/')[0]
+            elif str(country).upper() in ('US','USA','UNITED STATES','UNITED STATES OF AMERICA') and len(expanded_locations)==1:
+                geography_url=requested_url if company=='fannie-mae' else url
+                location_part=urllib.parse.urlsplit(geography_url).path.split('/job/',1)[-1].split('/')[0]
                 explicit=re.fullmatch(r'(.+)-([A-Z]{2})',location_part)
-                if explicit and state_name(explicit[2]):state=state_name(explicit[2])
+                if explicit and state_name(explicit[2]):
+                    state=state_name(explicit[2])
+                    location_evidence='Single employer-listed U.S. office; state from employer posting URL: '+geography_url
         if str(country).upper() in ('US', 'USA', 'UNITED STATES', 'UNITED STATES OF AMERICA') and state and city:
             item = {'city': city, 'state': state}
             if item not in locations: locations.append(item)
@@ -504,8 +508,8 @@ def normalize_posting(body, url, company, now):
         'reviewedAt':today, 'status':'closed' if source.get('_employerClosed') or deadline and deadline<today else 'reviewed', 'sector':sector,
         'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' '+deadline_note if deadline_note else ''),
         'checkedAt':now.isoformat(), 'collectionMethod':source.get('_adapter') or 'official-jobposting-jsonld',
-        'sourceHash':hashlib.sha256(json.dumps({'structured':source,'arrangement':arrangement_evidence,'remoteScope':remote_scope,'travel':travel_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
-        'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note},
+        'sourceHash':hashlib.sha256(json.dumps({'structured':source,'locations':locations,'arrangement':arrangement_evidence,'remoteScope':remote_scope,'travel':travel_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
+        'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note,**({'location':location_evidence} if location_evidence else {})},
     }
 
 
