@@ -2,14 +2,14 @@
 
 40 connected; 11 need permitted access, source evidence, or employer service recovery; RTX remains paused. These are bounded samples, not all openings. No employer is classified as requiring a paid provider.
 
-The previous full 39-employer refresh completed without source errors. Salesforce independently passed initial collection and repeat refresh with 20 verified recent jobs. See collection-status.json for current source health and actual verification times.
+The previous full 39-employer refresh completed without source errors. Salesforce independently passed collection and repeat refresh; role-level work settings are checked against the public job-details interface. See collection-status.json for current source health and actual verification times.
 
 | Company | Status | Reason / next step |
 | --- | --- | --- |
 | AT&T | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Abbott Laboratories | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Alphabet (Google) | access-restricted | Published crawler rules exclude the tested Google career paths. Obtain an authorized job feed or employer permission. |
-| Amazon | connected | Verified public recent-job search, individual role identity, employer posting dates, and independent per-ID refresh. Twenty recent U.S. roles in the initial sample. Monitor the bounded sample, published fields, source health, and scheduled refreshes. |
+| Amazon | connected | Verified public recent-job search, individual role identity, employer posting dates, and independent per-ID refresh. Nineteen verified recent U.S. roles in the initial sample. Monitor the bounded sample, published fields, source health, and scheduled refreshes. |
 | Apple | connected | Verified direct public search links and employer-serialized individual role data. Uses the selected location and its own posting date, not the changing general display date. Country-wide pipelines, foreign locations and mismatched location IDs are excluded. Pay is scoped to the selected office; unspecified pay periods remain text. Monitor bounded discovery, location-specific dates, published pay, closures and independent refresh. |
 | Bank of America | connected | Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata. Monitor field coverage, freshness, and scheduled refresh results. |
 | Boeing | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
@@ -48,7 +48,7 @@ The previous full 39-employer refresh completed without source errors. Salesforc
 | Phillips 66 | connected | Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata. Monitor field coverage, freshness, and scheduled refresh results. |
 | Progressive | access-restricted | Official-host access returned HTTP 403. Use an authorized source; do not bypass the denial. |
 | RTX | paused | Skipped at the explicit user request after GitHub access denial. Leave paused unless the user asks to revisit it. |
-| Salesforce | connected | Public corporate jobs page loads a credential-free Salesforce CDN snapshot containing official Workday application links. Twenty recent U.S. postings passed individual-page verification and independent refresh, including three state-restricted Remote roles and one explicit Hybrid role. Generic TELECOMMUTE metadata is ignored; explicit U.S. state/city labels supply geography. Monitor snapshot freshness and completeness, bounded collection, published pay, work-arrangement evidence and closures. |
+| Salesforce | connected | Public corporate snapshot supplies official Workday links. Individual JobPosting and permitted public role-details data are cross-checked by requisition, title, posting date, country and publication status. The role remoteType controls work arrangement; Office - Flexible is Hybrid even when a location contains Remote. All explicitly listed U.S. locations are retained. Monitor snapshot freshness, role-detail identity, conflicting work-setting evidence, pay geography, all listed locations and closures. |
 | Target | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Tesla | access-restricted | Official-host access returned HTTP 403. Use an authorized source; do not bypass the denial. |
 | UPS | connected | Current U.S. search data replaces the retired sitemap routes. Search UUIDs and canonical global posting IDs are verified as the same role. Six recent postings collected and refreshed. Monitor the bounded sample, published fields, source health, and scheduled refreshes. |

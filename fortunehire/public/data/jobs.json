@@ -56520,24 +56520,31 @@
       "requisitionId": "JR354950",
       "identifierType": "requisition",
       "title": "Partner & Agentforce Contact Center, Solution Consulting Director",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Partner---Agentforce-Contact-Center--Solution-Consulting-Director_JR354950",
-      "arrangement": "remote",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Remote/Partner---Agentforce-Contact-Center--Solution-Consulting-Director_JR354950",
+      "arrangement": "unknown",
       "locations": [
         {
           "city": "Remote",
           "state": "Washington"
+        },
+        {
+          "city": "Seattle Metro - Remote",
+          "state": "Washington"
+        },
+        {
+          "city": "San Francisco Metro - Remote",
+          "state": "California"
         }
       ],
-      "remoteScope": "states",
-      "eligibleStates": [
-        "Washington"
-      ],
-      "locationNote": "Remote, Washington",
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Remote, Washington; Seattle Metro - Remote, Washington; San Francisco Metro - Remote, California",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $171,200 - $273,000 / year | pay range for this role in those locations is $205,800 - $298,400 per year.",
         "scopeStates": [
+          "California",
           "Washington"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
@@ -56550,16 +56557,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "dee289dbf14c8ae7e5943abce8ebc81a158d317fb7a53890cfd71b380703ed86",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Remote Customer-Based. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "5641de9f5c40b339a1fcd5eddc0792674be752e211c4311dd35708dff92a88df",
       "evidence": {
-        "arrangement": "Employer labels the posting location Remote in: Washington",
+        "arrangement": "",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: Washington - Remote"
+        "location": "Employer JobPosting U.S. location label: California - San Francisco Metro - Remote"
       }
     },
     {
@@ -56568,25 +56575,68 @@
       "requisitionId": "JR359265",
       "identifierType": "requisition",
       "title": "Account Solution Engineer, Higher Education",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Account-Solution-Engineer--Higher-Education_JR359265",
-      "arrangement": "remote",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---Remote/Account-Solution-Engineer--Higher-Education_JR359265",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Remote",
           "state": "California"
+        },
+        {
+          "city": "Remote",
+          "state": "Arizona"
+        },
+        {
+          "city": "Remote",
+          "state": "Colorado"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        },
+        {
+          "city": "Phoenix",
+          "state": "Arizona"
+        },
+        {
+          "city": "Dallas",
+          "state": "Texas"
+        },
+        {
+          "city": "Chandler",
+          "state": "Arizona"
+        },
+        {
+          "city": "Remote",
+          "state": "Texas"
+        },
+        {
+          "city": "Denver",
+          "state": "Colorado"
+        },
+        {
+          "city": "Remote",
+          "state": "Tennessee"
+        },
+        {
+          "city": "Austin",
+          "state": "Texas"
         }
       ],
-      "remoteScope": "states",
-      "eligibleStates": [
-        "California"
-      ],
-      "locationNote": "Remote, California",
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Remote, California; Remote, Arizona; Remote, Colorado; Seattle, Washington; Phoenix, Arizona; Dallas, Texas; Chandler, Arizona; Remote, Texas; Denver, Colorado; Remote, Tennessee; Austin, Texas",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $134,750 - $180,250 / year | pay range for this role in those locations is $148,190 - $198,170 per year.",
         "scopeStates": [
-          "California"
+          "Arizona",
+          "California",
+          "Colorado",
+          "Tennessee",
+          "Texas",
+          "Washington"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
       },
@@ -56598,16 +56648,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "00e97a725c5bdc37c81e2cd6f9c37e24956341b48675aa1481acc17a27d91e5d",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office - Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "9415c2397a748a5bf7b9b1d09dd70f077b2f1043fa3929e2fec97bcfffadd0ad",
       "evidence": {
-        "arrangement": "Employer labels the posting location Remote in: California",
+        "arrangement": "Employer role remoteType=Office - Flexible",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: California - Remote"
+        "location": "Employer JobPosting U.S. location label: Texas - Austin"
       }
     },
     {
@@ -56616,23 +56666,38 @@
       "requisitionId": "JR364943",
       "identifierType": "requisition",
       "title": "Lead Software Engineer, AI Labs (Product and Customer Facing)",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Lead-Software-Engineer--AI-Labs--Product-and-Customer-Facing-_JR364943",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Lead-Software-Engineer--AI-Labs--Product-and-Customer-Facing-_JR364943",
       "arrangement": "unknown",
       "locations": [
         {
           "city": "San Francisco",
           "state": "California"
+        },
+        {
+          "city": "Washington",
+          "state": "District of Columbia"
+        },
+        {
+          "city": "New York",
+          "state": "New York"
+        },
+        {
+          "city": "Bellevue",
+          "state": "Washington"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "San Francisco, California",
+      "locationNote": "San Francisco, California; Washington, District of Columbia; New York, New York; Bellevue, Washington",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $148,500 - $313,700 / year | salary range for this role is $178,900 - $344,700 / year",
         "scopeStates": [
-          "California"
+          "California",
+          "District of Columbia",
+          "New York",
+          "Washington"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
       },
@@ -56644,16 +56709,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "f87fd6819c51ffdf76a96aa319652fede4eb648c5bf8699cfa9a72df91028060",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office Tech-Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "a79a0039f722369b91bfa58d1ec3cae06e103617abe5167a70b99f1de192172e",
       "evidence": {
         "arrangement": "",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: California - San Francisco"
+        "location": "Employer JobPosting U.S. location label: Washington - Bellevue"
       }
     },
     {
@@ -56662,17 +56727,25 @@
       "requisitionId": "JR365129",
       "identifierType": "requisition",
       "title": "Field Service Readiness Architect (U.S. Citizen)",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Field-Service-Readiness-Architect_JR365129",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Indiana---Indianapolis/Field-Service-Readiness-Architect_JR365129",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Indianapolis",
           "state": "Indiana"
+        },
+        {
+          "city": "Atlanta",
+          "state": "Georgia"
+        },
+        {
+          "city": "Chicago",
+          "state": "Illinois"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Indianapolis, Indiana",
+      "locationNote": "Indianapolis, Indiana; Atlanta, Georgia; Chicago, Illinois",
       "employmentType": "Full-time",
       "salary": {
         "min": 123100,
@@ -56680,12 +56753,16 @@
         "period": "year",
         "currency": "USD",
         "scopeStates": [
+          "Georgia",
+          "Illinois",
           "Indiana"
         ]
       },
       "publishedPay": {
         "text": "salary range for this position is $123,100 - $186,300 / year",
         "scopeStates": [
+          "Georgia",
+          "Illinois",
           "Indiana"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
@@ -56698,16 +56775,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "aae48a7fbc18d38d6397a27836da0c7fd4ef86e5b5545a3640d81950dcdaeb66",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office - Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "c7659410b195e253e796a107ef3cc14afa6c7ecf8cb94964aae51b43cbddefac",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Office - Flexible",
         "travel": "",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: Indiana - Indianapolis"
+        "location": "Employer JobPosting U.S. location label: Illinois - Chicago"
       }
     },
     {
@@ -56716,8 +56793,8 @@
       "requisitionId": "JR365150",
       "identifierType": "requisition",
       "title": "Senior Manager of Software Engineering, DNS Engineering",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Director-of-Software-Engineering--DNS-Engineering_JR365150",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Bellevue/Director-of-Software-Engineering--DNS-Engineering_JR365150",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Bellevue",
@@ -56752,12 +56829,12 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "09f8667f18d0e2014b5c978eb5d721950c1f9594d1cea599b546af0b681db073",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office - Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "c2154ab5e37dfc31e1e27906ddcd147248a7b46622593306d6a49900dc26bde6",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Office - Flexible",
         "travel": "",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
         "deadline": "",
@@ -56770,22 +56847,27 @@
       "requisitionId": "JR366239",
       "identifierType": "requisition",
       "title": "FINS IDO Manager",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/FINS-IDO-Manager_JR366239",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York-City-Metro---Remote/FINS-IDO-Manager_JR366239",
+      "arrangement": "remote",
       "locations": [
         {
           "city": "New York City Metro - Remote",
           "state": "New York"
+        },
+        {
+          "city": "San Francisco Metro - Remote",
+          "state": "California"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "New York City Metro - Remote, New York",
+      "locationNote": "Remote · Eligible states not verified · Employer-listed locations: New York City Metro - Remote, New York; San Francisco Metro - Remote, California",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $182,770 - $244,510 / year | pay range for this role in those locations is $201,110 - $269,080 per year.",
         "scopeStates": [
+          "California",
           "New York"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
@@ -56798,16 +56880,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "e10c35e2997711bfe48ba2159c810dc3b3032b9fd4d335c209c1ae452c2d1d10",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Remote Home-Based. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "599c1586694a2e0413ca384e7d8aa42ec2da7fb4b81d59c2de4b22b1187117ad",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Remote Home-Based",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: New York - New York City Metro - Remote"
+        "location": "Employer JobPosting U.S. location label: California - San Francisco Metro - Remote"
       }
     },
     {
@@ -56816,22 +56898,43 @@
       "requisitionId": "JR366369",
       "identifierType": "requisition",
       "title": "Sr. Manager, Hyperscaler Partner Sales",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Sr-Manager--Hyperscaler-Partner-Sales_JR366369",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Sr-Manager--Hyperscaler-Partner-Sales_JR366369",
+      "arrangement": "remote",
       "locations": [
         {
-          "city": "Raleigh",
+          "city": "New York",
+          "state": "New York"
+        },
+        {
+          "city": "Irvine",
+          "state": "California"
+        },
+        {
+          "city": "Remote",
           "state": "North Carolina"
+        },
+        {
+          "city": "Chicago",
+          "state": "Illinois"
+        },
+        {
+          "city": "San Francisco",
+          "state": "California"
         }
       ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "Raleigh, North Carolina",
+      "remoteScope": "states",
+      "eligibleStates": [
+        "North Carolina"
+      ],
+      "locationNote": "New York, New York; Irvine, California; Remote, North Carolina; Chicago, Illinois; San Francisco, California",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $168,560 - $225,470 / year | pay range for this role in those locations is $185,430 - $248,010 per year.",
         "scopeStates": [
+          "California",
+          "Illinois",
+          "New York",
           "North Carolina"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
@@ -56844,16 +56947,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "bc6f997eb918b276a8a60ab9bf2aad1a0813bfab2b14e7919512bef132fda536",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Remote Home-Based. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "8df707624618eefb7160530c8771ee8435dc9c9113b9f2233735e8c3dde7e1b7",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Remote Home-Based",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: North Carolina - Raleigh"
+        "location": "Employer JobPosting U.S. location label: California - San Francisco"
       }
     },
     {
@@ -56862,23 +56965,28 @@
       "requisitionId": "JR366531",
       "identifierType": "requisition",
       "title": "Director of Product Management",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Director-of-Product-Management_JR366531",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Director-of-Product-Management_JR366531",
       "arrangement": "unknown",
       "locations": [
         {
           "city": "San Francisco",
           "state": "California"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "San Francisco, California",
+      "locationNote": "San Francisco, California; Seattle, Washington",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $197,300 - $313,700 / year | salary range for this role is $237,700 - $344,700 / year",
         "scopeStates": [
-          "California"
+          "California",
+          "Washington"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
       },
@@ -56890,16 +56998,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "8db57001b6614772b4854717473ea860c952f4619e55cbf4c522b6558b018d4a",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office Tech-Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "1489c2c2630ada404923b5f9578863b2952185f2d8121d22e35bc8eb6bffb918",
       "evidence": {
         "arrangement": "",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: California - San Francisco"
+        "location": "Employer JobPosting U.S. location label: Washington - Seattle"
       }
     },
     {
@@ -56908,19 +57016,33 @@
       "requisitionId": "JR367256",
       "identifierType": "requisition",
       "title": "Learning Experience Design Senior Analyst",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Learning-Experience-Design-Senior-Analyst_JR367256",
-      "arrangement": "remote",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Texas---Houston-Metro---Remote/Learning-Experience-Design-Senior-Analyst_JR367256",
+      "arrangement": "hybrid",
       "locations": [
         {
-          "city": "Remote",
+          "city": "Houston Metro - Remote",
+          "state": "Texas"
+        },
+        {
+          "city": "Seattle Metro - Remote",
           "state": "Washington"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        },
+        {
+          "city": "Remote",
+          "state": "District of Columbia"
+        },
+        {
+          "city": "Remote",
+          "state": "Illinois"
         }
       ],
-      "remoteScope": "states",
-      "eligibleStates": [
-        "Washington"
-      ],
-      "locationNote": "Remote, Washington",
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Houston Metro - Remote, Texas; Seattle Metro - Remote, Washington; Seattle, Washington; Remote, District of Columbia; Remote, Illinois",
       "employmentType": "Full-time",
       "salary": {
         "min": 94000,
@@ -56928,12 +57050,18 @@
         "period": "year",
         "currency": "USD",
         "scopeStates": [
+          "District of Columbia",
+          "Illinois",
+          "Texas",
           "Washington"
         ]
       },
       "publishedPay": {
         "text": "salary range for this position is $94,000 - $142,300 / year",
         "scopeStates": [
+          "District of Columbia",
+          "Illinois",
+          "Texas",
           "Washington"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
@@ -56946,16 +57074,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "e5bcdd39fe36e60052824a5a588df8c7cfecb15a610851328d5e27c5bc49702f",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office - Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "240f56024f9b13ccb9ee10970f4d57ac98bab184d13905174dc48d69ad6b3081",
       "evidence": {
-        "arrangement": "Employer labels the posting location Remote in: Washington",
+        "arrangement": "Employer role remoteType=Office - Flexible",
         "travel": "",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: Washington - Remote"
+        "location": "Employer JobPosting U.S. location label: Illinois - Remote"
       }
     },
     {
@@ -56964,17 +57092,21 @@
       "requisitionId": "JR367301",
       "identifierType": "requisition",
       "title": "Senior Technical Program Manager - Digital Enterprise Technology",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Senior-Technical-Program-Manager---Digital-Enterprise-Technology_JR367301",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Texas---Dallas/Senior-Technical-Program-Manager---Digital-Enterprise-Technology_JR367301",
       "arrangement": "unknown",
       "locations": [
         {
           "city": "Dallas",
           "state": "Texas"
+        },
+        {
+          "city": "Indianapolis",
+          "state": "Indiana"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Dallas, Texas",
+      "locationNote": "Dallas, Texas; Indianapolis, Indiana",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": null,
@@ -56986,16 +57118,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "a9c73e17aff4d5cc910b99b90274b1366701369cbffcdb857f4903d4ee4982e4",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office Tech-Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "500614173a8a5e6194517d43c88b7546ce425ce9a867dc57887e65bf03b28be0",
       "evidence": {
         "arrangement": "",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: Texas - Dallas"
+        "location": "Employer JobPosting U.S. location label: Indiana - Indianapolis"
       }
     },
     {
@@ -57004,23 +57136,34 @@
       "requisitionId": "JR367612",
       "identifierType": "requisition",
       "title": "Senior/Lead Platform Solution Engineer - Data Foundations",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Senior-Lead-Platform-Solution-Engineer---Data-Foundations_JR367612",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Senior-Lead-Platform-Solution-Engineer---Data-Foundations_JR367612",
+      "arrangement": "remote",
       "locations": [
         {
           "city": "San Francisco",
           "state": "California"
+        },
+        {
+          "city": "Remote",
+          "state": "California"
+        },
+        {
+          "city": "Austin",
+          "state": "Texas"
         }
       ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "San Francisco, California",
+      "remoteScope": "states",
+      "eligibleStates": [
+        "California"
+      ],
+      "locationNote": "San Francisco, California; Remote, California; Austin, Texas",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $113,330 - $180,250 / year | pay range for this role in those locations is $124,670 - $198,170 per year.",
         "scopeStates": [
-          "California"
+          "California",
+          "Texas"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
       },
@@ -57032,16 +57175,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "bd8eb7a35c8c75e963ac58569491e968f122a3911f7a39ef43c7be28581b2890",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Remote Home-Based. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "117e1906e4794ac70b96e1889ef065c3d326c98a7a7cfb21c341889733fa3d97",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Remote Home-Based",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: California - San Francisco"
+        "location": "Employer JobPosting U.S. location label: Texas - Austin"
       }
     },
     {
@@ -57050,23 +57193,48 @@
       "requisitionId": "JR367618",
       "identifierType": "requisition",
       "title": "Distinguished/Principal Platform Solution Engineer - Data Foundations",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Distinguised-Principal-Platform-Solution-Engineer---Data-Foundations_JR367618",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Illinois---Chicago/Distinguised-Principal-Platform-Solution-Engineer---Data-Foundations_JR367618",
+      "arrangement": "remote",
       "locations": [
         {
           "city": "Chicago",
           "state": "Illinois"
+        },
+        {
+          "city": "Boston",
+          "state": "Massachusetts"
+        },
+        {
+          "city": "New York",
+          "state": "New York"
+        },
+        {
+          "city": "Atlanta",
+          "state": "Georgia"
+        },
+        {
+          "city": "Dallas",
+          "state": "Texas"
+        },
+        {
+          "city": "San Francisco",
+          "state": "California"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Chicago, Illinois",
+      "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Chicago, Illinois; Boston, Massachusetts; New York, New York; Atlanta, Georgia; Dallas, Texas; San Francisco, California",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $157,640 - $244,510 / year | pay range for this role in those locations is $173,460 - $269,080 per year.",
         "scopeStates": [
-          "Illinois"
+          "California",
+          "Georgia",
+          "Illinois",
+          "Massachusetts",
+          "New York",
+          "Texas"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
       },
@@ -57078,16 +57246,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "ed085f193629d87b58f4dcf840945c7b111f34fbf3a8ac2d816ad930d111bbb6",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Remote Home-Based. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "ffd1a4076eb14e5f01ef6a3e54fc1373f12b272076400215a0da89511c9d2cf2",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Remote Home-Based",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: Illinois - Chicago"
+        "location": "Employer JobPosting U.S. location label: California - San Francisco"
       }
     },
     {
@@ -57096,7 +57264,7 @@
       "requisitionId": "JR367654",
       "identifierType": "requisition",
       "title": "Event Broadcast Specialist",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Event-Broadcast-Specialist_JR367654",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Event-Broadcast-Specialist_JR367654",
       "arrangement": "hybrid",
       "locations": [
         {
@@ -57124,12 +57292,12 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "79fb0f85e6c9843c2e2b77e9d24c0b262420bd273e6bbfc7883236add6f49dc6",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office - Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "8d55d2222a5b1d997b926d0e76ae0f38f75227282451237eb6620aca27030b2b",
       "evidence": {
-        "arrangement": "This is a hybrid role",
+        "arrangement": "Employer role remoteType=Office - Flexible",
         "travel": "",
         "salary": "",
         "deadline": "",
@@ -57142,8 +57310,8 @@
       "requisitionId": "JR367767",
       "identifierType": "requisition",
       "title": "Senior Product Manager, Tableau Applied AI",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Senior-Product-Manager--Tableau-Applied-AI_JR367767",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Senior-Product-Manager--Tableau-Applied-AI_JR367767",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "San Francisco",
@@ -57170,56 +57338,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "916654fa7e1508626f29bcf0069543753e1375aff358c36c64092766b544fdee",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office - Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "1883a9ab25646aaace53b815b7e154235ab83484b872b3fefb88c1f58c340c87",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Office - Flexible",
         "travel": "",
         "salary": "",
         "deadline": "",
         "location": "Employer JobPosting U.S. location label: California - San Francisco"
-      }
-    },
-    {
-      "id": "salesforce-jr367999",
-      "companyId": "salesforce",
-      "requisitionId": "JR367999",
-      "identifierType": "requisition",
-      "title": "Ops Analyst, Slack Policy Operations",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Ops-Analyst--Slack-Policy-Operations_JR367999",
-      "arrangement": "unknown",
-      "locations": [
-        {
-          "city": "San Francisco Metro - Remote",
-          "state": "California"
-        }
-      ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "San Francisco Metro - Remote, California",
-      "employmentType": "Full-time",
-      "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
-      "travelRequired": null,
-      "travelNote": "Travel not verified automatically.",
-      "postedAt": "2026-11-12",
-      "closesAt": null,
-      "reviewedAt": "2026-11-14",
-      "status": "reviewed",
-      "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "48966d1cbb68430daa920b0a4834e819751e80988a59ffa1fd8e661de1b14d7d",
-      "evidence": {
-        "arrangement": "",
-        "travel": "",
-        "salary": "",
-        "deadline": "",
-        "location": "Employer JobPosting U.S. location label: California - San Francisco Metro - Remote"
       }
     },
     {
@@ -57228,17 +57356,21 @@
       "requisitionId": "JR368102",
       "identifierType": "requisition",
       "title": "Senior Corporate Counsel",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Senior-Corporate-Counsel_JR368102",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Seattle/Senior-Corporate-Counsel_JR368102",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "Seattle",
           "state": "Washington"
+        },
+        {
+          "city": "Denver",
+          "state": "Colorado"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Seattle, Washington",
+      "locationNote": "Seattle, Washington; Denver, Colorado",
       "employmentType": "Full-time",
       "salary": {
         "min": 197300,
@@ -57246,12 +57378,14 @@
         "period": "year",
         "currency": "USD",
         "scopeStates": [
+          "Colorado",
           "Washington"
         ]
       },
       "publishedPay": {
         "text": "salary range for this position is $197,300 - $313,700 / year",
         "scopeStates": [
+          "Colorado",
           "Washington"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
@@ -57264,16 +57398,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "e72bc0c2588193227b872dfff11fece17566155be630e18cc3bb08e63ec36fe2",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office - Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "734b16a84884cb60ea73337e7506f1851daec0cde46f222fc51a88350574e5f7",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Office - Flexible",
         "travel": "",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: Washington - Seattle"
+        "location": "Employer JobPosting U.S. location label: Colorado - Denver"
       }
     },
     {
@@ -57282,23 +57416,28 @@
       "requisitionId": "JR368156",
       "identifierType": "requisition",
       "title": "Senior/Lead Software Engineer - AgentExchange Buyer Experience",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Software-Engineering---AgentExchange-Buyer-Experience---LMTS_JR368156",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Software-Engineering---AgentExchange-Buyer-Experience---LMTS_JR368156",
       "arrangement": "unknown",
       "locations": [
         {
           "city": "San Francisco",
           "state": "California"
+        },
+        {
+          "city": "Bellevue",
+          "state": "Washington"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "San Francisco, California",
+      "locationNote": "San Francisco, California; Bellevue, Washington",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $148,500 - $260,100 / year | salary range for this role is $178,900 - $285,800 / year",
         "scopeStates": [
-          "California"
+          "California",
+          "Washington"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
       },
@@ -57310,16 +57449,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "e2a4207a5c7713437f29867b921c79432aab4680ae40728d52bd1333f9460784",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office Tech-Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "ab95b468667ae1cb3f4ae460d09d1b02397a1ae2b0fb489bf9dbe440830d3fe6",
       "evidence": {
         "arrangement": "",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: California - San Francisco"
+        "location": "Employer JobPosting U.S. location label: Washington - Bellevue"
       }
     },
     {
@@ -57328,23 +57467,28 @@
       "requisitionId": "JR368243",
       "identifierType": "requisition",
       "title": "Senior Product Marketer",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Senior-Product-Marketer_JR368243",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Senior-Product-Marketer_JR368243",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "San Francisco",
           "state": "California"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "San Francisco, California",
+      "locationNote": "San Francisco, California; Seattle, Washington",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $94,000 - $142,300 / year | salary range for this role is $112,900 - $155,200 / year",
         "scopeStates": [
-          "California"
+          "California",
+          "Washington"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
       },
@@ -57356,16 +57500,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "7c8166c0ca8c887a9f4e5acc6c3cb31e16fbf126114994a66ccb0f4b7cdd1af6",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office - Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "1a3203f76974ad6559b582b324660618de3f84a7723f222888d6fdc169227c96",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Office - Flexible",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: California - San Francisco"
+        "location": "Employer JobPosting U.S. location label: Washington - Seattle"
       }
     },
     {
@@ -57374,23 +57518,28 @@
       "requisitionId": "JR368302",
       "identifierType": "requisition",
       "title": "Senior Production Support Engineer",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Senior-Production-Support-Engineer_JR368302",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Senior-Production-Support-Engineer_JR368302",
       "arrangement": "unknown",
       "locations": [
         {
           "city": "San Francisco",
           "state": "California"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
         }
       ],
       "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "San Francisco, California",
+      "locationNote": "San Francisco, California; Seattle, Washington",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
         "text": "salary range for this position is $148,500 - $223,900 / year | salary range for this role is $178,900 - $246,000 / year",
         "scopeStates": [
-          "California"
+          "California",
+          "Washington"
         ],
         "note": "Employer-published range for listed locations; pay may vary by level or location."
       },
@@ -57402,16 +57551,16 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "81ffa9442e10037566c9035add73752042c588f47761a4d1644dd886cbe8df61",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office Tech-Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "63364d7b1177e8ba130ba25b1c0c7d4a1107fe4984d85e61de321027a215accf",
       "evidence": {
         "arrangement": "",
         "travel": "",
         "salary": "",
         "deadline": "",
-        "location": "Employer JobPosting U.S. location label: California - San Francisco"
+        "location": "Employer JobPosting U.S. location label: Washington - Seattle"
       }
     },
     {
@@ -57420,8 +57569,8 @@
       "requisitionId": "JR368394",
       "identifierType": "requisition",
       "title": "Executive Assistant/Senior Executive Assistant",
-      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Executive-Assistant-Senior-Executive-Assistant_JR368394",
-      "arrangement": "unknown",
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Executive-Assistant-Senior-Executive-Assistant_JR368394",
+      "arrangement": "hybrid",
       "locations": [
         {
           "city": "San Francisco",
@@ -57448,12 +57597,12 @@
       "reviewedAt": "2026-11-14",
       "status": "reviewed",
       "sector": "Technology",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
-      "checkedAt": "2026-11-14T19:41:38.658363+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "d172d31151c4f9eff454272f24e554fa1bba470f7a535fcc75607b0028a226da",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer work setting: Office - Flexible. Location labels containing Remote do not override this setting.",
+      "checkedAt": "2026-11-14T19:53:40.141193+00:00",
+      "collectionMethod": "salesforce-public-role-details",
+      "sourceHash": "a5faa93418a5e85dbc596525ba97117ca890954274409f20871a1fa8198cade0",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer role remoteType=Office - Flexible",
         "travel": "",
         "salary": "",
         "deadline": "",
@@ -73249,7 +73398,7 @@
       },
       "salesforce": {
         "discovered": 479,
-        "checked": 20,
+        "checked": 19,
         "added": 0,
         "changed": 0,
         "closed": 0,
@@ -73257,10 +73406,10 @@
         "outsidePostingWindow": 0,
         "warnings": [],
         "errors": [],
-        "activeTracked": 20,
+        "activeTracked": 19,
         "pendingClosureChecks": 0,
         "discoveryLimited": false,
-        "lastSuccessfulAt": "2026-11-14T19:41:38.658363+00:00"
+        "lastSuccessfulAt": "2026-11-14T19:53:40.141193+00:00"
       }
     }
   }

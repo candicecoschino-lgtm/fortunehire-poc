@@ -979,7 +979,9 @@
     "missing": {}
   },
   "salesforce": {
-    "rejected": {},
+    "rejected": {
+      "JR367999": "2026-11-14T19:52:59.348135+00:00"
+    },
     "quarantined": {},
     "missing": {}
   }

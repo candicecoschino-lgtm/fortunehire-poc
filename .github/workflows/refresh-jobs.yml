@@ -14,6 +14,7 @@ on:
       - 'fortunehire/test/test_apple.py'
       - 'fortunehire/test/test_fannie.py'
       - 'fortunehire/test/test_salesforce.py'
+      - 'fortunehire/scripts/salesforce_details.py'
       - 'fortunehire/test/test_employer_sources.py'
       - 'fortunehire/test/test_public_search.py'
       - 'fortunehire/test/test_valero.py'
@@ -26,7 +27,7 @@ permissions:
   contents: write
 concurrency:
   group: fortunehire-job-refresh
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 jobs:
   refresh:
     runs-on: ubuntu-latest

@@ -136,6 +136,16 @@ def public_search(client, client_factory):
 def public_fetch(client, url, client_factory):
     """Check the public job URL, then read its employer-published details."""
     status,body=client.get(url)
+    if client.host=='salesforce.wd12.myworkdayjobs.com' and status==200:
+        from salesforce_details import enrich
+        canonical=Document(body).find('link',rel='canonical')
+        target=urlsplit(canonical['attrs'].get('href','') if canonical else '')
+        if target.scheme!='https' or target.netloc!=client.host or '/job/' not in target.path:raise ValueError('Missing Salesforce canonical role URL')
+        stem=target.path.split('/job/',1)[1]
+        if not re.fullmatch(r'[^/]+_JR\d+(?:-\d+)?',stem):raise ValueError('Unexpected Salesforce canonical posting ID')
+        detail_status,details=client.get('https://'+client.host+'/wday/cxs/salesforce/External_Career_Site/job/'+stem)
+        if detail_status!=200:raise ValueError('Salesforce public role details unavailable')
+        return status,enrich(body,details)
     if client.host=='www.amazon.jobs' and status==200:
         req=amazon_id(urlsplit(url).path)
         if not req:raise ValueError('Invalid Amazon individual posting route')

@@ -616,8 +616,8 @@
       "companyId": "salesforce",
       "company": "Salesforce",
       "status": "connected",
-      "reason": "Public corporate jobs page loads a credential-free Salesforce CDN snapshot containing official Workday application links. Twenty recent U.S. postings passed individual-page verification and independent refresh, including three state-restricted Remote roles and one explicit Hybrid role. Generic TELECOMMUTE metadata is ignored; explicit U.S. state/city labels supply geography.",
-      "nextStep": "Monitor snapshot freshness and completeness, bounded collection, published pay, work-arrangement evidence and closures.",
+      "reason": "Public corporate snapshot supplies official Workday links. Individual JobPosting and permitted public role-details data are cross-checked by requisition, title, posting date, country and publication status. The role remoteType controls work arrangement; Office - Flexible is Hybrid even when a location contains Remote. All explicitly listed U.S. locations are retained.",
+      "nextStep": "Monitor snapshot freshness, role-detail identity, conflicting work-setting evidence, pay geography, all listed locations and closures.",
       "officialCareerUrl": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site",
       "reviewedAt": "2026-11-14",
       "githubObservation": {
@@ -626,7 +626,7 @@
         "accessError": "Unexpected source host or protocol"
       },
       "previousReason": "The old career host redirects to Salesforce’s current corporate careers site. Its robots redirect was resolved to an explicit corporate HTTP 404; the current jobs UI needs a new integration and its linked search-script request returned HTTP 403.",
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43633427843"
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43634477499"
     },
     {
       "companyId": "target",
