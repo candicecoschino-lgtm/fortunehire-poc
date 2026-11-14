@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T17:36:08.064344+00:00",
+  "updatedAt": "2026-11-14T19:11:46.987478+00:00",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 9,
-    "adapter-needed": 2,
-    "connected": 38,
+    "adapter-needed": 1,
+    "connected": 39,
     "paused": 1,
     "verification-needed": 2
   },
@@ -76,10 +76,10 @@
     {
       "companyId": "apple",
       "company": "Apple",
-      "status": "adapter-needed",
-      "reason": "Public search and individual role pages return HTTP 200 after following the exact published robots redirects to the corporate HTTP 404. Pages do not expose JobPosting JSON-LD; an employer-specific reader still needs verified posting dates and locations.",
-      "nextStep": "Complete a reader for the employer-published job fields and verify independent refresh before enabling.",
-      "officialCareerUrl": "https://www.apple.com/careers/us/",
+      "status": "connected",
+      "reason": "Verified direct public search links and employer-serialized individual role data. Uses the selected location and its own posting date, not the changing general display date. Country-wide pipelines, foreign locations and mismatched location IDs are excluded. Pay is scoped to the selected office; unspecified pay periods remain text.",
+      "nextStep": "Monitor bounded discovery, location-specific dates, published pay, closures and independent refresh.",
+      "officialCareerUrl": "https://jobs.apple.com/en-us/search",
       "reviewedAt": "2026-11-14",
       "githubObservation": {
         "companyId": "apple",
@@ -87,7 +87,8 @@
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Sitemap contains no individual job URLs"
-      }
+      },
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43629781988"
     },
     {
       "companyId": "bank-of-america",

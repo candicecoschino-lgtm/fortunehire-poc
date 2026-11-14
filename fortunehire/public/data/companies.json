@@ -78,11 +78,13 @@
         "state": "California"
       },
       "listYear": 2026,
-      "careerUrl": "https://www.apple.com/careers/us/",
+      "careerUrl": "https://jobs.apple.com/en-us/search",
       "profileSource": "https://fortune.com/company/apple/",
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
-      "reviewedAt": "2026-11-13",
-      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy."
+      "reviewedAt": "2026-11-14",
+      "verificationNote": "Official career landing page reviewed. This is a company destination, not a verified vacancy. Official Apple job search and individual location-specific roles verified by collection and repeat refresh.",
+      "previousCareerUrl": "https://www.apple.com/careers/us/",
+      "verificationSource": "https://www.apple.com/careers/us/"
     },
     {
       "id": "att",

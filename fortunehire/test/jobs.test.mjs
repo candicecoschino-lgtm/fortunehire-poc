@@ -7,6 +7,13 @@ const data=JSON.parse(await readFile(new URL('./fixtures/reviewed-jobs.json',imp
 const jobs=validateJobs(data,companies),today='2026-11-13';
 const filters=extra=>({...readJobFilters(''),...extra});
 
+test('Apple direct posting paths keep location IDs and reject pickers or other hosts',()=>{
+  const employers=companies.map(c=>c.id==='apple'?{...c,careerUrl:'https://jobs.apple.com/en-us/search'}:c);
+  const j={...structuredClone(data.jobs[0]),id:'apple-synthetic',companyId:'apple',url:'https://jobs.apple.com/en-us/details/123456-0017/synthetic-role'};
+  assert.equal(validateJobs({schemaVersion:1,jobs:[j]},employers).length,1);
+  for(const url of [j.url+'/locationPicker',j.url+'?redirect=elsewhere',j.url.replace('jobs.apple.com','other.example'),'https://jobs.apple.com/en-us/search'])assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,url}]},employers));
+});
+
 test('new employer URLs must match that employer reviewed career host',()=>{
   const sample={...structuredClone(data.jobs[0]),id:'comcast-synthetic',companyId:'comcast',url:'https://jobs.comcast.com/job/test-city/test-role/45483/12345'};
   assert.equal(validateJobs({schemaVersion:1,jobs:[sample]},companies).length,1);

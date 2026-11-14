@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 38 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 39 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -61,3 +61,7 @@ The exact Salesforce robots redirect to its own corporate HTTP 404 page is follo
 ## Fannie Mae — November 14
 
 For one explicitly U.S. office, retain the state from the employer sitemap URL when the canonical role URL drops it. Keep the employer office name; multiple ambiguous offices remain unpublished. Generic TELECOMMUTE metadata conflicts with the portal’s office policy, so only explicit role labels establish Hybrid or Remote. Annual Pay Range labels may appear inside a paragraph; numeric filtering requires an explicit annual period, one unique range and one state. Initial collection and independent repeat refresh must both pass.
+
+## Apple — November 14
+
+Read direct public /en-us/details/<job-location-id>/<slug> links from the search page. Decode the literal JSON string assigned to __staticRouterHydrationData with JSON parsers; never execute employer JavaScript. Match the full jobNumber and selectedLocation.postingIdentifier. Require an active U.S. city/state and the matching location-specific postingPostLocationData.en_US entry. Ignore changing general postingDateMeta/longPostingDate fields. Country-wide retail pipelines are excluded. Include only selected-office pay and deadline footers. Do not infer Remote from homeOffice or annual pay from the size of a dollar range. Exact robots-only corporate redirect hops end at verified HTTP 404; job redirects remain host-restricted.

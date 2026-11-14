@@ -1,8 +1,8 @@
 # All 52 company feed statuses — November 14, 2026
 
-38 connected; 13 need further integration, source evidence, or authorized access; RTX remains paused. These are bounded samples, not all openings. No employer is classified as requiring a paid provider.
+39 connected; 12 need further integration, source evidence, or authorized access; RTX remains paused. These are bounded samples, not all openings. No employer is classified as requiring a paid provider.
 
-The latest completed full refresh of the previous 37 feeds succeeded with no source errors after Workday recovered. See collection-status.json for current health and per-employer verification times.
+The latest completed full refresh of the previous 38 feeds succeeded with no source errors after Workday recovered. See collection-status.json for current health and per-employer verification times.
 
 | Company | Status | Reason / next step |
 | --- | --- | --- |
@@ -10,7 +10,7 @@ The latest completed full refresh of the previous 37 feeds succeeded with no sou
 | Abbott Laboratories | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | Alphabet (Google) | access-restricted | Published crawler rules exclude the tested Google career paths. Obtain an authorized job feed or employer permission. |
 | Amazon | connected | Verified public recent-job search, individual role identity, employer posting dates, and independent per-ID refresh. Twenty recent U.S. roles in the initial sample. Monitor the bounded sample, published fields, source health, and scheduled refreshes. |
-| Apple | adapter-needed | Public search and individual role pages return HTTP 200 after following the exact published robots redirects to the corporate HTTP 404. Pages do not expose JobPosting JSON-LD; an employer-specific reader still needs verified posting dates and locations. Complete a reader for the employer-published job fields and verify independent refresh before enabling. |
+| Apple | connected | Verified direct public search links and employer-serialized individual role data. Uses the selected location and its own posting date, not the changing general display date. Country-wide pipelines, foreign locations and mismatched location IDs are excluded. Pay is scoped to the selected office; unspecified pay periods remain text. Monitor bounded discovery, location-specific dates, published pay, closures and independent refresh. |
 | Bank of America | connected | Verified recent postings after reviewing employer date formats, identifiers, and individual-page metadata. Monitor field coverage, freshness, and scheduled refresh results. |
 | Boeing | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |
 | CVS Health | connected | Enabled after verified first-party collection and publication validation. Limited sample, not all openings. Monitor field coverage, freshness, and scheduled refresh results. |

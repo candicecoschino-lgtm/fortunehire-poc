@@ -23,6 +23,19 @@ API='/hcmRestApi/resources/11.13.18.05/'
 
 def public_search(client, client_factory):
     """Inspect at most 60 recent results; publishing still checks each job."""
+    if client.host=='jobs.apple.com':
+        from apple_public import role_id
+        from urllib.parse import urljoin
+        status,body=client.get('https://jobs.apple.com/en-us/search')
+        if status!=200:raise ValueError('Apple public search unavailable')
+        found={}
+        for n in Document(body).nodes:
+            if n['tag']!='a':continue
+            url=urljoin('https://jobs.apple.com',n['attrs'].get('href',''));req=role_id(url)
+            if req and len(found)<20:found.setdefault(req,url.split('?')[0])
+        if not found:raise ValueError('No Apple individual job links in public search')
+        client.discovery_dates={};client.discovery_limited=True;client.discovery_warnings=[]
+        return found
     if client.host=='www.jobs-ups.com':
         status,body=client.get('https://www.jobs-ups.com/us/en/search-results')
         marker=re.search(r'phApp\.ddo\s*=\s*',body)

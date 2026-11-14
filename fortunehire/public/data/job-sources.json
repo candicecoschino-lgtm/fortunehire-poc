@@ -153,6 +153,10 @@
     "fannie-mae": {
       "host": "fanniemae.wd1.myworkdayjobs.com",
       "sector": "Financials"
+    },
+    "apple": {
+      "host": "jobs.apple.com",
+      "sector": "Technology"
     }
   }
 }

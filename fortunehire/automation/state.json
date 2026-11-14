@@ -968,5 +968,12 @@
     },
     "quarantined": {},
     "missing": {}
+  },
+  "apple": {
+    "rejected": {},
+    "quarantined": {
+      "114438158": "2026-11-14T19:01:21.005188+00:00"
+    },
+    "missing": {}
   }
 }
