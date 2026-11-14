@@ -1,0 +1,53 @@
+name: Inspect remaining public employer interfaces
+on:
+  push:
+    paths: ['.github/workflows/review-remaining-public.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect bounded public discovery
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,re
+          from concurrent.futures import ThreadPoolExecutor
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          def review(key):
+              row={'companyId':key}
+              try:
+                  if key=='costco-script':
+                      cl=c.Client('app.jibecdn.com')
+                      status,body=cl.get('https://app.jibecdn.com/prod/search/4.11.226/main.js')
+                      row.update(status=status,length=len(body))
+                      row['hints']=[body[max(0,m.start()-80):m.end()+200] for m in list(re.finditer(r'api/jobs|posted_date|sortBy',body))[:16]]
+                  else:
+                      host='www.jobs-ups.com'
+                      cl=c.Client(host)
+                      found=c.discover(cl)
+                      row['discovered']=len(found)
+                      pairs=sorted(found.items(),key=lambda p:(cl.discovery_dates.get(p[0],''),c.discovery_priority(p[0])),reverse=True)
+                      us=[p for p in pairs if '/us/en/' in p[1].lower()]
+                      row['usRoutes']=len(us)
+                      c.SOURCES['ups']=(host,'Transportation')
+                      row['samples']=[]
+                      for req,url in us[:3]:
+                          status,body=cl.get(url)
+                          sample={'url':url,'status':status}
+                          try:
+                              j=c.normalize_posting(body,url,'ups',c.datetime.now(c.timezone.utc))
+                              sample.update(parsed=j is not None,posted=j.get('postedAt') if j else None)
+                          except Exception as e:sample['error']=str(e)
+                          row['samples'].append(sample)
+              except Exception as e:row['error']=str(e)
+              print('PUBLIC_REVIEW',json.dumps(row),flush=True)
+          with ThreadPoolExecutor(max_workers=2) as pool:list(pool.map(review,['costco-script','ups']))
+          PY
