@@ -1,4 +1,4 @@
-name: Inspect current UPS pay fields
+name: Verify remaining policy and service blockers
 on:
   push:
     paths: ['.github/workflows/review-remaining-public.yml']
@@ -13,25 +13,37 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Read one official posting
+      - name: Check exact published destinations without bypasses
         working-directory: fortunehire
         run: |
           python - <<'PY'
-          import sys,json
+          import sys,json,urllib.request,urllib.error
           sys.path.insert(0,'scripts')
           import collect_jobs as c
           from employer_adapters import Document
-          url='https://www.jobs-ups.com/us/en/job/a60ee55e-ca1a-45cc-869d-d81b579f39f8/Driver-Helper'
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,*args):return None
+          opener=urllib.request.build_opener(NoRedirect())
+          for company,url in [('apple','https://apple.com/pagenotfound'),('ibm','https://www-api.ibm.com/robots.txt')]:
+              row={'companyId':company,'url':url,'chain':[]}
+              for hop in range(5):
+                  try:
+                      with opener.open(urllib.request.Request(url,headers={'User-Agent':c.UA}),timeout=30) as response:
+                          row['chain'].append({'url':url,'status':response.status,'type':response.headers.get('Content-Type')});break
+                  except urllib.error.HTTPError as response:
+                      target=response.headers.get('Location')
+                      row['chain'].append({'url':url,'status':response.code,'redirect':target})
+                      if company=='apple' and response.code in (301,302,307,308) and target and c.urllib.parse.urlsplit(target).netloc in ('apple.com','www.apple.com') and c.urllib.parse.urlsplit(target).scheme=='https':
+                          url=target;continue
+                      break
+                  except Exception as e:row['error']=str(e);break
+              print('BLOCKER_REVIEW',json.dumps(row),flush=True)
+          row={'companyId':'delta'}
           try:
-              cl=c.Client('www.jobs-ups.com')
-              status,body=cl.get(url)
-              page=c.Page(body)
-              structured=[{k:v for k,v in j.items() if k not in ('description','responsibilities','qualifications')} for s in page.scripts for j in c.postings(json.loads(s))]
-              metas=[n['attrs'] for n in Document(body).nodes if n['tag']=='meta' and n['attrs'].get('property')=='og:url']
-              marker=c.re.search(r'phApp.ddo\s*=\s*',body)
-              data=json.JSONDecoder().raw_decode(body[marker.end():])[0] if marker else {}
-              detail=data.get('jobDetail',{}).get('data',{}).get('job',{})
-              print('UPS_PAY',json.dumps({'ddoKeys':list(data),'jobKeys':list(detail),'pay':{k:v for k,v in detail.items() if c.re.search('salary|pay|compensation',k,c.re.I)}}))
-              print('UPS_METADATA',json.dumps({'status':status,'canonical':page.canonical,'metadata':metas,'postings':structured}))
-          except Exception as e:print('UPS_METADATA',json.dumps({'error':str(e)}))
+              cl=c.Client('delta.avature.net')
+              status,body=cl.get('https://delta.avature.net/careers')
+              row.update(status=status,length=len(body))
+              row['jobLinks']=list(dict.fromkeys(n['attrs']['href'] for n in Document(body).nodes if n['tag']=='a' and 'JobDetail' in n['attrs'].get('href','')))[:2]
+          except Exception as e:row['error']=str(e)
+          print('BLOCKER_REVIEW',json.dumps(row),flush=True)
           PY
