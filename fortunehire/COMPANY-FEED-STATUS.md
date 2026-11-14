@@ -2,7 +2,7 @@
 
 34 connected; 17 need further work or authorized access; RTX is paused. Connected feeds have limited samples rather than complete employer coverage. A failed check does not establish a need for a paid provider.
 
-Coca-Cola’s November 14 check returned an employer HTTP 503 service error. Its previous successful check dates were retained. Source-health details remain visible on the website and in collection-status.json.
+Coca-Cola’s November 14 checks returned employer HTTP 503 service errors and the official tenant-matched Workday outage redirect. Its previous successful check dates were retained. Source-health details remain visible on the website and in collection-status.json.
 
 | Company | Status | Reason / next step |
 | --- | --- | --- |

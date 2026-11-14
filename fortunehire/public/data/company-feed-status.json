@@ -263,7 +263,7 @@
         "landingStatus": 200,
         "discoveryError": "Sitemap contains no individual job URLs"
       },
-      "latestHealthNote": "November 14 production check returned HTTP 503 from the employer service; previous successful check dates were retained."
+      "latestHealthNote": "November 14 checks returned employer HTTP 503 errors and then the official Workday outage redirect. Previous successful check dates were retained."
     },
     {
       "companyId": "comcast",

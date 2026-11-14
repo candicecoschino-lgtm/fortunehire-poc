@@ -4,7 +4,7 @@
 
 ## Implementation spec
 
-Keep the existing 52-company directory and expand job collection in verified batches. Each enabled employer must match its reviewed career host, permit the requested crawler access, expose individual postings with stable requisitions, and pass collection and publication validation. No paid service is needed for the connected batch.
+Keep the existing 52-company directory and expand job collection in verified batches. Each enabled employer must match its reviewed career host, permit the requested crawler access, expose individual postings with stable requisitions or clearly labeled public posting IDs, and pass collection and publication validation. No paid service is needed for the connected batch.
 
 Use a small source registry and shared adapters for compatible sitemap and JobPosting formats. Deduplicate translated URLs, prefer English postings, decode encoded descriptions, and check pay, work arrangement, location, travel, employment type, and employer posting dates independently. Preserve missing details as unknown. Never derive remote eligibility from a headquarters address or title.
 

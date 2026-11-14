@@ -4,7 +4,7 @@ from pathlib import Path
 
 def availability_failures(report):
     failures=[(company,error.get('error','')) for company,result in report.get('sources',{}).items() for error in result.get('errors',[])]
-    return failures if failures and all(re.fullmatch(r'Employer request failed: HTTP 5\d\d',message) for company,message in failures) else None
+    return failures if failures and all(re.fullmatch(r'Employer request failed: HTTP 5\d\d|Employer service unavailable: Workday outage redirect',message) for company,message in failures) else None
 
 def check(path):
     report=json.loads(Path(path).read_text(encoding='utf-8'))

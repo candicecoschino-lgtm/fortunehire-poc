@@ -486,6 +486,12 @@ class SourceError(RuntimeError): pass
 class RestrictedRedirect(urllib.request.HTTPRedirectHandler):
     def __init__(self, host): self.host = host
     def redirect_request(self, req, fp, code, msg, headers, newurl):
+        target=urllib.parse.urlsplit(newurl)
+        tenant=self.host.split('.')[0]
+        if self.host.endswith('.myworkdayjobs.com') and target.scheme=='https' and target.netloc=='www.myworkday.com' and target.path=='/wday/drs/outage' and urllib.parse.parse_qs(target.query).get('t')==[tenant]:
+            # Recognize the vendor's explicit outage destination without
+            # following it or relaxing the source-host restriction.
+            raise SourceError('Employer service unavailable: Workday outage redirect')
         safe_url(newurl, self.host)
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 

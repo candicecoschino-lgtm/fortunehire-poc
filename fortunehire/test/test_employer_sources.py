@@ -25,6 +25,14 @@ def verizon_data(**changes):
     return scripts+'<div data-testid="job-page" data-job-id="r-test"><div class="wysiwyg"><p>This is a hybrid position.</p></div></div><aside><p>Work Type: Remote</p></aside>'
 
 class EmployerSourceTests(unittest.TestCase):
+    def test_workday_outage_redirect_is_identified_without_following_other_hosts(self):
+        redirect=c.RestrictedRedirect('coke.wd1.myworkdayjobs.com')
+        req=c.urllib.request.Request('https://coke.wd1.myworkdayjobs.com/sitemap.xml')
+        with self.assertRaisesRegex(c.SourceError,'Workday outage redirect'):
+            redirect.redirect_request(req,None,302,'Found',{},'https://www.myworkday.com/wday/drs/outage?t=coke&s=sitemap.xml')
+        for target in ['https://www.myworkday.com/wday/drs/outage?t=another','https://www.myworkday.com.evil.example/wday/drs/outage?t=coke','https://www.myworkday.com:8443/wday/drs/outage?t=coke','http://www.myworkday.com/wday/drs/outage?t=coke']:
+            with self.assertRaises(ValueError):redirect.redirect_request(req,None,302,'Found',{},target)
+
     def test_oracle_public_details_keep_date_identity_state_and_scope(self):
         with patch.dict(c.SOURCES,{'dell':('enterpriseplatform.dell.com','Technology')}):
             j=c.normalize_posting(oracle_data(),DELL,'dell',NOW)
