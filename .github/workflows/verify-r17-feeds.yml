@@ -1,4 +1,4 @@
-name: Verify Amazon and Costco public feeds
+name: Verify Amazon title normalization and Costco public feeds
 on:
   push:
     paths: ['.github/workflows/verify-r17-feeds.yml']

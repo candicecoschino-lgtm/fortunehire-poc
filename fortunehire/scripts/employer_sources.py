@@ -1,5 +1,6 @@
 """Bounded public search interfaces explicitly linked by the employer portals."""
 import json
+import html
 from urllib.parse import urlencode, urlsplit, parse_qs
 import re
 from employer_adapters import Document, text
@@ -96,6 +97,7 @@ def public_fetch(client, url, client_factory):
             matches=[row for row in amazon_rows(search_body)['jobs'] if str(row.get('id_icims',''))==req and amazon_id(row.get('job_path',''))==req]
             if len(matches)!=1:raise ValueError('Missing or ambiguous Amazon posting lookup')
             record=matches[0]
+        record={**record,'title':html.unescape(str(record.get('title',''))).strip()}
         doc=Document(body);title=doc.find('h1',**{'class':'title'});identity=doc.find('meta',property='og:url');scope=doc.find(id='job-detail-body')
         def descendants(node):
             if isinstance(node,dict):

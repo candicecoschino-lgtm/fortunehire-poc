@@ -30,6 +30,9 @@ class PublicSearchTests(unittest.TestCase):
   status,body=public_fetch(cl,URL,Mock())
   with patch.dict(c.SOURCES,{'amazon':('www.amazon.jobs','Consumer Discretionary')}):
    with self.assertRaises(ValueError):c.normalize_posting(body,URL,'amazon',NOW)
+ def test_amazon_title_whitespace_is_not_a_different_posting(self):
+  cl=Mock(host='www.amazon.jobs');cl.amazon_records={'12345':record(title='Synthetic support engineer ')};cl.get.return_value=(200,page())
+  status,body=public_fetch(cl,URL,Mock());self.assertEqual(json.loads(body)['amazonPosting']['title'],'Synthetic support engineer')
  def test_amazon_location_pay_periods_and_multiple_bands_remain_distinct(self):
   location=[{'city':'Test City','state':'California'}];label='The base salary range for this position is listed below.\n'
   salary,pay=c.extract_published_pay(label+'USA, CA, Test City - 33.26 - 49.51 USD hourly',location,'amazon')
