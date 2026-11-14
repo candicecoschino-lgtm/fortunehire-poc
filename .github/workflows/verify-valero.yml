@@ -1,4 +1,4 @@
-name: Verify Valero free employer feed
+name: Verify Valero and Costco free employer feeds
 on:
   push:
     paths: ['.github/workflows/verify-valero.yml']
@@ -24,7 +24,7 @@ jobs:
           from pathlib import Path
           sys.path.insert(0,'scripts')
           import collect_jobs as c
-          c.SOURCES={'valero':('valero.taleo.net','Energy')}
+          c.SOURCES={'valero':('valero.taleo.net','Energy'),'costco':('careers.costco.com','Retail')}
           root=Path(tempfile.mkdtemp())
           c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
           initial=c.run(root,max_new=20)
