@@ -1,4 +1,4 @@
-name: Verify Fannie Mae published annual salary ranges
+name: Verify inline Fannie Mae annual salary ranges
 on:
   push:
     paths: ['.github/workflows/verify-workday-recovery.yml']

@@ -168,7 +168,7 @@ def extract_published_pay(description, locations, company, nationwide=False):
     if company=='fannie-mae':
         bands=[]
         for line in lines:
-            match=re.search(r'^(?:Target\s+)?Pay Range:\s*\$([\d,]+(?:\.\d{1,2})?)\s*[-\u2013\u2014]\s*\$?([\d,]+(?:\.\d{1,2})?)\s+(?:a|per)\s+year\b',line,re.I)
+            match=re.search(r'\b(?:Target\s+)?Pay Range:\s*\$([\d,]+(?:\.\d{1,2})?)\s*[-\u2013\u2014]\s*\$?([\d,]+(?:\.\d{1,2})?)\s+(?:a|per)\s+year\b',line,re.I)
             if match:
                 low,high=float(match[1].replace(',','')),float(match[2].replace(',',''))
                 if 0<low<=high:bands.append((low,high,match[0]))

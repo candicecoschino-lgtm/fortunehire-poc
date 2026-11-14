@@ -14,7 +14,7 @@ def body(locations=None):
 class FannieTests(unittest.TestCase):
  def test_annual_hiring_range_requires_explicit_period_and_one_state(self):
   loc=[{'city':'Midtown Center','state':'District of Columbia'}]
-  salary,pay=c.extract_published_pay('Target Pay Range: $155,000.00 - 209,000.00 a year',loc,'fannie-mae')
+  salary,pay=c.extract_published_pay('We welcome applicants. Target Pay Range: $155,000.00 - 209,000.00 a year #LI-Hybrid',loc,'fannie-mae')
   self.assertEqual(salary['period'],'year');self.assertEqual(salary['min'],155000);self.assertEqual(salary['scopeStates'],['District of Columbia'])
   salary,pay=c.extract_published_pay('Pay Range: $141,000 - $184,000 per year',loc,'fannie-mae');self.assertEqual(salary['max'],184000)
   salary,pay=c.extract_published_pay('Pay Range: $141,000 - $184,000',loc,'fannie-mae');self.assertIsNone(salary)
