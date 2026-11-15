@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-15T15:56:23.076252+00:00",
+  "updatedAt": "2026-11-15T16:07:05.807513+00:00",
   "method": "Official employer career-page, sitemap, and public-search checks; bounded employer pilot.",
   "jobs": [
     {
@@ -92964,7 +92964,7 @@
       "identifierType": "posting-id",
       "title": "Senior Director, Product Management - Homedepot.com/Apps",
       "url": "https://careers.homedepot.com/job/23106138/senior-director-product-management-homedepot-com-apps-atlanta-ga",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Atlanta",
@@ -92985,12 +92985,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req171461.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "84ee96e2ab1a4765e659f8d9845dbe1d29e04eebe9caa59ad33c4e313abf69ba",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req171461. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "49d07395cc266b14c5d303b0af3b25b5847740ecab3efaee049197c3fbcc0d1b",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93003,7 +93003,7 @@
       "identifierType": "posting-id",
       "title": "Senior Executive Recruiter",
       "url": "https://careers.homedepot.com/job/24013962/senior-executive-recruiter-atlanta-ga",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Atlanta",
@@ -93024,12 +93024,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req196141.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "e7935d4ad6cd3e1379ca4d0ac5aecdf734c7ea12ba7b45f689566b4c465fd384",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req196141. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "368ae1e5d5691038ca5b026a39e4440541286efc9c757cbcd2b9a847b2eefc0b",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93042,7 +93042,7 @@
       "identifierType": "posting-id",
       "title": "Product Advisor, Lighting",
       "url": "https://careers.homedepot.com/job/24097503/product-advisor-lighting-atlanta-ga",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Atlanta",
@@ -93063,12 +93063,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 4570694008.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "e2e58fc09e54f8683c8089b6b2918fdcf1fc709b7b347ac6c74ecb8e30ca2a85",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 4570694008. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "19121c41c50688a94bf87b88dce184aa60551a52b7efa5f683365e2d08900d1e",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93081,7 +93081,7 @@
       "identifierType": "posting-id",
       "title": "Administrative Assistant",
       "url": "https://careers.homedepot.com/job/24131399/administrative-assistant-santa-rosa-beach-fl",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Santa Rosa Beach",
@@ -93102,12 +93102,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 4574669008.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "76940ceed7a0bf285b0355ea40f4650d9e16712086a356eecf24d590b85517e5",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 4574669008. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "19829b670fb0ff54957af05cda7c684fa943e8190effbef589d9486b493f5c08",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93127,13 +93127,19 @@
           "state": "Georgia"
         }
       ],
-      "remoteScope": "nationwide",
+      "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Remote within the U.S. · Employer-listed locations: Atlanta, Georgia",
+      "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Atlanta, Georgia",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "pay range for this position is between $80,000.00 – $180,000.00",
+        "scopeStates": [
+          "Georgia"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
       "travelRequired": false,
       "travelNote": "No travel required",
       "postedAt": "2026-11-13",
@@ -93141,12 +93147,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req198585.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "f305b377918a8516c008e689bada1ba5c9be348ea2c2aa08e061517e43561b5f",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req198585. Work Location Remote/virtual – Associates in remote roles have the flexibility to complete their job responsibilities primarily from home. Depending on the position, a remote role may be entirely virtual, or it may require living within a commutable distance of an assigned company office to support occasional, in-person responsibilities.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "2826e08c4a59afcd7560e5f6f5cdce6910dc3ecbb55596b5998950294524c9f0",
       "evidence": {
-        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "arrangement": "Work Location Remote",
         "travel": "No travel required",
         "salary": "",
         "deadline": ""
@@ -93159,7 +93165,7 @@
       "identifierType": "posting-id",
       "title": "Operations Experience Manager",
       "url": "https://careers.homedepot.com/job/24146584/operations-experience-manager-farmingdale-ny",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Farmingdale",
@@ -93171,8 +93177,14 @@
       "locationNote": "Farmingdale, New York",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "pay range for this position is between $47,000.00 – $64,500.00",
+        "scopeStates": [
+          "New York"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
       "travelRequired": false,
       "travelNote": "No travel required",
       "postedAt": "2026-11-13",
@@ -93180,12 +93192,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req198751.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "3a883032062a5aae2b2b3d61811cb1b2bb7fdb958de4ba9ba5e452927cafe367",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req198751. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "cd225a6c989a29ac6b3c21b3a6791f6e499faabb33fa2a2a17e5c70c64d64b75",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "No travel required",
         "salary": "",
         "deadline": ""
@@ -93210,8 +93222,14 @@
       "locationNote": "Newark, New Jersey",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "pay range for this position is between $80,900.00 – $100,900.00",
+        "scopeStates": [
+          "New Jersey"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-13",
@@ -93220,9 +93238,9 @@
       "status": "reviewed",
       "sector": "Retail",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199101.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "041c542754c05af83daaf9d92dabaebfe4771b2a87ff29acf63d5f2cb4da749e",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "3fdc9ff9b4e0a595b3a8890d15a6fc62debf8b5dac207aaf47792470c7397ad8",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -93249,8 +93267,14 @@
       "locationNote": "Boston, Massachusetts",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "pay range for this position is between $78,400.00 – $98,400.00",
+        "scopeStates": [
+          "Massachusetts"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-13",
@@ -93259,9 +93283,9 @@
       "status": "reviewed",
       "sector": "Retail",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199108.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "33d3047d379690a78e2738b9cb398fc9b398f200a3b7574d45bb2e01863f6f08",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "cd1677eb534f58d1bb297688602d30cbbd4ff9344595d2a8b57f7d69ea9155d0",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -93276,7 +93300,7 @@
       "identifierType": "posting-id",
       "title": "CUSTOMER SERVICE ASSOCIATE",
       "url": "https://careers.homedepot.com/job/24147074/customer-service-associate-huntsville-al",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Huntsville",
@@ -93297,12 +93321,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 158566BR.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "104e291b1f4ed284c6a6768b61cfe05031bbf28650408f003f3c6959396fb6ef",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 158566BR. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "c720101f7848cea9907bafd52d022ef4647e23bbe8d713640ebb0ee309d1261b",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93315,7 +93339,7 @@
       "identifierType": "posting-id",
       "title": "CUSTOMER SERVICE ASSOCIATE",
       "url": "https://careers.homedepot.com/job/24147075/customer-service-associate-anaheim-ca",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Anaheim",
@@ -93327,8 +93351,14 @@
       "locationNote": "Anaheim, California",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "Pay Range The pay range for this position is between $21.00 * * Starting pay may vary based on factors including, but not limited to, position offered and location.",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-13",
@@ -93336,12 +93366,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 158567BR.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "06c721242b3665d425e3659500fd7a0d22e7f8a67ed00ec709997b1e7c3373dc",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 158567BR. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "32b3efc4414111f8745cea33ff4ca8927cb56e86a68de39c7e10e93b4d9257bf",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93354,7 +93384,7 @@
       "identifierType": "posting-id",
       "title": "CUSTOMER SERVICE ASSOCIATE",
       "url": "https://careers.homedepot.com/job/24147076/customer-service-associate-pomona-ca",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Pomona",
@@ -93366,8 +93396,14 @@
       "locationNote": "Pomona, California",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "Pay Range The pay range for this position is between $21.00 * * Starting pay may vary based on factors including, but not limited to, position offered and location.",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-13",
@@ -93375,12 +93411,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 158568BR.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "038a09e2ac81c332f31e33e7666d1ac3535dba380147a68dd2b53ee81b5a3eeb",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: 158568BR. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "5bfd281b157f7c12db8b748cb55eabf4f460ced5622678036841322a6dfc53d4",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93393,7 +93429,7 @@
       "identifierType": "posting-id",
       "title": "Sr. Operations Business Analyst - HDES",
       "url": "https://careers.homedepot.com/job/24147228/sr-operations-business-analyst-hdes-atlanta-ga",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Atlanta",
@@ -93414,12 +93450,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req197308.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "b32524105bb4b72482f64892b273a47042633895c658dd1e0dbe6776aa84a918",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req197308. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "782794f8838a488625c392a7fdc281e21e8a1fb90dfb20e3146de6a876b1c5a1",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93444,8 +93480,14 @@
       "locationNote": "Anaheim, California",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "pay range for this position is between $40,000.00 – $100,000.00",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-13",
@@ -93454,9 +93496,9 @@
       "status": "reviewed",
       "sector": "Retail",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199130.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "4cb61f4948f7a5193f556e6c662945065aa51c8a1fe4eae67538d26710d8e4b8",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "1b2efe0dd3b7b017614df8521ffd05f5627219eb65c44a1cd62b9b9f985e497b",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -93483,8 +93525,14 @@
       "locationNote": "Irvine, California",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "pay range for this position is between $40,000.00 – $100,000.00",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-13",
@@ -93493,9 +93541,9 @@
       "status": "reviewed",
       "sector": "Retail",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199131.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "e3a1f1a34e4fafa4bab267dc93f1ec65d71f6692849a39440845ccdc512ffe41",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "952455b572dfeee081fdfc24d4e7bb5172c7986f39935c4c9b9064da29194c2e",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -93522,8 +93570,14 @@
       "locationNote": "Corona, California",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "pay range for this position is between $40,000.00 – $100,000.00",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-13",
@@ -93532,9 +93586,9 @@
       "status": "reviewed",
       "sector": "Retail",
       "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199137.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "590350d6a19012f5fe6c575bd45e4da14c6b4ed91fb4958a14324da932ccf8b1",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "4e7c215a8b60d8711ed705af229bba480f031cbbc81a3e4f32006bd05a597f1f",
       "evidence": {
         "arrangement": "",
         "travel": "",
@@ -93549,7 +93603,7 @@
       "identifierType": "posting-id",
       "title": "Lead Data Scientist, Inventory Planning & Replenishment",
       "url": "https://careers.homedepot.com/job/24147639/lead-data-scientist-inventory-planning-replenishment-atlanta-ga",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Atlanta",
@@ -93570,12 +93624,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req198598.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "50d44418f09bd955cfa3703a40bf86afcee0300ab820c9d13d94ae5e527fc614",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req198598. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "825a53b46a72615ec01923532269435080f1b5fe3cd65adb95ff6976e8e9f8e4",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93588,7 +93642,7 @@
       "identifierType": "posting-id",
       "title": "DC Maintenance Technician- Forklift Repair",
       "url": "https://careers.homedepot.com/job/24147640/dc-maintenance-technician-forklift-repair-dallas-tx",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Dallas",
@@ -93600,8 +93654,14 @@
       "locationNote": "Dallas, Texas",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "pay range for this position is between $27.00 – $39.00",
+        "scopeStates": [
+          "Texas"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
       "travelRequired": null,
       "travelNote": "Travel not verified automatically.",
       "postedAt": "2026-11-13",
@@ -93609,12 +93669,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199067.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "abbb71ae64bdf6ecb049fd05c11b7080fa575682dde2559f6c205c9e5a3c9159",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199067. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "cc0e38b492d342506aa337d501826cdf899a57a836ad3d5acf968d3b5d8bdd42",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93627,7 +93687,7 @@
       "identifierType": "posting-id",
       "title": "Assistant Store Manager",
       "url": "https://careers.homedepot.com/job/24147641/assistant-store-manager-charleston-sc",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Charleston",
@@ -93648,12 +93708,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199098.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "fedadbe0c0c5e7d03fb52e0cee8e59cb2c9c05cb453ee4e9a198de3c9885d80c",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199098. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "c9fd1dc4a63896b7c8b6ab56d523319e0259dc3896a96a9919689ff9f0f37ffc",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -93673,13 +93733,19 @@
           "state": "Georgia"
         }
       ],
-      "remoteScope": "nationwide",
+      "remoteScope": "unknown",
       "eligibleStates": [],
-      "locationNote": "Remote within the U.S. · Employer-listed locations: Atlanta, Georgia",
+      "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Atlanta, Georgia",
       "employmentType": "Not specified",
       "salary": null,
-      "publishedPay": null,
-      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "publishedPay": {
+        "text": "pay range for this position is between $80,000.00 – $180,000.00",
+        "scopeStates": [
+          "Georgia"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
       "travelRequired": false,
       "travelNote": "No travel required",
       "postedAt": "2026-11-14",
@@ -93687,12 +93753,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req198774.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "96806929d92a6aba18ea438c377616439a236701d29bf7c2d01cf2b9174422b9",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req198774. Work Location Remote/virtual – Associates in remote roles have the flexibility to complete their job responsibilities primarily from home. Depending on the position, a remote role may be entirely virtual, or it may require living within a commutable distance of an assigned company office to support occasional, in-person responsibilities.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "924079670528942b94f62d0796221fd514d5e1e3cb099c08c6c082e0f4c25a3a",
       "evidence": {
-        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "arrangement": "Work Location Remote",
         "travel": "No travel required",
         "salary": "",
         "deadline": ""
@@ -93705,7 +93771,7 @@
       "identifierType": "posting-id",
       "title": "Pro Experience Manager",
       "url": "https://careers.homedepot.com/job/24150008/pro-experience-manager-layton-ut",
-      "arrangement": "unknown",
+      "arrangement": "on-site",
       "locations": [
         {
           "city": "Layton",
@@ -93726,12 +93792,12 @@
       "reviewedAt": "2026-11-15",
       "status": "reviewed",
       "sector": "Retail",
-      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199126.",
-      "checkedAt": "2026-11-15T15:52:29.748244+00:00",
-      "collectionMethod": "official-jobposting-jsonld",
-      "sourceHash": "2b155ce4f28cdbb964f9ea92e53ae41ec529be0a2a77b2fab027596975c96df0",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited. Employer requisition reference: Req199126. Work Location Onsite – These roles offer the opportunity to be part of a team at a specific physical location. Associates in these locations work in person at a local store, warehouse, or office, supporting daily operations and building strong relationships with their teams.",
+      "checkedAt": "2026-11-15T16:07:05.807513+00:00",
+      "collectionMethod": "home-depot-matched-role-and-sections",
+      "sourceHash": "53c7f6e16804f76db21291ad910c282552f3fd0cc99e68e4b5a8d0c75359ff70",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Work Location Onsite",
         "travel": "No travel required",
         "salary": "",
         "deadline": ""
@@ -93740,7 +93806,7 @@
   ],
   "automation": {
     "schemaVersion": 1,
-    "attemptedAt": "2026-11-15T15:52:29.748244+00:00",
+    "attemptedAt": "2026-11-15T16:07:05.807513+00:00",
     "postingWindowDays": 14,
     "coverage": "U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.",
     "sources": {
@@ -94416,7 +94482,7 @@
         "activeTracked": 20,
         "pendingClosureChecks": 0,
         "discoveryLimited": true,
-        "lastSuccessfulAt": "2026-11-15T15:52:29.748244+00:00"
+        "lastSuccessfulAt": "2026-11-15T16:07:05.807513+00:00"
       }
     }
   }

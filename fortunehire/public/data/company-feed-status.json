@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-15T15:56:23.076252+00:00",
+  "updatedAt": "2026-11-15T16:07:05.807513+00:00",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
-    "access-restricted": 7,
+    "access-restricted": 5,
     "connected": 42,
     "paused": 1,
-    "verification-needed": 2
+    "verification-needed": 4
   },
   "companies": [
     {
@@ -42,12 +42,14 @@
     {
       "companyId": "alphabet",
       "company": "Alphabet (Google)",
-      "status": "access-restricted",
-      "reason": "Published crawler rules exclude the tested Google career paths.",
-      "nextStep": "Obtain an authorized job feed or employer permission.",
+      "status": "verification-needed",
+      "reason": "Current public search and one directly linked individual role are allowed by published crawler rules and return HTTP 200 locally and from GitHub. The tested role has no JobPosting schema or verified publication date in the current reader.",
+      "nextStep": "Review the employer-published individual format for a reliable original posting date before enabling the fourteen-day feed. Never substitute search order or a crawl timestamp.",
       "officialCareerUrl": "https://www.google.com/about/careers/applications/",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "reviewedAt": "2026-11-15",
+      "previousReason": "Published crawler rules exclude the tested Google career paths.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43733632425",
+      "historicalGithubObservation": {
         "companyId": "alphabet",
         "careerUrl": "https://www.google.com/about/careers/applications/",
         "landingAllowed": false,
@@ -383,7 +385,7 @@
       "companyId": "home-depot",
       "company": "Home Depot",
       "status": "connected",
-      "reason": "Twenty recent U.S. jobs collected and independently refreshed with zero errors or warnings. Employer-published date-sorted public search links to individual JobPosting pages. Public posting IDs keep separate store openings distinct even when ATS requisitions repeat. Actual employer posting dates control the fourteen-day window; navigation and related jobs cannot populate work-model filters.",
+      "reason": "Twenty recent U.S. jobs collected and independently refreshed with zero errors or warnings. Employer-published date-sorted public search links to individual JobPosting pages. Public posting IDs keep separate store openings distinct even when ATS requisitions repeat. Actual employer posting dates control the fourteen-day window; navigation and related jobs cannot populate work-model filters. Matched role-specific pay and work-location sections supply additional verified fields: thirteen Onsite, two Remote and five unknown arrangements; eleven postings preserve published pay. Remote commuting caveats are retained; generic country metadata does not imply nationwide eligibility.",
       "nextStep": "Monitor the bounded sample, current source health, published fields, posting dates and independent refreshes. No paid provider is needed for this connection.",
       "officialCareerUrl": "https://careers.homedepot.com/",
       "reviewedAt": "2026-11-15",
@@ -395,7 +397,7 @@
         "landingStatus": 200,
         "discoveryError": "Unexpected source host or protocol"
       },
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43732245766"
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43733597351"
     },
     {
       "companyId": "humana",
@@ -490,12 +492,14 @@
     {
       "companyId": "meta",
       "company": "Meta Platforms",
-      "status": "access-restricted",
-      "reason": "The GitHub discovery request returned HTTP 403.",
-      "nextStep": "Use an authorized source; do not bypass the denial.",
+      "status": "verification-needed",
+      "reason": "Current public home/search pages are accessible locally, and a directly published individual role returns HTTP 200 and dated JobPosting data both locally and from GitHub. The linked featured role is dated April 14 and is outside the fourteen-day window.",
+      "nextStep": "Review permitted recent-job discovery and exact individual role identity. Keep the old featured role excluded; do not claim complete or current coverage from it.",
       "officialCareerUrl": "https://www.metacareers.com/",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "reviewedAt": "2026-11-15",
+      "previousReason": "The GitHub discovery request returned HTTP 403.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43733632425",
+      "historicalGithubObservation": {
         "companyId": "meta",
         "careerUrl": "https://www.metacareers.com/",
         "landingAllowed": true,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-15T15:52:29.748244+00:00",
+  "attemptedAt": "2026-11-15T16:07:05.807513+00:00",
   "postingWindowDays": 14,
   "coverage": "U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.",
   "sources": {
@@ -648,21 +648,6 @@
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-15T01:57:31.389942+00:00"
     },
-    "nvidia": {
-      "discovered": 20,
-      "checked": 20,
-      "added": 0,
-      "changed": 0,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 20,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-15T14:27:17.887443+00:00"
-    },
     "home-depot": {
       "discovered": 20,
       "checked": 20,
@@ -676,7 +661,7 @@
       "activeTracked": 20,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-15T15:52:29.748244+00:00"
+      "lastSuccessfulAt": "2026-11-15T16:07:05.807513+00:00"
     }
   }
 }

@@ -21,3 +21,20 @@ class HomeDepotTests(unittest.TestCase):
   with patch.dict(c.SOURCES,{'home-depot':(HOST,'Retail')}):
    a=c.normalize_posting(job(),URL,'home-depot',datetime(2026,11,15,tzinfo=timezone.utc));other=URL.replace('12345','54321');b=c.normalize_posting(job(other),other,'home-depot',datetime(2026,11,15,tzinfo=timezone.utc))
    self.assertNotEqual(a['id'],b['id']);self.assertEqual(a['identifierType'],'posting-id');self.assertIn('SHARED-REF',a['sourceNote']);self.assertEqual(a['arrangement'],'unknown')
+
+ def test_role_sections_preserve_pay_and_remote_caveat_without_inventing_period_or_states(self):
+  from home_depot_public import enrich
+  source={'@type':'JobPosting','title':'Synthetic engineer (Remote)','identifier':{'value':'R1'},'datePosted':'2026-11-14','url':URL,'description':'No travel required.','jobLocationType':'TELECOMMUTE','applicantLocationRequirements':{'@type':'Country','name':'US'},'jobLocation':{'address':{'addressCountry':'US','addressRegion':'GA','addressLocality':'Atlanta'}}}
+  sections='<span id="gtm-jobdetail-idSC">R1</span><div><div id="payrange"></div><div class="fusion-builder-row-inner"><h2>Pay Range</h2><p>The pay range for this position is between $80,000 – $180,000.</p></div><div id="worklocation"></div><div class="fusion-builder-row-inner"><h2>Work Location</h2><p>Remote/virtual – Depending on the position, a remote role may require living within a commutable distance of an assigned company office.</p></div></div><aside>Work Type: Hybrid. Salary $900,000 per year.</aside>'
+  body='<script type="application/ld+json">'+json.dumps(source)+'</script>'+sections
+  with patch.dict(c.SOURCES,{'home-depot':(HOST,'Retail')}):
+   j=c.normalize_posting(body,URL,'home-depot',datetime(2026,11,15,tzinfo=timezone.utc))
+  self.assertEqual(j['arrangement'],'remote');self.assertEqual(j['remoteScope'],'unknown');self.assertEqual(j['eligibleStates'],[]);self.assertIsNone(j['salary']);self.assertIn('80,000',j['publishedPay']['text']);self.assertNotIn('900,000',j['publishedPay']['text']);self.assertIn('commutable',j['sourceNote']);self.assertFalse(j['travelRequired'])
+  with self.assertRaisesRegex(ValueError,'requisition'):enrich(source,sections.replace('>R1<','>OTHER<'))
+
+ def test_only_matching_anchored_section_controls_work_location(self):
+  from home_depot_public import enrich
+  source={'identifier':{'value':'R1'},'description':'Role duties.'}
+  body='<span id="gtm-jobdetail-idSC">R1</span><div><div id="worklocation"></div><div class="fusion-builder-row-inner"><h2>Work Location</h2><p>Onsite – This job works at the store.</p></div></div>'
+  self.assertEqual(enrich(source,body)['jobLocationType'],'ON_SITE')
+  self.assertNotIn('jobLocationType',enrich(source,body.replace('<h2>Work Location</h2>','<h2>Similar Roles</h2>')))
