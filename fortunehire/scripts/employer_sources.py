@@ -143,9 +143,12 @@ def public_fetch(client, url, client_factory):
     """Check the public job URL, then read its employer-published details."""
     status,body=client.get(url)
     if client.host=='careers.walmart.com' and status==200:
-        doc=Document(body);main=doc.find('main',id='main-content')
-        if main and re.search(r'\b404\s+Sorry, but it looks like this page no longer exists\.',text(main)) and not doc.find('script',id='__NEXT_DATA__'):
-            return 404,'' # Employer soft-404; reconciliation still requires two checks six hours apart.
+        doc=Document(body);main=doc.find('main',id='main-content');node=doc.find('script',id='__NEXT_DATA__')
+        if main and node and re.search(r'\b404\s+Sorry, but it looks like this page no longer exists\.',text(main)):
+            data=json.loads(''.join(v for v in node['children'] if isinstance(v,str)))
+            props=data.get('props',{}).get('pageProps',{})
+            if data.get('query',{}).get('page')==['job-not-found'] and props.get('pagePath')=='/content/careers/us/en/job-not-found' and not props.get('jobDetails'):
+                return 404,'' # Employer soft-404; reconciliation still requires two checks six hours apart.
     if client.host in ('apply.careers.microsoft.com','jobs.nvidia.com') and status==200:
         from pcsx_public import fetch
         return fetch(client,url,body)

@@ -28,11 +28,15 @@ class EmployerSourceTests(unittest.TestCase):
     def test_walmart_soft404_requires_exact_employer_template_without_active_payload(self):
         client=Mock(host='careers.walmart.com')
         missing='<main id="main-content"><div>404</div><div>Sorry, but it looks like this page no longer exists.</div></main>'
-        client.get.return_value=(200,missing)
+        data={'query':{'page':['job-not-found']},'props':{'pageProps':{'pagePath':'/content/careers/us/en/job-not-found'}}}
+        script=lambda value:'<script id="__NEXT_DATA__">'+json.dumps(value)+'</script>'
+        body=missing+script(data);client.get.return_value=(200,body)
         self.assertEqual(public_fetch(client,'https://careers.walmart.com/us/en/jobs/R-123',Mock()),(404,''))
-        for body in [missing+'<script id="__NEXT_DATA__">{}</script>',missing.replace('404','Error'),missing.replace('main-content','recommendations')]:
+        for body in [missing,missing+script({}),missing.replace('404','Error')+script(data),missing.replace('main-content','recommendations')+script(data)]:
             client.get.return_value=(200,body)
             self.assertEqual(public_fetch(client,'https://careers.walmart.com/us/en/jobs/R-123',Mock()),(200,body))
+        data['props']['pageProps']['jobDetails']={'jobId':'R-123'};body=missing+script(data);client.get.return_value=(200,body)
+        self.assertEqual(public_fetch(client,'https://careers.walmart.com/us/en/jobs/R-123',Mock()),(200,body))
 
     def test_oracle_exact_empty_lookup_uses_repeated_missing_guard_not_immediate_closure(self):
         client=Mock(host='enterpriseplatform.dell.com')
