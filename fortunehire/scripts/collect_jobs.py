@@ -22,6 +22,7 @@ import uuid
 from employer_adapters import extract as extract_employer_page, Document, ups_opening_pay
 from employer_sources import public_search, public_fetch
 from zoneinfo import ZoneInfo
+from crawler_rules import CrawlerRules
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY=json.loads((ROOT/'public/data/job-sources.json').read_text(encoding='utf-8'))
@@ -327,7 +328,7 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details'):
+    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details','employer-pcsx-page-and-public-details'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]
@@ -456,6 +457,7 @@ def normalize_posting(body, url, company, now):
             else:arrangement,arrangement_evidence='unknown','Conflicting employer work setting '+model+' and role declaration: '+arrangement_evidence
     if arrangement=='remote' and remote_location_states:
         eligible=sorted(set(eligible+remote_location_states))
+    if company in ('microsoft','nvidia') and source.get('_pcsxWorksite') and arrangement!='unknown':arrangement_evidence='Employer role work setting: '+source['_pcsxWorksite']
     # A posted office address is not evidence of remote eligibility.
     if arrangement != 'remote': eligible = []
     # Generic internet/home-office requirements do not impose state residency.
@@ -475,6 +477,7 @@ def normalize_posting(body, url, company, now):
     if not yes_travel: yes_travel=re.search(r'\b(?:Willing(?:ness)?|Ability|Required)\s+to\s+travel\s+(?:nationally\s+)?(?:up to\s+)?([1-9]\d?(?:\.\d+)?|100)\s*%[^\n]{0,50}|\b(?:up to\s+)?(?:[1-9]\d?|100)\s*%\s+(?:business\s+)?travel\b|\bthis (?:role|position) (?:may need to|requires? you to|requires? occasional) travel\b',description,re.I)
     if no_travel: travel, travel_evidence = False, no_travel[0]
     elif yes_travel: travel, travel_evidence = True, yes_travel[0]
+    if company in ('microsoft','nvidia') and isinstance(source.get('_pcsxTravel'),bool):travel,travel_evidence=source['_pcsxTravel'],'Employer role travel setting: '+source.get('_pcsxTravelLabel','')
     employment = 'Not specified'
     raw_type = ' '.join(str(x) for x in as_list(source.get('employmentType'))).lower().replace('_','-')
     for pattern, value in [('full-time','Full-time'),('full time','Full-time'),('part-time','Part-time'),('part time','Part-time'),('contract','Contract'),('temporary','Temporary'),('intern','Internship')]:
@@ -583,7 +586,7 @@ class Client:
         status, body = self.get('https://'+host+'/robots.txt', check=False)
         if status == 404: body = ''
         elif status != 200: raise SourceError('Cannot establish crawler rules: HTTP '+str(status))
-        self.robots = urllib.robotparser.RobotFileParser()
+        self.robots = CrawlerRules()
         self.robots.parse(body.splitlines())
         self.delay = max(delay, self.robots.crawl_delay(UA) or self.robots.crawl_delay('*') or 0)
 

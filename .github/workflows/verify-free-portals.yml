@@ -1,0 +1,61 @@
+name: Verify permitted public portals and crawler rule precedence
+on:
+  push:
+    paths: ['.github/workflows/verify-free-portals.yml']
+permissions:
+  contents: read
+jobs:
+  new-portals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test rules and collector evidence
+        working-directory: fortunehire
+        run: python -m unittest discover -s test -p 'test_*.py' -v
+      - name: Collect and independently refresh Microsoft and NVIDIA
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,tempfile
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          c.SOURCES={'microsoft':('apply.careers.microsoft.com','Technology'),'nvidia':('jobs.nvidia.com','Technology')}
+          root=Path(tempfile.mkdtemp())
+          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
+          initial=c.run(root,max_new=20)
+          print('INITIAL_REPORT',json.dumps(json.loads((root/'public/data/collection-status.json').read_text())))
+          refreshed=c.run(root,max_new=0)
+          data=json.loads((root/'public/data/jobs.json').read_text())
+          print('STAGE_JOBS',json.dumps(data['jobs']))
+          print('STAGE_SOURCES',json.dumps(data['automation']['sources']))
+          print('STAGE_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
+          print('VERIFIED',bool(initial and refreshed and all(any(j['companyId']==key for j in data['jobs']) for key in c.SOURCES)))
+          PY
+  existing-feeds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Review existing feeds with corrected rule matching without publishing
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,tempfile
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          root=Path(tempfile.mkdtemp())
+          c.atomic_json(root/'public/data/jobs.json',json.loads(Path('public/data/jobs.json').read_text()))
+          c.atomic_json(root/'automation/state.json',json.loads(Path('automation/state.json').read_text()))
+          ok=c.run(root,max_new=0)
+          print('EXISTING_REPORTS',json.dumps(json.loads((root/'public/data/collection-status.json').read_text())))
+          print('EXISTING_VERIFIED',ok)
+          PY

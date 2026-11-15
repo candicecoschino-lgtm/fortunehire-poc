@@ -30,6 +30,9 @@ API='/hcmRestApi/resources/11.13.18.05/'
 
 def public_search(client, client_factory):
     """Inspect at most 60 recent results; publishing still checks each job."""
+    if client.host in ('apply.careers.microsoft.com','jobs.nvidia.com'):
+        from pcsx_public import discover
+        return discover(client)
     if client.host=='salesforce.wd12.myworkdayjobs.com':
         data_client=client_factory('a.sfdcstatic.com')
         status,body=data_client.get('https://a.sfdcstatic.com/digital/xsf/careers/prod/jobs_1.json')
@@ -136,6 +139,9 @@ def public_search(client, client_factory):
 def public_fetch(client, url, client_factory):
     """Check the public job URL, then read its employer-published details."""
     status,body=client.get(url)
+    if client.host in ('apply.careers.microsoft.com','jobs.nvidia.com') and status==200:
+        from pcsx_public import fetch
+        return fetch(client,url,body)
     if client.host=='salesforce.wd12.myworkdayjobs.com' and status==200:
         from salesforce_details import enrich
         canonical=Document(body).find('link',rel='canonical')
