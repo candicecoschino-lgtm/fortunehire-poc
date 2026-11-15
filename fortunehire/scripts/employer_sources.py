@@ -30,6 +30,9 @@ API='/hcmRestApi/resources/11.13.18.05/'
 
 def public_search(client, client_factory):
     """Inspect at most 60 recent results; publishing still checks each job."""
+    if client.host=='www.metacareers.com':
+        from meta_public import discover
+        return discover(client)
     if client.host=='careers.homedepot.com':
         from home_depot_public import discover
         return discover(client,client_factory)

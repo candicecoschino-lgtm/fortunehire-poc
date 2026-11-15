@@ -169,6 +169,10 @@
     "home-depot": {
       "host": "careers.homedepot.com",
       "sector": "Retail"
+    },
+    "meta": {
+      "host": "www.metacareers.com",
+      "sector": "Communication Services"
     }
   }
 }

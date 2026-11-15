@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-15T16:07:05.807513+00:00",
+  "updatedAt": "2026-11-15",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 5,
-    "connected": 42,
+    "connected": 43,
     "paused": 1,
-    "verification-needed": 4
+    "verification-needed": 3
   },
   "companies": [
     {
@@ -43,8 +43,8 @@
       "companyId": "alphabet",
       "company": "Alphabet (Google)",
       "status": "verification-needed",
-      "reason": "Current public search and one directly linked individual role are allowed by published crawler rules and return HTTP 200 locally and from GitHub. The tested role has no JobPosting schema or verified publication date in the current reader.",
-      "nextStep": "Review the employer-published individual format for a reliable original posting date before enabling the fourteen-day feed. Never substitute search order or a crawl timestamp.",
+      "reason": "The public career and individual role pages load, but no reliable named original posting-date field has been verified. Three embedded timestamps have different possible meanings; their position in an array is not proof of publication. The linked format script is excluded by its host crawler rules and was not fetched.",
+      "nextStep": "Obtain a permitted, documented publication-date mapping or an employer-published dated feed. Do not use a sitemap modification date, crawl time, unverified timestamp or third-party job age.",
       "officialCareerUrl": "https://www.google.com/about/careers/applications/",
       "reviewedAt": "2026-11-15",
       "previousReason": "Published crawler rules exclude the tested Google career paths.",
@@ -492,13 +492,13 @@
     {
       "companyId": "meta",
       "company": "Meta Platforms",
-      "status": "verification-needed",
-      "reason": "Current public home/search pages are accessible locally, and a directly published individual role returns HTTP 200 and dated JobPosting data both locally and from GitHub. The linked featured role is dated April 14 and is outside the fourteen-day window.",
-      "nextStep": "Review permitted recent-job discovery and exact individual role identity. Keep the old featured role excluded; do not claim complete or current coverage from it.",
+      "status": "connected",
+      "reason": "The employer-advertised job-search sitemap and individual pages work without credentials. Sixty bounded candidates yielded two recent U.S. postings; forty-four older and fourteen non-U.S. candidates stayed excluded. Individual posting dates, canonical URLs, requisition IDs and matched public role details control publication. Both postings independently refreshed without errors or warnings; published U.S. compensation text is preserved.",
+      "nextStep": "Prioritize newly observed public URLs on subsequent bounded runs, while always requiring actual employer posting dates. This is a small pilot sample, not complete Meta coverage. Preserve pay-component and work-arrangement uncertainty.",
       "officialCareerUrl": "https://www.metacareers.com/",
       "reviewedAt": "2026-11-15",
-      "previousReason": "The GitHub discovery request returned HTTP 403.",
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43733632425",
+      "previousReason": "Current public home/search pages are accessible locally, and a directly published individual role returns HTTP 200 and dated JobPosting data both locally and from GitHub. The linked featured role is dated April 14 and is outside the fourteen-day window.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43740681758",
       "historicalGithubObservation": {
         "companyId": "meta",
         "careerUrl": "https://www.metacareers.com/",
