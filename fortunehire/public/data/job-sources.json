@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-14",
+  "reviewedAt": "2026-11-15",
   "sources": {
     "boeing": {
       "host": "jobs.boeing.com",
@@ -161,6 +161,14 @@
     "salesforce": {
       "host": "salesforce.wd12.myworkdayjobs.com",
       "sector": "Technology"
+    },
+    "nvidia": {
+      "host": "jobs.nvidia.com",
+      "sector": "Technology"
+    },
+    "home-depot": {
+      "host": "careers.homedepot.com",
+      "sector": "Retail"
     }
   }
 }

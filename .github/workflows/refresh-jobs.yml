@@ -8,6 +8,12 @@ on:
     paths:
       - '.github/workflows/refresh-jobs.yml'
       - 'fortunehire/scripts/collect_jobs.py'
+      - 'fortunehire/scripts/crawler_rules.py'
+      - 'fortunehire/scripts/pcsx_public.py'
+      - 'fortunehire/scripts/home_depot_public.py'
+      - 'fortunehire/test/test_crawler_rules.py'
+      - 'fortunehire/test/test_pcsx.py'
+      - 'fortunehire/test/test_home_depot.py'
       - 'fortunehire/scripts/employer_adapters.py'
       - 'fortunehire/scripts/employer_sources.py'
       - 'fortunehire/scripts/apple_public.py'

@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 40 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 42 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -56,7 +56,7 @@ Costco uses the public /api/jobs interface sorted by posted_date, then checks in
 
 UPS uses employer-published eagerLoadRefineSearch data from the current U.S. search page. UUIDs and canonical UPBUPSGLOBAL identifiers resolve to the same posting; missing requisitions are labeled public posting IDs. Role JobPosting dates control eligibility; the separate dateCreated field is not substituted. A matching jobDetail.openingPayRate with an explicit hourly period and a single U.S. state supports a starting-rate pay filter.
 
-The exact Salesforce robots redirect to its own corporate HTTP 404 page is followed only for robots retrieval, following RFC 9309 sections 2.3.1.2–3: https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1.2 . Job redirects retain the strict host restriction. Its feed stays disabled pending a working integration; access denials are not bypassed.
+The exact Salesforce robots redirect to its own corporate HTTP 404 page is followed only for robots retrieval, following RFC 9309 sections 2.3.1.2–3: https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1.2 . Job redirects retain the strict host restriction. The Salesforce feed is now enabled after individual-role and public-details verification; access denials are not bypassed.
 
 ## Fannie Mae — November 14
 
@@ -79,3 +79,7 @@ IBM research resolved the published two-hop robots redirect using RFC 9309 secti
 The individual role page loads the public GET /wday/cxs/salesforce/External_Career_Site/job/<posting-id> interface, allowed by the employer robots policy. Require matching requisition, title, original posting date, posting-site ID, application host and explicit posted/canApply flags. Preserve additional U.S. location labels. Use the employer remoteType field rather than a primary location name to set Hybrid/Remote/On-site; conflicts remain unknown. Employer explanation: https://www.salesforce.com/news/stories/hybrid-workplace/ .
 
 Code pushes cancel an outdated in-progress refresh in the same group so old code cannot publish stale classifications or fail when trying to overwrite a newer commit. Scheduled/manual runs remain serialized.
+
+## NVIDIA and Home Depot — November 15
+
+See FREE-SOURCE-VERIFICATION.md for verified free public interfaces, field provenance and request limits. Crawler rules use RFC 9309 longest-match precedence; explicit Allow rules can permit career paths under a general exclusion. Excluded paths, security challenges and HTTP 403/429 still stop collection. Home Depot uses distinct public posting IDs for shared store requisitions. Employer soft-404 and exact empty per-ID Oracle lookups enter the same two-check/six-hour missing guard; generic errors and malformed results do not close jobs.

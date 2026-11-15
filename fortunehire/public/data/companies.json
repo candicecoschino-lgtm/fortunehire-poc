@@ -582,11 +582,12 @@
         "state": "California"
       },
       "listYear": 2026,
-      "careerUrl": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+      "careerUrl": "https://jobs.nvidia.com/careers",
       "profileSource": "https://fortune.com/company/nvidia/",
       "membershipSource": "https://fortune.com/company/nvidia/",
-      "reviewedAt": "2026-11-13",
-      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+      "reviewedAt": "2026-11-15",
+      "verificationNote": "Official NVIDIA corporate careers page links to this public job portal. Company and list membership reviewed; current vacancies are not guaranteed.",
+      "verificationSource": "https://www.nvidia.com/en-us/about-nvidia/careers/"
     },
     {
       "id": "oracle",

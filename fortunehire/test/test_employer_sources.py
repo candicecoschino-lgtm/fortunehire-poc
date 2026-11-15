@@ -25,6 +25,26 @@ def verizon_data(**changes):
     return scripts+'<div data-testid="job-page" data-job-id="r-test"><div class="wysiwyg"><p>This is a hybrid position.</p></div></div><aside><p>Work Type: Remote</p></aside>'
 
 class EmployerSourceTests(unittest.TestCase):
+    def test_walmart_soft404_requires_exact_employer_template_without_active_payload(self):
+        client=Mock(host='careers.walmart.com')
+        missing='<main id="main-content"><div>404</div><div>Sorry, but it looks like this page no longer exists.</div></main>'
+        client.get.return_value=(200,missing)
+        self.assertEqual(public_fetch(client,'https://careers.walmart.com/us/en/jobs/R-123',Mock()),(404,''))
+        for body in [missing+'<script id="__NEXT_DATA__">{}</script>',missing.replace('404','Error'),missing.replace('main-content','recommendations')]:
+            client.get.return_value=(200,body)
+            self.assertEqual(public_fetch(client,'https://careers.walmart.com/us/en/jobs/R-123',Mock()),(200,body))
+
+    def test_oracle_exact_empty_lookup_uses_repeated_missing_guard_not_immediate_closure(self):
+        client=Mock(host='enterpriseplatform.dell.com')
+        client.oracle_data_client=None
+        empty={'items':[],'count':0,'hasMore':False}
+        client.get.side_effect=[(200,'<html>public page</html>'),(200,json.dumps(empty))]
+        self.assertEqual(public_fetch(client,DELL,Mock()),(404,''))
+        self.assertIn('ById',client.get.call_args.args[0])
+        for changed in [dict(empty,error='service failure'),dict(empty,hasMore=True),{'items':[]}]:
+            payload=json.dumps(changed);client.get.side_effect=[(200,'<html></html>'),(200,payload)]
+            self.assertEqual(public_fetch(client,DELL,Mock()),(200,payload))
+
     def test_workday_outage_redirect_is_identified_without_following_other_hosts(self):
         redirect=c.RestrictedRedirect('coke.wd1.myworkdayjobs.com')
         req=c.urllib.request.Request('https://coke.wd1.myworkdayjobs.com/sitemap.xml')

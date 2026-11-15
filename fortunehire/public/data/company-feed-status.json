@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T19:44:00.136144+00:00",
+  "updatedAt": "2026-11-15T15:56:23.076252+00:00",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
-    "access-restricted": 10,
-    "connected": 40,
+    "access-restricted": 7,
+    "connected": 42,
     "paused": 1,
-    "verification-needed": 1
+    "verification-needed": 2
   },
   "companies": [
     {
@@ -382,18 +382,20 @@
     {
       "companyId": "home-depot",
       "company": "Home Depot",
-      "status": "access-restricted",
-      "reason": "The directly linked role parses locally, but the GitHub request returned HTTP 403.",
-      "nextStep": "Use an authorized source that works from the scheduled collector.",
+      "status": "connected",
+      "reason": "Twenty recent U.S. jobs collected and independently refreshed with zero errors or warnings. Employer-published date-sorted public search links to individual JobPosting pages. Public posting IDs keep separate store openings distinct even when ATS requisitions repeat. Actual employer posting dates control the fourteen-day window; navigation and related jobs cannot populate work-model filters.",
+      "nextStep": "Monitor the bounded sample, current source health, published fields, posting dates and independent refreshes. No paid provider is needed for this connection.",
       "officialCareerUrl": "https://careers.homedepot.com/",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "reviewedAt": "2026-11-15",
+      "previousReason": "The directly linked role parses locally, but the GitHub request returned HTTP 403.",
+      "historicalGithubObservation": {
         "companyId": "home-depot",
         "careerUrl": "https://careers.homedepot.com/",
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Unexpected source host or protocol"
-      }
+      },
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43732245766"
     },
     {
       "companyId": "humana",
@@ -504,18 +506,20 @@
     {
       "companyId": "microsoft",
       "company": "Microsoft",
-      "status": "access-restricted",
-      "reason": "The official Microsoft job portal excludes the tested career route in its crawler rules.",
-      "nextStep": "Obtain an authorized job feed or employer permission.",
+      "status": "verification-needed",
+      "reason": "Official public portal explicitly permits the tested career and PCSX paths in its crawler rules. Three individual postings were verified, then the GitHub collector received HTTP 429 rate limiting. The source remains disabled; staged Microsoft jobs are not published.",
+      "nextStep": "Honor the cooldown and Retry-After guidance, then consider a smaller employer-permitted request budget. Do not bypass throttling or assume a paid provider is mandatory.",
       "officialCareerUrl": "https://careers.microsoft.com/",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "reviewedAt": "2026-11-15",
+      "previousReason": "The official Microsoft job portal excludes the tested career route in its crawler rules.",
+      "historicalGithubObservation": {
         "companyId": "microsoft",
         "careerUrl": "https://careers.microsoft.com/",
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Invalid employer sitemap response"
-      }
+      },
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43724355714"
     },
     {
       "companyId": "nike",
@@ -529,18 +533,20 @@
     {
       "companyId": "nvidia",
       "company": "Nvidia",
-      "status": "access-restricted",
-      "reason": "The officially linked NVIDIA jobs portal excludes the tested career route in its crawler rules.",
-      "nextStep": "Obtain an authorized job feed or employer permission.",
-      "officialCareerUrl": "https://www.nvidia.com/en-us/about-nvidia/careers/",
-      "reviewedAt": "2026-11-13",
-      "githubObservation": {
+      "status": "connected",
+      "reason": "Twenty recent U.S. jobs collected and independently refreshed with zero errors or warnings. Public PCSX search, individual role pages and per-ID details are matched by role ID, title, employer requisition and posting date. Published crawler rules explicitly allow /careers and /api/pcsx; longest-match precedence is honored. Generic Office categories do not prove full-time onsite; pay without a stated period remains text.",
+      "nextStep": "Monitor the bounded sample, current source health, published fields, posting dates and independent refreshes. No paid provider is needed for this connection.",
+      "officialCareerUrl": "https://jobs.nvidia.com/careers",
+      "reviewedAt": "2026-11-15",
+      "previousReason": "The officially linked NVIDIA jobs portal excludes the tested career route in its crawler rules.",
+      "historicalGithubObservation": {
         "companyId": "nvidia",
         "careerUrl": "https://www.nvidia.com/en-us/about-nvidia/careers/",
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Employer request failed: HTTP 504"
-      }
+      },
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43724355714"
     },
     {
       "companyId": "oracle",
