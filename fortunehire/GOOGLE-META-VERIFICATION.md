@@ -19,3 +19,7 @@ Google's public career search and directly linked individual role load, but thei
 ## Validation
 
 129 Python tests and 33 directory/filter/data tests passed. Tests cover exact Meta URL ownership, advertised sitemap selection, stale-date exclusion, matching role identity, field isolation, U.S. compensation selection and prioritization of newly observed URLs without replacing employer posting dates. The source registry and all 52 audited company statuses agree. Existing scheduled data is synchronized before promotion; production check results remain in collection-status.json.
+
+## Full production refresh
+
+GitHub run 43750731217 completed successfully on November 15. All forty-three connected employers completed with zero source errors. Meta independently refreshed both tracked roles with zero changes, closures, errors or warnings. All 129 Python tests and 33 directory/filter/data tests passed, and all 2,272 published records validated. The eight unconnected companies remain disabled and RTX remains paused. Actual current request times and source outcomes are preserved in collection-status.json.
