@@ -1,0 +1,41 @@
+name: Review Google and Meta permitted public role evidence
+on:
+  push:
+    paths: ['.github/workflows/review-public-role-evidence.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect one employer-published role per candidate without publishing
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json
+          sys.path.insert(0,'scripts')
+          from collect_jobs import Client,Page,postings,UA
+          from urllib.parse import urlsplit
+          urls={'alphabet':'https://www.google.com/about/careers/applications/jobs/results/86136593793852102-senior-director-product-management-chrome-developer-and-ecosystem','meta':'https://www.metacareers.com/profile/job_details/1690022942358388/'}
+          for key,url in urls.items():
+              report={'companyId':key,'url':url}
+              try:
+                  client=Client(urlsplit(url).hostname)
+                  report['allowed']=client.robots.can_fetch(UA,url)
+                  status,body=client.get(url)
+                  report['status']=status
+                  rows=[]
+                  for script in Page(body).scripts:
+                      try:rows.extend(postings(json.loads(script)))
+                      except (ValueError,TypeError):pass
+                  report['jobPostingCount']=len(rows)
+                  report['postingDates']=[row.get('datePosted') for row in rows]
+                  report['titles']=[row.get('title') for row in rows]
+              except Exception as e:report['error']=str(e)
+              print('PUBLIC_ROLE_EVIDENCE',json.dumps(report))
+          PY
