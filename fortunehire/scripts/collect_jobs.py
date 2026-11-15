@@ -801,7 +801,11 @@ def run(root=ROOT, now=None, max_new=20):
         try:
             client = Client(host)
             discovered = discover(client)
+            if company=='meta':
+                from meta_public import discovery_order
+                client.discovery_dates=discovery_order(discovered,state.get(company,{}).get('discoveryFirstSeen',{}),now)
             refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,lambda url:public_fetch(client,url,Client),now,max_new=max_new,discovery_dates=client.discovery_dates)
+            if company=='meta':source_state['discoveryFirstSeen']=client.discovery_dates
             result['discoveryLimited']=client.discovery_limited
             if client.discovery_warnings:result['discoveryWarnings']=client.discovery_warnings
             if not result['errors']:

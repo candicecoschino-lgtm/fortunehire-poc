@@ -50,3 +50,17 @@ def enrich(source,body,url):
    parts.append('<p>Employer-published U.S. compensation: '+html.escape(low+' – '+high)+'.</p>')
  result['description']='\n'.join(parts);result['_adapter']='meta-public-jobposting-and-matched-details'
  return result
+
+
+def discovery_order(found,previous,now):
+    """First-observed times prioritize new URLs; only JobPosting dates publish jobs."""
+    from datetime import datetime
+    result={}
+    for req in found:
+        value=previous.get(req)
+        try:
+            stamp=datetime.fromisoformat(value)
+            if stamp.tzinfo is None or stamp>now:raise ValueError('Invalid observation time')
+        except (ValueError,TypeError):value=now.isoformat()
+        result[req]=value
+    return result

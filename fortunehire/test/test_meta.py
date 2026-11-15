@@ -28,3 +28,12 @@ class MetaTests(unittest.TestCase):
    self.assertEqual(j['arrangement'],'unknown');self.assertEqual(j['employmentType'],'Full-time');self.assertEqual(j['travelRequired'],True);self.assertIsNone(j['salary']);self.assertIn('$80,000/year',j['publishedPay']['text']);self.assertNotIn('900,000',j['publishedPay']['text']);self.assertNotIn('DO NOT PUBLISH',json.dumps(j));self.assertEqual(j['postedAt'],'2026-11-14')
    self.assertFalse(c.recent_posting(c.normalize_posting(fixture('2025-01-01'),URL,'meta',now),now))
    with self.assertRaisesRegex(ValueError,'identity|details'):c.normalize_posting(fixture(record_id='999'),URL,'meta',now)
+
+ def test_newly_observed_urls_precede_old_backlog_without_claiming_a_posting_date(self):
+  from meta_public import discovery_order
+  now=datetime(2026,11,15,tzinfo=timezone.utc);older=URL.replace('12345','99999');found={'99999':older,'12345':URL}
+  dates=discovery_order(found,{'99999':'2026-11-01T00:00:00+00:00','removed':'2026-01-01T00:00:00+00:00'},now)
+  self.assertNotIn('removed',dates);self.assertEqual(dates['12345'],now.isoformat());requested=[]
+  with patch.dict(c.SOURCES,{'meta':('www.metacareers.com','Technology')}):
+   c.reconcile('meta',[],{},found,lambda u:(requested.append(u) or (404,'')),now,max_new=1,discovery_dates=dates)
+  self.assertEqual(requested,[URL])

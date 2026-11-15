@@ -1,4 +1,4 @@
-name: Verify Meta public job sitemap and original posting dates
+name: Verify Meta independent refresh and new-link prioritization
 on:
   push:
     paths: ['.github/workflows/verify-meta.yml']
@@ -29,14 +29,8 @@ jobs:
           seed=json.loads(Path('automation/meta-review-seed.json').read_text())
           c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':seed['jobs']})
           c.atomic_json(root/'automation/state.json',seed['state'])
-          ok=False
-          for attempt in range(2):
-              ok=c.run(root,max_new=20)
-              report=json.loads((root/'public/data/collection-status.json').read_text())
-              print('META_INITIAL_REPORT',json.dumps(report))
-              jobs=json.loads((root/'public/data/jobs.json').read_text())['jobs']
-              if not ok:break
-          refreshed=c.run(root,max_new=0) if ok and jobs else False
+          ok=c.run(root,max_new=0)
+          refreshed=c.run(root,max_new=0) if ok else False
           data=json.loads((root/'public/data/jobs.json').read_text())
           print('META_JOBS',json.dumps(data['jobs']))
           print('META_SOURCES',json.dumps(data['automation']['sources']))
