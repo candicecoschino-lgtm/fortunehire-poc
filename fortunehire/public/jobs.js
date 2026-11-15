@@ -68,7 +68,7 @@ export function validateJobs(data,companies) {
     const taleo=url.hostname==='valero.taleo.net'&&url.pathname==='/careersection/2/jobdetail.ftl'&&url.searchParams.getAll('job').length===1&&/^[A-Za-z0-9]{5,12}$/.test(url.searchParams.get('job'))&&Array.from(url.searchParams.keys()).every(key=>key==='job');
     const meta=url.hostname==='www.metacareers.com'&&/^\/profile\/job_details\/\d+\/?$/.test(url.pathname)&&!url.search&&!url.hash;
     const apple=url.hostname==='jobs.apple.com'&&/^\/en-us\/details\/\d+(?:-\d+)?\/[^/]+\/?$/.test(url.pathname)&&!url.search;
-    if(url.protocol!=='https:'||url.username||url.password||url.hostname!==officialHost||(!taleo&&!apple&&!meta&&!/\/jobs?\/[^/]+|\/search\/jobdetails\/[^/]+\/[0-9a-f-]{36}\/?$|\/en-us\/job-detail\/[^/]+/i.test(url.pathname)))throw Error('Invalid official job URL');
+    if(url.protocol!=='https:'||url.username||url.password||url.hostname!==officialHost||(url.hostname==='www.metacareers.com'&&!meta)||(!taleo&&!apple&&!meta&&!/\/jobs?\/[^/]+|\/search\/jobdetails\/[^/]+\/[0-9a-f-]{36}\/?$|\/en-us\/job-detail\/[^/]+/i.test(url.pathname)))throw Error('Invalid official job URL');
     if(!['reviewed','closed','needs-review'].includes(j.status))throw Error('Invalid review status');
     if(j.salary && (!Number.isFinite(j.salary.min)||!Number.isFinite(j.salary.max)||j.salary.min<=0||j.salary.max<j.salary.min||j.salary.currency!=='USD'||!['year','hour'].includes(j.salary.period)))throw Error('Invalid pay');
     if(j.salary?.scopeStates && (!Array.isArray(j.salary.scopeStates)||j.salary.scopeStates.some(s=>!US_STATES.includes(s))))throw Error('Invalid pay geography');

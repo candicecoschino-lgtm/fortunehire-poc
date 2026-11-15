@@ -26,14 +26,16 @@ jobs:
           import collect_jobs as c
           c.SOURCES={'meta':('www.metacareers.com','Communication Services')}
           root=Path(tempfile.mkdtemp())
-          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
+          seed=json.loads(Path('automation/meta-review-seed.json').read_text())
+          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':seed['jobs']})
+          c.atomic_json(root/'automation/state.json',seed['state'])
           ok=False
-          for attempt in range(3):
+          for attempt in range(2):
               ok=c.run(root,max_new=20)
               report=json.loads((root/'public/data/collection-status.json').read_text())
               print('META_INITIAL_REPORT',json.dumps(report))
               jobs=json.loads((root/'public/data/jobs.json').read_text())['jobs']
-              if not ok or jobs:break
+              if not ok:break
           refreshed=c.run(root,max_new=0) if ok and jobs else False
           data=json.loads((root/'public/data/jobs.json').read_text())
           print('META_JOBS',json.dumps(data['jobs']))

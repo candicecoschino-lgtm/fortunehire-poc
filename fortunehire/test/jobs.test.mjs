@@ -121,5 +121,5 @@ test('data validation rejects wrong-employer links, unsafe URLs, bogus dates and
 test('Meta application links require the exact public posting route and employer host',()=>{
  const j={...structuredClone(data.jobs[0]),id:'meta-synthetic',companyId:'meta',url:'https://www.metacareers.com/profile/job_details/12345/'};
  assert.equal(validateJobs({schemaVersion:1,jobs:[j]},companies).length,1);
- for(const url of [j.url+'?private=1',j.url+'#redirect','https://www.metacareers.com/jobsearch/',j.url.replace('www.metacareers.com','other.example')])assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,url}]},companies));
+ for(const url of [j.url+'?private=1',j.url+'#redirect','https://www.metacareers.com/jobsearch/','https://www.metacareers.com/job/12345',j.url.replace('www.metacareers.com','other.example')])assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,url}]},companies));
 });
