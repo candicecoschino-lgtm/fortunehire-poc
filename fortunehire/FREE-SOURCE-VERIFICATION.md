@@ -25,3 +25,7 @@ Local verification: 125 Python tests, 32 directory/filter/data tests, and valida
 References: https://www.rfc-editor.org/rfc/rfc9309.html#section-2.2.2 ; https://www.nvidia.com/en-us/about-nvidia/careers/ ; https://careers.homedepot.com/job-search-results/ ; https://careers.microsoft.com/ .
 
 Follow-up run 43733632425 verified HTTP 200 individual-role access for Google and Meta under their published rules. Google still needs original date extraction; Meta still needs permitted recent-job discovery. The inspected Meta featured role is dated April 14, so it remains excluded. Oracle, Progressive and Tesla again returned HTTP 403; no further requests were attempted.
+
+## Full production refresh
+
+Run 43733871384 completed successfully on November 15, validating all 1,904 published records and passing 125 Python tests plus 32 directory/filter/data tests. NVIDIA and Home Depot each independently refreshed all twenty tracked jobs without errors or warnings. Forty-one employers had no source errors; one CVS individual posting returned a temporary HTTP 502. Its previous verified record and real check date were retained, and the source health report preserves the error. Walmart and Kroger missing-page formats entered the existing guarded missing checks without causing collection errors. The workflow succeeded with the recorded temporary employer outage.
