@@ -312,6 +312,9 @@ def normalize_posting(body, url, company, now):
         except ValueError: pass
     if len(matched) != 1: raise ValueError('Missing or ambiguous matching JobPosting data; '+str(len(candidates))+' structured candidates found')
     source = matched[0]
+    if company=='home-depot':
+        from home_depot_public import enrich
+        source=enrich(source,body)
     url=job_url((source.get('url') or page.canonical).rstrip('/'),host)
     if not isinstance(source.get('title'),str): raise ValueError('Invalid posting title')
     title = html.unescape(source['title']).strip()
@@ -551,7 +554,7 @@ def normalize_posting(body, url, company, now):
         'travelRequired':travel, 'travelNote':travel_evidence or 'Travel not verified automatically.',
         'postedAt':posted, 'closesAt':deadline,
         'reviewedAt':today, 'status':'closed' if source.get('_employerClosed') or deadline and deadline<today else 'reviewed', 'sector':sector,
-        'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' Employer requisition reference: '+employer_identifier[:100]+'.' if company=='home-depot' and employer_identifier else '')+(' Employer work setting: '+source['_salesforceRemoteType']+'. Location labels containing Remote do not override this setting.' if company=='salesforce' and source.get('_salesforceRemoteType') else '')+(' '+deadline_note if deadline_note else ''),
+        'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' Employer requisition reference: '+employer_identifier[:100]+'.' if company=='home-depot' and employer_identifier else '')+(' '+source['_homeDepotWorksite'] if company=='home-depot' and source.get('_homeDepotWorksite') else '')+(' Employer work setting: '+source['_salesforceRemoteType']+'. Location labels containing Remote do not override this setting.' if company=='salesforce' and source.get('_salesforceRemoteType') else '')+(' '+deadline_note if deadline_note else ''),
         'checkedAt':now.isoformat(), 'collectionMethod':source.get('_adapter') or 'official-jobposting-jsonld',
         'sourceHash':hashlib.sha256(json.dumps({'structured':source,'locations':locations,'arrangement':arrangement_evidence,'remoteScope':remote_scope,'travel':travel_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
         'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note,**({'location':location_evidence} if location_evidence else {})},

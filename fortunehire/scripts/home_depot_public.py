@@ -21,3 +21,48 @@ def discover(client,client_factory):
         found[req]=url;dates[req]=str(row.get('open_date',''))[:10]
     client.discovery_dates=dates;client.discovery_limited=data.get('totalHits',0)>len(found);client.discovery_warnings=[]
     return found
+
+
+def enrich(source,body):
+    """Preserve matched role sections which the employer omits from JSON-LD."""
+    import html
+    from employer_adapters import Document,text
+    doc=Document(body);identity=doc.find(id='gtm-jobdetail-idSC')
+    value=source.get('identifier',{});req=str(value.get('value','') if isinstance(value,dict) else value)
+    result=dict(source)
+    # The country schema does not establish all-state eligibility: the role's
+    # Remote/virtual explanation can require commuting to an assigned office.
+    result.pop('applicantLocationRequirements',None)
+    if not identity:return result
+    if text(identity).strip()!=req:raise ValueError('Conflicting Home Depot role-section requisition')
+    def section(anchor,label):
+        target=doc.find(id=anchor)
+        if not target:return ''
+        for parent in [doc.root]+doc.nodes:
+            children=[v for v in parent['children'] if isinstance(v,dict)]
+            for i,node in enumerate(children[:-1]):
+                if node is target:
+                    row=children[i+1]
+                    if 'fusion-builder-row-inner' not in row['attrs'].get('class','').split():return ''
+                    headings=[]
+                    def walk(n):
+                        if not isinstance(n,dict):return
+                        if n['tag']=='h2':headings.append(re.sub(r'\s+',' ',text(n)).strip())
+                        for child in n['children']:walk(child)
+                    walk(row)
+                    if headings!=[label]:return ''
+                    return re.sub(r'\s+',' ',text(row)).strip()
+        return ''
+    pay=section('payrange','Pay Range');work=section('worklocation','Work Location')
+    if pay:pay=re.sub(r'(\$[\d,.]+)\s*\ufffd\s*(?=\$[\d,.]+)',r'\1 – ',pay)
+    parts=[str(result.get('description',''))]
+    for value in [pay,work]:
+        if value:parts.append('<p>'+html.escape(value)+'</p>')
+    result['description']='\n'.join(parts);result['_adapter']='home-depot-matched-role-and-sections'
+    if work:
+        label=re.sub(r'^Work Location\s*','',work)
+        match=re.match(r'(Remote/virtual|Onsite|On-site|Hybrid)\b',label,re.I)
+        if match:
+            result['jobLocationType']={'remote/virtual':'REMOTE','onsite':'ON_SITE','on-site':'ON_SITE','hybrid':'HYBRID'}[match[1].lower()]
+            result['_homeDepotWorksite']=work
+    return result

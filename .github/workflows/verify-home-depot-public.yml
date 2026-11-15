@@ -1,4 +1,4 @@
-name: Verify Home Depot public jobs
+name: Verify Home Depot public jobs and separate role sections
 on:
   push:
     paths: ['.github/workflows/verify-home-depot-public.yml']
