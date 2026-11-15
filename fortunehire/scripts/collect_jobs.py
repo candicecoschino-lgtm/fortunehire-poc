@@ -47,6 +47,10 @@ def safe_url(url, host):
 
 
 def job_url(url, host):
+    if host=='www.metacareers.com':
+        from meta_public import role_id
+        if not role_id(url):raise ValueError('Not an individual Meta job URL')
+        return url
     if host=='jobs.apple.com':
         from apple_public import role_id
         url=safe_url(url,host)
@@ -66,6 +70,9 @@ def job_url(url, host):
 
 
 def posting_key(url):
+    if urllib.parse.urlsplit(url).hostname=='www.metacareers.com':
+        from meta_public import role_id
+        return role_id(url) or ''
     if urllib.parse.urlsplit(url).hostname=='jobs.apple.com':
         from apple_public import role_id
         return role_id(url) or ''
@@ -312,6 +319,9 @@ def normalize_posting(body, url, company, now):
         except ValueError: pass
     if len(matched) != 1: raise ValueError('Missing or ambiguous matching JobPosting data; '+str(len(candidates))+' structured candidates found')
     source = matched[0]
+    if company=='meta':
+        from meta_public import enrich
+        source=enrich(source,body,url)
     if company=='home-depot':
         from home_depot_public import enrich
         source=enrich(source,body)
@@ -337,7 +347,7 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if company=='home-depot' or source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details','employer-pcsx-page-and-public-details'):
+    if company=='home-depot' or source.get('_adapter') in ('meta-public-jobposting-and-matched-details','verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details','employer-pcsx-page-and-public-details'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]

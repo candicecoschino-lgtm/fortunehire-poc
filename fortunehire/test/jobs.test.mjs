@@ -117,3 +117,9 @@ test('pagination has no duplicate/missing records and clamps out-of-range pages'
 test('data validation rejects wrong-employer links, unsafe URLs, bogus dates and eligibility',()=>{
   for(const mutate of [d=>d.jobs.push(d.jobs[0]),d=>d.jobs[0].url='javascript:alert(1)',d=>d.jobs[0].url='https://jobs.boeing.com/job/wrong-employer',d=>d.jobs[0].reviewedAt='2026-02-31',d=>d.jobs[0].remoteScope='nationwide',d=>d.jobs[0].locations[0].state='Atlantis',d=>d.jobs[0].salary.min=-1]){const copy=structuredClone(data);mutate(copy);assert.throws(()=>validateJobs(copy,companies));}
 });
+
+test('Meta application links require the exact public posting route and employer host',()=>{
+ const j={...structuredClone(data.jobs[0]),id:'meta-synthetic',companyId:'meta',url:'https://www.metacareers.com/profile/job_details/12345/'};
+ assert.equal(validateJobs({schemaVersion:1,jobs:[j]},companies).length,1);
+ for(const url of [j.url+'?private=1',j.url+'#redirect','https://www.metacareers.com/jobsearch/',j.url.replace('www.metacareers.com','other.example')])assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,url}]},companies));
+});
