@@ -1,4 +1,4 @@
-name: Check Home Depot public role access
+name: Verify Home Depot public jobs
 on:
   push:
     paths: ['.github/workflows/verify-home-depot-public.yml']
@@ -7,26 +7,32 @@ permissions:
 jobs:
   review:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify current official individual role without publication
+      - name: Test evidence and source identity
+        working-directory: fortunehire
+        run: python -m unittest discover -s test -p 'test_*.py'
+      - name: Collect and refresh Home Depot without publishing
         working-directory: fortunehire
         run: |
           python - <<'PY'
-          import sys,json
+          import sys,json,tempfile
+          from pathlib import Path
           sys.path.insert(0,'scripts')
           import collect_jobs as c
-          row={}
-          try:
-              url='https://careers.homedepot.com/job/24150008/pro-experience-manager-layton-ut/'
-              cl=c.Client('careers.homedepot.com')
-              status,body=cl.get(url)
-              p=c.Page(body)
-              row.update(status=status,canonical=p.canonical,postings=[{k:v for k,v in j.items() if k!='description'} for s in p.scripts for j in c.postings(json.loads(s))])
-          except Exception as e:row['error']=str(e)
-          print('HOME_DEPOT_REVIEW',json.dumps(row))
+          c.SOURCES={'home-depot':('careers.homedepot.com','Retail')}
+          root=Path(tempfile.mkdtemp())
+          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
+          initial=c.run(root,max_new=20)
+          print('INITIAL_REPORT',json.dumps(json.loads((root/'public/data/collection-status.json').read_text())))
+          refreshed=c.run(root,max_new=0) if initial else False
+          data=json.loads((root/'public/data/jobs.json').read_text())
+          print('HD_JOBS',json.dumps(data['jobs']))
+          print('HD_SOURCES',json.dumps(data['automation']['sources']))
+          print('HD_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
+          print('HD_VERIFIED',bool(initial and refreshed and data['jobs']))
           PY

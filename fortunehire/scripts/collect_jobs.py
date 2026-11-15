@@ -318,6 +318,12 @@ def normalize_posting(body, url, company, now):
     req = source.get('identifier') or {}
     req = str((req.get('value') or '') if isinstance(req, dict) else (req or '')).strip()
     identifier_type=source.get('_identifierType','requisition')
+    employer_identifier=req
+    if company=='home-depot':
+        # Some store openings reuse an ATS requisition across distinct locations.
+        # Their reviewed public posting IDs are unique per individual page.
+        req=posting_key(url);identifier_type='posting-id'
+        if not req.isdigit():raise ValueError('Missing Home Depot public posting ID')
     if company=='cardinal-health':
         # Cardinal repeats its tenant identifier across different postings.
         # The reviewed canonical job URL provides the distinct public ID.
@@ -328,7 +334,7 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details','employer-pcsx-page-and-public-details'):
+    if company=='home-depot' or source.get('_adapter') in ('verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details','employer-pcsx-page-and-public-details'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]
@@ -545,7 +551,7 @@ def normalize_posting(body, url, company, now):
         'travelRequired':travel, 'travelNote':travel_evidence or 'Travel not verified automatically.',
         'postedAt':posted, 'closesAt':deadline,
         'reviewedAt':today, 'status':'closed' if source.get('_employerClosed') or deadline and deadline<today else 'reviewed', 'sector':sector,
-        'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' Employer work setting: '+source['_salesforceRemoteType']+'. Location labels containing Remote do not override this setting.' if company=='salesforce' and source.get('_salesforceRemoteType') else '')+(' '+deadline_note if deadline_note else ''),
+        'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' Employer requisition reference: '+employer_identifier[:100]+'.' if company=='home-depot' and employer_identifier else '')+(' Employer work setting: '+source['_salesforceRemoteType']+'. Location labels containing Remote do not override this setting.' if company=='salesforce' and source.get('_salesforceRemoteType') else '')+(' '+deadline_note if deadline_note else ''),
         'checkedAt':now.isoformat(), 'collectionMethod':source.get('_adapter') or 'official-jobposting-jsonld',
         'sourceHash':hashlib.sha256(json.dumps({'structured':source,'locations':locations,'arrangement':arrangement_evidence,'remoteScope':remote_scope,'travel':travel_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
         'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note,**({'location':location_evidence} if location_evidence else {})},

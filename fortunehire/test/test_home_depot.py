@@ -1,0 +1,23 @@
+import sys,json,unittest
+from pathlib import Path
+from unittest.mock import Mock,patch
+from datetime import datetime,timezone
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
+import collect_jobs as c
+from home_depot_public import discover,search_data
+HOST='careers.homedepot.com';URL='https://'+HOST+'/job/12345/synthetic-role/'
+def job(url=URL):
+ d={'@type':'JobPosting','title':'Synthetic store associate','identifier':{'value':'SHARED-REF'},'datePosted':'2026-11-14','url':url,'description':'Role duties.','jobLocation':{'address':{'addressCountry':'US','addressRegion':'UT','addressLocality':'Test City'}}}
+ return '<script type="application/ld+json">'+json.dumps(d)+'</script><aside>Work Type: Remote</aside>'
+class HomeDepotTests(unittest.TestCase):
+ def test_discovery_requires_employer_org_us_country_and_matching_individual_id(self):
+  client=Mock(host=HOST);api=Mock();row={'id':12345,'url':URL,'scout_orgid':1814,'primary_country':'US','open_date':'2026-11-14T10:00:00','timestamp':'2099-01-01'}
+  data={'totalHits':200,'searchResults':[{'job':row},{'job':{**row,'scout_orgid':999}},{'job':{**row,'primary_country':'CA'}},{'job':{**row,'url':URL.replace(HOST,'other.example')}}]}
+  api.get.return_value=(200,'CWS.jobs.jobCallback('+json.dumps(data)+');');self.assertEqual(discover(client,Mock(return_value=api)),{'12345':URL});self.assertEqual(client.discovery_dates,{'12345':'2026-11-14'})
+ def test_jsonp_is_decoded_as_data_and_rejects_trailing_code(self):
+  for body in ['OtherCallback({"searchResults":[]})','CWS.jobs.jobCallback({"searchResults":[]});alert(1)','CWS.jobs.jobCallback({"error":"bad"})']:
+   with self.assertRaises(ValueError):search_data(body)
+ def test_reused_requisition_has_distinct_public_posting_ids_and_navigation_cannot_set_work_model(self):
+  with patch.dict(c.SOURCES,{'home-depot':(HOST,'Retail')}):
+   a=c.normalize_posting(job(),URL,'home-depot',datetime(2026,11,15,tzinfo=timezone.utc));other=URL.replace('12345','54321');b=c.normalize_posting(job(other),other,'home-depot',datetime(2026,11,15,tzinfo=timezone.utc))
+   self.assertNotEqual(a['id'],b['id']);self.assertEqual(a['identifierType'],'posting-id');self.assertIn('SHARED-REF',a['sourceNote']);self.assertEqual(a['arrangement'],'unknown')
