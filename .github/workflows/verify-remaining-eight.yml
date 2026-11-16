@@ -1,11 +1,42 @@
-name: Verify recovered Microsoft public jobs with reduced request budget
+name: Verify Oracle public jobs and remaining employer access
 on:
   push:
     paths: ['.github/workflows/verify-remaining-eight.yml']
 permissions:
   contents: read
 jobs:
-  microsoft:
+  oracle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test Oracle geography and existing collectors
+        working-directory: fortunehire
+        run: python -m unittest discover -s test -p 'test_*.py'
+      - name: Collect and independently refresh Oracle
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,tempfile
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          c.SOURCES={'oracle':('careers.oracle.com','Technology')}
+          root=Path(tempfile.mkdtemp())
+          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
+          initial=c.run(root,max_new=20)
+          print('ORACLE_INITIAL',json.dumps(json.loads((root/'public/data/collection-status.json').read_text())))
+          refreshed=c.run(root,max_new=0) if initial else False
+          data=json.loads((root/'public/data/jobs.json').read_text())
+          print('ORACLE_JOBS',json.dumps(data['jobs']))
+          print('ORACLE_SOURCES',json.dumps(data['automation']['sources']))
+          print('ORACLE_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
+          print('ORACLE_VERIFIED',bool(initial and refreshed and data['jobs']))
+          PY
+  remaining-access:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -13,30 +44,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Test evidence and enforced source budgets
-        working-directory: fortunehire
-        run: python -m unittest discover -s test -p 'test_*.py'
-      - name: Collect and independently refresh a bounded Microsoft sample
+      - name: Record barriers without publishing, retrying denials or requesting Microsoft again
         working-directory: fortunehire
         run: |
           python - <<'PY'
-          import sys,json,tempfile,time
-          from pathlib import Path
+          import sys,json,re
           sys.path.insert(0,'scripts')
-          import collect_jobs as c
-          c.SOURCES={'microsoft':('apply.careers.microsoft.com','Technology')}
-          c.REGISTRY['sources']['microsoft']={'host':'apply.careers.microsoft.com','sector':'Technology','maxTracked':10,'maxNew':2,'requestDelaySeconds':6}
-          root=Path(tempfile.mkdtemp())
-          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
-          initial=c.run(root,max_new=20)
-          print('MS_INITIAL',json.dumps(json.loads((root/'public/data/collection-status.json').read_text())))
-          refreshed=False
-          if initial:
-              time.sleep(6)
-              refreshed=c.run(root,max_new=0)
-          data=json.loads((root/'public/data/jobs.json').read_text())
-          print('MS_JOBS',json.dumps(data['jobs']))
-          print('MS_SOURCES',json.dumps(data['automation']['sources']))
-          print('MS_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
-          print('MS_VERIFIED',bool(initial and refreshed and data['jobs']))
+          from collect_jobs import Client,Page,postings
+          from urllib.parse import urlsplit
+          urls={'alphabet':'https://www.google.com/about/careers/applications/jobs/results/86136593793852102-senior-director-product-management-chrome-developer-and-ecosystem','delta':'https://delta.avature.net/careers','ibm':'https://careers.ibm.com/en_US/careers/JobDetail?jobId=119566&source=WEB_Search_NA','jpmorgan-chase':'https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions','progressive':'https://careers.progressive.com/jobs/search/','tesla':'https://www.tesla.com/careers/search'}
+          for key,url in urls.items():
+              r={'companyId':key,'url':url}
+              try:
+                  status,body=Client(urlsplit(url).hostname).get(url)
+                  r.update(status=status,verificationChallenge=bool(re.search(r'awswaf|verify.{0,70}robot|robot.verification',body,re.I)))
+                  jobs=[]
+                  for script in Page(body).scripts:
+                      try:jobs.extend(postings(json.loads(script)))
+                      except ValueError:pass
+                  r['postingDates']=[j.get('datePosted') for j in jobs]
+              except Exception as e:r['error']=str(e)
+              print('ACCESS_REVIEW',json.dumps(r))
           PY

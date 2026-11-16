@@ -139,11 +139,21 @@ def oracle(body,url):
     locations=[]
     for loc in (source.get('workLocation') or [])+(source.get('otherWorkLocations') or []):
         locations.append({'address':{'addressLocality':loc.get('TownOrCity'),'addressRegion':loc.get('Region2'),'addressCountry':loc.get('Country')}})
+    if urlsplit(url).hostname=='careers.oracle.com':
+        named=[(source.get('PrimaryLocation'),source.get('PrimaryLocationCountry'))]+[(loc.get('Name'),loc.get('CountryCode')) for loc in (source.get('secondaryLocations') or [])]
+        for label,country in named:
+            if country!='US' or not isinstance(label,str):continue
+            parts=[part.strip() for part in label.rsplit(',',2)]
+            if len(parts)==3 and parts[0] and parts[2] in ('US','USA','United States'):
+                locations.append({'address':{'addressLocality':parts[0],'addressRegion':parts[1],'addressCountry':'US'}})
     description='\n'.join(str(source.get(key) or '') for key in ('ExternalDescriptionStr','ExternalQualificationsStr','ExternalResponsibilitiesStr'))
     schedule={'Full time':'FULL_TIME','Part time':'PART_TIME'}.get(source.get('JobSchedule'))
     arrangement={'ORA_ON_SITE':'ON_SITE','ORA_HYBRID':'HYBRID','ORA_REMOTE':'REMOTE'}.get(source.get('WorkplaceTypeCode'))
     # Plain public labels also occur when the corresponding code is absent.
     arrangement=arrangement or {'On-site':'ON_SITE','Hybrid':'HYBRID','Remote':'REMOTE'}.get(source.get('WorkplaceType'))
+    if urlsplit(url).hostname=='careers.oracle.com' and not arrangement:
+        qualifier=re.search(r'[-–—]\s*(HYBRID|REMOTE|ON[- ]?SITE)\s*$',source.get('Title',''),re.I)
+        if qualifier:arrangement={'hybrid':'HYBRID','remote':'REMOTE','onsite':'ON_SITE'}[re.sub(r'[- ]','',qualifier[1].lower())]
     posted=source['ExternalPostedStartDate']
     if 'T' in posted:
         try:
@@ -211,7 +221,7 @@ def extract(company,body,url):
         from apple_public import extract as apple
         return apple(body,url)
     if company=='amazon':return amazon(body,url)
-    if company in ('dell','kroger'):return oracle(body,url)
+    if company in ('dell','kroger','oracle'):return oracle(body,url)
     if company not in ('walmart','disney','phillips-66','verizon','valero'):return None
     document=Document(body)
     if company=='valero':return valero(document,body,url)

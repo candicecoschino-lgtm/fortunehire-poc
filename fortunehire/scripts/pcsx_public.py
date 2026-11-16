@@ -21,7 +21,7 @@ def raw_locations(row):
     return result
 def discover(client):
     host=client.host;domain,company=CONFIG[host];found={};dates={};total=0
-    for start in ((0,) if company=='microsoft' else (0,10,20,30,40,50)):
+    for start in (0,10,20,30,40,50):
         params={'domain':domain,'query':'','location':'United States','start':start,'sort_by':'timestamp','filter_include_remote':1}
         status,body=client.get('https://'+host+'/api/pcsx/search?'+urlencode(params))
         if status!=200:raise ValueError('Employer public job search unavailable')
