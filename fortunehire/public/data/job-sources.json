@@ -177,6 +177,11 @@
     "oracle": {
       "host": "careers.oracle.com",
       "sector": "Technology"
+    },
+    "jpmorgan-chase": {
+      "host": "jpmc.fa.oraclecloud.com",
+      "sector": "Financials",
+      "approvedPublicJobPolicy": true
     }
   }
 }

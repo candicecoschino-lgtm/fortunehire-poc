@@ -20,6 +20,15 @@ def body(**changes):
 
 
 class CollectorTests(unittest.TestCase):
+    def test_fetch_error_never_reuses_previous_unavailable_job_body(self):
+        a=c.normalize_posting(body(),URL,'boeing',NOW)
+        other=URL.replace('12345','12346');b=c.normalize_posting(body(url=other,identifier={'value':'TEST-2'}),other,'boeing',NOW)
+        def fetch(url):
+            if url==URL:return 200,'This job is no longer available.'
+            raise ValueError('Identity verification failed before response returned')
+        jobs,state,report=c.reconcile('boeing',[a,b],{}, {},fetch,NOW)
+        self.assertIn(a['id'],state['missing']);self.assertNotIn(b['id'],state['missing']);self.assertEqual(len(report['errors']),1)
+
     def client_without_network(self):
         client=c.Client.__new__(c.Client)
         client.host='jobs.boeing.com';client.delay=0;client.last=0

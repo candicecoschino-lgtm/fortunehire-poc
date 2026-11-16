@@ -3136,5 +3136,10 @@
     },
     "quarantined": {},
     "missing": {}
+  },
+  "jpmorgan-chase": {
+    "rejected": {},
+    "quarantined": {},
+    "missing": {}
   }
 }

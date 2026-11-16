@@ -719,6 +719,7 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
     closures = []
     for url, old in queue:
         job_url(url,host)
+        body='' # Never inspect a previous role's response after a fetch failure.
         try:
             status, body = fetch(url)
             report['checked'] += 1
@@ -799,12 +800,18 @@ def run(root=ROOT, now=None, max_new=20):
     def collect(company):
         host,sector=SOURCES[company]
         try:
-            client = Client(host)
+            if company=='jpmorgan-chase':
+                from jpm_public import create
+                client=create(Client,SourceError,approved=REGISTRY['sources'].get(company,{}).get('approvedPublicJobPolicy') is True)
+                source_max_new=min(max_new,5);source_cap=20
+            else:
+                client = Client(host)
+                source_max_new=max_new;source_cap=100
             discovered = discover(client)
             if company=='meta':
                 from meta_public import discovery_order
                 client.discovery_dates=discovery_order(discovered,state.get(company,{}).get('discoveryFirstSeen',{}),now)
-            refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,lambda url:public_fetch(client,url,Client),now,max_new=max_new,discovery_dates=client.discovery_dates)
+            refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,lambda url:public_fetch(client,url,Client),now,max_new=source_max_new,cap=source_cap,discovery_dates=client.discovery_dates)
             if company=='meta':source_state['discoveryFirstSeen']=client.discovery_dates
             result['discoveryLimited']=client.discovery_limited
             if client.discovery_warnings:result['discoveryWarnings']=client.discovery_warnings

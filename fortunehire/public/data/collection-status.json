@@ -678,6 +678,21 @@
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-16T12:19:13.214560+00:00"
+    },
+    "jpmorgan-chase": {
+      "discovered": 12,
+      "checked": 5,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 5,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-16T12:56:40.023403+00:00"
     }
   }
 }

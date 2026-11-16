@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 44 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 45 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -83,3 +83,5 @@ Code pushes cancel an outdated in-progress refresh in the same group so old code
 ## NVIDIA and Home Depot — November 15
 
 See FREE-SOURCE-VERIFICATION.md for verified free public interfaces, field provenance and request limits. Crawler rules use RFC 9309 longest-match precedence; explicit Allow rules can permit career paths under a general exclusion. Excluded paths, security challenges and HTTP 403/429 still stop collection. Home Depot uses distinct public posting IDs for shared store requisitions. Employer soft-404 and exact empty per-ID Oracle lookups enter the same two-check/six-hour missing guard; generic errors and malformed results do not close jobs.
+
+JPMorgan has a user-approved source-specific public-job policy: maximum five new candidates and twenty tracked jobs, minimum two-second pacing, strict public-route allowlist. Its unavailable robots.txt HTTP 403 exception does not apply to other employers or actual job denials. Published exclusions, rate limits and challenges stop requests.

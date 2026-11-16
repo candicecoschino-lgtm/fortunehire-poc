@@ -3,8 +3,8 @@
   "updatedAt": "2026-11-16",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
-    "access-restricted": 6,
-    "connected": 44,
+    "access-restricted": 5,
+    "connected": 45,
     "paused": 1,
     "verification-needed": 1
   },
@@ -443,10 +443,10 @@
     {
       "companyId": "jpmorgan-chase",
       "company": "JPMorgan Chase",
-      "status": "access-restricted",
-      "reason": "The public corporate opportunity page links to the same Oracle Cloud job portal. That portal still returns HTTP 403 locally and from GitHub.",
-      "nextStep": "Obtain an employer-permitted job feed or access approval; do not bypass the denial.",
-      "officialCareerUrl": "https://www.jpmorganchase.com/careers",
+      "status": "connected",
+      "reason": "Five recent U.S. postings verified and independently refreshed with no errors. User-approved public CX_1001 API and individual jobs only; five new candidates per run, twenty tracked jobs, minimum two-second pacing. An unavailable robots.txt HTTP 403 exception is limited to this employer; actual denials, rate limits, exclusions and challenges still stop collection.",
+      "nextStep": "Monitor bounded scheduled refreshes; coverage is incomplete.",
+      "officialCareerUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions",
       "reviewedAt": "2026-11-16",
       "githubObservation": {
         "companyId": "jpmorgan-chase",
@@ -456,7 +456,9 @@
         "discoveryError": "Sitemap contains no individual job URLs"
       },
       "previousReason": "The Oracle portal linked by JPMorgan returned HTTP 403.",
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500"
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
+      "localFailureResource": "https://jpmc.fa.oraclecloud.com/robots.txt",
+      "correctionNote": "Earlier descriptions of these as confirmed job-page denials were too broad; the policy-file failure is now distinguished."
     },
     {
       "companyId": "kroger",
@@ -609,8 +611,8 @@
       "companyId": "progressive",
       "company": "Progressive",
       "status": "access-restricted",
-      "reason": "Both the corporate career page and publicly advertised job-search page return HTTP 403 to the collector. The job-search page also returns HTTP 403 from GitHub.",
-      "nextStep": "Obtain a permitted employer source or access approval before enabling automation.",
+      "reason": "Following the user-approved one-page diagnostic, the actual public job-search page returned HTTP 403. Collection stopped; source remains disabled.",
+      "nextStep": "Use an employer-permitted feed or wait for access recovery.",
       "officialCareerUrl": "https://careers.progressive.com/",
       "reviewedAt": "2026-11-16",
       "githubObservation": {
@@ -619,7 +621,9 @@
         "accessError": "Employer request failed: HTTP 403"
       },
       "previousReason": "Official-host access returned HTTP 403.",
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500"
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
+      "localFailureResource": "https://careers.progressive.com/robots.txt",
+      "correctionNote": "Earlier descriptions of these as confirmed job-page denials were too broad; the policy-file failure is now distinguished."
     },
     {
       "companyId": "rtx",
@@ -659,8 +663,8 @@
       "companyId": "tesla",
       "company": "Tesla",
       "status": "access-restricted",
-      "reason": "The career landing page and publicly advertised job-search page return HTTP 403 to the collector; the actual job-search page also returns HTTP 403 from GitHub.",
-      "nextStep": "Obtain a permitted employer source or access approval before enabling automation.",
+      "reason": "Following the user-approved one-page diagnostic, the actual public job-search page returned HTTP 403. Collection stopped; source remains disabled.",
+      "nextStep": "Use an employer-permitted feed or wait for access recovery.",
       "officialCareerUrl": "https://www.tesla.com/careers",
       "reviewedAt": "2026-11-16",
       "githubObservation": {
@@ -669,7 +673,9 @@
         "accessError": "Employer request failed: HTTP 403"
       },
       "previousReason": "Official-host access returned HTTP 403.",
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500"
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
+      "localFailureResource": "https://www.tesla.com/robots.txt",
+      "correctionNote": "Earlier descriptions of these as confirmed job-page denials were too broad; the policy-file failure is now distinguished."
     },
     {
       "companyId": "ups",

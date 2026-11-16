@@ -1,9 +1,5 @@
-# FortuneHire continuation
+# Next steps
 
-44 feeds enabled. Oracle is newly connected: sixteen recent U.S. jobs collected and independently refreshed with zero errors or warnings. All eight previous remaining employers were reviewed on November 16. Seven remain disabled: Alphabet/Google, Delta, IBM, JPMorgan Chase, Microsoft, Progressive and Tesla. RTX stays paused.
+45 feeds enabled. Oracle and JPMorgan passed independent refresh tests. Six employers remain disabled for the barriers documented in REMAINING-EIGHT-VERIFICATION.md. RTX stays paused.
 
-Oracle's careers.oracle.com portal is separate from its unavailable corporate page. Its published configuration identifies eeho.fa.us2.oraclecloud.com and site CX_45001. Reuse the reviewed public Oracle recruiting interfaces. Search dates only prioritize discovery; individual ExternalPostedStartDate controls publication. Require exact per-ID lookup identity and explicit U.S. state geography. PrimaryLocation and secondaryLocations labels are used only on Oracle's reviewed host, with explicit US country and state. Other Oracle-hosted employers retain their original parsers. Full descriptions, work arrangements and pay remain scoped to the individual public role; unknown fields are not inferred.
-
-Actual barriers: Microsoft HTTP 429 from GitHub despite a slower, smaller test; Delta and IBM explicit HTTP 202 robot-verification challenges; JPMorgan, Progressive and Tesla HTTP 403 from the actual job portals; Google lacks a verified original publication-date mapping. Do not repeat failed requests or bypass restrictions. These require a permitted employer feed, access approval, source recovery or authoritative date evidence. No paid-provider requirement is established.
-
-The unsuccessful Microsoft budget prototype is retained only under work/nov16-review/microsoft-draft and the verification branch history. It is not part of the production collector or enabled registry. See REMAINING-EIGHT-VERIFICATION.md and the full company audit for evidence. Keep fourteen-day posting, seven-day verification, ordinary twenty-candidate/100-active caps and closure safeguards.
+Monitor the next scheduled JPMorgan checks within its approved five-new/twenty-tracked limits. Resolve the existing Elevance, Coca-Cola and Salesforce refresh failures without inferring closures or bypassing denials. Improve field coverage among connected employers before expanding the directory.
