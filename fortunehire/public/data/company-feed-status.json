@@ -43,17 +43,23 @@
       "companyId": "alphabet",
       "company": "Alphabet (Google)",
       "status": "verification-needed",
-      "reason": "Google public career content remains accessible, but the inspected response provides no verified original JobPosting date. The three positional timestamps still lack an authoritative publication-date mapping; the excluded format script remains unfetched.",
-      "nextStep": "Obtain a permitted dated source or authoritative field mapping. Do not substitute discovery dates, array-position guesses or third-party posting age for the employer publication date.",
+      "reason": "A fresh public search and one linked role returned HTTP 200, but neither supplies verified named original publication-date fields or JobPosting data. The current linked format asset is excluded by its host crawler rules and was not fetched.",
+      "nextStep": "Obtain an authoritative original publication-date mapping or a permitted dated employer feed. Do not guess positional timestamp meanings, substitute indexing dates, or fetch the excluded asset.",
       "officialCareerUrl": "https://www.google.com/about/careers/applications/",
       "reviewedAt": "2026-11-16",
-      "previousReason": "The public career and individual role pages load, but no reliable named original posting-date field has been verified. Three embedded timestamps have different possible meanings; their position in an array is not proof of publication. The linked format script is excluded by its host crawler rules and was not fetched.",
+      "previousReason": "Google public career content remains accessible, but the inspected response provides no verified original JobPosting date. The three positional timestamps still lack an authoritative publication-date mapping; the excluded format script remains unfetched.",
       "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
       "historicalGithubObservation": {
         "companyId": "alphabet",
         "careerUrl": "https://www.google.com/about/careers/applications/",
         "landingAllowed": false,
         "discoveryError": "Crawler rules exclude requested URL"
+      },
+      "latestObservation": {
+        "attemptedAt": "2026-11-16T13:50:22.393203+00:00",
+        "url": "https://www.google.com/about/careers/applications/jobs/results/",
+        "status": 200,
+        "challenge": false
       }
     },
     {
@@ -313,8 +319,8 @@
       "companyId": "delta",
       "company": "Delta Air Lines",
       "status": "access-restricted",
-      "reason": "The official corporate careers page still announces maintenance. Its directly linked Avature job portal returns HTTP 202 with an explicit robot-verification challenge, both locally and from GitHub.",
-      "nextStep": "Keep disabled until the employer restores a permitted machine-readable job source. Do not bypass the verification challenge.",
+      "reason": "The official Avature portal again returned HTTP 202 with an explicit robot-verification challenge. The corporate careers page still announces maintenance.",
+      "nextStep": "Keep disabled until source access recovers or an employer-permitted feed is available; stop on denials and verification challenges.",
       "officialCareerUrl": "https://www.delta.com/us/en/careers/overview",
       "reviewedAt": "2026-11-16",
       "githubObservation": {
@@ -326,7 +332,13 @@
       },
       "latestReviewNote": "Employer maintenance notice: https://www.delta.com/us/en/careers/overview",
       "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
-      "previousReason": "Delta’s official corporate careers page currently announces career-site maintenance, slow responses and possible outages. The linked job portal returns unusable HTTP 202 responses; the latest external fetch also returned HTTP 406."
+      "previousReason": "The official corporate careers page still announces maintenance. Its directly linked Avature job portal returns HTTP 202 with an explicit robot-verification challenge, both locally and from GitHub.",
+      "latestObservation": {
+        "attemptedAt": "2026-11-16T13:50:22.394208+00:00",
+        "url": "https://delta.avature.net/careers",
+        "status": 202,
+        "challenge": true
+      }
     },
     {
       "companyId": "elevance-health",
@@ -426,8 +438,8 @@
       "companyId": "ibm",
       "company": "IBM",
       "status": "access-restricted",
-      "reason": "The inspected individual role still returns HTTP 202 with AWS robot-verification challenge content, locally and from GitHub. Available corporate search alone does not verify job-specific U.S. state geography and current individual posting status.",
-      "nextStep": "Obtain a permitted individual-role interface with verified publication dates and U.S. states; do not bypass the robot-verification challenge.",
+      "reason": "The inspected official individual role again returned HTTP 202 with an explicit AWS robot-verification challenge. Available corporate search alone does not establish verified state-level job geography and individual posting status.",
+      "nextStep": "Keep disabled until source access recovers or an employer-permitted feed is available; stop on denials and verification challenges.",
       "officialCareerUrl": "https://www.ibm.com/careers",
       "reviewedAt": "2026-11-16",
       "githubObservation": {
@@ -438,7 +450,13 @@
         "discoveryError": "Interrupted employer download after three attempts: The read operation timed out"
       },
       "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
-      "previousReason": "Public corporate search API returns full job descriptions and employer dates. Its exact robots redirect chain was resolved and parsed using the published rules. However, a current individual application page returns HTTP 202 with an explicit robot-verification challenge to the automated collector, both locally and on GitHub. Search metadata alone does not supply verified state-level job geography."
+      "previousReason": "The inspected individual role still returns HTTP 202 with AWS robot-verification challenge content, locally and from GitHub. Available corporate search alone does not verify job-specific U.S. state geography and current individual posting status.",
+      "latestObservation": {
+        "attemptedAt": "2026-11-16T13:50:22.393203+00:00",
+        "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=119566&source=WEB_Search_NA",
+        "status": 202,
+        "challenge": true
+      }
     },
     {
       "companyId": "jpmorgan-chase",
@@ -517,11 +535,11 @@
       "companyId": "microsoft",
       "company": "Microsoft",
       "status": "access-restricted",
-      "reason": "Local public search responds, but the GitHub collector again receives HTTP 429 even in a reduced-budget test with six-second request spacing and at most two new candidates. The test stopped at the rate limit; no staged Microsoft jobs were published.",
-      "nextStep": "Keep disabled. Honor any cooldown or Retry-After guidance and obtain a reliable employer-permitted feed or permission before another integration attempt.",
+      "reason": "The bounded GitHub recheck returned HTTP 429 on the first public search request after six-second pacing. No candidate or individual posting was fetched, no Retry-After was supplied, and the test stopped. No Microsoft jobs were enabled.",
+      "nextStep": "Keep disabled until access recovers or an employer-permitted feed is available. Do not repeat the rate-limited request or switch routes to evade it.",
       "officialCareerUrl": "https://careers.microsoft.com/",
       "reviewedAt": "2026-11-16",
-      "previousReason": "Official public portal explicitly permits the tested career and PCSX paths in its crawler rules. Three individual postings were verified, then the GitHub collector received HTTP 429 rate limiting. The source remains disabled; staged Microsoft jobs are not published.",
+      "previousReason": "Local public search responds, but the GitHub collector again receives HTTP 429 even in a reduced-budget test with six-second request spacing and at most two new candidates. The test stopped at the rate limit; no staged Microsoft jobs were published.",
       "historicalGithubObservation": {
         "companyId": "microsoft",
         "careerUrl": "https://careers.microsoft.com/",
@@ -529,7 +547,15 @@
         "landingStatus": 200,
         "discoveryError": "Invalid employer sitemap response"
       },
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43863539716"
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43879839952",
+      "latestObservation": {
+        "attemptedAt": "2026-11-16T13:51:44.7390117+00:00",
+        "status": 429,
+        "resource": "https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=&location=United+States&start=0&sort_by=timestamp&filter_include_remote=1",
+        "newCandidatesChecked": 0,
+        "requestDelaySeconds": 6,
+        "retryAfter": null
+      }
     },
     {
       "companyId": "nike",
@@ -611,8 +637,8 @@
       "companyId": "progressive",
       "company": "Progressive",
       "status": "access-restricted",
-      "reason": "Following the user-approved one-page diagnostic, the actual public job-search page returned HTTP 403. Collection stopped; source remains disabled.",
-      "nextStep": "Use an employer-permitted feed or wait for access recovery.",
+      "reason": "The fresh check stopped at HTTP 403 on robots.txt; no job-search page was fetched in this pass. The earlier user-approved one-page diagnostic also found an actual job-search HTTP 403.",
+      "nextStep": "Keep disabled until source access recovers or an employer-permitted feed is available; stop on denials and verification challenges.",
       "officialCareerUrl": "https://careers.progressive.com/",
       "reviewedAt": "2026-11-16",
       "githubObservation": {
@@ -620,10 +646,17 @@
         "careerUrl": "https://careers.progressive.com/",
         "accessError": "Employer request failed: HTTP 403"
       },
-      "previousReason": "Official-host access returned HTTP 403.",
+      "previousReason": "Following the user-approved one-page diagnostic, the actual public job-search page returned HTTP 403. Collection stopped; source remains disabled.",
       "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
       "localFailureResource": "https://careers.progressive.com/robots.txt",
-      "correctionNote": "Earlier descriptions of these as confirmed job-page denials were too broad; the policy-file failure is now distinguished."
+      "correctionNote": "Earlier descriptions of these as confirmed job-page denials were too broad; the policy-file failure is now distinguished.",
+      "latestObservation": {
+        "attemptedAt": "2026-11-16T13:50:25.576443+00:00",
+        "url": "https://careers.progressive.com/jobs/search/",
+        "resource": "https://careers.progressive.com/robots.txt",
+        "httpStatus": 403,
+        "retryAfter": null
+      }
     },
     {
       "companyId": "rtx",
@@ -663,8 +696,8 @@
       "companyId": "tesla",
       "company": "Tesla",
       "status": "access-restricted",
-      "reason": "Following the user-approved one-page diagnostic, the actual public job-search page returned HTTP 403. Collection stopped; source remains disabled.",
-      "nextStep": "Use an employer-permitted feed or wait for access recovery.",
+      "reason": "The fresh check stopped at HTTP 403 on robots.txt; no job-search page was fetched in this pass. The earlier user-approved one-page diagnostic also found an actual job-search HTTP 403.",
+      "nextStep": "Keep disabled until source access recovers or an employer-permitted feed is available; stop on denials and verification challenges.",
       "officialCareerUrl": "https://www.tesla.com/careers",
       "reviewedAt": "2026-11-16",
       "githubObservation": {
@@ -672,10 +705,17 @@
         "careerUrl": "https://www.tesla.com/careers",
         "accessError": "Employer request failed: HTTP 403"
       },
-      "previousReason": "Official-host access returned HTTP 403.",
+      "previousReason": "Following the user-approved one-page diagnostic, the actual public job-search page returned HTTP 403. Collection stopped; source remains disabled.",
       "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
       "localFailureResource": "https://www.tesla.com/robots.txt",
-      "correctionNote": "Earlier descriptions of these as confirmed job-page denials were too broad; the policy-file failure is now distinguished."
+      "correctionNote": "Earlier descriptions of these as confirmed job-page denials were too broad; the policy-file failure is now distinguished.",
+      "latestObservation": {
+        "attemptedAt": "2026-11-16T13:50:25.696077+00:00",
+        "url": "https://www.tesla.com/careers/search",
+        "resource": "https://www.tesla.com/robots.txt",
+        "httpStatus": 403,
+        "retryAfter": null
+      }
     },
     {
       "companyId": "ups",
