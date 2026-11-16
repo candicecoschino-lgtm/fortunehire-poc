@@ -1,4 +1,4 @@
-# Remaining eight — November 16, 2026
+# Remaining eight â€” November 16, 2026
 
 Oracle and JPMorgan Chase are connected. Total: 45 connected, six disabled, RTX paused. Coverage is sampled, not complete.
 
@@ -17,3 +17,5 @@ The initial audit confused a robots.txt denial with a job-page denial for JPMorg
 Validation: 138 Python tests and 33 directory/filter/data tests, plus publication validation. A regression check prevents a failed request from reusing another job's response and incorrectly marking a job closed.
 
 The full 44-source Oracle refresh (run 43865460659) published verified updates but failed its health check for unrelated existing sources: Elevance HTTP 502, Coca-Cola lacking matching JobPosting data, and Salesforce lacking a canonical role URL. Follow-up checks returned Coca-Cola HTTP 429 and Salesforce public per-job API HTTP 403. Neither establishes closure. Prior records and their real successful-check times were preserved; requests stopped. These issues remain unresolved and must not be hidden to force a green workflow.
+
+Follow-up: Elevance and Salesforce passed GitHub repair verification run 43874118747. Coca-Cola remains blocked by HTTP 429 with an explicit challenge. See REFRESH-REPAIR-VERIFICATION.md for current evidence and closure safeguards.

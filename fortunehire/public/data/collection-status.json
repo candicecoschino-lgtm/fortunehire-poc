@@ -96,23 +96,18 @@
     },
     "elevance-health": {
       "discovered": 226,
-      "checked": 55,
+      "checked": 98,
       "added": 0,
       "changed": 0,
-      "closed": 1,
+      "closed": 3,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
-      "errors": [
-        {
-          "url": "https://careers.elevancehealth.com/inpatient-drg-validator-acute-care/job/A6D3CDAE69F2440AB231B4353CEFD890",
-          "error": "Employer request failed: HTTP 502"
-        }
-      ],
-      "activeTracked": 98,
-      "pendingClosureChecks": 7,
+      "errors": [],
+      "activeTracked": 95,
+      "pendingClosureChecks": 5,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-16T02:12:28.931999+00:00"
+      "lastSuccessfulAt": "2026-11-16T13:16:05.120972+00:00"
     },
     "comcast": {
       "discovered": 748,
@@ -370,23 +365,14 @@
       "lastSuccessfulAt": "2026-11-16T12:19:13.214560+00:00"
     },
     "coca-cola": {
-      "discovered": 100,
-      "checked": 57,
-      "added": 0,
-      "changed": 0,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 0,
-      "warnings": [],
+      "attemptedAt": "2026-11-16T13:12:10+00:00",
       "errors": [
         {
-          "url": "https://coke.wd1.myworkdayjobs.com/en-US/coca-cola-careers/job/Director-of-Global-Logistics-Network-Optimization-and-Digitization_R-148492",
-          "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+          "url": "https://coke.wd1.myworkdayjobs.com/robots.txt",
+          "error": "Employer request failed: HTTP 429",
+          "verificationChallenge": true
         }
       ],
-      "activeTracked": 57,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-16T02:12:28.931999+00:00"
     },
     "cvs-health": {
@@ -645,24 +631,19 @@
       "lastSuccessfulAt": "2026-11-16T12:19:13.214560+00:00"
     },
     "salesforce": {
-      "discovered": 479,
-      "checked": 78,
+      "discovered": 478,
+      "checked": 79,
       "added": 0,
       "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
-      "errors": [
-        {
-          "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Virginia---Washington-DC-Metro---Remote/Solution-Architect---Senior-Solution-Architect---Missionforce_JR362488",
-          "error": "Missing Salesforce canonical role URL"
-        }
-      ],
+      "errors": [],
       "activeTracked": 79,
-      "pendingClosureChecks": 0,
+      "pendingClosureChecks": 1,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-16T02:12:28.931999+00:00"
+      "lastSuccessfulAt": "2026-11-16T13:16:05.120972+00:00"
     },
     "apple": {
       "discovered": 20,
@@ -694,5 +675,11 @@
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-16T12:56:40.023403+00:00"
     }
-  }
+  },
+  "lastTargetedRefreshAt": "2026-11-16T13:16:05.120972+00:00",
+  "lastTargetedRefreshCompanies": [
+    "elevance-health",
+    "salesforce",
+    "coca-cola"
+  ]
 }

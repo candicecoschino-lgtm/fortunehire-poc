@@ -624,6 +624,21 @@ class Client:
                     return response.status, raw.decode('utf-8-sig')
             except urllib.error.HTTPError as error:
                 if error.code in (404,410): return error.code, ''
+                # Brief gateway/service failures may recover. Denials, rate limits
+                # and challenges are never retried, including challenges with 5xx.
+                headers=error.headers or {}
+                if error.code in (502,503,504) and attempt<2 and not headers.get('Cf-Mitigated'):
+                    retry_after=headers.get('Retry-After')
+                    wait=2*(attempt+1)
+                    if retry_after:
+                        from email.utils import parsedate_to_datetime
+                        if re.fullmatch(r'\d+',retry_after.strip()):wait=max(wait,int(retry_after))
+                        else:
+                            try:wait=max(wait,(parsedate_to_datetime(retry_after)-datetime.now(timezone.utc)).total_seconds())
+                            except (TypeError,ValueError,OverflowError):wait=None
+                    if wait is not None and wait<=60:
+                        time.sleep(max(self.delay,wait));self.last=time.monotonic()
+                        continue
                 # Never retry access denial or rate limiting.
                 raise SourceError('Employer request failed: HTTP '+str(error.code)) from error
             except (http.client.IncompleteRead,http.client.RemoteDisconnected,TimeoutError,ConnectionResetError,urllib.error.URLError) as error:
