@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-15",
+  "updatedAt": "2026-11-16",
   "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
-    "access-restricted": 5,
-    "connected": 43,
+    "access-restricted": 6,
+    "connected": 44,
     "paused": 1,
-    "verification-needed": 3
+    "verification-needed": 1
   },
   "companies": [
     {
@@ -43,12 +43,12 @@
       "companyId": "alphabet",
       "company": "Alphabet (Google)",
       "status": "verification-needed",
-      "reason": "The public career and individual role pages load, but no reliable named original posting-date field has been verified. Three embedded timestamps have different possible meanings; their position in an array is not proof of publication. The linked format script is excluded by its host crawler rules and was not fetched.",
-      "nextStep": "Obtain a permitted, documented publication-date mapping or an employer-published dated feed. Do not use a sitemap modification date, crawl time, unverified timestamp or third-party job age.",
+      "reason": "Google public career content remains accessible, but the inspected response provides no verified original JobPosting date. The three positional timestamps still lack an authoritative publication-date mapping; the excluded format script remains unfetched.",
+      "nextStep": "Obtain a permitted dated source or authoritative field mapping. Do not substitute discovery dates, array-position guesses or third-party posting age for the employer publication date.",
       "officialCareerUrl": "https://www.google.com/about/careers/applications/",
-      "reviewedAt": "2026-11-15",
-      "previousReason": "Published crawler rules exclude the tested Google career paths.",
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43733632425",
+      "reviewedAt": "2026-11-16",
+      "previousReason": "The public career and individual role pages load, but no reliable named original posting-date field has been verified. Three embedded timestamps have different possible meanings; their position in an array is not proof of publication. The linked format script is excluded by its host crawler rules and was not fetched.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
       "historicalGithubObservation": {
         "companyId": "alphabet",
         "careerUrl": "https://www.google.com/about/careers/applications/",
@@ -312,11 +312,11 @@
     {
       "companyId": "delta",
       "company": "Delta Air Lines",
-      "status": "verification-needed",
-      "reason": "Delta’s official corporate careers page currently announces career-site maintenance, slow responses and possible outages. The linked job portal returns unusable HTTP 202 responses; the latest external fetch also returned HTTP 406.",
-      "nextStep": "Recheck after the employer’s maintenance ends or obtain a permitted feed with individual posting dates and locations.",
+      "status": "access-restricted",
+      "reason": "The official corporate careers page still announces maintenance. Its directly linked Avature job portal returns HTTP 202 with an explicit robot-verification challenge, both locally and from GitHub.",
+      "nextStep": "Keep disabled until the employer restores a permitted machine-readable job source. Do not bypass the verification challenge.",
       "officialCareerUrl": "https://www.delta.com/us/en/careers/overview",
-      "reviewedAt": "2026-11-14",
+      "reviewedAt": "2026-11-16",
       "githubObservation": {
         "companyId": "delta",
         "careerUrl": "https://www.delta.com/us/en/careers/overview",
@@ -325,7 +325,8 @@
         "discoveryError": "Unexpected sitemap format; manual adapter review required"
       },
       "latestReviewNote": "Employer maintenance notice: https://www.delta.com/us/en/careers/overview",
-      "latestVerificationUrl": "https://www.delta.com/us/en/careers/overview"
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
+      "previousReason": "Delta’s official corporate careers page currently announces career-site maintenance, slow responses and possible outages. The linked job portal returns unusable HTTP 202 responses; the latest external fetch also returned HTTP 406."
     },
     {
       "companyId": "elevance-health",
@@ -425,10 +426,10 @@
       "companyId": "ibm",
       "company": "IBM",
       "status": "access-restricted",
-      "reason": "Public corporate search API returns full job descriptions and employer dates. Its exact robots redirect chain was resolved and parsed using the published rules. However, a current individual application page returns HTTP 202 with an explicit robot-verification challenge to the automated collector, both locally and on GitHub. Search metadata alone does not supply verified state-level job geography.",
-      "nextStep": "Obtain an employer-permitted interface with job-specific U.S. states and current posting status before enabling; do not bypass the robot-verification challenge.",
+      "reason": "The inspected individual role still returns HTTP 202 with AWS robot-verification challenge content, locally and from GitHub. Available corporate search alone does not verify job-specific U.S. state geography and current individual posting status.",
+      "nextStep": "Obtain a permitted individual-role interface with verified publication dates and U.S. states; do not bypass the robot-verification challenge.",
       "officialCareerUrl": "https://www.ibm.com/careers",
-      "reviewedAt": "2026-11-14",
+      "reviewedAt": "2026-11-16",
       "githubObservation": {
         "companyId": "ibm",
         "careerUrl": "https://www.ibm.com/careers",
@@ -436,23 +437,26 @@
         "landingStatus": 200,
         "discoveryError": "Interrupted employer download after three attempts: The read operation timed out"
       },
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43633427843"
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500",
+      "previousReason": "Public corporate search API returns full job descriptions and employer dates. Its exact robots redirect chain was resolved and parsed using the published rules. However, a current individual application page returns HTTP 202 with an explicit robot-verification challenge to the automated collector, both locally and on GitHub. Search metadata alone does not supply verified state-level job geography."
     },
     {
       "companyId": "jpmorgan-chase",
       "company": "JPMorgan Chase",
       "status": "access-restricted",
-      "reason": "The Oracle portal linked by JPMorgan returned HTTP 403.",
-      "nextStep": "Obtain an authorized endpoint or employer permission.",
+      "reason": "The public corporate opportunity page links to the same Oracle Cloud job portal. That portal still returns HTTP 403 locally and from GitHub.",
+      "nextStep": "Obtain an employer-permitted job feed or access approval; do not bypass the denial.",
       "officialCareerUrl": "https://www.jpmorganchase.com/careers",
-      "reviewedAt": "2026-11-13",
+      "reviewedAt": "2026-11-16",
       "githubObservation": {
         "companyId": "jpmorgan-chase",
         "careerUrl": "https://www.jpmorganchase.com/careers",
         "landingAllowed": true,
         "landingStatus": 200,
         "discoveryError": "Sitemap contains no individual job URLs"
-      }
+      },
+      "previousReason": "The Oracle portal linked by JPMorgan returned HTTP 403.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500"
     },
     {
       "companyId": "kroger",
@@ -510,12 +514,12 @@
     {
       "companyId": "microsoft",
       "company": "Microsoft",
-      "status": "verification-needed",
-      "reason": "Official public portal explicitly permits the tested career and PCSX paths in its crawler rules. Three individual postings were verified, then the GitHub collector received HTTP 429 rate limiting. The source remains disabled; staged Microsoft jobs are not published.",
-      "nextStep": "Honor the cooldown and Retry-After guidance, then consider a smaller employer-permitted request budget. Do not bypass throttling or assume a paid provider is mandatory.",
+      "status": "access-restricted",
+      "reason": "Local public search responds, but the GitHub collector again receives HTTP 429 even in a reduced-budget test with six-second request spacing and at most two new candidates. The test stopped at the rate limit; no staged Microsoft jobs were published.",
+      "nextStep": "Keep disabled. Honor any cooldown or Retry-After guidance and obtain a reliable employer-permitted feed or permission before another integration attempt.",
       "officialCareerUrl": "https://careers.microsoft.com/",
-      "reviewedAt": "2026-11-15",
-      "previousReason": "The official Microsoft job portal excludes the tested career route in its crawler rules.",
+      "reviewedAt": "2026-11-16",
+      "previousReason": "Official public portal explicitly permits the tested career and PCSX paths in its crawler rules. Three individual postings were verified, then the GitHub collector received HTTP 429 rate limiting. The source remains disabled; staged Microsoft jobs are not published.",
       "historicalGithubObservation": {
         "companyId": "microsoft",
         "careerUrl": "https://careers.microsoft.com/",
@@ -523,7 +527,7 @@
         "landingStatus": 200,
         "discoveryError": "Invalid employer sitemap response"
       },
-      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43724355714"
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43863539716"
     },
     {
       "companyId": "nike",
@@ -555,16 +559,18 @@
     {
       "companyId": "oracle",
       "company": "Oracle",
-      "status": "access-restricted",
-      "reason": "Official-host access returned HTTP 403.",
-      "nextStep": "Use an authorized source; do not bypass the denial.",
-      "officialCareerUrl": "https://www.oracle.com/careers/",
-      "reviewedAt": "2026-11-13",
+      "status": "connected",
+      "reason": "The separate employer-owned careers.oracle.com portal publishes recruiting service eeho.fa.us2.oraclecloud.com and site CX_45001. Date-sorted public search, individual pages and exact per-ID details yielded sixteen recent U.S. roles from twenty candidates; four candidates lacked verified U.S. state geography. All sixteen independently refreshed with zero errors or warnings. Named primary and secondary locations are read only when their country and state are explicit.",
+      "nextStep": "Monitor the bounded sample, employer posting dates, public site identity, geographic scope and scheduled refreshes. The unavailable corporate page is not used.",
+      "officialCareerUrl": "https://careers.oracle.com/en/sites/jobsearch/",
+      "reviewedAt": "2026-11-16",
       "githubObservation": {
         "companyId": "oracle",
         "careerUrl": "https://www.oracle.com/careers/",
         "accessError": "Employer request failed: HTTP 403"
-      }
+      },
+      "previousReason": "Official-host access returned HTTP 403.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500"
     },
     {
       "companyId": "pepsico",
@@ -603,15 +609,17 @@
       "companyId": "progressive",
       "company": "Progressive",
       "status": "access-restricted",
-      "reason": "Official-host access returned HTTP 403.",
-      "nextStep": "Use an authorized source; do not bypass the denial.",
+      "reason": "Both the corporate career page and publicly advertised job-search page return HTTP 403 to the collector. The job-search page also returns HTTP 403 from GitHub.",
+      "nextStep": "Obtain a permitted employer source or access approval before enabling automation.",
       "officialCareerUrl": "https://careers.progressive.com/",
-      "reviewedAt": "2026-11-13",
+      "reviewedAt": "2026-11-16",
       "githubObservation": {
         "companyId": "progressive",
         "careerUrl": "https://careers.progressive.com/",
         "accessError": "Employer request failed: HTTP 403"
-      }
+      },
+      "previousReason": "Official-host access returned HTTP 403.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500"
     },
     {
       "companyId": "rtx",
@@ -651,15 +659,17 @@
       "companyId": "tesla",
       "company": "Tesla",
       "status": "access-restricted",
-      "reason": "Official-host access returned HTTP 403.",
-      "nextStep": "Use an authorized source; do not bypass the denial.",
+      "reason": "The career landing page and publicly advertised job-search page return HTTP 403 to the collector; the actual job-search page also returns HTTP 403 from GitHub.",
+      "nextStep": "Obtain a permitted employer source or access approval before enabling automation.",
       "officialCareerUrl": "https://www.tesla.com/careers",
-      "reviewedAt": "2026-11-13",
+      "reviewedAt": "2026-11-16",
       "githubObservation": {
         "companyId": "tesla",
         "careerUrl": "https://www.tesla.com/careers",
         "accessError": "Employer request failed: HTTP 403"
-      }
+      },
+      "previousReason": "Official-host access returned HTTP 403.",
+      "latestVerificationUrl": "https://github.com/candicecoschino-lgtm/fortunehire-poc/actions/runs/43864532500"
     },
     {
       "companyId": "ups",

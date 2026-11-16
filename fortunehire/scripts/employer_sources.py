@@ -23,6 +23,7 @@ def amazon_id(path):
     return match[1] if match else None
 
 ORACLE = {
+    'careers.oracle.com': ('eeho.fa.us2.oraclecloud.com','CX_45001','/en/sites/jobsearch'),
     'enterpriseplatform.dell.com': ('enterpriseplatform.dell.com','CX_1001','/hcmUI/CandidateExperience/en/sites/CX_1001'),
     'www.krogerfamilycareers.com': ('eluq.fa.us2.oraclecloud.com','CX_2001','/en/sites/CX_2001'),
 }

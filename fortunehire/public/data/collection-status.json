@@ -693,6 +693,21 @@
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-16T02:12:28.931999+00:00"
+    },
+    "oracle": {
+      "discovered": 27,
+      "checked": 16,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 16,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-16T12:13:31.534829+00:00"
     }
   }
 }

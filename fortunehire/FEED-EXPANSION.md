@@ -1,4 +1,4 @@
-> Current status: 43 connected employers; all 52 companies are accounted for in COMPANY-FEED-STATUS.md. The earlier batch notes below are historical.
+> Current status: 44 connected employers; all 52 companies are accounted for in COMPANY-FEED-STATUS.md. The earlier batch notes below are historical.
 
 # Employer feed expansion — November 13, 2026
 
@@ -14,7 +14,7 @@ Acceptance: source host checks, filter regression tests, lifecycle tests, zero c
 
 ## Current coverage
 
-43 connected employers; 8 require further format, discovery, eligibility, or access work, and RTX remains paused. This is sampled coverage, not all openings at each employer. A successful discovery audit does not establish complete coverage or a need for a paid provider. The table below records an earlier audit; COMPANY-FEED-STATUS.md contains the current status for every employer.
+44 connected employers; 7 require further format, discovery, eligibility, or access work, and RTX remains paused. This is sampled coverage, not all openings at each employer. A successful discovery audit does not establish complete coverage or a need for a paid provider. The table below records an earlier audit; COMPANY-FEED-STATUS.md contains the current status for every employer.
 
 Some pay ranges have no explicit period or contain target incentives or different geographic bands. These remain visible as employer text and cannot drive numeric pay filters. Generic employer-wide remote policies and boilerplate are not role-level work arrangements. Sector values are broad employer groupings used by this prototype, not a licensed investment classification.
 

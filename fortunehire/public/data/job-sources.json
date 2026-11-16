@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-15",
+  "reviewedAt": "2026-11-16",
   "sources": {
     "boeing": {
       "host": "jobs.boeing.com",
@@ -173,6 +173,10 @@
     "meta": {
       "host": "www.metacareers.com",
       "sector": "Communication Services"
+    },
+    "oracle": {
+      "host": "careers.oracle.com",
+      "sector": "Technology"
     }
   }
 }

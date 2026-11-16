@@ -598,11 +598,12 @@
         "state": "Texas"
       },
       "listYear": 2026,
-      "careerUrl": "https://www.oracle.com/careers/",
+      "careerUrl": "https://careers.oracle.com/en/sites/jobsearch/",
       "profileSource": "https://fortune.com/company/oracle/",
       "membershipSource": "https://fortune.com/company/oracle/",
       "reviewedAt": "2026-11-13",
-      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+      "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy. Official job destination updated November 16, 2026 using the employer-owned Oracle Careers portal.",
+      "verificationSource": "https://www.oracle.com/careers/"
     },
     {
       "id": "pepsico",

@@ -17,6 +17,7 @@ on:
       - 'fortunehire/test/test_pcsx.py'
       - 'fortunehire/test/test_home_depot.py'
       - 'fortunehire/scripts/employer_adapters.py'
+      - 'fortunehire/test/test_oracle_company.py'
       - 'fortunehire/scripts/employer_sources.py'
       - 'fortunehire/scripts/apple_public.py'
       - 'fortunehire/test/test_apple.py'
