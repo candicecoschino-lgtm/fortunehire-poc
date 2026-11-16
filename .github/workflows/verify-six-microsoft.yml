@@ -1,0 +1,67 @@
+name: Verify bounded Microsoft public source
+on:
+  push:
+    branches: [verify-six-microsoft-20261116]
+    paths: ['.github/workflows/verify-six-microsoft.yml']
+permissions:
+  contents: read
+jobs:
+  microsoft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test adapters and publication rules
+        working-directory: fortunehire
+        run: |
+          python -m unittest discover -s test -p 'test_*.py'
+          npm test
+      - name: Verify two candidates and repeat the refresh
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import json,sys
+          from pathlib import Path
+          from datetime import datetime,timezone
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          from employer_sources import public_fetch
+          host='apply.careers.microsoft.com'
+          c.SOURCES={'microsoft':(host,'Technology')}
+          jobs=[];state={};reports=[]
+          try:
+              for max_new in (2,0):
+                  client=c.Client(host,delay=6)
+                  found=c.discover(client)
+                  now=datetime.now(timezone.utc)
+                  jobs,state,report=c.reconcile('microsoft',jobs,state,found,lambda url:public_fetch(client,url,c.Client),now,max_new=max_new,cap=10,discovery_dates=client.discovery_dates)
+                  report['discoveryLimited']=client.discovery_limited
+                  if not report['errors']:report['lastSuccessfulAt']=now.isoformat()
+                  reports.append(report)
+                  if report['errors'] or not jobs:raise ValueError('Microsoft sample failed verification; no integration enabled')
+          except Exception as e:
+              cause=e.__cause__;headers=getattr(cause,'headers',{}) or {}
+              print('MICROSOFT_FAILURE',json.dumps({'error':str(e),'resource':getattr(cause,'url',None),'status':getattr(cause,'code',None),'retryAfter':headers.get('Retry-After'),'reports':reports}))
+              raise
+          out=Path('automation/microsoft-six-review');out.mkdir(exist_ok=True)
+          data={'schemaVersion':1,'jobs':jobs}
+          c.atomic_json(out/'jobs.json',data)
+          employers=json.loads(Path('public/data/companies.json').read_text())
+          for company in employers['companies']:
+              if company['id']=='microsoft':company['careerUrl']='https://apply.careers.microsoft.com/careers'
+          c.atomic_json(out/'companies.json',employers)
+          print('MICROSOFT_JOBS',json.dumps(jobs))
+          print('MICROSOFT_SOURCES',json.dumps({'microsoft':reports[-1]}))
+          print('MICROSOFT_STATES',json.dumps({'microsoft':state}))
+          print('MICROSOFT_REPORTS',json.dumps(reports))
+          PY
+      - name: Validate publication records
+        working-directory: fortunehire
+        run: |
+          node --input-type=module -e "import fs from 'node:fs';import {validateJobs} from './public/jobs.js';const d=JSON.parse(fs.readFileSync('automation/microsoft-six-review/jobs.json'));const c=JSON.parse(fs.readFileSync('automation/microsoft-six-review/companies.json'));console.log('Validated Microsoft jobs:',validateJobs(d,c.companies).length)"
