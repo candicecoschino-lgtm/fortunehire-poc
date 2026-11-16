@@ -1,0 +1,49 @@
+name: Verify Elevance and Salesforce refresh repairs
+on:
+  push:
+    branches: [verify-refresh-repair-20261116]
+    paths: ['.github/workflows/verify-refresh-repair.yml']
+permissions:
+  contents: read
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check retry, closure and publication safeguards
+        working-directory: fortunehire
+        run: |
+          python -m unittest discover -s test -p 'test_*.py'
+          npm test
+      - name: Refresh existing Elevance and Salesforce records
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,tempfile
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          c.SOURCES={k:v for k,v in c.SOURCES.items() if k in ('elevance-health','salesforce')}
+          root=Path(tempfile.mkdtemp())
+          for name in ('public/data/jobs.json','automation/state.json'):
+              c.atomic_json(root/name,json.loads(Path(name).read_text()))
+          okay=c.run(root,max_new=0)
+          data=json.loads((root/'public/data/jobs.json').read_text())
+          out=Path('automation/refresh-repair-review');out.mkdir(exist_ok=True)
+          c.atomic_json(out/'jobs.json',data)
+          print('REPAIR_JOBS',json.dumps([j for j in data['jobs'] if j['companyId'] in c.SOURCES]))
+          print('REPAIR_SOURCES',json.dumps(data['automation']['sources']))
+          print('REPAIR_STATES',json.dumps({k:v for k,v in json.loads((root/'automation/state.json').read_text()).items() if k in c.SOURCES}))
+          if not okay or any(v.get('errors') for v in data['automation']['sources'].values()):raise SystemExit('Targeted refresh still has errors')
+          PY
+      - name: Validate refreshed publication records
+        working-directory: fortunehire
+        run: |
+          node --input-type=module -e "import fs from 'node:fs';import {validateJobs} from './public/jobs.js';const data=JSON.parse(fs.readFileSync('automation/refresh-repair-review/jobs.json'));const employers=JSON.parse(fs.readFileSync('public/data/companies.json'));console.log('Validated refreshed records:',validateJobs(data,employers.companies).length)"

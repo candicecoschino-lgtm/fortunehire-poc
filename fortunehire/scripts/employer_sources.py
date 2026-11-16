@@ -144,9 +144,40 @@ def public_search(client, client_factory):
     client.discovery_dates=dates;client.discovery_limited=limited;client.discovery_warnings=[]
     return found
 
+def workday_unavailable(body,url):
+    """Exact employer unavailable flag; ambiguous shells are never closure evidence."""
+    config={'salesforce.wd12.myworkdayjobs.com':('salesforce','External_Career_Site'),
+            'coke.wd1.myworkdayjobs.com':('coke','coca-cola-careers')}
+    parsed=urlsplit(url);scope=config.get(parsed.hostname)
+    if not scope or parsed.scheme!='https' or parsed.netloc!=parsed.hostname or parsed.query or parsed.fragment:return False
+    tenant,site=scope
+    if not re.fullmatch(r'/(?:en-US/)?'+re.escape(site)+r'/job/(?:[^/]+/)?[^/]+_(?:JR\d+|R-\d+)(?:-\d+)?',parsed.path):return False
+    doc=Document(body)
+    if any(n['tag']=='script' and n['attrs'].get('type')=='application/ld+json' for n in doc.nodes):return False
+    identities=[n['attrs'].get('content') for n in doc.nodes if n['tag']=='meta' and n['attrs'].get('property')=='og:url']
+    if identities!=[url]:return False
+    scripts=[''.join(v for v in n['children'] if isinstance(v,str)) for n in doc.nodes if n['tag']=='script']
+    configs=[]
+    for script in scripts:
+        match=re.search(r'window\.workday\s*=\s*window\.workday\s*\|\|\s*\{',script)
+        if match:
+            # Reviewed properties precede arrays/nested branding in the published literal.
+            end=script.find('allowedFileTypes:',match.end())
+            if end<0:return False
+            configs.append(script[match.end():end])
+    if len(configs)!=1:return False
+    data=configs[0]
+    for key,value in [('tenant','"'+tenant+'"'),('siteId','"'+site+'"'),('appName','"cxs"'),('isExternal','true'),('postingAvailable','false')]:
+        values=re.findall(r'\b'+key+r'\s*:\s*("[^"]*"|true|false|null)\s*[,}]',data)
+        if values!=[value]:return False
+    return True
+
+
 def public_fetch(client, url, client_factory):
     """Check the public job URL, then read its employer-published details."""
     status,body=client.get(url)
+    if status==200 and workday_unavailable(body,url):
+        return 404,'' # Exact unavailable posting; repeated-missing and bulk-closure guards still apply.
     if client.host=='careers.walmart.com' and status==200:
         doc=Document(body);main=doc.find('main',id='main-content');node=doc.find('script',id='__NEXT_DATA__')
         if main and node and re.search(r'\b404\s+Sorry, but it looks like this page no longer exists\.',text(main)):
