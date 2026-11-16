@@ -37,3 +37,7 @@ class PcsxTests(unittest.TestCase):
  def test_individual_refresh_uses_independent_position_id_lookup_and_explicit_missing_status(self):
   cl=Mock(host=HOST);cl.get.return_value=(200,envelope(api()));status,body=fetch(cl,URL,page());self.assertEqual(status,200);self.assertIn('position_id=12345',cl.get.call_args.args[0]);self.assertIn('REQ123',body)
   cl.get.return_value=(200,json.dumps({'status':404,'error':{'message':'Position not found'}}));self.assertEqual(fetch(cl,URL,page()),(404,''))
+
+ def test_microsoft_search_is_one_page_even_when_more_results_are_available(self):
+  client=Mock(host=HOST);client.get.return_value=(200,envelope({'positions':[api(id=i,positionUrl='/careers/job/'+str(i)) for i in range(10)],'count':1000}))
+  self.assertEqual(len(discover(client)),10);self.assertEqual(client.get.call_count,1)

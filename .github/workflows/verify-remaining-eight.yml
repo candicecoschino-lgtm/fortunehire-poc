@@ -1,0 +1,42 @@
+name: Verify recovered Microsoft public jobs with reduced request budget
+on:
+  push:
+    paths: ['.github/workflows/verify-remaining-eight.yml']
+permissions:
+  contents: read
+jobs:
+  microsoft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test evidence and enforced source budgets
+        working-directory: fortunehire
+        run: python -m unittest discover -s test -p 'test_*.py'
+      - name: Collect and independently refresh a bounded Microsoft sample
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,tempfile,time
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          c.SOURCES={'microsoft':('apply.careers.microsoft.com','Technology')}
+          c.REGISTRY['sources']['microsoft']={'host':'apply.careers.microsoft.com','sector':'Technology','maxTracked':10,'maxNew':2,'requestDelaySeconds':6}
+          root=Path(tempfile.mkdtemp())
+          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
+          initial=c.run(root,max_new=20)
+          print('MS_INITIAL',json.dumps(json.loads((root/'public/data/collection-status.json').read_text())))
+          refreshed=False
+          if initial:
+              time.sleep(6)
+              refreshed=c.run(root,max_new=0)
+          data=json.loads((root/'public/data/jobs.json').read_text())
+          print('MS_JOBS',json.dumps(data['jobs']))
+          print('MS_SOURCES',json.dumps(data['automation']['sources']))
+          print('MS_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
+          print('MS_VERIFIED',bool(initial and refreshed and data['jobs']))
+          PY
