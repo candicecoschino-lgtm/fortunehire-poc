@@ -1,0 +1,55 @@
+name: Verify approved bounded JPMorgan public feed
+on:
+  push:
+    paths: ['.github/workflows/verify-approved-jpm.yml']
+permissions:
+  contents: read
+jobs:
+  jpmorgan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test scope safeguards and lifecycle
+        working-directory: fortunehire
+        run: |
+          python -m unittest discover -s test -p 'test_*.py'
+          npm test
+      - name: Collect five candidates and independently refresh
+        working-directory: fortunehire
+        run: |
+          python - <<'PY'
+          import sys,json,tempfile,time
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import collect_jobs as c
+          c.SOURCES={'jpmorgan-chase':('jpmc.fa.oraclecloud.com','Financials')}
+          c.REGISTRY['sources']['jpmorgan-chase']={'host':'jpmc.fa.oraclecloud.com','sector':'Financials','approvedPublicJobPolicy':True}
+          root=Path(tempfile.mkdtemp())
+          c.atomic_json(root/'public/data/jobs.json',{'schemaVersion':1,'jobs':[]})
+          initial=c.run(root,max_new=20)
+          print('JPM_INITIAL',json.dumps(json.loads((root/'public/data/collection-status.json').read_text())))
+          if initial:time.sleep(2)
+          refreshed=c.run(root,max_new=0) if initial else False
+          data=json.loads((root/'public/data/jobs.json').read_text())
+          out=Path('automation/jpm-review');out.mkdir(exist_ok=True)
+          c.atomic_json(out/'jobs.json',data)
+          companies=json.loads(Path('public/data/companies.json').read_text())
+          for company in companies['companies']:
+              if company['id']=='jpmorgan-chase':company['careerUrl']='https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions'
+          c.atomic_json(out/'companies.json',companies)
+          print('JPM_JOBS',json.dumps(data['jobs']))
+          print('JPM_SOURCES',json.dumps(data['automation']['sources']))
+          print('JPM_STATES',json.dumps(json.loads((root/'automation/state.json').read_text())))
+          print('JPM_VERIFIED',bool(initial and refreshed and data['jobs']))
+          PY
+      - name: Validate the isolated publication sample
+        working-directory: fortunehire
+        run: |
+          node --input-type=module -e "import fs from 'node:fs';import {validateJobs} from './public/jobs.js';let j=JSON.parse(fs.readFileSync('automation/jpm-review/jobs.json'));let c=JSON.parse(fs.readFileSync('automation/jpm-review/companies.json'));console.log('Validated JPMorgan records:',validateJobs(j,c.companies).length)"

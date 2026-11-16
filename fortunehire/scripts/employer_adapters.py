@@ -139,7 +139,7 @@ def oracle(body,url):
     locations=[]
     for loc in (source.get('workLocation') or [])+(source.get('otherWorkLocations') or []):
         locations.append({'address':{'addressLocality':loc.get('TownOrCity'),'addressRegion':loc.get('Region2'),'addressCountry':loc.get('Country')}})
-    if urlsplit(url).hostname=='careers.oracle.com':
+    if urlsplit(url).hostname in ('careers.oracle.com','jpmc.fa.oraclecloud.com'):
         named=[(source.get('PrimaryLocation'),source.get('PrimaryLocationCountry'))]+[(loc.get('Name'),loc.get('CountryCode')) for loc in (source.get('secondaryLocations') or [])]
         for label,country in named:
             if country!='US' or not isinstance(label,str):continue
@@ -151,7 +151,7 @@ def oracle(body,url):
     arrangement={'ORA_ON_SITE':'ON_SITE','ORA_HYBRID':'HYBRID','ORA_REMOTE':'REMOTE'}.get(source.get('WorkplaceTypeCode'))
     # Plain public labels also occur when the corresponding code is absent.
     arrangement=arrangement or {'On-site':'ON_SITE','Hybrid':'HYBRID','Remote':'REMOTE'}.get(source.get('WorkplaceType'))
-    if urlsplit(url).hostname=='careers.oracle.com' and not arrangement:
+    if urlsplit(url).hostname in ('careers.oracle.com','jpmc.fa.oraclecloud.com') and not arrangement:
         qualifier=re.search(r'[-–—]\s*(HYBRID|REMOTE|ON[- ]?SITE)\s*$',source.get('Title',''),re.I)
         if qualifier:arrangement={'hybrid':'HYBRID','remote':'REMOTE','onsite':'ON_SITE'}[re.sub(r'[- ]','',qualifier[1].lower())]
     posted=source['ExternalPostedStartDate']
@@ -221,7 +221,7 @@ def extract(company,body,url):
         from apple_public import extract as apple
         return apple(body,url)
     if company=='amazon':return amazon(body,url)
-    if company in ('dell','kroger','oracle'):return oracle(body,url)
+    if company in ('dell','kroger','oracle','jpmorgan-chase'):return oracle(body,url)
     if company not in ('walmart','disney','phillips-66','verizon','valero'):return None
     document=Document(body)
     if company=='valero':return valero(document,body,url)
