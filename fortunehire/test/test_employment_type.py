@@ -6,6 +6,20 @@ import collect_jobs as c
 from test_collector import body,URL,NOW
 
 class EmploymentTypeTests(unittest.TestCase):
+ def test_unspecified_defaults_to_full_time_with_disclosure_and_preserved_employer_evidence(self):
+  old={'title':'Analyst','employmentType':'Not specified','evidence':{'arrangement':''},'postedAt':'2026-11-12','reviewedAt':'2026-11-13','sourceHash':'original'}
+  new=apply_employment_policy(old)
+  self.assertEqual(new['employmentType'],'Full-time');self.assertEqual(new['employmentTypeBasis'],'assumed-full-time')
+  self.assertIn('Assumed',new['employmentTypeNote']);self.assertEqual(new['evidence'],old['evidence'])
+  for key in ['postedAt','reviewedAt','sourceHash']:self.assertEqual(new[key],old[key])
+  self.assertEqual(apply_employment_policy(new),new)
+ def test_verified_types_are_preserved_and_later_title_evidence_replaces_the_assumption(self):
+  for kind in ['Full-time','Part-time','Contract','Temporary','Internship']:
+   old={'title':'Analyst','employmentType':kind,'evidence':{}}
+   self.assertEqual(apply_employment_policy(old),old)
+  old=apply_employment_policy({'title':'Analyst','employmentType':'Not specified','evidence':{}})
+  new=apply_employment_policy({**old,'title':'Analyst (Part-Time)'})
+  self.assertEqual(new['employmentType'],'Part-time');self.assertNotIn('employmentTypeBasis',new);self.assertNotIn('employmentTypeNote',new)
  def test_verizon_time_type_must_match_the_same_role_id_and_title(self):
   url='https://mycareer.verizon.com/jobs/r-test'
   primary={'Id':'r-test','Reference':'R-TEST','Title':'Synthetic specialist','DisplayDate':'2026-11-12','DueDate':None,'Urls':[{'Url':url}],'Locations':[{'City':'Austin','Region':'Texas','Country':'US'}]}

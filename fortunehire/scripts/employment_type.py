@@ -1,4 +1,4 @@
-"""Employment labels from a matched role, never company policy or benefits."""
+"""Verified role labels, followed by the disclosed user-selected fallback."""
 import re
 
 SPACE=r'[\s\u2010-\u2015_-]*'
@@ -31,6 +31,10 @@ def resolve_employment(title,description,current='Not specified',raw_type=''):
  return current,''
 
 def apply_employment_policy(job):
- kind,evidence=resolve_employment(job['title'],'',job['employmentType'])
- if kind==job['employmentType']:return job
- return {**job,'employmentType':kind,'evidence':{**job.get('evidence',{}),'employmentType':evidence}}
+ current='Not specified' if job.get('employmentTypeBasis')=='assumed-full-time' else job['employmentType']
+ kind,evidence=resolve_employment(job['title'],'',current)
+ if kind=='Not specified':
+  return {**job,'employmentType':'Full-time','employmentTypeBasis':'assumed-full-time','employmentTypeNote':'Assumed full-time because the employer did not specify an employment type.'}
+ if kind==job['employmentType'] and not job.get('employmentTypeBasis'):return job
+ result={k:v for k,v in job.items() if k not in ('employmentTypeBasis','employmentTypeNote')}
+ return {**result,'employmentType':kind,'evidence':{**job.get('evidence',{}),**({'employmentType':evidence} if evidence else {})}}

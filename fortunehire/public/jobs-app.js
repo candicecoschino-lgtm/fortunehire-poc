@@ -20,7 +20,7 @@ function card(j,f){
   const byline=e('div',undefined,'job-byline');const posted=e('time',postedLabel(j.postedAt,todayInNewYork()),'job-posted');posted.dateTime=j.postedAt;posted.title=`Employer posting date: ${labelDate(j.postedAt)}`;byline.append(e('span',j.companyName,'job-company'),e('span','\u00b7'),posted);identity.append(title,byline);top.append(mark,identity);
   const meta=e('div',undefined,'job-meta');const badges=e('div',undefined,'job-badges');
   badges.append(e('span',j.arrangement==='remote'&&j.remoteScope==='states'?'Remote \u00b7 State restricted':j.arrangement==='unknown'?'Work arrangement not specified':ARRANGEMENTS[j.arrangement],`job-badge ${j.arrangement}`));
-  if(j.employmentType!=='Not specified')badges.append(e('span',j.employmentType,'job-badge'));
+  if(j.employmentType!=='Not specified')badges.append(e('span',j.employmentType+(j.employmentTypeBasis==='assumed-full-time'?' (assumed)':''),'job-badge'));
   if(j.travelRequired===true)badges.append(e('span','Travel required','job-badge'));
   meta.append(e('p',locationSummary(j,f.state),'job-location'),badges);
   const details=e('details',undefined,'job-details');const summary=e('summary','Job details & sources');const body=e('div',undefined,'job-detail-body');
@@ -28,6 +28,7 @@ function card(j,f){
   if(j.arrangement==='remote'&&j.remoteScope==='states')dl.append(e('dt','Eligible remote states'),e('dd',j.eligibleStates.join(', ')));
   const payScope=j.salary?.scopeStates||j.publishedPay?.scopeStates||[];const payApplies=!f.state||!payScope.length||payScope.includes(f.state);
   body.append(e('p','Location & eligibility: '+j.locationNote));
+  if(j.employmentTypeBasis==='assumed-full-time')body.append(e('p','Employment type: '+j.employmentTypeNote));
   if(j.arrangementBasis==='listed-location')body.append(e('p','Work arrangement: On-site, classified from the listed city/state. The employer did not explicitly state a work arrangement.'));
   if(payApplies&&(j.salary||j.publishedPay))body.append(e('p','Employer-published pay: '+salaryText(j)));
   else if(!payApplies)body.append(e('p','Published pay does not have verified applicability to the selected state. Open the employer posting for its location-specific terms.'));

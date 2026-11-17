@@ -7,6 +7,14 @@ const data=JSON.parse(await readFile(new URL('./fixtures/reviewed-jobs.json',imp
 const jobs=validateJobs(data,companies),today='2026-11-13';
 const filters=extra=>({...readJobFilters(''),...extra});
 
+test('assumed full-time is disclosed, validated, and included in the full-time filter',()=>{
+ const j={...structuredClone(data.jobs[0]),employmentType:'Full-time',employmentTypeBasis:'assumed-full-time',employmentTypeNote:'Assumed full-time; employer did not specify.'};
+ const valid=validateJobs({schemaVersion:1,jobs:[j]},companies);
+ assert.equal(filterJobs(valid,filters({type:'Full-time'}),today).length,1);
+ assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,employmentType:'Part-time'}]},companies));
+ assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,employmentTypeNote:''}]},companies));
+});
+
 test('every listed office or eligible remote state matches once, including later states',()=>{
  const locations=[{city:'Austin',state:'Texas'},{city:'Raleigh',state:'North Carolina'},{city:'Charlotte',state:'North Carolina'}];
  for(const arrangement of ['on-site','hybrid','unknown']){
