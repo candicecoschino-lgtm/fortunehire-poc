@@ -1,5 +1,5 @@
 .job-cards{grid-template-columns:1fr;gap:12px}
-.job-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,240px);grid-template-areas:"identity pay" "meta actions" "details details";gap:10px 24px;padding:21px 24px;border-radius:12px}
+.job-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,240px);grid-template-areas:"identity pay" "meta pay" "details actions";gap:10px 24px;padding:21px 24px;border-radius:12px}
 .job-card .card-top{grid-area:identity;margin:0;align-items:start;gap:13px}
 .job-title{font-size:17px!important;line-height:1.4!important;letter-spacing:-.2px!important}
 .job-title a{text-decoration:none}
