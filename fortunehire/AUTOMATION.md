@@ -85,3 +85,7 @@ Code pushes cancel an outdated in-progress refresh in the same group so old code
 See FREE-SOURCE-VERIFICATION.md for verified free public interfaces, field provenance and request limits. Crawler rules use RFC 9309 longest-match precedence; explicit Allow rules can permit career paths under a general exclusion. Excluded paths, security challenges and HTTP 403/429 still stop collection. Home Depot uses distinct public posting IDs for shared store requisitions. Employer soft-404 and exact empty per-ID Oracle lookups enter the same two-check/six-hour missing guard; generic errors and malformed results do not close jobs.
 
 JPMorgan has a user-approved source-specific public-job policy: maximum five new candidates and twenty tracked jobs, minimum two-second pacing, strict public-route allowlist. Its unavailable robots.txt HTTP 403 exception does not apply to other employers or actual job denials. Published exclusions, rate limits and challenges stop requests.
+
+## User-selected location-based On-site classification
+
+As of November 17, 2026, a posting with physical city/state locations and no stated work arrangement defaults to On-site after employer evidence is extracted. It carries arrangementBasis: listed-location and a disclosed arrangementNote; it is not an employer-stated On-site assertion. Explicit Remote and Hybrid evidence takes priority. Remote placeholders and unresolved worksite conflicts do not receive this default. See LOCATION-WORKSITE-POLICY.md.

@@ -55,6 +55,7 @@ export function validateJobs(data,companies) {
     const c=employers.get(j.companyId);if(!c)throw Error('Unknown employer');
     for(const v of [j.title,j.requisitionId,j.locationNote,j.sourceNote,j.sector])if(typeof v!=='string'||!v.trim())throw Error('Missing job field');
     if(!Object.hasOwn(ARRANGEMENTS,j.arrangement)||!['Full-time','Part-time','Contract','Temporary','Internship','Not specified'].includes(j.employmentType)||![true,false,null].includes(j.travelRequired))throw Error('Invalid job category');
+    if(j.arrangementBasis!==undefined&&(j.arrangementBasis!=='listed-location'||j.arrangement!=='on-site'||typeof j.arrangementNote!=='string'||!j.arrangementNote.trim()))throw Error('Invalid location-based work arrangement');
     if(!['nationwide','states','unknown'].includes(j.remoteScope)||!Array.isArray(j.eligibleStates)||!Array.isArray(j.locations))throw Error('Invalid eligibility');
     for(const s of j.eligibleStates)if(!US_STATES.includes(s))throw Error('Invalid eligible state');
     for(const loc of j.locations)if(!loc.city||!US_STATES.includes(loc.state))throw Error('Invalid job location');

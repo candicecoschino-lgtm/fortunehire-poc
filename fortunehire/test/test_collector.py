@@ -333,7 +333,7 @@ class CollectorTests(unittest.TestCase):
             return 200,body(url=url,identifier={'value':url.rsplit('/',1)[-1]},description='Role description.')
         jobs,state,report=c.reconcile('boeing',[],{},urls,fetch,NOW,max_new=4)
         self.assertEqual(len(checked),4);self.assertIn(remote,checked)
-        self.assertTrue(all(j['arrangement']=='unknown' for j in jobs))
+        self.assertTrue(all(j['arrangement']=='on-site' and j['arrangementBasis']=='listed-location' for j in jobs))
 
     def test_plural_routes_have_stable_noncolliding_keys(self):
         first='https://corporate.target.com/jobs/w06/25/designer'

@@ -7,6 +7,13 @@ const data=JSON.parse(await readFile(new URL('./fixtures/reviewed-jobs.json',imp
 const jobs=validateJobs(data,companies),today='2026-11-13';
 const filters=extra=>({...readJobFilters(''),...extra});
 
+test('location-based on-site classification is disclosed and cannot label a remote role',()=>{
+ const j={...structuredClone(data.jobs[0]),arrangement:'on-site',remoteScope:'unknown',eligibleStates:[],arrangementBasis:'listed-location',arrangementNote:'Classified from the employer-listed city and state.'};
+ assert.equal(validateJobs({schemaVersion:1,jobs:[j]},companies)[0].arrangementBasis,'listed-location');
+ assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,arrangement:'remote'}]},companies));
+ assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,arrangementNote:''}]},companies));
+});
+
 test('Apple direct posting paths keep location IDs and reject pickers or other hosts',()=>{
   const employers=companies.map(c=>c.id==='apple'?{...c,careerUrl:'https://jobs.apple.com/en-us/search'}:c);
   const j={...structuredClone(data.jobs[0]),id:'apple-synthetic',companyId:'apple',url:'https://jobs.apple.com/en-us/details/123456-0017/synthetic-role'};

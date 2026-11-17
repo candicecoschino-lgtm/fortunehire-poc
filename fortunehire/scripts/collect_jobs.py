@@ -478,6 +478,7 @@ def normalize_posting(body, url, company, now):
         eligible=sorted(set(eligible+remote_location_states))
     if company in ('microsoft','nvidia') and source.get('_pcsxWorksite') and arrangement!='unknown':arrangement_evidence='Employer role work setting: '+source['_pcsxWorksite']
     # A posted office address is not evidence of remote eligibility.
+    unresolved_worksite=arrangement=='unknown' and bool(source.get('_salesforceRemoteType') or source.get('_pcsxWorksite') or re.search(r'\b(?:This|The) (?:role|position|job)\b[^.\n]{0,140}\b(?:remote or hybrid|hybrid or remote|on[- ]?site or remote|remote or on[- ]?site)\b',description,re.I))
     if arrangement != 'remote': eligible = []
     # Generic internet/home-office requirements do not impose state residency.
     residency_restricted=bool(re.search(r'\bwithin\s+\d+\s+miles\b',description,re.I))
@@ -556,6 +557,7 @@ def normalize_posting(body, url, company, now):
     return {
         'id':company+'-'+key, 'companyId':company, 'requisitionId':req, 'identifierType':identifier_type, 'title':title, 'url':url,
         'arrangement':arrangement, 'locations':locations,
+        **({'arrangementReviewRequired':True} if unresolved_worksite else {}),
         'remoteScope':remote_scope, 'eligibleStates':eligible,
         'locationNote':location_note,
         'employmentType':employment, 'salary':salary,
@@ -751,6 +753,8 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 if old: raise ValueError('Previously published job no longer has verified US geography')
                 rejected[posting_key(url)] = now.isoformat(); report['skipped'] += 1
                 continue
+            from location_worksite import apply_location_policy
+            job=apply_location_policy(job)
             # Requisition identity is stable across title/slug changes.
             if old and old['requisitionId'] != job['requisitionId']: raise ValueError('Requisition identity changed')
             if not recent_posting(job,now):
@@ -765,7 +769,7 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 source_state.setdefault('quarantined',{})[posting_key(url)]=now.isoformat()
                 continue
             if existing:
-                if existing.get('sourceHash') != job['sourceHash']: report['changed'] += 1
+                if existing.get('sourceHash') != job['sourceHash'] or any(existing.get(key)!=job.get(key) for key in ('arrangement','arrangementBasis')): report['changed'] += 1
             else: report['added'] += 1
             by_id[job['id']] = job
             if job['status']=='closed' and (not existing or existing['status']!='closed'): report['closed'] += 1

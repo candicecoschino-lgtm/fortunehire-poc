@@ -26,6 +26,7 @@ function card(j,f){
   if(j.arrangement==='remote'&&j.remoteScope==='states')dl.append(e('dt','Eligible remote states'),e('dd',j.eligibleStates.join(', ')));
   const payScope=j.salary?.scopeStates||j.publishedPay?.scopeStates||[];const payApplies=!f.state||!payScope.length||payScope.includes(f.state);
   body.append(e('p','Location & eligibility: '+j.locationNote));
+  if(j.arrangementBasis==='listed-location')body.append(e('p','Work arrangement: On-site, classified from the listed city/state. The employer did not explicitly state a work arrangement.'));
   if(payApplies&&(j.salary||j.publishedPay))body.append(e('p','Employer-published pay: '+salaryText(j)));
   else if(!payApplies)body.append(e('p','Published pay does not have verified applicability to the selected state. Open the employer posting for its location-specific terms.'));
   for(const note of new Set([j.salaryNote,j.publishedPay?.note].filter(Boolean)))body.append(e('p',note));
