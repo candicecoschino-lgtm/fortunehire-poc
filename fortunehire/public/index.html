@@ -29,12 +29,12 @@
   <form id="filters" role="search" aria-label="Filter jobs">
     <div class="search-controls">
       <label class="keyword-control" for="q">Role or company<span class="search-field"><span aria-hidden="true">&#8981;</span><input id="q" name="q" type="search" placeholder="Job title, keyword, or company" autocomplete="off" maxlength="160"></span></label>
-      <label class="city-control" for="city">City or ZIP<input id="city" name="city" type="text" placeholder="Austin, TX or 78701" maxlength="160" list="job-cities" autocomplete="off" aria-describedby="city-help city-status"><datalist id="job-cities"></datalist></label>
+      <label class="city-control" for="city">ZIP code<input id="city" name="city" type="text" placeholder="e.g. 01803" maxlength="10" inputmode="numeric" autocomplete="off" aria-describedby="city-help city-status"></label>
       <label for="state">State<select id="state" disabled aria-describedby="location-help"><option value="">All states</option></select></label>
       <label for="arrangement">Work arrangement<select id="arrangement"><option value="">All arrangements</option><option value="on-site">On-site</option><option value="hybrid">Hybrid</option><option value="remote">Remote</option><option value="remote-state">State-restricted remote</option><option value="unknown">Not specified</option></select></label>
     </div>
-    <p id="city-help" class="filter-help">City or ZIP narrows on-site and hybrid roles by listed city, not commute distance. Use State for remote eligibility.</p>
-    <div class="city-feedback"><p id="city-status" class="small" role="status" aria-live="polite"></p><button id="clear-city" type="button" hidden>Clear city / ZIP</button><button id="retry-zip" type="button" hidden>Retry ZIP lookup</button></div>
+    <p id="city-help" class="filter-help">ZIP matches the listed city for on-site and hybrid jobs. Use State for remote jobs.</p>
+    <div class="city-feedback"><p id="city-status" class="small" role="status" aria-live="polite"></p><button id="clear-city" type="button" hidden>Clear ZIP</button><button id="retry-zip" type="button" hidden>Retry ZIP lookup</button></div>
     <div class="filter-tools">
       <details class="more-filters"><summary>More filters <span id="more-filter-count" class="filter-count" hidden></span></summary>
         <div class="filter-row">

@@ -1,15 +1,7 @@
-# City and ZIP search
+# ZIP search
 
-The main search row includes City or ZIP with suggestions from the employer-listed office cities in the current feed. Users can enter a city, City/State, City/ST, or five-digit U.S. ZIP (ZIP+4 is also accepted). Leading zeroes are preserved. Input values round-trip through links and saved searches and have a removable filter chip and clear control.
+The search row accepts a five-digit U.S. ZIP code (or ZIP+4), preserving leading zeroes. City entry and autocomplete have been removed. ZIPs resolve to postal cities and match employer-listed on-site and hybrid office locations; this is not a radius or exact office-address search. State continues to control remote eligibility.
 
-City/ZIP narrows on-site and hybrid roles. Remote eligibility continues to use State; a city query never converts an office address into remote eligibility. Conflicting state selections and unrecognized ZIPs show explanations and do not broaden the search. ZIP loading/failure states are explicit, with Retry on failure and city entry as an alternative.
+Shared links and saved searches retain ZIP values. Older saved city-text queries show a ZIP validation message instead of silently broadening results. Unknown ZIPs, failed lookups and conflicting states have explicit feedback. Later-listed matching offices appear first, and pay filters honor their state.
 
-For multi-location roles, city and state must match the same location. A matching later-listed city appears first on the card. Pay presence and minimum-pay filtering honor the matched location's state even if State is not separately selected. City matching normalizes case, accents, St./Saint, Ft./Fort, Mt./Mount, and New York/NYC naming, without inferring nearby suburbs or a metro radius.
-
-ZIP resolves a postal city, not the role's exact office ZIP, commute time, or distance radius: the current job records provide cities/states, not reliable office ZIPs. This limitation is stated beside the input and in ZIP results. City names can be entered freely even if they do not yet appear in suggestions.
-
-The site bundles 40,977 ZIPs across 99 two-digit-prefix JSON shards from GeoNames' U.S. postal data, licensed CC BY 4.0. A ZIP search loads only its small same-origin shard; typing a city needs no lookup request. ZIPs are not sent to a third-party geocoder, and there is no mapping account/API key. The footer credits GeoNames and the license, and zip-source.json records the source and build metadata. scripts/build_zip_lookup.py regenerates the artifacts manually; it is not added to recurring job collection.
-
-Verification: 77 frontend/data tests pass, covering real ZIPs/leading zeroes, all shard/schema counts and state codes, unknown/failed lookup behavior, city aliases, same-location state intersection, remote separation, later-listed cities, pay geography, saved searches, and older personal-list records. Browser checks verified Burlington ZIP 01803, Austin hybrid roles, invalid ZIP 00000, a conflicting state, saved-search restoration, clear-city behavior, and a 390px viewport. Temporary test searches were removed. Collector data, refresh cadence, employment defaults, and RTX's paused status are unchanged.
-
-The earlier collection run completed collection and validation but failed its push because main advanced during collection. The publication helper now safely rebases a data-only commit over concurrent site edits, keeps newer incoming data instead of overwriting it, and retries bounded non-fast-forward races without forcing. Three isolated Git integration scenarios, using shallow checkouts like GitHub Actions, verify these outcomes.
+The existing local GeoNames lookup and attribution remain in use. No paid service or collection changes are required.

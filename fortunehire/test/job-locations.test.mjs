@@ -10,13 +10,13 @@ const today='2026-11-17';
 const job={id:'example-1',title:'Analyst',companyName:'Example',companyId:'example',status:'reviewed',postedAt:today,reviewedAt:today,closesAt:null,arrangement:'hybrid',locations:[{city:'Seattle',state:'Washington'},{city:'Austin',state:'Texas'},{city:'Dallas',state:'Texas'}],employmentType:'Full-time',travelRequired:null,salary:null,publishedPay:null};
 const shard=code=>JSON.parse(fs.readFileSync(new URL(`../public/data/zip/${code.slice(0,2)}.json`,import.meta.url),'utf8'));
 
-test('city matching normalizes case, accents, common place-name abbreviations, and state qualifiers',()=>{
+test('city matching normalizes case, accents, common place-name abbreviations, for ZIP-to-office matching',()=>{
  assert.equal(normalizeCity('ST. LOUIS'),normalizeCity('Saint Louis'));
  assert.equal(normalizeCity('Ft. Worth'),normalizeCity('Fort Worth'));
  assert.equal(normalizeCity('Mt. Juliet'),normalizeCity('Mount Juliet'));
  assert.equal(normalizeCity('New York City'),normalizeCity('New York'));
  assert.equal(normalizeCity('Cañon City'),'canon city');
- for(const query of ['Austin, TX','Austin TX','Austin, Texas'])assert.deepEqual(resolveCitySearch(query).places,[{city:'Austin',state:'Texas'}]);
+ for(const query of ['Austin','Austin, TX','Austin TX','Austin, Texas'])assert.equal(resolveCitySearch(query).status,'invalid');
  assert.equal(resolveCitySearch('Austin, invalid').status,'invalid');
 });
 
@@ -34,31 +34,30 @@ test('unknown, loading, incomplete, malformed, and failed ZIP lookups never broa
  assert.equal(filterJobs([job],readJobFilters('?city=01803'),today).length,0);
 });
 
-test('city/state restrictions match the same location and include later-listed cities',()=>{
- for(const city of ['Austin','Austin, TX','Dallas, Texas'])assert.equal(filterJobs([job],readJobFilters('?city='+encodeURIComponent(city)),today).length,1);
- assert.equal(filterJobs([job],readJobFilters('?city=Austin&state=Washington'),today).length,0);
- assert.equal(filterJobs([job],readJobFilters('?city=Austin%2C+WA'),today).length,0);
- const zip=resolveCitySearch('78701',shard('78701'));
- assert.equal(filterJobs([job],readJobFilters('?city=78701'),today,false,zip).length,1);
- assert.equal(filterJobs([job],readJobFilters('?city=78701&state=Washington'),today,false,zip).length,0);
- assert.equal(filterJobs([job],readJobFilters('?city=Aust'),today).length,0); // Suggestions guide exact cities; no substring geography.
+test('ZIP/state restrictions match the same location and include later-listed cities',()=>{
+ for(const code of ['78701','75201']){
+  const search=resolveCitySearch(code,shard(code));
+  assert.equal(filterJobs([job],readJobFilters('?city='+code),today,false,search).length,1);
+  assert.equal(filterJobs([job],readJobFilters('?city='+code+'&state=Washington'),today,false,search).length,0);
+ }
+ assert.equal(filterJobs([job],readJobFilters('?city=Austin'),today).length,0); // Old saved city text must not broaden results.
 });
 
-test('city search targets on-site/hybrid offices without reinterpreting remote eligibility',()=>{
- for(const arrangement of ['on-site','hybrid'])assert.equal(matchingOfficeLocations({...job,arrangement},resolveCitySearch('Austin')).length,1);
- for(const arrangement of ['remote','unknown'])assert.equal(matchingOfficeLocations({...job,arrangement},resolveCitySearch('Austin')).length,0);
+test('ZIP search targets on-site/hybrid offices without reinterpreting remote eligibility',()=>{
+ for(const arrangement of ['on-site','hybrid'])assert.equal(matchingOfficeLocations({...job,arrangement},resolveCitySearch('78701',shard('78701'))).length,1);
+ for(const arrangement of ['remote','unknown'])assert.equal(matchingOfficeLocations({...job,arrangement},resolveCitySearch('78701',shard('78701'))).length,0);
  const remote={...job,arrangement:'remote',remoteScope:'nationwide',eligibleStates:[]};
  assert.equal(filterJobs([remote],readJobFilters('?state=Texas&arrangement=remote'),today).length,1);
  assert.equal(filterJobs([remote],readJobFilters('?city=Austin&arrangement=remote'),today).length,0);
 });
 
 test('matched city appears first on cards, even when another city shares its state',()=>{
- const search=resolveCitySearch('Dallas, TX');
+ const search=resolveCitySearch('75201',shard('75201'));
  assert.equal(locationSummary(job,'Texas',search),'Dallas, Texas + 2 more locations');
  assert.equal(locationSummary(job,'Washington'),'Seattle, Washington + 2 more locations');
 });
 
-test('ZIP and city searches retain pay-state restrictions even when the State select is empty',()=>{
+test('ZIP searches retain pay-state restrictions even when the State select is empty',()=>{
  const j={...job,salary:{min:90000,max:120000,period:'year',currency:'USD',scopeStates:['Washington']}};
  const search=resolveCitySearch('78701',shard('78701'));
  assert.equal(locationPayState(j,search),'Texas');assert.equal(paySummary(j,locationPayState(j,search)).text,'Pay unavailable for this state');
@@ -66,11 +65,11 @@ test('ZIP and city searches retain pay-state restrictions even when the State se
  assert.equal(filterJobs([{...j,salary:{...j.salary,scopeStates:['Texas']}}],readJobFilters('?city=78701&payPosted=1'),today,false,search).length,1);
 });
 
-test('city/ZIP round-trips through shared links and saved searches, including future and older saved roles',()=>{
+test('ZIP round-trips through shared links and saved searches, including future and older saved roles',()=>{
  const f=readJobFilters('?city=01803&state=Massachusetts&arrangement=hybrid');assert.equal(f.city,'01803');assert.deepEqual(readJobFilters('?'+serializeJobFilters(f)),f);assert.equal(readJobFilters(savedQuery(f)).city,'01803');
- const future={...job,locations:[{city:'Tempe',state:'Arizona'}]};assert.equal(filterJobs([future],readJobFilters('?city=Tempe%2C+AZ'),today).length,1);
+ const future={...job,locations:[{city:'Tempe',state:'Arizona'}]};assert.equal(filterJobs([future],readJobFilters('?city=85281'),today,false,resolveCitySearch('85281',shard('85281'))).length,1);
  const old={...job,postedAt:'2026-10-01',organizerUnavailable:true};
- assert.equal(filterJobs([old],readJobFilters('?city=Austin'),today).length,0);assert.equal(filterJobs([old],readJobFilters('?city=Austin&view=saved'),today,true).length,1);
+ assert.equal(filterJobs([old],readJobFilters('?city=78701'),today).length,0);assert.equal(filterJobs([old],readJobFilters('?city=78701&view=saved'),today,true,resolveCitySearch('78701',shard('78701'))).length,1);
 });
 
 test('bundled ZIP shards have complete provenance, valid state codes, and consistent counts',()=>{

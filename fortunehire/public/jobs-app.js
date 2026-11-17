@@ -1,7 +1,7 @@
 import {JOB_FUNCTIONS,classifyJobFunctions} from './job-functions.js';
 import {mountSavedSearches} from './saved-searches.js';
 import {ACTIVITY_KEY,readJobActivity,setJobActivity,activityFlags,activityView,trackedJobs} from './job-activity.js';
-import {resolveCitySearch,zipPrefix,normalizeCity,physicalCity,locationPayState} from './job-locations.js';
+import {resolveCitySearch,zipPrefix,locationPayState} from './job-locations.js';
 import { JOB_KEYS, US_STATES, ARRANGEMENTS, todayInNewYork, readJobFilters, serializeJobFilters, isCurrent, filterJobs, paginateJobs, salaryText, validateJobs } from './jobs.js';
 import {postedLabel,locationSummary,paySummary} from './job-presentation.js';
 const $=id=>document.getElementById(id);
@@ -9,7 +9,7 @@ const e=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined
 const link=(text,url)=>{const a=e('a',text);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;};
 let jobs=[],ready=false,currentPage='1',pending,renderedDay='',collection=null,logos={};
 let activity=[],activityStorage,activityAvailable=true,companyDirectory=[],undoAction=null;
-let localSearch=resolveCitySearch(''),cityOptions=[];
+let localSearch=resolveCitySearch('');
 const zipShards=new Map(),zipLoads=new Set();
 const FILTER_CONTROLS=JOB_KEYS.filter(k=>!['page','travel','payPosted'].includes(k));
 try{activityStorage=window.localStorage;activity=readJobActivity(activityStorage);}catch{activityAvailable=false;}
@@ -75,7 +75,7 @@ function renderFilterChips(f){
   const active=[];
   for(const key of ['state','arrangement','company','industry','function','type','pay','posted'])if(f[key]){const control=$(key);active.push([key,control.options[control.selectedIndex].textContent]);}
   if(f.q.trim())active.push(['q',`Search: ${f.q.trim()}`]);
-  if(f.city.trim())active.push(['city',`City/ZIP: ${f.city.trim()}`]);
+  if(f.city.trim())active.push(['city',`ZIP: ${f.city.trim()}`]);
   if(f.travel==='exclude')active.push(['travel','Exclude travel-required roles']);
   if(f.payPosted)active.push(['payPosted','Pay posted']);
   $('active-filters').replaceChildren(...active.map(([key,label])=>{
@@ -107,7 +107,7 @@ function render(sync=true){
   if(localSearch.status==='loading')ensureZipLookup(f.city);
   let cityMessage=localSearch.message;
   if(localSearch.status==='valid'&&f.state&&localSearch.places.every(place=>place.state&&place.state!==f.state))cityMessage+=' The selected state conflicts with this location; change or clear State.';
-  if(f.city&&['remote','remote-state'].includes(f.arrangement))cityMessage+=' City/ZIP searches on-site and hybrid roles. Clear City/ZIP to search remote roles using State.';
+  if(f.city&&['remote','remote-state'].includes(f.arrangement))cityMessage+=' ZIP searches on-site and hybrid roles. Clear ZIP to search remote roles using State.';
   if($('city-status').textContent!==cityMessage)$('city-status').textContent=cityMessage;
   $('city').setAttribute('aria-invalid',String(['invalid','not-found'].includes(localSearch.status)));
   $('retry-zip').hidden=localSearch.status!=='unavailable';$('clear-city').hidden=!f.city;
@@ -140,21 +140,7 @@ function ensureZipLookup(query){
     return data;
   }).then(data=>zipShards.set(prefix,data)).catch(()=>zipShards.set(prefix,null)).finally(()=>{zipLoads.delete(prefix);if(ready&&zipPrefix($('city').value)===prefix)render();});
 }
-function citySuggestions(){
-  const input=$('city').value.trim(),state=$('state').value,query=normalizeCity(input.split(',')[0]);
-  const values=/^\d/.test(input)?[]:cityOptions.filter(place=>(!state||place.state===state)&&(!query||place.normalized.startsWith(query)));
-  $('job-cities').replaceChildren(...values.slice(0,80).map(place=>{const option=e('option');option.value=place.city+', '+place.state;return option;}));
-}
-function indexCities(){
-  const places=new Map();
-  for(const job of jobs)if(['on-site','hybrid'].includes(job.arrangement))for(const place of job.locations){
-    if(!physicalCity(place.city))continue;
-    const normalized=normalizeCity(place.city),key=normalized+'|'+place.state,old=places.get(key);
-    if(!old||/[a-z]/.test(place.city)&&!/[a-z]/.test(old.city))places.set(key,{...place,normalized});
-  }
-  cityOptions=[...places.values()].sort((a,b)=>a.city.localeCompare(b.city)||a.state.localeCompare(b.state));
-}
-function change(){clearTimeout(pending);currentPage='1';citySuggestions();render();}
+function change(){clearTimeout(pending);currentPage='1';render();}
 function reset(){clearTimeout(pending);for(const k of FILTER_CONTROLS.filter(k=>k!=='view'))$(k).value=k==='sort'?'newest':'';$('include-travel').checked=true;$('pay-posted').checked=false;document.querySelector('.more-filters').open=false;currentPage='1';render();}
 async function load(){
   ready=false;$('error').hidden=true;$('empty').hidden=true;$('results').setAttribute('aria-busy','true');$('count').textContent='Loading jobs…';
@@ -165,12 +151,12 @@ async function load(){
     const companies=[...new Map(jobs.map(j=>[j.companyId,j.companyName]))].sort((a,b)=>a[1].localeCompare(b[1]));setOptions('company',companies);
     setOptions('industry',[...new Set(jobs.map(j=>j.industry))].sort().map(s=>[s,s]));
     setOptions('function',Object.entries(JOB_FUNCTIONS));
-    indexCities();restore();ready=true;citySuggestions();render(false);savedSearches.refresh();
+    restore();ready=true;render(false);savedSearches.refresh();
   }catch{$('results').replaceChildren();$('error').hidden=false;$('coverage').textContent='Job data unavailable';$('count').textContent='Unable to load jobs';$('pagination').hidden=true;}
   finally{$('results').setAttribute('aria-busy','false');}
 }
 $('filters').addEventListener('submit',event=>{event.preventDefault();change();});$('q').addEventListener('input',()=>{clearTimeout(pending);pending=setTimeout(change,120);});
-$('city').addEventListener('input',()=>{citySuggestions();clearTimeout(pending);pending=setTimeout(change,200);});
+$('city').addEventListener('input',()=>{clearTimeout(pending);pending=setTimeout(change,200);});
 $('clear-city').addEventListener('click',()=>{$('city').value='';change();$('city').focus();});
 $('retry-zip').addEventListener('click',()=>{zipShards.delete(zipPrefix($('city').value));render();});
 for(const k of FILTER_CONTROLS.filter(k=>!['q','city'].includes(k)))$(k).addEventListener('change',change);
@@ -183,6 +169,6 @@ for(const [id,delta]of [['previous-page',-1],['next-page',1]])$(id).addEventList
 window.addEventListener('popstate',()=>{if(ready){clearTimeout(pending);restore();render(false);}});
 function refreshFreshness(){if(ready&&todayInNewYork()!==renderedDay)render();}
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshFreshness();});setInterval(refreshFreshness,60000);
-const savedSearches=mountSavedSearches({getFilters:selected,isReady:()=>ready,applyFilters:f=>{clearTimeout(pending);applyFilterValues(f);citySuggestions();render();}});
+const savedSearches=mountSavedSearches({getFilters:selected,isReady:()=>ready,applyFilters:f=>{clearTimeout(pending);applyFilterValues(f);render();}});
 if(!activityAvailable)$('job-action-status').textContent='Your browser blocks site storage, so job lists are unavailable. Search and filters still work.';
 load();
