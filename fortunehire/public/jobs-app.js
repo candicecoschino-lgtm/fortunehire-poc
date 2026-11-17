@@ -1,3 +1,4 @@
+import {JOB_FUNCTIONS,classifyJobFunctions} from './job-functions.js';
 import { JOB_KEYS, US_STATES, ARRANGEMENTS, todayInNewYork, readJobFilters, serializeJobFilters, isCurrent, filterJobs, paginateJobs, salaryText, validateJobs } from './jobs.js';
 import {postedLabel,locationSummary,paySummary} from './job-presentation.js';
 const $=id=>document.getElementById(id);
@@ -22,7 +23,7 @@ function card(j,f){
   if(j.travelRequired===true)badges.append(e('span','Travel required','job-badge'));
   meta.append(e('p',locationSummary(j,f.state),'job-location'),badges);
   const details=e('details',undefined,'job-details');const summary=e('summary','Job details & sources');const body=e('div',undefined,'job-detail-body');
-  const dl=e('dl');for(const [key,val]of [['Posted',labelDate(j.postedAt)],['Last successfully checked',labelDate(j.reviewedAt)],['Job type',j.employmentType],['Industry',j.industry],['Sector',j.sector],[j.identifierType==='posting-id'?'Employer posting ID':'Employer requisition',j.requisitionId],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
+  const dl=e('dl');for(const [key,val]of [['Posted',labelDate(j.postedAt)],['Last successfully checked',labelDate(j.reviewedAt)],['Employment type',j.employmentType],['Industry',j.industry],['Job function (from title)',classifyJobFunctions(j.title).map(key=>JOB_FUNCTIONS[key]).join(', ')],[j.identifierType==='posting-id'?'Employer posting ID':'Employer requisition',j.requisitionId],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
   if(j.arrangement==='remote'&&j.remoteScope==='states')dl.append(e('dt','Eligible remote states'),e('dd',j.eligibleStates.join(', ')));
   const payScope=j.salary?.scopeStates||j.publishedPay?.scopeStates||[];const payApplies=!f.state||!payScope.length||payScope.includes(f.state);
   body.append(e('p','Location & eligibility: '+j.locationNote));
@@ -42,7 +43,7 @@ function card(j,f){
 
 function renderFilterChips(f){
   const active=[];
-  for(const key of ['state','arrangement','company','industry','sector','type','pay'])if(f[key]){const control=$(key);active.push([key,control.options[control.selectedIndex].textContent]);}
+  for(const key of ['state','arrangement','company','industry','function','type','pay'])if(f[key]){const control=$(key);active.push([key,control.options[control.selectedIndex].textContent]);}
   if(f.q.trim())active.push(['q',`Search: ${f.q.trim()}`]);
   if(f.travel==='exclude')active.push(['travel','Exclude travel-required roles']);
   $('active-filters').replaceChildren(...active.map(([key,label])=>{
@@ -50,7 +51,7 @@ function renderFilterChips(f){
     button.addEventListener('click',()=>{const index=[...$('active-filters').children].indexOf(button);if(key==='travel')$('include-travel').checked=true;else $(key).value='';change();const remaining=$('active-filters').children;if(remaining.length)remaining[Math.min(index,remaining.length-1)].focus();else $('q').focus();});return button;
   }));
   $('active-filters').hidden=!active.length;$('reset').hidden=!active.length;
-  const count=['company','industry','sector','type','pay'].filter(key=>f[key]).length+(f.travel==='exclude'?1:0);
+  const count=['company','industry','function','type','pay'].filter(key=>f[key]).length+(f.travel==='exclude'?1:0);
   $('more-filter-count').textContent=`${count} selected`;$('more-filter-count').hidden=!count;
   return active.length;
 }
@@ -60,7 +61,7 @@ function restore(){
   const f=readJobFilters(location.search);currentPage=f.page;
   for(const k of JOB_KEYS.filter(k=>!['page','travel'].includes(k))){const control=$(k);if(k!=='q'&&f[k]&&![...control.options].some(o=>o.value===f[k])){const o=e('option',`Unavailable: ${f[k]}`);o.value=f[k];control.append(o);}control.value=f[k];}
   $('include-travel').checked=f.travel!=='exclude';
-  if(['company','industry','sector','type','pay'].some(k=>f[k])||f.travel==='exclude')document.querySelector('.more-filters').open=true;
+  if(['company','industry','function','type','pay'].some(k=>f[k])||f.travel==='exclude')document.querySelector('.more-filters').open=true;
 }
 function selected(){return {...Object.fromEntries(JOB_KEYS.filter(k=>!['page','travel'].includes(k)).map(k=>[k,$(k).value])),travel:$('include-travel').checked?'include':'exclude',page:currentPage};}
 function render(sync=true){
@@ -85,7 +86,8 @@ async function load(){
     const [data,employers,logoData]=await Promise.all([...responses.map(r=>r.json()),fetch(new URL('./data/company-logos.json',import.meta.url)).then(r=>r.ok?r.json():null).catch(()=>null)]);jobs=validateJobs(data,employers.companies);collection=data.automation||null;logos=logoData?.schemaVersion===1?logoData.logos||{}:{};
     setOptions('state',US_STATES.map(s=>[s,s]));
     const companies=[...new Map(jobs.map(j=>[j.companyId,j.companyName]))].sort((a,b)=>a[1].localeCompare(b[1]));setOptions('company',companies);
-    for(const k of ['industry','sector'])setOptions(k,[...new Set(jobs.map(j=>j[k]))].sort().map(s=>[s,s]));
+    setOptions('industry',[...new Set(jobs.map(j=>j.industry))].sort().map(s=>[s,s]));
+    setOptions('function',Object.entries(JOB_FUNCTIONS));
     restore();ready=true;render(false);
   }catch{$('results').replaceChildren();$('error').hidden=false;$('coverage').textContent='Job data unavailable';$('count').textContent='Unable to load jobs';$('pagination').hidden=true;}
   finally{$('results').setAttribute('aria-busy','false');}

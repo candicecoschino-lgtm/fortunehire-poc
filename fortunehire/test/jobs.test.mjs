@@ -114,8 +114,8 @@ test('a published fixed hourly rate is shown once and stays distinct from annual
 test('excluding travel-required jobs preserves unknowns without calling them travel-free',()=>{
   const result=filterJobs(jobs,filters({state:'Florida',travel:'exclude'}),today);assert.equal(result.length,3);assert.ok(result.some(j=>j.travelRequired===null));assert.ok(result.every(j=>j.travelRequired!==true));
 });
-test('company, industry, sector, job type, state, arrangement and title intersect',()=>{
-  const result=filterJobs(jobs,filters({q:' SUPPORT ',company:'citigroup',industry:'Commercial Banks',sector:'Financials',type:'Full-time',state:'Florida',arrangement:'hybrid',pay:'year:50000'}),today);
+test('company, industry, employment type, state, arrangement and title intersect',()=>{
+  const result=filterJobs(jobs,filters({q:' SUPPORT ',company:'citigroup',industry:'Commercial Banks',type:'Full-time',state:'Florida',arrangement:'hybrid',pay:'year:50000'}),today);
   assert.equal(result.length,1);assert.equal(result[0].requisitionId,'261002688');
   assert.equal(filterJobs(jobs,filters({company:'citigroup',arrangement:'remote'}),today).length,0);
 });
