@@ -2,6 +2,7 @@ import { keys, readFilters, filterCompanies, serializeFilters, validateData } fr
 const $ = id => document.getElementById(id);
 let companies = [];
 let logos = {};
+let connected = new Set();
 let ready = false;
 let pending;
 const element = (tag, text, className) => { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (className) e.className = className; return e; };
@@ -26,7 +27,11 @@ function card(c) {
   details.append(summary,element('p',`Reviewed ${date}. ${c.verificationNote}`),link('Company data source ↗',c.profileSource),element('br'),link(`${c.listYear} membership source ↗`,c.membershipSource),element('p',`Destination: ${new URL(c.careerUrl).hostname}`));
   if(/^https:\/\//.test(logo?.sourceUrl||'')) details.append(element('br'),link('Official brand icon source ↗',logo.sourceUrl));
   for (const source of c.supportingSources || []) details.append(element('br'),link(`${source.label} ↗`,source.url));
-  article.append(top,dl,career,details); return article;
+  const actions=element('div',undefined,'company-actions');
+  if(connected.has(c.id)){
+    const browse=element('a','View collected jobs \u2197','career-link');browse.href='./?company='+encodeURIComponent(c.id)+'#directory';browse.setAttribute('aria-label',`View collected jobs at ${c.name}`);actions.append(browse);career.className='secondary-career';
+  }
+  actions.append(career);article.append(top,dl,actions,details); return article;
 }
 function options(id, values) {
   const select = $(id); select.replaceChildren(select.options[0]);
@@ -39,24 +44,30 @@ function restore() {
     if (key !== 'q' && f[key] && ![...$(key).options].some(o=>o.value === f[key])) { const option = element('option',`Unavailable: ${f[key]}`); option.value=f[key]; $(key).append(option); }
     $(key).value=f[key];
   }
+  if(['company','state','city'].some(key=>f[key]))document.querySelector('.more-filters').open=true;
 }
 function render(sync = true) {
   if (!ready) return;
   const f = Object.fromEntries(keys.map(key=>[key,$(key).value]));
+  const advanced=['company','state','city'].filter(key=>f[key]).length;
+  $('more-filter-count').textContent=`${advanced} selected`;$('more-filter-count').hidden=!advanced;
+  $('reset').hidden=!keys.some(key=>key!=='sort'&&f[key]);
   const result = filterCompanies(companies,f);
   $('results').replaceChildren(...result.map(card));
   $('count').textContent = `${result.length} of ${companies.length} companies`;
   $('empty').hidden = result.length !== 0;
   if (sync) { const query = serializeFilters(f); history.replaceState(null,'',`${location.pathname}${query ? '?' + query : ''}${location.hash}`); }
 }
-function reset() { clearTimeout(pending); for (const key of keys) $(key).value=key === 'sort' ? 'asc' : ''; render(); }
+function reset() { clearTimeout(pending); for (const key of keys) $(key).value=key === 'sort' ? 'asc' : ''; document.querySelector('.more-filters').open=false;render(); }
 async function load() {
   ready = false; $('error').hidden = true; $('empty').hidden = true; $('results').setAttribute('aria-busy','true'); $('count').textContent='Loading companies…';
   try {
-    const [response,logoData] = await Promise.all([
+    const [response,logoData,sourceData] = await Promise.all([
       fetch(new URL('./data/companies.json',import.meta.url)),
-      fetch(new URL('./data/company-logos.json',import.meta.url)).then(r=>r.ok?r.json():null).catch(()=>null)
+      fetch(new URL('./data/company-logos.json',import.meta.url)).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch(new URL('./data/job-sources.json',import.meta.url)).then(r=>r.ok?r.json():null).catch(()=>null)
     ]);
+    connected=new Set(sourceData?.schemaVersion===1?Object.keys(sourceData.sources||{}):[]);
     logos=logoData?.schemaVersion===1&&logoData.logos&&typeof logoData.logos==='object'?logoData.logos:{};
     if (!response.ok) throw new Error('Data unavailable');
     const data = validateData(await response.json()); companies=data.companies;

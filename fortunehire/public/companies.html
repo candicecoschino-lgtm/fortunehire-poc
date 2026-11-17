@@ -4,41 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Discover employers and go straight to their official career pages. An independent Fortune 500 company directory prototype.">
-  <title>FortuneHire — Company directory</title>
+  <title>FortuneHire - Explore companies</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./company-logos.css">
+  <link rel="stylesheet" href="./search-layout.css">
   <script type="module" src="./companies-app.js"></script>
 </head>
-<body>
+<body class="compact-page">
 <a class="skip" href="#directory">Skip to directory</a>
 <header class="topbar wrap">
   <a class="brand" href="./" aria-label="FortuneHire home"><span class="brand-mark" aria-hidden="true">f<span>↗</span></span>Fortune<span>Hire</span></a>
-  <nav aria-label="Main navigation"><a href="./#directory">Find jobs</a><a href="#about">How it works <span aria-hidden="true">↗</span></a></nav>
+  <nav aria-label="Main navigation"><a href="./">Find jobs</a><a href="./companies.html" aria-current="page">Explore companies</a></nav>
   <span class="prototype">PROOF OF CONCEPT</span>
 </header>
 <main>
-<section class="hero wrap" aria-labelledby="headline">
-  <div class="hero-copy"><p class="eyebrow"><span class="dot"></span> BIG COMPANIES. NEW POSSIBILITIES.</p>
-  <h1 id="headline">Your next chapter<br>starts with a <em>company.</em></h1>
-  <p class="intro">Explore leading employers. Find the ones that fit your ambitions. Go straight to the source.</p>
-  <a class="primary" href="#directory">Explore the directory <span aria-hidden="true">↓</span></a>
-  <p class="small hero-note">Official career pages. No sign-up needed.</p></div>
-  <aside class="hero-panel" aria-label="Directory overview"><div class="panel-top"><span>THE NEXT MOVE IS YOURS</span><span aria-hidden="true">↗</span></div>
-  <div class="orbit" aria-hidden="true"><span class="orbit-label one">Discover</span><span class="orbit-label two">Explore</span><span class="orbit-label three">Take the next step</span><span class="orbit-core">f↗</span></div>
-  <div class="panel-bottom"><span>One place to begin.<br><strong>A world of possibilities.</strong></span><span class="asterisk" aria-hidden="true">✳</span></div></aside>
-</section>
-<div class="trust-strip"><div class="wrap"><span>01 <strong>Find a company</strong></span><span>02 <strong>Explore its career site</strong></span><span>03 <strong>Apply directly with the employer</strong></span></div></div>
+<section class="page-intro wrap" aria-labelledby="headline"><p class="eyebrow"><span class="dot"></span> A CLOSER LOOK AT THE COMPANIES</p><h1 id="headline">Explore your <em>next employer.</em></h1><p class="intro">Get to know the companies. Browse collected jobs or visit their official career sites.</p><span id="coverage" class="sr-only">Loading reviewed coverage...</span></section>
 <section id="directory" class="directory wrap" aria-labelledby="directory-title">
-  <div class="section-heading"><div><p class="eyebrow">THE COMPANY DIRECTORY</p><h2 id="directory-title">Where will you go next?</h2></div><p id="coverage" class="coverage">Loading verified coverage…</p></div>
-  <p class="scope-note">Fortune 500 employers · 2026 list · Growing verified collection, not the full 500.</p>
+  <h2 id="directory-title" class="sr-only">Explore companies</h2>
   <form id="filters" role="search" aria-label="Filter companies">
-    <div class="search-row"><label class="search-field" for="q"><span aria-hidden="true">⌕</span><span class="sr-only">Search company names</span><input id="q" name="q" type="search" placeholder="Search company names…" autocomplete="off" maxlength="120"></label><button id="reset" type="button">Clear filters <span aria-hidden="true">↺</span></button></div>
-    <div class="filter-row"><label>Company<select id="company" name="company" disabled><option value="">All companies</option></select></label><label>Industry<select id="industry" name="industry" disabled><option value="">All industries</option></select></label><label>Headquarters state<select id="state" name="state" disabled><option value="">All states</option></select></label><label>Headquarters city<select id="city" name="city" disabled><option value="">All cities</option></select></label></div>
-    <p class="small location-note">Headquarters describes the company’s home base. Find job locations and work arrangements on its career site.</p>
+    <div class="search-controls company-search">
+      <label class="keyword-control" for="q">Company name<span class="search-field"><span aria-hidden="true">&#8981;</span><input id="q" name="q" type="search" placeholder="Search company names" autocomplete="off" maxlength="120"></span></label>
+      <label for="industry">Industry<select id="industry" name="industry" disabled><option value="">All industries</option></select></label>
+    </div>
+    <div class="filter-tools">
+      <details class="more-filters"><summary>More filters <span id="more-filter-count" class="filter-count" hidden></span></summary><div class="filter-row">
+        <label>Company<select id="company" name="company" disabled><option value="">All companies</option></select></label>
+        <label>Headquarters state<select id="state" name="state" disabled><option value="">All states</option></select></label>
+        <label>Headquarters city<select id="city" name="city" disabled><option value="">All cities</option></select></label>
+      </div><p class="filter-help">Headquarters is the company's home base. For job locations and remote eligibility, use Find jobs.</p></details>
+      <button id="reset" type="button" hidden>Clear all filters</button>
+    </div>
   </form>
+  <p class="scope-note">Selected Fortune 500 employers from the 2026 list. A growing collection, not the full 500.</p>
   <div class="results-bar"><p id="count" role="status" aria-live="polite" aria-atomic="true">Loading companies…</p><label>Sort by <select id="sort"><option value="asc">Company A–Z</option><option value="desc">Company Z–A</option></select></label></div>
-  <div id="results" class="cards" aria-label="Company results" aria-busy="true"></div>
+  <div id="results" class="cards company-cards" aria-label="Company results" aria-busy="true"></div>
   <div id="empty" class="message" hidden><h3>No companies match these filters.</h3><p>Try another name or broaden your selection.</p><button id="empty-reset" type="button">Clear all filters</button></div>
   <div id="error" class="message" role="alert" hidden><h3>The directory couldn’t load.</h3><p>Please check your connection and try again.</p><button id="retry" type="button">Try again</button></div>
   <noscript><p class="message">Enable JavaScript to search this directory. You can also <a href="./data/companies.json">view the sourced company data</a>.</p></noscript>
