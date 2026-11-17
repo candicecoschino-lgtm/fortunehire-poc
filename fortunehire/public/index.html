@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./job-list.css">
   <link rel="stylesheet" href="./company-logos.css">
   <link rel="stylesheet" href="./search-layout.css">
+  <link rel="stylesheet" href="./saved-searches.css">
   <script type="module" src="./jobs-app.js"></script>
 </head>
 <body class="compact-page">
@@ -46,6 +47,18 @@
     </div>
     <p id="location-help" class="sr-only">State means the role's location or the employer's stated remote eligibility, not company headquarters. Local restrictions appear in job details.</p>
   </form>
+  <section class="saved-search-area" aria-label="Saved searches">
+    <div class="saved-search-toolbar">
+      <button id="save-filters" type="button" aria-expanded="false" aria-controls="save-search-form" disabled>Save filters</button>
+      <details id="saved-searches"><summary>Saved searches<span id="saved-search-count"></span></summary><div id="saved-search-list"></div><p class="small">Saved in this browser on this device.</p></details>
+    </div>
+    <form id="save-search-form" hidden>
+      <label for="search-name">Name this search<input id="search-name" type="text" required maxlength="60" placeholder="e.g. Remote IT roles in Florida" autocomplete="off" aria-describedby="save-search-help"></label>
+      <div class="save-search-actions"><button type="submit">Save search</button><button id="cancel-save-search" type="button">Cancel</button></div>
+      <p id="save-search-help" class="small">Saved in this browser on this device. Use an existing name to update its filters.</p>
+    </form>
+    <p id="saved-search-status" class="small" role="status" aria-live="polite" aria-atomic="true"></p>
+  </section>
   <p id="scope-note" class="scope-note">Loading coverage and successful check dates...</p>
   <div class="results-bar"><p id="count" role="status" aria-live="polite" aria-atomic="true">Loading jobs…</p><label>Sort by <select id="sort"><option value="newest">Newest posted</option><option value="title">Role A–Z</option><option value="company">Company A–Z</option></select></label></div>
   <div id="active-filters" class="small" hidden></div>

@@ -1,4 +1,5 @@
 import {JOB_FUNCTIONS,classifyJobFunctions} from './job-functions.js';
+import {mountSavedSearches} from './saved-searches.js';
 import { JOB_KEYS, US_STATES, ARRANGEMENTS, todayInNewYork, readJobFilters, serializeJobFilters, isCurrent, filterJobs, paginateJobs, salaryText, validateJobs } from './jobs.js';
 import {postedLabel,locationSummary,paySummary} from './job-presentation.js';
 const $=id=>document.getElementById(id);
@@ -58,10 +59,13 @@ function renderFilterChips(f){
 
 function setOptions(id,values){const select=$(id);select.replaceChildren(select.options[0]);for(const [value,label]of values){const o=e('option',label);o.value=value;select.append(o);}select.disabled=false;}
 function restore(){
-  const f=readJobFilters(location.search);currentPage=f.page;
+  applyFilterValues(readJobFilters(location.search));
+}
+function applyFilterValues(f){
+  currentPage=f.page;
   for(const k of JOB_KEYS.filter(k=>!['page','travel'].includes(k))){const control=$(k);if(k!=='q'&&f[k]&&![...control.options].some(o=>o.value===f[k])){const o=e('option',`Unavailable: ${f[k]}`);o.value=f[k];control.append(o);}control.value=f[k];}
   $('include-travel').checked=f.travel!=='exclude';
-  if(['company','industry','function','type','pay'].some(k=>f[k])||f.travel==='exclude')document.querySelector('.more-filters').open=true;
+  document.querySelector('.more-filters').open=['company','industry','function','type','pay'].some(k=>f[k])||f.travel==='exclude';
 }
 function selected(){return {...Object.fromEntries(JOB_KEYS.filter(k=>!['page','travel'].includes(k)).map(k=>[k,$(k).value])),travel:$('include-travel').checked?'include':'exclude',page:currentPage};}
 function render(sync=true){
@@ -88,7 +92,7 @@ async function load(){
     const companies=[...new Map(jobs.map(j=>[j.companyId,j.companyName]))].sort((a,b)=>a[1].localeCompare(b[1]));setOptions('company',companies);
     setOptions('industry',[...new Set(jobs.map(j=>j.industry))].sort().map(s=>[s,s]));
     setOptions('function',Object.entries(JOB_FUNCTIONS));
-    restore();ready=true;render(false);
+    restore();ready=true;render(false);savedSearches.refresh();
   }catch{$('results').replaceChildren();$('error').hidden=false;$('coverage').textContent='Job data unavailable';$('count').textContent='Unable to load jobs';$('pagination').hidden=true;}
   finally{$('results').setAttribute('aria-busy','false');}
 }
@@ -99,4 +103,5 @@ for(const [id,delta]of [['previous-page',-1],['next-page',1]])$(id).addEventList
 window.addEventListener('popstate',()=>{if(ready){clearTimeout(pending);restore();render(false);}});
 function refreshFreshness(){if(ready&&todayInNewYork()!==renderedDay)render();}
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshFreshness();});setInterval(refreshFreshness,60000);
+const savedSearches=mountSavedSearches({getFilters:selected,isReady:()=>ready,applyFilters:f=>{clearTimeout(pending);applyFilterValues(f);render();}});
 load();
