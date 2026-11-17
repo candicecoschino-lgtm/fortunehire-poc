@@ -8,6 +8,8 @@ on:
     paths:
       - '.github/workflows/refresh-jobs.yml'
       - 'fortunehire/scripts/collect_jobs.py'
+      - 'fortunehire/scripts/publish_refresh.py'
+      - 'fortunehire/test/test_publish_refresh.py'
       - 'fortunehire/scripts/employment_type.py'
       - 'fortunehire/test/test_employment_type.py'
       - 'fortunehire/scripts/location_worksite.py'
@@ -82,14 +84,7 @@ jobs:
             echo '```' >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Publish validated data and retain previous successful records
-        run: |
-          git config user.name 'fortunehire-updates'
-          git config user.email 'fortunehire-updates@users.noreply.github.com'
-          git add public/data/jobs.json public/data/collection-status.json automation/state.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Refresh official FortuneHire pilot postings'
-            git push origin HEAD:main
-          fi
+        run: python scripts/publish_refresh.py
       - name: Flag any collection failure
         if: steps.collect.outcome == 'failure'
         run: python scripts/collection_health.py
