@@ -36,6 +36,7 @@ on:
       - 'fortunehire/test/test_employer_adapters.py'
       - 'fortunehire/public/data/job-sources.json'
       - 'fortunehire/test/test_collector.py'
+      - 'fortunehire/test/test_title_employment.py'
       - 'fortunehire/test/test_refresh_repair.py'
 permissions:
   contents: write

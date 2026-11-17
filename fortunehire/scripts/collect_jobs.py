@@ -98,6 +98,10 @@ def posting_key(url):
     return re.sub(r'__[a-z]{2}(?:-[a-z]{2})?$','',tail[0],flags=re.I)
 
 
+def part_time_title(title):
+    return re.search(r'\bpart[\s\u2010-\u2015-]+time\b',title,re.I)
+
+
 def discovery_priority(key):
     # Only a discovery preference; the actual employer date controls eligibility.
     if re.fullmatch(r'[0-9A-Fa-f]{24,}',key): return (0,key)
@@ -498,7 +502,7 @@ def normalize_posting(body, url, company, now):
     if no_travel: travel, travel_evidence = False, no_travel[0]
     elif yes_travel: travel, travel_evidence = True, yes_travel[0]
     if company in ('microsoft','nvidia') and isinstance(source.get('_pcsxTravel'),bool):travel,travel_evidence=source['_pcsxTravel'],'Employer role travel setting: '+source.get('_pcsxTravelLabel','')
-    employment = 'Not specified'
+    employment = 'Not specified';employment_evidence=''
     raw_type = ' '.join(str(x) for x in as_list(source.get('employmentType'))).lower().replace('_','-')
     for pattern, value in [('full-time','Full-time'),('full time','Full-time'),('part-time','Part-time'),('part time','Part-time'),('contract','Contract'),('temporary','Temporary'),('intern','Internship')]:
         if pattern in raw_type: employment = value; break
@@ -507,6 +511,9 @@ def normalize_posting(body, url, company, now):
         if labeled_type: employment = 'Full-time' if labeled_type[1].lower().startswith('full') else 'Part-time'
         explicit_type=re.search(r'\bThis\s+(?:position|role|job)\s+is\s+(?:a\s+)?(full[- ]time|part[- ]time)\b',description,re.I)
         if explicit_type: employment='Full-time' if explicit_type[1].lower().startswith('full') else 'Part-time'
+    title_type=part_time_title(title)
+    if title_type:
+        employment='Part-time';employment_evidence='Employer job title explicitly states '+title_type[0]+'.'
     # Pay from descriptions can have location-specific ranges. Do not guess scope.
     salary, salary_evidence = None, ''
     base = source.get('baseSalary') or {}
@@ -569,7 +576,7 @@ def normalize_posting(body, url, company, now):
         'sourceNote':'Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.'+(' Employer requisition reference: '+employer_identifier[:100]+'.' if company=='home-depot' and employer_identifier else '')+(' '+source['_homeDepotWorksite'] if company=='home-depot' and source.get('_homeDepotWorksite') else '')+(' Employer work setting: '+source['_salesforceRemoteType']+'. Location labels containing Remote do not override this setting.' if company=='salesforce' and source.get('_salesforceRemoteType') else '')+(' '+deadline_note if deadline_note else ''),
         'checkedAt':now.isoformat(), 'collectionMethod':source.get('_adapter') or 'official-jobposting-jsonld',
         'sourceHash':hashlib.sha256(json.dumps({'structured':source,'locations':locations,'arrangement':arrangement_evidence,'remoteScope':remote_scope,'travel':travel_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
-        'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note,**({'location':location_evidence} if location_evidence else {})},
+        'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note,**({'location':location_evidence} if location_evidence else {}),**({'employmentType':employment_evidence} if employment_evidence else {})},
     }
 
 

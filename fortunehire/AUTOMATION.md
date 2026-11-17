@@ -89,3 +89,7 @@ JPMorgan has a user-approved source-specific public-job policy: maximum five new
 ## User-selected location-based On-site classification
 
 As of November 17, 2026, a posting with physical city/state locations and no stated work arrangement defaults to On-site after employer evidence is extracted. It carries arrangementBasis: listed-location and a disclosed arrangementNote; it is not an employer-stated On-site assertion. Explicit Remote and Hybrid evidence takes priority. Remote placeholders and unresolved worksite conflicts do not receive this default. See LOCATION-WORKSITE-POLICY.md.
+
+## Explicit part-time titles
+
+An employer title stating Part-Time or Part Time is classified as Part-time, including parenthetical, case and common Unicode hyphen variants. The role title takes priority over generic employment-type metadata. Benefits text, PT and hour counts alone do not supply this classification. Title evidence is retained and normal refreshes apply the same rule. See TITLE-EMPLOYMENT-VERIFICATION.md.

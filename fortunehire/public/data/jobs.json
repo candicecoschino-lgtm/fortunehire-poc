@@ -804,7 +804,7 @@
       "employmentType": "Not specified",
       "salary": {
         "min": 20.5,
-        "max": 41.0,
+        "max": 41,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -1210,7 +1210,7 @@
       "employmentType": "Not specified",
       "salary": {
         "min": 22.5,
-        "max": 45.0,
+        "max": 45,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -1372,7 +1372,7 @@
       "employmentType": "Not specified",
       "salary": {
         "min": 20.5,
-        "max": 41.0,
+        "max": 41,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -1427,7 +1427,7 @@
       "employmentType": "Not specified",
       "salary": {
         "min": 20.5,
-        "max": 41.0,
+        "max": 41,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -1482,7 +1482,7 @@
       "employmentType": "Not specified",
       "salary": {
         "min": 20.5,
-        "max": 41.0,
+        "max": 41,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -1779,8 +1779,8 @@
       "locationNote": "Redmond, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 117300.0,
-        "max": 160000.0,
+        "min": 117300,
+        "max": 160000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -1952,8 +1952,8 @@
       "locationNote": "Frederick, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 96000.0,
-        "max": 166300.0,
+        "min": 96000,
+        "max": 166300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2086,8 +2086,8 @@
       "locationNote": "Northborough, Massachusetts",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70000.0,
-        "max": 90900.0,
+        "min": 70000,
+        "max": 90900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2141,8 +2141,8 @@
       "locationNote": "Sunnyvale, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 157900.0,
-        "max": 213600.0,
+        "min": 157900,
+        "max": 213600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2200,8 +2200,8 @@
       "locationNote": "BYHALIA, Mississippi; Byhalia, Mississippi",
       "employmentType": "Full-time",
       "salary": {
-        "min": 91000.0,
-        "max": 136500.0,
+        "min": 91000,
+        "max": 136500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2311,8 +2311,8 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 159200.0,
-        "max": 215300.0,
+        "min": 159200,
+        "max": 215300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2366,8 +2366,8 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 108300.0,
-        "max": 160000.0,
+        "min": 108300,
+        "max": 160000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2421,8 +2421,8 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 136000.0,
-        "max": 184000.0,
+        "min": 136000,
+        "max": 184000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2657,8 +2657,8 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 159200.0,
-        "max": 215300.0,
+        "min": 159200,
+        "max": 215300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2712,8 +2712,8 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 159200.0,
-        "max": 215300.0,
+        "min": 159200,
+        "max": 215300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2767,8 +2767,8 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 159200.0,
-        "max": 215300.0,
+        "min": 159200,
+        "max": 215300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -2822,8 +2822,8 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 159200.0,
-        "max": 215300.0,
+        "min": 159200,
+        "max": 215300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -3045,8 +3045,8 @@
       "locationNote": "Phoenix, Arizona",
       "employmentType": "Full-time",
       "salary": {
-        "min": 91000.0,
-        "max": 136500.0,
+        "min": 91000,
+        "max": 136500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -3252,8 +3252,8 @@
       "locationNote": "Ocala, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70000.0,
-        "max": 90900.0,
+        "min": 70000,
+        "max": 90900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -3359,8 +3359,8 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 143700.0,
-        "max": 194400.0,
+        "min": 143700,
+        "max": 194400,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -3476,8 +3476,8 @@
       "locationNote": "Westboro, Massachusetts",
       "employmentType": "Full-time",
       "salary": {
-        "min": 143700.0,
-        "max": 194400.0,
+        "min": 143700,
+        "max": 194400,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -3531,8 +3531,8 @@
       "locationNote": "Lanham, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70000.0,
-        "max": 90900.0,
+        "min": 70000,
+        "max": 90900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -3586,8 +3586,8 @@
       "locationNote": "Fort Worth, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 135000.0,
-        "max": 182700.0,
+        "min": 135000,
+        "max": 182700,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -3641,8 +3641,8 @@
       "locationNote": "Herndon, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 127100.0,
-        "max": 171900.0,
+        "min": 127100,
+        "max": 171900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -9934,7 +9934,7 @@
       "locationNote": "Folsom, California; Roseville, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -10196,8 +10196,8 @@
       "locationNote": "Washington, District of Columbia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 44.0,
+        "min": 25,
+        "max": 44,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -10295,7 +10295,7 @@
       "locationNote": "Monroe Township, New Jersey; Rocky Hill, New Jersey; Hamilton, New Jersey; Trenton, New Jersey; Plainsboro, New Jersey; Bordentown, New Jersey; Princeton Junction, New Jersey; Princeton, New Jersey; Windsor, New Jersey; Mercerville, New Jersey; Columbus, New Jersey; Willingboro, New Jersey",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -10350,8 +10350,8 @@
       "locationNote": "Westborough, Massachusetts",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 45.0,
+        "min": 25,
+        "max": 45,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -10699,7 +10699,7 @@
       "locationNote": "Albany, New York; Latham, New York; Troy, New York; Scotia, New York; Schenectady, New York; Delmar, New York",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -11657,8 +11657,8 @@
       "locationNote": "Richmond, Virginia; Charlottesville, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 45.0,
+        "min": 25,
+        "max": 45,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -11769,8 +11769,8 @@
       "locationNote": "Irvine, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 44.0,
+        "min": 25,
+        "max": 44,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -11865,8 +11865,8 @@
       "locationNote": "New York, New York",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 45.0,
+        "min": 25,
+        "max": 45,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12298,8 +12298,8 @@
       "locationNote": "Vienna, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 45.0,
+        "min": 25,
+        "max": 45,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12490,8 +12490,8 @@
       "locationNote": "Bridgewater, New Jersey",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 45.0,
+        "min": 25,
+        "max": 45,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12549,7 +12549,7 @@
       "locationNote": "Guilford, Connecticut; Madison, Connecticut",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -12853,7 +12853,7 @@
       "locationNote": "Phoenix, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -12908,8 +12908,8 @@
       "locationNote": "Washington, District of Columbia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 45.0,
+        "min": 25,
+        "max": 45,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -12963,7 +12963,7 @@
       "locationNote": "Baltimore, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -13059,7 +13059,7 @@
       "locationNote": "Baltimore, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -13122,7 +13122,7 @@
       "locationNote": "Baltimore, Maryland; Randallstown, Maryland; Owings Mills, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -13181,7 +13181,7 @@
       "locationNote": "Columbia, Maryland; Clarksville, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -13285,7 +13285,7 @@
       "locationNote": "Laurel, Maryland; Bowie, Maryland; Seabrook, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -13348,7 +13348,7 @@
       "locationNote": "Grove City, Ohio; Columbus, Ohio; Canal Winchester, Ohio",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -13448,8 +13448,8 @@
       "locationNote": "Florham Park, New Jersey; Summit, New Jersey",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 45.0,
+        "min": 25,
+        "max": 45,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -13560,7 +13560,7 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -13619,7 +13619,7 @@
       "locationNote": "Lynnwood, Washington; Mill Creek, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -13674,7 +13674,7 @@
       "locationNote": "Seattle, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -13733,7 +13733,7 @@
       "locationNote": "Elmont, New York; Hempstead, New York",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -14009,7 +14009,7 @@
       "locationNote": "La Plata, Maryland; Clinton, Maryland; Mechanicsville, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -14370,8 +14370,8 @@
       "locationNote": "Walnut Creek, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 44.0,
+        "min": 25,
+        "max": 44,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -14494,7 +14494,7 @@
       "locationNote": "Springfield, Virginia; Woodbridge, Virginia; Alexandria, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
+        "min": 25,
         "max": 26.77,
         "period": "hour",
         "currency": "USD",
@@ -15369,7 +15369,7 @@
       "locationNote": "Huntington Beach, California",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
+        "min": 24,
         "max": 45.13,
         "period": "hour",
         "currency": "USD",
@@ -20498,8 +20498,8 @@
       "locationNote": "Miami Lakes, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 18.0,
+        "min": 18,
+        "max": 18,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -20792,8 +20792,8 @@
       "locationNote": "Holland, Ohio",
       "employmentType": "Full-time",
       "salary": {
-        "min": 17.0,
-        "max": 17.0,
+        "min": 17,
+        "max": 17,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -21305,8 +21305,8 @@
       "locationNote": "Redding, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 20.0,
-        "max": 20.0,
+        "min": 20,
+        "max": 20,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -21454,8 +21454,8 @@
       "locationNote": "Dublin, Ohio",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 25.0,
+        "min": 25,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -21550,8 +21550,8 @@
       "locationNote": "Flowood, Mississippi",
       "employmentType": "Full-time",
       "salary": {
-        "min": 17.0,
-        "max": 17.0,
+        "min": 17,
+        "max": 17,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -22501,8 +22501,8 @@
       "locationNote": "Miami Lakes, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 18.0,
+        "min": 18,
+        "max": 18,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -22704,8 +22704,8 @@
       "locationNote": "Miami Lakes, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 18.0,
+        "min": 18,
+        "max": 18,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -22902,8 +22902,8 @@
       "locationNote": "Dallas, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 23.0,
-        "max": 23.0,
+        "min": 23,
+        "max": 23,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23309,8 +23309,8 @@
       "locationNote": "Dublin, Ohio",
       "employmentType": "Full-time",
       "salary": {
-        "min": 22.0,
-        "max": 22.0,
+        "min": 22,
+        "max": 22,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23405,8 +23405,8 @@
       "locationNote": "Buford, Georgia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 19.0,
+        "min": 19,
+        "max": 19,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23650,8 +23650,8 @@
       "locationNote": "Buford, Georgia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 19.0,
+        "min": 19,
+        "max": 19,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23834,8 +23834,8 @@
       "locationNote": "Albuquerque, New Mexico",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 21.0,
+        "min": 21,
+        "max": 21,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -23889,8 +23889,8 @@
       "locationNote": "Atlanta, Georgia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 19.0,
+        "min": 19,
+        "max": 19,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -24520,8 +24520,8 @@
       "locationNote": "Houston, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 24.0,
-        "max": 24.0,
+        "min": 24,
+        "max": 24,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -29188,8 +29188,8 @@
       "locationNote": "Remote-NY, New York",
       "employmentType": "Full-time",
       "salary": {
-        "min": 188900.0,
-        "max": 359800.0,
+        "min": 188900,
+        "max": 359800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -29243,8 +29243,8 @@
       "locationNote": "Remote-MO, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -29483,8 +29483,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-AL, Alabama; Remote-AR, Arkansas; Remote-CT, Connecticut; Remote-DC, District of Columbia; Remote-DE, Delaware; Remote-FL, Florida; Remote-GA, Georgia; Remote-IA, Iowa; Remote-IL, Illinois; Remote-IN, Indiana; Remote-KS, Kansas; Remote-KY, Kentucky; Remote-LA, Louisiana; Remote-MA, Massachusetts; Remote-MD, Maryland; Remote-ME, Maine; Remote-MI, Michigan; Remote-MN, Minnesota; Remote-MS, Mississippi; Remote-NC, North Carolina; Remote-ND, North Dakota; Remote-NE, Nebraska; Remote-NH, New Hampshire; Remote-NJ, New Jersey; Remote-NY, New York; Remote-OH, Ohio; Remote-OK, Oklahoma; Remote-PA, Pennsylvania; Remote-RI, Rhode Island; Remote-SC, South Carolina; Remote-SD, South Dakota; Remote-TN, Tennessee; Remote-TX, Texas; Remote-VA, Virginia; Remote-VT, Vermont; Remote-WI, Wisconsin; Remote-WV, West Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 87700.0,
-        "max": 157800.0,
+        "min": 87700,
+        "max": 157800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -29851,8 +29851,8 @@
       "locationNote": "Remote-CA, California; Remote-AL, Alabama; Remote-AR, Arkansas; Remote-AZ, Arizona; Remote-CO, Colorado; Remote-CT, Connecticut; Remote-DC, District of Columbia; Remote-DE, Delaware; Remote-FL, Florida; Remote-GA, Georgia; Remote-IA, Iowa; Remote-ID, Idaho; Remote-IL, Illinois; Remote-IN, Indiana; Remote-KS, Kansas; Remote-KY, Kentucky; Remote-LA, Louisiana; Remote-MA, Massachusetts; Remote-MD, Maryland; Remote-ME, Maine; Remote-MI, Michigan; Remote-MN, Minnesota; Remote-MO, Missouri; Remote-MS, Mississippi; Remote-MT, Montana; Remote-NC, North Carolina; Remote-ND, North Dakota; Remote-NE, Nebraska; Remote-NH, New Hampshire; Remote-NJ, New Jersey; Remote-NM, New Mexico; Remote-NV, Nevada; Remote-NY, New York; Remote-OH, Ohio; Remote-OK, Oklahoma; Remote-OR, Oregon; Remote-PA, Pennsylvania; Remote-RI, Rhode Island; Remote-SC, South Carolina; Remote-SD, South Dakota; Remote-TN, Tennessee; Remote-TX, Texas; Remote-UT, Utah; Remote-VA, Virginia; Remote-VT, Vermont; Remote-WA State, Washington; Remote-WI, Wisconsin; Remote-WV, West Virginia; Remote-WY, Wyoming",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -30252,8 +30252,8 @@
       "locationNote": "Remote-KY, Kentucky; Remote-IN, Indiana; Remote-OH, Ohio; Remote-TN, Tennessee; Remote-WV, West Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -30498,8 +30498,8 @@
       "locationNote": "Remote-NJ, New Jersey",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -31104,8 +31104,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-CA, California; Remote-FL, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 87000.0,
-        "max": 161300.0,
+        "min": 87000,
+        "max": 161300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -31836,8 +31836,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-AL, Alabama; Remote-AR, Arkansas; Remote-AZ, Arizona; Remote-CA, California; Remote-CO, Colorado; Remote-CT, Connecticut; Remote-DC, District of Columbia; Remote-DE, Delaware; Remote-FL, Florida; Remote-GA, Georgia; Remote-IA, Iowa; Remote-ID, Idaho; Remote-IL, Illinois; Remote-IN, Indiana; Remote-KS, Kansas; Remote-KY, Kentucky; Remote-LA, Louisiana; Remote-MA, Massachusetts; Remote-MD, Maryland; Remote-ME, Maine; Remote-MI, Michigan; Remote-MN, Minnesota; Remote-MS, Mississippi; Remote-MT, Montana; Remote-NC, North Carolina; Remote-ND, North Dakota; Remote-NE, Nebraska; Remote-NH, New Hampshire; Remote-NJ, New Jersey; Remote-NM, New Mexico; Remote-NV, Nevada; Remote-NY, New York; Remote-OH, Ohio; Remote-OK, Oklahoma; Remote-OR, Oregon; Remote-PA, Pennsylvania; Remote-RI, Rhode Island; Remote-SC, South Carolina; Remote-SD, South Dakota; Remote-TN, Tennessee; Remote-TX, Texas; Remote-UT, Utah; Remote-VA, Virginia; Remote-VT, Vermont; Remote-WI, Wisconsin; Remote-WV, West Virginia; Remote-WY, Wyoming",
       "employmentType": "Full-time",
       "salary": {
-        "min": 102900.0,
-        "max": 190500.0,
+        "min": 102900,
+        "max": 190500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -32026,8 +32026,8 @@
       "locationNote": "Remote-CA, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 107700.0,
-        "max": 199300.0,
+        "min": 107700,
+        "max": 199300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -32081,8 +32081,8 @@
       "locationNote": "Remote-MO, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -32306,8 +32306,8 @@
       "locationNote": "Tampa, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 102900.0,
-        "max": 190500.0,
+        "min": 102900,
+        "max": 190500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -32473,8 +32473,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-DE, Delaware; Remote-GA, Georgia; Remote-MA, Massachusetts; Remote-NH, New Hampshire; Remote-OH, Ohio; Remote-OK, Oklahoma; Remote-PA, Pennsylvania; Remote-TN, Tennessee",
       "employmentType": "Full-time",
       "salary": {
-        "min": 215000.0,
-        "max": 408500.0,
+        "min": 215000,
+        "max": 408500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -32544,8 +32544,8 @@
       "locationNote": "Remote-NV, Nevada",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -32838,8 +32838,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-FL, Florida; Remote-WI, Wisconsin",
       "employmentType": "Full-time",
       "salary": {
-        "min": 215000.0,
-        "max": 408500.0,
+        "min": 215000,
+        "max": 408500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -32932,8 +32932,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-AZ, Arizona; Remote-IA, Iowa; Remote-IN, Indiana; Remote-KS, Kansas; Remote-OK, Oklahoma; Remote-PA, Pennsylvania; Remote-UT, Utah",
       "employmentType": "Full-time",
       "salary": {
-        "min": 215000.0,
-        "max": 408500.0,
+        "min": 215000,
+        "max": 408500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -33111,8 +33111,8 @@
       "locationNote": "Remote-MO, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 87000.0,
-        "max": 161300.0,
+        "min": 87000,
+        "max": 161300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -33395,8 +33395,8 @@
       "locationNote": "Remote-IL, Illinois; Remote-AZ, Arizona; Remote-CA, California; Remote-CO, Colorado; Remote-CT, Connecticut; Remote-DC, District of Columbia; Remote-DE, Delaware; Remote-FL, Florida; Remote-GA, Georgia; Remote-IA, Iowa; Remote-ID, Idaho; Remote-IN, Indiana; Remote-KS, Kansas; Remote-KY, Kentucky; Remote-LA, Louisiana; Remote-MA, Massachusetts; Remote-MD, Maryland; Remote-ME, Maine; Remote-MI, Michigan; Remote-MN, Minnesota; Remote-MO, Missouri; Remote-MS, Mississippi; Remote-MT, Montana; Remote-NC, North Carolina; Remote-ND, North Dakota; Remote-NE, Nebraska; Remote-NH, New Hampshire; Remote-NJ, New Jersey; Remote-NM, New Mexico; Remote-NV, Nevada; Remote-NY, New York; Remote-OH, Ohio; Remote-OK, Oklahoma; Remote-OR, Oregon; Remote-PA, Pennsylvania; Remote-RI, Rhode Island; Remote-SC, South Carolina; Remote-SD, South Dakota; Remote-TN, Tennessee; Remote-TX, Texas; Remote-UT, Utah; Remote-VA, Virginia; Remote-VT, Vermont; Remote-WA State, Washington; Remote-WI, Wisconsin; Remote-WV, West Virginia; Remote-WY, Wyoming",
       "employmentType": "Full-time",
       "salary": {
-        "min": 87700.0,
-        "max": 157800.0,
+        "min": 87700,
+        "max": 157800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -33650,8 +33650,8 @@
       "locationNote": "Tallahassee, Florida; Gainesville, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -33828,8 +33828,8 @@
       "locationNote": "Remote-MO, Missouri; Remote-IL, Illinois; Remote-NC, North Carolina; Remote-NY, New York; Remote-TX, Texas; Remote-VA, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 121500.0,
-        "max": 224900.0,
+        "min": 121500,
+        "max": 224900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -33893,8 +33893,8 @@
       "locationNote": "Remote-FL, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -34129,8 +34129,8 @@
       "locationNote": "Remote-FL, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 87700.0,
-        "max": 157800.0,
+        "min": 87700,
+        "max": 157800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -34229,8 +34229,8 @@
       "locationNote": "Remote-SC, South Carolina",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -34440,8 +34440,8 @@
       "locationNote": "Remote-OR, Oregon",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -34495,8 +34495,8 @@
       "locationNote": "Remote-NJ, New Jersey",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -34713,8 +34713,8 @@
       "locationNote": "Remote-IN, Indiana",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -34809,8 +34809,8 @@
       "locationNote": "Remote-IL, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 63600.0,
-        "max": 114600.0,
+        "min": 63600,
+        "max": 114600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -35121,8 +35121,8 @@
       "locationNote": "Remote-GA, Georgia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -35176,8 +35176,8 @@
       "locationNote": "Remote-FL, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 87700.0,
-        "max": 157800.0,
+        "min": 87700,
+        "max": 157800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -35231,8 +35231,8 @@
       "locationNote": "Remote-MO, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -35420,8 +35420,8 @@
       "locationNote": "Remote-IL, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -35530,8 +35530,8 @@
       "locationNote": "Remote-IA, Iowa; Remote-FL, Florida; Remote-GA, Georgia; Remote-IL, Illinois; Remote-KS, Kansas; Remote-MO, Missouri; Remote-NC, North Carolina; Remote-NY, New York; Remote-PA, Pennsylvania; Remote-TN, Tennessee; Remote-TX, Texas; Remote-WI, Wisconsin",
       "employmentType": "Full-time",
       "salary": {
-        "min": 107700.0,
-        "max": 199300.0,
+        "min": 107700,
+        "max": 199300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -35808,8 +35808,8 @@
       "locationNote": "Remote-MO, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 134600.0,
-        "max": 249000.0,
+        "min": 134600,
+        "max": 249000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -35863,8 +35863,8 @@
       "locationNote": "Remote-MO, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 107700.0,
-        "max": 199300.0,
+        "min": 107700,
+        "max": 199300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -36008,8 +36008,8 @@
       "locationNote": "Remote-TX, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -36077,8 +36077,8 @@
       "locationNote": "Remote-NV, Nevada; Remote-AZ, Arizona; Remote-OR, Oregon; Remote-WA State, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -36210,8 +36210,8 @@
       "locationNote": "Remote-FL, Florida; Remote-GA, Georgia; Remote-KY, Kentucky; Remote-MI, Michigan; Remote-MO, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 56200.0,
-        "max": 101000.0,
+        "min": 56200,
+        "max": 101000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -37227,8 +37227,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Remote-WA State, Washington; Olympia, Washington; Shelton, Washington; Tacoma, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70100.0,
-        "max": 126200.0,
+        "min": 70100,
+        "max": 126200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -37343,8 +37343,8 @@
       "locationNote": "Tampa, Florida; Remote-FL, Florida; Remote-GA, Georgia; Remote-MO, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 134600.0,
-        "max": 249000.0,
+        "min": 134600,
+        "max": 249000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -56497,7 +56497,7 @@
       "locationNote": "ISSAQUAH, Washington",
       "employmentType": "Not specified",
       "salary": {
-        "min": 21.0,
+        "min": 21,
         "max": 32.9,
         "period": "hour",
         "currency": "USD",
@@ -56734,7 +56734,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
+        "min": 20,
         "max": 31.2,
         "period": "hour",
         "currency": "USD",
@@ -56789,7 +56789,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 21.0,
+        "min": 21,
         "max": 32.9,
         "period": "hour",
         "currency": "USD",
@@ -56844,7 +56844,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
+        "min": 20,
         "max": 31.2,
         "period": "hour",
         "currency": "USD",
@@ -56899,7 +56899,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 21.0,
+        "min": 21,
         "max": 32.9,
         "period": "hour",
         "currency": "USD",
@@ -56954,7 +56954,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 21.0,
+        "min": 21,
         "max": 32.9,
         "period": "hour",
         "currency": "USD",
@@ -57009,7 +57009,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 21.0,
+        "min": 21,
         "max": 32.9,
         "period": "hour",
         "currency": "USD",
@@ -57064,7 +57064,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
+        "min": 20,
         "max": 31.2,
         "period": "hour",
         "currency": "USD",
@@ -57119,7 +57119,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 21.0,
+        "min": 21,
         "max": 32.9,
         "period": "hour",
         "currency": "USD",
@@ -57174,7 +57174,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
+        "min": 20,
         "max": 31.2,
         "period": "hour",
         "currency": "USD",
@@ -57284,7 +57284,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
+        "min": 20,
         "max": 31.2,
         "period": "hour",
         "currency": "USD",
@@ -57386,7 +57386,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
+        "min": 20,
         "max": 31.2,
         "period": "hour",
         "currency": "USD",
@@ -57441,7 +57441,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
+        "min": 20,
         "max": 31.2,
         "period": "hour",
         "currency": "USD",
@@ -57496,7 +57496,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
+        "min": 20,
         "max": 31.2,
         "period": "hour",
         "currency": "USD",
@@ -57551,7 +57551,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 21.0,
+        "min": 21,
         "max": 32.9,
         "period": "hour",
         "currency": "USD",
@@ -57606,7 +57606,7 @@
       "locationNote": "NAPLES, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 21.0,
+        "min": 21,
         "max": 32.9,
         "period": "hour",
         "currency": "USD",
@@ -64965,7 +64965,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Los Angeles, California",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "PAY TRANSPARENCY The hiring range for this position in Los Angeles is $42,280 to $56,630 per year based on a 28 hour work week. The amount of hours scheduled per week may vary based on business needs. The base pay actually offered will take into account internal equity and also may vary depending on the candidate’s geographic region, job-related knowledge, skills, and experience among other factors. A bonus and/or long-term incentive units may be provided as part of the compensation package, in addition to the full range of medical, financial, and/or other benefits, dependent on the level and position offered. | The hiring range for this position in Los Angeles is $42,280 to $56,630 per year based on a 28 hour work week. The amount of hours scheduled per week may vary based on business needs. The base pay actually offered will take into account internal equity and also may vary depending on the candidate’s geographic region, job-related knowledge, skills, and experience among other fac",
@@ -64990,7 +64990,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part-Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -67013,7 +67014,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Celebration, Florida",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "The starting pay rate for this position is $20.60 per hour.",
@@ -67038,7 +67039,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -67060,7 +67062,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "West Tampa Heights, Florida",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "The starting pay rate for this role in Florida is $20.60 per hour.",
@@ -67085,7 +67087,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -67437,7 +67440,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Anaheim, California",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "The pay rate for this role in California is $25.50 per hour.",
@@ -67462,7 +67465,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -67531,7 +67535,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Hilton Head Island, South Carolina",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Starting rate of pay $24.60 per hour",
@@ -67556,7 +67560,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -67578,7 +67583,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Hilton Head Island, South Carolina",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Starting rate of pay is $20.60 per hour. | Starting Rate of Pay $20.60",
@@ -67603,7 +67608,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part-Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -67672,7 +67678,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Anaheim, California",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "The pay rate for this role in California is $21.13 per hour, plus tips.",
@@ -67697,7 +67703,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -73317,7 +73324,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Tucson, Arizona",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
@@ -73336,7 +73343,8 @@
         "arrangement": "Hybrid: This role requires associates to be in-office",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part-Time."
       }
     },
     {
@@ -73452,8 +73460,8 @@
       "locationNote": "Reston Town Center, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 123000.0,
-        "max": 161000.0,
+        "min": 123000,
+        "max": 161000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -73590,8 +73598,8 @@
       "locationNote": "Midtown Center, District of Columbia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 141000.0,
-        "max": 184000.0,
+        "min": 141000,
+        "max": 184000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -73732,8 +73740,8 @@
       "locationNote": "Reston Town Center, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 109000.0,
-        "max": 142000.0,
+        "min": 109000,
+        "max": 142000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -73786,8 +73794,8 @@
       "locationNote": "Midtown Center, District of Columbia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 141000.0,
-        "max": 184000.0,
+        "min": 141000,
+        "max": 184000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -73880,8 +73888,8 @@
       "locationNote": "Reston Town Center, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 141000.0,
-        "max": 184000.0,
+        "min": 141000,
+        "max": 184000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -73976,8 +73984,8 @@
       "locationNote": "Reston Town Center, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 109000.0,
-        "max": 142000.0,
+        "min": 109000,
+        "max": 142000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -74156,8 +74164,8 @@
       "locationNote": "Midtown Center, District of Columbia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 155000.0,
-        "max": 209000.0,
+        "min": 155000,
+        "max": 209000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -75543,7 +75551,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "North Charleston, South Carolina",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Pay Range: ﻿$19.24﻿",
@@ -75568,7 +75576,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -75590,7 +75599,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Huntington, West Virginia",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Pay Range: ﻿Pay rate: $18.41 per/hour﻿",
@@ -75615,7 +75624,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -75637,7 +75647,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Syracuse, New York",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Pay Range: ﻿$19.34/hr - $25.97/hr﻿",
@@ -75662,7 +75672,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -75684,7 +75695,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Cedar Rapids, Iowa",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": null,
       "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
@@ -75703,7 +75714,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -75725,7 +75737,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Cleveland, Ohio",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Pay Range: ﻿$19.34 - $25.97 per hour﻿",
@@ -75750,7 +75762,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -75772,7 +75785,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Needham, Massachusetts",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Additional Posting Information: ﻿Part Time Handler-Early Morning Shift - Mon to Fri 06:00AM to 10:00AM; Base Pay: $20.36﻿",
@@ -75797,7 +75810,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -75962,7 +75976,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Salt Lake City, Utah",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Pay Range: ﻿﻿ Additional Posting Information: ﻿Part Time Handler || Shift Time: Tuesday to Saturday 4:00AM to 08:00AM || **Drug Test is required** Pay Rate - $18.00/hr﻿ | Additional Posting Information: ﻿Part Time Handler || Shift Time: Tuesday to Saturday 4:00AM to 08:00AM || **Drug Test is required** Pay Rate - $18.00/hr﻿",
@@ -75987,7 +76001,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -76009,7 +76024,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Portsmouth, New Hampshire",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Pay Range: ﻿$19.00 per hour﻿ | Additional Posting Information: ﻿Part-time Handler; Morning Shift: Monday -Friday 5:00 AM to 9:00 AM; Pay rate: $19.00/hr.﻿",
@@ -76034,7 +76049,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -86922,8 +86938,8 @@
       "locationNote": "DeSoto, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 255000.0,
-        "max": 298500.0,
+        "min": 255000,
+        "max": 298500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87064,8 +87080,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Louisville, Kentucky; Arlington, Virginia; Atlanta, Georgia; Boston, Massachusetts; Charlotte, North Carolina; Dallas, Texas; Frisco, Texas; Plano, Texas; Nashville, Tennessee; New York, New York; Oak Brook, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 106900.0,
-        "max": 147000.0,
+        "min": 106900,
+        "max": 147000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87133,8 +87149,8 @@
       "locationNote": "Jacksonville, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 38000.0,
-        "max": 45800.0,
+        "min": 38000,
+        "max": 45800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87239,8 +87255,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Remote, Indiana",
       "employmentType": "Full-time",
       "salary": {
-        "min": 168000.0,
-        "max": 231000.0,
+        "min": 168000,
+        "max": 231000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87292,8 +87308,8 @@
       "locationNote": "Oklahoma City, Oklahoma",
       "employmentType": "Full-time",
       "salary": {
-        "min": 93600.0,
-        "max": 128700.0,
+        "min": 93600,
+        "max": 128700,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87363,8 +87379,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Remote, Washington; Remote, Idaho; Remote, Montana; Remote, Oregon; Remote, Utah",
       "employmentType": "Full-time",
       "salary": {
-        "min": 71100.0,
-        "max": 97800.0,
+        "min": 71100,
+        "max": 97800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87424,8 +87440,8 @@
       "locationNote": "Phoenix, Arizona",
       "employmentType": "Part-time",
       "salary": {
-        "min": 37440.0,
-        "max": 43800.0,
+        "min": 37440,
+        "max": 43800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87479,8 +87495,8 @@
       "locationNote": "Fort Worth, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 38000.0,
-        "max": 45800.0,
+        "min": 38000,
+        "max": 45800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87534,8 +87550,8 @@
       "locationNote": "Jackson, Mississippi",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64000.0,
-        "max": 88000.0,
+        "min": 64000,
+        "max": 88000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87589,8 +87605,8 @@
       "locationNote": "Richmond, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 43000.0,
-        "max": 56200.0,
+        "min": 43000,
+        "max": 56200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87644,8 +87660,8 @@
       "locationNote": "Las Vegas, Nevada",
       "employmentType": "Full-time",
       "salary": {
-        "min": 43000.0,
-        "max": 56200.0,
+        "min": 43000,
+        "max": 56200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87699,8 +87715,8 @@
       "locationNote": "Jacksonville, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 43000.0,
-        "max": 56200.0,
+        "min": 43000,
+        "max": 56200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87754,8 +87770,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Chicago, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 138900.0,
-        "max": 191100.0,
+        "min": 138900,
+        "max": 191100,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87807,8 +87823,8 @@
       "locationNote": "Port Orange, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 43000.0,
-        "max": 56200.0,
+        "min": 43000,
+        "max": 56200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87862,8 +87878,8 @@
       "locationNote": "Lexington, Kentucky",
       "employmentType": "Full-time",
       "salary": {
-        "min": 43000.0,
-        "max": 56200.0,
+        "min": 43000,
+        "max": 56200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87917,8 +87933,8 @@
       "locationNote": "Alameda, California",
       "employmentType": "Part-time",
       "salary": {
-        "min": 115300.0,
-        "max": 158600.0,
+        "min": 115300,
+        "max": 158600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -87972,8 +87988,8 @@
       "locationNote": "Surprise, Arizona",
       "employmentType": "Full-time",
       "salary": {
-        "min": 43000.0,
-        "max": 56200.0,
+        "min": 43000,
+        "max": 56200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -88027,8 +88043,8 @@
       "locationNote": "The Villages, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 43000.0,
-        "max": 56200.0,
+        "min": 43000,
+        "max": 56200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -88080,8 +88096,8 @@
       "locationNote": "Deerfield Beach, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 38000.0,
-        "max": 45800.0,
+        "min": 38000,
+        "max": 45800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -88135,8 +88151,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Remote, Michigan",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 88600.0,
+        "min": 65000,
+        "max": 88600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -89389,8 +89405,8 @@
       "locationNote": "New York, New York; Chicago, Illinois; Louisville, Kentucky",
       "employmentType": "Full-time",
       "salary": {
-        "min": 128300.0,
-        "max": 176400.0,
+        "min": 128300,
+        "max": 176400,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -89448,8 +89464,8 @@
       "locationNote": "Orlando, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64300.0,
-        "max": 87700.0,
+        "min": 64300,
+        "max": 87700,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -89550,8 +89566,8 @@
       "locationNote": "Louisville, Kentucky",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 88600.0,
+        "min": 65000,
+        "max": 88600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -89934,8 +89950,8 @@
       "locationNote": "Jacksonville, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 38000.0,
-        "max": 45800.0,
+        "min": 38000,
+        "max": 45800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -90173,8 +90189,8 @@
       "locationNote": "San Jose, California",
       "employmentType": "Part-time",
       "salary": {
-        "min": 111000.0,
-        "max": 152800.0,
+        "min": 111000,
+        "max": 152800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -90228,8 +90244,8 @@
       "locationNote": "Fernley, Nevada",
       "employmentType": "Full-time",
       "salary": {
-        "min": 69100.0,
-        "max": 94500.0,
+        "min": 69100,
+        "max": 94500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -90283,8 +90299,8 @@
       "locationNote": "Boerne, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 43000.0,
-        "max": 56200.0,
+        "min": 43000,
+        "max": 56200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -90338,8 +90354,8 @@
       "locationNote": "Orange City, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 38000.0,
-        "max": 45800.0,
+        "min": 38000,
+        "max": 45800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -90828,8 +90844,8 @@
       "locationNote": "Sandwich, Massachusetts; Barnstable, Massachusetts",
       "employmentType": "Part-time",
       "salary": {
-        "min": 41300.0,
-        "max": 48200.0,
+        "min": 41300,
+        "max": 48200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -90934,8 +90950,8 @@
       "locationNote": "Deerfield Beach, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 38000.0,
-        "max": 45800.0,
+        "min": 38000,
+        "max": 45800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -90989,8 +91005,8 @@
       "locationNote": "Hiawatha, Iowa",
       "employmentType": "Part-time",
       "salary": {
-        "min": 64000.0,
-        "max": 87500.0,
+        "min": 64000,
+        "max": 87500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -101596,7 +101612,7 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Puyallup, Washington",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": null,
       "publishedPay": {
         "text": "Pay Range for this position $22.81 - $24.21",
@@ -101621,7 +101637,8 @@
         "arrangement": "",
         "travel": "",
         "salary": "",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -105260,8 +105277,8 @@
       "locationNote": "North Bend, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 98400.0,
-        "max": 147600.0,
+        "min": 98400,
+        "max": 147600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -113537,8 +113554,8 @@
       "locationNote": "Indianapolis, Indiana; Chicago, Illinois; Seattle, Washington; Bellevue, Washington; Dallas, Texas; Denver, Colorado; Atlanta, Georgia; Mclean, Virginia; Austin, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 123100.0,
-        "max": 186300.0,
+        "min": 123100,
+        "max": 186300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -113759,8 +113776,8 @@
       "locationNote": "Seattle, Washington; Chicago, Illinois; Atlanta, Georgia; Indianapolis, Indiana",
       "employmentType": "Full-time",
       "salary": {
-        "min": 143400.0,
-        "max": 216900.0,
+        "min": 143400,
+        "max": 216900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -113919,8 +113936,8 @@
       "locationNote": "Remote, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 172500.0,
-        "max": 260100.0,
+        "min": 172500,
+        "max": 260100,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -114045,8 +114062,8 @@
       "locationNote": "Chicago, Illinois; Atlanta, Georgia; Seattle, Washington; Indianapolis, Indiana; Austin, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 143400.0,
-        "max": 216900.0,
+        "min": 143400,
+        "max": 216900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -114123,8 +114140,8 @@
       "locationNote": "Chicago, Illinois; Atlanta, Georgia; Seattle, Washington; Indianapolis, Indiana; Austin, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 164000.0,
-        "max": 261500.0,
+        "min": 164000,
+        "max": 261500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -114645,8 +114662,8 @@
       "locationNote": "Atlanta Metro - Remote, Georgia; Remote, Florida; Remote, Texas; Remote, Michigan; Remote, Georgia; Remote, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 123100.0,
-        "max": 227000.0,
+        "min": 123100,
+        "max": 227000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -114874,8 +114891,8 @@
       "locationNote": "Chicago, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 148500.0,
-        "max": 223900.0,
+        "min": 148500,
+        "max": 223900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -114994,8 +115011,8 @@
       "locationNote": "Bellevue, Washington; Herndon, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 218400.0,
-        "max": 365200.0,
+        "min": 218400,
+        "max": 365200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -115693,8 +115710,8 @@
       "locationNote": "Indianapolis, Indiana; Atlanta, Georgia; Chicago, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 123100.0,
-        "max": 186300.0,
+        "min": 123100,
+        "max": 186300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -116476,8 +116493,8 @@
       "locationNote": "Dallas, Texas; Indianapolis, Indiana; Denver, Colorado",
       "employmentType": "Full-time",
       "salary": {
-        "min": 117200.0,
-        "max": 223900.0,
+        "min": 117200,
+        "max": 223900,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -116988,8 +117005,8 @@
       "locationNote": "Washington, District of Columbia; Chicago, Illinois; Indianapolis, Indiana; Austin, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 117400.0,
-        "max": 177600.0,
+        "min": 117400,
+        "max": 177600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -117060,8 +117077,8 @@
       "locationNote": "Chicago, Illinois; Atlanta, Georgia; Seattle, Washington; Indianapolis, Indiana",
       "employmentType": "Full-time",
       "salary": {
-        "min": 150100.0,
-        "max": 227000.0,
+        "min": 150100,
+        "max": 227000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -117136,8 +117153,8 @@
       "locationNote": "Houston Metro - Remote, Texas; Seattle Metro - Remote, Washington; Seattle, Washington; Remote, District of Columbia; Remote, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 94000.0,
-        "max": 142300.0,
+        "min": 94000,
+        "max": 142300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -117329,8 +117346,8 @@
       "locationNote": "Chicago, Illinois; Atlanta, Georgia; Seattle, Washington; Indianapolis, Indiana; Dallas, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 117400.0,
-        "max": 177600.0,
+        "min": 117400,
+        "max": 177600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -117436,8 +117453,8 @@
       "locationNote": "Chicago, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 117400.0,
-        "max": 177600.0,
+        "min": 117400,
+        "max": 177600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -118328,8 +118345,8 @@
       "locationNote": "Chicago, Illinois; Atlanta, Georgia; Seattle, Washington; Indianapolis, Indiana",
       "employmentType": "Full-time",
       "salary": {
-        "min": 164000.0,
-        "max": 261500.0,
+        "min": 164000,
+        "max": 261500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -118392,8 +118409,8 @@
       "locationNote": "Seattle, Washington; Chicago, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 164000.0,
-        "max": 261500.0,
+        "min": 164000,
+        "max": 261500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -118452,8 +118469,8 @@
       "locationNote": "Seattle, Washington; Chicago, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 181700.0,
-        "max": 304700.0,
+        "min": 181700,
+        "max": 304700,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -118668,8 +118685,8 @@
       "locationNote": "Atlanta, Georgia; Washington, District of Columbia; Chicago, Illinois; Mclean, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 99400.0,
-        "max": 150300.0,
+        "min": 99400,
+        "max": 150300,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -119152,8 +119169,8 @@
       "locationNote": "Seattle, Washington; Denver, Colorado",
       "employmentType": "Full-time",
       "salary": {
-        "min": 197300.0,
-        "max": 313700.0,
+        "min": 197300,
+        "max": 313700,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -120826,8 +120843,8 @@
       "locationNote": "Sanford, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 171000.0,
+        "min": 95000,
+        "max": 171000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -120879,8 +120896,8 @@
       "locationNote": "Wesley Chapel, North Carolina",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64000.0,
-        "max": 128000.0,
+        "min": 64000,
+        "max": 128000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -120934,8 +120951,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 171000.0,
+        "min": 95000,
+        "max": 171000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -121225,8 +121242,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 132000.0,
-        "max": 238000.0,
+        "min": 132000,
+        "max": 238000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -121279,8 +121296,8 @@
       "locationNote": "Brooklyn Park, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 168000.0,
-        "max": 356000.0,
+        "min": 168000,
+        "max": 356000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -121387,8 +121404,8 @@
       "locationNote": "Brooklyn Park, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 98000.0,
-        "max": 176000.0,
+        "min": 98000,
+        "max": 176000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -121440,8 +121457,8 @@
       "locationNote": "Brooklyn Park, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 115000.0,
-        "max": 206000.0,
+        "min": 115000,
+        "max": 206000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -121493,8 +121510,8 @@
       "locationNote": "Strongsville, Ohio",
       "employmentType": "Full-time",
       "salary": {
-        "min": 22.0,
-        "max": 24.0,
+        "min": 22,
+        "max": 24,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -121602,8 +121619,8 @@
       "locationNote": "Chambersburg, Pennsylvania",
       "employmentType": "Full-time",
       "salary": {
-        "min": 73000.0,
-        "max": 132000.0,
+        "min": 73000,
+        "max": 132000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -121658,8 +121675,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 149000.0,
-        "max": 268000.0,
+        "min": 149000,
+        "max": 268000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -121765,8 +121782,8 @@
       "locationNote": "Fullerton, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 171000.0,
+        "min": 95000,
+        "max": 171000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -121818,8 +121835,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 171000.0,
+        "min": 95000,
+        "max": 171000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -121873,8 +121890,8 @@
       "locationNote": "San Diego, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 27.0,
+        "min": 25,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -121928,8 +121945,8 @@
       "locationNote": "San Diego, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 25.0,
-        "max": 27.0,
+        "min": 25,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -122080,8 +122097,8 @@
       "locationNote": "Brooklyn Park, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 132000.0,
-        "max": 238000.0,
+        "min": 132000,
+        "max": 238000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -122188,8 +122205,8 @@
       "locationNote": "Brooklyn Park, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 115000.0,
-        "max": 206000.0,
+        "min": 115000,
+        "max": 206000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -122241,8 +122258,8 @@
       "locationNote": "Rapid City, South Dakota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64000.0,
-        "max": 128000.0,
+        "min": 64000,
+        "max": 128000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -122461,8 +122478,8 @@
       "locationNote": "Morgantown, West Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 23.0,
+        "min": 21,
+        "max": 23,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -122517,8 +122534,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 132000.0,
-        "max": 238000.0,
+        "min": 132000,
+        "max": 238000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -122570,8 +122587,8 @@
       "locationNote": "Omaha, Nebraska",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64000.0,
-        "max": 128000.0,
+        "min": 64000,
+        "max": 128000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -122885,8 +122902,8 @@
       "locationNote": "Brooklyn Park, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 171000.0,
+        "min": 95000,
+        "max": 171000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -122938,8 +122955,8 @@
       "locationNote": "Lake City, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 171000.0,
+        "min": 95000,
+        "max": 171000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -122993,8 +123010,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 73000.0,
-        "max": 132000.0,
+        "min": 73000,
+        "max": 132000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -123128,8 +123145,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 171000.0,
+        "min": 95000,
+        "max": 171000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -123263,8 +123280,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 171000.0,
+        "min": 95000,
+        "max": 171000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -123357,8 +123374,8 @@
       "locationNote": "Lanesborough, Massachusetts",
       "employmentType": "Part-time",
       "salary": {
-        "min": 18.0,
-        "max": 27.0,
+        "min": 18,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -123453,8 +123470,8 @@
       "locationNote": "Tyler, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 73000.0,
-        "max": 132000.0,
+        "min": 73000,
+        "max": 132000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -124043,8 +124060,8 @@
       "locationNote": "Crestwood, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64000.0,
-        "max": 128000.0,
+        "min": 64000,
+        "max": 128000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -124098,8 +124115,8 @@
       "locationNote": "Tinley Park, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64000.0,
-        "max": 128000.0,
+        "min": 64000,
+        "max": 128000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -124153,8 +124170,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 73000.0,
-        "max": 132000.0,
+        "min": 73000,
+        "max": 132000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -124308,8 +124325,8 @@
       "locationNote": "Bel Air, Maryland",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64000.0,
-        "max": 128000.0,
+        "min": 64000,
+        "max": 128000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -124418,8 +124435,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 73000.0,
-        "max": 132000.0,
+        "min": 73000,
+        "max": 132000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -124528,8 +124545,8 @@
       "locationNote": "Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 171000.0,
+        "min": 95000,
+        "max": 171000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -124581,8 +124598,8 @@
       "locationNote": "Anderson, South Carolina",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64000.0,
-        "max": 128000.0,
+        "min": 64000,
+        "max": 128000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -124636,8 +124653,8 @@
       "locationNote": "Napa, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 26.0,
-        "max": 28.0,
+        "min": 26,
+        "max": 28,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -124869,8 +124886,8 @@
       "locationNote": "New Britain, Connecticut",
       "employmentType": "Full-time",
       "salary": {
-        "min": 64000.0,
-        "max": 128000.0,
+        "min": 64000,
+        "max": 128000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -126313,8 +126330,8 @@
       "locationNote": "Newberry, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 78508.0,
-        "max": 117762.0,
+        "min": 78508,
+        "max": 117762,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -126563,8 +126580,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Richmond, Virginia",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -126612,8 +126629,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -126661,8 +126678,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -126710,8 +126727,8 @@
       "locationNote": "Irving, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 60200.0,
-        "max": 107400.0,
+        "min": 60200,
+        "max": 107400,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -126765,8 +126782,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -126861,8 +126878,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Las Vegas, Nevada",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -126922,8 +126939,8 @@
       "locationNote": "Milwaukee, Wisconsin; De Pere, Wisconsin; Wausau, Wisconsin",
       "employmentType": "Not specified",
       "salary": {
-        "min": 22.0,
-        "max": 48.0,
+        "min": 22,
+        "max": 48,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -126977,8 +126994,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 120100.0,
-        "max": 214500.0,
+        "min": 120100,
+        "max": 214500,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -127030,8 +127047,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 120100.0,
-        "max": 214500.0,
+        "min": 120100,
+        "max": 214500,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -127127,10 +127144,10 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Paris, Tennessee",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -127160,7 +127177,8 @@
         "arrangement": "",
         "travel": "Travel: \n Yes, 25 % of the Time ",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -127184,8 +127202,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 134600.0,
-        "max": 230800.0,
+        "min": 134600,
+        "max": 230800,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -127237,8 +127255,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -127286,8 +127304,8 @@
       "locationNote": "Kahului, Hawaii",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -127353,8 +127371,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Minneapolis, Minnesota; Las Vegas, Nevada",
       "employmentType": "Full-time",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -127466,8 +127484,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Raleigh, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 134600.0,
-        "max": 230800.0,
+        "min": 134600,
+        "max": 230800,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -127513,10 +127531,10 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Raleigh, North Carolina",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": {
-        "min": 41.0,
-        "max": 62.0,
+        "min": 41,
+        "max": 62,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -127546,7 +127564,8 @@
         "arrangement": "",
         "travel": "Travel: \n Yes, 25 % of the Time ",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -127570,8 +127589,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -127666,8 +127685,8 @@
       "locationNote": "Draper, Utah",
       "employmentType": "Not specified",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -127721,8 +127740,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -127770,8 +127789,8 @@
       "locationNote": "Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 159300.0,
-        "max": 273200.0,
+        "min": 159300,
+        "max": 273200,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -127873,10 +127892,10 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Memphis, Tennessee",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -127906,7 +127925,8 @@
         "arrangement": "",
         "travel": "Travel: \n Yes, 25 % of the Time ",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -127989,8 +128009,8 @@
       "locationNote": "Remote · Eligible states not verified · Employer-listed locations: New York, New York; Jersey City, New Jersey; Minneapolis, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 72800.0,
-        "max": 130000.0,
+        "min": 72800,
+        "max": 130000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -128046,8 +128066,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 77000.0,
-        "max": 137600.0,
+        "min": 77000,
+        "max": 137600,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -128150,8 +128170,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -128246,8 +128266,8 @@
       "locationNote": "Novato, California",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -128299,8 +128319,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Minnetonka, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -128348,8 +128368,8 @@
       "locationNote": "Indianapolis, Indiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 29.0,
+        "min": 16,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -128403,8 +128423,8 @@
       "locationNote": "Everett, Washington",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -128458,8 +128478,8 @@
       "locationNote": "Sumter, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -128513,8 +128533,8 @@
       "locationNote": "Westborough, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 29.0,
+        "min": 16,
+        "max": 29,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -128566,9 +128586,9 @@
       "remoteScope": "nationwide",
       "eligibleStates": [],
       "locationNote": "Remote within the U.S. · Employer-listed locations: Lafayette, Louisiana",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": {
-        "min": 33.0,
+        "min": 33,
         "max": 49.5,
         "period": "hour",
         "currency": "USD",
@@ -128595,7 +128615,8 @@
         "arrangement": "You'll enjoy the flexibility to work remotely * from anywhere within the U.S.",
         "travel": "Travel: \n No",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part-Time."
       }
     },
     {
@@ -128663,8 +128684,8 @@
       "locationNote": "Pasadena, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -128875,10 +128896,10 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Sugar Land, Texas",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -128908,7 +128929,8 @@
         "arrangement": "",
         "travel": "Travel: \n No",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part-Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -128932,8 +128954,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 20.0,
-        "max": 36.0,
+        "min": 20,
+        "max": 36,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -129034,8 +129056,8 @@
       "locationNote": "Sugar Land, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 35.0,
-        "max": 63.0,
+        "min": 35,
+        "max": 63,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -129089,8 +129111,8 @@
       "locationNote": "Fort Worth, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 19.0,
-        "max": 25.0,
+        "min": 19,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -129160,8 +129182,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Minneapolis, Minnesota; Tampa, Florida; Hartford, Connecticut",
       "employmentType": "Full-time",
       "salary": {
-        "min": 112700.0,
-        "max": 193200.0,
+        "min": 112700,
+        "max": 193200,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -129209,8 +129231,8 @@
       "locationNote": "Glen Flora, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 35.0,
-        "max": 63.0,
+        "min": 35,
+        "max": 63,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -129264,8 +129286,8 @@
       "locationNote": "Rutherford, New Jersey",
       "employmentType": "Not specified",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -129319,8 +129341,8 @@
       "locationNote": "Chestnut Hill, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 91700.0,
-        "max": 163700.0,
+        "min": 91700,
+        "max": 163700,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -129374,8 +129396,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Minneapolis, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 24.0,
-        "max": 43.0,
+        "min": 24,
+        "max": 43,
         "period": "hour",
         "currency": "USD",
         "scopeStates": []
@@ -129565,8 +129587,8 @@
       "locationNote": "Pembroke, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 71640.0,
-        "max": 107460.0,
+        "min": 71640,
+        "max": 107460,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -129723,8 +129745,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Eden Prairie, Minnesota",
       "employmentType": "Not specified",
       "salary": {
-        "min": 60200.0,
-        "max": 107400.0,
+        "min": 60200,
+        "max": 107400,
         "period": "year",
         "currency": "USD",
         "scopeStates": []
@@ -129788,8 +129810,8 @@
       "locationNote": "Remote within the U.S. · Employer-listed locations: Dallas, Texas; Phoenix, Arizona; Minneapolis, Minnesota; Tampa, Florida; Hartford, Connecticut",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 32.0,
+        "min": 18,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": []
@@ -129887,8 +129909,8 @@
       "locationNote": "Greenville, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 75620.0,
-        "max": 113430.0,
+        "min": 75620,
+        "max": 113430,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -129942,7 +129964,7 @@
       "locationNote": "Elizabethton, Tennessee",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 22.6,
         "period": "hour",
         "currency": "USD",
@@ -129997,8 +130019,8 @@
       "locationNote": "Sylacauga, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 74376.0,
-        "max": 111564.0,
+        "min": 74376,
+        "max": 111564,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -130052,8 +130074,8 @@
       "locationNote": "Sylacauga, Alabama",
       "employmentType": "Not specified",
       "salary": {
-        "min": 74376.0,
-        "max": 111564.0,
+        "min": 74376,
+        "max": 111564,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -130162,8 +130184,8 @@
       "locationNote": "Bolivia, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 71640.0,
-        "max": 107460.0,
+        "min": 71640,
+        "max": 107460,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -130272,7 +130294,7 @@
       "locationNote": "Lexington, Kentucky",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 21.65,
         "period": "hour",
         "currency": "USD",
@@ -130325,10 +130347,10 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Colorado Springs, Colorado",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": {
-        "min": 44.0,
-        "max": 79.0,
+        "min": 44,
+        "max": 79,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -130358,7 +130380,8 @@
         "arrangement": "",
         "travel": "Travel: \n No",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part-time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -130382,8 +130405,8 @@
       "locationNote": "Jonesboro, Arkansas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 67104.0,
-        "max": 100656.0,
+        "min": 67104,
+        "max": 100656,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -130437,8 +130460,8 @@
       "locationNote": "Dayton, Ohio",
       "employmentType": "Not specified",
       "salary": {
-        "min": 50000.0,
-        "max": 115000.0,
+        "min": 50000,
+        "max": 115000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -130633,7 +130656,7 @@
       "locationNote": "Valparaiso, Indiana",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 26.35,
         "period": "hour",
         "currency": "USD",
@@ -130688,8 +130711,8 @@
       "locationNote": "Leominster, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 87560.0,
-        "max": 131340.0,
+        "min": 87560,
+        "max": 131340,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -130798,8 +130821,8 @@
       "locationNote": "Charleston, South Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 75620.0,
-        "max": 113430.0,
+        "min": 75620,
+        "max": 113430,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -131006,8 +131029,8 @@
       "locationNote": "Hartwell, Georgia",
       "employmentType": "Not specified",
       "salary": {
-        "min": 70992.0,
-        "max": 106488.0,
+        "min": 70992,
+        "max": 106488,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -131061,7 +131084,7 @@
       "locationNote": "Akron, Ohio",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
+        "min": 16,
         "max": 23.85,
         "period": "hour",
         "currency": "USD",
@@ -131163,8 +131186,8 @@
       "locationNote": "Portland, Maine",
       "employmentType": "Not specified",
       "salary": {
-        "min": 66400.0,
-        "max": 99600.0,
+        "min": 66400,
+        "max": 99600,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -131216,10 +131239,10 @@
       "remoteScope": "unknown",
       "eligibleStates": [],
       "locationNote": "Stafford, Texas",
-      "employmentType": "Not specified",
+      "employmentType": "Part-time",
       "salary": {
-        "min": 29.0,
-        "max": 52.0,
+        "min": 29,
+        "max": 52,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -131249,7 +131272,8 @@
         "arrangement": "",
         "travel": "Travel: \n No",
         "salary": "Explicit employer pay text with stated period; scoped to listed or explicitly named states",
-        "deadline": ""
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Part-Time."
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement."
@@ -131273,8 +131297,8 @@
       "locationNote": "Webster, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 16.0,
-        "max": 32.0,
+        "min": 16,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -131375,8 +131399,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 84744.0,
-        "max": 127116.0,
+        "min": 84744,
+        "max": 127116,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -131430,8 +131454,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 44880.0,
-        "max": 67320.0,
+        "min": 44880,
+        "max": 67320,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -131485,8 +131509,8 @@
       "locationNote": "Portland, Oregon",
       "employmentType": "Not specified",
       "salary": {
-        "min": 40832.0,
-        "max": 61248.0,
+        "min": 40832,
+        "max": 61248,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -132818,8 +132842,8 @@
       "locationNote": "Avon, Massachusetts; North Attleboro, Massachusetts; Taunton, Massachusetts; Foxboro, Massachusetts",
       "employmentType": "Not specified",
       "salary": {
-        "min": 37000.0,
-        "max": 64000.0,
+        "min": 37000,
+        "max": 64000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -132963,8 +132987,8 @@
       "locationNote": "Basking Ridge, New Jersey",
       "employmentType": "Not specified",
       "salary": {
-        "min": 53000.0,
-        "max": 92000.0,
+        "min": 53000,
+        "max": 92000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -133073,8 +133097,8 @@
       "locationNote": "Brunswick, Maine",
       "employmentType": "Not specified",
       "salary": {
-        "min": 37000.0,
-        "max": 64000.0,
+        "min": 37000,
+        "max": 64000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -133388,8 +133412,8 @@
       "locationNote": "San Diego, California",
       "employmentType": "Not specified",
       "salary": {
-        "min": 61500.0,
-        "max": 100000.0,
+        "min": 61500,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -133562,8 +133586,8 @@
       "locationNote": "Basking Ridge, New Jersey; Alpharetta, Georgia; Irving, Texas; Temple Terrace, Florida; Charlotte, North Carolina",
       "employmentType": "Not specified",
       "salary": {
-        "min": 120500.0,
-        "max": 231000.0,
+        "min": 120500,
+        "max": 231000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -133623,8 +133647,8 @@
       "locationNote": "Berlin, New Jersey",
       "employmentType": "Not specified",
       "salary": {
-        "min": 53000.0,
-        "max": 92000.0,
+        "min": 53000,
+        "max": 92000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -133899,8 +133923,8 @@
       "locationNote": "New York, New York; Basking Ridge, New Jersey",
       "employmentType": "Not specified",
       "salary": {
-        "min": 115500.0,
-        "max": 201000.0,
+        "min": 115500,
+        "max": 201000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -134224,8 +134248,8 @@
       "locationNote": "San Diego, California",
       "employmentType": "Not specified",
       "salary": {
-        "min": 53000.0,
-        "max": 92000.0,
+        "min": 53000,
+        "max": 92000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -134279,8 +134303,8 @@
       "locationNote": "San Diego, California",
       "employmentType": "Not specified",
       "salary": {
-        "min": 53000.0,
-        "max": 92000.0,
+        "min": 53000,
+        "max": 92000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -134704,8 +134728,8 @@
       "locationNote": "Succasunna, New Jersey",
       "employmentType": "Not specified",
       "salary": {
-        "min": 37000.0,
-        "max": 64000.0,
+        "min": 37000,
+        "max": 64000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -134859,8 +134883,8 @@
       "locationNote": "Basking Ridge, New Jersey; Irving, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 137000.0,
-        "max": 263000.0,
+        "min": 137000,
+        "max": 263000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -134918,8 +134942,8 @@
       "locationNote": "Basking Ridge, New Jersey; New York, New York",
       "employmentType": "Not specified",
       "salary": {
-        "min": 128000.0,
-        "max": 223000.0,
+        "min": 128000,
+        "max": 223000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -134973,8 +134997,8 @@
       "locationNote": "San Diego, California",
       "employmentType": "Not specified",
       "salary": {
-        "min": 61500.0,
-        "max": 100000.0,
+        "min": 61500,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -135079,8 +135103,8 @@
       "locationNote": "Alpharetta, Georgia; Irving, Texas; Basking Ridge, New Jersey",
       "employmentType": "Not specified",
       "salary": {
-        "min": 120500.0,
-        "max": 231000.0,
+        "min": 120500,
+        "max": 231000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -135172,8 +135196,8 @@
       "locationNote": "Basking Ridge, New Jersey; Irving, Texas; Chicago, Illinois; New York, New York; Tampa, Florida; Rolling Meadows, Illinois; Alpharetta, Georgia; Temple Terrace, Florida; Atlanta, Georgia; Dallas, Texas",
       "employmentType": "Not specified",
       "salary": {
-        "min": 108000.0,
-        "max": 207000.0,
+        "min": 108000,
+        "max": 207000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -136325,8 +136349,8 @@
       "locationNote": "Annapolis Junction, Maryland; Blue Bell, Pennsylvania; Basking Ridge, New Jersey; New York, New York",
       "employmentType": "Not specified",
       "salary": {
-        "min": 159500.0,
-        "max": 278000.0,
+        "min": 159500,
+        "max": 278000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -136512,8 +136536,8 @@
       "locationNote": "Basking Ridge, New Jersey; Irving, Texas; Ashburn, Virginia; Irvine, California; Lone Tree, Colorado; Cary, North Carolina; New York, New York; Rolling Meadows, Illinois; Alpharetta, Georgia; Temple Terrace, Florida",
       "employmentType": "Not specified",
       "salary": {
-        "min": 149000.0,
-        "max": 286000.0,
+        "min": 149000,
+        "max": 286000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -136585,8 +136609,8 @@
       "locationNote": "Irvine, California",
       "employmentType": "Not specified",
       "salary": {
-        "min": 159500.0,
-        "max": 278000.0,
+        "min": 159500,
+        "max": 278000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -136779,8 +136803,8 @@
       "locationNote": "Basking Ridge, New Jersey; New York, New York",
       "employmentType": "Not specified",
       "salary": {
-        "min": 115500.0,
-        "max": 201000.0,
+        "min": 115500,
+        "max": 201000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -137370,8 +137394,8 @@
       "locationNote": "Twinsburg, Ohio",
       "employmentType": "Not specified",
       "salary": {
-        "min": 114000.0,
-        "max": 199000.0,
+        "min": 114000,
+        "max": 199000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -137811,8 +137835,8 @@
       "locationNote": "LOUISVILLE, Kentucky",
       "employmentType": "Full-time",
       "salary": {
-        "min": 24.0,
-        "max": 32.0,
+        "min": 24,
+        "max": 32,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -137866,8 +137890,8 @@
       "locationNote": "FORT MYERS, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -137921,8 +137945,8 @@
       "locationNote": "GREENSBORO, North Carolina",
       "employmentType": "Full-time",
       "salary": {
-        "min": 22.0,
-        "max": 30.0,
+        "min": 22,
+        "max": 30,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -137976,8 +138000,8 @@
       "locationNote": "NIXA, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 100000.0,
+        "min": 65000,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -138031,8 +138055,8 @@
       "locationNote": "PRAIRIE DU CHIEN, Wisconsin",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 100000.0,
+        "min": 65000,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -138086,8 +138110,8 @@
       "locationNote": "SAN ANTONIO, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138141,8 +138165,8 @@
       "locationNote": "SAINT CLAIRSVILLE, Ohio",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138196,8 +138220,8 @@
       "locationNote": "MEMPHIS, Tennessee",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138251,8 +138275,8 @@
       "locationNote": "MEMPHIS, Tennessee",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138306,8 +138330,8 @@
       "locationNote": "HANOVER, Pennsylvania",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 29.0,
+        "min": 21,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138361,8 +138385,8 @@
       "locationNote": "BELVIDERE, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 116000.0,
-        "max": 174000.0,
+        "min": 116000,
+        "max": 174000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -138416,8 +138440,8 @@
       "locationNote": "SAN ANTONIO, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138471,8 +138495,8 @@
       "locationNote": "BELVIDERE, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 80000.0,
-        "max": 120000.0,
+        "min": 80000,
+        "max": 120000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -138526,8 +138550,8 @@
       "locationNote": "SPRINGFIELD, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138581,8 +138605,8 @@
       "locationNote": "ELK CITY, Oklahoma",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 100000.0,
+        "min": 65000,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -138636,8 +138660,8 @@
       "locationNote": "HAMPTON, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 100000.0,
+        "min": 65000,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -138691,8 +138715,8 @@
       "locationNote": "BEAUMONT, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138746,8 +138770,8 @@
       "locationNote": "BAYTOWN, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138801,8 +138825,8 @@
       "locationNote": "ATLANTA, Georgia",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138856,8 +138880,8 @@
       "locationNote": "SAN ANTONIO, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138911,8 +138935,8 @@
       "locationNote": "IDAHO FALLS, Idaho",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 29.0,
+        "min": 21,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -138966,8 +138990,8 @@
       "locationNote": "TULSA, Oklahoma",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 29.0,
+        "min": 21,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139077,8 +139101,8 @@
       "locationNote": "COVINGTON, Louisiana",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139132,8 +139156,8 @@
       "locationNote": "MEMPHIS, Tennessee",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139242,8 +139266,8 @@
       "locationNote": "SLIDELL, Louisiana",
       "employmentType": "Part-time",
       "salary": {
-        "min": 16.0,
-        "max": 24.0,
+        "min": 16,
+        "max": 24,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139297,8 +139321,8 @@
       "locationNote": "NEWPORT NEWS, Virginia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 100000.0,
+        "min": 65000,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -139352,8 +139376,8 @@
       "locationNote": "BATON ROUGE, Louisiana",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139407,8 +139431,8 @@
       "locationNote": "EVANS, Colorado",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139462,8 +139486,8 @@
       "locationNote": "COVINGTON, Louisiana",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139517,8 +139541,8 @@
       "locationNote": "BROOKSVILLE, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65500.0,
-        "max": 98000.0,
+        "min": 65500,
+        "max": 98000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -139627,8 +139651,8 @@
       "locationNote": "VERO BEACH, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139682,8 +139706,8 @@
       "locationNote": "BALTIMORE, Maryland",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
-        "max": 28.0,
+        "min": 20,
+        "max": 28,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139737,8 +139761,8 @@
       "locationNote": "BROOKSVILLE, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65500.0,
-        "max": 98000.0,
+        "min": 65500,
+        "max": 98000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -139792,8 +139816,8 @@
       "locationNote": "LUFKIN, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139847,8 +139871,8 @@
       "locationNote": "GREEN BAY, Wisconsin",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -139951,8 +139975,8 @@
       "locationNote": "WAKE FOREST, North Carolina",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140006,8 +140030,8 @@
       "locationNote": "BURLESON, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 29.0,
+        "min": 21,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140061,8 +140085,8 @@
       "locationNote": "TULSA, Oklahoma",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 29.0,
+        "min": 21,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140116,8 +140140,8 @@
       "locationNote": "SAINT LOUIS, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 20.0,
-        "max": 28.0,
+        "min": 20,
+        "max": 28,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140171,8 +140195,8 @@
       "locationNote": "COCOA, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140226,8 +140250,8 @@
       "locationNote": "FORT WORTH, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140335,8 +140359,8 @@
       "locationNote": "LANSING, Michigan",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140390,8 +140414,8 @@
       "locationNote": "CASPER, Wyoming",
       "employmentType": "Full-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140445,8 +140469,8 @@
       "locationNote": "HOUSTON, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140500,8 +140524,8 @@
       "locationNote": "LAS VEGAS, Nevada",
       "employmentType": "Full-time",
       "salary": {
-        "min": 22.0,
-        "max": 30.0,
+        "min": 22,
+        "max": 30,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140555,8 +140579,8 @@
       "locationNote": "EL PASO, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140610,8 +140634,8 @@
       "locationNote": "GREENSBORO, North Carolina",
       "employmentType": "Part-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140714,8 +140738,8 @@
       "locationNote": "IOLA, Kansas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 100000.0,
+        "min": 65000,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -140769,8 +140793,8 @@
       "locationNote": "TROUTMAN, North Carolina",
       "employmentType": "Full-time",
       "salary": {
-        "min": 84000.0,
-        "max": 126000.0,
+        "min": 84000,
+        "max": 126000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -140824,8 +140848,8 @@
       "locationNote": "OXFORD, North Carolina",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 100000.0,
+        "min": 65000,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -140933,8 +140957,8 @@
       "locationNote": "OWENSBORO, Kentucky",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -140988,8 +141012,8 @@
       "locationNote": "ALPHARETTA, Georgia",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141043,8 +141067,8 @@
       "locationNote": "TROUTMAN, North Carolina",
       "employmentType": "Full-time",
       "salary": {
-        "min": 80000.0,
-        "max": 120000.0,
+        "min": 80000,
+        "max": 120000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -141098,8 +141122,8 @@
       "locationNote": "FRIDLEY, Minnesota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 23.0,
-        "max": 31.0,
+        "min": 23,
+        "max": 31,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141153,8 +141177,8 @@
       "locationNote": "SAN ANTONIO, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141208,8 +141232,8 @@
       "locationNote": "COVINGTON, Louisiana",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141263,8 +141287,8 @@
       "locationNote": "MEDFORD, Oregon",
       "employmentType": "Full-time",
       "salary": {
-        "min": 85000.0,
-        "max": 120000.0,
+        "min": 85000,
+        "max": 120000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -141318,8 +141342,8 @@
       "locationNote": "BENTONVILLE, Arkansas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 40.0,
+        "min": 21,
+        "max": 40,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141373,8 +141397,8 @@
       "locationNote": "BELLEVUE, Washington",
       "employmentType": "Full-time",
       "salary": {
-        "min": 95000.0,
-        "max": 145000.0,
+        "min": 95000,
+        "max": 145000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -141428,8 +141452,8 @@
       "locationNote": "PLANO, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 29.0,
+        "min": 21,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141483,8 +141507,8 @@
       "locationNote": "ST PETERSBURG, Florida",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141538,8 +141562,8 @@
       "locationNote": "ROSEVILLE, Michigan",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141593,8 +141617,8 @@
       "locationNote": "DAYTONA BEACH, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 22.0,
-        "max": 30.0,
+        "min": 22,
+        "max": 30,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141648,8 +141672,8 @@
       "locationNote": "JEFFERSON CITY, Missouri",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141703,8 +141727,8 @@
       "locationNote": "LONE TREE, Colorado",
       "employmentType": "Full-time",
       "salary": {
-        "min": 26.0,
-        "max": 34.0,
+        "min": 26,
+        "max": 34,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141758,8 +141782,8 @@
       "locationNote": "CHESAPEAKE, Virginia",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141813,8 +141837,8 @@
       "locationNote": "TINLEY PARK, Illinois",
       "employmentType": "Full-time",
       "salary": {
-        "min": 22.0,
-        "max": 30.0,
+        "min": 22,
+        "max": 30,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141868,8 +141892,8 @@
       "locationNote": "SAINT LOUIS, Missouri",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
-        "max": 28.0,
+        "min": 20,
+        "max": 28,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141923,8 +141947,8 @@
       "locationNote": "EL PASO, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 21.0,
-        "max": 29.0,
+        "min": 21,
+        "max": 29,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -141978,8 +142002,8 @@
       "locationNote": "KELLER, Texas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 70000.0,
-        "max": 95000.0,
+        "min": 70000,
+        "max": 95000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -142033,8 +142057,8 @@
       "locationNote": "SALT LAKE CITY, Utah",
       "employmentType": "Full-time",
       "salary": {
-        "min": 22.0,
-        "max": 30.0,
+        "min": 22,
+        "max": 30,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142088,8 +142112,8 @@
       "locationNote": "CASTLE ROCK, Colorado",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 100000.0,
+        "min": 65000,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -142143,8 +142167,8 @@
       "locationNote": "IDAHO FALLS, Idaho",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142253,8 +142277,8 @@
       "locationNote": "FARGO, North Dakota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 20.0,
-        "max": 28.0,
+        "min": 20,
+        "max": 28,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142308,8 +142332,8 @@
       "locationNote": "FARGO, North Dakota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 20.0,
-        "max": 28.0,
+        "min": 20,
+        "max": 28,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142363,8 +142387,8 @@
       "locationNote": "FARGO, North Dakota",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142418,8 +142442,8 @@
       "locationNote": "HUNTSVILLE, Alabama",
       "employmentType": "Full-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142473,8 +142497,8 @@
       "locationNote": "MURRIETA, California",
       "employmentType": "Part-time",
       "salary": {
-        "min": 19.0,
-        "max": 27.0,
+        "min": 19,
+        "max": 27,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142528,8 +142552,8 @@
       "locationNote": "BALTIMORE, Maryland",
       "employmentType": "Part-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142583,8 +142607,8 @@
       "locationNote": "LOGAN, Utah",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142639,7 +142663,7 @@
       "employmentType": "Full-time",
       "salary": {
         "min": 20.8,
-        "max": 26.0,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142693,8 +142717,8 @@
       "locationNote": "KANSAS CITY, Kansas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142748,8 +142772,8 @@
       "locationNote": "BRANSON, Missouri",
       "employmentType": "Full-time",
       "salary": {
-        "min": 65000.0,
-        "max": 100000.0,
+        "min": 65000,
+        "max": 100000,
         "period": "year",
         "currency": "USD",
         "scopeStates": [
@@ -142803,8 +142827,8 @@
       "locationNote": "STAFFORD MEADOWS, Texas",
       "employmentType": "Part-time",
       "salary": {
-        "min": 17.0,
-        "max": 25.0,
+        "min": 17,
+        "max": 25,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -142858,7 +142882,7 @@
       "locationNote": "OLATHE, Kansas",
       "employmentType": "Full-time",
       "salary": {
-        "min": 23.0,
+        "min": 23,
         "max": 28.8,
         "period": "hour",
         "currency": "USD",
@@ -142913,8 +142937,8 @@
       "locationNote": "PANAMA CITY, Florida",
       "employmentType": "Full-time",
       "salary": {
-        "min": 22.0,
-        "max": 30.0,
+        "min": 22,
+        "max": 30,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -143024,8 +143048,8 @@
       "locationNote": "PHOENIX, Arizona",
       "employmentType": "Part-time",
       "salary": {
-        "min": 20.0,
-        "max": 28.0,
+        "min": 20,
+        "max": 28,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -143079,8 +143103,8 @@
       "locationNote": "ALLENTOWN, Pennsylvania",
       "employmentType": "Full-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
@@ -143134,8 +143158,8 @@
       "locationNote": "RIVERDALE, Utah",
       "employmentType": "Part-time",
       "salary": {
-        "min": 18.0,
-        "max": 26.0,
+        "min": 18,
+        "max": 26,
         "period": "hour",
         "currency": "USD",
         "scopeStates": [
