@@ -1,0 +1,17 @@
+.search-controls:not(.company-search){grid-template-columns:minmax(0,1.5fr) minmax(0,1.3fr) minmax(0,.9fr) minmax(0,1.1fr)}
+.city-control input{display:block;width:100%;margin-top:6px;min-height:48px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-size:14px;font-weight:400;padding:10px}
+#city-help{font-weight:400;margin-top:10px}
+.city-feedback{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.city-feedback:has(#city-status:empty){display:none}
+#city-status{margin:0;line-height:1.5;flex:1;min-width:180px}
+.city-feedback button{font-size:11px;padding:4px 8px;min-height:32px;border:0;background:transparent;text-decoration:underline}
+@media(max-width:900px){
+ .search-controls:not(.company-search){grid-template-columns:1fr 1fr}
+ .search-controls .keyword-control{grid-column:auto}
+}
+@media(max-width:760px){
+ .search-controls .keyword-control,.search-controls .city-control{grid-column:1/-1}
+ .city-control input{font-size:16px}
+}
+@media(max-width:420px){.search-controls:not(.company-search){grid-template-columns:.8fr 1.2fr}}
+@media(max-width:350px){.search-controls:not(.company-search){grid-template-columns:1fr}}

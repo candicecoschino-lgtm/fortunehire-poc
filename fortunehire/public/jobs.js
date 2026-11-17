@@ -1,8 +1,10 @@
 import {classifyJobFunctions} from './job-functions.js';
 import { normalize } from './directory.js';
-export const US_STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+import {US_STATES} from './us-geography.js';
+export {US_STATES} from './us-geography.js';
+import {resolveCitySearch,matchingOfficeLocations} from './job-locations.js';
 export const ARRANGEMENTS = {'on-site':'On-site',hybrid:'Hybrid',remote:'Remote',unknown:'Not specified'};
-export const JOB_KEYS = ['q','state','arrangement','company','industry','function','type','pay','posted','payPosted','view','travel','sort','page'];
+export const JOB_KEYS = ['q','city','state','arrangement','company','industry','function','type','pay','posted','payPosted','view','travel','sort','page'];
 export function todayInNewYork(date = new Date()) {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date).map(p=>[p.type,p.value]));
   return `${parts.year}-${parts.month}-${parts.day}`;
@@ -44,8 +46,9 @@ export function hasPostedPay(job,state=''){
  const scope=job.salary?.scopeStates||job.publishedPay?.scopeStates||[];
  return !state||!scope.length||scope.includes(state);
 }
-export function filterJobs(jobs,f,today = todayInNewYork(),includeUnavailable=false) {
-  return jobs.filter(j=>(includeUnavailable||!j.organizerUnavailable&&isCurrent(j,today)) && matchesPosted(j,f.posted,today) && (!f.payPosted||hasPostedPay(j,f.state)) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||(f.arrangement==='remote-state'?j.arrangement==='remote'&&j.remoteScope==='states':j.arrangement===f.arrangement)) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.function||classifyJobFunctions(j.title).includes(f.function)) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || matchesPay(j,f.pay,f.state))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
+export function filterJobs(jobs,f,today = todayInNewYork(),includeUnavailable=false,localSearch=resolveCitySearch(f.city)) {
+  const local=localSearch.status!=='empty';
+  return jobs.filter(j=>(!local||matchingOfficeLocations(j,localSearch,f.state).length>0) && (includeUnavailable||!j.organizerUnavailable&&isCurrent(j,today)) && matchesPosted(j,f.posted,today) && (!f.payPosted||(local?matchingOfficeLocations(j,localSearch,f.state).some(location=>hasPostedPay(j,location.state)):hasPostedPay(j,f.state))) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||(f.arrangement==='remote-state'?j.arrangement==='remote'&&j.remoteScope==='states':j.arrangement===f.arrangement)) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.function||classifyJobFunctions(j.title).includes(f.function)) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || (local?matchingOfficeLocations(j,localSearch,f.state).some(location=>matchesPay(j,f.pay,location.state)):matchesPay(j,f.pay,f.state)))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
 }
 export function matchesPay(job,value,state='') {
   const match=/^(year|hour):(\d+)$/.exec(value);

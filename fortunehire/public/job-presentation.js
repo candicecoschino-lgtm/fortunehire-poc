@@ -1,3 +1,4 @@
+import {matchingOfficeLocations} from './job-locations.js';
 const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:value%1?2:0,maximumFractionDigits:2}).format(value);
 function publishedRanges(text){
  const ranges=[];
@@ -20,7 +21,7 @@ export function postedLabel(postedAt,today){
   if(!Number.isFinite(days)||days<0)return 'Posting date unavailable';
   return days===0?'Posted today':days===1?'Posted yesterday':`Posted ${days} days ago`;
 }
-export function locationSummary(job,state=''){
+export function locationSummary(job,state='',localSearch={status:'empty'}){
   if(job.arrangement==='remote'){
     if(job.remoteScope==='nationwide')return 'Remote across the United States';
     if(job.remoteScope==='states'){
@@ -29,7 +30,7 @@ export function locationSummary(job,state=''){
     }
     return 'Remote - eligible states not specified';
   }
-  const first=job.locations.find(location=>location.state===state)||job.locations[0];
+  const first=matchingOfficeLocations(job,localSearch,state)[0]||job.locations.find(location=>location.state===state)||job.locations[0];
   if(!first)return job.locationNote;
   return `${first.city}, ${first.state}${job.locations.length>1?` + ${job.locations.length-1} more ${job.locations.length===2?'location':'locations'}`:''}`;
 }

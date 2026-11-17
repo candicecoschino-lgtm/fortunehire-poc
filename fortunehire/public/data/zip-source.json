@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "source": "https://download.geonames.org/export/zip/US.zip",
+  "attribution": "GeoNames",
+  "attributionUrl": "https://www.geonames.org/",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "builtAt": "2026-11-17T20:13:17.413902+00:00",
+  "coverage": "50 U.S. states and District of Columbia; postal-city matching, not exact job ZIP or radius.",
+  "zipCount": 40977,
+  "shardCount": 99
+}
