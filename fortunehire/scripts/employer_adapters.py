@@ -101,23 +101,27 @@ def verizon(document,url):
         try:value=json.JSONDecoder().raw_decode(script[len(prefix):])[0]
         except (ValueError,TypeError):continue
         if isinstance(value,list) and len(value)==2 and value[0]==1 and isinstance(value[1],str):parts.append(value[1])
-    matches=[];req=urlsplit(url).path.strip('/').split('/')[1]
-    def walk(value,depth=0):
+    matches=[];schedules=[];req=urlsplit(url).path.strip('/').split('/')[1]
+    def walk(value,depth=0,primary=True):
         if depth>40:return
         if isinstance(value,dict):
-            if str(value.get('Id','')).lower()==req.lower() and 'DisplayDate' in value:matches.append(value)
-            for child in value.values():walk(child,depth+1)
+            if str(value.get('Id','')).lower()==req.lower():
+                if primary and 'DisplayDate' in value:matches.append(value)
+                if isinstance(value.get('TimeType'),str):schedules.append(value)
+            for child in value.values():walk(child,depth+1,primary)
         elif isinstance(value,list):
-            for child in value:walk(child,depth+1)
+            for child in value:walk(child,depth+1,primary)
         elif isinstance(value,str) and value.startswith(('{','[')):
-            try:walk(json.loads(value),depth+1)
+            try:walk(json.loads(value),depth+1,primary)
             except ValueError:pass
-    for line in ''.join(parts).splitlines():
-        try:walk(json.loads(line.partition(':')[2]))
+    for line,primary in [(line,True) for line in ''.join(parts).splitlines()]+[(line,False) for part in parts for line in part.splitlines()]:
+        try:walk(json.loads(line.partition(':')[2]),primary=primary)
         except ValueError:pass
     unique={json.dumps(value,sort_keys=True):value for value in matches}
     if len(unique)!=1:return None
     source=next(iter(unique.values()))
+    time_types={row['TimeType'] for row in schedules if row.get('Title')==source.get('Title') and row['TimeType'].strip()}
+    time_type=next(iter(time_types)) if len(time_types)==1 else None
     if not any(urlsplit(urljoin(url,row.get('Url',''))).path.rstrip('/')==urlsplit(url).path.rstrip('/') for row in source.get('Urls',[])):return None
     page=document.find(**{'data-testid':'job-page','data-job-id':source['Id']})
     if not page:return None
@@ -127,7 +131,7 @@ def verizon(document,url):
             for child in node['children']:yield from descendants(child)
     descriptions=[node for node in descendants(page) if node['attrs'].get('class')=='wysiwyg']
     if len(descriptions)!=1:return None
-    return {'@type':'JobPosting','url':url,'identifier':source.get('Reference'),'title':source.get('Title'),'description':text(descriptions[0]),'datePosted':source.get('DisplayDate'),'validThrough':source.get('DueDate'),'jobLocation':[{'address':{'addressLocality':loc.get('City'),'addressRegion':loc.get('Region'),'addressCountry':loc.get('Country')}} for loc in source.get('Locations',[])],'_adapter':'verizon-public-page-data'}
+    return {'@type':'JobPosting','url':url,'identifier':source.get('Reference'),'title':source.get('Title'),'description':text(descriptions[0]),'employmentType':time_type,'_employmentTypeEvidence':'Employer matched Verizon TimeType='+str(time_type or ''),'datePosted':source.get('DisplayDate'),'validThrough':source.get('DueDate'),'jobLocation':[{'address':{'addressLocality':loc.get('City'),'addressRegion':loc.get('Region'),'addressCountry':loc.get('Country')}} for loc in source.get('Locations',[])],'_adapter':'verizon-public-page-data'}
 
 def oracle(body,url):
     try:items=json.loads(body).get('items',[])

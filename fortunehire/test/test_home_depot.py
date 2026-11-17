@@ -10,6 +10,16 @@ def job(url=URL):
  d={'@type':'JobPosting','title':'Synthetic store associate','identifier':{'value':'SHARED-REF'},'datePosted':'2026-11-14','url':url,'description':'Role duties.','jobLocation':{'address':{'addressCountry':'US','addressRegion':'UT','addressLocality':'Test City'}}}
  return '<script type="application/ld+json">'+json.dumps(d)+'</script><aside>Work Type: Remote</aside>'
 class HomeDepotTests(unittest.TestCase):
+ def test_matching_current_job_supplies_schedule_without_using_unrelated_page_text(self):
+  from home_depot_public import enrich
+  source={'identifier':{'value':'SHARED-REF'},'url':URL,'description':'Role duties.'}
+  record={'id':12345,'ref':'SHARED-REF','scout_orgid':1814,'employment_type':'Full_time'}
+  html=lambda row:'<script>var current_job = '+json.dumps(row)+';</script>'
+  self.assertEqual(enrich(source,html(record))['employmentType'],'Full_time')
+  self.assertEqual(enrich({k:v for k,v in source.items() if k!='url'},html(record),URL)['employmentType'],'Full_time')
+  for invalid in [{**record,'id':99999},{**record,'ref':'OTHER'},{**record,'scout_orgid':999}]:
+   self.assertNotIn('employmentType',enrich(source,html(invalid)))
+  self.assertNotIn('employmentType',enrich(source,html(record)+html(record)))
  def test_discovery_requires_employer_org_us_country_and_matching_individual_id(self):
   client=Mock(host=HOST);api=Mock();row={'id':12345,'url':URL,'scout_orgid':1814,'primary_country':'US','open_date':'2026-11-14T10:00:00','timestamp':'2099-01-01'}
   data={'totalHits':200,'searchResults':[{'job':row},{'job':{**row,'scout_orgid':999}},{'job':{**row,'primary_country':'CA'}},{'job':{**row,'url':URL.replace(HOST,'other.example')}}]}

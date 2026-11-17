@@ -8,6 +8,8 @@ on:
     paths:
       - '.github/workflows/refresh-jobs.yml'
       - 'fortunehire/scripts/collect_jobs.py'
+      - 'fortunehire/scripts/employment_type.py'
+      - 'fortunehire/test/test_employment_type.py'
       - 'fortunehire/scripts/location_worksite.py'
       - 'fortunehire/test/test_location_worksite.py'
       - 'fortunehire/scripts/jpm_public.py'

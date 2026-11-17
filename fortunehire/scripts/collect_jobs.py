@@ -328,7 +328,7 @@ def normalize_posting(body, url, company, now):
         source=enrich(source,body,url)
     if company=='home-depot':
         from home_depot_public import enrich
-        source=enrich(source,body)
+        source=enrich(source,body,url)
     url=job_url((source.get('url') or page.canonical).rstrip('/'),host)
     if not isinstance(source.get('title'),str): raise ValueError('Invalid posting title')
     title = html.unescape(source['title']).strip()
@@ -502,18 +502,10 @@ def normalize_posting(body, url, company, now):
     if no_travel: travel, travel_evidence = False, no_travel[0]
     elif yes_travel: travel, travel_evidence = True, yes_travel[0]
     if company in ('microsoft','nvidia') and isinstance(source.get('_pcsxTravel'),bool):travel,travel_evidence=source['_pcsxTravel'],'Employer role travel setting: '+source.get('_pcsxTravelLabel','')
-    employment = 'Not specified';employment_evidence=''
     raw_type = ' '.join(str(x) for x in as_list(source.get('employmentType'))).lower().replace('_','-')
-    for pattern, value in [('full-time','Full-time'),('full time','Full-time'),('part-time','Part-time'),('part time','Part-time'),('contract','Contract'),('temporary','Temporary'),('intern','Internship')]:
-        if pattern in raw_type: employment = value; break
-    if employment == 'Not specified':
-        labeled_type = re.search(r'Time\s+Type\s*:\s*(Full[- ]time|Part[- ]time)', page.text, re.I)
-        if labeled_type: employment = 'Full-time' if labeled_type[1].lower().startswith('full') else 'Part-time'
-        explicit_type=re.search(r'\bThis\s+(?:position|role|job)\s+is\s+(?:a\s+)?(full[- ]time|part[- ]time)\b',description,re.I)
-        if explicit_type: employment='Full-time' if explicit_type[1].lower().startswith('full') else 'Part-time'
-    title_type=part_time_title(title)
-    if title_type:
-        employment='Part-time';employment_evidence='Employer job title explicitly states '+title_type[0]+'.'
+    from employment_type import resolve_employment
+    employment,employment_evidence=resolve_employment(title,description,raw_type=raw_type)
+    if source.get('_employmentTypeEvidence') and employment_evidence.startswith('Employer employmentType'):employment_evidence=source['_employmentTypeEvidence']
     # Pay from descriptions can have location-specific ranges. Do not guess scope.
     salary, salary_evidence = None, ''
     base = source.get('baseSalary') or {}
@@ -859,7 +851,8 @@ def run(root=ROOT, now=None, max_new=20):
             report['sources'][company]=result
             print(company+': '+str(result.get('activeTracked','retained'))+' tracked; '+str(len(result['errors']))+' errors',flush=True)
     from location_worksite import apply_publication_policy
-    data['jobs']=sorted(apply_publication_policy(jobs),key=lambda j:j['id'])
+    from employment_type import apply_employment_policy
+    data['jobs']=sorted(apply_publication_policy([apply_employment_policy(job) for job in jobs]),key=lambda j:j['id'])
     data['automation']=report
     data['method']='Official employer career-page, sitemap, and public-search checks; bounded employer pilot.'
     if successes: data['updatedAt']=now.astimezone(ZoneInfo('America/New_York')).date().isoformat()

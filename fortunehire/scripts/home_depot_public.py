@@ -23,7 +23,7 @@ def discover(client,client_factory):
     return found
 
 
-def enrich(source,body):
+def enrich(source,body,url=None):
     """Preserve matched role sections which the employer omits from JSON-LD."""
     import html
     from employer_adapters import Document,text
@@ -33,6 +33,24 @@ def enrich(source,body):
     # The country schema does not establish all-state eligibility: the role's
     # Remote/virtual explanation can require commuting to an assigned office.
     result.pop('applicantLocationRequirements',None)
+    # The page's current_job record must match this posting and requisition.
+    records=[]
+    for node in doc.nodes:
+        if node['tag']!='script':continue
+        script=''.join(part for part in node['children'] if isinstance(part,str)).strip()
+        match=re.match(r'var\s+current_job\s*=\s*',script)
+        if not match:continue
+        try:record,end=json.JSONDecoder().raw_decode(script[match.end():])
+        except (ValueError,TypeError):continue
+        if script[match.end()+end:].strip() not in ('',';'):continue
+        if not isinstance(record,dict):continue
+        target=urlsplit(url or result.get('url',''))
+        path=target.path.strip('/').split('/')
+        if len(path)<2 or str(record.get('id',''))!=path[1] or str(record.get('ref',''))!=req or record.get('scout_orgid')!=1814:continue
+        records.append(record)
+    if len(records)==1 and isinstance(records[0].get('employment_type'),str) and records[0]['employment_type'].strip():
+        result['employmentType']=records[0]['employment_type']
+        result['_employmentTypeEvidence']='Employer matched Home Depot employment_type='+records[0]['employment_type']
     if not identity:return result
     if text(identity).strip()!=req:raise ValueError('Conflicting Home Depot role-section requisition')
     def section(anchor,label):
