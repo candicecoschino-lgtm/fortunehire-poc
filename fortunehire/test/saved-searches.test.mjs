@@ -5,7 +5,7 @@ import {readJobFilters,filterJobs} from '../public/jobs.js';
 function memoryStorage(){const data=new Map();return {getItem:key=>data.get(key)||null,setItem:(key,value)=>data.set(key,value)};}
 
 test('saved filters retain every selection and sort while starting on page one',()=>{
- const f=readJobFilters('?q=Analyst&state=New+York&arrangement=remote-state&company=citigroup&industry=Commercial+Banks&function=it&type=Part-time&pay=hour%3A25&travel=exclude&sort=title&page=4');
+ const f=readJobFilters('?q=Analyst&state=New+York&arrangement=remote-state&company=citigroup&industry=Commercial+Banks&function=it&type=Part-time&pay=hour%3A25&posted=7&payPosted=1&view=saved&travel=exclude&sort=title&page=4');
  const restored=readJobFilters(savedQuery(f));assert.deepEqual(restored,{...f,page:'1'});
  assert.equal(savedQuery(savedQuery(f)),savedQuery(f));
  assert.ok(!savedQuery('state=Florida&tracking=unrelated&page=8').includes('tracking'));

@@ -1,0 +1,13 @@
+# Personal job lists and search refinements
+
+Each card has Save, Hide/Unhide, and Mark applied/Applied toggles. Choices are independent. View selects All jobs, Saved, Applied, or Hidden; totals are shown in its options. Hidden jobs leave All jobs but remain accessible in the personal views. Undo reverses the last local action. Clear filters preserves the chosen view and all job choices; Browse all jobs returns from an empty personal view.
+
+Mark applied is personal tracking only and submits no application. Official employer application links remain separate. No accounts, server writes, email collection, or paid services are introduced. Choices remain in this browser/device and can disappear when browser data is cleared.
+
+Versioned browser-local storage retains up to 500 job records with independent flags and snapshots. Current feed data supersedes snapshots. Valid saved records can remain visible after leaving the feed or becoming closed, with an availability notice and View employer posting instead of Apply. Personal lists still honor active search filters; All jobs never revives a missing/expired snapshot. Snapshots must pass the same employer-host/role-URL and data validation before producing links. Storage errors are disclosed; failed writes do not falsely report persistence. Other browser tabs update via storage events.
+
+More filters adds Posting date (Today, Past 3/7/14 days) and Pay posted. Date comparisons use employer calendar dates in the existing New York date convention, not last-check dates; an exact 24-hour claim is avoided because exact posting times are not stored. All jobs retains the existing two-week publication window. Personal lists can retain older jobs unless a date filter narrows them.
+
+Pay posted includes employer-published pay text as well as structured salary. Known pay-state restrictions must match the selected state. Existing numeric minimum-pay filters remain limited to verified numeric periods and scopes. Both new filters and the selected view round-trip through URLs and saved searches; reset and removable chips support the new filters.
+
+Verification: 68 frontend/data tests pass, including independent persistent flags, undo behavior, hidden-view rules, stale/missing snapshots, invalid snapshot links, failed storage, date boundaries, geography-aware pay presence, and saved-search compatibility. Browser checks cover all actions, refresh persistence, undo, empty views, filter reset/restoration, and 390px/700px layouts. Test-only local choices and searches were removed. No collector code, job data, refresh schedule, or RTX status changes.

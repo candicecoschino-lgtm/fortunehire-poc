@@ -2,7 +2,7 @@ import {classifyJobFunctions} from './job-functions.js';
 import { normalize } from './directory.js';
 export const US_STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
 export const ARRANGEMENTS = {'on-site':'On-site',hybrid:'Hybrid',remote:'Remote',unknown:'Not specified'};
-export const JOB_KEYS = ['q','state','arrangement','company','industry','function','type','pay','travel','sort','page'];
+export const JOB_KEYS = ['q','state','arrangement','company','industry','function','type','pay','posted','payPosted','view','travel','sort','page'];
 export function todayInNewYork(date = new Date()) {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date).map(p=>[p.type,p.value]));
   return `${parts.year}-${parts.month}-${parts.day}`;
@@ -12,6 +12,9 @@ export function readJobFilters(search) {
   const f = Object.fromEntries(JOB_KEYS.map(k=>[k,(p.get(k)||'').slice(0,160)]));
   f.sort = ['title','company'].includes(f.sort) ? f.sort : 'newest';
   f.travel = f.travel === 'exclude' ? 'exclude' : 'include';
+  f.posted = ['today','3','7','14'].includes(f.posted)?f.posted:'';
+  f.payPosted = f.payPosted==='1'?'1':'';
+  f.view = ['saved','applied','hidden'].includes(f.view)?f.view:'';
   f.page = /^\d+$/.test(f.page) ? String(Math.min(10000,Math.max(1,Number(f.page)))) : '1';
   return f;
 }
@@ -31,8 +34,18 @@ export function matchesState(job,state) {
   if(job.arrangement==='remote') return job.remoteScope==='nationwide' || job.eligibleStates.includes(state);
   return job.locations.some(location=>location.state===state);
 }
-export function filterJobs(jobs,f,today = todayInNewYork()) {
-  return jobs.filter(j=>isCurrent(j,today) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||(f.arrangement==='remote-state'?j.arrangement==='remote'&&j.remoteScope==='states':j.arrangement===f.arrangement)) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.function||classifyJobFunctions(j.title).includes(f.function)) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || matchesPay(j,f.pay,f.state))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
+export function matchesPosted(job,window,today){
+ if(!window)return true;
+ const age=(Date.parse(today+'T12:00:00Z')-Date.parse(job.postedAt+'T12:00:00Z'))/86400000;
+ return Number.isFinite(age)&&age>=0&&age<=(window==='today'?0:Number(window));
+}
+export function hasPostedPay(job,state=''){
+ if(!job.salary&&!job.publishedPay)return false;
+ const scope=job.salary?.scopeStates||job.publishedPay?.scopeStates||[];
+ return !state||!scope.length||scope.includes(state);
+}
+export function filterJobs(jobs,f,today = todayInNewYork(),includeUnavailable=false) {
+  return jobs.filter(j=>(includeUnavailable||!j.organizerUnavailable&&isCurrent(j,today)) && matchesPosted(j,f.posted,today) && (!f.payPosted||hasPostedPay(j,f.state)) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||(f.arrangement==='remote-state'?j.arrangement==='remote'&&j.remoteScope==='states':j.arrangement===f.arrangement)) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.function||classifyJobFunctions(j.title).includes(f.function)) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || matchesPay(j,f.pay,f.state))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
 }
 export function matchesPay(job,value,state='') {
   const match=/^(year|hour):(\d+)$/.exec(value);

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./company-logos.css">
   <link rel="stylesheet" href="./search-layout.css">
   <link rel="stylesheet" href="./saved-searches.css">
+  <link rel="stylesheet" href="./job-tools.css">
   <script type="module" src="./jobs-app.js"></script>
 </head>
 <body class="compact-page">
@@ -38,10 +39,13 @@
           <label>Employment type<select id="type"><option value="">All employment types</option><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Temporary</option><option>Internship</option><option value="Not specified">Not specified by employer</option></select></label>
           <label>Industry<select id="industry" disabled><option value="">All industries</option></select></label>
           <label>Job function<select id="function" disabled aria-describedby="function-help"><option value="">All job functions</option></select></label>
+          <label>Posted<select id="posted"><option value="">Any available date</option><option value="today">Today</option><option value="3">Past 3 days</option><option value="7">Past 7 days</option><option value="14">Past 14 days</option></select></label>
         </div>
         <p id="function-help" class="filter-help">Job function groups roles by title; a role can match more than one function. Employment type means full-time, part-time, contract, or similar terms.</p>
         <div class="travel-control"><label><input type="checkbox" id="include-travel" checked> Include roles that require travel</label><p class="small">Unknown travel requirements stay included.</p></div>
+        <div class="travel-control"><label><input type="checkbox" id="pay-posted"> Pay posted</label><p class="small">Includes published ranges without a verified pay period; state-specific pay must apply to your selected state.</p></div>
         <p class="filter-help">Pay filters use the employer's verified minimum USD base-pay range. Hourly and annual pay are separate. Location-specific pay may not apply to every state.</p>
+        <p class="filter-help">Posting-date filters use the employer’s calendar date, not our check date. All jobs covers the past 14 days; saved lists can retain older jobs.</p>
       </details>
       <button id="reset" type="button" hidden>Clear all filters</button>
     </div>
@@ -60,13 +64,15 @@
     <p id="saved-search-status" class="small" role="status" aria-live="polite" aria-atomic="true"></p>
   </section>
   <p id="scope-note" class="scope-note">Loading coverage and successful check dates...</p>
-  <div class="results-bar"><p id="count" role="status" aria-live="polite" aria-atomic="true">Loading jobs…</p><label>Sort by <select id="sort"><option value="newest">Newest posted</option><option value="title">Role A–Z</option><option value="company">Company A–Z</option></select></label></div>
+  <div class="results-bar"><p id="count" role="status" aria-live="polite" aria-atomic="true">Loading jobs…</p><div class="result-controls"><label>View <select id="view"><option value="">All jobs</option><option value="saved">Saved jobs</option><option value="applied">Applied jobs</option><option value="hidden">Hidden jobs</option></select></label><label>Sort by <select id="sort"><option value="newest">Newest posted</option><option value="title">Role A–Z</option><option value="company">Company A–Z</option></select></label></div></div>
+  <p id="view-help" class="list-help small"></p>
+  <div class="job-feedback"><p id="job-action-status" role="status" aria-live="polite" aria-atomic="true" class="small"></p><button id="undo-job-action" type="button" hidden>Undo</button></div>
   <div id="active-filters" class="small" hidden></div>
   <div id="results" class="cards job-cards" aria-label="Job results" aria-busy="true"></div>
   <nav id="pagination" class="pagination" aria-label="Job result pages" hidden><button id="previous-page" type="button">← Previous</button><span id="page-label"></span><button id="next-page" type="button">Next →</button></nav>
-  <div id="empty" class="message" hidden><h3>No jobs in our collection match yet.</h3><p>Broaden your selection. This curated collection does not cover every employer or opening.</p><button id="empty-reset" type="button">Clear all filters</button></div>
+  <div id="empty" class="message" hidden><h3 id="empty-title">No jobs in our collection match yet.</h3><p id="empty-note">Broaden your selection. This curated collection does not cover every employer or opening.</p><button id="empty-reset" type="button">Clear all filters</button> <button id="all-jobs" type="button" hidden>Browse all jobs</button></div>
   <div id="error" class="message" role="alert" hidden><h3>The job list couldn’t load.</h3><p>Please check your connection and try again.</p><button id="retry" type="button">Try again</button></div>
-  <p id="freshness" class="small">Only jobs with an employer posting date within the past 14 days are shown. Jobs past their published deadline or more than seven days past their last successful check are hidden. <a href="./data/collection-status.json">View automated check status</a>.</p>
+  <p id="freshness" class="small">All jobs shows postings with employer dates within the past 14 days. Closed jobs, jobs past their deadline, and jobs more than seven days past their last successful check are excluded. Your personal lists can retain older jobs with availability notices. <a href="./data/collection-status.json">View automated check status</a>.</p>
   <noscript><p class="message">Enable JavaScript to filter jobs. You can also <a href="./data/jobs.json">view the sourced job data</a> or <a href="./companies.html">browse employers</a>.</p></noscript>
 </section>
 <section id="about" class="about wrap"><div><p class="eyebrow">DIRECT FROM THE SOURCE</p><h2>Find a role here.<br>Apply at the source.</h2></div><div><p>Choose a state and work arrangement, then narrow your results. Every role title and application button opens that specific posting on the employer’s official career site.</p><p class="small">Automated collection is expanding across selected employers in our directory, with up to 100 tracked active U.S. postings per connected employer. The coverage note above shows how many employers are connected; the directory also includes companies whose jobs are not connected yet. Checks are scheduled twice daily; successful check dates are shown and openings can close between checks. Only a sample of each employer is collected. No matching results can mean that matching openings have not been collected yet. Missing pay, work arrangement, remote eligibility, employment type, or travel details remain unknown. Industry describes the employer. Job function is a search category inferred from the role title; unclear titles remain Other / Unclassified.</p><a href="./companies.html">Explore the company directory <span aria-hidden="true">↗</span></a> · <a href="./data/jobs.json">View job sources</a></div></section>
