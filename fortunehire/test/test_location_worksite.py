@@ -3,10 +3,25 @@ import sys,unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import collect_jobs as c
-from location_worksite import use_listed_location,apply_location_policy,LOCATION_REASON
+from location_worksite import use_listed_location,apply_location_policy,apply_publication_policy,LOCATION_REASON
 from test_collector import body,URL,NOW
 
 class LocationWorksiteTests(unittest.TestCase):
+ def test_multiple_offices_preserve_every_location_and_real_dates(self):
+  old={'arrangement':'unknown','locations':[{'city':'Austin','state':'Texas'},{'city':'Raleigh','state':'North Carolina'}],'evidence':{'arrangement':''},'postedAt':'2026-11-12','reviewedAt':'2026-11-13','sourceHash':'unchanged'}
+  new=apply_publication_policy([old])[0]
+  self.assertEqual(new['arrangement'],'on-site')
+  for key in ('locations','evidence','postedAt','reviewedAt','sourceHash'):self.assertEqual(new[key],old[key])
+  self.assertEqual(apply_publication_policy([new]),[new])
+ def test_all_remote_labels_contribute_states_without_adding_office_states(self):
+  old={'arrangement':'remote','remoteScope':'states','eligibleStates':['California'],'locations':[{'city':'Remote','state':'California'},{'city':'Chicago Metro - Remote','state':'Illinois'},{'city':'Work at Home','state':'Virginia'},{'city':'Remote-TX','state':'Texas'},{'city':'Phoenix','state':'Arizona'}]}
+  new=apply_location_policy(old)
+  self.assertEqual(new['eligibleStates'],['California','Illinois','Texas','Virginia'])
+  self.assertEqual(old['eligibleStates'],['California'])
+  self.assertEqual(apply_location_policy({**old,'remoteScope':'nationwide','eligibleStates':[]})['remoteScope'],'nationwide')
+ def test_home_location_labels_do_not_become_offices(self):
+  for city in ['Work At Home','Work\u00a0at Home','Work From Home','Home Office']:
+   self.assertFalse(use_listed_location('unknown',[{'city':city,'state':'Florida'}]))
  def test_city_and_state_supply_the_user_selected_onsite_default(self):
   j=apply_location_policy(c.normalize_posting(body(description='Role responsibilities and qualifications.'),URL,'boeing',NOW))
   self.assertEqual(j['arrangement'],'on-site');self.assertEqual(j['arrangementBasis'],'listed-location')

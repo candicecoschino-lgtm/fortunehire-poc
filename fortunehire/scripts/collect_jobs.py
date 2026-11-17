@@ -858,7 +858,8 @@ def run(root=ROOT, now=None, max_new=20):
             if not result['errors']: successes+=1
             report['sources'][company]=result
             print(company+': '+str(result.get('activeTracked','retained'))+' tracked; '+str(len(result['errors']))+' errors',flush=True)
-    data['jobs']=sorted(jobs,key=lambda j:j['id'])
+    from location_worksite import apply_publication_policy
+    data['jobs']=sorted(apply_publication_policy(jobs),key=lambda j:j['id'])
     data['automation']=report
     data['method']='Official employer career-page, sitemap, and public-search checks; bounded employer pilot.'
     if successes: data['updatedAt']=now.astimezone(ZoneInfo('America/New_York')).date().isoformat()

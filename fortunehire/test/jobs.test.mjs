@@ -7,6 +7,18 @@ const data=JSON.parse(await readFile(new URL('./fixtures/reviewed-jobs.json',imp
 const jobs=validateJobs(data,companies),today='2026-11-13';
 const filters=extra=>({...readJobFilters(''),...extra});
 
+test('every listed office or eligible remote state matches once, including later states',()=>{
+ const locations=[{city:'Austin',state:'Texas'},{city:'Raleigh',state:'North Carolina'},{city:'Charlotte',state:'North Carolina'}];
+ for(const arrangement of ['on-site','hybrid','unknown']){
+  const j={...jobs[0],arrangement,locations};
+  for(const state of ['Texas','North Carolina'])assert.equal(filterJobs([j],filters({state,arrangement}),today).length,1);
+  assert.equal(matchesState(j,'Florida'),false);
+ }
+ const remote={...jobs[0],arrangement:'remote',remoteScope:'states',eligibleStates:['California','Illinois','Virginia'],locations};
+ for(const state of remote.eligibleStates)assert.equal(filterJobs([remote],filters({state,arrangement:'remote-state'}),today).length,1);
+ assert.equal(matchesState(remote,'Texas'),false);
+});
+
 test('location-based on-site classification is disclosed and cannot label a remote role',()=>{
  const j={...structuredClone(data.jobs[0]),arrangement:'on-site',remoteScope:'unknown',eligibleStates:[],arrangementBasis:'listed-location',arrangementNote:'Classified from the employer-listed city and state.'};
  assert.equal(validateJobs({schemaVersion:1,jobs:[j]},companies)[0].arrangementBasis,'listed-location');
