@@ -35,7 +35,7 @@ function card(j,f){
   body.append(e('p',j.travelRequired===true?`Travel required: ${j.travelNote}`:j.travelRequired===false?'Travel: employer states none':'Travel requirements not specified'),dl,e('p',j.sourceNote),link('Official posting & application \u2197',j.url),e('br'),link('Employer classification source \u2197',j.companySource));
   details.append(summary,body);
   const pay=e('div',undefined,'job-pay');const presentation=paySummary(j,f.state);
-  if(presentation.detail){pay.append(e('p',presentation.text,'job-salary published-pay'));const button=e('button','Full pay details \u2193','inline-detail');button.type='button';button.setAttribute('aria-label',`View published pay for ${j.title} at ${j.companyName}`);button.addEventListener('click',()=>{details.open=true;summary.focus();});pay.append(button);}
+  if(presentation.detail){pay.append(e('p',presentation.text,'job-salary'));const button=e('button','Full pay details \u2193','inline-detail');button.type='button';button.setAttribute('aria-label',`View published pay for ${j.title} at ${j.companyName}`);button.addEventListener('click',()=>{details.open=true;summary.focus();});pay.append(button);}
   else pay.append(e('p',presentation.text,'job-salary'+(!j.salary&&!j.publishedPay||!payApplies?' unavailable':'')));
   if(presentation.note)pay.append(e('p',presentation.note,'pay-context'));
   const actions=e('div',undefined,'job-actions');const apply=link('Apply at employer \u2197',j.url);apply.className='career-link';apply.setAttribute('aria-label',`View role and apply: ${j.title} at ${j.companyName} (opens in a new tab)`);actions.append(apply);

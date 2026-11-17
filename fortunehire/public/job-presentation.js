@@ -1,4 +1,20 @@
-import {salaryText} from './jobs.js';
+const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:value%1?2:0,maximumFractionDigits:2}).format(value);
+function publishedRanges(text){
+ const ranges=[];
+ for(const match of text.matchAll(/\$\s*(\d[\d,]*(?:\.\d{1,2})?)\s*(?:to|[-\u2010-\u2015])\s*\$?\s*(\d[\d,]*(?:\.\d{1,2})?)(?![\d,.]|\s*[kKmM]\b)/g)){
+  const low=Number(match[1].replaceAll(',','')),high=Number(match[2].replaceAll(',',''));
+  if(!Number.isFinite(low)||!Number.isFinite(high)||low<=0||high<low)continue;
+  const before=text.slice(Math.max(text.lastIndexOf('|',match.index)+1,match.index-65),match.index);
+  const after=text.slice(match.index+match[0].length);
+  const suffix=/^\s*(?:\/\s*|per\s+|an?\s+)?(year|annum|annually|annual|hour|hr|hourly)\b/i.exec(after)?.[1];
+  const annual=/\b(?:annual|annually|yearly|per year|per annum)\b/i.test(before);
+  const hourly=/\b(?:hourly|per hour)\b/i.test(before);
+  const period=suffix?(/^(?:hour|hr)/i.test(suffix)?'hour':'year'):annual!==hourly?(annual?'year':'hour'):'';
+  const range=`${money(low)}\u2013${money(high)}${period?' / '+period:''}`;
+  if(!ranges.includes(range))ranges.push(range);
+ }
+ return ranges;
+}
 export function postedLabel(postedAt,today){
   const days=(Date.parse(today+'T12:00:00Z')-Date.parse(postedAt+'T12:00:00Z'))/86400000;
   if(!Number.isFinite(days)||days<0)return 'Posting date unavailable';
@@ -21,7 +37,10 @@ export function paySummary(job,state=''){
   const scope=job.salary?.scopeStates||job.publishedPay?.scopeStates||[];
   if(state&&scope.length&&!scope.includes(state))return {text:'Pay unavailable for this state',detail:false,note:''};
   if(!job.salary&&!job.publishedPay)return {text:'Pay information unavailable',detail:false,note:''};
-  const text=salaryText(job);
-  if(!job.salary&&text.length>95)return {text,detail:true,note:'Employer wording; see full terms'};
-  return {text,detail:false,note:scope.length?'Location-specific pay; see details':''};
+  if(job.salary){
+    const salary=job.salary;
+    return {text:`${money(salary.min)}${salary.min===salary.max?'':'\u2013'+money(salary.max)} / ${salary.period==='year'?'year':'hour'}`,detail:false,note:''};
+  }
+  const ranges=publishedRanges(job.publishedPay.text);
+  return {text:ranges.length?ranges.join(' · '):'See pay details',detail:true,note:''};
 }
