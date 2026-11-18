@@ -28,7 +28,7 @@ export function locationSummary(job,state=''){
     if(job.remoteScope==='nationwide')return 'Remote across the United States';
     if(job.remoteScope==='states'){
       const states=state&&job.eligibleStates.includes(state)?[state,...job.eligibleStates.filter(s=>s!==state)]:job.eligibleStates;
-      return `Remote in ${states.slice(0,2).join(', ')}${states.length>2?` + ${states.length-2} more ${states.length===3?'state':'states'}`:''}`;
+      return `Remote in ${states.slice(0,2).join(', ')}${states.length>2?` + ${states.length-2} more ${states.length===3?'state':'states'}`:''}${job.remoteEligibilityBasis==='title-geography'?' (from title)':''}`;
     }
     return 'Remote - eligible states not specified';
   }

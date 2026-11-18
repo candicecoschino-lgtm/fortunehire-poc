@@ -1,5 +1,6 @@
 import {classifyJobFunctions} from './job-functions.js';
 import {validFunctionContext} from './function-duties.js';
+import {applyRemoteTerritory} from './remote-territory.js';
 import { normalize } from './directory.js';
 import {US_STATES} from './us-geography.js';
 export {US_STATES} from './us-geography.js';
@@ -93,5 +94,5 @@ export function validateJobs(data,companies) {
     if(j.salary?.scopeStates && (!Array.isArray(j.salary.scopeStates)||j.salary.scopeStates.some(s=>!US_STATES.includes(s))))throw Error('Invalid pay geography');
     if(j.publishedPay && (typeof j.publishedPay.text!=='string'||!j.publishedPay.text.trim()||j.publishedPay.text.length>1000||typeof j.publishedPay.note!=='string'||!Array.isArray(j.publishedPay.scopeStates)||j.publishedPay.scopeStates.some(s=>!US_STATES.includes(s))))throw Error('Invalid published pay');
   }
-  return data.jobs.map(j=>({...j,companyName:employers.get(j.companyId).name,industry:employers.get(j.companyId).industry,companySource:employers.get(j.companyId).profileSource}));
+  return data.jobs.map(j=>applyRemoteTerritory({...j,companyName:employers.get(j.companyId).name,industry:employers.get(j.companyId).industry,companySource:employers.get(j.companyId).profileSource}));
 }
