@@ -23,6 +23,7 @@ from employer_adapters import extract as extract_employer_page, Document, ups_op
 from employer_sources import public_search, public_fetch
 from zoneinfo import ZoneInfo
 from crawler_rules import CrawlerRules
+from function_context import extract_function_context
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY=json.loads((ROOT/'public/data/job-sources.json').read_text(encoding='utf-8'))
@@ -561,6 +562,7 @@ def normalize_posting(body, url, company, now):
         'locationNote':location_note,
         'employmentType':employment, 'salary':salary,
         'publishedPay':published_pay,
+        'functionContext':extract_function_context(description,source),
         'salaryNote':published_pay['note'] if published_pay else 'Structured employer pay for the listed state.' if salary else 'Pay or geographic scope not verified automatically. See employer posting.',
         'travelRequired':travel, 'travelNote':travel_evidence or 'Travel not verified automatically.',
         'postedAt':posted, 'closesAt':deadline,

@@ -1,5 +1,6 @@
-// Search categories inferred only from explicit role-title wording. A role may
-// span functions; these labels are not employer-supplied employment types.
+import {dutyRules,dutyMatches,validFunctionContext} from './function-duties.js';
+// Responsibilities first, employer category second, title fallback.
+// These are search categories, not employer-supplied employment types.
 export const JOB_FUNCTIONS = {
  sales:'Sales',marketing:'Marketing & Communications',hr:'Human Resources',it:'IT & Software',
  operations:'Operations',service:'Customer Service',admin:'Administrative',legal:'Legal & Compliance',
@@ -29,7 +30,7 @@ const rules = {
  hospitality:/\b(?:food|beverage|barista|starbucks|bartender|server|waithelp|sous chef|housekeeping|room attendant|cake decorator|costumer|landscaper|dining|resort rep|proprietor)\b/i,
  quality:/\b(?:quality|safety|EHS|environmental|environment|asset protection|firefighter|security investigations)\b/i
 };
-export function classifyJobFunctions(title){
+function classifyTitle(title){
  if(typeof title!=='string')return ['other'];
  title=title.replace(/\s+/g,' ').replace(/[\u2010-\u2015]/g,'-');
  const isIT=rules.it.test(title)||extensions.it.test(title);
@@ -61,3 +62,21 @@ const extensions={
  quality:/\b(?:product acceptance|security investigative services|investigations lead, global security)\b/i,
  marketing:/\bevent broadcast\b/i
 };
+
+export function jobFunctionResult(job){
+ if(typeof job==='string'||job==null)return {keys:classifyTitle(job),basis:'title',evidence:[]};
+ const context=job.functionContext;
+ if(validFunctionContext(context)){
+  const scored=Object.keys(dutyRules).map(key=>({key,evidence:context.duties.filter(duty=>dutyMatches(key,duty))}));
+  const highest=Math.max(0,...scored.map(match=>match.evidence.length));
+  if(highest){
+   // Prefer repeated core duties over a single ancillary task.
+   const selected=scored.filter(match=>match.evidence.length===highest);
+   return {keys:selected.map(match=>match.key),basis:'responsibilities',evidence:[...new Set(selected.flatMap(match=>match.evidence))].slice(0,4)};
+  }
+  const category=classifyTitle(context.category);
+  if(!category.includes('other'))return {keys:category,basis:'employer category',evidence:[context.category]};
+ }
+ return {keys:classifyTitle(job.title),basis:'title',evidence:[]};
+}
+export function classifyJobFunctions(job){return jobFunctionResult(job).keys;}

@@ -1,4 +1,5 @@
 import {classifyJobFunctions} from './job-functions.js';
+import {validFunctionContext} from './function-duties.js';
 import { normalize } from './directory.js';
 import {US_STATES} from './us-geography.js';
 export {US_STATES} from './us-geography.js';
@@ -48,7 +49,7 @@ export function hasPostedPay(job,state=''){
 }
 export function filterJobs(jobs,f,today = todayInNewYork(),includeUnavailable=false,localSearch=resolveCitySearch(f.city)) {
   const local=localSearch.status!=='empty';
-  return jobs.filter(j=>(!local||matchingOfficeLocations(j,localSearch,f.state).length>0) && (includeUnavailable||!j.organizerUnavailable&&isCurrent(j,today)) && matchesPosted(j,f.posted,today) && (!f.payPosted||(local?matchingOfficeLocations(j,localSearch,f.state).some(location=>hasPostedPay(j,location.state)):hasPostedPay(j,f.state))) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||(f.arrangement==='remote-state'?j.arrangement==='remote'&&j.remoteScope==='states':j.arrangement===f.arrangement)) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.function||classifyJobFunctions(j.title).includes(f.function)) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || (local?matchingOfficeLocations(j,localSearch,f.state).some(location=>matchesPay(j,f.pay,location.state)):matchesPay(j,f.pay,f.state)))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
+  return jobs.filter(j=>(!local||matchingOfficeLocations(j,localSearch,f.state).length>0) && (includeUnavailable||!j.organizerUnavailable&&isCurrent(j,today)) && matchesPosted(j,f.posted,today) && (!f.payPosted||(local?matchingOfficeLocations(j,localSearch,f.state).some(location=>hasPostedPay(j,location.state)):hasPostedPay(j,f.state))) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||(f.arrangement==='remote-state'?j.arrangement==='remote'&&j.remoteScope==='states':j.arrangement===f.arrangement)) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.function||classifyJobFunctions(j).includes(f.function)) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || (local?matchingOfficeLocations(j,localSearch,f.state).some(location=>matchesPay(j,f.pay,location.state)):matchesPay(j,f.pay,f.state)))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
 }
 export function matchesPay(job,value,state='') {
   const match=/^(year|hour):(\d+)$/.exec(value);
@@ -88,6 +89,7 @@ export function validateJobs(data,companies) {
     const meta=url.hostname==='www.metacareers.com'&&/^\/profile\/job_details\/\d+\/?$/.test(url.pathname)&&!url.search&&!url.hash;
     const apple=url.hostname==='jobs.apple.com'&&/^\/en-us\/details\/\d+(?:-\d+)?\/[^/]+\/?$/.test(url.pathname)&&!url.search;
     if(url.protocol!=='https:'||url.username||url.password||url.hostname!==officialHost||(url.hostname==='www.metacareers.com'&&!meta)||(!taleo&&!apple&&!meta&&!/\/jobs?\/[^/]+|\/search\/jobdetails\/[^/]+\/[0-9a-f-]{36}\/?$|\/en-us\/job-detail\/[^/]+/i.test(url.pathname)))throw Error('Invalid official job URL');
+    if(j.functionContext!==undefined&&!validFunctionContext(j.functionContext))throw Error('Invalid job function evidence');
     if(!['reviewed','closed','needs-review'].includes(j.status))throw Error('Invalid review status');
     if(j.salary && (!Number.isFinite(j.salary.min)||!Number.isFinite(j.salary.max)||j.salary.min<=0||j.salary.max<j.salary.min||j.salary.currency!=='USD'||!['year','hour'].includes(j.salary.period)))throw Error('Invalid pay');
     if(j.salary?.scopeStates && (!Array.isArray(j.salary.scopeStates)||j.salary.scopeStates.some(s=>!US_STATES.includes(s))))throw Error('Invalid pay geography');

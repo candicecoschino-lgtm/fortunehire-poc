@@ -1,4 +1,4 @@
-import {JOB_FUNCTIONS,classifyJobFunctions} from './job-functions.js';
+import {JOB_FUNCTIONS,jobFunctionResult} from './job-functions.js';
 import {mountSavedSearches} from './saved-searches.js';
 import {ACTIVITY_KEY,readJobActivity,setJobActivity,activityFlags,activityView,trackedJobs} from './job-activity.js';
 import {resolveCitySearch,zipPrefix,locationPayState} from './job-locations.js';
@@ -34,9 +34,11 @@ function card(j,f){
   meta.append(e('p',locationSummary(j,f.state,localSearch),'job-location'),badges);
   if(j.organizerUnavailable)meta.append(e('p',j.status==='closed'?'This posting was marked closed.':'Outside the current job feed; availability is not verified.','job-availability'));
   const details=e('details',undefined,'job-details');const summary=e('summary','Job details & sources');const body=e('div',undefined,'job-detail-body');
-  const dl=e('dl');for(const [key,val]of [['Posted',labelDate(j.postedAt)],['Last successfully checked',labelDate(j.reviewedAt)],['Employment type',j.employmentType],['Industry',j.industry],['Job function (from title)',classifyJobFunctions(j.title).map(key=>JOB_FUNCTIONS[key]).join(', ')],[j.identifierType==='posting-id'?'Employer posting ID':'Employer requisition',j.requisitionId],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
+  const fn=jobFunctionResult(j);
+  const dl=e('dl');for(const [key,val]of [['Posted',labelDate(j.postedAt)],['Last successfully checked',labelDate(j.reviewedAt)],['Employment type',j.employmentType],['Industry',j.industry],[`Job function (from ${fn.basis})`,fn.keys.map(key=>JOB_FUNCTIONS[key]).join(', ')],[j.identifierType==='posting-id'?'Employer posting ID':'Employer requisition',j.requisitionId],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
   if(j.arrangement==='remote'&&j.remoteScope==='states')dl.append(e('dt','Eligible remote states'),e('dd',j.eligibleStates.join(', ')));
   const payScope=j.salary?.scopeStates||j.publishedPay?.scopeStates||[];const payApplies=!cardState||!payScope.length||payScope.includes(cardState);
+  for(const excerpt of fn.evidence)body.append(e('p','Function evidence: '+excerpt));
   body.append(e('p','Location & eligibility: '+j.locationNote));
   if(j.employmentTypeBasis==='assumed-full-time')body.append(e('p','Employment type: '+j.employmentTypeNote));
   if(j.arrangementBasis==='listed-location')body.append(e('p','Work arrangement: On-site, classified from the listed city/state. The employer did not explicitly state a work arrangement.'));
