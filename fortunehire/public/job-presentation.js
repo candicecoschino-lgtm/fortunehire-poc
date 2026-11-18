@@ -1,5 +1,7 @@
-import {matchingOfficeLocations} from './job-locations.js';
 const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:value%1?2:0,maximumFractionDigits:2}).format(value);
+export function todayPostingNote(jobs,today){
+ return jobs.some(job=>job.postedAt===today)?'':'No employer-dated postings for today are in our current collection yet. Try Past 3 days or check again after the next refresh. This does not mean employers have no new openings.';
+}
 function publishedRanges(text){
  const ranges=[];
  for(const match of text.matchAll(/\$\s*(\d[\d,]*(?:\.\d{1,2})?)\s*(?:to|[-\u2010-\u2015])\s*\$?\s*(\d[\d,]*(?:\.\d{1,2})?)(?![\d,.]|\s*[kKmM]\b)/g)){
@@ -21,7 +23,7 @@ export function postedLabel(postedAt,today){
   if(!Number.isFinite(days)||days<0)return 'Posting date unavailable';
   return days===0?'Posted today':days===1?'Posted yesterday':`Posted ${days} days ago`;
 }
-export function locationSummary(job,state='',localSearch={status:'empty'}){
+export function locationSummary(job,state=''){
   if(job.arrangement==='remote'){
     if(job.remoteScope==='nationwide')return 'Remote across the United States';
     if(job.remoteScope==='states'){
@@ -30,7 +32,7 @@ export function locationSummary(job,state='',localSearch={status:'empty'}){
     }
     return 'Remote - eligible states not specified';
   }
-  const first=matchingOfficeLocations(job,localSearch,state)[0]||job.locations.find(location=>location.state===state)||job.locations[0];
+  const first=job.locations.find(location=>location.state===state)||job.locations[0];
   if(!first)return job.locationNote;
   return `${first.city}, ${first.state}${job.locations.length>1?` + ${job.locations.length-1} more ${job.locations.length===2?'location':'locations'}`:''}`;
 }
