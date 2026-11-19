@@ -6,10 +6,11 @@ Classification lives in the shared browser module; collection requires no AI/API
 import re
 
 START = re.compile(r'^(?:(?:key|primary|essential|major|core|job|position|role)\s+)*(?:responsibilities|duties|accountabilities|functions)|^what you(?:[’\']ll| will) (?:do|be doing)|^your (?:role|impact|responsibilities)|^in this role(?:[, :]|$)|^you will\s*[:：]?$', re.I)
-SKILLS = re.compile(r'^(?:(?:required|preferred|basic|minimum|additional)\s+)*(?:qualifications|requirements|skills|experience|education|what you bring|what you need)\s*$', re.I)
-STOP = re.compile(r'^(?:about (?:us|the company)|why (?:join|work)|benefits|compensation|salary|pay range|equal (?:employment|opportunity)|our (?:company|benefits|commitment)|application|accommodation)', re.I)
+SKILLS = re.compile(r'^(?:(?:required|preferred|basic|minimum|additional)\s+)*(?:qualifications|requirements|skills|technical skills|experience|what you bring|what you need)\s*$', re.I)
+STOP = re.compile(r'^(?:minimum education(?:/experience)? requirement|education(?: requirements?)?|about (?:us|the company)|why (?:join|work)|benefits|compensation|salary|pay(?: transparency| range| and benefits)?|hours per week|schedule|work schedule|shift(?: details)?|location(?: details| requirements)?|where you(?: will)? work|equal (?:employment|opportunity)|our (?:company|benefits|commitment)|application|accommodation|physical requirements|work authorization)', re.I)
 ACTION = re.compile(r'^(?:(?:you(?:[’\']ll| will)|this (?:role|position) (?:will|is responsible for))\s+|responsible for\s+)?(?:design|develop|build|maintain|manage|lead|deliver|provide|support|analy[sz]e|prepare|process|perform|coordinate|execute|implement|monitor|resolve|sell|drive|negotiate|recruit|administer|conduct|operate|repair|inspect|ensure|assist|create|oversee|evaluate|review|plan|schedule|greet|stock|serve|cook|test|write|respond|handle|advise|represent|optimi[sz]e|supervise|diagnose|treat|assess|dispense|weld|assemble)\w*\b', re.I)
 BOILER = re.compile(r'\b(?:equal opportunity employer|reasonable accommodation|without regard to|we offer|our benefits|benefits package|health insurance|paid time off|401\(?k|all qualified applicants|employment eligibility|must be authorized|years of experience|bachelor.?s degree)\b', re.I)
+SKILL_NOISE = re.compile(r'\b(?:degree|diploma|education|hours per week|pay transparency|salary range|pay range|shift|work location|relocation assistance|authorized to work|employment visa|accommodation|equal opportunity|years? of experience|minimum\s+\d+\+?\s+years?\s+(?:of\s+)?relevant experience)\b', re.I)
 SHORT_SKILL = re.compile(r'^(?:AI|ML|R|SQL|Python|Java|JavaScript|C\+\+|C#|AWS|GCP|Azure|SAP|ERP|CRM|HIPAA|OSHA|PMP|CPA|CFA|RN|LPN|ACLS|BLS|SIEM|SOC|NLP|ETL|GIS|Tableau|Power ?BI|TensorFlow|PyTorch|Spark|pandas|SAS|React|Node\.js|Linux|Cisco|Kubernetes)$', re.I)
 
 
@@ -46,9 +47,11 @@ def extract_function_context(description, source=None):
         if excluded or not line or BOILER.search(line):
             continue
         if skill_active:
+            if SKILL_NOISE.search(line):
+                continue
             for sentence in re.split(r'(?<=[.!?;])\s+|\s*,\s*', line):
                 sentence = sentence.strip(' •*-–')
-                if 2 <= len(sentence) <= 500 and (len(sentence) >= 12 or SHORT_SKILL.fullmatch(sentence.rstrip('.'))) and not re.search(r'\b(?:benefits|salary|pay range|equal opportunity|years of experience|authorized to work|accommodation)\b', sentence, re.I):
+                if 2 <= len(sentence) <= 500 and (len(sentence) >= 12 or SHORT_SKILL.fullmatch(sentence.rstrip('.'))) and not SKILL_NOISE.search(sentence):
                     target = preferred_skills if preferred else required_skills
                     if sentence not in target and len(target) < 16:
                         target.append(sentence)

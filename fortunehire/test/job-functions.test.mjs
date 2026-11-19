@@ -68,6 +68,74 @@ test('missing descriptions only use clear title fallback or flagged Other',()=>{
  assert.deepEqual(jobFunctionResult(evidence),jobFunctionResult(evidence));
 });
 
+test('incidental responsibility terms do not classify by unrelated mentions',()=>{
+ for(const [title,duty,expected] of [
+  ['Specialist','Coordinate with the cybersecurity team to manage project dependencies.','projects'],
+  ['Specialist','Support procurement stage reviews while managing customer service requests.','other'],
+  ['Specialist','Manage employee headcount forecasts for operational planning.','other'],
+  ['Specialist','Collaborate with product teams to prepare financial statements.','finance']
+ ]) assert.equal(jobFunctionResult({title,functionContext:context([duty])}).primaryFunction,expected,title+': '+duty);
+});
+
+test('specific role names resolve narrowly and responsibility evidence remains primary',()=>{
+ for(const [title,expected] of [
+  ['Nuclear Pharmacist','healthcare'],
+  ['Systems Engineering Manager - Advanced Space Payload RF Communications','engineering'],
+  ['Senior Structural & Payloads Design Engineer','engineering'],
+  ['Optical Systems Liaison Engineer','engineering'],
+  ['Business Sales Representative - Territory Accounts','sales'],
+  ['Area Manager II','operations'],
+  ['Principal AI-Native Software Engineer','software']
+ ]) assert.equal(jobFunctionResult({title}).primaryFunction,expected,title);
+ const cross=jobFunctionResult({title:'Data Scientist, Marketing',functionContext:context([
+  'Build statistical models and predictive analytics for business planning.',
+  'Develop machine learning models and validate experimental results.'
+ ],['Python','SQL'],'Marketing')});
+ assert.equal(cross.primaryFunction,'data');
+ const homeDepot=jobFunctionResult({title:'Data Scientist, Marketing',functionContext:context([
+  'Execute tasks with high levels of efficiency and quality;',
+  'Prepare reports and presentations related to project progress;',
+  'Build and maintain library of reusable algorithms for future use.'
+ ])});
+ assert.equal(homeDepot.primaryFunction,'data');
+ assert.equal(homeDepot.basis,'responsibilities');
+ assert.equal(jobFunctionResult({title:'Supply Chain Coordinator (Inventory & Purchasing)'}).primaryFunction,'logistics');
+});
+
+test('responsibility order and specific tasks distinguish primary work from incidental tasks',()=>{
+ assert.equal(jobFunctionResult({title:'LegalEdge Intern',functionContext:context([
+  'Conduct legal research on substantive and procedural issues across practice areas.',
+  'Review and analyze pleadings, discovery materials, and other documents.'
+ ])}).primaryFunction,'legal');
+ assert.equal(jobFunctionResult({title:'Nurse Supervisor',functionContext:context([
+  'Develops and conducts training programs to promote employee safety in the workplace.'
+ ])}).primaryFunction,'quality');
+ assert.equal(jobFunctionResult({title:'Lead Digital Customer Growth',functionContext:context([
+  'Lead DRIVE product direction and maintain a single prioritized roadmap covering platform enhancements.',
+  'Build, test, release, and maintain low-code solutions.'
+ ])}).primaryFunction,'product');
+ assert.equal(jobFunctionResult({title:'Relationship Banker',functionContext:context([
+  'Builds relationships with clients to meet financial needs.',
+  'Manages financial center traffic, appointments, and outbound calls effectively.',
+  'Manages cash responsibilities.'
+ ])}).primaryFunction,'finance');
+});
+
+test('title only resolves a responsibility tie when it agrees with evidence and skills',()=>{
+ const compatible=jobFunctionResult({title:'Software Engineer',functionContext:context([
+  'Build backend services and APIs.',
+  'Manage project timelines and dependencies.'
+ ],[]) });
+ assert.equal(compatible.primaryFunction,'software');
+ assert.equal(compatible.reviewRequired,true);
+ const conflicting=jobFunctionResult({title:'Software Engineer',functionContext:context([
+  'Build backend services and APIs.',
+  'Manage project timelines and dependencies.'
+ ],['Payroll processing'])});
+ assert.equal(conflicting.primaryFunction,'other');
+ assert.equal(conflicting.reviewRequired,true);
+});
+
 test('title fallbacks recognize clear frontline and regulated occupations without forcing generic titles',()=>{
  for(const [title,expected] of [
   ['Retail Sales Consultant','retail'],['Retail Customer Service Associate','retail'],['Meat Clerk','retail'],

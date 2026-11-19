@@ -37,6 +37,42 @@ Manage employee benefits and provide medical care.
         self.assertEqual(extract_function_context('Responsibilities\nBuild software for product teams.\nBuild software for product teams.')['duties'],['Build software for product teams.'])
         self.assertEqual(extract_function_context('',{'occupationalCategory':['invalid']})['category'],'')
 
+    def test_excludes_education_pay_benefits_schedule_and_location_sections(self):
+        text='''Responsibilities:
+Develop software applications for clinical workflows.
+Coordinate implementation with engineering teams.
+Required Skills:
+Python
+SQL
+Minimum Education/Experience Requirement:
+Bachelor's degree in computer science is required.
+Pay Transparency:
+The salary range for this role is $90,000 to $120,000.
+Benefits:
+Manage employee benefits and administer medical coverage.
+Schedule:
+Work 40 hours per week on the night shift.
+Location:
+Hybrid in Detroit, Michigan.
+'''
+        context=extract_function_context(text)
+        self.assertEqual(context['duties'],[
+            'Develop software applications for clinical workflows.',
+            'Coordinate implementation with engineering teams.'
+        ])
+        self.assertEqual(context['requiredSkills'],['Python','SQL'])
+
+    def test_excludes_noise_even_when_embedded_in_skills_lines(self):
+        context=extract_function_context('''Required Qualifications:
+Python
+Bachelor's degree required
+Minimum 2 years relevant experience in shipping and inventory control
+Salary range $70,000 to $90,000
+Night shift schedule
+Work location: Detroit
+''')
+        self.assertEqual(context['requiredSkills'],['Python'])
+
     def test_collector_carries_only_isolated_description_and_refresh_replaces_evidence(self):
         html='<h2>Responsibilities</h2><ul><li>Build databases for sales reporting.</li></ul><h2>Benefits</h2><p>We offer health insurance.</p>'
         job=normalize_posting(body(description=html),URL,'boeing',NOW)
