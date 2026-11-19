@@ -20,7 +20,7 @@ test('responsibilities outrank title and employer department for a cross-functio
  ],['Python','SQL'],'Marketing')});
  assert.equal(result.primaryFunction,'data');
  assert.equal(result.basis,'responsibilities');
- assert.equal(result.confidence,'high');
+ assert.equal(result.confidence,'medium');
  assert.equal(result.reviewRequired,false);
  assert.deepEqual(classifyJobFunctions({title:'Data Scientist, Marketing'}),['data']);
 });

@@ -29,6 +29,24 @@ Manage employee benefits and provide medical care.
             self.assertEqual(len(extract_function_context(text)['duties']),1,text)
         self.assertEqual(extract_function_context('We develop software. Our company sells insurance.')['duties'],[])
 
+    def test_existing_role_sections_capture_more_specific_action_verbs(self):
+        text='''Key Responsibilities:
+Collaborate with platform teams to integrate enterprise systems.
+Reconcile financial activity and draft customer-facing reports.
+Configure Linux infrastructure and troubleshoot network services.
+Required Skills:
+Python
+Benefits:
+Manage employee benefits and provide medical care.
+'''
+        context=extract_function_context(text)
+        self.assertEqual(context['duties'],[
+            'Collaborate with platform teams to integrate enterprise systems.',
+            'Reconcile financial activity and draft customer-facing reports.',
+            'Configure Linux infrastructure and troubleshoot network services.'
+        ])
+        self.assertEqual(context['requiredSkills'],['Python'])
+
     def test_bounded_deduplicated_and_bad_categories(self):
         lines=['Responsibilities']+[f'Build software for product number {i}.' for i in range(30)]
         context=extract_function_context('\n'.join(lines),{'department':{'name':'Engineering'}})
