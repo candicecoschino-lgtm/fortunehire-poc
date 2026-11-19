@@ -9,8 +9,8 @@ test('old ZIP links and saved filters discard ZIP while preserving state, arrang
  const query='?city=48439&state=Michigan&arrangement=hybrid&function=it';
  const f=readJobFilters(query);
  assert.ok(!JOB_KEYS.includes('city'));assert.equal(f.city,undefined);
- assert.ok(!serializeJobFilters(f).includes('city='));assert.equal(f.state,'Michigan');assert.equal(f.arrangement,'hybrid');
- assert.equal(readJobFilters(savedQuery(query)).function,'it');
+ assert.ok(!serializeJobFilters(f).includes('city='));assert.deepEqual(f.state,['Michigan']);assert.deepEqual(f.arrangement,['hybrid']);
+ assert.deepEqual(readJobFilters(savedQuery(query)).function,['it']);
  const storage={getItem:()=>JSON.stringify({version:1,searches:[{name:'Michigan',query}]})};
  assert.ok(!readSavedSearches(storage)[0].query.includes('city='));
 });
