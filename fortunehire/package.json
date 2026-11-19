@@ -3,6 +3,13 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "engines": { "node": ">=22" },
-  "scripts": { "start": "node scripts/serve.mjs", "test": "node --test" }
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test",
+    "classify:jobs": "node scripts/classify-jobs.mjs --write",
+    "migrate:job-functions": "node scripts/migrate-job-functions.mjs"
+  }
 }

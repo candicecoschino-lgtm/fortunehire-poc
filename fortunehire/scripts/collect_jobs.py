@@ -11,6 +11,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import subprocess
 import time
 from datetime import datetime, timezone
 import urllib.error
@@ -770,7 +771,7 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 source_state.setdefault('quarantined',{})[posting_key(url)]=now.isoformat()
                 continue
             if existing:
-                if existing.get('sourceHash') != job['sourceHash'] or any(existing.get(key)!=job.get(key) for key in ('arrangement','arrangementBasis')): report['changed'] += 1
+                if existing.get('sourceHash') != job['sourceHash'] or any(existing.get(key)!=job.get(key) for key in ('arrangement','arrangementBasis','functionContext')): report['changed'] += 1
             else: report['added'] += 1
             by_id[job['id']] = job
             if job['status']=='closed' and (not existing or existing['status']!='closed'): report['closed'] += 1
@@ -859,6 +860,7 @@ def run(root=ROOT, now=None, max_new=20):
     data['method']='Official employer career-page, sitemap, and public-search checks; bounded employer pilot.'
     if successes: data['updatedAt']=now.astimezone(ZoneInfo('America/New_York')).date().isoformat()
     atomic_json(path,data)
+    subprocess.run(['node',str(ROOT/'scripts/classify-jobs.mjs'),'--write','--root',str(root)],cwd=ROOT,check=True,capture_output=True,text=True)
     atomic_json(state_path,state)
     atomic_json(root/'public/data/collection-status.json',report)
     print(json.dumps(report,indent=2))

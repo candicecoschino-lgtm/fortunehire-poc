@@ -1,4 +1,4 @@
-import {classifyJobFunctions} from './job-functions.js';
+import {jobFunctionResult,isValidJobFunction} from './job-functions.js';
 import {validFunctionContext} from './function-duties.js';
 import {applyRemoteTerritory} from './remote-territory.js';
 import { normalize } from './directory.js';
@@ -6,6 +6,8 @@ import {US_STATES} from './us-geography.js';
 export {US_STATES} from './us-geography.js';
 export const ARRANGEMENTS = {'on-site':'On-site',hybrid:'Hybrid',remote:'Remote',unknown:'Not specified'};
 export const JOB_KEYS = ['q','state','arrangement','company','industry','function','type','pay','posted','payPosted','view','travel','sort','page'];
+const LEGACY_FUNCTIONS={it:'it',engineering:'engineering',manufacturing:'manufacturing',logistics:'logistics',projects:'projects',business:'business',other:'other',sales:'sales',marketing:'marketing',hr:'hr',operations:'operations',service:'service',admin:'admin',legal:'legal',finance:'finance',healthcare:'healthcare',research:'research',retail:'retail',hospitality:'hospitality',quality:'quality'};
+export function normalizeLegacyFunction(value){return LEGACY_FUNCTIONS[value]||value;}
 export function todayInNewYork(date = new Date()) {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date).map(p=>[p.type,p.value]));
   return `${parts.year}-${parts.month}-${parts.day}`;
@@ -48,7 +50,7 @@ export function hasPostedPay(job,state=''){
  return !state||!scope.length||scope.includes(state);
 }
 export function filterJobs(jobs,f,today = todayInNewYork(),includeUnavailable=false) {
-  return jobs.filter(j=>(includeUnavailable||!j.organizerUnavailable&&isCurrent(j,today)) && matchesPosted(j,f.posted,today) && (!f.payPosted||hasPostedPay(j,f.state)) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||(f.arrangement==='remote-state'?j.arrangement==='remote'&&j.remoteScope==='states':j.arrangement===f.arrangement)) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.function||classifyJobFunctions(j).includes(f.function)) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || matchesPay(j,f.pay,f.state))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
+  return jobs.filter(j=>(includeUnavailable||!j.organizerUnavailable&&isCurrent(j,today)) && matchesPosted(j,f.posted,today) && (!f.payPosted||hasPostedPay(j,f.state)) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && (!f.arrangement||(f.arrangement==='remote-state'?j.arrangement==='remote'&&j.remoteScope==='states':j.arrangement===f.arrangement)) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && (!f.function||j.primaryJobFunction===f.function) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || matchesPay(j,f.pay,f.state))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
 }
 export function matchesPay(job,value,state='') {
   const match=/^(year|hour):(\d+)$/.exec(value);
@@ -65,7 +67,7 @@ export function salaryText(job) {
 }
 function validDate(value){return typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&!Number.isNaN(Date.parse(value))&&new Date(value+'T12:00:00Z').toISOString().slice(0,10)===value;}
 export function validateJobs(data,companies) {
-  if(data.schemaVersion!==1||!Array.isArray(data.jobs))throw Error('Invalid job dataset');
+  if(![1,2].includes(data.schemaVersion)||!Array.isArray(data.jobs))throw Error('Invalid job dataset');
   const ids=new Set(),urls=new Set(),employers=new Map(companies.map(c=>[c.id,c]));
   for(const j of data.jobs){
     if(!/^[a-z0-9-]+$/.test(j.id)||ids.has(j.id)||urls.has(j.url))throw Error('Duplicate/invalid job'); ids.add(j.id);urls.add(j.url);
@@ -89,10 +91,15 @@ export function validateJobs(data,companies) {
     const apple=url.hostname==='jobs.apple.com'&&/^\/en-us\/details\/\d+(?:-\d+)?\/[^/]+\/?$/.test(url.pathname)&&!url.search;
     if(url.protocol!=='https:'||url.username||url.password||url.hostname!==officialHost||(url.hostname==='www.metacareers.com'&&!meta)||(!taleo&&!apple&&!meta&&!/\/jobs?\/[^/]+|\/search\/jobdetails\/[^/]+\/[0-9a-f-]{36}\/?$|\/en-us\/job-detail\/[^/]+/i.test(url.pathname)))throw Error('Invalid official job URL');
     if(j.functionContext!==undefined&&!validFunctionContext(j.functionContext))throw Error('Invalid job function evidence');
+    if(data.schemaVersion===2&&(!isValidJobFunction(j.primaryJobFunction)||!['responsibilities','required skills','job title','employer category','insufficient evidence'].includes(j.jobFunctionBasis)||!['high','medium','low'].includes(j.jobFunctionConfidence)||typeof j.jobFunctionReviewRequired!=='boolean'||!Array.isArray(j.jobFunctionEvidence)||j.jobFunctionEvidence.length>4||j.jobFunctionEvidence.some(text=>typeof text!=='string'||text.length>500)))throw Error('Invalid primary job function');
     if(!['reviewed','closed','needs-review'].includes(j.status))throw Error('Invalid review status');
     if(j.salary && (!Number.isFinite(j.salary.min)||!Number.isFinite(j.salary.max)||j.salary.min<=0||j.salary.max<j.salary.min||j.salary.currency!=='USD'||!['year','hour'].includes(j.salary.period)))throw Error('Invalid pay');
     if(j.salary?.scopeStates && (!Array.isArray(j.salary.scopeStates)||j.salary.scopeStates.some(s=>!US_STATES.includes(s))))throw Error('Invalid pay geography');
     if(j.publishedPay && (typeof j.publishedPay.text!=='string'||!j.publishedPay.text.trim()||j.publishedPay.text.length>1000||typeof j.publishedPay.note!=='string'||!Array.isArray(j.publishedPay.scopeStates)||j.publishedPay.scopeStates.some(s=>!US_STATES.includes(s))))throw Error('Invalid published pay');
   }
-  return data.jobs.map(j=>applyRemoteTerritory({...j,companyName:employers.get(j.companyId).name,industry:employers.get(j.companyId).industry,companySource:employers.get(j.companyId).profileSource}));
+  return data.jobs.map(j=>{
+    const upgraded=data.schemaVersion===1&&!isValidJobFunction(j.primaryJobFunction)?jobFunctionResult(j):null;
+    const classified=upgraded?{...j,primaryJobFunction:upgraded.primaryFunction,jobFunctionBasis:upgraded.basis,jobFunctionConfidence:upgraded.confidence,jobFunctionReviewRequired:upgraded.reviewRequired,jobFunctionEvidence:upgraded.evidence}:j;
+    return applyRemoteTerritory({...classified,companyName:employers.get(j.companyId).name,industry:employers.get(j.companyId).industry,companySource:employers.get(j.companyId).profileSource});
+  });
 }

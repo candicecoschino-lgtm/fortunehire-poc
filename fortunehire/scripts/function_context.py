@@ -6,15 +6,21 @@ Classification lives in the shared browser module; collection requires no AI/API
 import re
 
 START = re.compile(r'^(?:(?:key|primary|essential|major|core|job|position|role)\s+)*(?:responsibilities|duties|accountabilities|functions)|^what you(?:[’\']ll| will) (?:do|be doing)|^your (?:role|impact|responsibilities)|^in this role(?:[, :]|$)|^you will\s*[:：]?$', re.I)
-STOP = re.compile(r'^(?:(?:required|preferred|basic|minimum|additional)\s+)*(?:qualifications|requirements|skills|experience|education)|^(?:what you (?:bring|need)|who you are|about (?:us|the company)|why (?:join|work)|benefits|compensation|salary|pay range|equal (?:employment|opportunity)|our (?:company|benefits|commitment)|application|accommodation)', re.I)
+SKILLS = re.compile(r'^(?:(?:required|preferred|basic|minimum|additional)\s+)*(?:qualifications|requirements|skills|experience|education|what you bring|what you need)\s*$', re.I)
+STOP = re.compile(r'^(?:about (?:us|the company)|why (?:join|work)|benefits|compensation|salary|pay range|equal (?:employment|opportunity)|our (?:company|benefits|commitment)|application|accommodation)', re.I)
 ACTION = re.compile(r'^(?:(?:you(?:[’\']ll| will)|this (?:role|position) (?:will|is responsible for))\s+|responsible for\s+)?(?:design|develop|build|maintain|manage|lead|deliver|provide|support|analy[sz]e|prepare|process|perform|coordinate|execute|implement|monitor|resolve|sell|drive|negotiate|recruit|administer|conduct|operate|repair|inspect|ensure|assist|create|oversee|evaluate|review|plan|schedule|greet|stock|serve|cook|test|write|respond|handle|advise|represent|optimi[sz]e|supervise|diagnose|treat|assess|dispense|weld|assemble)\w*\b', re.I)
 BOILER = re.compile(r'\b(?:equal opportunity employer|reasonable accommodation|without regard to|we offer|our benefits|benefits package|health insurance|paid time off|401\(?k|all qualified applicants|employment eligibility|must be authorized|years of experience|bachelor.?s degree)\b', re.I)
+SHORT_SKILL = re.compile(r'^(?:AI|ML|R|SQL|Python|Java|JavaScript|C\+\+|C#|AWS|GCP|Azure|SAP|ERP|CRM|HIPAA|OSHA|PMP|CPA|CFA|RN|LPN|ACLS|BLS|SIEM|SOC|NLP|ETL|GIS|Tableau|Power ?BI|TensorFlow|PyTorch|Spark|pandas|SAS|React|Node\.js|Linux|Cisco|Kubernetes)$', re.I)
 
 
 def extract_function_context(description, source=None):
     active = False
+    skill_active = False
     excluded = False
     duties = []
+    required_skills = []
+    preferred_skills = []
+    preferred = False
     for raw in description[:100000].splitlines():
         line = re.sub(r'\s+', ' ', raw).strip(' \t•*-–')
         if not line:
@@ -23,13 +29,29 @@ def extract_function_context(description, source=None):
         heading, sep, tail = line.partition(':')
         if STOP.match(heading):
             active = False
+            skill_active = False
             excluded = True
             continue
+        if SKILLS.match(heading):
+            active = False
+            skill_active = True
+            excluded = False
+            preferred = bool(re.match(r'preferred|desired', heading, re.I))
+            line = tail.strip() if sep else ''
         if START.match(heading):
             active = True
+            skill_active = False
             excluded = False
             line = tail.strip() if sep else ''
         if excluded or not line or BOILER.search(line):
+            continue
+        if skill_active:
+            for sentence in re.split(r'(?<=[.!?;])\s+|\s*,\s*', line):
+                sentence = sentence.strip(' •*-–')
+                if 2 <= len(sentence) <= 500 and (len(sentence) >= 12 or SHORT_SKILL.fullmatch(sentence.rstrip('.'))) and not re.search(r'\b(?:benefits|salary|pay range|equal opportunity|years of experience|authorized to work|accommodation)\b', sentence, re.I):
+                    target = preferred_skills if preferred else required_skills
+                    if sentence not in target and len(target) < 16:
+                        target.append(sentence)
             continue
         for sentence in re.split(r'(?<=[.!?;])\s+', line):
             sentence = sentence.strip(' •*-–')
@@ -48,4 +70,4 @@ def extract_function_context(description, source=None):
     if not isinstance(category, str):
         category = ''
     category = re.sub(r'\s+', ' ', category).strip()[:120]
-    return {'version': 1, 'duties': duties, 'category': category}
+    return {'version': 2, 'duties': duties, 'requiredSkills': required_skills[:16], 'preferredSkills': preferred_skills[:16], 'category': category}

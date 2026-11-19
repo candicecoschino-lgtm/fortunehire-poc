@@ -1,48 +1,44 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {jobFunctionResult,classifyJobFunctions} from '../public/job-functions.js';
+import {JOB_FUNCTIONS,jobFunctionResult} from '../public/job-functions.js';
 import {filterJobs,readJobFilters} from '../public/jobs.js';
-import {dutyRules} from '../public/function-duties.js';
-const context=(duties,category='')=>({version:1,duties,category});
-test('responsibilities override title and employer department without using incidental sales or medical words',()=>{
- const job={title:'Sales Operations Analyst',functionContext:context(['Build databases for the sales team.','Develop software for medical billing reports.'],'Sales')};
- assert.deepEqual(classifyJobFunctions(job),['it']);
- assert.equal(jobFunctionResult(job).basis,'responsibilities');
- assert.equal(jobFunctionResult(job).evidence.length,2);
-});
-test('specific responsibilities identify every function for generic titles',()=>{
- const examples={sales:'Meet sales targets.',marketing:'Develop marketing campaigns.',hr:'Manage employee relations.',it:'Build software for customers.',operations:'Oversee daily operations.',service:'Resolve customer complaints.',admin:'Manage executive calendars.',legal:'Provide legal advice.',finance:'Process payroll for employees.',engineering:'Design mechanical systems.',healthcare:'Provide direct patient care.',logistics:'Coordinate shipments.',manufacturing:'Operate production equipment.',research:'Conduct laboratory experiments.',projects:'Manage project timelines.',business:'Analyze business requirements.',retail:'Stock store shelves.',hospitality:'Prepare meals for customers.',quality:'Perform safety inspections.'};
- assert.deepEqual(Object.keys(examples).sort(),Object.keys(dutyRules).sort());
- for(const [key,duty] of Object.entries(examples))assert.deepEqual(classifyJobFunctions({title:'Specialist',functionContext:context([duty])}),[key],duty);
-});
-test('repeated core duties outweigh an incidental task; genuinely mixed duties can match multiple functions',()=>{
- const job={title:'Specialist',functionContext:context(['Develop software for operations.','Maintain databases for users.','Coordinate meetings.'])};
- assert.deepEqual(classifyJobFunctions(job),['it']);
- job.functionContext=context(['Process payroll for employees.','Manage employee relations.']);
- assert.deepEqual(new Set(classifyJobFunctions(job)),new Set(['hr','finance']));
-});
-test('category supports unclear descriptions; missing or malformed evidence safely falls back to title',()=>{
- assert.deepEqual(classifyJobFunctions({title:'Specialist',functionContext:context([],'Human Resources')}),['hr']);
- for(const functionContext of [undefined,{version:9},context([]),context(['Work with sales and HR. Support medical professionals.'])]){
-  const result=jobFunctionResult({title:'Software Engineer',functionContext});assert.deepEqual(result.keys,['it']);assert.equal(result.basis,'title');
- }
-});
-test('filters use the same description result as details and preserve saved/older title-only jobs',()=>{
- const job={id:'test',title:'Sales Analyst',companyName:'Test',status:'reviewed',postedAt:'2026-11-17',reviewedAt:'2026-11-17',arrangement:'hybrid',locations:[],functionContext:context(['Build databases for the sales team.'])};
- const f=fn=>readJobFilters('?function='+fn);
- assert.equal(filterJobs([job],f('it'),'2026-11-17').length,1);
- assert.equal(filterJobs([job],f('sales'),'2026-11-17').length,0);
- const {functionContext,...older}=job;
- assert.equal(filterJobs([older],f('sales'),'2026-11-17').length,1);
- assert.deepEqual(classifyJobFunctions({title:'Specialist'}),['other']);
+import {validFunctionContext} from '../public/function-duties.js';
+
+const context=(duties=[],requiredSkills=[],category='')=>({version:2,duties,requiredSkills,preferredSkills:[],category});
+test('role responsibilities beat incidental department and title vocabulary',()=>{
+ const result=jobFunctionResult({title:'Sales Operations Analyst',functionContext:context([
+  'Build data models and develop predictive analytics for account forecasting.',
+  'Validate statistical results using machine learning methods.'
+ ],['Python','SQL'],'Sales')});
+ assert.equal(result.primaryFunction,'data');assert.equal(result.basis,'responsibilities');
 });
 
-test('inflected actions and role-specific language resolve functions without their title',()=>{
- for(const [duty,key] of [
-  ['Develops software for users.','it'],['Handles member calls in a friendly manner.','service'],
-  ['Performs Failsafe Analyses for aircraft parts.','engineering'],['Operates handheld scanner to update inventory.','logistics'],
-  ['Analyzes financial information to qualify customers for a lending solution.','finance'],
-  ['Drives the prioritization and execution of product roadmap.','projects'],
-  ['Provides clinical consultation to customers.','healthcare']
- ])assert.deepEqual(classifyJobFunctions({title:'Specialist',functionContext:context([duty])}),[key],duty);
+test('each taxonomy function has bounded responsibility evidence coverage',()=>{
+ const examples={admin:'Coordinate executive calendars and schedule appointments.',business:'Analyze business requirements and document business processes.',communications:'Prepare press releases and manage media relations.',service:'Resolve customer inquiries and service issues.',success:'Improve customer adoption and manage account renewals.',data:'Build predictive statistical models and validate datasets.',creative:'Design visual assets and create user experiences.',engineering:'Design mechanical systems and prepare engineering drawings.',finance:'Prepare financial statements and reconcile accounts payable.',hospitality:'Prepare meals and serve food to guests.',healthcareAdmin:'Coordinate patient access and manage clinical operations.',healthcare:'Provide patient care and assess treatment plans.',hr:'Recruit candidates and administer employee benefits.',it:'Administer cloud infrastructure and maintain computer networks.',legal:'Draft legal contracts and conduct compliance investigations.',manufacturing:'Operate production equipment and assemble components.',marketing:'Develop marketing campaigns and manage brand strategy.',operations:'Improve facility operations and manage daily operational processes.',product:'Prioritize product roadmaps and define product requirements.',projects:'Manage project plans and coordinate project timelines.',procurement:'Select vendors and manage purchasing plans.',quality:'Conduct safety inspections and implement quality assurance programs.',research:'Conduct laboratory experiments and interpret research results.',retail:'Stock store shelves and manage retail displays.',sales:'Close new sales and grow the sales pipeline.',software:'Develop software and write application code.',logistics:'Coordinate supply shipments and manage inventory.',trades:'Repair electrical systems and install HVAC equipment.',cyber:'Investigate security incidents and mitigate cyber threats.'};
+ for(const key of Object.keys(JOB_FUNCTIONS).filter(key=>key!=='other')){
+  const duty=examples[key];assert.ok(duty,`Missing example for ${key}`);
+  const result=jobFunctionResult({title:'Specialist',functionContext:context([duty])});
+  assert.equal(result.primaryFunction,key,duty);assert.equal(result.reviewRequired,false,duty);
+ }
+});
+
+test('ambiguous evidence stays in Other while a clear skill set resolves when duties do not',()=>{
+ const mixed=jobFunctionResult({title:'Specialist',functionContext:context(['Develop marketing campaigns.','Prepare financial statements.'])});
+ assert.equal(mixed.primaryFunction,'other');assert.equal(mixed.reviewRequired,true);
+ const skillOverride=jobFunctionResult({title:'Marketing Analyst',functionContext:context(['Develop marketing campaigns.','Prepare financial statements.'],['Machine learning','Statistical modeling','Python'])});
+ assert.equal(skillOverride.primaryFunction,'other');assert.equal(skillOverride.basis,'responsibilities');
+ const skills=jobFunctionResult({title:'Specialist',functionContext:context([],['Machine learning','Statistical modeling','Python'])});
+ assert.equal(skills.primaryFunction,'data');assert.equal(skills.basis,'required skills');
+});
+
+test('job function validation accepts current context and rejects malformed evidence',()=>{
+ assert.equal(validFunctionContext(context(['Build predictive models.'],['Python'])),true);
+ assert.equal(validFunctionContext({version:2,duties:[],requiredSkills:['x'.repeat(501)],preferredSkills:[],category:''}),false);
+});
+
+test('job filter reads the persisted single function while saving and applying references by stable ID',()=>{
+ const job={id:'saved-job-id',title:'Sales Analyst',companyName:'Example',companyId:'example',industry:'Technology',status:'reviewed',postedAt:'2026-11-17',reviewedAt:'2026-11-17',closesAt:null,arrangement:'hybrid',remoteScope:'unknown',eligibleStates:[],locations:[{city:'Austin',state:'Texas'}],employmentType:'Full-time',travelRequired:null,primaryJobFunction:'data'};
+ assert.equal(filterJobs([job],readJobFilters('?function=data'),'2026-11-17').length,1);
+ assert.equal(filterJobs([job],readJobFilters('?function=sales'),'2026-11-17').length,0);
+ assert.equal(job.id,'saved-job-id');
 });
