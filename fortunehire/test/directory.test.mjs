@@ -5,7 +5,7 @@ import {filterCompanies, normalize, readFilters, serializeFilters, validateData}
 const data=JSON.parse(await readFile(new URL('../public/data/companies.json',import.meta.url),'utf8'));
 test('production records have complete provenance, safe URLs and unique identifiers',()=>{
   assert.equal(validateData(data),data);
-  assert.equal(data.companies.length,52);
+  assert.equal(data.companies.length,57);
   for(const c of data.companies){assert.equal(new URL(c.profileSource).hostname,'fortune.com');assert.equal(c.listYear,2026);}
 });
 test('search ignores surrounding spaces, case and diacritics',()=>{

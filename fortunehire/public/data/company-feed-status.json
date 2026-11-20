@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-16",
-  "coverage": "All 52 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
+  "updatedAt": "2026-11-20",
+  "coverage": "All 57 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 5,
     "connected": 45,
     "paused": 1,
-    "verification-needed": 1
+    "verification-needed": 6
   },
   "companies": [
     {
@@ -839,6 +839,51 @@
         "hasNextData": false,
         "hasDisneyMetadata": true
       }
+    },
+    {
+      "companyId": "adobe",
+      "company": "Adobe",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.adobe.com/careers.html",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "intuit",
+      "company": "Intuit",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.intuit.com/careers/",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "servicenow",
+      "company": "ServiceNow",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://careers.servicenow.com/jobs",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "workday",
+      "company": "Workday",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.workday.com/en-us/company/careers/overview.html",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "broadcom",
+      "company": "Broadcom",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.broadcom.com/company/careers",
+      "reviewedAt": "2026-11-20"
     }
   ]
 }

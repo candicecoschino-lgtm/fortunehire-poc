@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "listYear": 2026,
-  "coverage": "52 reviewed employers from the 2026 list; 448 remain to be verified. This is a curated sample, not a ranked top-50 list.",
+  "coverage": "57 reviewed employers from the 2026 list; 443 remain to be verified. This is a curated sample, not a ranked top-50 list.",
   "companies": [
     {
       "id": "alphabet",
@@ -820,6 +820,81 @@
       "membershipSource": "https://fortune.com/company/disney/",
       "reviewedAt": "2026-11-13",
       "verificationNote": "Official company career landing page reviewed. Inclusion does not guarantee a current vacancy."
+    },
+    {
+      "id": "adobe",
+      "name": "Adobe",
+      "industry": "Computer Software",
+      "headquarters": {
+        "city": "San Jose",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.adobe.com/careers.html",
+      "profileSource": "https://fortune.com/company/adobe-systems/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "intuit",
+      "name": "Intuit",
+      "industry": "Computer Software",
+      "headquarters": {
+        "city": "Mountain View",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.intuit.com/careers/",
+      "profileSource": "https://fortune.com/company/intuit/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "industry": "Computer Software",
+      "headquarters": {
+        "city": "Santa Clara",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.servicenow.com/jobs",
+      "profileSource": "https://fortune.com/company/servicenow/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "workday",
+      "name": "Workday",
+      "industry": "Computer Software",
+      "headquarters": {
+        "city": "Pleasanton",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.workday.com/en-us/company/careers/overview.html",
+      "profileSource": "https://fortune.com/company/workday/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "industry": "Semiconductors and Other Electronic Components",
+      "headquarters": {
+        "city": "Palo Alto",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.broadcom.com/company/careers",
+      "profileSource": "https://fortune.com/company/broadcom/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
     }
   ]
 }
