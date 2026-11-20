@@ -14,6 +14,19 @@
 .search-controls .search-field{margin-top:6px;min-height:48px;background:var(--paper)}
 .search-controls input{font-size:15px;font-weight:400;padding:11px 0}
 .search-controls select{display:block;width:100%;margin-top:6px;min-height:48px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-size:14px;padding:10px}
+.multi-filter-field{position:relative;min-width:0;font-size:12px;font-weight:600;color:var(--muted)}
+.multi-filter{position:relative;margin-top:6px;font-size:14px;font-weight:400;color:var(--ink)}
+.multi-filter>summary{display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;list-style:none}
+.multi-filter>summary::-webkit-details-marker{display:none}
+.multi-filter>summary::after{content:'⌄';margin-left:10px;color:var(--muted)}
+.multi-filter[open]>summary{border-color:#8d9b89;border-radius:6px 6px 0 0}
+.multi-filter-options{position:absolute;top:100%;left:0;z-index:20;display:grid;gap:1px;width:max(100%,220px);max-height:250px;overflow:auto;padding:6px;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 7px 7px;box-shadow:0 8px 20px #173e3318}
+.multi-filter-options label{display:flex;align-items:center;gap:9px;min-height:34px;padding:5px 7px;border-radius:4px;cursor:pointer;color:var(--ink);font-size:12px;font-weight:400}
+.multi-filter-options label:hover{background:#f1f4ed}
+.multi-filter-options input{width:16px;height:16px;flex:0 0 16px;margin:0;accent-color:var(--ink)}
+.filter-row>.multi-filter-field{font-size:12px}
+.filter-row .multi-filter{margin-top:6px}
+.filter-row .multi-filter>summary{min-height:44px;font-size:13px}
 .filter-tools{display:flex;align-items:start;gap:18px;margin-top:15px}
 .filter-tools:has(.more-filters[open]){flex-wrap:wrap}
 .filter-tools .more-filters[open]{flex-basis:100%}
@@ -49,6 +62,7 @@
  .compact-page .topbar nav a:last-child{display:block}
  .compact-page .topbar nav a{font-size:12px;padding:4px 0}
  .compact-page .topbar .brand{font-size:21px}
+ .multi-filter-options{max-height:220px}
  .page-intro{padding-top:21px;padding-bottom:21px}
  .page-intro h1{font-size:34px}
  .page-intro .intro{font-size:14px}

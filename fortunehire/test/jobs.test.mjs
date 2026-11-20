@@ -105,7 +105,7 @@ test('state-restricted remote is a subset of Remote and preserves state eligibil
   assert.ok(result.every(j=>filterJobs(jobs,filters({arrangement:'remote'}),today).includes(j)));
   const florida=filterJobs(jobs,filters({arrangement:'remote-state',state:'Florida'}),today);
   assert.ok(florida.every(j=>j.eligibleStates.includes('Florida')));
-  assert.deepEqual(readJobFilters('?arrangement=remote-state').arrangement,'remote-state');
+  assert.deepEqual(readJobFilters('?arrangement=remote-state').arrangement,['remote-state']);
   assert.ok(serializeJobFilters(filters({arrangement:'remote-state'})).includes('arrangement=remote-state'));
 });
 test('pay filters compare posted minimums within the same period and geographic scope',()=>{

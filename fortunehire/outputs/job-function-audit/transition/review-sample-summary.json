@@ -1,0 +1,20 @@
+{
+  "sampleSize": 150,
+  "adjudicableCases": 92,
+  "unresolvedCases": 58,
+  "prior": {
+    "correct": 30,
+    "accuracy": 0.32608695652173914
+  },
+  "updated": {
+    "correct": 92,
+    "accuracy": 1
+  },
+  "changedCategories": 72,
+  "ambiguousWithDutyOrSkillEvidence": 8,
+  "unresolvedWithoutDutyOrSkillEvidence": 50,
+  "sampleTitleFallbackCount": 51,
+  "updatedOther": 21,
+  "evaluationType": "In-sample review after tuning rules against this same review cohort; this is not an independent holdout estimate.",
+  "limitation": "Expected functions are human judgments from the captured duty/skill excerpts. The sample is stratified, several roles repeat, and 50 records lack usable duty/skill evidence; results should not be generalized to all postings."
+}

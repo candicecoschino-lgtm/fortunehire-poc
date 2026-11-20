@@ -1,88 +1,84 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {JOB_FUNCTIONS,classifyJobFunctions} from '../public/job-functions.js';
-import {filterJobs,readJobFilters,serializeJobFilters} from '../public/jobs.js';
+import {JOB_FUNCTIONS,JOB_FUNCTION_OPTIONS,jobFunctionResult,classifyJobFunctions,isValidJobFunction} from '../public/job-functions.js';
+import {filterJobs,readJobFilters,validateJobs} from '../public/jobs.js';
 
-test('clear role titles map to job functions independently of company industry',()=>{
- for(const [title,key] of [
-  ['Sales Associate','sales'],['Account Executive','sales'],['Marketing Manager','marketing'],
-  ['Human Resources Generalist','hr'],['HR Business Partner','hr'],['Software Engineer','it'],
-  ['IT Systems Administrator','it'],['Operations Manager','operations'],['Customer Service Representative','service'],
-  ['Administrative Assistant','admin'],['Admin Coordinator','admin'],['Executive Assistant','admin'],
-  ['Corporate Counsel','legal'],['Payroll Analyst','finance'],['Mechanical Engineer','engineering'],
-  ['Registered Nurse','healthcare'],['Supply Chain Analyst','logistics'],['Welder','manufacturing'],
-  ['Research Scientist','research'],['Program Manager','projects']
- ])assert.ok(classifyJobFunctions(title).includes(key),title);
- assert.ok(Object.keys(JOB_FUNCTIONS).length>=16);
+const context=(duties=[],requiredSkills=[],category='')=>({version:2,duties,requiredSkills,preferredSkills:[],category});
+const job=(title,fn,extra={})=>({id:'test-job',title,companyId:'example',companyName:'Example',industry:'Technology',status:'reviewed',postedAt:'2026-11-17',reviewedAt:'2026-11-17',closesAt:null,arrangement:'on-site',remoteScope:'unknown',eligibleStates:[],locations:[{city:'Austin',state:'Texas'}],employmentType:'Full-time',travelRequired:null,primaryJobFunction:fn,...extra});
+
+test('taxonomy is unchanged, candidate-friendly, and alphabetized for display',()=>{
+ const labels=JOB_FUNCTION_OPTIONS.map(([,label])=>label);
+ assert.equal(labels.length,30);
+ assert.deepEqual(labels.slice().sort((a,b)=>a.localeCompare(b)),labels);
+ assert.equal(JOB_FUNCTIONS.data,'Data & Analytics');
 });
 
-test('word boundaries and unclear titles do not invent functions',()=>{
- for(const title of ['Specialist II','Associate','President','Salesforce Consultant','Wholesale Specialist','Support Specialist'])assert.deepEqual(classifyJobFunctions(title),['other']);
- assert.deepEqual(classifyJobFunctions(null),['other']);
- assert.ok(!classifyJobFunctions('Software Engineer').includes('engineering'));
- assert.ok(!classifyJobFunctions('Technical Support Engineer').includes('service'));
- assert.ok(!classifyJobFunctions('Pharmacy Technician').includes('manufacturing'));
- assert.deepEqual(classifyJobFunctions('Systems Admin'),['it']);
-});
-
-test('cross-functional titles appear in each relevant category without duplicate labels',()=>{
- assert.deepEqual(classifyJobFunctions('Sales Operations Analyst'),['sales','operations']);
- assert.deepEqual(classifyJobFunctions('Marketing Communications Manager'),['marketing']);
-});
-
-test('job function intersects other filters while unspecified employment type stays independent',()=>{
- const j={id:'example',title:'Sales Operations Analyst',companyName:'Example',companyId:'example',industry:'Commercial Banks',status:'reviewed',postedAt:'2026-11-17',reviewedAt:'2026-11-17',closesAt:null,arrangement:'on-site',locations:[{city:'Austin',state:'Texas'}],employmentType:'Not specified',travelRequired:null};
- const f=extra=>({...readJobFilters(''),...extra});
- for(const fn of ['sales','operations'])assert.equal(filterJobs([j],f({function:fn,type:'Not specified',state:'Texas'}),'2026-11-17').length,1);
- assert.equal(filterJobs([j],f({function:'admin'}),'2026-11-17').length,0);
- assert.equal(filterJobs([j],f({function:'sales',type:'Full-time'}),'2026-11-17').length,0);
- assert.equal(j.employmentType,'Not specified');
- assert.equal(filterJobs([{...j,title:'Specialist II'}],f({function:'other'}),'2026-11-17').length,1);
-});
-
-test('job function links round trip and empty filters clear the selection',()=>{
- const f=readJobFilters('?function=admin&state=New+York&type=Not+specified');
- assert.equal(f.function,'admin');assert.deepEqual(readJobFilters('?'+serializeJobFilters(f)),f);
- assert.equal(readJobFilters('').function,'');assert.equal(serializeJobFilters(readJobFilters('')),'');
- assert.equal(readJobFilters('?sector=Technology').function,'');
-});
-
-test('reviewed gaps classify application development and other explicit technical vocabulary',()=>{
- for(const title of ['Application Development Advisor- Hybrid','Application Development Senior Analyst- Hybrid','Applications Development Sr Programmer Analyst - Assistant Vice President','Apps Dev Tech Lead Analyst - Vice President','Data Analyst - Optum Insight - Remote','Technical Staff, Network Architect','Senior Systems Architect - Datacenter','Lead (Oracle) SaaS Administrator','Applied AI/ML Lead Vice President','Senior Information Security Analyst','Principal Solution Architect','Long Range Server Planning'])assert.ok(classifyJobFunctions(title).includes('it'),title);
- assert.ok(!classifyJobFunctions('Avionics Technician - Line').includes('it'));
- assert.ok(classifyJobFunctions('Avionics Technician - Line').includes('engineering'));
-});
-
-test('reviewed non-IT gaps include functional and frontline titles',()=>{
- for(const [title,key] of [
-  ['Customer Success Manager, Core - Commercial','service'],['Center Administrator','admin'],
-  ['Personal Banker SAFE Act, One California Branch','finance'],['Underwriting Intern - Summer 2027','finance'],
-  ['Behavioral Health Liaison (20% Travel: Macomb & Wayne)','healthcare'],['Licensed Optician','healthcare'],
-  ['Optical Associate, Certified (ABO)','healthcare'],['Cashier Part Time','retail'],['Bakery/Deli Clerk','retail'],
-  ['Starbucks Barista','hospitality'],['Food & Beverage Busser - Part Time','hospitality'],
-  ['Courier/Non-DOT','logistics'],['Tractor Trailer Driver/RTD - Apprentice-2','logistics'],
-  ['Mechanical Technician, Beaumont, TX','manufacturing'],['Senior Product Manager','projects'],
-  ['Business Intelligence Analyst','business'],['Business\u00a0Information Consultant Senior','business'],
-  ['Senior Manager - UX Design & Innovation','engineering'],['Quality Specialist II','quality'],['Manager, EHS','quality'],
-  ['Employee Success Business Partner Director','hr'],['Training Consultant - Cold Planers','hr']
- ])assert.ok(classifyJobFunctions(title).includes(key),title);
-});
-
-test('broader vocabulary preserves ambiguous titles and separates physical and IT work',()=>{
- for(const title of ['Any Position','Field Specialist B','Assistant Manager','Senior Architect','Security Analyst Senior','Wellpoint Federal SME II'])assert.deepEqual(classifyJobFunctions(title),['other'],title);
- assert.ok(!classifyJobFunctions('Long Range Server Planning').includes('hospitality'));
- assert.ok(classifyJobFunctions('Restaurant Server').includes('hospitality'));
- assert.ok(!classifyJobFunctions('Optical Network Engineer').includes('healthcare'));
- assert.ok(!classifyJobFunctions('Human Resources Department Manager').includes('retail'));
-});
-
-test('brand-new listings receive rules without employer-specific IDs or saved manual labels',()=>{
- const base={id:'brand-new-listing-999',companyName:'New Employer',companyId:'new-employer',status:'reviewed',postedAt:'2026-11-17',reviewedAt:'2026-11-17',closesAt:null,arrangement:'hybrid',locations:[{city:'Austin',state:'Texas'}],employmentType:'Not specified',travelRequired:null};
- for(const title of ['Application Development Senior Analyst - New Team','Applications Development Group Manager - New Office']){
-  const j={...base,title};
-  const f={...readJobFilters(''),function:'it',state:'Texas',type:'Not specified'};
-  assert.equal(filterJobs([j],f,'2026-11-17').length,1);
-  assert.equal(filterJobs([j],{...f,function:'other'},'2026-11-17').length,0);
-  assert.equal(j.employmentType,'Not specified');assert.equal(j.reviewedAt,base.reviewedAt);
+test('specific job titles are the primary classification signal',()=>{
+ for(const [title,expected] of [
+  ['Data Scientist, Marketing','data'],['Finance Manager, Sales Finance','finance'],['IT Operations Engineer','it'],
+  ['Senior Software Engineer','software'],['Retail Sales Consultant','retail'],['Customer Success Account Manager','success'],
+  ['Medical Receptionist','healthcareAdmin'],['Registered Nurse','healthcare'],['Manufacturing Engineer I','manufacturing']
+ ]){
+  const result=jobFunctionResult({title,functionContext:context([],[], 'Unrelated Department')});
+  assert.equal(result.primaryFunction,expected,title);
+  assert.equal(result.basis,'job title');
+  assert.equal(classifyJobFunctions({title}).length,1);
  }
+});
+
+test('responsibilities support a generic title and resolve one clear function',()=>{
+ const result=jobFunctionResult({title:'Specialist',functionContext:context(['Prepare financial statements and reconcile accounts payable.'])});
+ assert.equal(result.primaryFunction,'finance');
+ assert.equal(result.basis,'responsibilities');
+ assert.equal(result.reviewRequired,false);
+});
+
+test('required skills can classify when title and responsibilities do not',()=>{
+ const result=jobFunctionResult({title:'Specialist',functionContext:context([],['Machine learning','Statistical modeling','PyTorch'])});
+ assert.equal(result.primaryFunction,'data');
+ assert.equal(result.basis,'required skills');
+ assert.equal(result.reviewRequired,true);
+});
+
+test('ambiguous evidence falls back to Other / Unclassified',()=>{
+ const result=jobFunctionResult({title:'Specialist',functionContext:context(['Develop marketing campaigns.','Prepare financial statements.'])});
+ assert.equal(result.primaryFunction,'other');
+ assert.equal(result.reviewRequired,true);
+ assert.equal(result.confidence,'low');
+});
+
+test('a specific title wins but conflicting duties flag the listing for review',()=>{
+ const result=jobFunctionResult({title:'Data Scientist, Marketing',functionContext:context(['Prepare financial statements and reconcile accounts payable.'])});
+ assert.equal(result.primaryFunction,'data');
+ assert.equal(result.basis,'job title');
+ assert.equal(result.reviewRequired,true);
+});
+
+test('missing evidence stays unclassified and each result is exactly one valid key',()=>{
+ for(const input of [{title:'Specialist II'},{title:''},{title:'Assistant'}]){
+  const result=jobFunctionResult(input);
+  assert.equal(result.primaryFunction,'other');
+  assert.equal(result.reviewRequired,true);
+  const functions=classifyJobFunctions(input);
+  assert.equal(functions.length,1);
+  assert.ok(isValidJobFunction(functions[0]));
+ }
+});
+
+test('filtering reads the persisted single function and keeps stable job references',()=>{
+ const dataJob=job('Data Scientist, Marketing','data',{id:'stable-saved-job'});
+ assert.equal(filterJobs([dataJob],readJobFilters('?function=data'),'2026-11-17').length,1);
+ assert.equal(filterJobs([dataJob],readJobFilters('?function=marketing'),'2026-11-17').length,0);
+ assert.equal(dataJob.id,'stable-saved-job');
+ const legacy={...dataJob};delete legacy.primaryJobFunction;
+ assert.equal(filterJobs([legacy],readJobFilters('?function=data'),'2026-11-17').length,0);
+});
+
+test('legacy schema upgrade assigns one function without changing job ID or URL',()=>{
+ const source=job('Data Scientist, Marketing',undefined);delete source.primaryJobFunction;
+ const companies=[{id:'example',name:'Example',industry:'Technology',profileSource:'https://example.com',careerUrl:'https://example.com/careers'}];
+ source.url='https://example.com/jobs/1';source.requisitionId='1';source.identifierType='requisition';source.locationNote='Austin, Texas';source.sector='Technology';source.sourceNote='Official posting';source.sourceHash='stable';source.collectionMethod='official';source.arrangementBasis=undefined;
+ const normalized=validateJobs({schemaVersion:1,jobs:[source]},companies)[0];
+ assert.equal(normalized.id,source.id);assert.equal(normalized.url,source.url);assert.equal(normalized.primaryJobFunction,'data');
+ assert.throws(()=>validateJobs({schemaVersion:2,jobs:[{...normalized,primaryJobFunction:['data']}]},companies),/Invalid primary job function/);
 });

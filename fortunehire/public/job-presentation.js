@@ -24,26 +24,31 @@ export function postedLabel(postedAt,today){
   return days===0?'Posted today':days===1?'Posted yesterday':`Posted ${days} days ago`;
 }
 export function locationSummary(job,state=''){
+  const selected=Array.isArray(state)?state:state?[state]:[];
   if(job.arrangement==='remote'){
     if(job.remoteScope==='nationwide')return 'Remote across the United States';
     if(job.remoteScope==='states'){
-      const states=state&&job.eligibleStates.includes(state)?[state,...job.eligibleStates.filter(s=>s!==state)]:job.eligibleStates;
+      const preferred=selected.find(value=>job.eligibleStates.includes(value))||state;
+      const states=preferred&&job.eligibleStates.includes(preferred)?[preferred,...job.eligibleStates.filter(s=>s!==preferred)]:job.eligibleStates;
       return `Remote in ${states.slice(0,2).join(', ')}${states.length>2?` + ${states.length-2} more ${states.length===3?'state':'states'}`:''}${job.remoteEligibilityBasis==='title-geography'?' (from title)':''}`;
     }
     return 'Remote - eligible states not specified';
   }
-  const first=job.locations.find(location=>location.state===state)||job.locations[0];
+  const first=job.locations.find(location=>selected.includes(location.state))||job.locations.find(location=>location.state===state)||job.locations[0];
   if(!first)return job.locationNote;
   return `${first.city}, ${first.state}${job.locations.length>1?` + ${job.locations.length-1} more ${job.locations.length===2?'location':'locations'}`:''}`;
 }
 export function paySummary(job,state=''){
+  const selected=Array.isArray(state)?state:state?[state]:[];
   const scope=job.salary?.scopeStates||job.publishedPay?.scopeStates||[];
-  if(state&&scope.length&&!scope.includes(state))return {text:'Pay unavailable for this state',detail:false,note:''};
+  if(selected.length&&scope.length&&!selected.some(value=>scope.includes(value)))return {text:selected.length===1?'Pay unavailable for this state':'Pay unavailable for these states',detail:false,note:''};
+  const applicable=selected.filter(value=>!scope.length||scope.includes(value));
+  const scopeNote=selected.length&&scope.length&&applicable.length<selected.length?`Published pay is verified only for ${applicable.join(', ')}.`:'';
   if(!job.salary&&!job.publishedPay)return {text:'Pay information unavailable',detail:false,note:''};
   if(job.salary){
     const salary=job.salary;
-    return {text:`${money(salary.min)}${salary.min===salary.max?'':'\u2013'+money(salary.max)} / ${salary.period==='year'?'year':'hour'}`,detail:false,note:''};
+    return {text:`${money(salary.min)}${salary.min===salary.max?'':'\u2013'+money(salary.max)} / ${salary.period==='year'?'year':'hour'}`,detail:false,note:scopeNote};
   }
   const ranges=publishedRanges(job.publishedPay.text);
-  return {text:ranges.length?ranges.join(' · '):'See pay details',detail:true,note:''};
+  return {text:ranges.length?ranges.join(' · '):'See pay details',detail:true,note:scopeNote};
 }

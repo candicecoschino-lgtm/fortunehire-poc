@@ -1,0 +1,373 @@
+{
+  "sampleSize": 150,
+  "outcomes": {
+    "correct": 48,
+    "incorrect": 35,
+    "ambiguous": 5,
+    "insufficient": 62
+  },
+  "adjudicable": 83,
+  "correct": 48,
+  "incorrect": 35,
+  "accuracyPercent": 57.8,
+  "accuracyIntervalApprox95": "47.2–68.5%",
+  "errorBasisCounts": {
+    "responsibilities": 20,
+    "job title": 12,
+    "employer category": 2,
+    "required skills": 1
+  },
+  "examplesOfIncorrect": [
+    {
+      "sampleRow": "9",
+      "employer": "Boeing",
+      "title": "Facilities Mechanical Engineer (Experienced or Senior)",
+      "expected": "engineering",
+      "actual": "procurement",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "10",
+      "employer": "Boeing",
+      "title": "Experienced Supplier Quality Specialist",
+      "expected": "quality",
+      "actual": "procurement",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "12",
+      "employer": "Cardinal Health",
+      "title": "Manufacturing Set Up Technician (Magellan) - 1st Shift",
+      "expected": "trades",
+      "actual": "manufacturing",
+      "basis": "job title",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "15",
+      "employer": "Cardinal Health",
+      "title": "IV Technician",
+      "expected": "healthcare",
+      "actual": "operations",
+      "basis": "employer category",
+      "confidence": "low"
+    },
+    {
+      "sampleRow": "16",
+      "employer": "Caterpillar",
+      "title": "Principal AI/ML Engineer - Computer Vision & Data Quality",
+      "expected": "data",
+      "actual": "software",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "17",
+      "employer": "Caterpillar",
+      "title": "Technology Team Leader",
+      "expected": "it",
+      "actual": "projects",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "27",
+      "employer": "Chevron",
+      "title": "Cloud Engineer",
+      "expected": "cyber",
+      "actual": "it",
+      "basis": "required skills",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "29",
+      "employer": "Chevron",
+      "title": "E&I Specialist A",
+      "expected": "trades",
+      "actual": "other",
+      "basis": "job title",
+      "confidence": "low"
+    },
+    {
+      "sampleRow": "31",
+      "employer": "Cigna Group",
+      "title": "Senior Manager - Data Science (Pricing & Underwriting) - Remote",
+      "expected": "data",
+      "actual": "other",
+      "basis": "job title",
+      "confidence": "low"
+    },
+    {
+      "sampleRow": "34",
+      "employer": "Cigna Group",
+      "title": "Proposal Project Specialist – Evernorth – Hybrid-St. Louis, MO",
+      "expected": "projects",
+      "actual": "marketing",
+      "basis": "employer category",
+      "confidence": "low"
+    },
+    {
+      "sampleRow": "38",
+      "employer": "Cisco Systems",
+      "title": "Manufacturing Engineer I (Full Time) - United States",
+      "expected": "manufacturing",
+      "actual": "engineering",
+      "basis": "job title",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "51",
+      "employer": "Costco Wholesale",
+      "title": "Non-Licensed Optician",
+      "expected": "retail",
+      "actual": "other",
+      "basis": "job title",
+      "confidence": "low"
+    },
+    {
+      "sampleRow": "52",
+      "employer": "Costco Wholesale",
+      "title": "Licensed Hearing Aid Dispenser",
+      "expected": "healthcare",
+      "actual": "admin",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "53",
+      "employer": "CVS Health",
+      "title": "Remote Call Center Triage Registered Nurse",
+      "expected": "healthcare",
+      "actual": "admin",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "60",
+      "employer": "Dell Technologies",
+      "title": "Applied Data Scientist, User Insights",
+      "expected": "quality",
+      "actual": "data",
+      "basis": "job title",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "71",
+      "employer": "Ford Motor",
+      "title": "PD - Engineer",
+      "expected": "engineering",
+      "actual": "procurement",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "74",
+      "employer": "Ford Motor",
+      "title": "Launch Process Engineer",
+      "expected": "manufacturing",
+      "actual": "engineering",
+      "basis": "job title",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "78",
+      "employer": "General Motors",
+      "title": "IT Operations Engineer",
+      "expected": "it",
+      "actual": "operations",
+      "basis": "job title",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "83",
+      "employer": "Humana",
+      "title": "Medical Assistant",
+      "expected": "healthcare",
+      "actual": "admin",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "87",
+      "employer": "JPMorgan Chase",
+      "title": "Part Time (20 Hours) Associate Banker, Turfway Branch, Florence, KY",
+      "expected": "finance",
+      "actual": "admin",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "94",
+      "employer": "Lowe's",
+      "title": "Central Selling Specialist - Flooring (Remote) MST/PST",
+      "expected": "sales",
+      "actual": "other",
+      "basis": "job title",
+      "confidence": "low"
+    },
+    {
+      "sampleRow": "98",
+      "employer": "McKesson",
+      "title": "Finance Manager, Sales Finance",
+      "expected": "finance",
+      "actual": "business",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "100",
+      "employer": "McKesson",
+      "title": "MTCS Pharmacist (North Carolina Licensed)",
+      "expected": "healthcare",
+      "actual": "healthcareAdmin",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "115",
+      "employer": "Oracle",
+      "title": "Principal Planning & Deployment Engineer",
+      "expected": "projects",
+      "actual": "procurement",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "117",
+      "employer": "PepsiCo",
+      "title": "Sanitation Team Supervisor",
+      "expected": "operations",
+      "actual": "finance",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "120",
+      "employer": "Phillips 66",
+      "title": "Senior Manager, Digital Change Enablement",
+      "expected": "hr",
+      "actual": "it",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "121",
+      "employer": "Phillips 66",
+      "title": "Mechanical Technician, Beaumont, TX",
+      "expected": "trades",
+      "actual": "logistics",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "128",
+      "employer": "Target",
+      "title": "Lead Benefits Consultant - Healthcare Strategy",
+      "expected": "hr",
+      "actual": "business",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "131",
+      "employer": "United Airlines Holdings",
+      "title": "Avionics Technician - Line",
+      "expected": "trades",
+      "actual": "manufacturing",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "133",
+      "employer": "United Airlines Holdings",
+      "title": "Account Manager - Inside Sales (Remote)",
+      "expected": "sales",
+      "actual": "success",
+      "basis": "job title",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "135",
+      "employer": "UnitedHealth Group",
+      "title": "Associate AI/ML Engineer",
+      "expected": "software",
+      "actual": "data",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "136",
+      "employer": "UnitedHealth Group",
+      "title": "Medical Receptionist",
+      "expected": "healthcareAdmin",
+      "actual": "admin",
+      "basis": "job title",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "145",
+      "employer": "Walmart",
+      "title": "(USA) Packing Operator, Manufacturing, Monday - Friday  6:30am - 3:00pm",
+      "expected": "manufacturing",
+      "actual": "quality",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "146",
+      "employer": "Walmart",
+      "title": "(USA) Product Sorter, Manufacturing (Starting at $21.30, Mon-Fri 4pm-12:30am, Line 1)",
+      "expected": "quality",
+      "actual": "manufacturing",
+      "basis": "job title",
+      "confidence": "medium"
+    },
+    {
+      "sampleRow": "148",
+      "employer": "Walt Disney",
+      "title": "Manager, Social Media (National Geographic)",
+      "expected": "marketing",
+      "actual": "creative",
+      "basis": "responsibilities",
+      "confidence": "medium"
+    }
+  ],
+  "notIndependentAccuracyOfDevelopmentSet": "95.8% (92/96), same previously reviewed sample now used as regression set",
+  "sampleCurrentFunctionCounts": {
+    "it": 5,
+    "projects": 5,
+    "software": 6,
+    "retail": 8,
+    "finance": 7,
+    "other": 14,
+    "procurement": 5,
+    "quality": 5,
+    "manufacturing": 5,
+    "logistics": 6,
+    "operations": 6,
+    "product": 5,
+    "healthcareAdmin": 5,
+    "admin": 6,
+    "engineering": 5,
+    "healthcare": 5,
+    "marketing": 5,
+    "service": 1,
+    "cyber": 6,
+    "legal": 4,
+    "hr": 5,
+    "business": 5,
+    "sales": 6,
+    "data": 5,
+    "communications": 2,
+    "creative": 5,
+    "research": 1,
+    "hospitality": 4,
+    "success": 2,
+    "trades": 1
+  },
+  "ambiguousClassifiedAsOther": 1,
+  "ambiguousClassifiedAsFunction": 4,
+  "insufficientTitleFallbacks": 60
+}

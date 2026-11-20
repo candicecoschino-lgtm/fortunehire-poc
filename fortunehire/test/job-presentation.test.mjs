@@ -28,6 +28,13 @@ test('a pay range never appears as applicable outside its published state scope'
  assert.equal(paySummary(job).note,'');
 });
 
+test('multi-state pay displays only when at least one selected state is covered and discloses partial scope',()=>{
+ const job={salary:{min:90000,max:100000,currency:'USD',period:'year',scopeStates:['Washington']}};
+ assert.equal(paySummary(job,['Michigan','Washington']).text,'$90,000–$100,000 / year');
+ assert.equal(paySummary(job,['Michigan','Washington']).note,'Published pay is verified only for Washington.');
+ assert.equal(paySummary(job,['Michigan','Ohio']).text,'Pay unavailable for these states');
+});
+
 test('projected starting-range boilerplate becomes only the stated range without guessing a period',()=>{
  const text='The starting salary range posted for this position is $77,300.00 to $97,900.00 and reflects the projected salary range for new hires in this position in U.S. and/or Canada locations, not including incentive compensation, equity, or benefits.';
  const job={salary:null,publishedPay:{text,scopeStates:['California']}};

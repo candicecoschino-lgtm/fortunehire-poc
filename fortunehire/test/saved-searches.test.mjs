@@ -62,7 +62,7 @@ test('blocked or full storage reports failure and preserves earlier saved data',
 test('loading a saved search includes newly received jobs rather than saved results',()=>{
  const storage=memoryStorage();saveSearch(storage,'New IT jobs','function=it&state=Texas');
  const filters=readJobFilters(readSavedSearches(storage)[0].query);
- const newJob={id:'received-later',title:'Application Development Analyst',status:'reviewed',postedAt:'2026-11-17',reviewedAt:'2026-11-17',closesAt:null,arrangement:'on-site',locations:[{city:'Austin',state:'Texas'}],employmentType:'Not specified',travelRequired:null};
+ const newJob={id:'received-later',title:'IT Application Analyst',primaryJobFunction:'it',status:'reviewed',postedAt:'2026-11-17',reviewedAt:'2026-11-17',closesAt:null,arrangement:'on-site',locations:[{city:'Austin',state:'Texas'}],employmentType:'Not specified',travelRequired:null};
  assert.equal(filterJobs([newJob],filters,'2026-11-17').length,1);
  assert.equal(filterJobs([{...newJob,status:'closed'}],filters,'2026-11-17').length,0);
 });
