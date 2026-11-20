@@ -1,30 +1,15 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-20T15:51:17.306051+00:00",
+  "attemptedAt": "2026-11-20T16:50:14.009063+00:00",
   "postingWindowDays": 14,
   "coverage": "U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.",
   "sources": {
-    "boeing": {
-      "discovered": 1189,
-      "checked": 98,
-      "added": 0,
-      "changed": 96,
-      "closed": 2,
-      "skipped": 0,
-      "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 96,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
-    },
     "citigroup": {
       "discovered": 3132,
-      "checked": 92,
+      "checked": 73,
       "added": 0,
-      "changed": 86,
-      "closed": 19,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -32,14 +17,14 @@
       "activeTracked": 73,
       "pendingClosureChecks": 5,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "unitedhealth-group": {
-      "discovered": 6533,
-      "checked": 99,
+      "discovered": 6541,
+      "checked": 94,
       "added": 0,
-      "changed": 94,
-      "closed": 5,
+      "changed": 1,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -47,29 +32,44 @@
       "activeTracked": 94,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
-    "chevron": {
-      "discovered": 166,
-      "checked": 29,
+    "boeing": {
+      "discovered": 1176,
+      "checked": 96,
       "added": 0,
-      "changed": 28,
+      "changed": 1,
       "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 4,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 96,
+      "pendingClosureChecks": 1,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
+    },
+    "chevron": {
+      "discovered": 168,
+      "checked": 29,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 29,
       "pendingClosureChecks": 1,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "cigna": {
-      "discovered": 505,
-      "checked": 29,
+      "discovered": 506,
+      "checked": 28,
       "added": 0,
-      "changed": 27,
-      "closed": 1,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -77,14 +77,14 @@
       "activeTracked": 28,
       "pendingClosureChecks": 1,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "att": {
       "discovered": 2160,
-      "checked": 91,
+      "checked": 90,
       "added": 0,
-      "changed": 90,
-      "closed": 1,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -92,28 +92,43 @@
       "activeTracked": 90,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
+    },
+    "fedex": {
+      "discovered": 4576,
+      "checked": 23,
+      "added": 0,
+      "changed": 1,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 23,
+      "pendingClosureChecks": 1,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "comcast": {
-      "discovered": 758,
+      "discovered": 757,
       "checked": 99,
       "added": 0,
-      "changed": 99,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 99,
-      "pendingClosureChecks": 0,
+      "pendingClosureChecks": 1,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "elevance-health": {
-      "discovered": 246,
+      "discovered": 252,
       "checked": 91,
       "added": 0,
-      "changed": 80,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -122,43 +137,28 @@
       "activeTracked": 91,
       "pendingClosureChecks": 11,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
-    },
-    "fedex": {
-      "discovered": 4573,
-      "checked": 26,
-      "added": 0,
-      "changed": 22,
-      "closed": 3,
-      "skipped": 0,
-      "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 23,
-      "pendingClosureChecks": 1,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "ford": {
-      "discovered": 888,
-      "checked": 92,
+      "discovered": 887,
+      "checked": 88,
       "added": 0,
-      "changed": 87,
-      "closed": 4,
+      "changed": 1,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 88,
-      "pendingClosureChecks": 1,
+      "pendingClosureChecks": 2,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "lowes": {
-      "discovered": 3855,
+      "discovered": 3887,
       "checked": 56,
       "added": 0,
-      "changed": 51,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -191,25 +191,25 @@
       "lastSuccessfulAt": "2026-11-17T20:29:28.131493+00:00"
     },
     "mckesson": {
-      "discovered": 673,
-      "checked": 93,
+      "discovered": 672,
+      "checked": 92,
       "added": 0,
-      "changed": 89,
-      "closed": 1,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 1,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 92,
-      "pendingClosureChecks": 3,
+      "pendingClosureChecks": 4,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "united-airlines": {
-      "discovered": 127,
+      "discovered": 126,
       "checked": 19,
       "added": 0,
-      "changed": 19,
+      "changed": 1,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -218,13 +218,13 @@
       "activeTracked": 19,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "nike": {
-      "discovered": 1092,
+      "discovered": 1093,
       "checked": 56,
       "added": 0,
-      "changed": 53,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -233,28 +233,28 @@
       "activeTracked": 56,
       "pendingClosureChecks": 3,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "target": {
       "discovered": 14165,
-      "checked": 97,
+      "checked": 95,
       "added": 0,
-      "changed": 96,
-      "closed": 2,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 1,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 95,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "general-motors": {
-      "discovered": 637,
+      "discovered": 639,
       "checked": 94,
       "added": 0,
-      "changed": 85,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -263,29 +263,29 @@
       "activeTracked": 94,
       "pendingClosureChecks": 9,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "centene": {
-      "discovered": 398,
-      "checked": 92,
+      "discovered": 402,
+      "checked": 90,
       "added": 0,
-      "changed": 83,
-      "closed": 2,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 90,
-      "pendingClosureChecks": 7,
+      "pendingClosureChecks": 8,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "walmart": {
-      "discovered": 15569,
-      "checked": 94,
+      "discovered": 15512,
+      "checked": 91,
       "added": 0,
-      "changed": 88,
-      "closed": 3,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -293,14 +293,14 @@
       "activeTracked": 91,
       "pendingClosureChecks": 3,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "disney": {
-      "discovered": 590,
-      "checked": 94,
+      "discovered": 595,
+      "checked": 93,
       "added": 0,
-      "changed": 93,
-      "closed": 1,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -308,14 +308,14 @@
       "activeTracked": 93,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "caterpillar": {
-      "discovered": 994,
-      "checked": 90,
+      "discovered": 992,
+      "checked": 88,
       "added": 0,
-      "changed": 83,
-      "closed": 2,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -323,13 +323,13 @@
       "activeTracked": 88,
       "pendingClosureChecks": 7,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "abbott": {
       "discovered": 2246,
       "checked": 28,
       "added": 0,
-      "changed": 27,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -338,43 +338,48 @@
       "activeTracked": 28,
       "pendingClosureChecks": 1,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
-    },
-    "cencora": {
-      "discovered": 1048,
-      "checked": 41,
-      "added": 0,
-      "changed": 41,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 1,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 41,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "cisco": {
-      "discovered": 1416,
-      "checked": 82,
+      "discovered": 1419,
+      "checked": 80,
       "added": 0,
-      "changed": 69,
-      "closed": 2,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 1,
+      "outsidePostingWindow": 0,
       "warnings": [],
-      "errors": [],
+      "errors": [
+        {
+          "url": "https://careers.cisco.com/ca/fr/job/CISCISGLOBAL2029628EXTERNALFRCA/Responsable-de-produit-d%E2%80%99ing%C3%A9nierie",
+          "error": "Previously published job no longer has verified US geography"
+        }
+      ],
       "activeTracked": 80,
       "pendingClosureChecks": 11,
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
     },
+    "cencora": {
+      "discovered": 1051,
+      "checked": 41,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 41,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
+    },
     "pepsico": {
       "discovered": 2762,
       "checked": 6,
       "added": 0,
-      "changed": 6,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -383,13 +388,13 @@
       "activeTracked": 6,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "coca-cola": {
       "discovered": 100,
       "checked": 74,
       "added": 0,
-      "changed": 70,
+      "changed": 1,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -398,37 +403,22 @@
       "activeTracked": 74,
       "pendingClosureChecks": 4,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "phillips-66": {
       "discovered": 66,
       "checked": 50,
       "added": 0,
-      "changed": 46,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 3,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 50,
-      "pendingClosureChecks": 4,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
-    },
-    "cvs-health": {
-      "discovered": 8025,
-      "checked": 92,
-      "added": 0,
-      "changed": 91,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
-      "activeTracked": 92,
-      "pendingClosureChecks": 1,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "activeTracked": 50,
+      "pendingClosureChecks": 4,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "bank-of-america": {
       "errors": [
@@ -438,11 +428,26 @@
       ],
       "lastSuccessfulAt": "2026-11-16T13:22:07.027637+00:00"
     },
+    "cvs-health": {
+      "discovered": 7565,
+      "checked": 92,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 92,
+      "pendingClosureChecks": 2,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
+    },
     "cardinal-health": {
       "discovered": 848,
       "checked": 98,
       "added": 0,
-      "changed": 98,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -451,13 +456,13 @@
       "activeTracked": 98,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "verizon": {
       "discovered": 1241,
       "checked": 99,
       "added": 0,
-      "changed": 99,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -466,14 +471,14 @@
       "activeTracked": 99,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "dell": {
-      "discovered": 14,
-      "checked": 54,
+      "discovered": 15,
+      "checked": 51,
       "added": 0,
-      "changed": 48,
-      "closed": 3,
+      "changed": 1,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -481,7 +486,7 @@
       "activeTracked": 51,
       "pendingClosureChecks": 3,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "valero": {
       "discovered": 6,
@@ -496,14 +501,14 @@
       "activeTracked": 1,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "humana": {
       "discovered": 2137,
-      "checked": 90,
+      "checked": 88,
       "added": 0,
-      "changed": 86,
-      "closed": 2,
+      "changed": 1,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -511,14 +516,14 @@
       "activeTracked": 88,
       "pendingClosureChecks": 2,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "kroger": {
       "discovered": 20,
-      "checked": 97,
+      "checked": 94,
       "added": 0,
-      "changed": 94,
-      "closed": 3,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -526,47 +531,21 @@
       "activeTracked": 94,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "ups": {
-      "discovered": 7,
-      "checked": 28,
-      "added": 0,
-      "changed": 14,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 0,
-      "warnings": [],
       "errors": [
         {
-          "error": "Bulk closure guard: previous records retained"
+          "error": "Public employer search contains no verified U.S. job URLs"
         }
       ],
-      "activeTracked": 28,
-      "pendingClosureChecks": 14,
-      "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-18T00:09:59.620147+00:00"
-    },
-    "costco": {
-      "discovered": 20,
-      "checked": 21,
-      "added": 0,
-      "changed": 21,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 2,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 21,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
     },
     "fannie-mae": {
       "discovered": 62,
       "checked": 20,
       "added": 0,
-      "changed": 17,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -590,11 +569,26 @@
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-16T13:22:07.027637+00:00"
     },
+    "costco": {
+      "discovered": 20,
+      "checked": 21,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 21,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
+    },
     "amazon": {
-      "discovered": 5,
+      "discovered": 4,
       "checked": 73,
       "added": 0,
-      "changed": 70,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -603,13 +597,13 @@
       "activeTracked": 73,
       "pendingClosureChecks": 3,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "apple": {
       "discovered": 20,
       "checked": 19,
       "added": 0,
-      "changed": 18,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -625,49 +619,59 @@
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-16T13:22:07.027637+00:00"
     },
-    "nvidia": {
+    "home-depot": {
       "discovered": 20,
-      "checked": 37,
+      "checked": 100,
       "added": 0,
-      "changed": 36,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
-      "errors": [
-        {
-          "url": "https://jobs.nvidia.com/careers/job/893397742060",
-          "error": "Employer request failed: HTTP 429"
-        }
-      ],
-      "activeTracked": 91,
-      "pendingClosureChecks": 1,
+      "errors": [],
+      "activeTracked": 100,
+      "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-19T03:33:12.151908+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "salesforce": {
-      "discovered": 484,
+      "discovered": 486,
       "checked": 95,
       "added": 0,
-      "changed": 95,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 2,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 95,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
-    "meta": {
-      "discovered": 1354,
-      "checked": 57,
+    "nvidia": {
+      "discovered": 20,
+      "checked": 91,
       "added": 0,
-      "changed": 53,
+      "changed": 54,
       "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 6,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 91,
+      "pendingClosureChecks": 1,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
+    },
+    "meta": {
+      "discovered": 1355,
+      "checked": 57,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [
         {
@@ -692,21 +696,6 @@
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-19T03:33:12.151908+00:00"
     },
-    "home-depot": {
-      "discovered": 20,
-      "checked": 100,
-      "added": 0,
-      "changed": 100,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 100,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
-    },
     "nationwide": {
       "discovered": 148,
       "checked": 0,
@@ -720,13 +709,13 @@
       "activeTracked": 0,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-20T15:51:17.306051+00:00"
+      "lastSuccessfulAt": "2026-11-20T16:50:14.009063+00:00"
     },
     "jpmorgan-chase": {
-      "discovered": 20,
+      "discovered": 21,
       "checked": 20,
       "added": 0,
-      "changed": 19,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
@@ -743,10 +732,10 @@
       "lastSuccessfulAt": "2026-11-17T20:29:28.131493+00:00"
     },
     "oracle": {
-      "discovered": 26,
+      "discovered": 27,
       "checked": 87,
       "added": 0,
-      "changed": 80,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
