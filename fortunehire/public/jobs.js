@@ -5,8 +5,8 @@ import { normalize } from './directory.js';
 import {US_STATES} from './us-geography.js';
 export {US_STATES} from './us-geography.js';
 export const ARRANGEMENTS = {'on-site':'On-site',hybrid:'Hybrid',remote:'Remote',unknown:'Not specified'};
-export const JOB_KEYS = ['q','state','arrangement','company','industry','function','type','pay','posted','payPosted','view','travel','sort','page'];
-export const MULTI_FILTER_KEYS = ['state','arrangement','function'];
+export const JOB_KEYS = ['q','state','arrangement','company','companyExclude','industry','function','type','pay','posted','payPosted','view','travel','sort','page'];
+export const MULTI_FILTER_KEYS = ['state','arrangement','function','company','companyExclude'];
 const LEGACY_FUNCTIONS={it:'it',engineering:'engineering',manufacturing:'manufacturing',logistics:'logistics',projects:'projects',business:'business',other:'other',sales:'sales',marketing:'marketing',hr:'hr',operations:'operations',service:'service',admin:'admin',legal:'legal',finance:'finance',healthcare:'healthcare',research:'research',retail:'retail',hospitality:'hospitality',quality:'quality'};
 export function normalizeLegacyFunction(value){return LEGACY_FUNCTIONS[value]||value;}
 export function todayInNewYork(date = new Date()) {
@@ -16,6 +16,7 @@ export function todayInNewYork(date = new Date()) {
 export function readJobFilters(search) {
   const p = new URLSearchParams(search);
   const f = Object.fromEntries(JOB_KEYS.map(k=>[k,MULTI_FILTER_KEYS.includes(k)?[...new Set(p.getAll(k).flatMap(value=>value.split(',')).map(value=>value.trim()).filter(Boolean).map(value=>value.slice(0,160)))].slice(0,50):(p.get(k)||'').slice(0,160)]));
+  f.company=f.company.filter(id=>!f.companyExclude.includes(id));
   f.sort = ['title','company'].includes(f.sort) ? f.sort : 'newest';
   f.travel = f.travel === 'exclude' ? 'exclude' : 'include';
   f.posted = ['today','3','7','14'].includes(f.posted)?f.posted:'';
@@ -71,7 +72,7 @@ export function hasPostedPay(job,state=''){
  return matchesStateScope(scope,state);
 }
 export function filterJobs(jobs,f,today = todayInNewYork(),includeUnavailable=false) {
-  return jobs.filter(j=>(includeUnavailable||!j.organizerUnavailable&&isCurrent(j,today)) && matchesPosted(j,f.posted,today) && (!f.payPosted||hasPostedPay(j,f.state)) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && matchesArrangement(j,f.arrangement) && (!f.company||j.companyId===f.company) && (!f.industry||j.industry===f.industry) && matchesCategory(j.primaryJobFunction,f.function) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || matchesPay(j,f.pay,f.state))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
+  return jobs.filter(j=>(includeUnavailable||!j.organizerUnavailable&&isCurrent(j,today)) && matchesPosted(j,f.posted,today) && (!f.payPosted||hasPostedPay(j,f.state)) && (!normalize(f.q)||normalize(j.title+' '+j.companyName).includes(normalize(f.q))) && matchesState(j,f.state) && matchesArrangement(j,f.arrangement) && matchesCategory(j.companyId,f.company) && !(Array.isArray(f.companyExclude)?f.companyExclude:f.companyExclude?[f.companyExclude]:[]).includes(j.companyId) && (!f.industry||j.industry===f.industry) && matchesCategory(j.primaryJobFunction,f.function) && (!f.type||j.employmentType===f.type) && (f.travel!=='exclude'||j.travelRequired!==true) && (!f.pay || matchesPay(j,f.pay,f.state))).sort((a,b)=>f.sort==='title'?a.title.localeCompare(b.title):f.sort==='company'?a.companyName.localeCompare(b.companyName)||a.title.localeCompare(b.title):(b.postedAt||'').localeCompare(a.postedAt||'')||a.title.localeCompare(b.title));
 }
 export function matchesPay(job,value,state='') {
   const match=/^(year|hour):(\d+)$/.exec(value);
