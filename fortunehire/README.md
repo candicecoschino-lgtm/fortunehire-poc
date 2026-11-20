@@ -1,6 +1,6 @@
 # FortuneHire proof of concept
 
-**Directory branding:** the company directory uses locally hosted official-site brand icons for the original 52 employers; nineteen newly reviewed companies use the initials fallback. Sources and review dates are recorded in `public/data/company-logos.json` and linked from each card. Icons load as they come into view; company initials remain the fallback if a file is unavailable. The directory makes no external logo-service requests. This visual update does not change job collection.
+**Directory branding:** the company directory uses locally hosted official-site brand icons for 68 of the 71 reviewed employers. Adobe, Intel, and Warner Bros. Discovery retain the initials fallback because a suitable icon could not be approved or obtained. Sources and review dates are recorded in `public/data/company-logos.json` and linked from each card. Icons load as they come into view; company initials remain the fallback if a file is unavailable. The directory makes no external logo-service requests. This visual update does not change job collection.
 
 **Automation pilot:** 45 reviewed employers have enabled first-party career-page and public-search connections, with twice-daily GitHub checks and bounded U.S. collection. See [FEED-EXPANSION.md](FEED-EXPANSION.md) for the 52-employer audit and [AUTOMATION.md](AUTOMATION.md) for limits and lifecycle behavior. The company directory and connected job coverage are separate.
 
