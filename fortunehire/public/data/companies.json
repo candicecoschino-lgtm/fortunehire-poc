@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "listYear": 2026,
-  "coverage": "66 reviewed employers from the 2026 list; 434 remain to be verified. This is a curated sample, not a ranked top-50 list.",
+  "coverage": "71 reviewed employers from the 2026 list; 429 remain to be verified. This is a curated sample, not a ranked top-50 list.",
   "companies": [
     {
       "id": "alphabet",
@@ -1027,6 +1027,81 @@
       "listYear": 2026,
       "careerUrl": "https://careers.wbd.com/global/en",
       "profileSource": "https://fortune.com/company/discovery/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "intel",
+      "name": "Intel",
+      "industry": "Semiconductors and Other Electronic Components",
+      "headquarters": {
+        "city": "Santa Clara",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://intel.wd1.myworkdayjobs.com/External/page/6042070b79e01001f04fa9b468070000",
+      "profileSource": "https://fortune.com/company/intel/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "hp",
+      "name": "HP Inc.",
+      "industry": "Computers, Office Equipment",
+      "headquarters": {
+        "city": "Palo Alto",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.hp.com/",
+      "profileSource": "https://fortune.com/company/hp/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "uber-technologies",
+      "name": "Uber Technologies",
+      "industry": "Internet Services and Retailing",
+      "headquarters": {
+        "city": "San Francisco",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.uber.com/",
+      "profileSource": "https://fortune.com/company/uber-technologies/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "cbre-group",
+      "name": "CBRE Group",
+      "industry": "Real estate",
+      "headquarters": {
+        "city": "Dallas",
+        "state": "Texas"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.cbre.com/careers",
+      "profileSource": "https://fortune.com/company/cbre-group/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "jones-lang-lasalle",
+      "name": "Jones Lang LaSalle (JLL)",
+      "industry": "Real estate",
+      "headquarters": {
+        "city": "Chicago",
+        "state": "Illinois"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.jll.com/en-us/careers",
+      "profileSource": "https://fortune.com/company/jones-lang-lasalle/",
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
       "reviewedAt": "2026-11-20",
       "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."

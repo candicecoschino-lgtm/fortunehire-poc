@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-11-20",
-  "coverage": "All 66 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
+  "coverage": "All 71 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 5,
     "connected": 45,
     "paused": 1,
-    "verification-needed": 15
+    "verification-needed": 20
   },
   "companies": [
     {
@@ -964,6 +964,51 @@
       "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
       "nextStep": "Audit official postings and access policy before considering a job feed.",
       "officialCareerUrl": "https://careers.wbd.com/global/en",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "intel",
+      "company": "Intel",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://intel.wd1.myworkdayjobs.com/External/page/6042070b79e01001f04fa9b468070000",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "hp",
+      "company": "HP Inc.",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://jobs.hp.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "uber-technologies",
+      "company": "Uber Technologies",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://jobs.uber.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "cbre-group",
+      "company": "CBRE Group",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.cbre.com/careers",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "jones-lang-lasalle",
+      "company": "Jones Lang LaSalle (JLL)",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.jll.com/en-us/careers",
       "reviewedAt": "2026-11-20"
     }
   ]
