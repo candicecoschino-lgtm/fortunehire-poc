@@ -3,12 +3,14 @@ import {mountSavedSearches} from './saved-searches.js';
 import {ACTIVITY_KEY,readJobActivity,setJobActivity,activityFlags,activityView,trackedJobs} from './job-activity.js';
 import { JOB_KEYS, MULTI_FILTER_KEYS, US_STATES, ARRANGEMENTS, todayInNewYork, readJobFilters, serializeJobFilters, isCurrent, filterJobs, paginateJobs, salaryText, validateJobs } from './jobs.js';
 import {postedLabel,locationSummary,paySummary,todayPostingNote} from './job-presentation.js';
+import {installMultiFilterBehavior} from './multi-filter-behavior.js';
 const $=id=>document.getElementById(id);
 const e=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const link=(text,url)=>{const a=e('a',text);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;};
 let jobs=[],ready=false,currentPage='1',pending,renderedDay='',collection=null,logos={};
 let activity=[],activityStorage,activityAvailable=true,companyDirectory=[],undoAction=null;
 const FILTER_CONTROLS=JOB_KEYS.filter(k=>!['page','travel','payPosted'].includes(k));
+installMultiFilterBehavior(document);
 try{activityStorage=window.localStorage;activity=readJobActivity(activityStorage);}catch{activityAvailable=false;}
 const labelDate=value=>new Date(value+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
 function card(j,f){
