@@ -4,9 +4,9 @@
   "coverage": "All 71 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 5,
-    "connected": 45,
+    "connected": 46,
     "paused": 1,
-    "verification-needed": 20
+    "verification-needed": 19
   },
   "companies": [
     {
@@ -915,9 +915,9 @@
     {
       "companyId": "nationwide",
       "company": "Nationwide",
-      "status": "verification-needed",
-      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "status": "connected",
+      "reason": "Employer-owned career host and crawler rules verified. Published sitemap lists individual roles; each sampled role supplied matching dated JobPosting identity, U.S. locations, and official URL. Bounded pilot: 20 of 20 recent candidates validated.",
+      "nextStep": "Monitor the first scheduled refresh, closure checks, and field coverage; sample is not a complete inventory.",
       "officialCareerUrl": "https://careers.nationwide.com/",
       "reviewedAt": "2026-11-20"
     },
