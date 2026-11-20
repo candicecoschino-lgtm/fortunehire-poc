@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "listYear": 2026,
-  "coverage": "62 reviewed employers from the 2026 list; 438 remain to be verified. This is a curated sample, not a ranked top-50 list.",
+  "coverage": "66 reviewed employers from the 2026 list; 434 remain to be verified. This is a curated sample, not a ranked top-50 list.",
   "companies": [
     {
       "id": "alphabet",
@@ -892,6 +892,66 @@
       "listYear": 2026,
       "careerUrl": "https://www.broadcom.com/company/careers",
       "profileSource": "https://fortune.com/company/broadcom/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "metlife",
+      "name": "MetLife",
+      "industry": "Insurance: Life and Health",
+      "headquarters": {
+        "city": "New York City",
+        "state": "New York"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.metlifecareers.com/",
+      "profileSource": "https://fortune.com/company/metlife/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "new-york-life",
+      "name": "New York Life",
+      "industry": "Insurance: Life, Health (Mutual)",
+      "headquarters": {
+        "city": "New York City",
+        "state": "New York"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.newyorklife.com/careers",
+      "profileSource": "https://fortune.com/company/new-york-life-insurance/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "allstate",
+      "name": "Allstate",
+      "industry": "Insurance: Property and Casualty (Stock)",
+      "headquarters": {
+        "city": "Northbrook",
+        "state": "Illinois"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.allstate.jobs/",
+      "profileSource": "https://fortune.com/company/allstate/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "nationwide",
+      "name": "Nationwide",
+      "industry": "Insurance: Property and Casualty (Mutual)",
+      "headquarters": {
+        "city": "Columbus",
+        "state": "Ohio"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.nationwide.com/",
+      "profileSource": "https://fortune.com/company/nationwide/",
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
       "reviewedAt": "2026-11-20",
       "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."

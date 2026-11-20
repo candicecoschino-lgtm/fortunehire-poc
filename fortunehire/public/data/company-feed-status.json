@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-11-20",
-  "coverage": "All 62 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
+  "coverage": "All 66 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 5,
     "connected": 45,
     "paused": 1,
-    "verification-needed": 11
+    "verification-needed": 15
   },
   "companies": [
     {
@@ -883,6 +883,42 @@
       "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
       "nextStep": "Audit official postings and access policy before considering a job feed.",
       "officialCareerUrl": "https://www.broadcom.com/company/careers",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "metlife",
+      "company": "MetLife",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.metlifecareers.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "new-york-life",
+      "company": "New York Life",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.newyorklife.com/careers",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "allstate",
+      "company": "Allstate",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.allstate.jobs/",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "nationwide",
+      "company": "Nationwide",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://careers.nationwide.com/",
       "reviewedAt": "2026-11-20"
     },
     {
