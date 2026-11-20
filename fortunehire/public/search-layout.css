@@ -25,6 +25,15 @@
 .multi-filter-options label:hover{background:#f1f4ed}
 .multi-filter-options input{width:16px;height:16px;flex:0 0 16px;margin:0;accent-color:var(--ink)}
 .filter-row>.multi-filter-field{font-size:12px}
+.company-filter-panel{position:absolute;z-index:20;left:0;right:0;min-width:min(340px,85vw);padding:10px;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 12px 28px #0002}
+.company-filter-panel>input{box-sizing:border-box;width:100%;min-height:38px;margin-bottom:8px;padding:7px;border:1px solid var(--line);border-radius:5px}
+.company-filter-head,.company-filter-row{display:grid;grid-template-columns:55px minmax(0,1fr) 55px;align-items:center;gap:8px;text-align:center}
+.company-filter-head{font-size:11px;font-weight:700}
+.company-filter-row{min-height:36px;font-size:12px;font-weight:400}
+.company-filter-row>span{text-align:left}
+.company-filter-row label{display:flex;justify-content:center;padding:5px}
+.company-filter-row input{width:16px;height:16px;accent-color:var(--ink)}
+.company-filter-panel .multi-filter-options{position:static;max-height:240px;overflow-y:auto;border:0;box-shadow:none;padding:0}
 .filter-row .multi-filter{margin-top:6px}
 .filter-row .multi-filter>summary{min-height:44px;font-size:13px}
 .filter-tools{display:flex;align-items:start;gap:18px;margin-top:15px}
