@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "listYear": 2026,
-  "coverage": "61 reviewed employers from the 2026 list; 439 remain to be verified. This is a curated sample, not a ranked top-50 list.",
+  "coverage": "66 reviewed employers from the 2026 list; 434 remain to be verified. This is a curated sample, not a ranked top-50 list.",
   "companies": [
     {
       "id": "alphabet",
@@ -952,6 +952,81 @@
       "listYear": 2026,
       "careerUrl": "https://careers.nationwide.com/",
       "profileSource": "https://fortune.com/company/nationwide/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "travelers",
+      "name": "Travelers",
+      "industry": "Insurance: Property and Casualty (Stock)",
+      "headquarters": {
+        "city": "New York City",
+        "state": "New York"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.travelers.com/",
+      "profileSource": "https://fortune.com/company/travelers-cos/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "liberty-mutual",
+      "name": "Liberty Mutual Insurance",
+      "industry": "Insurance: Property and Casualty (Stock)",
+      "headquarters": {
+        "city": "Boston",
+        "state": "Massachusetts"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://searchjobs.libertymutualgroup.com/careers/search",
+      "profileSource": "https://fortune.com/company/liberty-mutual-insurance-group/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "charter-communications",
+      "name": "Charter Communications",
+      "industry": "Telecommunications",
+      "headquarters": {
+        "city": "Stamford",
+        "state": "Connecticut"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://jobs.spectrum.com/",
+      "profileSource": "https://fortune.com/company/charter-communications/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "live-nation-entertainment",
+      "name": "Live Nation Entertainment",
+      "industry": "Entertainment",
+      "headquarters": {
+        "city": "Beverly Hills",
+        "state": "California"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://www.livenationentertainment.com/careers",
+      "profileSource": "https://fortune.com/company/live-nation-entertainment/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-20",
+      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "warner-bros-discovery",
+      "name": "Warner Bros. Discovery",
+      "industry": "Entertainment",
+      "headquarters": {
+        "city": "New York City",
+        "state": "New York"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.wbd.com/global/en",
+      "profileSource": "https://fortune.com/company/discovery/",
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
       "reviewedAt": "2026-11-20",
       "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."

@@ -1,14 +1,14 @@
 # FortuneHire proof of concept
 
-**Directory branding:** the company directory uses locally hosted official-site brand icons for the original 52 employers; nine newly reviewed companies use the initials fallback. Sources and review dates are recorded in `public/data/company-logos.json` and linked from each card. Icons load as they come into view; company initials remain the fallback if a file is unavailable. The directory makes no external logo-service requests. This visual update does not change job collection.
+**Directory branding:** the company directory uses locally hosted official-site brand icons for the original 52 employers; fourteen newly reviewed companies use the initials fallback. Sources and review dates are recorded in `public/data/company-logos.json` and linked from each card. Icons load as they come into view; company initials remain the fallback if a file is unavailable. The directory makes no external logo-service requests. This visual update does not change job collection.
 
 **Automation pilot:** 45 reviewed employers have enabled first-party career-page and public-search connections, with twice-daily GitHub checks and bounded U.S. collection. See [FEED-EXPANSION.md](FEED-EXPANSION.md) for the 52-employer audit and [AUTOMATION.md](AUTOMATION.md) for limits and lifecycle behavior. The company directory and connected job coverage are separate.
 
-**Current product:** the main page is now an individual-job board with State and Work arrangement first, plus company, industry, sector, job type, posted minimum pay and travel filtering. See [JOB-BOARD-SPEC.md](JOB-BOARD-SPEC.md) for current behavior and [JOB-DATA-REVIEW.md](JOB-DATA-REVIEW.md) for coverage, sourcing and maintenance. The 61-company directory is preserved at `public/companies.html`. The directory-specific notes below describe that secondary page.
+**Current product:** the main page is now an individual-job board with State and Work arrangement first, plus company, industry, sector, job type, posted minimum pay and travel filtering. See [JOB-BOARD-SPEC.md](JOB-BOARD-SPEC.md) for current behavior and [JOB-DATA-REVIEW.md](JOB-DATA-REVIEW.md) for coverage, sourcing and maintenance. The 66-company directory is preserved at `public/companies.html`. The directory-specific notes below describe that secondary page.
 
 A static, independent employer directory. Search names and combine company, industry, headquarters state, and headquarters city filters. Open the employer's own career page to find jobs and work arrangements. No accounts, personal data, uploads, or tracking. Directory filters describe headquarters; job filters use evidence from individual employer postings.
 
-**Coverage:** 61 reviewed employers from the 2026 Fortune 500. This is an intentionally labeled growing collection, not a complete 500-company directory. Every record links to its company profile, list membership source, reviewed official career destination, and review date. No rankings, financial figures, or company descriptions are republished. Brand icons are sourced separately as described above.
+**Coverage:** 66 reviewed employers from the 2026 Fortune 500. This is an intentionally labeled growing collection, not a complete 500-company directory. Every record links to its company profile, list membership source, reviewed official career destination, and review date. No rankings, financial figures, or company descriptions are republished. Brand icons are sourced separately as described above.
 
 ## Preview and checks
 
@@ -34,10 +34,10 @@ Quick alternative: drag the **public** folder into Netlify's manual deployment f
 
 ## Deployment smoke checks
 
-- Header and cards load; there are 61 companies with no filters. Check desktop and a narrow phone window.
+- Header and cards load; there are 66 companies with no filters. Check desktop and a narrow phone window.
 - Search `micro` → Microsoft; change case → same result.
 - Clear. Select General Merchandisers + Washington → Costco Wholesale.
-- Select Apple + Minnesota → no results. Clear all filters restores 61 cards.
+- Select Apple + Minnesota → no results. Clear all filters restores 66 cards.
 - Select Atlanta → Coca-Cola, Delta Air Lines, Home Depot and UPS. This is headquarters filtering, not job location filtering.
 - Sort Z–A. Copy the URL into a fresh tab and reload: selections, sorting and results persist.
 - Tab through controls, open a source disclosure with the keyboard, and follow an official career link. It should open a new tab with the employer's site.
@@ -63,4 +63,4 @@ Before calling the directory complete, verify all 500 records against appropriat
 GitHub Pages is also compatible when the contents of `public/` are published; Netlify is the primary V1 deployment target. No service-specific API is required.
 
 
-All 61 company feed outcomes and outstanding obstacles are documented in COMPANY-FEED-STATUS.md and public/data/company-feed-status.json. The State-restricted remote filter remains a subset of Remote; it does not relabel those jobs as hybrid.
+All 66 company feed outcomes and outstanding obstacles are documented in COMPANY-FEED-STATUS.md and public/data/company-feed-status.json. The State-restricted remote filter remains a subset of Remote; it does not relabel those jobs as hybrid.

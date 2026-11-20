@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-11-20",
-  "coverage": "All 61 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
+  "coverage": "All 66 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 5,
     "connected": 45,
     "paused": 1,
-    "verification-needed": 10
+    "verification-needed": 15
   },
   "companies": [
     {
@@ -919,6 +919,51 @@
       "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
       "nextStep": "Audit official postings and access policy before considering a job feed.",
       "officialCareerUrl": "https://careers.nationwide.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "travelers",
+      "company": "Travelers",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://careers.travelers.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "liberty-mutual",
+      "company": "Liberty Mutual Insurance",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://searchjobs.libertymutualgroup.com/careers/search",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "charter-communications",
+      "company": "Charter Communications",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://jobs.spectrum.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "live-nation-entertainment",
+      "company": "Live Nation Entertainment",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://www.livenationentertainment.com/careers",
+      "reviewedAt": "2026-11-20"
+    },
+    {
+      "companyId": "warner-bros-discovery",
+      "company": "Warner Bros. Discovery",
+      "status": "verification-needed",
+      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://careers.wbd.com/global/en",
       "reviewedAt": "2026-11-20"
     }
   ]
