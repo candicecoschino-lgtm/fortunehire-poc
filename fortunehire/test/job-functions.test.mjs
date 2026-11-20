@@ -40,6 +40,19 @@ test('specific sales, communications, IT, and operations titles no longer fall t
  assert.equal(jobFunctionResult({title:'Communications Research and Impact Advisor',functionContext:context(['Lead quantitative and qualitative studies end to end.'])}).primaryFunction,'other');
 });
 
+test('recurring specific occupations resolve without broad department guesses',()=>{
+ for(const [title,expected] of [
+  ['Pharmacy Intern','healthcare'],['CNA Hospice Aide','healthcare'],
+  ['Online Grocery Pick-Up Clerk','retail'],['Bakery/Deli Clerk','retail'],
+  ['Merchandising Service Associate','retail'],
+  ['Xfinity Outside Sales Professional','sales'],['Solar Sales Rep','sales'],
+  ['Senior Network Developer','it'],['Tire & Battery Technician - Automotive','trades'],
+  ['Operations Admin II','admin'],['Senior Tax Analyst','finance']
+ ]) assert.equal(jobFunctionResult({title}).primaryFunction,expected,title);
+ for(const title of ['Benefits Consultant','Merchandising Lead','Fulfillment Associate'])
+  assert.equal(jobFunctionResult({title}).primaryFunction,'other',title);
+});
+
 test('responsibilities support a generic title and resolve one clear function',()=>{
  const result=jobFunctionResult({title:'Specialist',functionContext:context(['Prepare financial statements and reconcile accounts payable.'])});
  assert.equal(result.primaryFunction,'finance');

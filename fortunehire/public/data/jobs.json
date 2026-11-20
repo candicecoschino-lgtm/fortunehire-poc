@@ -55807,10 +55807,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states full-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "finance",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Senior Tax Analyst"
       ]
@@ -56797,10 +56797,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -103622,10 +103622,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Xfinity Outside Sales Professional"
       ]
@@ -103776,10 +103776,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Xfinity Outside Sales Professional"
       ]
@@ -103963,10 +103963,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Xfinity Outside Sales Professional"
       ]
@@ -105307,10 +105307,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Solar Sales Rep"
       ]
@@ -105383,10 +105383,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Solar Sales Rep"
       ]
@@ -105533,10 +105533,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Xfinity Outside Sales Professional"
       ]
@@ -105608,10 +105608,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Xfinity Outside Sales Professional"
       ]
@@ -105683,10 +105683,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Xfinity Outside Sales Professional"
       ]
@@ -105758,10 +105758,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Xfinity Outside Sales Professional"
       ]
@@ -105977,10 +105977,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Xfinity Outside Sales Professional"
       ]
@@ -111168,10 +111168,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern - Grad"
       ]
@@ -114255,10 +114255,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -114339,10 +114339,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -114492,10 +114492,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Foreign Pharmacy Grad - International Pharmacy Intern"
       ]
@@ -114575,10 +114575,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Foreign Pharmacy Grad - International Pharmacy Intern"
       ]
@@ -114658,10 +114658,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Foreign Pharmacy Grad - International Pharmacy Intern"
       ]
@@ -114742,10 +114742,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -114826,10 +114826,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -114910,10 +114910,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -114994,10 +114994,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115078,10 +115078,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115162,10 +115162,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115246,10 +115246,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115330,10 +115330,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115414,10 +115414,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115498,10 +115498,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115582,10 +115582,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115666,10 +115666,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115750,10 +115750,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115834,10 +115834,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -115918,10 +115918,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116002,10 +116002,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116086,10 +116086,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116170,10 +116170,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116254,10 +116254,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116338,10 +116338,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116422,10 +116422,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116506,10 +116506,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116590,10 +116590,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116674,10 +116674,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116758,10 +116758,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116842,10 +116842,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -116926,10 +116926,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -117010,10 +117010,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -117094,10 +117094,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -117178,10 +117178,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -141153,10 +141153,10 @@
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "closedAt": "2026-11-18T00:09:59.620147+00:00",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -142632,10 +142632,10 @@
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "closedAt": "2026-11-18T00:09:59.620147+00:00",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Pharmacy Intern"
       ]
@@ -146789,10 +146789,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "admin",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Operations Admin II"
       ]
@@ -147175,10 +147175,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "admin",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Sr Operations Admin"
       ]
@@ -147456,10 +147456,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "admin",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Sr Operations Admin"
       ]
@@ -183683,10 +183683,10 @@
         "deadline": ""
       },
       "closedAt": "2026-11-17T04:31:51.240243+00:00",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Online Grocery Pick-Up Clerk"
       ]
@@ -183737,10 +183737,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Courtesy Clerk/Grocery Bagger"
       ]
@@ -183795,10 +183795,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Deli Clerk"
       ]
@@ -183851,10 +183851,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Meat Clerk"
       ]
@@ -183905,10 +183905,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Meat Clerk"
       ]
@@ -183961,10 +183961,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Bakery/Deli Clerk"
       ]
@@ -184017,10 +184017,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "MEAT/CLERK"
       ]
@@ -184125,10 +184125,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Online Grocery Pick-Up Clerk"
       ]
@@ -184235,10 +184235,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Produce Clerk"
       ]
@@ -184293,10 +184293,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Bakery/Deli Clerk"
       ]
@@ -184513,10 +184513,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Bakery/Deli Clerk"
       ]
@@ -184623,10 +184623,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Bakery Clerk"
       ]
@@ -184679,10 +184679,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Online Grocery Pick-Up Clerk"
       ]
@@ -184733,10 +184733,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Courtesy Clerk/Grocery Bagger"
       ]
@@ -184787,10 +184787,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Meat Clerk"
       ]
@@ -185114,10 +185114,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Meat Clerk"
       ]
@@ -185497,10 +185497,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states full-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "MEAT/CLERK"
       ]
@@ -185764,10 +185764,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "FRONT END/COURTESY CLERK"
       ]
@@ -185822,10 +185822,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Bakery/Deli Clerk"
       ]
@@ -185880,10 +185880,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Deli Clerk"
       ]
@@ -185936,10 +185936,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Courtesy Clerk/Grocery Bagger"
       ]
@@ -186153,10 +186153,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "PRODUCE/CLERK"
       ]
@@ -186493,10 +186493,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Courtesy Clerk/Grocery Bagger"
       ]
@@ -186549,10 +186549,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Meat Clerk"
       ]
@@ -187057,10 +187057,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Bakery/Deli Clerk"
       ]
@@ -187431,10 +187431,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Bakery/Deli Clerk"
       ]
@@ -187541,10 +187541,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Meat Clerk"
       ]
@@ -187595,10 +187595,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Online Grocery Pick-Up Clerk"
       ]
@@ -187757,10 +187757,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Produce Clerk"
       ]
@@ -188028,10 +188028,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Bakery/Deli Clerk"
       ]
@@ -188196,10 +188196,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "DELI/CLERK"
       ]
@@ -188252,10 +188252,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "MEAT/CLERK"
       ]
@@ -188308,10 +188308,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Courtesy Clerk/Grocery Bagger"
       ]
@@ -188420,10 +188420,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "MEAT/CLERK"
       ]
@@ -188476,10 +188476,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "STORE/NIGHT CLERK"
       ]
@@ -188525,10 +188525,10 @@
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "closedAt": "2026-11-18T00:09:59.620147+00:00",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "PRODUCE/CLERK"
       ]
@@ -188574,10 +188574,10 @@
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "closedAt": "2026-11-17T14:59:08.619392+00:00",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "GROCERY/COURTESY CLERK"
       ]
@@ -188626,10 +188626,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "STORE/NIGHT CLERK"
       ],
@@ -188736,10 +188736,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "FRONT END/COURTESY CLERK"
       ]
@@ -188788,10 +188788,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Courtesy Clerk/Grocery Bagger"
       ],
@@ -188847,10 +188847,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Bakery/Deli Clerk"
       ]
@@ -188952,10 +188952,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Online Grocery Pick-Up Clerk"
       ],
@@ -189007,10 +189007,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Meat Clerk"
       ]
@@ -189119,10 +189119,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "STORE/NIGHT CLERK"
       ]
@@ -189287,10 +189287,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Meat Clerk"
       ]
@@ -189343,10 +189343,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Produce Clerk"
       ]
@@ -189397,10 +189397,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "STORE/NIGHT CLERK"
       ]
@@ -189509,10 +189509,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Produce Clerk (Truck)"
       ]
@@ -189563,10 +189563,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "MEAT/CLERK"
       ]
@@ -189729,10 +189729,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Courtesy Clerk/Grocery Bagger"
       ]
@@ -189783,10 +189783,10 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states part-time."
       },
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Online Grocery Pick-Up Clerk"
       ]
@@ -189839,10 +189839,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Courtesy Clerk/Grocery Bagger"
       ]
@@ -189949,10 +189949,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Online Grocery Pick-Up Clerk"
       ]
@@ -193736,10 +193736,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Full Time - Merchandising Service Associate - Day"
       ]
@@ -193818,10 +193818,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Full Time - Merchandising Service Associate - Day"
       ]
@@ -194245,10 +194245,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Full Time - Merchandising Service Associate - Day"
       ]
@@ -194416,10 +194416,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Full Time - Merchandising Service Associate - Day"
       ]
@@ -194633,10 +194633,10 @@
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "closedAt": "2026-11-18T03:43:58.958207+00:00",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Full Time - Merchandising Service Associate - Day"
       ]
@@ -194715,10 +194715,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Full Time - Merchandising Service Associate - Day"
       ]
@@ -194950,10 +194950,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Full Time - Merchandising Service Associate - Day"
       ]
@@ -196883,10 +196883,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "retail",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Full Time - Merchandising Service Associate - Day"
       ]
@@ -226663,10 +226663,10 @@
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "it",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Principal Network Developer - Seattle or Bay area"
       ]
@@ -227293,10 +227293,10 @@
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "it",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Senior Network Developer"
       ]
@@ -227385,10 +227385,10 @@
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "it",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Senior Network Developer"
       ]
@@ -227802,12 +227802,12 @@
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
-      "jobFunctionBasis": "responsibilities",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "primaryJobFunction": "it",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
-        "You will design advanced automation, testing, telemetry, and monitoring solutions;",
+        "Principal Network Developer",
         "You will partner with engineering teams, vendors, and customers to resolve complex technical challenges, ensure deployment readiness, and evolve network architecture and operational practices at cloud scale.",
         "Lead the design, deployment, validation, and lifecycle management of large-scale RDMA/RoCE network fabrics supporting OCI AI, GPU, and HPC infrastructure.",
         "Serve as technical lead for complex network initiatives spanning RDMA/RoCE fabrics, data center networking, automation, testing, deployment, and operations."
@@ -227866,13 +227866,13 @@
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
-      "jobFunctionBasis": "responsibilities",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "primaryJobFunction": "it",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
+        "Senior Network Developer",
         "Design, operate, validate, and scale advanced network fabrics for large-scale cloud, AI, and data center environments.",
-        "Develop automation, scripts, and tooling to streamline network testing, operations, deployment, and troubleshooting.",
         "Build and enhance telemetry, dashboards, alerting, and monitoring to improve network health, reliability, and SLO performance.",
         "Develop test strategies, lead pre-production validation, and drive root cause analysis (RCA) for network issues and changes."
       ]
@@ -227936,14 +227936,14 @@
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
-      "jobFunctionBasis": "responsibilities",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "primaryJobFunction": "it",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
+        "Principal Network Developer",
         "Lead the design, deployment, validation, and lifecycle management of large-scale RDMA/RoCE network fabrics supporting OCI AI, GPU, and HPC infrastructure.",
         "Serve as technical lead for complex network initiatives spanning RDMA/RoCE fabrics, data center networking, automation, testing, deployment, and operations.",
-        "Develop automation frameworks, tools, scripts, and infrastructure pipelines to improve network deployment, testing, reliability, and operational efficiency.",
         "Design test strategies and lead pre-production validation, network change reviews, and deployment readiness for high-performance network fabrics."
       ]
     },
@@ -254982,10 +254982,10 @@
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "CNA Hospice Aide"
       ]
@@ -263380,10 +263380,10 @@
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "CNA Hospice Aide"
       ]
@@ -264014,10 +264014,10 @@
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "healthcare",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "CNA Hospice Aide"
       ]
@@ -275577,10 +275577,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "trades",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "(USA) Tire & Battery Technician - Automotive"
       ]
@@ -275650,10 +275650,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "trades",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "(USA) Tire & Battery Technician - Automotive"
       ]
@@ -276971,10 +276971,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "trades",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "(USA) Tire & Battery Technician - Automotive"
       ]
@@ -277364,10 +277364,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "trades",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "(USA) Tire & Battery Technician - Automotive"
       ]
@@ -278635,10 +278635,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "trades",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "(USA) Tire & Battery Technician - Automotive"
       ]
@@ -279732,10 +279732,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "trades",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "(USA) Tire & Battery Technician - Automotive"
       ]
@@ -280866,10 +280866,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "trades",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "(USA) Tire & Battery Technician - Automotive"
       ]
