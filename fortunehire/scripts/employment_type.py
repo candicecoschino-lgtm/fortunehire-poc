@@ -1,4 +1,4 @@
-"""Verified role labels, followed by the disclosed user-selected fallback."""
+"""Keep employment type unspecified unless the employer's role evidence supports it."""
 import re
 
 SPACE=r'[\s\u2010-\u2015_-]*'
@@ -34,7 +34,9 @@ def apply_employment_policy(job):
  current='Not specified' if job.get('employmentTypeBasis')=='assumed-full-time' else job['employmentType']
  kind,evidence=resolve_employment(job['title'],'',current)
  if kind=='Not specified':
-  return {**job,'employmentType':'Full-time','employmentTypeBasis':'assumed-full-time','employmentTypeNote':'Assumed full-time because the employer did not specify an employment type.'}
+  if job.get('employmentTypeBasis')!='assumed-full-time':return job
+  result={k:v for k,v in job.items() if k not in ('employmentTypeBasis','employmentTypeNote')}
+  return {**result,'employmentType':'Not specified'}
  if kind==job['employmentType'] and not job.get('employmentTypeBasis'):return job
  result={k:v for k,v in job.items() if k not in ('employmentTypeBasis','employmentTypeNote')}
  return {**result,'employmentType':kind,'evidence':{**job.get('evidence',{}),**({'employmentType':evidence} if evidence else {})}}

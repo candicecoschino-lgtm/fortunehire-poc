@@ -7,10 +7,11 @@ const data=JSON.parse(await readFile(new URL('./fixtures/reviewed-jobs.json',imp
 const jobs=validateJobs(data,companies),today='2026-11-13';
 const filters=extra=>({...readJobFilters(''),...extra});
 
-test('assumed full-time is disclosed, validated, and included in the full-time filter',()=>{
+test('legacy assumed full-time is treated as unspecified in employment filters',()=>{
  const j={...structuredClone(data.jobs[0]),employmentType:'Full-time',employmentTypeBasis:'assumed-full-time',employmentTypeNote:'Assumed full-time; employer did not specify.'};
  const valid=validateJobs({schemaVersion:1,jobs:[j]},companies);
- assert.equal(filterJobs(valid,filters({type:'Full-time'}),today).length,1);
+ assert.equal(filterJobs(valid,filters({type:'Full-time'}),today).length,0);
+ assert.equal(filterJobs(valid,filters({type:'Not specified'}),today).length,1);
  assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,employmentType:'Part-time'}]},companies));
  assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...j,employmentTypeNote:''}]},companies));
 });
@@ -83,6 +84,7 @@ test('published pay text remains visible without inventing a numeric pay period'
 test('current publication dataset validates independently of historical regression fixtures',async()=>{
   const current=JSON.parse(await readFile(new URL('../public/data/jobs.json',import.meta.url),'utf8'));
   assert.ok(validateJobs(current,companies).length>0);
+  assert.equal(current.jobs.filter(j=>j.employmentTypeBasis==='assumed-full-time').length,0);
 });
 test('reviewed production jobs join real employers and cover all three arrangements',()=>{
   assert.equal(jobs.length,22);assert.deepEqual([...new Set(jobs.map(j=>j.arrangement))].sort(),['hybrid','on-site','remote']);
