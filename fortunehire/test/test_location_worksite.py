@@ -47,6 +47,15 @@ class LocationWorksiteTests(unittest.TestCase):
   self.assertEqual(job['arrangement'],'remote');self.assertEqual(job['eligibleStates'],['Florida']);self.assertEqual(job['remoteScope'],'states');self.assertEqual(job['reviewedAt'],old['reviewedAt'])
   self.assertEqual(old['arrangement'],'unknown')
   self.assertEqual(apply_location_policy({**old,'companyId':'salesforce'})['arrangement'],'unknown')
+ def test_work_at_home_location_is_remote_only_in_named_states(self):
+  for city in ['Work At Home','Work\u00a0at Home']:
+   old={'companyId':'cvs-health','arrangement':'unknown','remoteScope':'unknown','eligibleStates':[],'locations':[{'city':city,'state':'Michigan'},{'city':city,'state':'Ohio'}],'locationNote':'Employer-listed locations','evidence':{'arrangement':''},'postedAt':'2026-11-12','reviewedAt':'2026-11-13'}
+   new=apply_location_policy(old)
+   self.assertEqual(new['arrangement'],'remote')
+   self.assertEqual(new['remoteScope'],'states')
+   self.assertEqual(new['eligibleStates'],['Michigan','Ohio'])
+   self.assertEqual((new['postedAt'],new['reviewedAt']),(old['postedAt'],old['reviewedAt']))
+   self.assertEqual(apply_location_policy(new),new)
  def test_ambiguous_remote_hybrid_options_stay_unresolved(self):
   j=apply_location_policy(c.normalize_posting(body(description='This position may be considered for a Remote or Hybrid work arrangement.'),URL,'boeing',NOW))
   self.assertEqual(j['arrangement'],'unknown');self.assertTrue(j['arrangementReviewRequired'])

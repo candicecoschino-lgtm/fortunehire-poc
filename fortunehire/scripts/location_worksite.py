@@ -26,7 +26,7 @@ def apply_location_policy(job):
         if states:
             return {**job,'remoteScope':'states','eligibleStates':states}
     if job['arrangement']=='unknown' and not job.get('evidence',{}).get('arrangement') and job.get('companyId') not in ('salesforce','microsoft','nvidia'):
-        remote_states=sorted({location['state'] for location in job['locations'] if location['city'].strip().casefold()=='remote'})
+        remote_states=remote_location_states(job['locations'])
         if remote_states:
             return {**job,'arrangement':'remote','remoteScope':'states','eligibleStates':remote_states,'locationNote':'Remote in '+', '.join(remote_states)+'; employer-listed locations: '+job['locationNote'],'evidence':{**job.get('evidence',{}),'arrangement':'Employer-listed job location is Remote; eligibility is limited to its named states.'}}
     if not use_listed_location(job['arrangement'],job['locations'],job.get('evidence',{}).get('arrangement','')):return job

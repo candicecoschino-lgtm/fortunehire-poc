@@ -7022,10 +7022,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "it",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Network Deploy Technician, Infra Delivery, AWS"
       ]
@@ -7372,10 +7372,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "operations",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Prime Air Ops Manager, Prime Air"
       ]
@@ -7751,10 +7751,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "it",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Infra Delivery Technician"
       ]
@@ -44995,10 +44995,10 @@
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
       "closedAt": "2026-11-18T03:43:58.958207+00:00",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Global Sales Accounts Director"
       ]
@@ -51063,10 +51063,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "it",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Manager, IT Service"
       ]
@@ -52585,10 +52585,10 @@
         "employmentType": "Employer employmentType explicitly states full-time."
       },
       "closedAt": "2026-11-19T19:00:02.000684+00:00",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "it",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Lead IT Portfolio Management Analyst"
       ]
@@ -62701,15 +62701,12 @@
         "deadline": "",
         "employmentType": "Employer employmentType explicitly states other full-time."
       },
-      "primaryJobFunction": "other",
-      "jobFunctionBasis": "responsibilities",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "primaryJobFunction": "communications",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
-        "Support the development and execution of integrated communication strategies that align employees and stakeholders with GHB business priorities and objectives.",
-        "Drive the creation and delivery of high-impact communications across multiple internal and external channels, including digital, print, executive presentations, organizational announcements, and leadership messaging.",
-        "Manage communications plans, timelines, budgets, and workflows to ensure initiatives are delivered on time and with measurable results.",
-        "Lead or support the development of executive thought leadership content that strengthens leadership visibility and reinforces strategic priorities."
+        "Business Communications Lead Analyst - Cigna Healthcare - Remote"
       ]
     },
     {
@@ -63569,10 +63566,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "communications",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Business Communications Senior Advisor - Pharmacy and Care Delivery"
       ]
@@ -70389,10 +70386,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "sales",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Sales Development Representative I  (Full Time) United States Splunk"
       ]
@@ -75656,15 +75653,14 @@
         "deadline": "",
         "employmentType": "Employer role description: Time Type:\nFull time."
       },
-      "primaryJobFunction": "other",
-      "jobFunctionBasis": "responsibilities",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "primaryJobFunction": "operations",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
+        "Head of Custody Operations and NAM Lead for Investor Services Operations",
         "Lead the Custody Operations organization, delivering operational excellence, regulatory compliance, and strong client outcomes.",
-        "Provide senior leadership and oversight for NAM Investor Services Operations, ensuring resilient, timely, and effective execution across critical custody and investor servicing activities.",
-        "Drive transformation initiatives that improve effectiveness, scalability, resilience, productivity, and service quality.",
-        "Maintain end-to-end accountability for Custody operations, including settlement, asset servicing, income processing, and related operational activities across traditional and emerging asset classes."
+        "Drive transformation initiatives that improve effectiveness, scalability, resilience, productivity, and service quality."
       ]
     },
     {
@@ -94135,7 +94131,7 @@
       "identifierType": "requisition",
       "title": "Health Advocate- Inbound/Outbound Calls, Healthy Outcomes Team - Remote (IL, VA, LA, KY)",
       "url": "https://jobs.cvshealth.com/us/en/job/R1087044/Health-Advocate-Inbound-Outbound-Calls-Healthy-Outcomes-Team-Remote-IL-VA-LA-KY",
-      "arrangement": "unknown",
+      "arrangement": "remote",
       "locations": [
         {
           "city": "Work at Home",
@@ -94154,9 +94150,14 @@
           "state": "Virginia"
         }
       ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "Work at Home, Illinois; Work At Home, Kentucky; Work At Home, Louisiana; Work At Home, Virginia",
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Illinois",
+        "Kentucky",
+        "Louisiana",
+        "Virginia"
+      ],
+      "locationNote": "Remote in Illinois, Kentucky, Louisiana, Virginia; employer-listed locations: Work at Home, Illinois; Work At Home, Kentucky; Work At Home, Louisiana; Work At Home, Virginia",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
@@ -94182,7 +94183,7 @@
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "e25f17fe12d9ca19cabe70f123af3696741c267a5514b3782c5fb1405e17ca75",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer-listed job location is Remote; eligibility is limited to its named states.",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -94719,16 +94720,18 @@
       "identifierType": "requisition",
       "title": "Clinical Claim Review Nurse - Fully Remote",
       "url": "https://jobs.cvshealth.com/us/en/job/R1095854/Clinical-Claim-Review-Nurse-Fully-Remote",
-      "arrangement": "unknown",
+      "arrangement": "remote",
       "locations": [
         {
           "city": "Work at Home",
           "state": "Ohio"
         }
       ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "Work at Home, Ohio",
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Ohio"
+      ],
+      "locationNote": "Remote in Ohio; employer-listed locations: Work at Home, Ohio",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
@@ -94751,7 +94754,7 @@
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "7538f9dc7520ffc6d60bd490e024833d523471f0f447edeca97c214ea4f121c8",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer-listed job location is Remote; eligibility is limited to its named states.",
         "travel": "",
         "salary": "",
         "deadline": ""
@@ -95455,7 +95458,7 @@
       "identifierType": "requisition",
       "title": "Minute Clinic Virtual Care Nurse Practitioner",
       "url": "https://jobs.cvshealth.com/us/en/job/R1099997/Minute-Clinic-Virtual-Care-Nurse-Practitioner",
-      "arrangement": "unknown",
+      "arrangement": "remote",
       "locations": [
         {
           "city": "Work at Home",
@@ -95514,9 +95517,24 @@
           "state": "Texas"
         }
       ],
-      "remoteScope": "unknown",
-      "eligibleStates": [],
-      "locationNote": "Work at Home, Nevada; Work At Home, Alabama; Work At Home, Arkansas; Work At Home, Colorado; Work At Home, Iowa; Work At Home, Idaho; Work At Home, Indiana; Work At Home, Louisiana; Work At Home, Michigan; Work At Home, Mississippi; Work At Home, Nebraska; Work At Home, Oklahoma; Work At Home, Tennessee; Work At Home, Texas",
+      "remoteScope": "states",
+      "eligibleStates": [
+        "Alabama",
+        "Arkansas",
+        "Colorado",
+        "Idaho",
+        "Indiana",
+        "Iowa",
+        "Louisiana",
+        "Michigan",
+        "Mississippi",
+        "Nebraska",
+        "Nevada",
+        "Oklahoma",
+        "Tennessee",
+        "Texas"
+      ],
+      "locationNote": "Remote in Alabama, Arkansas, Colorado, Idaho, Indiana, Iowa, Louisiana, Michigan, Mississippi, Nebraska, Nevada, Oklahoma, Tennessee, Texas; employer-listed locations: Work at Home, Nevada; Work At Home, Alabama; Work At Home, Arkansas; Work At Home, Colorado; Work At Home, Iowa; Work At Home, Idaho; Work At Home, Indiana; Work At Home, Louisiana; Work At Home, Michigan; Work At Home, Mississippi; Work At Home, Nebraska; Work At Home, Oklahoma; Work At Home, Tennessee; Work At Home, Texas",
       "employmentType": "Full-time",
       "salary": null,
       "publishedPay": {
@@ -95562,7 +95580,7 @@
       "collectionMethod": "official-jobposting-jsonld",
       "sourceHash": "4fe7c7d39f62ef24090f15ba2d03213466478f712caf218a3afd3905645ca86c",
       "evidence": {
-        "arrangement": "",
+        "arrangement": "Employer-listed job location is Remote; eligibility is limited to its named states.",
         "travel": "",
         "salary": "",
         "deadline": "",
@@ -171101,10 +171119,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "communications",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Communications Associate Manager"
       ]
@@ -171174,10 +171192,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "communications",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Partner Manager, Social Media Communications"
       ]
@@ -194876,10 +194894,10 @@
         "location": "Employer JobPosting U.S. location label: California - San Francisco"
       },
       "closedAt": "2026-11-18T03:43:58.958207+00:00",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "communications",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Manager, Corporate Communications"
       ]
@@ -208596,10 +208614,10 @@
       },
       "arrangementBasis": "listed-location",
       "arrangementNote": "On-site classification based on the employer-listed city/state; the employer did not state a work arrangement.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "communications",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Manager - Corporate Communications (Houston Hub)"
       ]
@@ -217974,10 +217992,10 @@
       },
       "employmentTypeBasis": "assumed-full-time",
       "employmentTypeNote": "Assumed full-time because the employer did not specify an employment type.",
-      "primaryJobFunction": "other",
+      "primaryJobFunction": "communications",
       "jobFunctionBasis": "job title",
-      "jobFunctionConfidence": "low",
-      "jobFunctionReviewRequired": true,
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
       "jobFunctionEvidence": [
         "Director of CEO Communications - Remote"
       ]

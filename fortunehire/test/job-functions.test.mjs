@@ -26,6 +26,20 @@ test('specific job titles are the primary classification signal',()=>{
  }
 });
 
+test('specific sales, communications, IT, and operations titles no longer fall through to Other',()=>{
+ for(const [title,expected] of [
+  ['Sales Development Representative I','sales'],
+  ['Global Sales Accounts Director','sales'],
+  ['Business Communications Lead Analyst','communications'],
+  ['Director of CEO Communications','communications'],
+  ['Network Deploy Technician, Infra Delivery','it'],
+  ['Lead IT Portfolio Management Analyst','it'],
+  ['Prime Air Ops Manager','operations'],
+  ['Head of Custody Operations','operations']
+ ]) assert.equal(jobFunctionResult({title}).primaryFunction,expected,title);
+ assert.equal(jobFunctionResult({title:'Communications Research and Impact Advisor',functionContext:context(['Lead quantitative and qualitative studies end to end.'])}).primaryFunction,'other');
+});
+
 test('responsibilities support a generic title and resolve one clear function',()=>{
  const result=jobFunctionResult({title:'Specialist',functionContext:context(['Prepare financial statements and reconcile accounts payable.'])});
  assert.equal(result.primaryFunction,'finance');
