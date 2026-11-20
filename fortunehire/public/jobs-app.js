@@ -79,19 +79,19 @@ function jobAction(job,flag,value,undo=false){
 function renderFilterChips(f){
   const active=[];
   for(const key of MULTI_FILTER_KEYS){
-    const checked=[...$(key).querySelectorAll('input[type="checkbox"]:checked')];
-    for(const input of checked)active.push([key,input.value,input.parentElement.textContent.trim()]);
+    const checked=key==='company'||key==='companyExclude'?companyInputs(key).filter(input=>input.checked):[...$(key).querySelectorAll('input[type="checkbox"]:checked')];
+    for(const input of checked)active.push([key,input.value,key==='company'?`Include: ${input.dataset.label}`:key==='companyExclude'?`Exclude: ${input.dataset.label}`:input.parentElement.textContent.trim()]);
   }
-  for(const key of ['company','industry','type','pay','posted'])if(f[key]){const control=$(key);active.push([key,'',control.options[control.selectedIndex]?.textContent||f[key]]);}
+  for(const key of ['industry','type','pay','posted'])if(f[key]){const control=$(key);active.push([key,'',control.options[control.selectedIndex]?.textContent||f[key]]);}
   if(f.q.trim())active.push(['q','',`Search: ${f.q.trim()}`]);
   if(f.travel==='exclude')active.push(['travel','','Exclude travel-required roles']);
   if(f.payPosted)active.push(['payPosted','','Pay posted']);
   $('active-filters').replaceChildren(...active.map(([key,value,label])=>{
     const button=e('button',label+' \u00d7','filter-chip');button.type='button';button.setAttribute('aria-label',`Remove filter: ${label}`);
-    button.addEventListener('click',()=>{const index=[...$('active-filters').children].indexOf(button);if(key==='travel')$('include-travel').checked=true;else if(key==='payPosted')$('pay-posted').checked=false;else if(MULTI_FILTER_KEYS.includes(key)){const input=[...$(key).querySelectorAll('input[type="checkbox"]')].find(option=>option.value===value);if(input)input.checked=false;updateMultiSummary(key);}else if(key==='q')$('q').value='';else $(key).value='';change();const remaining=$('active-filters').children;if(remaining.length)remaining[Math.min(index,remaining.length-1)].focus();else $('q').focus();});return button;
+    button.addEventListener('click',()=>{const index=[...$('active-filters').children].indexOf(button);if(key==='travel')$('include-travel').checked=true;else if(key==='payPosted')$('pay-posted').checked=false;else if(MULTI_FILTER_KEYS.includes(key)){const inputs=key==='company'||key==='companyExclude'?companyInputs(key):[...$(key).querySelectorAll('input[type="checkbox"]')];const input=inputs.find(option=>option.value===value);if(input)input.checked=false;updateMultiSummary(key);}else if(key==='q')$('q').value='';else $(key).value='';change();const remaining=$('active-filters').children;if(remaining.length)remaining[Math.min(index,remaining.length-1)].focus();else $('q').focus();});return button;
   }));
   $('active-filters').hidden=!active.length;$('reset').hidden=!active.length;
-  const count=['company','industry','type','pay','posted','payPosted'].filter(key=>f[key]).length+MULTI_FILTER_KEYS.reduce((sum,key)=>sum+(Array.isArray(f[key])?f[key].length:f[key]?1:0),0)+(f.travel==='exclude'?1:0);
+  const count=['industry','type','pay','posted','payPosted'].filter(key=>f[key]).length+MULTI_FILTER_KEYS.reduce((sum,key)=>sum+(Array.isArray(f[key])?f[key].length:f[key]?1:0),0)+(f.travel==='exclude'?1:0);
   $('more-filter-count').textContent=`${count} selected`;$('more-filter-count').hidden=!count;
   return active.length;
 }
@@ -103,13 +103,27 @@ function setMultiOptions(id,values){
   box.addEventListener('change',()=>updateMultiSummary(id));
   updateMultiSummary(id);
 }
+function companyInputs(id){return [...$('company-rows').querySelectorAll(`input[data-filter="${id}"]`)];}
+function setCompanyOptions(values){
+  const rows=$('company-rows');rows.replaceChildren();
+  for(const [value,name] of values){
+    const row=e('div',undefined,'company-filter-row');row.dataset.name=name.toLowerCase();
+    const include=e('label');const yes=e('input');yes.type='checkbox';yes.value=value;yes.dataset.filter='company';yes.dataset.label=name;yes.setAttribute('aria-label',`Include ${name}`);include.append(yes);
+    const exclude=e('label');const no=e('input');no.type='checkbox';no.value=value;no.dataset.filter='companyExclude';no.dataset.label=name;no.setAttribute('aria-label',`Exclude ${name}`);exclude.append(no);
+    row.append(include,e('span',name),exclude);rows.append(row);
+  }
+  rows.addEventListener('change',event=>{const input=event.target;if(input.checked){const opposite=input.dataset.filter==='company'?'companyExclude':'company';const other=companyInputs(opposite).find(item=>item.value===input.value);if(other)other.checked=false;}updateMultiSummary('company');change();});
+  $('company-search').addEventListener('input',()=>{const query=$('company-search').value.trim().toLowerCase();for(const row of rows.children)row.hidden=!row.dataset.name.includes(query);});
+  updateMultiSummary('company');
+}
 function updateMultiSummary(id){
+  if(id==='company'||id==='companyExclude'){const yes=companyInputs('company').filter(input=>input.checked).length,no=companyInputs('companyExclude').filter(input=>input.checked).length;$('company-summary').textContent=yes||no?`${yes} included · ${no} excluded`:'All companies';return;}
   const selected=[...$(id).querySelectorAll('input[type="checkbox"]:checked')].map(input=>input.parentElement.textContent.trim());
   const summary=$(`${id}-summary`);
   const empty={state:'Any state',arrangement:'Any arrangement',function:'Any function'}[id];
   summary.textContent=!selected.length?empty:selected.length===1?selected[0]:`${selected[0]} + ${selected.length-1} more`;
 }
-function multiValues(id){return [...$(id).querySelectorAll('input[type="checkbox"]:checked')].map(input=>input.value);}
+function multiValues(id){return (id==='company'||id==='companyExclude'?companyInputs(id):[...$(id).querySelectorAll('input[type="checkbox"]')]).filter(input=>input.checked).map(input=>input.value);}
 function restore(){
   applyFilterValues(readJobFilters(location.search));
 }
@@ -118,9 +132,9 @@ function applyFilterValues(f){
   for(const k of FILTER_CONTROLS){
     if(MULTI_FILTER_KEYS.includes(k)){
       const values=Array.isArray(f[k])?f[k]:f[k]?[f[k]]:[];
-      const box=$(k);
-      for(const value of values)if(![...box.querySelectorAll('input[type="checkbox"]')].some(input=>input.value===value)){const row=e('label');const input=document.createElement('input');input.type='checkbox';input.value=value;row.append(input,e('span',`Unavailable: ${value}`));box.append(row);}
-      for(const input of box.querySelectorAll('input[type="checkbox"]'))input.checked=values.includes(input.value);
+      const box=$(k);const inputs=k==='company'||k==='companyExclude'?companyInputs(k):[...box.querySelectorAll('input[type="checkbox"]')];
+      if(k!=='company'&&k!=='companyExclude')for(const value of values)if(!inputs.some(input=>input.value===value)){const row=e('label');const input=document.createElement('input');input.type='checkbox';input.value=value;row.append(input,e('span',`Unavailable: ${value}`));box.append(row);}
+      for(const input of k==='company'||k==='companyExclude'?inputs:box.querySelectorAll('input[type="checkbox"]'))input.checked=values.includes(input.value);
       updateMultiSummary(k);continue;
     }
     const control=$(k);if(k!=='q'&&f[k]&&![...control.options].some(o=>o.value===f[k])){const o=e('option',`Unavailable: ${f[k]}`);o.value=f[k];control.append(o);}control.value=f[k];
@@ -153,7 +167,7 @@ function render(sync=true){
   if(sync){const query=serializeJobFilters(f);history.replaceState(null,'',`${location.pathname}${query?'?'+query:''}${location.hash}`);}
 }
 function change(){clearTimeout(pending);currentPage='1';render();}
-function reset(){clearTimeout(pending);for(const k of FILTER_CONTROLS.filter(k=>k!=='view')){if(MULTI_FILTER_KEYS.includes(k)){for(const input of $(k).querySelectorAll('input[type="checkbox"]'))input.checked=false;updateMultiSummary(k);}else $(k).value=k==='sort'?'newest':'';}$('include-travel').checked=true;$('pay-posted').checked=false;document.querySelector('.more-filters').open=false;currentPage='1';render();}
+function reset(){clearTimeout(pending);for(const k of FILTER_CONTROLS.filter(k=>k!=='view')){if(MULTI_FILTER_KEYS.includes(k)){for(const input of k==='company'||k==='companyExclude'?companyInputs(k):$(k).querySelectorAll('input[type="checkbox"]'))input.checked=false;updateMultiSummary(k);}else $(k).value=k==='sort'?'newest':'';}$('company-search').value='';for(const row of $('company-rows').children)row.hidden=false;$('include-travel').checked=true;$('pay-posted').checked=false;document.querySelector('.more-filters').open=false;currentPage='1';render();}
 async function load(){
   ready=false;$('error').hidden=true;$('empty').hidden=true;$('results').setAttribute('aria-busy','true');$('count').textContent='Loading jobs…';
   try{
@@ -161,7 +175,7 @@ async function load(){
     const [data,employers,logoData]=await Promise.all([...responses.map(r=>r.json()),fetch(new URL('./data/company-logos.json',import.meta.url)).then(r=>r.ok?r.json():null).catch(()=>null)]);companyDirectory=employers.companies;jobs=validateJobs(data,companyDirectory);collection=data.automation||null;logos=logoData?.schemaVersion===1?logoData.logos||{}:{};
     setMultiOptions('state',US_STATES.map(s=>[s,s]));
     setMultiOptions('arrangement',[['on-site','On-site'],['hybrid','Hybrid'],['remote','Remote'],['remote-state','State-restricted remote'],['unknown','Not specified']]);
-    const companies=[...new Map(jobs.map(j=>[j.companyId,j.companyName]))].sort((a,b)=>a[1].localeCompare(b[1]));setOptions('company',companies);
+    const companies=[...new Map(jobs.map(j=>[j.companyId,j.companyName]))].sort((a,b)=>a[1].localeCompare(b[1]));setCompanyOptions(companies);
     setOptions('industry',[...new Set(jobs.map(j=>j.industry))].sort().map(s=>[s,s]));
     setMultiOptions('function',JOB_FUNCTION_OPTIONS);
     restore();ready=true;render();savedSearches.refresh();
