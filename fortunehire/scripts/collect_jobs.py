@@ -29,6 +29,7 @@ from function_context import extract_function_context
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY=json.loads((ROOT/'public/data/job-sources.json').read_text(encoding='utf-8'))
 SOURCES={key:(value['host'],value['sector']) for key,value in REGISTRY['sources'].items()}
+EXPANDED_CAP_SOURCES={'walmart','target','unitedhealth-group','cvs-health','boeing'}
 UA = 'FortuneHirePilot/0.1 (+https://fortunehire.netlify.app/)'
 POSTING_MAX_AGE_DAYS = 14
 STATES = dict(zip(
@@ -815,7 +816,7 @@ def run(root=ROOT, now=None, max_new=20):
     data = json.loads(path.read_text(encoding='utf-8'))
     state_path = root/'automation/state.json'
     state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {}
-    report = {'schemaVersion':1,'attemptedAt':now.isoformat(),'postingWindowDays':POSTING_MAX_AGE_DAYS,'coverage':'U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.','sources':{}}
+    report = {'schemaVersion':1,'attemptedAt':now.isoformat(),'postingWindowDays':POSTING_MAX_AGE_DAYS,'coverage':'U.S. postings published within the past 14 days. Bounded pilot: at most 125 tracked active postings for five reviewed employers, 100 for other standard feeds, and 20 for the JPMorgan pilot; up to 20 new candidates per employer per scheduled/manual run (five for JPMorgan). Not a complete feed.','sources':{}}
     jobs = data['jobs']
     successes = 0
     def collect(company):
@@ -827,7 +828,7 @@ def run(root=ROOT, now=None, max_new=20):
                 source_max_new=min(max_new,5);source_cap=20
             else:
                 client = Client(host)
-                source_max_new=max_new;source_cap=100
+                source_max_new=max_new;source_cap=125 if company in EXPANDED_CAP_SOURCES else 100
             discovered = discover(client)
             if company=='meta':
                 from meta_public import discovery_order
