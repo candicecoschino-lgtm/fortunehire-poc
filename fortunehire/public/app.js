@@ -9,12 +9,17 @@ function card(c) {
   const article = element('article', undefined, 'card');
   const top = element('div', undefined, 'card-top');
   const monogram = element('span', c.name.split(/\s+/).map(s=>s[0]).slice(0,2).join(''), 'monogram'); monogram.setAttribute('aria-hidden','true');
-  const title = element('div'); title.append(element('h3',c.name),element('div', `Fortune 500 · ${c.listYear}`, 'list-year')); top.append(monogram,title);
+  const title = element('div');
+  title.append(element('h3',c.name));
+  if (c.listYear !== undefined) title.append(element('div', `Fortune 500 · ${c.listYear}`, 'list-year'));
+  top.append(monogram,title);
   const dl = element('dl'); dl.append(element('dt','Industry'),element('dd',c.industry),element('dt','Headquarters'),element('dd',`${c.headquarters.city}, ${c.headquarters.state}`));
   const career = link('Visit official careers ↗',c.careerUrl); career.className = 'career-link'; career.setAttribute('aria-label',`Visit ${c.name} official careers (opens in a new tab)`);
   const details = element('details'); const summary = element('summary','Sources & review date');
   const date = new Date(`${c.reviewedAt}T12:00:00Z`).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'});
-  details.append(summary,element('p',`Reviewed ${date}. ${c.verificationNote}`),link('Company data source ↗',c.profileSource),element('br'),link(`${c.listYear} membership source ↗`,c.membershipSource),element('p',`Destination: ${new URL(c.careerUrl).hostname}`));
+  details.append(summary,element('p',`Reviewed ${date}. ${c.verificationNote}`),link('Company data source ↗',c.profileSource));
+  if (c.membershipSource) details.append(element('br'),link(`${c.listYear} membership source ↗`,c.membershipSource));
+  details.append(element('p',`Destination: ${new URL(c.careerUrl).hostname}`));
   for (const source of c.supportingSources || []) details.append(element('br'),link(`${source.label} ↗`,source.url));
   article.append(top,dl,career,details); return article;
 }
@@ -48,7 +53,7 @@ async function load() {
     const data = validateData(await response.json()); companies=data.companies;
     options('company', [...companies].sort((a,b)=>a.name.localeCompare(b.name)).map(c=>[c.id,c.name]));
     for (const key of ['industry','state','city']) options(key,[...new Set(companies.map(c=>key==='industry'?c.industry:c.headquarters[key]))].sort().map(s=>[s,s]));
-    $('coverage').textContent=`${companies.length} of 500 employers reviewed`;
+    $('coverage').textContent=`${companies.length} employers reviewed`;
     restore(); ready = true; render(false);
   } catch {
     $('results').replaceChildren(); $('count').textContent='Directory unavailable'; $('coverage').textContent='Coverage unavailable'; $('error').hidden=false;

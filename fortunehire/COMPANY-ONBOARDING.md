@@ -1,12 +1,12 @@
 # Company directory onboarding
 
-Use this guide for small, reviewed batches of Fortune 500 companies. A directory record points visitors to an official career site; **it does not connect a job feed** or guarantee current openings. Keep job collection work in a separate, verified change.
+Use this guide for small, reviewed batches of companies. A company explicitly requested for the directory is eligible regardless of Fortune 500 membership. A directory record points visitors to an official career site; **it does not connect a job feed** or guarantee current openings. Keep job collection work in a separate, verified change.
 
 ## Verify each company
 
-1. Check membership on Fortune's list for the applicable `listYear`. Record the company profile and list source; do not infer membership from a prior year.
+1. For a Fortune 500 batch, verify membership on Fortune's list for the applicable year. For an explicitly requested company, membership is optional. Record `listYear` and `membershipSource` together only when membership for that year is verified. The card displays a Fortune 500 label only when those fields are present.
 2. Verify headquarters city and state, industry, and the official career destination against authoritative sources, including the company's own site. Confirm ownership when the application site uses another host. Skip a company whose required facts cannot be verified; continue with the rest of the batch.
-3. Add one unique, stable `id` and the verified fields to [`public/data/companies.json`](public/data/companies.json), following existing records. Include `name`, `industry`, `headquarters`, `listYear`, `careerUrl`, `profileSource`, `membershipSource`, `reviewedAt`, and an accurate `verificationNote`; use `supportingSources` when needed. Do not alter existing company records or jobs to increase coverage.
+3. Add one unique, stable `id` and the verified fields to [`public/data/companies.json`](public/data/companies.json), following existing records. Include `name`, `industry`, `headquarters`, `careerUrl`, `profileSource`, `reviewedAt`, and an accurate `verificationNote`. Use `supportingSources` for additional employer or authoritative references. Do not alter existing company records or jobs to increase coverage.
 
 ## Add branding when available
 
