@@ -1,12 +1,12 @@
 # Company directory onboarding
 
-Use this guide for small, reviewed batches of Fortune 500 companies. A directory record points visitors to an official career site; **it does not connect a job feed** or guarantee current openings. Keep job collection work in a separate, verified change.
+Use this guide for small, reviewed batches of companies. A company explicitly requested for the directory is eligible regardless of Fortune 500 membership. A directory record points visitors to an official career site; **it does not connect a job feed** or guarantee current openings. Keep job collection work in a separate, verified change.
 
 ## Verify each company
 
-1. Check membership on Fortune's list for the applicable `listYear`. Record the company profile and list source; do not infer membership from a prior year.
+1. For a Fortune 500 batch, verify membership on Fortune's list for the applicable year. For an explicitly requested company, membership is optional. Record `listYear` and `membershipSource` together only when membership for that year is verified. The card displays a Fortune 500 label only when those fields are present.
 2. Verify headquarters city and state, industry, and the official career destination against authoritative sources, including the company's own site. Confirm ownership when the application site uses another host. Skip a company whose required facts cannot be verified; continue with the rest of the batch.
-3. Add one unique, stable `id` and the verified fields to [`public/data/companies.json`](public/data/companies.json), following existing records. Include `name`, `industry`, `headquarters`, `listYear`, `careerUrl`, `profileSource`, `membershipSource`, `reviewedAt`, and an accurate `verificationNote`; use `supportingSources` when needed. Do not alter existing company records or jobs to increase coverage.
+3. Add one unique, stable `id` and the verified fields to [`public/data/companies.json`](public/data/companies.json), following existing records. Include `name`, `industry`, `headquarters`, `careerUrl`, `profileSource`, `reviewedAt`, and an accurate `verificationNote`. Use `supportingSources` for additional employer or authoritative references. Do not alter existing company records or jobs to increase coverage.
 
 ## Add branding when available
 
@@ -20,17 +20,6 @@ Use this guide for small, reviewed batches of Fortune 500 companies. A directory
 8. Update directory and feed-status count assertions in [`test/`](test/) and the relevant coverage statements in [`README.md`](README.md) and the [root README](../README.md). Keep the year and counts consistent with the JSON data.
 9. From `fortunehire/`, run `npm test` and `node scripts/validate-jobs.mjs`. Confirm the existing job count and records have not changed. Start a local preview with `npm start`; inspect every new company card on desktop and mobile, its official career link, source disclosure, and logo or initials fallback. Check for broken images and layout overflow.
 10. Create one focused pull request against the latest `main`. List added and skipped companies, sources, counts, and checks. Leave the PR for review; do not merge automatically.
-
-## November 22, 2026 eligibility review
-
-The directory review yielded zero additions. Fortune's [2026 U.S. Fortune 500 ranking](https://fortune.com/ranking/fortune500/) determines eligibility for this batch.
-
-| Company | Review outcome |
-| --- | --- |
-| OpenAI | 2026 Fortune 500 membership could not be verified. [Fortune profile](https://fortune.com/company/openai/) |
-| Perplexity | 2026 Fortune 500 membership could not be verified. [Fortune profile](https://fortune.com/company/perplexity/) |
-| Anthropic | 2026 Fortune 500 membership could not be verified. [Fortune profile](https://fortune.com/company/anthropic/) |
-| Brown & Brown | Fortune's 2026 ranking data places the company at No. 601, outside the first 500. [Fortune profile](https://fortune.com/company/brown-brown/) |
 
 ## Reuse in a future Codex task
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-20",
+  "reviewedAt": "2026-11-22",
   "logos": {
     "abbott": {
       "src": "./assets/company-logos/abbott.png",
@@ -25,6 +25,12 @@
       "sourceUrl": "https://www.amazon.com/favicon.ico",
       "companyUrl": "https://www.amazon.com/",
       "reviewedAt": "2026-11-13"
+    },
+    "anthropic": {
+      "src": "./assets/company-logos/anthropic.png",
+      "sourceUrl": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
+      "companyUrl": "https://www.anthropic.com/",
+      "reviewedAt": "2026-11-22"
     },
     "apple": {
       "src": "./assets/company-logos/apple.ico",
@@ -55,6 +61,12 @@
       "sourceUrl": "https://www.broadcom.com/favicon-96x96.png",
       "companyUrl": "https://www.broadcom.com/",
       "reviewedAt": "2026-11-20"
+    },
+    "brown-brown": {
+      "src": "./assets/company-logos/brown-brown.ico",
+      "sourceUrl": "https://us.bbrown.com/hubfs/favicon.ico",
+      "companyUrl": "https://us.bbrown.com/",
+      "reviewedAt": "2026-11-22"
     },
     "cardinal-health": {
       "src": "./assets/company-logos/cardinal-health.ico",
@@ -302,6 +314,12 @@
       "companyUrl": "https://www.nvidia.com/",
       "reviewedAt": "2026-11-13"
     },
+    "openai": {
+      "src": "./assets/company-logos/openai.png",
+      "sourceUrl": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
+      "companyUrl": "https://openai.com/",
+      "reviewedAt": "2026-11-22"
+    },
     "oracle": {
       "src": "./assets/company-logos/oracle.ico",
       "sourceUrl": "https://docs.oracle.com/en/styles/images/favicon.ico",
@@ -313,6 +331,12 @@
       "sourceUrl": "https://www.pepsico.com/apple-touch-icon.png",
       "companyUrl": "https://www.pepsico.com/",
       "reviewedAt": "2026-11-13"
+    },
+    "perplexity": {
+      "src": "./assets/company-logos/perplexity.png",
+      "sourceUrl": "https://frontend-cdn.perplexity.ai/_agi_assets/marketing/careers/favicon.png",
+      "companyUrl": "https://www.perplexity.ai/",
+      "reviewedAt": "2026-11-22"
     },
     "phillips-66": {
       "src": "./assets/company-logos/phillips-66.png",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "listYear": 2026,
-  "coverage": "71 reviewed employers from the 2026 list; 429 remain to be verified. This is a curated sample, not a ranked top-50 list.",
+  "coverage": "75 reviewed employers, including 71 from the 2026 Fortune 500 and four added by request.",
   "companies": [
     {
       "id": "alphabet",
@@ -1105,6 +1105,86 @@
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
       "reviewedAt": "2026-11-20",
       "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "industry": "Artificial Intelligence",
+      "headquarters": {
+        "city": "San Francisco",
+        "state": "California"
+      },
+      "careerUrl": "https://openai.com/careers/",
+      "profileSource": "https://openai.com/about/",
+      "reviewedAt": "2026-11-22",
+      "verificationNote": "Added by request. The employer’s AI research and deployment work, headquarters, and careers page were reviewed.",
+      "supportingSources": [
+        {
+          "label": "Principal office filing",
+          "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forl-m24000007718-99a58793-d4c9-4ca6-ba36-b40244daa826&directionType=ForwardList&inquirytype=EntityName&searchNameOrder=OPENAI+M240000077180"
+        }
+      ]
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "industry": "Artificial Intelligence",
+      "headquarters": {
+        "city": "San Francisco",
+        "state": "California"
+      },
+      "careerUrl": "https://www.perplexity.ai/hub/careers",
+      "profileSource": "https://fortune.com/company/perplexity/",
+      "reviewedAt": "2026-11-22",
+      "verificationNote": "Added by request. Fortune identifies San Francisco as headquarters, and Perplexity’s own sources confirm its California address, AI search product, and careers page.",
+      "supportingSources": [
+        {
+          "label": "Perplexity product overview",
+          "url": "https://www.perplexity.ai/en-GB/hub/blog/getting-started-with-perplexity"
+        },
+        {
+          "label": "Perplexity company address",
+          "url": "https://www.perplexity.ai/en-GB/hub/legal/terms-of-service"
+        }
+      ]
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "industry": "Artificial Intelligence",
+      "headquarters": {
+        "city": "San Francisco",
+        "state": "California"
+      },
+      "careerUrl": "https://www.anthropic.com/careers",
+      "profileSource": "https://www.anthropic.com/company",
+      "reviewedAt": "2026-11-22",
+      "verificationNote": "Added by request. Anthropic’s AI research, San Francisco headquarters, and official careers page were reviewed.",
+      "supportingSources": [
+        {
+          "label": "Anthropic headquarters disclosure",
+          "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda"
+        }
+      ]
+    },
+    {
+      "id": "brown-brown",
+      "name": "Brown & Brown",
+      "industry": "Insurance Brokerage",
+      "headquarters": {
+        "city": "Daytona Beach",
+        "state": "Florida"
+      },
+      "careerUrl": "https://us.bbrown.com/careers/",
+      "profileSource": "https://investor.bbrown.com/static-files/057c0ad3-a8ae-4b04-af73-3f190f712679",
+      "reviewedAt": "2026-11-22",
+      "verificationNote": "Added by request. The employer’s filing confirms its insurance brokerage business and Daytona Beach headquarters. Its official careers page links to the Brown & Brown Workday portal.",
+      "supportingSources": [
+        {
+          "label": "Employer-linked Workday careers",
+          "url": "https://bbinsurance.wd1.myworkdayjobs.com/en-US/Careers"
+        }
+      ]
     }
   ]
 }

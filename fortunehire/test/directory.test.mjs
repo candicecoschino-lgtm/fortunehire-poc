@@ -5,8 +5,12 @@ import {filterCompanies, normalize, readFilters, serializeFilters, validateData}
 const data=JSON.parse(await readFile(new URL('../public/data/companies.json',import.meta.url),'utf8'));
 test('production records have complete provenance, safe URLs and unique identifiers',()=>{
   assert.equal(validateData(data),data);
-  assert.equal(data.companies.length,71);
-  for(const c of data.companies){assert.equal(new URL(c.profileSource).hostname,'fortune.com');assert.equal(c.listYear,2026);}
+  assert.equal(data.companies.length,75);
+  const ranked = data.companies.filter(c => c.listYear !== undefined);
+  assert.equal(ranked.length,71);
+  for (const c of ranked) assert.equal(c.listYear,2026);
+  assert.deepEqual(data.companies.filter(c => c.listYear === undefined).map(c => c.id).sort(),
+    ['anthropic','brown-brown','openai','perplexity']);
 });
 test('search ignores surrounding spaces, case and diacritics',()=>{
   assert.equal(normalize('  Résumé  '),'resume');
@@ -42,7 +46,7 @@ test('unknown URL selection yields no fabricated matches',()=>{
   assert.equal(filterCompanies(data.companies,readFilters('?company=unknown')).length,0);
 });
 test('malformed sources and duplicate companies are rejected',()=>{
-  for(const modify of [d=>d.companies.push(d.companies[0]),d=>d.companies[0].careerUrl='javascript:alert(1)',d=>d.companies[0].headquarters=null,d=>d.companies[0].listYear=2025,d=>d.companies[0].supportingSources=[{label:'source',url:'javascript:alert(1)'}]]){
+  for(const modify of [d=>d.companies.push(d.companies[0]),d=>d.companies[0].careerUrl='javascript:alert(1)',d=>d.companies[0].headquarters=null,d=>d.companies[0].listYear=2025,d=>delete d.companies[0].listYear,d=>delete d.companies[0].membershipSource,d=>d.companies[0].membershipSource='javascript:alert(1)',d=>d.companies[0].supportingSources=[{label:'source',url:'javascript:alert(1)'}]]){
     const copy=structuredClone(data);modify(copy);assert.throws(()=>validateData(copy));
   }
 });

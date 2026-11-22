@@ -19,8 +19,10 @@ export function validateData(data) {
     if (!/^[a-z0-9-]+$/.test(c.id) || ids.has(c.id)) throw new Error('Invalid or duplicate ID');
     ids.add(c.id);
     for (const value of [c.name,c.industry,c.headquarters?.city,c.headquarters?.state,c.verificationNote]) if (typeof value !== 'string' || !value.trim()) throw new Error('Missing company field');
-    if (!Number.isInteger(c.listYear) || c.listYear !== data.listYear || !/^\d{4}-\d{2}-\d{2}$/.test(c.reviewedAt)) throw new Error('Invalid date or list year');
-    for (const field of ['careerUrl','profileSource','membershipSource']) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(c.reviewedAt)) throw new Error('Invalid review date');
+    const hasMembership = c.listYear !== undefined || c.membershipSource !== undefined;
+    if (hasMembership && (!Number.isInteger(c.listYear) || c.listYear !== data.listYear || typeof c.membershipSource !== 'string')) throw new Error('Invalid Fortune 500 membership');
+    for (const field of hasMembership ? ['careerUrl','profileSource','membershipSource'] : ['careerUrl','profileSource']) {
       const url = new URL(c[field]);
       if (url.protocol !== 'https:' || url.username || url.password) throw new Error('Unsafe URL');
     }
