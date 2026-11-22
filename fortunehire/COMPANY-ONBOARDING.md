@@ -21,6 +21,17 @@ Use this guide for small, reviewed batches of Fortune 500 companies. A directory
 9. From `fortunehire/`, run `npm test` and `node scripts/validate-jobs.mjs`. Confirm the existing job count and records have not changed. Start a local preview with `npm start`; inspect every new company card on desktop and mobile, its official career link, source disclosure, and logo or initials fallback. Check for broken images and layout overflow.
 10. Create one focused pull request against the latest `main`. List added and skipped companies, sources, counts, and checks. Leave the PR for review; do not merge automatically.
 
+## November 22, 2026 eligibility review
+
+The directory review yielded zero additions. Fortune's [2026 U.S. Fortune 500 ranking](https://fortune.com/ranking/fortune500/) determines eligibility for this batch.
+
+| Company | Review outcome |
+| --- | --- |
+| OpenAI | 2026 Fortune 500 membership could not be verified. [Fortune profile](https://fortune.com/company/openai/) |
+| Perplexity | 2026 Fortune 500 membership could not be verified. [Fortune profile](https://fortune.com/company/perplexity/) |
+| Anthropic | 2026 Fortune 500 membership could not be verified. [Fortune profile](https://fortune.com/company/anthropic/) |
+| Brown & Brown | Fortune's 2026 ranking data places the company at No. 601, outside the first 500. [Fortune profile](https://fortune.com/company/brown-brown/) |
+
 ## Reuse in a future Codex task
 
 > Add the next five verified Fortune 500 companies to FortuneHire's directory. Follow `fortunehire/COMPANY-ONBOARDING.md`, add every company whose required facts can be verified, and report any skips. Keep job feeds and existing jobs unchanged. Run the guide's checks and open one PR against `main`; do not merge.
