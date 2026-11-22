@@ -1,12 +1,18 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-13",
+  "reviewedAt": "2026-11-20",
   "logos": {
     "abbott": {
       "src": "./assets/company-logos/abbott.png",
       "sourceUrl": "https://www.abbott.com/etc.clientlibs/corp/abbott-core/clientlibs/favicons/clientlib-favicon-abbottcore/resources/apple-touch-icon-180x180.png",
       "companyUrl": "https://www.abbott.com/",
       "reviewedAt": "2026-11-13"
+    },
+    "allstate": {
+      "src": "./assets/company-logos/allstate.png",
+      "sourceUrl": "https://www.allstate.com/apple-touch-icon.png",
+      "companyUrl": "https://www.allstate.com/",
+      "reviewedAt": "2026-11-20"
     },
     "alphabet": {
       "src": "./assets/company-logos/alphabet.ico",
@@ -44,6 +50,12 @@
       "companyUrl": "https://www.boeing.com/",
       "reviewedAt": "2026-11-13"
     },
+    "broadcom": {
+      "src": "./assets/company-logos/broadcom.png",
+      "sourceUrl": "https://www.broadcom.com/favicon-96x96.png",
+      "companyUrl": "https://www.broadcom.com/",
+      "reviewedAt": "2026-11-20"
+    },
     "cardinal-health": {
       "src": "./assets/company-logos/cardinal-health.ico",
       "sourceUrl": "https://activatecdn.azureedge.net/activatedata/35Content/CardinalHealth/favicon.ico",
@@ -56,6 +68,12 @@
       "companyUrl": "https://www.caterpillar.com/",
       "reviewedAt": "2026-11-13"
     },
+    "cbre-group": {
+      "src": "./assets/company-logos/cbre-group.png",
+      "sourceUrl": "https://www.cbre.com/-/media/project/cbre/dotcom/global/unsorted/favicon_lg.png?rev=f6bed35a1dfb4fac9ede077cef213618",
+      "companyUrl": "https://www.cbre.com/",
+      "reviewedAt": "2026-11-20"
+    },
     "cencora": {
       "src": "./assets/company-logos/cencora.png",
       "sourceUrl": "https://www.cencora.com/-/media/assets/corporate/global/icons/cencora_favicon.png",
@@ -67,6 +85,12 @@
       "sourceUrl": "https://www.centene.com/content/dam/centenedotcom/logos/centene-favicon.ico",
       "companyUrl": "https://www.centene.com/",
       "reviewedAt": "2026-11-13"
+    },
+    "charter-communications": {
+      "src": "./assets/company-logos/charter-communications.png",
+      "sourceUrl": "https://tbcdn.talentbrew.com/company/4673/v4_0/img/icons/spectrumfavicon2025.png",
+      "companyUrl": "https://corporate.charter.com/",
+      "reviewedAt": "2026-11-20"
     },
     "chevron": {
       "src": "./assets/company-logos/chevron.png",
@@ -170,6 +194,12 @@
       "companyUrl": "https://www.homedepot.com/",
       "reviewedAt": "2026-11-13"
     },
+    "hp": {
+      "src": "./assets/company-logos/hp.png",
+      "sourceUrl": "https://www.hp.com/favicon.ico",
+      "companyUrl": "https://www.hp.com/",
+      "reviewedAt": "2026-11-20"
+    },
     "humana": {
       "src": "./assets/company-logos/humana.png",
       "sourceUrl": "https://www.humana.com/assets/icons/apple-touch-icon-152x152.png",
@@ -182,6 +212,18 @@
       "companyUrl": "https://www.ibm.com/",
       "reviewedAt": "2026-11-13"
     },
+    "intuit": {
+      "src": "./assets/company-logos/intuit.png",
+      "sourceUrl": "https://tbcdn.talentbrew.com/company/27595/v1_0/images/favicons/apple-touch-icon-180x180.png",
+      "companyUrl": "https://www.intuit.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    "jones-lang-lasalle": {
+      "src": "./assets/company-logos/jones-lang-lasalle.png",
+      "sourceUrl": "https://www.jll.com/content/dam/tech-resources/android-chrome-192x192.png",
+      "companyUrl": "https://www.jll.com/",
+      "reviewedAt": "2026-11-20"
+    },
     "jpmorgan-chase": {
       "src": "./assets/company-logos/jpmorgan-chase.png",
       "sourceUrl": "https://www.jpmorganchase.com/etc.clientlibs/cws/clientlibs/clientlib-base/resources/jpmc/images/jpmc-favicon-76.png",
@@ -193,6 +235,18 @@
       "sourceUrl": "https://www.thekrogerco.com/wp-content/uploads/2026/06/cropped-Kroger-favicon-180x180.jpg",
       "companyUrl": "https://www.thekrogerco.com/",
       "reviewedAt": "2026-11-13"
+    },
+    "liberty-mutual": {
+      "src": "./assets/company-logos/liberty-mutual.ico",
+      "sourceUrl": "https://www.libertymutual.com/favicon.ico?v=1",
+      "companyUrl": "https://www.libertymutual.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    "live-nation-entertainment": {
+      "src": "./assets/company-logos/live-nation-entertainment.png",
+      "sourceUrl": "https://assets.livenationcdn.com/uploads/ff23638e-77ee-40db-8117-d668e910939a.png",
+      "companyUrl": "https://www.livenationentertainment.com/",
+      "reviewedAt": "2026-11-20"
     },
     "lowes": {
       "src": "./assets/company-logos/lowes.png",
@@ -212,11 +266,29 @@
       "companyUrl": "https://about.meta.com/",
       "reviewedAt": "2026-11-13"
     },
+    "metlife": {
+      "src": "./assets/company-logos/metlife.ico",
+      "sourceUrl": "https://www.metlife.com/content/dam/globalMarketingPlatformAssets/images/social/nf/favicon.ico",
+      "companyUrl": "https://www.metlife.com/",
+      "reviewedAt": "2026-11-20"
+    },
     "microsoft": {
       "src": "./assets/company-logos/microsoft.ico",
       "sourceUrl": "https://www.microsoft.com/favicon.ico?v2",
       "companyUrl": "https://www.microsoft.com/",
       "reviewedAt": "2026-11-13"
+    },
+    "nationwide": {
+      "src": "./assets/company-logos/nationwide.png",
+      "sourceUrl": "https://careers.nationwide.com/apple-touch-icon.png",
+      "companyUrl": "https://www.nationwide.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    "new-york-life": {
+      "src": "./assets/company-logos/new-york-life.png",
+      "sourceUrl": "https://www.newyorklife.com/logo.png",
+      "companyUrl": "https://www.newyorklife.com/",
+      "reviewedAt": "2026-11-20"
     },
     "nike": {
       "src": "./assets/company-logos/nike.png",
@@ -266,6 +338,12 @@
       "companyUrl": "https://www.salesforce.com/",
       "reviewedAt": "2026-11-13"
     },
+    "servicenow": {
+      "src": "./assets/company-logos/servicenow.ico",
+      "sourceUrl": "https://www.servicenow.com/favicon.ico",
+      "companyUrl": "https://www.servicenow.com/",
+      "reviewedAt": "2026-11-20"
+    },
     "target": {
       "src": "./assets/company-logos/target.png",
       "sourceUrl": "https://assets.targetimg1.com/static/images/apple-touch-icon-precomposed.png",
@@ -277,6 +355,18 @@
       "sourceUrl": "https://ir.tesla.com/themes/custom/tesla_investor_relations/assets/favicon.ico",
       "companyUrl": "https://ir.tesla.com/",
       "reviewedAt": "2026-11-13"
+    },
+    "travelers": {
+      "src": "./assets/company-logos/travelers.png",
+      "sourceUrl": "https://www.travelers.com/favicon.ico",
+      "companyUrl": "https://www.travelers.com/",
+      "reviewedAt": "2026-11-20"
+    },
+    "uber-technologies": {
+      "src": "./assets/company-logos/uber-technologies.png",
+      "sourceUrl": "https://uber-careers-v2-cdn.happydance.website/assets/tile.png",
+      "companyUrl": "https://www.uber.com/",
+      "reviewedAt": "2026-11-20"
     },
     "united-airlines": {
       "src": "./assets/company-logos/united-airlines.ico",
@@ -313,8 +403,13 @@
       "sourceUrl": "https://www.walmart.com/favicon.ico",
       "companyUrl": "https://www.walmart.com/",
       "reviewedAt": "2026-11-13"
+    },
+    "workday": {
+      "src": "./assets/company-logos/workday.ico",
+      "sourceUrl": "https://www.workday.com/favicon.ico",
+      "companyUrl": "https://www.workday.com/",
+      "reviewedAt": "2026-11-20"
     }
   },
   "unavailable": {}
 }
-
