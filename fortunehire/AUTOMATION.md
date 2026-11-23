@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 46 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 49 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -34,7 +34,7 @@ Check `public/data/collection-status.json` and the workflow summary after each r
 The source registry records the exact reviewed career host and broad sector group for each employer. Sitemap indexes and translated routes are deduplicated by posting identity, with English preferred. Encoded HTML descriptions are decoded before interpreting labeled work arrangements and pay text. Generic company-wide boilerplate does not establish a role’s arrangement. Location-dependent and period-ambiguous published pay stays visible without inventing a numeric filter value. Independent hosts may collect in parallel, with each host still paced separately. Code pushes refresh existing records; scheduled and manual runs consider new candidates.
 See ARRANGEMENT-REVIEW.md for role declarations, structured location labels, false-positive protections, and bounded remote discovery hints. URL hints prioritize inspection only; they never set a job category or eligibility.
 
-All 52 company feed outcomes and outstanding obstacles are documented in COMPANY-FEED-STATUS.md and public/data/company-feed-status.json. The State-restricted remote filter remains a subset of Remote; it does not relabel those jobs as hybrid.
+Current feed coverage is recorded in [company-feed-status.json](public/data/company-feed-status.json). Earlier checks are documented in [COMPANY-FEED-STATUS.md](COMPANY-FEED-STATUS.md). The State-restricted remote filter remains a subset of Remote; it does not relabel those jobs as hybrid.
 
 ## November 14 public portal readers
 
@@ -93,3 +93,12 @@ As of November 17, 2026, a posting with physical city/state locations and no sta
 ## Explicit part-time titles
 
 An employer title stating Part-Time or Part Time is classified as Part-time, including parenthetical, case and common Unicode hyphen variants. The role title takes priority over generic employment-type metadata. Benefits text, PT and hour counts alone do not supply this classification. Title evidence is retained and normal refreshes apply the same rule. See TITLE-EMPLOYMENT-VERIFICATION.md.
+
+
+## Intuit, Spectrum, and Uber — November 22
+
+Intuit uses its [official public jobs search](https://jobs.intuit.com/en/search-jobs). Charter Communications uses the [Spectrum retail jobs category](https://jobs.spectrum.com/category/retail-jobs/4673/21675/1), which is linked from the official career site and allowed by its crawler policy. This sample covers the first retail category page. Uber uses its [official jobs sitemap](https://jobs.uber.com/en/jobs/sitemap.xml), linked from the sitemap declared in its crawler policy. The collector checks those policies and uses its standard per-host pacing. Discovery reads one page or sitemap per employer and checks up to 20 new candidate roles.
+
+Each role must have matching official structured posting data, verified U.S. geography, and a requisition-specific employer application route. The published URL is the employer's exact role page, which presents the application. Intuit uses its linked Avature tenant, Spectrum uses its linked iCIMS tenant, and Uber uses the Oracle application path included in its individual role data. Generic destination URLs are quarantined. Spectrum compares the labeled date on the public posting with its structured date and retains the earlier employer date when they differ. Missing or conflicting visible dates fail verification. Sitemap and posting IDs prioritize discovery. The posting evidence determines freshness.
+
+These sources preserve unspecified employment type and work arrangement. All three use the existing deduplication, closing-date, repeated missing checks, bulk-closure guard, and failure retention rules.

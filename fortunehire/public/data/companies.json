@@ -845,11 +845,17 @@
         "state": "California"
       },
       "listYear": 2026,
-      "careerUrl": "https://www.intuit.com/careers/",
+      "careerUrl": "https://jobs.intuit.com/en/search-jobs",
       "profileSource": "https://fortune.com/company/intuit/",
       "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
-      "reviewedAt": "2026-11-20",
-      "verificationNote": "2026 Fortune 500 membership and official career destination reviewed. Directory listing does not imply connected job coverage."
+      "reviewedAt": "2026-11-22",
+      "verificationNote": "2026 Fortune 500 membership reviewed. Intuit’s corporate careers page links to its official jobs portal.",
+      "supportingSources": [
+        {
+          "label": "Intuit corporate careers",
+          "url": "https://www.intuit.com/careers/"
+        }
+      ]
     },
     {
       "id": "servicenow",
