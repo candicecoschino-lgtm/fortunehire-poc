@@ -840,6 +840,56 @@
       "pendingClosureChecks": 1,
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-22T17:51:28.877543+00:00"
+    },
+    "intuit": {
+      "discovered": 15,
+      "checked": 15,
+      "added": 8,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 3,
+      "outsidePostingWindow": 3,
+      "warnings": [
+        {
+          "url": "https://jobs.intuit.com/en/job/arizona-city/lead-ies-mid-market-product-support/27595/103578254752",
+          "error": "Candidate quarantined: Missing matching direct employer application"
+        }
+      ],
+      "errors": [],
+      "activeTracked": 8,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-23T00:09:57.079870+00:00"
+    },
+    "charter-communications": {
+      "discovered": 15,
+      "checked": 15,
+      "added": 2,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 13,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 2,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-23T00:09:56.624127+00:00"
+    },
+    "uber-technologies": {
+      "discovered": 825,
+      "checked": 20,
+      "added": 11,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 9,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 11,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-23T00:10:01.255391+00:00"
     }
   }
 }

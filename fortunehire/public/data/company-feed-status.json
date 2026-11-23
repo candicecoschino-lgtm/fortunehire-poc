@@ -4,9 +4,9 @@
   "coverage": "All 75 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 5,
-    "connected": 46,
+    "connected": 49,
     "paused": 1,
-    "verification-needed": 23
+    "verification-needed": 20
   },
   "companies": [
     {
@@ -852,11 +852,11 @@
     {
       "companyId": "intuit",
       "company": "Intuit",
-      "status": "verification-needed",
-      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
-      "officialCareerUrl": "https://www.intuit.com/careers/",
-      "reviewedAt": "2026-11-20"
+      "status": "connected",
+      "reason": "Verified U.S. roles from Intuit’s official public search and individual structured posting pages.",
+      "nextStep": "Monitor public search coverage, posting dates, and role changes.",
+      "officialCareerUrl": "https://jobs.intuit.com/en/search-jobs",
+      "reviewedAt": "2026-11-22"
     },
     {
       "companyId": "servicenow",
@@ -942,11 +942,11 @@
     {
       "companyId": "charter-communications",
       "company": "Charter Communications",
-      "status": "verification-needed",
-      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "status": "connected",
+      "reason": "Verified U.S. roles from Spectrum’s official public retail category and individual structured posting pages.",
+      "nextStep": "Monitor recent retail postings and coverage. The pilot samples the public retail category.",
       "officialCareerUrl": "https://jobs.spectrum.com/",
-      "reviewedAt": "2026-11-20"
+      "reviewedAt": "2026-11-22"
     },
     {
       "companyId": "live-nation-entertainment",
@@ -987,11 +987,11 @@
     {
       "companyId": "uber-technologies",
       "company": "Uber Technologies",
-      "status": "verification-needed",
-      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "status": "connected",
+      "reason": "Verified U.S. roles from Uber’s employer-declared job sitemap and individual structured posting pages.",
+      "nextStep": "Monitor sitemap freshness, U.S. coverage, and role changes.",
       "officialCareerUrl": "https://jobs.uber.com/",
-      "reviewedAt": "2026-11-20"
+      "reviewedAt": "2026-11-22"
     },
     {
       "companyId": "cbre-group",

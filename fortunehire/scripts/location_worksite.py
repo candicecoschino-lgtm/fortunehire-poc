@@ -19,7 +19,7 @@ def use_listed_location(arrangement,locations,evidence=''):
         if re.fullmatch(r'(?:US|USA|United States(?: of America)?|all(?: locations)?|home(?: office| based)?|not specified|not available|unknown|unspecified|n/?a)',city,re.I):return False
     return True
 
-def apply_location_policy(job):
+def apply_location_policy(job, *, assume_on_site=True):
     if job.get('arrangementReviewRequired'):return job
     if job['arrangement']=='remote' and job.get('remoteScope')!='nationwide':
         states=sorted(set(job.get('eligibleStates',[]))|set(remote_location_states(job['locations'])))
@@ -29,7 +29,7 @@ def apply_location_policy(job):
         remote_states=remote_location_states(job['locations'])
         if remote_states:
             return {**job,'arrangement':'remote','remoteScope':'states','eligibleStates':remote_states,'locationNote':'Remote in '+', '.join(remote_states)+'; employer-listed locations: '+job['locationNote'],'evidence':{**job.get('evidence',{}),'arrangement':'Employer-listed job location is Remote; eligibility is limited to its named states.'}}
-    if not use_listed_location(job['arrangement'],job['locations'],job.get('evidence',{}).get('arrangement','')):return job
+    if not assume_on_site or not use_listed_location(job['arrangement'],job['locations'],job.get('evidence',{}).get('arrangement','')):return job
     # Keep the employer-evidence object and real check dates intact. This is
     # a disclosed classification policy, not an employer worksite statement.
     return {**job,'arrangement':'on-site','arrangementBasis':LOCATION_BASIS,'arrangementNote':LOCATION_REASON}

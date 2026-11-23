@@ -25,6 +25,10 @@ from employer_sources import public_search, public_fetch
 from zoneinfo import ZoneInfo
 from crawler_rules import CrawlerRules
 from function_context import extract_function_context
+from public_listing_feeds import (
+    FEEDS as PUBLIC_LISTING_FEEDS, has_application, role_id as public_listing_role_id,
+    spectrum_posting_date,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY=json.loads((ROOT/'public/data/job-sources.json').read_text(encoding='utf-8'))
@@ -49,6 +53,10 @@ def safe_url(url, host):
 
 
 def job_url(url, host):
+    if host in PUBLIC_LISTING_FEEDS:
+        if not public_listing_role_id(url, host):
+            raise ValueError('Not an individual employer job URL')
+        return safe_url(url, host)
     if host=='www.metacareers.com':
         from meta_public import role_id
         if not role_id(url):raise ValueError('Not an individual Meta job URL')
@@ -337,6 +345,8 @@ def normalize_posting(body, url, company, now):
     req = source.get('identifier') or {}
     req = str((req.get('value') or '') if isinstance(req, dict) else (req or '')).strip()
     identifier_type=source.get('_identifierType','requisition')
+    if host=='jobs.uber.com' and req!=posting_key(url):
+        raise ValueError('Uber requisition does not match the individual posting URL')
     employer_identifier=req
     if company=='home-depot':
         # Some store openings reuse an ATS requisition across distinct locations.
@@ -497,6 +507,8 @@ def normalize_posting(body, url, company, now):
     explicit_national=us_allowed and not host.endswith('.myworkdayjobs.com') or bool(national_remote and (not country_requirements or us_allowed))
     remote_scope='states' if eligible else 'nationwide' if arrangement=='remote' and explicit_national and not residency_restricted else 'unknown'
     if not locations and not eligible and remote_scope!='nationwide': return None
+    if host in PUBLIC_LISTING_FEEDS and not has_application(body, host, req):
+        raise ValueError('Missing matching direct employer application')
     travel, travel_evidence = None, ''
     no_travel = re.search(r'\b(?:Travel\s*(?:Required)?\s*:\s*(?:None|No)(?!\s+more)|No travel (?:is )?required)\b|\bTravel\s*:\s*0\s*%',page.text,re.I)
     yes_travel = re.search(r'\bTravel\s*:\s*(?:Yes\s*,?\s*)?(?:Up to\s*)?([1-9]\d?(?:\.\d+)?|100)\s*%[^\n]{0,50}',page.text,re.I)
@@ -543,6 +555,10 @@ def normalize_posting(body, url, company, now):
             except ValueError: pass
     deadline = min(deadlines) if deadlines else None
     posted = date_only(source.get('datePosted'))
+    if host=='jobs.spectrum.com':
+        visible_date = spectrum_posting_date(body)
+        posted = min(posted, visible_date) if posted else visible_date
+        source = {**source, '_spectrumVisibleDate': visible_date}
     if not posted and company in ('cardinal-health','bank-of-america'):
         try:posted=datetime.strptime(str(source.get('datePosted','')),'%m/%d/%Y').date().isoformat()
         except ValueError:pass
@@ -756,7 +772,7 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 rejected[posting_key(url)] = now.isoformat(); report['skipped'] += 1
                 continue
             from location_worksite import apply_location_policy
-            job=apply_location_policy(job)
+            job=apply_location_policy(job, assume_on_site=host not in PUBLIC_LISTING_FEEDS)
             # Requisition identity is stable across title/slug changes.
             if old and old['requisitionId'] != job['requisitionId']: raise ValueError('Requisition identity changed')
             if not recent_posting(job,now):
@@ -853,9 +869,16 @@ def run(root=ROOT, now=None, max_new=20):
             if not result['errors']: successes+=1
             report['sources'][company]=result
             print(company+': '+str(result.get('activeTracked','retained'))+' tracked; '+str(len(result['errors']))+' errors',flush=True)
-    from location_worksite import apply_publication_policy
+    from location_worksite import apply_location_policy
     from employment_type import apply_employment_policy
-    data['jobs']=sorted(apply_publication_policy([apply_employment_policy(job) for job in jobs]),key=lambda j:j['id'])
+    prepared=[]
+    for job in jobs:
+        host=SOURCES.get(job['companyId'], ('', ''))[0]
+        if host in PUBLIC_LISTING_FEEDS:
+            prepared.append(apply_location_policy(job, assume_on_site=False))
+        else:
+            prepared.append(apply_location_policy(apply_employment_policy(job)))
+    data['jobs']=sorted(prepared,key=lambda j:j['id'])
     data['automation']=report
     data['method']='Official employer career-page, sitemap, and public-search checks; bounded employer pilot.'
     if successes: data['updatedAt']=now.astimezone(ZoneInfo('America/New_York')).date().isoformat()

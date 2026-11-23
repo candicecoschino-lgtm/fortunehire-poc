@@ -29,6 +29,8 @@ on:
       - 'fortunehire/scripts/employer_adapters.py'
       - 'fortunehire/test/test_oracle_company.py'
       - 'fortunehire/scripts/employer_sources.py'
+      - 'fortunehire/scripts/public_listing_feeds.py'
+      - 'fortunehire/test/test_public_listing_feeds.py'
       - 'fortunehire/scripts/apple_public.py'
       - 'fortunehire/test/test_apple.py'
       - 'fortunehire/test/test_fannie.py'
