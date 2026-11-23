@@ -198,6 +198,18 @@
     "uber-technologies": {
       "host": "jobs.uber.com",
       "sector": "Consumer Discretionary"
+    },
+    "anthropic": {
+      "host": "job-boards.greenhouse.io",
+      "sector": "Technology"
+    },
+    "openai": {
+      "host": "jobs.ashbyhq.com",
+      "sector": "Technology"
+    },
+    "perplexity": {
+      "host": "jobs.ashbyhq.com",
+      "sector": "Technology"
     }
   }
 }

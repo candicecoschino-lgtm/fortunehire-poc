@@ -13,7 +13,7 @@ test('all 75 directory companies have an honest feed status matching enabled sou
   }
   for (const id of ['anthropic','brown-brown','openai','perplexity']) {
     const row = audit.companies.find(c => c.companyId === id);
-    assert.equal(row.status,'verification-needed');
+    assert.equal(row.status, id === 'brown-brown' ? 'access-restricted' : 'connected');
     assert.equal(row.officialCareerUrl,companies.companies.find(c => c.id === id).careerUrl);
   }
   assert.equal(audit.companies.find(c=>c.companyId==='rtx').status,'paused');

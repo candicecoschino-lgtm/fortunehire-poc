@@ -10,6 +10,7 @@ import html
 from html.parser import HTMLParser
 import json
 from pathlib import Path
+from threading import Lock
 import re
 import subprocess
 import time
@@ -25,10 +26,13 @@ from employer_sources import public_search, public_fetch
 from zoneinfo import ZoneInfo
 from crawler_rules import CrawlerRules
 from function_context import extract_function_context
+import requested_ats_feeds as ats
 from public_listing_feeds import (
     FEEDS as PUBLIC_LISTING_FEEDS, has_application, role_id as public_listing_role_id,
     spectrum_posting_date,
 )
+
+EVIDENCE_ONLY_HOSTS = PUBLIC_LISTING_FEEDS.keys() | ats.HOSTS
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY=json.loads((ROOT/'public/data/job-sources.json').read_text(encoding='utf-8'))
@@ -53,6 +57,10 @@ def safe_url(url, host):
 
 
 def job_url(url, host):
+    if host in ats.HOSTS:
+        if urllib.parse.urlsplit(url).netloc != host or not ats.role(url):
+            raise ValueError('Not an individual employer ATS job URL')
+        return url.rstrip('/')
     if host in PUBLIC_LISTING_FEEDS:
         if not public_listing_role_id(url, host):
             raise ValueError('Not an individual employer job URL')
@@ -80,6 +88,8 @@ def job_url(url, host):
 
 
 def posting_key(url):
+    if urllib.parse.urlsplit(url).hostname in ats.HOSTS:
+        return (ats.role(url) or ('', ''))[1]
     if urllib.parse.urlsplit(url).hostname=='www.metacareers.com':
         from meta_public import role_id
         return role_id(url) or ''
@@ -306,6 +316,8 @@ def normalize_posting(body, url, company, now):
     host, sector = SOURCES[company]
     url = job_url(url, host)
     requested_url=url
+    if host in ats.HOSTS and ats.role(url)[0] != company:
+        raise ValueError('Unexpected employer ATS tenant')
     page = Page(body)
     if company=='amazon':page.scripts=[]
     candidates = []
@@ -363,7 +375,7 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if company=='home-depot' or source.get('_adapter') in ('meta-public-jobposting-and-matched-details','verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details','employer-pcsx-page-and-public-details'):
+    if company=='home-depot' or source.get('_adapter') in ('meta-public-jobposting-and-matched-details','verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details','employer-pcsx-page-and-public-details','greenhouse-public-first-published','ashby-public-jobposting'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]
@@ -772,7 +784,7 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 rejected[posting_key(url)] = now.isoformat(); report['skipped'] += 1
                 continue
             from location_worksite import apply_location_policy
-            job=apply_location_policy(job, assume_on_site=host not in PUBLIC_LISTING_FEEDS)
+            job=apply_location_policy(job, assume_on_site=host not in EVIDENCE_ONLY_HOSTS)
             # Requisition identity is stable across title/slug changes.
             if old and old['requisitionId'] != job['requisitionId']: raise ValueError('Requisition identity changed')
             if not recent_posting(job,now):
@@ -834,7 +846,16 @@ def run(root=ROOT, now=None, max_new=20):
     report = {'schemaVersion':1,'attemptedAt':now.isoformat(),'postingWindowDays':POSTING_MAX_AGE_DAYS,'coverage':'U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.','sources':{}}
     jobs = data['jobs']
     successes = 0
+    ashby_lock = Lock()
+    ashby_client = None
+    ashby_denied = None
+
+    def failure(company, error):
+        last_success = data.get('automation', {}).get('sources', {}).get(company, {}).get('lastSuccessfulAt')
+        return company, None, None, {'errors': [{'error': str(error)[:300]}], 'lastSuccessfulAt': last_success}
+
     def collect(company):
+        nonlocal ashby_client
         host,sector=SOURCES[company]
         try:
             if company=='jpmorgan-chase':
@@ -842,14 +863,22 @@ def run(root=ROOT, now=None, max_new=20):
                 client=create(Client,SourceError,approved=REGISTRY['sources'].get(company,{}).get('approvedPublicJobPolicy') is True)
                 source_max_new=min(max_new,5);source_cap=20
             else:
-                client = Client(host)
-                source_max_new=max_new;source_cap=100
+                if host==ats.ASHBY:
+                    if ashby_client is None:
+                        ashby_client = Client(host)
+                    client = ashby_client
+                else:
+                    client = Client(host)
+                source_max_new = max_new
+                source_cap = ats.ACTIVE_CAP if host in ats.HOSTS else 100
+            if host in ats.HOSTS:
+                client.ats_company = company
             discovered = discover(client)
-            if company=='meta':
+            if company=='meta' or host==ats.ASHBY:
                 from meta_public import discovery_order
                 client.discovery_dates=discovery_order(discovered,state.get(company,{}).get('discoveryFirstSeen',{}),now)
             refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,lambda url:public_fetch(client,url,Client),now,max_new=source_max_new,cap=source_cap,discovery_dates=client.discovery_dates)
-            if company=='meta':source_state['discoveryFirstSeen']=client.discovery_dates
+            if company=='meta' or host==ats.ASHBY:source_state['discoveryFirstSeen']=client.discovery_dates
             result['discoveryLimited']=client.discovery_limited
             if client.discovery_warnings:result['discoveryWarnings']=client.discovery_warnings
             if not result['errors']:
@@ -858,10 +887,21 @@ def run(root=ROOT, now=None, max_new=20):
                 result['lastSuccessfulAt']=data.get('automation',{}).get('sources',{}).get(company,{}).get('lastSuccessfulAt')
             return company,refreshed,source_state,result
         except Exception as error:
-            result={'errors':[{'error':str(error)[:300]}],'lastSuccessfulAt':data.get('automation',{}).get('sources',{}).get(company,{}).get('lastSuccessfulAt')}
-            return company,None,None,result
+            return failure(company, error)
+    def collect_with_host_pacing(company):
+        nonlocal ashby_denied
+        if SOURCES[company][0]!=ats.ASHBY:
+            return collect(company)
+        with ashby_lock:
+            if ashby_denied:
+                return failure(company, 'Shared Ashby host blocked collection: '+ashby_denied)
+            result = collect(company)
+            ashby_denied = next((row['error'] for row in result[3]['errors']
+                                 if re.search(r'\bHTTP (?:401|403|429)\b', row['error'])), None)
+            return result
+
     with ThreadPoolExecutor(max_workers=3) as pool:
-        for future in as_completed([pool.submit(collect,key) for key in SOURCES]):
+        for future in as_completed([pool.submit(collect_with_host_pacing,key) for key in SOURCES]):
             company,refreshed,source_state,result=future.result()
             if refreshed is not None:
                 jobs=[j for j in jobs if j['companyId']!=company]+refreshed
@@ -874,7 +914,7 @@ def run(root=ROOT, now=None, max_new=20):
     prepared=[]
     for job in jobs:
         host=SOURCES.get(job['companyId'], ('', ''))[0]
-        if host in PUBLIC_LISTING_FEEDS:
+        if host in EVIDENCE_ONLY_HOSTS:
             prepared.append(apply_location_policy(job, assume_on_site=False))
         else:
             prepared.append(apply_location_policy(apply_employment_policy(job)))

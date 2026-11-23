@@ -15602,6 +15602,1269 @@
       ]
     },
     {
+      "id": "anthropic-11918",
+      "companyId": "anthropic",
+      "requisitionId": "11918",
+      "identifierType": "requisition",
+      "title": "Strategic Account Executive, Hedge Funds",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490572008",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "New York City",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "New York City, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $380,000—$450,000 USD",
+        "scopeStates": [
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Identify and prioritize high-potential opportunities within your accounts, building and executing account plans that turn strategic relationships into committed revenue",
+          "Drive evaluation, deployment, and adoption of Claude within your accounts across research, engineering, and operations, turning early wins into durable, scaled usage",
+          "Partner closely with Applied AI, Solutions Architecture, and Product to design solutions, prove value quickly, and represent client requirements on security, deployment, and performance to Product"
+        ],
+        "requiredSkills": [
+          "5+ years of enterprise sales experience",
+          "with demonstrated success selling into hedge funds",
+          "A track record of carrying and exceeding quota in enterprise sales of technical",
+          "complex products (API-first platforms",
+          "cloud infrastructure",
+          "data/ML platforms",
+          "or enterprise SaaS)",
+          "Experience winning and growing strategic enterprise accounts",
+          "including building C-suite relationships",
+          "in hedge funds",
+          "Operational rigor across complex",
+          "multi-stakeholder sales cycles",
+          "balancing velocity with deal quality and forecasting accurately in fast-changing environments",
+          "Credibility with technical buyers and builders (CIOs",
+          "Heads of Research) and experience pairing effectively with solutions architects and applied AI teams",
+          "A genuine interest in deploying AI responsibly and motivation to advance Anthropic's mission of building safe"
+        ],
+        "preferredSkills": [
+          "Experience bringing generative AI or LLM-based products",
+          "or other emerging platform technologies",
+          "to hedge funds",
+          "Deep familiarity with regulated-industry selling: model-risk management",
+          "regulatory and compliance-driven procurement",
+          "security review",
+          "and the governance expectations of financial institutions",
+          "Experience selling with IP protection",
+          "and vendor risk in mind",
+          "including the protection of proprietary strategies and data",
+          "Experience selling with and through cloud and ecosystem partners such as AWS",
+          "Google Cloud",
+          "and global systems integrators",
+          "Familiarity with consumption- or usage-based commercial models and value-based pricing conversations",
+          "The annual compensation range for this role is listed below.",
+          "For sales roles"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "cb7ed70921c4f9d5f29920fb557e8152ed1e50b7e49bca2a8c9e7ec8e6e2af70",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "sales",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Strategic Account Executive, Hedge Funds"
+      ]
+    },
+    {
+      "id": "anthropic-266163",
+      "companyId": "anthropic",
+      "requisitionId": "266163",
+      "identifierType": "requisition",
+      "title": "Staff+ Software Engineer, Capacity Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490979008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York; Seattle, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $320,000—$485,000 USD",
+        "scopeStates": [
+          "California",
+          "New York",
+          "Washington"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You’ll collaborate closely with research engineering, infrastructure, inference, and finance teams.",
+          "Build the planning and allocation stack — the tools leadership uses to allocate capacity, teams use to plan against their allocations, and the scheduler enforces.",
+          "Drive the efficiency programs: stranding and rightsizing, unused capacity recovery, and job-level utilization across training, inference, and eval.",
+          "Establish per-config baselines and work with system-owning teams to close the gaps.",
+          "Build the data platform underneath all of it: pipelines ingesting occupancy, utilization, and cost from a rapidly diversifying fleet into BigQuery, with real ownership of completeness, latency SLOs, and gap detection.",
+          "Operate Kubernetes-native systems at scale — collection agents, workload labeling, and the taint/reservation/scheduling behavior that determines what capacity is actually usable.",
+          "Treat the output as a product, not a pipeline."
+        ],
+        "requiredSkills": [
+          "A strong track record building and operating production systems.",
+          "This is a hands-on engineering role with a devops flavor.",
+          "Python and SQL at production quality.",
+          "Most pipeline code is Python;",
+          "the presentation layer is BigQuery SQL",
+          "including table-valued functions and views.",
+          "Both need to be idiomatic",
+          "and maintainable.",
+          "Deep experience with at least one major cloud provider (Amazon Web Services",
+          "Google Cloud",
+          "or Microsoft Azure) and its operations",
+          "Experience with observability tooling stack",
+          "including Prometheus",
+          "including writing recording rules and building monitoring that engineering teams rely on.",
+          "Ability to gather your own requirements and work across organizational boundaries in an ambiguous environment with limited direction."
+        ],
+        "preferredSkills": [
+          "Experience with capacity planning",
+          "resource management",
+          "or cost attribution systems at a hyperscaler or in a large-scale machine learning environment.",
+          "Time spent in product engineering and developer experience absolutely counts here.",
+          "Scheduling and packing efficiency experience",
+          "or profiling-driven optimization of large distributed workloads.",
+          "Multi-cloud data ingestion experience",
+          "especially normalizing billing exports",
+          "reservation APIs",
+          "on-demand capacity reservations",
+          "and vendor telemetry from providers with different billing arrangements.",
+          "Total cost of ownership and forecasting experience",
+          "including decomposing whether infrastructure growth is causal or correlated with business drivers.",
+          "Accelerator infrastructure familiarity.",
+          "GPU metrics (DCGM)",
+          "TPU utilization"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "6aee8b4c59de5d51870c8920785dbdbbb2be234b33b52bc2af94f96b9eccd6c8",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "software",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Staff+ Software Engineer, Capacity Engineering"
+      ]
+    },
+    {
+      "id": "anthropic-pip-267962",
+      "companyId": "anthropic",
+      "requisitionId": "PIP-267962",
+      "identifierType": "requisition",
+      "title": "Strategic Account Executive, Financial Services",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5480875008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $380,000—$450,000 USD",
+        "scopeStates": [
+          "California",
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You'll drive adoption of safe, frontier AI by securing strategic, enterprise-scale deals in one of these sectors.",
+          "Identify and prioritize high-potential opportunities within your accounts, building and executing account plans that turn strategic relationships into committed revenue",
+          "Partner closely with Applied AI, Solutions Architecture, and Product to design solutions, prove value quickly, and translate your sector's needs into product and roadmap input"
+        ],
+        "requiredSkills": [
+          "8+ years of enterprise sales experience in at least one of the following",
+          "with demonstrated success covering those organizations:",
+          "Banking: retail banks",
+          "commercial banks",
+          "or consumer finance organizations",
+          "Insurance: carriers or reinsurers",
+          "Asset & wealth management and hedge funds: asset managers",
+          "wealth management firms",
+          "or other buy-side and institutional investors",
+          "A track record of carrying and exceeding quota in enterprise sales of technical",
+          "complex products (API-first platforms",
+          "cloud infrastructure",
+          "data/ML platforms",
+          "or enterprise SaaS)",
+          "Experience winning and growing strategic enterprise accounts",
+          "including building C-suite relationships"
+        ],
+        "preferredSkills": [
+          "Experience bringing generative AI or LLM-based products",
+          "or other emerging platform technologies",
+          "to large financial institutions",
+          "Deep familiarity with regulated-industry selling: data governance",
+          "and compliance-driven procurement",
+          "security review",
+          "and the governance expectations of financial institutions",
+          "Experience selling with and through cloud and ecosystem partners such as AWS",
+          "Google Cloud",
+          "and global systems integrators",
+          "Familiarity with consumption- or usage-based commercial models and value-based pricing conversations",
+          "Experience navigating long",
+          "multi-stakeholder enterprise cycles typical of banking",
+          "or institutional investment and wealth advisory procurement",
+          "The annual compensation range for this role is listed below.",
+          "For sales roles"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "24422f775b28b1db945aee94cf93ef5375b6acc1f0a765242434605f249f16b9",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "sales",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Strategic Account Executive, Financial Services"
+      ]
+    },
+    {
+      "id": "anthropic-pip-267963",
+      "companyId": "anthropic",
+      "requisitionId": "PIP-267963",
+      "identifierType": "requisition",
+      "title": "Strategic Account Executive, HCLS",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5480893008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $380,000—$450,000 USD",
+        "scopeStates": [
+          "California",
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Design and execute sales strategies tailored to each customer's procurement cycles, budgeting processes, and priorities, from drug development to value-based care initiatives, translating market landscape and trend analysis into targeted account plans and campaigns",
+          "Identify and prioritize high-potential opportunities across business units, including R&D, clinical development, commercial, clinical departments, care management, claims processing, and administrative offices, turning strategic relationships into committed revenue and differentiating Anthropic's offering for each use case",
+          "Partner closely with Applied AI, Solutions Architecture, and Product to design solutions, prove value quickly, and translate industry-specific needs and feedback from scientific, clinical, care coordination, commercial, and administrative leaders into product and roadmap input"
+        ],
+        "requiredSkills": [
+          "8+ years of enterprise sales experience in at least one of the following",
+          "with demonstrated success covering those organizations:",
+          "Life sciences: bio",
+          "and research organizations",
+          "Healthcare: health systems",
+          "and/or payor organizations",
+          "A track record of carrying and exceeding quota in enterprise sales of technical",
+          "complex products (API-first platforms",
+          "cloud infrastructure",
+          "data/ML platforms",
+          "or enterprise SaaS)",
+          "Experience winning and growing strategic enterprise accounts",
+          "including building C-suite relationships",
+          "within healthcare or life sciences",
+          "A track record of managing complex",
+          "multi-stakeholder sales cycles and securing strategic deals by understanding both technical requirements and business"
+        ],
+        "preferredSkills": [
+          "Experience growing very large",
+          "multi-business-unit customer relationships with a concentrated book of one to three accounts",
+          "Experience bringing generative AI or LLM-based products",
+          "or other emerging platform technologies",
+          "to large pharmaceutical",
+          "biotechnology",
+          "or healthcare delivery organizations",
+          "Deep familiarity with regulated-industry selling",
+          "including GxP compliance",
+          "data governance",
+          "regulatory and compliance-driven procurement",
+          "security review",
+          "and the governance expectations of healthcare and life sciences organizations",
+          "Deep understanding of buying cycles",
+          "decision-making processes",
+          "and key pain points across biopharma"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "a577623f10cdaa1992732ba67ba07163deefc43c4570cbc96df05cf75831093c",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "sales",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Strategic Account Executive, HCLS"
+      ]
+    },
+    {
+      "id": "anthropic-pip-267973",
+      "companyId": "anthropic",
+      "requisitionId": "PIP-267973",
+      "identifierType": "requisition",
+      "title": "GTM Strategy & Operations Business Partner",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5485591008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        },
+        {
+          "city": "Washington",
+          "state": "District of Columbia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York; Washington, District of Columbia",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $270,000—$310,000 USD",
+        "scopeStates": [
+          "California",
+          "District of Columbia",
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Partner with GTM leaders to analyze and refine strategy for your area of the business including territory planning, resource allocation, performance to plan, and growth initiatives",
+          "Maintain excellence through business reviews and operating cadences to help achieve company revenue targets and strategic objectives",
+          "Analyze sales performance metrics and develop insights to optimize performance and improve efficiency using SQL, R, or Python to query, model, and visualize data at scale",
+          "Partner to create, evolve and maintain reporting mechanisms, using data to go from \"what\" to \"why\"",
+          "Build and maintain dashboards, models, and ad hoc analyses in spreadsheets and BI tools with mastery-level proficiency",
+          "Develop and maintain use case frameworks to capture and standardize how customers derive value",
+          "Support multiple teams and executives in leveraging insights for new deals, expansions, and retention strategies",
+          "Partner with GTM teams to evolve and refine sales motions and best practices across segments and regions",
+          "Serve as a trusted strategic advisor to senior and executive stakeholders across the GTM organization, delivering insights and recommendations with clarity, conviction, and composure",
+          "Build deep credibility through consistent follow-through, proactive communication, and the ability to challenge assumptions respectfully when the data warrants it",
+          "Support coordination between sales segments, regions, and partnership teams",
+          "Track record of driving forward high-growth sales organizations"
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "b98d8ba0f745050af518199c069e8b789785acf20892e4a6539cf9c923ee972e",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "other",
+      "jobFunctionBasis": "responsibilities",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Partner with GTM leaders to analyze and refine strategy for your area of the business including territory planning, resource allocation, performance to plan, and growth initiatives",
+        "Maintain excellence through business reviews and operating cadences to help achieve company revenue targets and strategic objectives",
+        "Analyze sales performance metrics and develop insights to optimize performance and improve efficiency using SQL, R, or Python to query, model, and visualize data at scale",
+        "Partner to create, evolve and maintain reporting mechanisms, using data to go from \"what\" to \"why\""
+      ]
+    },
+    {
+      "id": "anthropic-pip-267979",
+      "companyId": "anthropic",
+      "requisitionId": "PIP-267979",
+      "identifierType": "requisition",
+      "title": "Engineering Manager, Privacy Infrastructure",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490122008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $405,000—$485,000 USD",
+        "scopeStates": [
+          "California",
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You'll lead a team of talented privacy engineers that builds and operates the platform and infra frameworks underpinning Anthropic's privacy and compliance posture.",
+          "Build and lead the team: Recruit, develop, and retain a team of exceptional privacy engineers;",
+          "establish team charter, practices, and priorities as the team matures",
+          "Drive technical strategy: Partner with technical leads, researchers, and legal to set direction for privacy infrastructure across training, inference, and product surfaces: data governance and policy enforcement, deletion and retention at scale, encryption and key management, audit and access transparency, and ML-based PII detection and redaction.",
+          "Build foundational privacy infrastructure: Guide the team in building automated data discovery, classification, access controls, audit logging, and lifecycle management systems, plus data governance platforms for tracking lineage, purpose limitation, and retention across distributed AI systems",
+          "Lead privacy reviews at scale: Oversee technical privacy reviews and threat modeling for new AI models and features, identifying risks and architecting scalable mitigations"
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-19",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "28a86b4c04b465d3d250a779c9c8ddfe5db118e2a8dee27e1dfdff5e2d1cde68",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Engineering Manager, Privacy Infrastructure"
+      ]
+    },
+    {
+      "id": "anthropic-pip-267981",
+      "companyId": "anthropic",
+      "requisitionId": "PIP-267981",
+      "identifierType": "requisition",
+      "title": "Campaign Manager",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5491575008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $255,000—$320,000 USD",
+        "scopeStates": [
+          "California",
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You'll develop and execute comprehensive campaign strategies in partnership with Sales, Field Marketing, Product Marketing, Partner Marketing, and Digital teams, creating compelling programs and flywheel motions that help Sales teams reach their pipeline and revenue targets.",
+          "Design and lead integrated campaigns across customer segments, establishing scalable frameworks and processes that connect digital, events, content, and ABM channels into cohesive buyer journeys",
+          "Drive full-funnel campaign initiatives across core priorities, industries, segments, and regions, adapting strategies to how each audience buys, from self-serve and small teams to enterprise buying committees",
+          "Create and implement campaign programs including thought leadership moments, digital nurture streams, webinar series, executive engagement programs, and ABM activations",
+          "Partner closely with Field Marketing to align campaign programs with territory and account-specific goals that directly achieve pipeline, adoption, and expansion targets",
+          "Optimize programs using measurement frameworks, including lead scoring, attribution models, and ROI reporting to demonstrate campaign impact on demand, adoption, and revenue",
+          "Collaborate with global Marketing teams to ensure Enterprise campaigns align with company-wide strategy while meeting segment- and industry-specific needs",
+          "Coordinate with Product Marketing and Solutions Marketing to ensure consistent messaging and positioning across all campaign touchpoints",
+          "Build and manage campaign budgets with strong financial discipline and ROI focus",
+          "Drive continuous improvement through post-campaign analysis, stakeholder feedback, and data-driven optimization"
+        ],
+        "requiredSkills": [
+          "Demonstrate deep understanding of how businesses buy software",
+          "through enterprise buying committees or high-volume and self-serve models - experience working within software companies is required for this position",
+          "Have a track record of successfully building and scaling integrated campaign programs that span digital",
+          "and ABM or lifecycle channels",
+          "Have strong analytical skills and a data-driven approach to campaign optimization and attribution",
+          "Have demonstrated success in contributing to significant demand",
+          "and revenue goals through integrated marketing initiatives",
+          "Are a proven self-starter who can build and run sophisticated programs with small teams in fast-paced startup environments",
+          "Have strong project management skills",
+          "with experience managing several multi-channel campaigns and agencies at once",
+          "for different audiences",
+          "Possess strong budgeting and financial management capabilities with experience managing substantial campaign budgets",
+          "Excel at cross-functional collaboration",
+          "particularly with sales teams",
+          "agency partners",
+          "and executive stakeholders"
+        ],
+        "preferredSkills": [
+          "Have 10+ years of B2B marketing experience with expertise in integrated campaigns and demand generation",
+          "plus depth in account-based",
+          "or customer marketing",
+          "Have experience marketing AI/ML or complex technical products to enterprise customers",
+          "Have experience building and leading integrated campaign or demand generation teams",
+          "Have deep knowledge of account-based marketing (ABM) strategies and execution",
+          "including platforms such as 6sense or Demandbase",
+          "Have experience at high-growth technology companies",
+          "Have experience developing industry- or segment-specific campaign motions for regulated or vertical markets",
+          "Have run B2B campaigns built on customer stories",
+          "including working with customers' brand",
+          "and legal teams on approvals",
+          "Have run high-volume demand",
+          "or self-serve campaigns for small business or mid-market customers",
+          "Have marketing automation and campaign operations fluency (e.g.",
+          "Salesforce) with an understanding of lead lifecycle management"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-22",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "7ae307f4f9c2f5644f545af37a2944e21f22ffd7aa3da4649bd824a1abacf94a",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "marketing",
+      "jobFunctionBasis": "responsibilities",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "You'll develop and execute comprehensive campaign strategies in partnership with Sales, Field Marketing, Product Marketing, Partner Marketing, and Digital teams, creating compelling programs and flywheel motions that help Sales teams reach their pipeline and revenue targets."
+      ]
+    },
+    {
+      "id": "anthropic-req-26-0292-02",
+      "companyId": "anthropic",
+      "requisitionId": "REQ-26-0292-02",
+      "identifierType": "requisition",
+      "title": "Corporate Network Engineer",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5489564008",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Remote · Eligible states not verified · Employer-listed locations: San Francisco, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $325,000—$360,000 USD",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Design, build, and operate campus networks for offices of every size: switching, Wi-Fi, edge, carrier, and out-of-band connectivity",
+          "Build and maintain network infrastructure as code (source of truth, generated configuration, review, CI, staged rollout), and automate recurring manual work away",
+          "Build monitoring and alerting that catches network problems early, respond to network events, and run incidents through to a fix for the cause",
+          "Partner with Corporate Security, Detection & Response, and Endpoint on network authentication, segmentation, and the network as a detection source",
+          "Deliver the network for new offices end to end, from landlord and contractor requirements through carriers, cabling, staging, and cutover, alongside Buildouts, Workplace, and integrators",
+          "Treat network configuration as code, have written a substantial part of the pipeline that ships it, and have operated a network from it",
+          "Write code well (Python or similar), build automation and tooling as a normal part of the job, and make a habit of automating yourself out of work"
+        ],
+        "requiredSkills": [
+          "Campus switching and high-density Wi-Fi: L2/L3 design",
+          "Wi-Fi design for dense spaces",
+          "Access control and edge: 802.1X/EAP-TLS",
+          "segmentation",
+          "multi-carrier BGP",
+          "out-of-band access",
+          "Automation: Python",
+          "Ansible or Nornir",
+          "GitOps and CI",
+          "Observability: streaming telemetry",
+          "flow and log pipelines",
+          "Buildout infrastructure: MDF/IDF design",
+          "structured cabling",
+          "power and cooling",
+          "carrier diversity",
+          "Any vendor: Arista"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-19",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "3ae8dd72add944f58e37b1f8224f29a5460e8102c9cee75794347783fb3d0c8e",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "it",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Corporate Network Engineer",
+        "Design, build, and operate campus networks for offices of every size: switching, Wi-Fi, edge, carrier, and out-of-band connectivity",
+        "Build and maintain network infrastructure as code (source of truth, generated configuration, review, CI, staged rollout), and automate recurring manual work away",
+        "Build monitoring and alerting that catches network problems early, respond to network events, and run incidents through to a fix for the cause"
+      ]
+    },
+    {
+      "id": "anthropic-req-26-1528-01",
+      "companyId": "anthropic",
+      "requisitionId": "REQ-26-1528-01",
+      "identifierType": "requisition",
+      "title": "Research Engineer, Beneficial Deployments",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5485188008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $500,000—$850,000 USD",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You'll identify where our models fall short, build the environments and reward signals used to train them, run experiments, and measure whether new capabilities generalize beyond the training data.",
+          "Identify capability gaps in our models and turn them into a research agenda",
+          "Collaborate with domain experts to design data pipelines",
+          "Develop and improve QA frameworks to catch reward hacking and ensure env quality",
+          "Partner with other RL research teams and product teams to align on capability goals"
+        ],
+        "requiredSkills": [
+          "Have experience with fine-tuning large language models for specific domains or real-world use cases",
+          "Have experience with reinforcement learning",
+          "reward design",
+          "or training data curation for LLMs",
+          "Have a track record of setting your own direction and delivering on ambiguous",
+          "high-stakes work with little oversight",
+          "such as by running your own team",
+          "research program",
+          "Can turn deep technical understanding into clear strategic recommendations that influence senior",
+          "non-technical leaders",
+          "Think rigorously about how quickly AI capabilities are advancing and are ready to plan around the possibility that transformative AI arrives soon",
+          "Find value in reading through datasets to understand them and spot issues",
+          "Are excited about a role that combines hands-on applied research with strategy and influence"
+        ],
+        "preferredSkills": [
+          "Have experience training production ML systems",
+          "Have experience designing evals or benchmarks for LLMs",
+          "Have domain expertise in healthcare",
+          "global health",
+          "or philanthropy",
+          "Have experience with multilingual models or low-resource languages",
+          "Have worked with NGOs",
+          "ministries of health",
+          "or other partners in low- and middle-income countries",
+          "The annual compensation range for this role is listed below.",
+          "For sales roles",
+          "the range provided is the role’s On Target Earnings (\"OTE\") range",
+          "meaning that the range includes both the sales commissions/sales bonuses target and annual base salary for the role.",
+          "Annual Salary:",
+          "Required field of study: A field relevant to the role as demonstrated through coursework",
+          "or professional experience"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "2608578326ebb6d7e51082c8009901bc3eeb2a68751a31057df9e6c524fe90e4",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Research Engineer, Beneficial Deployments"
+      ]
+    },
+    {
+      "id": "anthropic-req-26-1574-02",
+      "companyId": "anthropic",
+      "requisitionId": "REQ-26-1574-02",
+      "identifierType": "requisition",
+      "title": "Program Manager, Cloud Partners",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5491573008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $255,000—$320,000 USD",
+        "scopeStates": [
+          "California",
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You'll design new programs and run them yourself, then direct agencies, regional teams, and partners to scale what works.",
+          "Lead the technical webinar programs we run with cloud partners, from topic and speaker strategy through promotion, regional and on-demand versions, and follow-up",
+          "Build a repeatable developer workshop model and scale it across cities and regions with cloud partners, systems integrators, and Anthropic's technical teams",
+          "Lead digital campaigns, including audience strategy, creative briefs, budget pacing, and optimization",
+          "Build the follow-up motion so program leads turn into opportunities and pipeline"
+        ],
+        "requiredSkills": [
+          "Have owned B2B marketing programs end to end across several channels",
+          "including webinars",
+          "in-person events or workshops",
+          "and paid digital campaigns",
+          "Have run co-marketing programs with a cloud provider or a comparable technology partner",
+          "including joint planning and multi-party approvals",
+          "Have managed program budgets",
+          "agencies or vendors",
+          "and partner funding such as MDF",
+          "and report on campaigns in a CRM and a marketing automation platform",
+          "Can analyze registration",
+          "and pipeline data in spreadsheets or a reporting tool",
+          "and turn it into a clear recommendation",
+          "Have planned and optimized paid campaigns on LinkedIn or a comparable platform",
+          "with an agency or an internal growth team",
+          "Have led programs across sales"
+        ],
+        "preferredSkills": [
+          "Have worked in marketing at a major cloud provider",
+          "or have marketed a product through one",
+          "Have marketed to developers and IT decision-makers as well as business leaders",
+          "Have built a program model from scratch and scaled it through agencies",
+          "or regional teams",
+          "Have run programs across North America",
+          "Have built account-based programs with sales teams against a named account list",
+          "Understand cloud marketplaces",
+          "and consumption-based business models",
+          "Have marketed AI",
+          "or developer products",
+          "Have used Claude or other AI tools to scale your own marketing work",
+          "Role-specific policy: For this role",
+          "we expect all staff to be able to work from our San Francisco or Seattle office at least 2 days a week",
+          "though we encourage you to apply even if you might need some flexibility for an interim period of time for relocation.",
+          "If based in Seattle"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-22",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "3778acb73601320cd6a015a8d014e404c5b1e8f59a150c717e620c598917c93a",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "projects",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Program Manager, Cloud Partners"
+      ]
+    },
+    {
+      "id": "anthropic-req-26-1772-01",
+      "companyId": "anthropic",
+      "requisitionId": "REQ-26-1772-01",
+      "identifierType": "requisition",
+      "title": "Commercial Counsel, GTM Strategic Alliances",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490950008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York; Seattle, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $335,000—$385,000 USD",
+        "scopeStates": [
+          "California",
+          "New York",
+          "Washington"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You'll serve as the legal partner on critical GTM engagements, architecting bespoke commercial structures.",
+          "You'll negotiate directly with customers’ and partners’ senior executives and legal teams.",
+          "Lead complex negotiations involving senior executives, procurement teams, legal departments, security organizations, compliance functions, and technical stakeholders",
+          "Design playbooks and deal frameworks that enable rapid customization for specific customer or partner requirements while maintaining appropriate risk controls",
+          "Collaborate with product, finance, and ops colleagues",
+          "Coordinate with other strategic commercial workstreams (e.g., compute) to ensure deals align with other initiatives and commitments"
+        ],
+        "requiredSkills": [
+          "Experience leading Fortune 500 and Global 2000 technology deals",
+          "Demonstrated track record of closing high value enterprise technology deals involving bespoke commercials",
+          "Executive presence and ability to negotiate effectively with senior legal and business leaders",
+          "Expertise in navigating complex enterprise decision making processes involving technical validation",
+          "security assessments",
+          "AI governance reviews",
+          "procurement negotiations",
+          "and executive approvals",
+          "Superior judgment in balancing competitive urgency with thoroughness on mission critical deals",
+          "Outstanding communication skills with the ability to translate complex technical and legal concepts into compelling business value propositions",
+          "Genuine intellectual curiosity about AI technology and commitment to supporting responsible enterprise AI deployment",
+          "Comfort with ambiguity and an entrepreneurial mindset.",
+          "You thrive in environments where you're inventing new approaches rather than applying established templates"
+        ],
+        "preferredSkills": [
+          "At least 8 years of relevant legal experience",
+          "with substantial focus on complex enterprise technology transactions",
+          "Direct experience supporting enterprise sales or partnerships",
+          "strategic account",
+          "or pursuit teams at high growth B2B technology companies",
+          "Experience with complex SaaS",
+          "infrastructure",
+          "or platform deals requiring custom deployments",
+          "or collaborative components",
+          "Familiarity with AI/ML deployment considerations at enterprise scale",
+          "including data residency",
+          "model and safety reviews",
+          "security requirements",
+          "regulatory compliance (including emerging AI regulations such as the EU AI Act)",
+          "and responsible AI frameworks",
+          "Track record of winning competitive"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "32bcd74f13ea8ea505c7638c6378aebeb0ebc62ecdd0912272dd097eb3731804",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "other",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Commercial Counsel, GTM Strategic Alliances"
+      ]
+    },
+    {
+      "id": "anthropic-req-26-2000-01",
+      "companyId": "anthropic",
+      "requisitionId": "REQ-26-2000-01",
+      "identifierType": "requisition",
+      "title": "Head of Campaign Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5491578008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $320,000—$320,000 USD",
+        "scopeStates": [
+          "California",
+          "New York"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You'll lead a small team of full-time employees and contractors, and you'll build alongside them: the intake, templates, calendars, tools, reporting, and ways of working that let campaign and content leads spend their time on strategy and delivery.",
+          "You'll design it.",
+          "Build the operating model for campaigns, channels, and content: how we plan, build, launch, measure, and improve work across every audience at global scale",
+          "Build and operationalize the intake for campaign, content, and channel requests, with clear criteria, SLAs, and status, ensuring a positive experience for internal stakeholders",
+          "Create the planning tools campaigns rely on, including briefs, plan templates, launch checklists, campaign kits, and the calendar",
+          "Lead, coach, and develop a small team of full-time employees and contractors, including webinar and email program managers, and set the standard for how those programs support campaigns",
+          "Partner with Analytics and Marketing Operations on tagging, dashboards, channel health, and database health, so results can be inspected weekly and budget can move to what works",
+          "Track budgets, agency deliverables, and spend against plan",
+          "Manage agency relationships and partner with them on operations, including budget management",
+          "Manage various large cross-functional projects",
+          "Design for global scale from the start: set what is standard worldwide and what regions adapt, and build the regional intake, localization, handoffs, and reporting to support it",
+          "Write clearly, and turn messy threads into crisp updates and decisions"
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [
+          "Have 10+ years of B2B experience across marketing or campaign operations",
+          "integrated campaigns",
+          "or marketing program management",
+          "with B2B software experience",
+          "Have led webinar",
+          "or other channel programs at scale",
+          "Have built or led integrated campaigns or campaign operations teams",
+          "Have set up regional hubs",
+          "localization vendors",
+          "or follow-the-sun support models",
+          "Have experience with account-based marketing (ABM) platforms",
+          "and marketing automation",
+          "Have worked at a high-growth B2B software company through a period of rapid hiring",
+          "The annual compensation range for this role is listed below.",
+          "For sales roles",
+          "the range provided is the role’s On Target Earnings (\"OTE\") range"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-22",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "d25456a132ac5d85b483171f0ca021d52b3ed163025da2a615f71dee04863642",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "other",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Head of Campaign Operations"
+      ]
+    },
+    {
+      "id": "anthropic-req-26-l266074-02",
+      "companyId": "anthropic",
+      "requisitionId": "REQ-26-L266074-02",
+      "identifierType": "requisition",
+      "title": "Research Engineer, Finetuning",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5489567008",
+      "arrangement": "on-site",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        },
+        {
+          "city": "New York City",
+          "state": "New York"
+        },
+        {
+          "city": "Seattle",
+          "state": "Washington"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California; New York City, New York; Seattle, Washington",
+      "employmentType": "Not specified",
+      "salary": null,
+      "publishedPay": {
+        "text": "Annual Salary: $500,000—$850,000 USD",
+        "scopeStates": [
+          "California",
+          "New York",
+          "Washington"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Design and run experiments to improve model capabilities",
+          "Build reinforcement learning environments and evaluations",
+          "Develop the tools and infrastructure needed to support this research",
+          "Collaborate with teams across research, engineering and product"
+        ],
+        "requiredSkills": [
+          "Strong software engineering skills",
+          "including proficiency in Python",
+          "Experience training",
+          "fine-tuning or evaluating machine learning models",
+          "A track record of owning ambiguous technical projects end to end",
+          "Strong communication skills and a collaborative working style",
+          "Care about the societal impacts and safety of your work"
+        ],
+        "preferredSkills": [
+          "Experience with reinforcement learning",
+          "particularly in long-horizon or sparse-reward settings",
+          "Experience building reinforcement learning environments",
+          "simulation systems or large-scale ML infrastructure",
+          "Experience building evaluations or benchmarks for agentic systems",
+          "Experience working closely with product teams to drive model improvements",
+          "Representative projects",
+          "Build a simulation where decisions made early on have consequences much later",
+          "and use it to train a model",
+          "Design an evaluation for work that takes a long time and has no single right answer",
+          "Investigate where a model's independence breaks down on long projects",
+          "and run experiments to improve it",
+          "Develop a way for people to oversee a large amount of work without reviewing every step",
+          "The annual compensation range for this role is listed below.",
+          "For sales roles",
+          "the range provided is the role’s On Target Earnings (\"OTE\") range"
+        ],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-21",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:25:44.272432+00:00",
+      "collectionMethod": "greenhouse-public-first-published",
+      "sourceHash": "f2fb76537d8b7671115210aee935511165316517eed03707dffbeb527aec85bd",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=ON_SITE",
+        "travel": "",
+        "salary": "",
+        "deadline": ""
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Research Engineer, Finetuning"
+      ]
+    },
+    {
       "id": "apple-200631981-0836",
       "companyId": "apple",
       "requisitionId": "200631981-0836",
@@ -256364,6 +257627,299 @@
       ]
     },
     {
+      "id": "openai-04050b95-dde6-48c4-a5a2-1a9691560e82",
+      "companyId": "openai",
+      "requisitionId": "04050b95-dde6-48c4-a5a2-1a9691560e82",
+      "identifierType": "posting-id",
+      "title": "Advanced User Education Lead",
+      "url": "https://jobs.ashbyhq.com/openai/04050b95-dde6-48c4-a5a2-1a9691560e82",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "nationwide",
+      "eligibleStates": [],
+      "locationNote": "Remote within the U.S. · Employer-listed locations: San Francisco, California",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 207000,
+        "max": 230000,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "California"
+        ]
+      },
+      "publishedPay": null,
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Build deep product expertise by testing capabilities and finding valuable applications for enterprise knowledge workers.",
+          "Create practical, reusable learning resources that help users stretch their AI skills through experimentation and practice."
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Structured employer pay for the listed state.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-17",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:26:03.881292+00:00",
+      "collectionMethod": "ashby-public-jobposting",
+      "sourceHash": "296344f55cc32a895802aaeb40b0094ff034e5d991363b01f5f93a19ffa4b7c4",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "software",
+      "jobFunctionBasis": "responsibilities",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Build deep product expertise by testing capabilities and finding valuable applications for enterprise knowledge workers."
+      ]
+    },
+    {
+      "id": "openai-55f36629-8351-41d9-b2f5-3d63c5e26bf7",
+      "companyId": "openai",
+      "requisitionId": "55f36629-8351-41d9-b2f5-3d63c5e26bf7",
+      "identifierType": "posting-id",
+      "title": "Account Associate - NYC",
+      "url": "https://jobs.ashbyhq.com/openai/55f36629-8351-41d9-b2f5-3d63c5e26bf7",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "New York",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "nationwide",
+      "eligibleStates": [],
+      "locationNote": "Remote within the U.S. · Employer-listed locations: New York, New York",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 108000,
+        "max": 120000,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "New York"
+        ]
+      },
+      "publishedPay": null,
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Partner with Account Directors on account strategy, multi-threading, and deal progression.",
+          "Assess account developments and recommend adjustments to engagement approaches within agreed priorities.",
+          "Design and execute targeted outbound strategies using industry context, stakeholder mapping, and product signal to break into priority accounts.",
+          "Lead high-quality discovery to uncover business priorities, map stakeholders, and assess enterprise readiness.",
+          "Evaluate differing stakeholder needs and incomplete information to recommend qualification decisions and next steps.",
+          "Build and iterate on AI-enabled GTM workflows (GPTs/agents) to scale prospecting and qualification."
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Structured employer pay for the listed state.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-13",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:26:03.881292+00:00",
+      "collectionMethod": "ashby-public-jobposting",
+      "sourceHash": "98b732855bb69c00494b4d16ae6ad2992c9ab384685562d9d4f7892d50f4466b",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "other",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Account Associate - NYC"
+      ]
+    },
+    {
+      "id": "openai-dceee17e-1e37-448b-acd3-2f97e41a6af7",
+      "companyId": "openai",
+      "requisitionId": "dceee17e-1e37-448b-acd3-2f97e41a6af7",
+      "identifierType": "posting-id",
+      "title": "Account Director, Higher Education",
+      "url": "https://jobs.ashbyhq.com/openai/dceee17e-1e37-448b-acd3-2f97e41a6af7",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "nationwide",
+      "eligibleStates": [],
+      "locationNote": "Remote within the U.S. · Employer-listed locations: San Francisco, California",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 305000,
+        "max": 352000,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "California"
+        ]
+      },
+      "publishedPay": null,
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Create pipeline and lead complex, multi-threaded new-business and expansion opportunities from first engagement through procurement, deployment, adoption, and value realization.",
+          "Lead cross-functional pursuit and account teams across Solutions Engineering, Customer Success, Product, Research, Security, Legal, and other functions to design evaluations, pilots, technical validation, executive business cases, production deployments, and adoption plans.",
+          "forecast pipeline and usage-based growth;",
+          "Develop durable executive relationships and a broad coalition of institutional champions across decentralized stakeholder groups.",
+          "Represent OpenAI as a thoughtful partner at executive forums, industry events, customer advisory discussions, and the broader higher education ecosystem."
+        ],
+        "requiredSkills": [
+          "Demonstrated ownership of consumption- or usage-based revenue",
+          "including forecasting usage",
+          "driving adoption",
+          "creating new use cases",
+          "and converting customer outcomes into expansion.",
+          "The technical depth to learn complex AI products",
+          "lead effective discovery",
+          "partner closely with technical teams",
+          "explain technical concepts accurately at both executive and practitioner altitudes",
+          "and translate them into academic",
+          "and commercial outcomes.",
+          "Experience leading strategic transformations rather than isolated point-solution sales",
+          "including governance",
+          "change management",
+          "and measurable operational",
+          "or user outcomes."
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Structured employer pay for the listed state.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-09",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:26:03.881292+00:00",
+      "collectionMethod": "ashby-public-jobposting",
+      "sourceHash": "56358122f2c96131dc9911f25d8db3cd4cb1b85ea4061747d52a9e46ab3e5142",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "other",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Account Director, Higher Education"
+      ]
+    },
+    {
+      "id": "openai-e586578c-2489-4214-92c4-d9639339fe59",
+      "companyId": "openai",
+      "requisitionId": "e586578c-2489-4214-92c4-d9639339fe59",
+      "identifierType": "posting-id",
+      "title": "Account Director, Mid-Market Enterprise",
+      "url": "https://jobs.ashbyhq.com/openai/e586578c-2489-4214-92c4-d9639339fe59",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "nationwide",
+      "eligibleStates": [],
+      "locationNote": "Remote within the U.S. · Employer-listed locations: San Francisco, California",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 365000,
+        "max": 365000,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "California"
+        ]
+      },
+      "publishedPay": null,
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Manage a portfolio of accounts, developing and executing strategies for a comprehensive account plan",
+          "Lead our prospects’ journeys from consideration to successful deployment",
+          "Partner with solutions and research engineering to build and execute complex customer programs and projects",
+          "Manage consumption revenue forecasts",
+          "Analyze key account metrics to create reports and provide insights to internal and external stakeholders",
+          "Collaborate with solutions, marketing, communications, business operations, people operations, finance, product management, and engineering",
+          "Support the recruitment and onboarding of other teammates",
+          "Support the development of company culture",
+          "Designing and executing complex deal strategies",
+          "Supporting the growth of fast-growing, high-performance companies",
+          "Leading high-visibility customer events (CAB, conferences, product launches, etc.)"
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Structured employer pay for the listed state.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:26:03.881292+00:00",
+      "collectionMethod": "ashby-public-jobposting",
+      "sourceHash": "25da82a35eb3891e1896eda190ccec1b426d2742322d25088016a6093db83843",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "other",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Account Director, Mid-Market Enterprise"
+      ]
+    },
+    {
       "id": "oracle-331595",
       "companyId": "oracle",
       "requisitionId": "331595",
@@ -265487,6 +267043,176 @@
       "jobFunctionReviewRequired": true,
       "jobFunctionEvidence": [
         "Global Economic Advancement & Food Access Sr. Manager, Social Impact"
+      ]
+    },
+    {
+      "id": "perplexity-3f0dc0ad-aa9a-4cd8-aa75-245112f3b2de",
+      "companyId": "perplexity",
+      "requisitionId": "3f0dc0ad-aa9a-4cd8-aa75-245112f3b2de",
+      "identifierType": "posting-id",
+      "title": "Engineering Manager (Agent Engine)",
+      "url": "https://jobs.ashbyhq.com/Perplexity/3f0dc0ad-aa9a-4cd8-aa75-245112f3b2de",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "San Francisco, California",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 300000,
+        "max": 485000,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "California"
+        ]
+      },
+      "publishedPay": null,
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You'll lead, grow, and support a team in solving many open problems in AI, including:",
+          "Provide technical leadership across multiple layers of a rapidly growing product in the AI agents space.",
+          "Develop and leverage cutting-edge AI systems and related technologies to advance the capability frontier and scale those capabilities for a rapidly growing userbase.",
+          "Drive product reliability, code quality, AI evaluation, testing, and maintenance for the broader team.",
+          "Oversee hiring, onboarding, and mentorship for a rapidly growing team.",
+          "Develop rigorous interview pipelines and work closely with recruiting to source candidates."
+        ],
+        "requiredSkills": [
+          "Strong foundational familiarity with the AI systems stack.",
+          "Proficiency in Python (bonus points for TypeScript",
+          "and/or Rust).",
+          "Domain knowledge in at least one of the following areas:",
+          "Harness engineering",
+          "Agent Skills and plugin architectures",
+          "Model training and reinforcement learning",
+          "Browser technologies (CDP",
+          "extension development",
+          "Strong technical intuition and taste for user experience excellence.",
+          "Strong organizational skills for managing and delivering parallel technical projects;",
+          "ability to guide highly-opinionated teams in making sound tradeoffs and prioritization decisions is critical.",
+          "Experience managing engineering teams",
+          "including recruiting",
+          "and retaining high-caliber talent.",
+          "8+ years of engineering experience"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Structured employer pay for the listed state.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-19",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:26:54.289595+00:00",
+      "collectionMethod": "ashby-public-jobposting",
+      "sourceHash": "149afb2d551c21e4c4d6fbe1876287667202bacd81c0d363633f68c61c0a81ad",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Engineering Manager (Agent Engine)"
+      ]
+    },
+    {
+      "id": "perplexity-be6ffac6-5d72-4768-9f88-d1231a710ec9",
+      "companyId": "perplexity",
+      "requisitionId": "be6ffac6-5d72-4768-9f88-d1231a710ec9",
+      "identifierType": "posting-id",
+      "title": "Deal Desk Lead",
+      "url": "https://jobs.ashbyhq.com/Perplexity/be6ffac6-5d72-4768-9f88-d1231a710ec9",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "San Francisco",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "nationwide",
+      "eligibleStates": [],
+      "locationNote": "Remote within the U.S. · Employer-listed locations: San Francisco, California",
+      "employmentType": "Full-time",
+      "salary": {
+        "min": 200000,
+        "max": 250000,
+        "period": "year",
+        "currency": "USD",
+        "scopeStates": [
+          "California"
+        ]
+      },
+      "publishedPay": null,
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You’ll partner with the field, the Head of Revenue Operations, and Finance and Legal leadership to balance customer needs with company priorities.",
+          "Partner with the field: Engage early on complex opportunities, understand customer needs, and remove obstacles to close.",
+          "Ensure accurate execution: Ensure quotes, order forms, approvals, and CRM records reflect agreed terms.",
+          "Resolve discrepancies before signature and enable clean handoffs to billing and post-sale teams."
+        ],
+        "requiredSkills": [
+          "Relevant experience: 4+ years in Deal Desk",
+          "commercial operations",
+          "or a related function in SaaS or another high-growth industry",
+          "including complex deal structuring and approvals.",
+          "Exceptional business partnership: A track record of earning Sales’ trust through responsiveness",
+          "practical solutions",
+          "and sound commercial judgment that protects the business.",
+          "Autonomy and extreme ownership: The ability to prioritize independently",
+          "surface risks early",
+          "and drive issues to resolution without close supervision.",
+          "Commercial judgment and precision: Strong analytical skills and exceptional attention to detail across deal economics",
+          "and documentation",
+          "even under tight deadlines.",
+          "You distinguish material risks from issues that should not hold up a deal.",
+          "Tact and communication: The ability to handle Sales exception and clarification requests tactfully",
+          "influence stakeholders"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Structured employer pay for the listed state.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-11",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:26:54.289595+00:00",
+      "collectionMethod": "ashby-public-jobposting",
+      "sourceHash": "a36d24c51366e5013d48bf1059a7a7f621a11142ad0bbd07d2a10faa1dab3aeb",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "JobPosting.baseSalary; single published state",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "other",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Deal Desk Lead"
       ]
     },
     {
@@ -323376,6 +325102,69 @@
         "pendingClosureChecks": 0,
         "discoveryLimited": true,
         "lastSuccessfulAt": "2026-11-23T00:10:01.255391+00:00"
+      },
+      "anthropic": {
+        "discovered": 636,
+        "checked": 20,
+        "added": 13,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 4,
+        "outsidePostingWindow": 0,
+        "warnings": [
+          {
+            "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490978008",
+            "error": "Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job."
+          },
+          {
+            "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490976008",
+            "error": "Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job."
+          },
+          {
+            "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490974008",
+            "error": "Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job."
+          }
+        ],
+        "errors": [],
+        "activeTracked": 13,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": true,
+        "lastSuccessfulAt": "2026-11-23T00:25:44.272432+00:00"
+      },
+      "openai": {
+        "discovered": 628,
+        "checked": 20,
+        "added": 4,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 0,
+        "outsidePostingWindow": 15,
+        "warnings": [
+          {
+            "url": "https://jobs.ashbyhq.com/openai/1ae64ddb-505f-4ad2-a731-3a857e94edee",
+            "error": "Candidate quarantined: Missing title or requisition"
+          }
+        ],
+        "errors": [],
+        "activeTracked": 4,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": true,
+        "lastSuccessfulAt": "2026-11-23T00:26:03.881292+00:00"
+      },
+      "perplexity": {
+        "discovered": 129,
+        "checked": 20,
+        "added": 2,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 0,
+        "outsidePostingWindow": 18,
+        "warnings": [],
+        "errors": [],
+        "activeTracked": 2,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": true,
+        "lastSuccessfulAt": "2026-11-23T00:26:54.289595+00:00"
       }
     }
   }
