@@ -7,7 +7,7 @@ const manifest=JSON.parse(await readFile(new URL('../public/data/company-logos.j
 
 test('local company logos have official-source metadata and valid image files',async()=>{
   assert.equal(manifest.schemaVersion,1);
-  assert.equal(Object.keys(manifest.logos).length,72);
+  assert.equal(Object.keys(manifest.logos).length,73);
   const companyIds=new Set(companies.map(company=>company.id));
   for(const [id,logo] of Object.entries(manifest.logos)){
     assert.ok(companyIds.has(id),id);

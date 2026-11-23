@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "listYear": 2026,
-  "coverage": "75 reviewed employers, including 71 from the 2026 Fortune 500 and four added by request.",
+  "coverage": "76 reviewed employers, including 72 from the 2026 Fortune 500 and four additional companies.",
   "companies": [
     {
       "id": "alphabet",
@@ -1213,6 +1213,31 @@
         {
           "label": "Employer-linked Workday careers",
           "url": "https://bbinsurance.wd1.myworkdayjobs.com/en-US/Careers"
+        }
+      ]
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "industry": "Energy",
+      "headquarters": {
+        "city": "Cambridge",
+        "state": "Massachusetts"
+      },
+      "listYear": 2026,
+      "careerUrl": "https://careers.gevernova.com/",
+      "profileSource": "https://fortune.com/company/gevernova/",
+      "membershipSource": "https://fortune.com/ranking/fortune500/2026/",
+      "reviewedAt": "2026-11-22",
+      "verificationNote": "2026 Fortune 500 membership and official careers website reviewed. GE Vernova’s investor relations site confirms its Cambridge headquarters and its power, electrification, and wind businesses.",
+      "supportingSources": [
+        {
+          "label": "GE Vernova headquarters and business segments",
+          "url": "https://www.gevernova.com/investors/faq"
+        },
+        {
+          "label": "GE Vernova corporate careers link",
+          "url": "https://www.gevernova.com/careers"
         }
       ]
     }

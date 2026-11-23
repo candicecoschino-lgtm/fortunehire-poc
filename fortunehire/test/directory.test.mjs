@@ -5,9 +5,9 @@ import {filterCompanies, normalize, readFilters, serializeFilters, validateData}
 const data=JSON.parse(await readFile(new URL('../public/data/companies.json',import.meta.url),'utf8'));
 test('production records have complete provenance, safe URLs and unique identifiers',()=>{
   assert.equal(validateData(data),data);
-  assert.equal(data.companies.length,75);
+  assert.equal(data.companies.length,76);
   const ranked = data.companies.filter(c => c.listYear !== undefined);
-  assert.equal(ranked.length,71);
+  assert.equal(ranked.length,72);
   for (const c of ranked) assert.equal(c.listYear,2026);
   assert.deepEqual(data.companies.filter(c => c.listYear === undefined).map(c => c.id).sort(),
     ['anthropic','brown-brown','openai','perplexity']);
