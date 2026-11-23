@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-11-22",
-  "coverage": "All 75 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
+  "coverage": "All 76 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 6,
     "connected": 52,
     "paused": 1,
-    "verification-needed": 16
+    "verification-needed": 17
   },
   "companies": [
     {
@@ -1045,6 +1045,15 @@
       "reason": "The employer links to its Workday Careers tenant. The collector received HTTP 429 when checking crawler policy and stopped before collecting roles.",
       "nextStep": "Wait for access to recover or obtain an employer-authorized feed before attempting collection.",
       "officialCareerUrl": "https://us.bbrown.com/careers/",
+      "reviewedAt": "2026-11-22"
+    },
+    {
+      "companyId": "ge-vernova",
+      "company": "GE Vernova",
+      "status": "verification-needed",
+      "reason": "Official careers site verified for the directory. Individual job collection and posting-date evidence have yet to be reviewed.",
+      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "officialCareerUrl": "https://careers.gevernova.com/",
       "reviewedAt": "2026-11-22"
     }
   ]

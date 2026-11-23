@@ -194,6 +194,12 @@
       "companyUrl": "https://www.ford.com/",
       "reviewedAt": "2026-11-13"
     },
+    "ge-vernova": {
+      "src": "./assets/company-logos/ge-vernova.png",
+      "sourceUrl": "https://careers.gevernova.com/favicon-192x192.png",
+      "companyUrl": "https://www.gevernova.com/",
+      "reviewedAt": "2026-11-22"
+    },
     "general-motors": {
       "src": "./assets/company-logos/general-motors.png",
       "sourceUrl": "https://search-careers.gm.com/images/favicon.png",
