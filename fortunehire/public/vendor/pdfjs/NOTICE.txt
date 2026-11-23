@@ -1,0 +1,8 @@
+PDF.js 6.5.438, Mozilla and contributors
+Apache License 2.0 (see LICENSE)
+
+The two minified modules are unmodified files from the npm distribution:
+https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-6.5.438.tgz
+
+Verified package integrity:
+sha512-vg8Pw1x+AFKy4AMDvhuWl5cOYV8d698UoEANoFFhc79hqXDnZQqnOXoxw3HG907WHOg1JYOvLhP756boddFxpA==

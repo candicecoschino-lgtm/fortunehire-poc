@@ -1,0 +1,29 @@
+.resume-page { padding-block: 2rem 4rem; max-width: 840px; }
+.resume-page h1 { font-size: clamp(2rem, 6vw, 3.5rem); letter-spacing: -.05em; }
+.resume-page h2 { margin-block: 0 .75rem; }
+.resume-page h3 { margin-block: 0 .5rem; }
+.resume-page h4 { font-size: 1rem; margin-block: 1rem .3rem; }
+.resume-page label { display: block; color: inherit; font-size: .95rem; }
+.resume-page input[type="file"] { display: block; max-width: 100%; padding: .4rem; }
+.resume-page input[type="text"], .resume-page select, .resume-page textarea {
+  width: 100%; min-width: 0; padding: .6rem; border: 1px solid #798998;
+  border-radius: .4rem; background: #fff; color: #142633; font: inherit;
+}
+.resume-page textarea { resize: vertical; }
+.resume-page button { padding: .65rem .9rem; }
+.resume-page [hidden] { display: none !important; }
+.resume-panel, .match-card { margin-block: 1.25rem; padding: clamp(1rem, 4vw, 1.6rem); border: 1px solid #c9d6dc; border-radius: .8rem; background: #fff; }
+.resume-options, .resume-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-block: 1rem; }
+.resume-options > label { flex: 1 1 12rem; }
+.resume-status:empty { display: none; }
+.match-list { padding-inline-start: 1.8rem; }
+.match-list li { overflow-wrap: anywhere; }
+.match-list li::marker { font-weight: 700; }
+.match-card p { margin-block: .35rem; }
+.match-category { color: #0b625f; font-weight: 700; }
+.match-evidence { padding-inline-start: 1.4rem; }
+.match-evidence li { margin-block: .6rem; }
+.match-evidence span { display: block; font-size: .9rem; }
+.match-feedback { border: 0; border-top: 1px solid #c9d6dc; margin: 1rem 0 0; padding: .75rem 0 0; }
+.match-feedback legend { font-weight: 700; padding-inline-end: .5rem; }
+.match-feedback label + label { margin-top: .65rem; }
