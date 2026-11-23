@@ -3,10 +3,10 @@
   "updatedAt": "2026-11-22",
   "coverage": "All 75 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
-    "access-restricted": 5,
-    "connected": 49,
+    "access-restricted": 6,
+    "connected": 52,
     "paused": 1,
-    "verification-needed": 20
+    "verification-needed": 16
   },
   "companies": [
     {
@@ -1014,36 +1014,36 @@
     {
       "companyId": "openai",
       "company": "OpenAI",
-      "status": "verification-needed",
-      "reason": "Official careers page verified for the directory. Job collection and posting-date evidence have yet to be reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
-      "officialCareerUrl": "https://openai.com/careers/",
+      "status": "connected",
+      "reason": "Verified individual JobPosting dates and matching applications on OpenAI’s employer-linked public Ashby board.",
+      "nextStep": "Monitor source availability and posting date coverage.",
+      "officialCareerUrl": "https://jobs.ashbyhq.com/openai",
       "reviewedAt": "2026-11-22"
     },
     {
       "companyId": "perplexity",
       "company": "Perplexity",
-      "status": "verification-needed",
-      "reason": "Official careers page verified for the directory. Job collection and posting-date evidence have yet to be reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
-      "officialCareerUrl": "https://www.perplexity.ai/hub/careers",
+      "status": "connected",
+      "reason": "Verified individual JobPosting dates and matching applications on Perplexity’s employer-linked public Ashby board.",
+      "nextStep": "Monitor source availability and posting date coverage.",
+      "officialCareerUrl": "https://jobs.ashbyhq.com/Perplexity",
       "reviewedAt": "2026-11-22"
     },
     {
       "companyId": "anthropic",
       "company": "Anthropic",
-      "status": "verification-needed",
-      "reason": "Official careers page verified for the directory. Job collection and posting-date evidence have yet to be reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
-      "officialCareerUrl": "https://www.anthropic.com/careers",
+      "status": "connected",
+      "reason": "Verified original publication dates and matching individual applications on the employer-linked public Greenhouse board.",
+      "nextStep": "Monitor source availability and posting date coverage.",
+      "officialCareerUrl": "https://job-boards.greenhouse.io/anthropic",
       "reviewedAt": "2026-11-22"
     },
     {
       "companyId": "brown-brown",
       "company": "Brown & Brown",
-      "status": "verification-needed",
-      "reason": "Official careers page verified for the directory. Job collection and posting-date evidence have yet to be reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "status": "access-restricted",
+      "reason": "The employer links to its Workday Careers tenant. The collector received HTTP 429 when checking crawler policy and stopped before collecting roles.",
+      "nextStep": "Wait for access to recover or obtain an employer-authorized feed before attempting collection.",
       "officialCareerUrl": "https://us.bbrown.com/careers/",
       "reviewedAt": "2026-11-22"
     }

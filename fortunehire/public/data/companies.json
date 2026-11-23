@@ -1120,7 +1120,7 @@
         "city": "San Francisco",
         "state": "California"
       },
-      "careerUrl": "https://openai.com/careers/",
+      "careerUrl": "https://jobs.ashbyhq.com/openai",
       "profileSource": "https://openai.com/about/",
       "reviewedAt": "2026-11-22",
       "verificationNote": "Added by request. The employer’s AI research and deployment work, headquarters, and careers page were reviewed.",
@@ -1128,6 +1128,14 @@
         {
           "label": "Principal office filing",
           "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forl-m24000007718-99a58793-d4c9-4ca6-ba36-b40244daa826&directionType=ForwardList&inquirytype=EntityName&searchNameOrder=OPENAI+M240000077180"
+        },
+        {
+          "label": "Employer link to the official ATS",
+          "url": "https://openai.com/careers/search/"
+        },
+        {
+          "label": "Company careers page",
+          "url": "https://openai.com/careers/"
         }
       ]
     },
@@ -1139,7 +1147,7 @@
         "city": "San Francisco",
         "state": "California"
       },
-      "careerUrl": "https://www.perplexity.ai/hub/careers",
+      "careerUrl": "https://jobs.ashbyhq.com/Perplexity",
       "profileSource": "https://fortune.com/company/perplexity/",
       "reviewedAt": "2026-11-22",
       "verificationNote": "Added by request. Fortune identifies San Francisco as headquarters, and Perplexity’s own sources confirm its California address, AI search product, and careers page.",
@@ -1151,6 +1159,14 @@
         {
           "label": "Perplexity company address",
           "url": "https://www.perplexity.ai/en-GB/hub/legal/terms-of-service"
+        },
+        {
+          "label": "Employer link to the official ATS",
+          "url": "https://research.perplexity.ai/en-GB"
+        },
+        {
+          "label": "Company careers page",
+          "url": "https://www.perplexity.ai/hub/careers"
         }
       ]
     },
@@ -1162,7 +1178,7 @@
         "city": "San Francisco",
         "state": "California"
       },
-      "careerUrl": "https://www.anthropic.com/careers",
+      "careerUrl": "https://job-boards.greenhouse.io/anthropic",
       "profileSource": "https://www.anthropic.com/company",
       "reviewedAt": "2026-11-22",
       "verificationNote": "Added by request. Anthropic’s AI research, San Francisco headquarters, and official careers page were reviewed.",
@@ -1170,6 +1186,14 @@
         {
           "label": "Anthropic headquarters disclosure",
           "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda"
+        },
+        {
+          "label": "Employer link to the official ATS",
+          "url": "https://www.anthropic.com/careers/jobs"
+        },
+        {
+          "label": "Company careers page",
+          "url": "https://www.anthropic.com/careers"
         }
       ]
     },

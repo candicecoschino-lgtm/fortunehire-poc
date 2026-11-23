@@ -890,6 +890,69 @@
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-23T00:10:01.255391+00:00"
+    },
+    "anthropic": {
+      "discovered": 636,
+      "checked": 20,
+      "added": 13,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 4,
+      "outsidePostingWindow": 0,
+      "warnings": [
+        {
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490978008",
+          "error": "Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job."
+        },
+        {
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490976008",
+          "error": "Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job."
+        },
+        {
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490974008",
+          "error": "Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job."
+        }
+      ],
+      "errors": [],
+      "activeTracked": 13,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-23T00:25:44.272432+00:00"
+    },
+    "openai": {
+      "discovered": 628,
+      "checked": 20,
+      "added": 4,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 15,
+      "warnings": [
+        {
+          "url": "https://jobs.ashbyhq.com/openai/1ae64ddb-505f-4ad2-a731-3a857e94edee",
+          "error": "Candidate quarantined: Missing title or requisition"
+        }
+      ],
+      "errors": [],
+      "activeTracked": 4,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-23T00:26:03.881292+00:00"
+    },
+    "perplexity": {
+      "discovered": 129,
+      "checked": 20,
+      "added": 2,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 18,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 2,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-23T00:26:54.289595+00:00"
     }
   }
 }

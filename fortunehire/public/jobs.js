@@ -106,12 +106,20 @@ export function validateJobs(data,companies) {
     if(j.remoteScope==='states'&&!j.eligibleStates.length)throw Error('Empty remote eligibility');
     if(j.remoteScope!=='states'&&j.eligibleStates.length)throw Error('Conflicting eligibility');
     if(!validDate(j.reviewedAt)||(j.postedAt!==null&&!validDate(j.postedAt))||(j.closesAt!==null&&!validDate(j.closesAt)))throw Error('Invalid job dates');
-    const officialHost=new URL(c.careerUrl).hostname;
+    const career=new URL(c.careerUrl);
+    const officialHost=career.hostname;
     const url=new URL(j.url);
     const taleo=url.hostname==='valero.taleo.net'&&url.pathname==='/careersection/2/jobdetail.ftl'&&url.searchParams.getAll('job').length===1&&/^[A-Za-z0-9]{5,12}$/.test(url.searchParams.get('job'))&&Array.from(url.searchParams.keys()).every(key=>key==='job');
     const meta=url.hostname==='www.metacareers.com'&&/^\/profile\/job_details\/\d+\/?$/.test(url.pathname)&&!url.search&&!url.hash;
     const apple=url.hostname==='jobs.apple.com'&&/^\/en-us\/details\/\d+(?:-\d+)?\/[^/]+\/?$/.test(url.pathname)&&!url.search;
-    if(url.protocol!=='https:'||url.username||url.password||url.hostname!==officialHost||(url.hostname==='www.metacareers.com'&&!meta)||(!taleo&&!apple&&!meta&&!/\/jobs?\/[^/]+|\/search\/jobdetails\/[^/]+\/[0-9a-f-]{36}\/?$|\/en-us\/job-detail\/[^/]+/i.test(url.pathname)))throw Error('Invalid official job URL');
+    const atsHost=['job-boards.greenhouse.io','jobs.ashbyhq.com'].includes(officialHost);
+    const [board,...rolePath]=url.pathname.split('/').filter(Boolean);
+    const expectedBoard=career.pathname.split('/').filter(Boolean)[0];
+    const canonicalRolePath='/'+[board,...rolePath].join('/');
+    const ats=atsHost&&url.host===officialHost&&[canonicalRolePath,canonicalRolePath+'/'].includes(url.pathname)&&!url.search&&!url.hash&&board?.toLowerCase()===expectedBoard?.toLowerCase()&&
+      (officialHost==='job-boards.greenhouse.io'?rolePath.length===2&&rolePath[0]==='jobs'&&/^[0-9]+$/.test(rolePath[1]):
+        rolePath.length===1&&/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/.test(rolePath[0]));
+    if(url.protocol!=='https:'||url.username||url.password||url.hostname!==officialHost||(atsHost&&!ats)||(url.hostname==='www.metacareers.com'&&!meta)||(!ats&&!taleo&&!apple&&!meta&&!/\/jobs?\/[^/]+|\/search\/jobdetails\/[^/]+\/[0-9a-f-]{36}\/?$|\/en-us\/job-detail\/[^/]+/i.test(url.pathname)))throw Error('Invalid official job URL');
     if(j.functionContext!==undefined&&!validFunctionContext(j.functionContext))throw Error('Invalid job function evidence');
     if(data.schemaVersion===2&&(!isValidJobFunction(j.primaryJobFunction)||!['responsibilities','required skills','job title','employer category','insufficient evidence'].includes(j.jobFunctionBasis)||!['high','medium','low'].includes(j.jobFunctionConfidence)||typeof j.jobFunctionReviewRequired!=='boolean'||!Array.isArray(j.jobFunctionEvidence)||j.jobFunctionEvidence.length>4||j.jobFunctionEvidence.some(text=>typeof text!=='string'||text.length>500)))throw Error('Invalid primary job function');
     if(!['reviewed','closed','needs-review'].includes(j.status))throw Error('Invalid review status');

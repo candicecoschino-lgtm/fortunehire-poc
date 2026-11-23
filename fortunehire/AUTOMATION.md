@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 49 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 52 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -102,3 +102,11 @@ Intuit uses its [official public jobs search](https://jobs.intuit.com/en/search-
 Each role must have matching official structured posting data, verified U.S. geography, and a requisition-specific employer application route. The published URL is the employer's exact role page, which presents the application. Intuit uses its linked Avature tenant, Spectrum uses its linked iCIMS tenant, and Uber uses the Oracle application path included in its individual role data. Generic destination URLs are quarantined. Spectrum compares the labeled date on the public posting with its structured date and retains the earlier employer date when they differ. Missing or conflicting visible dates fail verification. Sitemap and posting IDs prioritize discovery. The posting evidence determines freshness.
 
 These sources preserve unspecified employment type and work arrangement. All three use the existing deduplication, closing-date, repeated missing checks, bulk-closure guard, and failure retention rules.
+
+## OpenAI, Perplexity, and Anthropic — November 22
+
+[OpenAI](https://openai.com/careers/search/) and [Perplexity](https://research.perplexity.ai/en-GB) link to their public Ashby boards. The collector reads the listed board inventory, then verifies the employer and posting ID on the public role and application pages. Only each role's explicit JobPosting date is used for freshness. The inventory supplies no posting dates, so new links are prioritized by first observation and every candidate must pass the normal freshness check. The two tenants share one paced client. An access denial or rate limit stops further requests to the shared host for that run.
+
+[Anthropic](https://www.anthropic.com/careers/jobs) links to its Greenhouse board. The [public Job Board API](https://docs.greenhouse.io/job-board.html) supplies the original `first_published` timestamp and role detail. Each candidate must match the employer, individual page title, and application form. U.S. locations are limited to verified office labels, and duplicate employer requisitions are quarantined. Employment type stays unspecified where the employer does not supply it.
+
+Each new feed is capped at 40 active jobs and 20 new candidates per run. Brown & Brown's employer-linked Workday host returned HTTP 429 to the collector's crawler-policy request, so its feed remains disabled.
