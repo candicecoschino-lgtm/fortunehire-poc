@@ -4,9 +4,9 @@
   "coverage": "All 76 directory companies have a reviewed feed status. Connected does not mean complete job coverage. A failed check does not establish that a paid provider is required.",
   "counts": {
     "access-restricted": 6,
-    "connected": 52,
+    "connected": 54,
     "paused": 1,
-    "verification-needed": 17
+    "verification-needed": 15
   },
   "companies": [
     {
@@ -861,11 +861,11 @@
     {
       "companyId": "servicenow",
       "company": "ServiceNow",
-      "status": "verification-needed",
-      "reason": "Official career destination verified; individual job collection and posting-date evidence have not been reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "status": "connected",
+      "reason": "Verified individual role pages from the employer’s published sitemap and matching ServiceNow SmartRecruiters application links.",
+      "nextStep": "Monitor posting dates, work arrangements, and collection health.",
       "officialCareerUrl": "https://careers.servicenow.com/jobs",
-      "reviewedAt": "2026-11-20"
+      "reviewedAt": "2026-11-22"
     },
     {
       "companyId": "workday",
@@ -1050,9 +1050,9 @@
     {
       "companyId": "ge-vernova",
       "company": "GE Vernova",
-      "status": "verification-needed",
-      "reason": "Official careers site verified for the directory. Individual job collection and posting-date evidence have yet to be reviewed.",
-      "nextStep": "Audit official postings and access policy before considering a job feed.",
+      "status": "connected",
+      "reason": "Verified roles from the official U.S. careers search and individual Workday-linked postings.",
+      "nextStep": "Monitor posting dates, work arrangements, and collection health.",
       "officialCareerUrl": "https://careers.gevernova.com/",
       "reviewedAt": "2026-11-22"
     }

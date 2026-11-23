@@ -27,12 +27,13 @@ from zoneinfo import ZoneInfo
 from crawler_rules import CrawlerRules
 from function_context import extract_function_context
 import requested_ats_feeds as ats
+import verified_career_portals as portals
 from public_listing_feeds import (
     FEEDS as PUBLIC_LISTING_FEEDS, has_application, role_id as public_listing_role_id,
     spectrum_posting_date,
 )
 
-EVIDENCE_ONLY_HOSTS = PUBLIC_LISTING_FEEDS.keys() | ats.HOSTS
+EVIDENCE_ONLY_HOSTS = PUBLIC_LISTING_FEEDS.keys() | ats.HOSTS | portals.HOSTS
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY=json.loads((ROOT/'public/data/job-sources.json').read_text(encoding='utf-8'))
@@ -57,6 +58,9 @@ def safe_url(url, host):
 
 
 def job_url(url, host):
+    if host in portals.HOSTS:
+        if not portals.role_id(url,host):raise ValueError("Not an individual employer portal job URL")
+        return safe_url(url,host)
     if host in ats.HOSTS:
         if urllib.parse.urlsplit(url).netloc != host or not ats.role(url):
             raise ValueError('Not an individual employer ATS job URL')
@@ -375,7 +379,7 @@ def normalize_posting(body, url, company, now):
         req=posting_key(url);identifier_type='posting-id'
     if not title or not req: raise ValueError('Missing title or requisition')
     description = Page(html.unescape(str(source.get('description', '')))).text
-    if company=='home-depot' or source.get('_adapter') in ('meta-public-jobposting-and-matched-details','verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details','employer-pcsx-page-and-public-details','greenhouse-public-first-published','ashby-public-jobposting'):
+    if company=='home-depot' or source.get('_adapter') in ('meta-public-jobposting-and-matched-details','verizon-public-page-data','oracle-public-requisition-details','valero-public-taleo-display-data','amazon-public-search-and-role-page','apple-public-location-posting','salesforce-public-role-details','employer-pcsx-page-and-public-details','greenhouse-public-first-published','ashby-public-jobposting','verified-employer-portal'):
         # These readers already isolate the individual role. Navigation,
         # suggested jobs and footer labels cannot populate its filters.
         page.parts=[description]
@@ -502,11 +506,16 @@ def normalize_posting(body, url, company, now):
         if mapped:
             if arrangement in ('unknown',mapped):arrangement,arrangement_evidence=mapped,'Employer role remoteType='+model
             else:arrangement,arrangement_evidence='unknown','Conflicting employer work setting '+model+' and role declaration: '+arrangement_evidence
+    if source.get('_ambiguousWorksite'):
+        arrangement = 'unknown'
+        arrangement_evidence = 'Employer lists more than one work persona: '+source['_ambiguousWorksite']
+    elif source.get('_verifiedWorksiteLabel') and arrangement!='unknown':
+        arrangement_evidence = 'Employer work persona: '+source['_verifiedWorksiteLabel']
     if arrangement=='remote' and remote_location_states:
         eligible=sorted(set(eligible+remote_location_states))
     if company in ('microsoft','nvidia') and source.get('_pcsxWorksite') and arrangement!='unknown':arrangement_evidence='Employer role work setting: '+source['_pcsxWorksite']
     # A posted office address is not evidence of remote eligibility.
-    unresolved_worksite=arrangement=='unknown' and bool(source.get('_salesforceRemoteType') or source.get('_pcsxWorksite') or re.search(r'\b(?:This|The) (?:role|position|job)\b[^.\n]{0,140}\b(?:remote or hybrid|hybrid or remote|on[- ]?site or remote|remote or on[- ]?site)\b',description,re.I))
+    unresolved_worksite=arrangement=='unknown' and bool(source.get('_ambiguousWorksite') or source.get('_salesforceRemoteType') or source.get('_pcsxWorksite') or re.search(r'\b(?:This|The) (?:role|position|job)\b[^.\n]{0,140}\b(?:remote or hybrid|hybrid or remote|on[- ]?site or remote|remote or on[- ]?site)\b',description,re.I))
     if arrangement != 'remote': eligible = []
     # Generic internet/home-office requirements do not impose state residency.
     residency_restricted=bool(re.search(r'\bwithin\s+\d+\s+miles\b',description,re.I))

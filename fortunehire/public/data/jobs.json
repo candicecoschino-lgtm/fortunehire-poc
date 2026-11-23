@@ -179531,6 +179531,1438 @@
       ]
     },
     {
+      "id": "ge-vernova-r5057614",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5057614",
+      "identifierType": "requisition",
+      "title": "GE Vernova PCS Sourcing & Procurement Internship - Summer 2027",
+      "url": "https://careers.gevernova.com/ge-vernova-pcs-sourcing-procurement-internship-summer-2027/job/R5057614",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Findlay Township",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Findlay Township, Pennsylvania",
+      "employmentType": "Internship",
+      "salary": null,
+      "publishedPay": null,
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "Strong data literacy;",
+          "comfortable using VLOOKUPs",
+          "Pivot Tables",
+          "and data visualization.",
+          "Comfortable navigating software interfaces such as SAP",
+          "or Microsoft Dynamics.",
+          "Proficient in using online tools to gather market intelligence",
+          "company financials and commodity pricing trends.",
+          "Must have the ability to work in the US for an unlimited amount of time without sponsorship.",
+          "Desired Characteristics",
+          "Analytical thinking skills to determine the best cost of ownership.",
+          "Professional when interacting with suppliers and clear when updating internal project managers and stakeholders.",
+          "This candidate has strong attention to detail and a problem solving ability.",
+          "Familiarity with concepts like Gantt Charts",
+          "risk mitigation",
+          "or project lifecycles"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-19",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "bbd22adea37613224ec5e2c9c2634c0ba68e0a49a54f9aa0434b69a37dea4a28",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Internship."
+      },
+      "primaryJobFunction": "procurement",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "GE Vernova PCS Sourcing & Procurement Internship - Summer 2027"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059179",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059179",
+      "identifierType": "requisition",
+      "title": "Lead Product Definition Engineer - Wind Turbine Blade",
+      "url": "https://careers.gevernova.com/lead-product-definition-engineer-wind-turbine-blade/job/R5059179",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Greenville",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Greenville, South Carolina",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $89,300.00 and $148,700.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "South Carolina"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "Desired Characteristics",
+          "Demonstrated experience managing complex EBOMs (Engineering Bill of Materials) and MBOM (Manufacturing Bill of Materials ) containing 500+ line items",
+          "ensuring 100% accuracy in parts integration and downstream manufacturing handoffs.",
+          "Tolerance Analysis: Proficiency in performing Stack-up Analysis and applying GD&T (Geometric Dimensioning and Tolerancing) per ASME Y14.5 or ISO standards",
+          "Manufacturing/Product documentation : Proficiency in building the manufacturing and other product documentation needed for manufacturing the blades in a factory",
+          "CAD Mastery: Modeling experience in Siemens NX or CATIA specifically with surfacing and large assembly management.",
+          "Experience in 3DX and CATIA V6 will be an added advantage",
+          "PLM Systems: Experience in using PLM software (e.g.",
+          "Teamcenter or Enovia) for version control",
+          "change management (ECR/ECN)",
+          "and data integrity.",
+          "Bonus eligibility: discretionary annual bonus.",
+          "This posting is expected to remain open for at least seven days after it was posted on November 19",
+          "GE Vernova Inc.",
+          "or its affiliates (collectively or individually",
+          "“GE Vernova”) sponsor certain employee benefit plans or programs GE Vernova reserves the right to terminate"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-19",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "ca914327d52ccc569091f5b5dbb2269343304849d62e80d31824d46740d642f1",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Lead Product Definition Engineer - Wind Turbine Blade"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059206",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059206",
+      "identifierType": "requisition",
+      "title": "GE Vernova Embedded Software Engineer",
+      "url": "https://careers.gevernova.com/ge-vernova-embedded-software-engineer/job/R5059206",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Roanoke",
+          "state": "Virginia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Roanoke, Virginia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $72,000.00 and $108,000.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "Virginia"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Responsible for designing, developing and testing Embedded Software (Firmware), platforms and systems that control and runs on devices that need to be tailored to the needs of the hardware that it has to control and run on (i.e."
+        ],
+        "requiredSkills": [
+          "Eligibility Requirements:",
+          "Unrestricted work authorization to work in the United States of America is required.",
+          "We will not provide sponsorship for this role now or in the future.",
+          "Desired Characteristics",
+          "C++ programming experience",
+          "Familiar with Real-time Operating Systems (RTOS)",
+          "preferably QNX",
+          "automated test methodologies",
+          "configuration management tools",
+          "and with software build and installation methodologies.",
+          "Strong oral and written communication skills.",
+          "Ability to document",
+          "and execute programs.",
+          "Familiar with writing device driver level code.",
+          "Knowledge of C# and .Net Framework.",
+          "Knowledge of network protocols and programming (TCP/IP"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-19",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "c578a719098732199bdea31c2de02f9f7c7935e438e419b58c374f1b47a38eda",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "software",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "GE Vernova Embedded Software Engineer"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059212",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059212",
+      "identifierType": "requisition",
+      "title": "Lead Site Manager",
+      "url": "https://careers.gevernova.com/lead-site-manager/job/R5059212",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Boston",
+          "state": "Massachusetts"
+        }
+      ],
+      "remoteScope": "nationwide",
+      "eligibleStates": [],
+      "locationNote": "Remote within the U.S. · Employer-listed locations: Boston, Massachusetts",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $87,000.00 and $145,000.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "Massachusetts"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "Desired Characteristics",
+          "Strong oral and written communication skills.",
+          "Demonstrated ability to analyze and resolve problems.",
+          "Ability to document",
+          "and execute programs.",
+          "Established project management skills.",
+          "Additional Information",
+          "#LI-Remote - This is a remote position"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": "2026-12-20",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "344bc7a7531b0a5b2436dc34cce9dfc95f23a7b21586bc33b5f3e4948e356991",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "projects",
+      "jobFunctionBasis": "required skills",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Established project management skills."
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059246",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059246",
+      "identifierType": "requisition",
+      "title": "GE Vernova Manufacturing Engineer Intern - Summer 2027",
+      "url": "https://careers.gevernova.com/ge-vernova-manufacturing-engineer-intern-summer-2027/job/R5059246",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Clearwater",
+          "state": "Florida"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Clearwater, Florida",
+      "employmentType": "Internship",
+      "salary": null,
+      "publishedPay": {
+        "text": "pay range for this position is $1,000-$2,000",
+        "scopeStates": [
+          "Florida"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-18",
+      "closesAt": "2026-11-25",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "759b9378a7d9c1c22fe34b47b0ad78076cf446538097586469d124292546041b",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Intern."
+      },
+      "primaryJobFunction": "manufacturing",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "GE Vernova Manufacturing Engineer Intern - Summer 2027"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059302",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059302",
+      "identifierType": "requisition",
+      "title": "Field Service Engineer - Datacenters BESS",
+      "url": "https://careers.gevernova.com/field-service-engineer-datacenters-bess/job/R5059302",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Boston",
+          "state": "Massachusetts"
+        }
+      ],
+      "remoteScope": "nationwide",
+      "eligibleStates": [],
+      "locationNote": "Remote within the U.S. · Employer-listed locations: Boston, Massachusetts",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $72,400.00 and $108,600.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "Massachusetts"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Installation & Commissioning: Execute on-site installation, startup, and functional testing of Battery Energy Storage Systems (BESS) and complex power electronics integration—including battery management systems (BMS), Power Conversion Systems (PCS), and plant-level energy management controllers (EMS)—under the guidance of Lead FSEs.",
+          "Documentation & Administration: Maintain precise commissioning records, test data, and technical reports;",
+          "manage spare parts and administrative requirements (timesheets, expenses) with accuracy and timeliness."
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-18",
+      "closesAt": "2026-12-30",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "bf1264d1682073bb79219290301ceb05cc205c4419a61cb5cf689e169ce6a490",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "trades",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Field Service Engineer - Datacenters BESS"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059304",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059304",
+      "identifierType": "requisition",
+      "title": "Gas Turbine Rotor Repair Engineer",
+      "url": "https://careers.gevernova.com/gas-turbine-rotor-repair-engineer/job/R5059304",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Greenville",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Greenville, South Carolina",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $89,300.00 and $148,700.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "South Carolina"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Develop and industrialize 7HA and 7FA rotor repair technology and new repair processes for the GVL shop, and support the upcoming Rotor Life Extension volume ramp.",
+          "Provide engineering review and dispositions of shop non-conformances for rotor repair.",
+          "Lead design reviews for repair development, working with Manufacturing Process Engineering (MPE) and Design Engineering.",
+          "Partner with Product Services to establish Rotor Life Extension operational history and to support Root Cause Analysis studies.",
+          "Conduct repair process technology testing with RDC and service center engineers, in the RDC or in the shop.",
+          "Establish and maintain inspection criteria, and substantiate service center repair process qualifications and certifications.",
+          "Support component readiness for global service centers and deliver operational commitments and key process indicator targets.",
+          "Drive productivity, quality, delivery, and cost improvements through lean methods (standard work, standard product, kaizen), partnering across Gas Power as one team."
+        ],
+        "requiredSkills": [
+          "Willingness to travel globally to repair centers",
+          "customer sites",
+          "and other locations",
+          "approximately 10% of the time.",
+          "Desired Qualifications",
+          "Strong mechanical design and analytical background",
+          "with familiarity with manufacturing processes.",
+          "Experience in gas turbine rotor manufacture",
+          "Lean or equivalent quality training.",
+          "Proven track record of driving projects to completion.",
+          "Bonus eligibility: discretionary annual bonus.",
+          "This posting is expected to remain open for at least seven days after it was posted on November 18",
+          "GE Vernova Inc.",
+          "or its affiliates (collectively or individually",
+          "“GE Vernova”) sponsor certain employee benefit plans or programs GE Vernova reserves the right to terminate",
+          "or modify its benefit plans and programs at any time and for any reason"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-18",
+      "closesAt": "2027-01-08",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "2ec0f048bdce387307e0f04b88ec8ce050f409fe40138f66b1f1e55036c05b45",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Gas Turbine Rotor Repair Engineer"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059390",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059390",
+      "identifierType": "requisition",
+      "title": "Ingénieur d'application (support commercial) / Application Engineer (Commercial Support)",
+      "url": "https://careers.gevernova.com/ing%C3%A9nieur-d-application-support-commercial-application-engineer-commercial-support/job/R5059390",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Atlanta",
+          "state": "Georgia"
+        },
+        {
+          "city": "Chicago",
+          "state": "Illinois"
+        },
+        {
+          "city": "Houston",
+          "state": "Texas"
+        },
+        {
+          "city": "Boston",
+          "state": "Massachusetts"
+        }
+      ],
+      "remoteScope": "nationwide",
+      "eligibleStates": [],
+      "locationNote": "Remote within the U.S. · Employer-listed locations: Atlanta, Georgia; Chicago, Illinois; Houston, Texas; Boston, Massachusetts",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $108,600.00 and $181,000.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "Georgia",
+          "Illinois",
+          "Massachusetts",
+          "Texas"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You will provide specialized support for Installation & Construction services, ensuring seamless integration within our Engineer, Procure, and Construct (EPC) project portfolio."
+        ],
+        "requiredSkills": [
+          "Up to 25% travel based on the business needs",
+          "Substation Construction Expertise: Proven experience in the construction and engineering of substation projects",
+          "with a strong technical grasp of Electrical Balance of Plant (eBOP) equipment (e.g.",
+          "power transformers",
+          "circuit breakers",
+          "disconnect switches",
+          "protection & control systems).",
+          "Experience with large and complex Substation Project proposal development.",
+          "Experience with Full turnkey Substation solutions",
+          "EPCI including Civil works.",
+          "Voltage Proficiency: Direct experience with the design",
+          "specification",
+          "or commissioning of substation equipment rated for 345kV and below.",
+          "Strong understanding of the Power Generation/Services industry and ITO/OTR (Order-to-Remittance) workflows.",
+          "Proficiency in interpreting technical drawings",
+          "single-line diagrams"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": true,
+      "travelNote": "Up to 25% travel",
+      "postedAt": "2026-11-18",
+      "closesAt": "2026-11-26",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "e0fc88b96d539de444ec2f58c2b29f32696e21dc131cebc4e4a52dd4d448fbb5",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "Up to 25% travel",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Ingénieur d'application (support commercial) / Application Engineer (Commercial Support)"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059443",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059443",
+      "identifierType": "requisition",
+      "title": "Lead Engineer - Mechanical Design",
+      "url": "https://careers.gevernova.com/lead-engineer-mechanical-design/job/R5059443",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Greenville",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Greenville, South Carolina",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $89,300.00 and $148,700.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "South Carolina"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "Minimum of 3 years relevant Engineering Experience",
+          "Desired Characteristics",
+          "Experience in gas turbine component design and analysis",
+          "Experience with gas turbine compressor hardware ownership and knowledge of compressor architecture",
+          "Basic understanding of engineering principles and how to apply them practically",
+          "Experience with ANSYS and NX CAD",
+          "Demonstrated ability to work in cross functional teams",
+          "Ability to interface effectively with all levels of the immediate organization",
+          "One team mindset with regards to team growth and success",
+          "Effective oral and written communication skills",
+          "Effective interpersonal and organizational skills",
+          "Shows aptitude for continuous learning personal growth",
+          "Bonus eligibility: discretionary annual bonus.",
+          "This posting is expected to remain open for at least seven days after it was posted on November 20",
+          "GE Vernova Inc.",
+          "or its affiliates (collectively or individually"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": "2026-12-05",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "b8912b38ec52b69db10906f99049dbaf3f81eb8e05fb89966f228bb83438e8fa",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Lead Engineer - Mechanical Design"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059444",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059444",
+      "identifierType": "requisition",
+      "title": "Program Manager, Gas Turbine Systems Engineering",
+      "url": "https://careers.gevernova.com/program-manager-gas-turbine-systems-engineering/job/R5059444",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Greenville",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Greenville, South Carolina",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $113,200.00 and $188,800.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "South Carolina"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Manage program schedules for assigned new product introduction (NPI) programs to deliver engineering milestones on time.",
+          "Serve as the Systems focal point for business rhythms, including strategy sessions (MGPP, Session T, SII) and financial closing periods.",
+          "Lead Cost and Cycle and EPDR scoping with Platform Managers, SILs, and Product Management.",
+          "Lead across Finance, Operations, Product Management, the Advanced Research Center, Global Supply Chain, and Gas Power Engineering to align priorities and deliver results."
+        ],
+        "requiredSkills": [
+          "8 years of engineering experience in a combination of gas turbine systems or program management roles.",
+          "Legal authorization to work in the United States is required.",
+          "This position is not eligible for employer visa sponsorship",
+          "now or in the future.",
+          "Demonstrated leadership and project management skills.",
+          "Knowledge of gas turbine products",
+          "and organizational structure.",
+          "Ability to manage multiple unrelated tasks at once.",
+          "Self-starter with a proven record of delivering results.",
+          "Strong communicator with experience presenting to and working with leaders across multiple organizations.",
+          "Bonus eligibility: discretionary annual bonus.",
+          "This posting is expected to remain open for at least seven days after it was posted on November 20",
+          "GE Vernova Inc.",
+          "or its affiliates (collectively or individually",
+          "“GE Vernova”) sponsor certain employee benefit plans or programs GE Vernova reserves the right to terminate",
+          "or modify its benefit plans and programs at any time and for any reason"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "3db0746487970e2b68b07ba1699e5040d18a1d9d8029ba5048192ce4fdbf4d6f",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "projects",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Program Manager, Gas Turbine Systems Engineering"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059450",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059450",
+      "identifierType": "requisition",
+      "title": "Lead Engineer - Controls Cyber Security",
+      "url": "https://careers.gevernova.com/lead-engineer-controls-cyber-security/job/R5059450",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Schenectady",
+          "state": "New York"
+        },
+        {
+          "city": "Greenville",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Schenectady, New York; Greenville, South Carolina",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $89,300.00 and $148,700.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "New York",
+          "South Carolina"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Collaborate with Technical Leaders, System Architects, and Product Security Leader to formulate comprehensive enhancement and validation plans for cybersecurity features within the GE Vernova cyber security product suite.",
+          "Implement and execute detailed design, configuration, and validation including performance evaluations for new hardware and software releases, prepare analytical reports for design reviews with the Controlled Title Holder community, as well as product documentations.",
+          "Provide technical guidance on cyber security requirements as well as project specific design and configuration customization to support fulfillment teams through the project lifecycle, including services.",
+          "Partner with Requisition and OTR (Order-to-Remittance) engineers, as well as external customers, to resolve technical support issues and translate field feedback into actionable product and process improvements.",
+          "Support the development of deliverables to ensure compliance with global cybersecurity regulations.",
+          "Support the gas power controls teams in developing and refining standard work processes related to cybersecurity standards.",
+          "Serve as a member in the Scaled Agile Framework defining the handoff scope in terms of features, stories, and tasks meeting milestone dates as laid out by the product owner to meet product testing requirements.",
+          "Manage multiple product and project development initiatives concurrently.",
+          "Maintain & continuously update technical skills and knowledge"
+        ],
+        "requiredSkills": [
+          "Eligibility Requirements:",
+          "Desired Characteristics:",
+          "Relevant certifications such as CISSP",
+          "or equivalent",
+          "Knowledge of the Gas Power Controls NPI processes",
+          "Strong oral and written communication skills.",
+          "Demonstrated ability to analyze and resolve problems.",
+          "Ability to document",
+          "and execute programs.",
+          "Established project management skills",
+          "Ability to succeed in a global team environment",
+          "Highly-motivated",
+          "self-starting personal characteristics",
+          "Bonus eligibility: discretionary annual bonus.",
+          "This posting is expected to remain open for at least seven days after it was posted on November 20",
+          "GE Vernova Inc."
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": "2026-12-11",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "24546c67d7238d50903764946573902ab8eb3af73ad2a5c93dae9fda089fc386",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "cyber",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Lead Engineer - Controls Cyber Security"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059464",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059464",
+      "identifierType": "requisition",
+      "title": "Inventory Control Clerk",
+      "url": "https://careers.gevernova.com/inventory-control-clerk/job/R5059464",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Rostraver",
+          "state": "Pennsylvania"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Rostraver, Pennsylvania",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the base pay for this position is $21/hr.",
+        "scopeStates": [
+          "Pennsylvania"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Inspect shipments for damage or defects, record any issues, and notify your supervisor or the Quality Assurance (QA) team.",
+          "Track Key Performance Indicators (KPIs) for inventory control, respond to questions from internal customers, and share ideas to improve how we work."
+        ],
+        "requiredSkills": [
+          "You are dependable",
+          "and enjoy working with a team where accuracy matters every day.",
+          "Minimum of 1 year of related experience in logistics",
+          "warehouse operations",
+          "or inventory control",
+          "Forklift experience",
+          "or a willingness to learn.",
+          "We provide the training.",
+          "Reliability and a strong record of showing up and following through",
+          "Flexibility to work overtime or weekends when business needs require",
+          "Ability to lift up to 35 pounds and to sit",
+          "and crawl repeatedly",
+          "Attention to detail and a willingness to learn quickly",
+          "Working knowledge of Microsoft (MS) Word and Excel",
+          "Clear communication and organizational skills",
+          "Why GE Vernova"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-19",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "26380ff5ea93669b3d74cdb4420461ecaeb561128e78bbed1bc1fe755a70a284",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "logistics",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Inventory Control Clerk"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059483",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059483",
+      "identifierType": "requisition",
+      "title": "Lead Engineer - Mechanical Design",
+      "url": "https://careers.gevernova.com/lead-engineer-mechanical-design/job/R5059483",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Greenville",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Greenville, South Carolina",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $89,300.00 and $148,700.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "South Carolina"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "Minimum of 3 years of relevant Engineering Experience",
+          "Desired Characteristics",
+          "Experience in gas turbine component design and analysis",
+          "Experience with gas turbine compressor hardware ownership and knowledge of compressor architecture",
+          "Basic understanding of engineering principles and how to apply them practically",
+          "Experience with ANSYS and NX CAD",
+          "Demonstrated ability to work in cross functional teams",
+          "Ability to interface effectively with all levels of the immediate organization",
+          "One team mindset with regards to team growth and success",
+          "Effective oral and written communication skills",
+          "Effective interpersonal and organizational skills",
+          "Shows aptitude for continuous learning personal growth",
+          "Bonus eligibility: discretionary annual bonus.",
+          "This posting is expected to remain open for at least seven days after it was posted on November 20",
+          "GE Vernova Inc.",
+          "or its affiliates (collectively or individually"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": "2026-12-05",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "cdb5a7463233bb72b310b23afa85cf077712a4bffda7962a22339df200409347",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Lead Engineer - Mechanical Design"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059484",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059484",
+      "identifierType": "requisition",
+      "title": "Lead Engineer - Mechanical Design",
+      "url": "https://careers.gevernova.com/lead-engineer-mechanical-design/job/R5059484",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Greenville",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Greenville, South Carolina",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $89,300.00 and $148,700.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "South Carolina"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "Minimum of 3 years of relevant Engineering Experience",
+          "Desired Characteristics",
+          "Experience in gas turbine component design and analysis",
+          "Experience with gas turbine compressor hardware ownership and knowledge of compressor architecture",
+          "Basic understanding of engineering principles and how to apply them practically",
+          "Experience with ANSYS and NX CAD",
+          "Demonstrated ability to work in cross functional teams",
+          "Ability to interface effectively with all levels of the immediate organization",
+          "One team mindset with regards to team growth and success",
+          "Effective oral and written communication skills",
+          "Effective interpersonal and organizational skills",
+          "Shows aptitude for continuous learning personal growth",
+          "Bonus eligibility: discretionary annual bonus.",
+          "This posting is expected to remain open for at least seven days after it was posted on November 20",
+          "GE Vernova Inc.",
+          "or its affiliates (collectively or individually"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": "2026-12-05",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "c2f2fead1718409d949abfad16f2e86ebb298e08c98daca85c6511e90d3f0f62",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Lead Engineer - Mechanical Design"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059485",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059485",
+      "identifierType": "requisition",
+      "title": "Lead Engineer - Compressor Airfoil Design",
+      "url": "https://careers.gevernova.com/lead-engineer-compressor-airfoil-design/job/R5059485",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Greenville",
+          "state": "South Carolina"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Greenville, South Carolina",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $98,400.00 and $164,000.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "South Carolina"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "Minimum of 5 years of relevant Engineering Experience",
+          "Desired Characteristics",
+          "Extensive experience in gas turbine compressor airfoil design and analysis and strong foundational knowledge of gas turbine architecture",
+          "Strong understanding of engineering principles and ability to apply them practically",
+          "Experience with ANSYS and NX CAD",
+          "Demonstrated ability to work in cross functional teams",
+          "Ability to interface effectively with all levels of the immediate organization",
+          "One team mindset with regards to team growth and success",
+          "Effective oral and written communication skills",
+          "Effective interpersonal and organizational skills",
+          "Shows aptitude for continuous learning personal growth",
+          "Bonus eligibility: discretionary annual bonus.",
+          "This posting is expected to remain open for at least seven days after it was posted on November 20",
+          "GE Vernova Inc.",
+          "or its affiliates (collectively or individually",
+          "“GE Vernova”) sponsor certain employee benefit plans or programs GE Vernova reserves the right to terminate"
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": "2026-12-05",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "877a68d298137414206f469e1b8a0c469d1d8a9188252124c9f216ae57b9c3f2",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "engineering",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Lead Engineer - Compressor Airfoil Design"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059557",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059557",
+      "identifierType": "requisition",
+      "title": "GEV Cores and Castings Materials Internship – 2027",
+      "url": "https://careers.gevernova.com/gev-cores-and-castings-materials-internship-2027/job/R5059557",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Schenectady",
+          "state": "New York"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Schenectady, New York",
+      "employmentType": "Internship",
+      "salary": null,
+      "publishedPay": {
+        "text": "pay range for this position is $1,000-$2,000",
+        "scopeStates": [
+          "New York"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Draft standard work, visual management aids, and work instructions for project cost-allocation, time/material tracking, variance reconciliation, and audit preparation",
+          "Assist in piloting newly developed processes with engineering and finance teams, gathering user feedback, and refining documentation, templates, and training guides",
+          "Create and/or optimize standard templates in Excel to ensure consistency in project cost tracking, forecasting, and reporting"
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-17",
+      "closesAt": "2026-11-27",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "b1ca3f2338e61fb02e50cc4ee1ee155ec01fd90d3601125ea2060a20a63ad817",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer job title explicitly states Internship."
+      },
+      "primaryJobFunction": "operations",
+      "jobFunctionBasis": "responsibilities",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Draft standard work, visual management aids, and work instructions for project cost-allocation, time/material tracking, variance reconciliation, and audit preparation"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059616",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059616",
+      "identifierType": "requisition",
+      "title": "Lead Field Service Engineer - Drives",
+      "url": "https://careers.gevernova.com/lead-field-service-engineer-drives/job/R5059616",
+      "arrangement": "remote",
+      "locations": [
+        {
+          "city": "Boston",
+          "state": "Massachusetts"
+        }
+      ],
+      "remoteScope": "nationwide",
+      "eligibleStates": [],
+      "locationNote": "Remote within the U.S. · Employer-listed locations: Boston, Massachusetts",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For candidates applying to a U.S. based position, the pay range for this position is between $78,800.00 and $131,200.00. The Company pays a geographic differential of 110%, 120% or 130% of salary in certain areas. The specific pay offered may be influenced by a variety of factors, including the candidate’s experience, education, and skill set.",
+        "scopeStates": [
+          "Massachusetts"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Perform installation, commissioning, and testing of drive and power systems at customer sites, shipyards, or offshore locations.",
+          "Diagnose technical issues, determine appropriate resolutions, and implement corrective actions during scheduled port visits or at sea.",
+          "Execute a wide range of engineering tasks to ensure the technical integrity and proper operation of equipment.",
+          "Develop technical documentation, including commissioning and maintenance procedures, and deliver customer training.",
+          "Lead on-site project management and technical resolution efforts to ensure high standards of customer satisfaction.",
+          "Identify and communicate commercial service opportunities, including service agreements, spare parts, training, and upgrades.",
+          "Provide on-call technical support in response to customer service inquiries.",
+          "Support engineering teams on customer upgrade projects and contribute to regional business growth initiatives.",
+          "Leadership qualities aligned with the GE Vernova values and culture."
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-19",
+      "closesAt": "2026-12-30",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "78a5aa95b822e44e98ebc4f276f94f46c4667badf45c242ce53c5daea7200299",
+      "evidence": {
+        "arrangement": "JobPosting.jobLocationType=TELECOMMUTE",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "trades",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Lead Field Service Engineer - Drives"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059720",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059720",
+      "identifierType": "requisition",
+      "title": "Tool Crib Attendant",
+      "url": "https://careers.gevernova.com/tool-crib-attendant/job/R5059720",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Grand Forks",
+          "state": "North Dakota"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Grand Forks, North Dakota",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "pay for this position is $22.01-$25.49",
+        "scopeStates": [
+          "North Dakota"
+        ],
+        "note": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "Ability to lift or carry objects or materials up to 25lbs.",
+          "Ability to stand for extended periods on concrete floors.",
+          "Ability to make quick or repeated movement (holding",
+          "bending) with hands",
+          "May require respirator usage.",
+          "Desired Characteristics",
+          "Post Moulding",
+          "For candidates applying to a U.S.",
+          "based position",
+          "the base pay for this position is $22.01-$25.49.",
+          "Additional Information",
+          "based position only:",
+          "The Company pays a geographic differential of 110%",
+          "120% or 130% of salary in certain areas.",
+          "This posting is expected to remain open for at least seven days after it was posted on November 20",
+          "GE Vernova Inc."
+        ],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Employer-published range for listed locations; pay may vary by level or location. Pay period is not specified for every range.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": "2026-12-04",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "1a6cd28ce7554b1f5877cdd6697b015946793cdd21e0848bef2aa984e47f7e84",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "logistics",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Tool Crib Attendant"
+      ]
+    },
+    {
+      "id": "ge-vernova-r5059731",
+      "companyId": "ge-vernova",
+      "requisitionId": "R5059731",
+      "identifierType": "requisition",
+      "title": "Staff Software Engineer - Oracle Database Developer",
+      "url": "https://careers.gevernova.com/staff-software-engineer-oracle-database-developer/job/R5059731",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Atlanta",
+          "state": "Georgia"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Atlanta, Georgia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": null,
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Collaborate with system engineers, frontend developers and software developers to implement solutions that are aligned with and extend shared platforms and solutions.",
+          "Write code that meets standards and delivers desired functionality using the technology selected for the project.",
+          "Build features such as web services and Queries on existing tables."
+        ],
+        "requiredSkills": [],
+        "preferredSkills": [],
+        "category": ""
+      },
+      "salaryNote": "Pay or geographic scope not verified automatically. See employer posting.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-20",
+      "closesAt": "2027-01-19",
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Energy",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:20.931131+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "156554c481abb86cdc14fe4fdf35550d62947a43911972aad5a6a97ee7d3f98d",
+      "evidence": {
+        "arrangement": "",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "software",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Staff Software Engineer - Oracle Database Developer",
+        "Build features such as web services and Queries on existing tables."
+      ]
+    },
+    {
       "id": "general-motors-jr-202517415",
       "companyId": "general-motors",
       "requisitionId": "JR-202517415",
@@ -282047,6 +283479,653 @@
       ]
     },
     {
+      "id": "servicenow-jb0076853",
+      "companyId": "servicenow",
+      "requisitionId": "JB0076853",
+      "identifierType": "requisition",
+      "title": "Federal Data and Analytics Sr Sales Executive",
+      "url": "https://careers.servicenow.com/jobs/744000162871309/federal-data-and-analytics-sr-sales-executive",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Washington, D.C.",
+          "state": "District of Columbia"
+        }
+      ],
+      "arrangementReviewRequired": true,
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Washington, D.C., District of Columbia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For positions in this location, we offer a base pay of $139,400 - $195,000, plus equity (when applicable), variable/incentive compensation and benefits. Sales positions generally offer a competitive On Target Earnings (OTE) incentive compensation structure. Please note that the base pay shown is a guideline, and individual total compensation will vary based on factors such as qualifications, skill level, competencies, and work location. We also offer health plans, including flexible spending accounts, a 401(k) Plan with company match, ESPP, matching donations, a flexible time away plan and family leave programs. Compensation is based on the geographic location in which the role is located and is subject to change based on work location.",
+        "scopeStates": [
+          "District of Columbia"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "To be successful in this role you have:",
+          "5+ years of field sales experience",
+          "preferably with an emphasis on D&A sales or AI-adjacent solutions.",
+          "Technical fluency in AI",
+          "Data and Analytics",
+          "including the ability to present",
+          "demo and lead credible discovery",
+          "value positioning and use-case identification.",
+          "Experience selling analytics or BI solutions such as Tableau",
+          "Power BI",
+          "Qlik or Oracle Analytics",
+          "plus credible depth in cloud data warehousing",
+          "data integration and governance.",
+          "Experience with consumption-based models and driving growth after the first sale.",
+          "A self-starter",
+          "hands-on and thought-leader mindset"
+        ],
+        "preferredSkills": [],
+        "category": "Sales"
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-21",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:18.069740+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "cf3eec1eaa55f5eda459f234456895f3a7ddb44ad1eeb76615929ce86ff3cdee",
+      "evidence": {
+        "arrangement": "Employer lists more than one work persona: Flexible or Remote",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "sales",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Federal Data and Analytics Sr Sales Executive"
+      ]
+    },
+    {
+      "id": "servicenow-jb0076854",
+      "companyId": "servicenow",
+      "requisitionId": "JB0076854",
+      "identifierType": "requisition",
+      "title": "Federal Data and Analytics Sr Sales Executive",
+      "url": "https://careers.servicenow.com/jobs/744000162870134/federal-data-and-analytics-sr-sales-executive",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Washington, D.C.",
+          "state": "District of Columbia"
+        }
+      ],
+      "arrangementReviewRequired": true,
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Washington, D.C., District of Columbia",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For positions in this location, we offer a base pay of $139,400 - $195,000, plus equity (when applicable), variable/incentive compensation and benefits. Sales positions generally offer a competitive On Target Earnings (OTE) incentive compensation structure. Please note that the base pay shown is a guideline, and individual total compensation will vary based on factors such as qualifications, skill level, competencies, and work location. We also offer health plans, including flexible spending accounts, a 401(k) Plan with company match, ESPP, matching donations, a flexible time away plan and family leave programs. Compensation is based on the geographic location in which the role is located and is subject to change based on work location.",
+        "scopeStates": [
+          "District of Columbia"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "To be successful in this role you have:",
+          "5+ years of field sales experience",
+          "preferably with an emphasis on D&A sales or AI-adjacent solutions.",
+          "Technical fluency in AI",
+          "Data and Analytics",
+          "including the ability to present",
+          "demo and lead credible discovery",
+          "value positioning and use-case identification.",
+          "Experience selling analytics or BI solutions such as Tableau",
+          "Power BI",
+          "Qlik or Oracle Analytics",
+          "plus credible depth in cloud data warehousing",
+          "data integration and governance.",
+          "Experience with consumption-based models and driving growth after the first sale.",
+          "A self-starter",
+          "hands-on and thought-leader mindset"
+        ],
+        "preferredSkills": [],
+        "category": "Sales"
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-21",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:18.069740+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "e7ea963dcd3aa6c9956c013e7a82887fb51fad0b6c452f5356c2d714c48d5fd0",
+      "evidence": {
+        "arrangement": "Employer lists more than one work persona: Flexible or Remote",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "sales",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Federal Data and Analytics Sr Sales Executive"
+      ]
+    },
+    {
+      "id": "servicenow-jb0077218",
+      "companyId": "servicenow",
+      "requisitionId": "JB0077218",
+      "identifierType": "requisition",
+      "title": "Solution Marketing Campaign Director, Employee Experience",
+      "url": "https://careers.servicenow.com/jobs/744000162954819/solution-marketing-campaign-director-employee-experience",
+      "arrangement": "unknown",
+      "locations": [
+        {
+          "city": "Santa Clara",
+          "state": "California"
+        }
+      ],
+      "arrangementReviewRequired": true,
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Santa Clara, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For positions in this location, we offer a base pay of $184,100 - $322,200, plus equity (when applicable), variable/incentive compensation and benefits. Sales positions generally offer a competitive On Target Earnings (OTE) incentive compensation structure. Please note that the base pay shown is a guideline, and individual total compensation will vary based on factors such as qualifications, skill level, competencies, and work location. We also offer health plans, including flexible spending accounts, a 401(k) Plan with company match, ESPP, matching donations, a flexible time away plan and family leave programs. Compensation is based on the geographic location in which the role is located and is subject to change based on work location.",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [],
+        "requiredSkills": [
+          "To be successful in this role you have:",
+          "Experience & Skills",
+          "Proven track record leading complex",
+          "multi-channel campaigns with multiple stakeholders and significant budgets",
+          "including launches targeting buyers and line-of-business leaders",
+          "Deep familiarity with full-funnel marketing across digital",
+          "and field marketing",
+          "applied to buying journeys",
+          "Demonstrated ability to drive cross-functional campaign work",
+          "influence without direct authority",
+          "and build capability across teams supporting go-to-market",
+          "Strong organizational skills",
+          "with the ability to manage multiple priorities and balance strategic direction with operational excellence",
+          "Personal Attributes",
+          "Business outcome obsessed and motivated by ambitious goals",
+          "Functional understanding of AI-native campaigns"
+        ],
+        "preferredSkills": [],
+        "category": "Marketing, Communications, and Brand"
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-21",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:18.069740+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "3ef6ee0e1e8014e1334be66c8025d14129372edfa9f95c2c6bde6cc9a5ab94fe",
+      "evidence": {
+        "arrangement": "Employer lists more than one work persona: Flexible or Remote",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "marketing",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Solution Marketing Campaign Director, Employee Experience"
+      ]
+    },
+    {
+      "id": "servicenow-jb0077336",
+      "companyId": "servicenow",
+      "requisitionId": "JB0077336",
+      "identifierType": "requisition",
+      "title": "Senior Application Engineer",
+      "url": "https://careers.servicenow.com/jobs/744000162883203/senior-application-engineer",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Santa Clara",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Santa Clara, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For positions in this location, we offer a base pay of $143,200 - $243,400, plus equity (when applicable), variable/incentive compensation and benefits. Sales positions generally offer a competitive On Target Earnings (OTE) incentive compensation structure. Please note that the base pay shown is a guideline, and individual total compensation will vary based on factors such as qualifications, skill level, competencies, and work location. We also offer health plans, including flexible spending accounts, a 401(k) Plan with company match, ESPP, matching donations, a flexible time away plan and family leave programs. Compensation is based on the geographic location in which the role is located and is subject to change based on work location.",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Build high-quality, clean, scalable, and reusable code while following software engineering best practices, including code reviews, unit testing, and maintainable architecture.",
+          "Partner with product owners to understand detailed requirements and take ownership of features through design, implementation, test automation, and delivery.",
+          "Develop intuitive software that enables customers to extend and customize functionality to meet their specific business needs.",
+          "Collaborate with teammates to solve complex technical challenges and deliver high-quality solutions.",
+          "Mentor fellow engineers and promote knowledge sharing and engineering best practices across the team."
+        ],
+        "requiredSkills": [
+          "To be successful in this role",
+          "Experience leveraging AI-powered tools or evaluating how AI can improve engineering workflows",
+          "decision-making",
+          "and problem-solving.",
+          "Experience with data structures",
+          "object-oriented design",
+          "design patterns",
+          "and performance and scalability considerations.",
+          "Experience with modern UI frameworks such as Angular",
+          "React",
+          "Passion for JavaScript",
+          "the web platform",
+          "and component-based development.",
+          "Strong analytical",
+          "problem-solving",
+          "and software design skills."
+        ],
+        "preferredSkills": [],
+        "category": "Engineering, Infrastructure and Operations"
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-21",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:18.069740+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "34e7d5ed1a5eff76bc1df2b49d4e09042bf1afc16d36d7de72bc40629f3f2791",
+      "evidence": {
+        "arrangement": "Employer work persona: Flexible",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "software",
+      "jobFunctionBasis": "responsibilities",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Build high-quality, clean, scalable, and reusable code while following software engineering best practices, including code reviews, unit testing, and maintainable architecture."
+      ]
+    },
+    {
+      "id": "servicenow-jb0077337",
+      "companyId": "servicenow",
+      "requisitionId": "JB0077337",
+      "identifierType": "requisition",
+      "title": "Staff Application Engineer",
+      "url": "https://careers.servicenow.com/jobs/744000162891903/staff-application-engineer",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Santa Clara",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Santa Clara, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For positions in this location, we offer a base pay of $166,500 - $291,400, plus equity (when applicable), variable/incentive compensation and benefits. Sales positions generally offer a competitive On Target Earnings (OTE) incentive compensation structure. Please note that the base pay shown is a guideline, and individual total compensation will vary based on factors such as qualifications, skill level, competencies, and work location. We also offer health plans, including flexible spending accounts, a 401(k) Plan with company match, ESPP, matching donations, a flexible time away plan and family leave programs. Compensation is based on the geographic location in which the role is located and is subject to change based on work location.",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Build high-quality, clean, scalable, and reusable code while driving best practices in software architecture, code quality, testing, and engineering processes.",
+          "Partner with product owners to understand detailed requirements and take ownership of solutions from design and implementation through test automation and delivery.",
+          "Design extensible software that enables customers to customize and extend functionality to meet their specific needs.",
+          "Mentor engineers and promote knowledge sharing and engineering best practices across the team."
+        ],
+        "requiredSkills": [
+          "To be successful in this role you have:",
+          "Experience leveraging AI-powered tools or evaluating how AI can improve engineering workflows",
+          "decision-making",
+          "and problem-solving.",
+          "Passion for JavaScript",
+          "the web platform",
+          "and component-based development.",
+          "Experience with data structures",
+          "object-oriented design",
+          "design patterns",
+          "and performance and scalability considerations.",
+          "Experience with modern UI frameworks such as Angular",
+          "React",
+          "Strong analytical",
+          "problem-solving",
+          "and software design skills."
+        ],
+        "preferredSkills": [],
+        "category": "Engineering, Infrastructure and Operations"
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-21",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:18.069740+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "91932d26c3db111671e0ee2259e8b01fb4988a3736a16dbb925487a3e76b4d7c",
+      "evidence": {
+        "arrangement": "Employer work persona: Flexible",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "software",
+      "jobFunctionBasis": "responsibilities",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Build high-quality, clean, scalable, and reusable code while driving best practices in software architecture, code quality, testing, and engineering processes."
+      ]
+    },
+    {
+      "id": "servicenow-jb0077338",
+      "companyId": "servicenow",
+      "requisitionId": "JB0077338",
+      "identifierType": "requisition",
+      "title": "Senior Staff Application Engineer",
+      "url": "https://careers.servicenow.com/jobs/744000162891739/senior-staff-application-engineer",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Santa Clara",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Santa Clara, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For positions in this location, we offer a base pay of $190,900 - $334,100, plus equity (when applicable), variable/incentive compensation and benefits. Sales positions generally offer a competitive On Target Earnings (OTE) incentive compensation structure. Please note that the base pay shown is a guideline, and individual total compensation will vary based on factors such as qualifications, skill level, competencies, and work location. We also offer health plans, including flexible spending accounts, a 401(k) Plan with company match, ESPP, matching donations, a flexible time away plan and family leave programs. Compensation is based on the geographic location in which the role is located and is subject to change based on work location.",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Build high-quality, clean, scalable, and reusable code while promoting best practices in software architecture, code quality, testing, and engineering processes.",
+          "Partner with product owners to understand detailed requirements and drive solutions from design and implementation through test automation and delivery.",
+          "Design and implement software that is intuitive, extensible, and enables customers to customize functionality to meet their specific needs.",
+          "Mentor engineers, promote knowledge sharing, and help raise the bar for engineering excellence across teams."
+        ],
+        "requiredSkills": [
+          "To be successful in this role you have:",
+          "Experience leveraging AI-powered tools or evaluating how AI can improve engineering workflows",
+          "decision-making",
+          "and problem-solving.",
+          "Passion for JavaScript",
+          "the web platform",
+          "and component-based development.",
+          "Advanced knowledge of data structures",
+          "object-oriented design",
+          "design patterns",
+          "and performance and scalability considerations.",
+          "Experience with modern UI frameworks such as Angular",
+          "React",
+          "Advanced experience working with relational databases",
+          "including development",
+          "troubleshooting"
+        ],
+        "preferredSkills": [],
+        "category": "Engineering, Infrastructure and Operations"
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-21",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:18.069740+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "3b28b30bab846b0f7b34f6189495dc0fd4b89bb077638cc325eb9d9070e010c1",
+      "evidence": {
+        "arrangement": "Employer work persona: Flexible",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "software",
+      "jobFunctionBasis": "responsibilities",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Build high-quality, clean, scalable, and reusable code while promoting best practices in software architecture, code quality, testing, and engineering processes."
+      ]
+    },
+    {
+      "id": "servicenow-jb0077342",
+      "companyId": "servicenow",
+      "requisitionId": "JB0077342",
+      "identifierType": "requisition",
+      "title": "Sr Software Engineer",
+      "url": "https://careers.servicenow.com/jobs/744000162878715/sr-software-engineer",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Santa Clara",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Santa Clara, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For positions in this location, we offer a base pay of $143,200 - $243,400, plus equity (when applicable), variable/incentive compensation and benefits. Sales positions generally offer a competitive On Target Earnings (OTE) incentive compensation structure. Please note that the base pay shown is a guideline, and individual total compensation will vary based on factors such as qualifications, skill level, competencies, and work location. We also offer health plans, including flexible spending accounts, a 401(k) Plan with company match, ESPP, matching donations, a flexible time away plan and family leave programs. Compensation is based on the geographic location in which the role is located and is subject to change based on work location.",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "You will develop and maintain multi-tier web applications using modern web technologies, working across the full stack to deliver intuitive, scalable, and high-performing solutions.",
+          "Develop across the full stack of web technologies, including persistence, services, platform capabilities, and performance, with a focus on delivering great user experiences.",
+          "Design and implement software that is simple, intuitive, and easy to use, with a platform-development mindset focused on solving real-world problems."
+        ],
+        "requiredSkills": [
+          "Strong understanding of data structures",
+          "object-oriented design",
+          "design patterns",
+          "and cloud/web technologies.",
+          "Experience in leveraging or critically thinking about how to integrate AI into work processes",
+          "decision-making",
+          "or problem-solving.",
+          "This may include using AI-powered tools",
+          "automating workflows",
+          "analyzing AI-driven insights",
+          "or exploring AI's potential impact on the function or industry.",
+          "Expertise in writing Java and JavaScript;",
+          "strong candidates with experience in other object-oriented languages will also be considered.",
+          "Experience with object-oriented programming and modular software design.",
+          "Expertise with web technologies including HTML5",
+          "and Web Services."
+        ],
+        "preferredSkills": [],
+        "category": "Engineering, Infrastructure and Operations"
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-21",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:18.069740+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "df1dce586ce447dda52630f080e9cc1397540ed8534fb70a8a7ed1923e3f43f0",
+      "evidence": {
+        "arrangement": "Employer work persona: Flexible",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "software",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "medium",
+      "jobFunctionReviewRequired": false,
+      "jobFunctionEvidence": [
+        "Sr Software Engineer",
+        "You will develop and maintain multi-tier web applications using modern web technologies, working across the full stack to deliver intuitive, scalable, and high-performing solutions.",
+        "Design and implement software that is simple, intuitive, and easy to use, with a platform-development mindset focused on solving real-world problems."
+      ]
+    },
+    {
+      "id": "servicenow-jb0078079",
+      "companyId": "servicenow",
+      "requisitionId": "JB0078079",
+      "identifierType": "requisition",
+      "title": "Sr Software Engineer",
+      "url": "https://careers.servicenow.com/jobs/744000162883690/sr-software-engineer",
+      "arrangement": "hybrid",
+      "locations": [
+        {
+          "city": "Santa Clara",
+          "state": "California"
+        }
+      ],
+      "remoteScope": "unknown",
+      "eligibleStates": [],
+      "locationNote": "Santa Clara, California",
+      "employmentType": "Full-time",
+      "salary": null,
+      "publishedPay": {
+        "text": "For positions in this location, we offer a base pay of $143,200 - $243,400, plus equity (when applicable), variable/incentive compensation and benefits. Sales positions generally offer a competitive On Target Earnings (OTE) incentive compensation structure. Please note that the base pay shown is a guideline, and individual total compensation will vary based on factors such as qualifications, skill level, competencies, and work location. We also offer health plans, including flexible spending accounts, a 401(k) Plan with company match, ESPP, matching donations, a flexible time away plan and family leave programs. Compensation is based on the geographic location in which the role is located and is subject to change based on work location.",
+        "scopeStates": [
+          "California"
+        ],
+        "note": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering."
+      },
+      "functionContext": {
+        "version": 2,
+        "duties": [
+          "Partner with designers and product managers from definition through verification, weighing trade-offs between user value, complexity, and delivery timelines.",
+          "Design and build components that are accessible (WCAG), performant, and secure in the browser, including protection against cross-site scripting (XSS) and unsafe rendering.",
+          "Review pull requests and raise the team's bar for code quality, maintainability, and testability.",
+          "Mentor engineers and share best practices for AI-assisted development and code quality.",
+          "Lead defect burn-down efforts, resolve complex customer issues, and support teams integrating our components."
+        ],
+        "requiredSkills": [
+          "To be successful in this role you have:",
+          "5+ years of software development experience building modern web applications.",
+          "Experience leveraging AI-powered tools and applying sound judgment when evaluating AI-generated output.",
+          "Deep expertise in JavaScript/TypeScript",
+          "and strong experience with modern UI frameworks such as Lit",
+          "React",
+          "Experience building reusable components or component libraries",
+          "with a passion for the web platform and component-based development.",
+          "Experience integrating with backend APIs (REST",
+          "GraphQL) and familiarity with server-side technologies such as Java or Node.js.",
+          "Strong knowledge of accessibility standards (WCAG)",
+          "front-end performance optimization",
+          "browser security",
+          "and modern testing practices.",
+          "Strong understanding of data structures",
+          "object-oriented design"
+        ],
+        "preferredSkills": [],
+        "category": "Engineering, Infrastructure and Operations"
+      },
+      "salaryNote": "Employer-published pay text. Period, pay components, or location-specific bands require confirmation; this text is not used for numeric pay filtering.",
+      "travelRequired": null,
+      "travelNote": "Travel not verified automatically.",
+      "postedAt": "2026-11-21",
+      "closesAt": null,
+      "reviewedAt": "2026-11-22",
+      "status": "reviewed",
+      "sector": "Technology",
+      "sourceNote": "Automatically checked against the official individual posting. Missing fields remain unknown; pilot coverage is limited.",
+      "checkedAt": "2026-11-23T00:52:18.069740+00:00",
+      "collectionMethod": "verified-employer-portal",
+      "sourceHash": "2a3137b151e1f83d81bc536fe81967e137faa34afb6303f043fddd487fec826f",
+      "evidence": {
+        "arrangement": "Employer work persona: Flexible",
+        "travel": "",
+        "salary": "",
+        "deadline": "",
+        "employmentType": "Employer employmentType explicitly states full-time."
+      },
+      "primaryJobFunction": "software",
+      "jobFunctionBasis": "job title",
+      "jobFunctionConfidence": "low",
+      "jobFunctionReviewRequired": true,
+      "jobFunctionEvidence": [
+        "Sr Software Engineer"
+      ]
+    },
+    {
       "id": "target-r0000447560",
       "companyId": "target",
       "requisitionId": "R0000447560",
@@ -325165,6 +327244,41 @@
         "pendingClosureChecks": 0,
         "discoveryLimited": true,
         "lastSuccessfulAt": "2026-11-23T00:26:54.289595+00:00"
+      },
+      "ge-vernova": {
+        "discovered": 20,
+        "checked": 19,
+        "added": 19,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 0,
+        "outsidePostingWindow": 0,
+        "warnings": [
+          {
+            "url": "https://careers.gevernova.com/ge-vernova-scs-facility-maintenance-internship-summer-2026/job/R5058677",
+            "error": "Candidate quarantined: GE Vernova internship title names a season before its posting date"
+          }
+        ],
+        "errors": [],
+        "activeTracked": 19,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": true,
+        "lastSuccessfulAt": "2026-11-23T00:52:20.931131+00:00"
+      },
+      "servicenow": {
+        "discovered": 984,
+        "checked": 20,
+        "added": 8,
+        "changed": 0,
+        "closed": 0,
+        "skipped": 12,
+        "outsidePostingWindow": 0,
+        "warnings": [],
+        "errors": [],
+        "activeTracked": 8,
+        "pendingClosureChecks": 0,
+        "discoveryLimited": true,
+        "lastSuccessfulAt": "2026-11-23T00:52:18.069740+00:00"
       }
     }
   }

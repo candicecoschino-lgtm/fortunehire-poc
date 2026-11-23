@@ -210,6 +210,14 @@
     "perplexity": {
       "host": "jobs.ashbyhq.com",
       "sector": "Technology"
+    },
+    "ge-vernova": {
+      "host": "careers.gevernova.com",
+      "sector": "Energy"
+    },
+    "servicenow": {
+      "host": "careers.servicenow.com",
+      "sector": "Technology"
     }
   }
 }

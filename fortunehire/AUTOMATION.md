@@ -1,6 +1,6 @@
 # Official job collection pilot
 
-The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 52 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
+The collector reads published XML sitemaps, official individual JobPosting/page data, and explicitly reviewed public job-search interfaces for the 54 employers enabled in public/data/job-sources.json. See FEED-EXPANSION.md for the audit and remaining work. It does not call excluded endpoints, sign in, collect applicant information, or use a paid provider. It checks crawler rules on every run and stops on access denial or rate limiting.
 
 ## Scope and schedule
 
@@ -110,3 +110,11 @@ These sources preserve unspecified employment type and work arrangement. All thr
 [Anthropic](https://www.anthropic.com/careers/jobs) links to its Greenhouse board. The [public Job Board API](https://docs.greenhouse.io/job-board.html) supplies the original `first_published` timestamp and role detail. Each candidate must match the employer, individual page title, and application form. U.S. locations are limited to verified office labels, and duplicate employer requisitions are quarantined. Employment type stays unspecified where the employer does not supply it.
 
 Each new feed is capped at 40 active jobs and 20 new candidates per run. Brown & Brown's employer-linked Workday host returned HTTP 429 to the collector's crawler-policy request, so its feed remains disabled.
+
+## GE Vernova and ServiceNow — November 22
+
+[GE Vernova](https://careers.gevernova.com/jobs?filter%5Bcountry%5D%5B0%5D=United+States+of+America) uses two pages of its public U.S. careers search. The role page supplies the labeled posting start date, closing date, job type and matching Workday application. If role text names an earlier posting date, the earlier employer date controls freshness. When an internship title names an already-past summer, the role is quarantined for review. City placeholders do not create search locations.
+
+[ServiceNow](https://careers.servicenow.com/sitemap.xml) uses its published sitemap, individual JobPosting data, and matching ServiceNow SmartRecruiters application links. Sitemap dates only prioritize discovery. Per [ServiceNow’s work-persona definitions](https://careers.servicenow.com/life-at-servicenow/), Flexible maps to Hybrid, Required in Office to On-site, and Remote to Remote. Roles labeled Flexible or Remote retain that evidence and remain unspecified in the single-arrangement filter.
+
+Both sources require a matching individual role and application. Existing validation and lifecycle rules apply. The classifier uses role duties to distinguish ServiceNow’s application software engineers and GE Vernova’s materials-process internship. GE Vernova tool crib roles are categorized under Supply Chain & Logistics.
