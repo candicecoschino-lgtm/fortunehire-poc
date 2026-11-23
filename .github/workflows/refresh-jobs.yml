@@ -30,6 +30,8 @@ on:
       - 'fortunehire/test/test_oracle_company.py'
       - 'fortunehire/scripts/employer_sources.py'
       - 'fortunehire/scripts/public_listing_feeds.py'
+      - 'fortunehire/scripts/verified_career_portals.py'
+      - 'fortunehire/test/test_verified_career_portals.py'
       - 'fortunehire/scripts/requested_ats_feeds.py'
       - 'fortunehire/test/test_requested_ats_feeds.py'
       - 'fortunehire/test/requested-ats-feeds.test.mjs'

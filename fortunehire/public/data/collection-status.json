@@ -953,6 +953,41 @@
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-23T00:26:54.289595+00:00"
+    },
+    "ge-vernova": {
+      "discovered": 20,
+      "checked": 19,
+      "added": 19,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [
+        {
+          "url": "https://careers.gevernova.com/ge-vernova-scs-facility-maintenance-internship-summer-2026/job/R5058677",
+          "error": "Candidate quarantined: GE Vernova internship title names a season before its posting date"
+        }
+      ],
+      "errors": [],
+      "activeTracked": 19,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-23T00:52:20.931131+00:00"
+    },
+    "servicenow": {
+      "discovered": 984,
+      "checked": 20,
+      "added": 8,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 12,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 8,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-23T00:52:18.069740+00:00"
     }
   }
 }

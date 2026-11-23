@@ -123,11 +123,30 @@ function cleanEvidence(values) {
   return values.filter(value=>typeof value==='string'&&value.trim().length>=8&&!/\b(?:salary|pay transparency|benefits|shift schedule|work location|equal opportunity|accommodation)\b/i.test(value));
 }
 
+function verifiedPortalFunction(job, duties) {
+  const title=job?.title;
+  if (typeof title!=='string') return null;
+  if (job.companyId==='servicenow' && /\bapplication\s+engineer\b/i.test(title)) {
+    const software=duties.filter(duty=>/\bsoftware (?:engineering|architecture|development)\b|\b(?:build|write|maintain) .{0,45}\bcode\b/i.test(duty));
+    if (software.length) return makeResult('software','responsibilities',software);
+  }
+  if (job.companyId==='ge-vernova') {
+    if (/\btool crib (?:attendant|technician)\b/i.test(title)) return makeResult('logistics','job title',[title]);
+    if (/\bcores and castings materials internship\b/i.test(title)) {
+      const operations=duties.filter(duty=>/\b(?:standard work|process maps?|continuous improvement)\b/i.test(duty));
+      if (operations.length) return makeResult('operations','responsibilities',operations);
+    }
+  }
+  return null;
+}
+
 export function jobFunctionResult(job) {
   const title=typeof job==='string'?job:job?.title;
   const context=typeof job==='object'&&validFunctionContext(job.functionContext)?job.functionContext:null;
   const duties=cleanEvidence(context?.duties||[]);
   const skills=cleanEvidence(context?.requiredSkills||[]);
+  const portalFunction=verifiedPortalFunction(job,duties);
+  if (portalFunction) return portalFunction;
   const titleFunction=classifyTitle(title);
   const dutyFunctions=matchingFunctions(duties,dutyRules);
   const skillFunctions=matchingFunctions(skills,skillRules);

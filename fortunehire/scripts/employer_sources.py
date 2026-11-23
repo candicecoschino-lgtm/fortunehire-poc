@@ -5,6 +5,7 @@ from urllib.parse import urlencode, urlsplit, parse_qs
 import re
 from employer_adapters import Document, text
 import requested_ats_feeds as ats
+import verified_career_portals as portals
 from datetime import datetime,timezone,timedelta
 
 def salesforce_rows(body):
@@ -33,6 +34,8 @@ API='/hcmRestApi/resources/11.13.18.05/'
 
 def public_search(client, client_factory):
     """Inspect at most 60 recent results; publishing still checks each job."""
+    if client.host in portals.HOSTS:
+        return portals.discover(client)
     if client.host in ats.HOSTS:
         return ats.discover(client, client_factory)
     from public_listing_feeds import FEEDS, discover
@@ -182,6 +185,8 @@ def workday_unavailable(body,url):
 def public_fetch(client, url, client_factory):
     """Check the public job URL, then read its employer-published details."""
     status,body=client.get(url)
+    if status==200 and client.host in portals.HOSTS:
+        return 200,portals.enrich(body,url,client.host)
     if status==200 and client.host in ats.HOSTS:
         return ats.fetch(client,url,body)
     if status==200 and workday_unavailable(body,url):
