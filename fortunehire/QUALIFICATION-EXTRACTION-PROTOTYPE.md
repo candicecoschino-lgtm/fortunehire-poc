@@ -147,12 +147,138 @@ of all 4,307 existing job records.
    rules and direct employer application URLs.
 
 
-## November 24 targeted follow-up (not independently validated)
+## November 24 corrections
 
-The extractor was updated on the same draft PR branch to recognize additional preferred and required section headings, including explicit licensing and credential headings, dash-delimited inline headings, and standalone must-hold/must-maintain credential language after a responsibility boundary. Three focused synthetic regression cases were added for section transitions, conditional licensing, and inline heading separators.
+The incoming draft head was `1667bb6`. It already recognized credential
+headings, dash-delimited inline headings, and standalone “must hold” and
+“must maintain” statements. The remaining failures had four main causes.
 
-These are **development changes, not a new accuracy benchmark**. The original development numbers above remain historical results for the earlier revision. The November 23 independent holdout reported approximately 82.2% statement precision, 53.5% overall recall, and 49.9% required recall, and found preferred-to-required promotions, missing hard requirements, and unsupported statements. Its adjudication/reference files were not available in this editing session, so those metrics have **not** been recalculated. The fresh human-adjudicated holdout and source-specific review remain mandatory before merge or integration.
+- **Section scope leaked.** Expanded headings such as JPMorgan’s
+  qualifications/capabilities/skills, Phillips 66’s label suffixes, and
+  Verizon’s full “even better” heading now establish the correct scope. Nested
+  headings end with their lists. Unknown HTML headings, job duties, and
+  application and compensation sections close inherited qualification scope.
+- **Labels and clauses were read in isolation.** Home Depot-style headings
+  pair with numeric tenure values and empty placeholders are rejected. An
+  explicit floor in a qualification section can establish a requirement at
+  medium confidence. A floor in a preferred section stays preferred. Generic
+  criteria stay ambiguous where the wording does not establish a requirement.
+  Conflicting explicit labels for the same statement are retained as ambiguous.
+- **Obligations were mixed with duties.** In the captured Cencora Pharmacist
+  posting R2613180 the extractor now retains the pharmacy degree, resident-state
+  license, active Pennsylvania license, and the obligation to obtain or maintain
+  nonresident licenses as business needs dictate. It also retains complete
+  documented disjunctions and nested choices, including the final Centene
+  licensure option and Perplexity’s “at least one” technical list.
+- **Nonqualification text inherited a bucket.** The extractor screens out
+  application directions, salary ranges attached to qualifying text, employer
+  marketing, equal-opportunity language, template labels, and operational
+  actions ending in “when required.” These checks also apply to text supplied
+  through the dedicated fields. The verified-input routing is unchanged.
 
-The GitHub Actions JavaScript workflow passed for commit `41a6a78bb153f4287d2297451cd4758020493524`. That workflow result does **not** establish that the expanded Python extraction tests or dataset validator passed on this revision. Those commands must be rerun in the repository's normal development environment before reviewing this change for merge.
+## Before-and-after development replay
 
-Remaining priority risks: preferred-to-required promotions in untested employer templates, incomplete conditional/state-specific licensure, generic heading ambiguity, table and flattened-text boundaries, and boilerplate false positives. No production feeds, job classifications, public job data, search, or resume-matching code were changed in this update.
+Both revisions ran against the same cached inputs and unedited references.
+The original 21-case development set uses complete wording in the correct
+bucket. The 136-case November 23 set spans 25 employers and 13 methods. That
+set informed the changes below and is now development evidence. The
+source-only reference was rule-assisted and received no independent human
+adjudication. The separate blinded reference covers 11 usable jobs within
+the same replayed set.
+
+| Measure | Incoming draft `1667bb6` | Corrected |
+|---|---:|---:|
+| 21-case development required precision | 75/75 (100%) | 78/78 (100%) |
+| 21-case development required recall | 75/81 (92.6%) | 78/81 (96.3%) |
+| 21-case development preferred precision | 61/61 (100%) | 65/65 (100%) |
+| 21-case development preferred recall | 61/65 (93.8%) | 65/65 (100%) |
+| 136-case primary required precision | 288/312 (92.3%) | 409/426 (96.0%) |
+| 136-case primary required recall | 288/575 (50.1%) | 409/575 (71.1%) |
+| 136-case primary preferred precision | 334/392 (85.2%) | 426/440 (96.8%) |
+| 136-case primary preferred recall | 334/605 (55.2%) | 426/605 (70.4%) |
+| 136-case primary overall precision | 875/1,103 (79.3%) | 1,136/1,217 (93.3%) |
+| 136-case primary overall recall | 875/1,619 (54.0%) | 1,136/1,619 (70.2%) |
+
+| Primary replay error or coverage measure | Incoming draft | Corrected |
+|---|---:|---:|
+| Required missing, incomplete, or misclassified | 287 | 166 |
+| Preferred missing, incomplete, or misclassified | 271 | 179 |
+| Complete statements in the wrong bucket | 113 | 30 |
+| Preferred-to-required promotions against the fixed labels | 10 | 0 |
+| Partial wording or grouping differences | 35 | 17 |
+| Source-like output without a reference label | 71 | 31 |
+| Output without a literal match to one rendered source block | 9 | 3 |
+| Required alternatives or conditions recovered completely and correctly | 115/206 | 164/206 |
+| Required licenses or certifications recovered completely and correctly | 18/23 | 22/23 |
+
+The unmatched outputs include source-backed label/value joins and grouped
+choices. The three without a literal source-block match join choice lists
+across multiple blocks. The unmatched count does not establish a confirmed
+false-positive count. Forty-two required units with an alternative or
+condition still lack a complete correct match. That includes misses,
+bucket disagreements, and grouping differences. The replay does not isolate
+how many actually lost an option or condition. The targeted Cencora, Centene,
+and Perplexity fixtures assert the full source clause.
+
+In the blinded 11-job replay, required precision and recall changed from
+27/29 (93.1%) and 27/35 (77.1%) to 32/36 (88.9%) and 32/35 (91.4%).
+Preferred precision and recall changed from 27/31 (87.1%) and 27/40 (67.5%)
+to 39/41 (95.1%) and 39/40 (97.5%). Reviewers had disagreed on some numeric
+floors and generic labels. The drop in required precision is an additional
+reason to adjudicate those cases in the next evaluation. On the original
+21-case set, one GE Vernova accepted-major criterion remains ambiguous, three
+required statements lack a complete correct match, and no output went
+unmatched by wording.
+
+The default cap of 24 per bucket was held fixed for the comparison. It omitted
+51 preferred candidates and zero required candidates on the corrected replay.
+With the cap disabled for an audit only, preferred precision was 477/491
+(97.1%) and recall was 477/605 (78.8%). Required results were identical.
+
+### Employer and method limitations
+
+| Employer | Complete required before → after | Complete preferred before → after | Remaining issue |
+|---|---:|---:|---|
+| Cencora | 8 → 14 of 14 | 6 → 7 of 8 | The separate pharmacist fixture covers the known state obligations. Other templates still need fresh review. |
+| JPMorgan Chase | 0 → 38 of 38 | 0 → 21 of 29 | Regulatory, training, and travel material needs source-level adjudication. |
+| Phillips 66 | 1 → 32 of 60 | 0 → 44 of 45 | Bare “What You’ll Bring” remains ambiguous for nonnumeric criteria. The primary reference often labels those criteria required. |
+| Verizon | 6 → 8 of 8 | 0 → 7 of 17 | The ten remaining preferred reference labels are application or worksite logistics. The extractor excludes them. |
+| Home Depot | 20 → 26 of 31 | 38 → 40 of 40 | Some label/value pairs and physical criteria differ from the reference. |
+| Comcast | No required labels | 7 → 7 of 7 | Generic skills and degree-equivalence prose need adjudication. The blinded reference includes criteria omitted by the primary reference. |
+| Intuit | 0 → 2 of 3 | 6 → 4 of 6 | Splitting an independently labeled degree pair can differ from the reference unit. Generic traits remain ambiguous. |
+| ServiceNow | 0 → 3 of 7 | 3 → 3 of 3 | Plain experience counts and mixed baseline/preference language still need review. Tracking codes and bare labels are excluded. |
+| Perplexity | 0 → 4 of 5 | 11 → 17 of 17 | Nested choices can differ from the rubric’s grouping. |
+| Meta | 0 → 0 of 2 | No preferred labels | Flattened fields lack reliable statement boundaries and explicit strength labels. Keep the source-supported material ambiguous. |
+
+For example, corrected required recall was 82/84 for Oracle requisition
+details, 118/151 for general JobPosting JSON-LD, 43/99 for Disney metadata,
+and 35/59 for Greenhouse. Preferred recall was 81/146 for Oracle and 29/55
+for Greenhouse. These are replay denominators, with shared employer
+templates within methods. The original sample lacked usable Apple, NVIDIA,
+Salesforce and Fannie Mae captures. Some Cencora and Humana requests failed,
+and one Walmart posting supplied empty sections. Those gaps require source
+coverage review before any supported-method claim.
+
+### Automated checks and fresh validation
+
+All 226 Python tests and all 103 JavaScript tests passed locally. The
+dataset validator passed all 4,307 existing official job records. The Python
+suite ran on Windows with its temporary bare Git fixture repositories in
+the writable worktree. Seventeen new extraction regressions cover the
+confirmed parsing failure classes.
+
+Freeze the extractor before drawing at least 100 new verified postings.
+Exclude every tuning posting, archived duplicate, and repeated template
+body. Stratify by employer, source method, and qualification severity.
+For each method considered for deployment, aim for at least 30 postings
+or 100 reviewed hard statements where available. Have two human reviewers
+annotate complete source wording and strength without extractor output.
+Adjudicate disagreements, including numeric floors under generic headings,
+eligibility clauses, and nested alternatives. Score each bucket and source
+method with denominators and confidence intervals. Audit false positives,
+preferred-to-required promotions, and complete conditions and alternatives
+separately. Require required precision of at least 99% and recall of at
+least 95%, preferred precision of at least 95% and recall of at least 90%,
+and zero audited preferred promotions or lost mandatory alternatives before
+considering integration. Keep source-limited methods out of hard eligibility
+decisions until their evidence supports those gates.
