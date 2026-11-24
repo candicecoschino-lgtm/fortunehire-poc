@@ -222,9 +222,111 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Maintains active pharmacist license in home state and obtains/maintains required '
                          'non-resident state licenses as business needs dictate to support multi-state operations.'),
             ('required', 'Requires Pennsylvania active pharmacist license.'),
-            ('required', 'Requires a Degree in Pharmacy from an accredited College of Pharmacy. '
-                         'Unrestricted, current state license as a Registered Pharmacist in resident state is required.'),
+            ('required', 'Requires a Degree in Pharmacy from an accredited College of Pharmacy.'),
+            ('required', 'Unrestricted, current state license as a Registered Pharmacist in resident state is required.'),
         ])
+
+    def test_soft_skills_reset_strength_and_explicit_degree_preference_wins(self):
+        self.assert_statements({'description': '''
+            <p>Minimum Qualifications</p>
+            <p>Juris Doctor degree preferred, or equivalent compliance experience.</p>
+            <p>Preferred Qualifications</p>
+            <p>Experience presenting to agency staff.</p>
+            <p>Soft Skills:</p>
+            <ul><li>Ability to work independently.</li><li>Strong communication skills.</li></ul>
+        '''}, [
+            ('preferred', 'Juris Doctor degree preferred, or equivalent compliance experience.'),
+            ('preferred', 'Experience presenting to agency staff.'),
+            ('ambiguous', 'Ability to work independently.'),
+            ('ambiguous', 'Strong communication skills.'),
+        ])
+
+    def test_typical_tenure_is_ambiguous_and_a_wrapped_preference_is_complete(self):
+        self.assert_statements({'description': '''
+            <p>Education:</p>
+            <ul>
+                <li>Normally requires a minimum of two years of pharmacy experience.
+                Technician certification from a national</li>
+                <li>certification provider or another comparable credential is preferred.</li>
+                <li>An active technician or trainee license is required.
+                For further information, please consult the state board.</li>
+            </ul>
+        '''}, [
+            ('ambiguous', 'Normally requires a minimum of two years of pharmacy experience.'),
+            ('preferred', 'Technician certification from a national certification provider or another '
+                          'comparable credential is preferred.'),
+            ('required', 'An active technician or trainee license is required.'),
+        ])
+
+    def test_topical_sections_read_strength_labels_and_keep_or_clause(self):
+        self.assert_statements({'description': '''
+            <p>Responsibilities:</p><p>Prepare billing records.</p>
+            <p>Education and Work Experience</p>
+            <ul>
+                <li>Requires broad training in accounting, generally obtained through an associate degree.</li>
+                <li>Minimum 5 years of accounting software experience.</li>
+                <li>Must have advanced Excel skills. Writing formulas and pivot tables.</li>
+            </ul>
+            <p>Education/Experience:</p>
+            <p>Required A High School diploma</p><p>Required or equivalent work experience</p>
+            <p>Preferred A Bachelor's Degree in a related field</p>
+            <p>Candidate Experience: Required 2+ years of outreach experience</p>
+            <p>Required 4+ years of experience in Event Planning</p>
+        '''}, [
+            ('required', 'Requires broad training in accounting, generally obtained through an associate degree.'),
+            ('required', 'Minimum 5 years of accounting software experience.'),
+            ('required', 'Must have advanced Excel skills. Writing formulas and pivot tables.'),
+            ('required', 'Required A High School diploma Required or equivalent work experience'),
+            ('preferred', "Preferred A Bachelor's Degree in a related field"),
+            ('required', 'Candidate Experience: Required 2+ years of outreach experience'),
+            ('required', 'Required 4+ years of experience in Event Planning'),
+        ])
+
+    def test_timed_credentials_and_license_conditions_keep_their_complete_wording(self):
+        self.assert_statements({'description': '''
+            <p>Work Experience</p>
+            <ul>
+                <li>Candidates must be willing to obtain a Pharmacy Operations (PO) credential within six months.</li>
+                <li>An active state license is required. If you live outside the state, a second license is required.</li>
+                <li>Experience with medical billing helpful.</li>
+                <li>Requires computer skills. A current driver's license is required.</li>
+            </ul>
+        '''}, [
+            ('required', 'Candidates must be willing to obtain a Pharmacy Operations (PO) credential within six months.'),
+            ('required', 'An active state license is required. If you live outside the state, a second license is required.'),
+            ('preferred', 'Experience with medical billing helpful.'),
+            ('required', 'Requires computer skills.'),
+            ('required', "A current driver's license is required."),
+        ])
+
+    def test_nested_travel_addresses_are_skipped_and_sibling_requirements_survive(self):
+        self.assert_statements({'description': '''
+            <p>Required Qualifications</p>
+            <ul>
+                <li>Ability to travel to the locations below:
+                    <ul><li>25 Main Street, Austin 78701</li></ul>
+                </li>
+                <li>Graduate from an accredited Nurse Practitioner or Physician Assistant program.</li>
+                <li>Reside within a commutable distance of the clinic.</li>
+                <li>Ability to lift up to forty pounds is required.</li>
+                <li>Must be able to lift 100 lbs</li>
+            </ul>
+            <p>Preferred Qualifications</p>
+            <ul>
+                <li>Ability and willingness to provide coverage at other locations as needed.</li>
+                <li>Experience treating pediatric patients.</li>
+            </ul>
+        '''}, [
+            ('required', 'Graduate from an accredited Nurse Practitioner or Physician Assistant program.'),
+            ('preferred', 'Experience treating pediatric patients.'),
+        ])
+
+    def test_choice_lead_in_stays_attached_to_credential_options(self):
+        wording = (
+            'License/Certification: One of the following is preferred. Licensed Practical Nurse (LPN); '
+            'Licensed Social Worker (LSW); Registered Nurse (RN) preferred.'
+        )
+        self.assert_statements({'description': f'<p>{wording}</p>'}, [('preferred', wording)])
 
     def test_cencora_warehouse_keeps_education_equivalence_and_tenure(self):
         self.assert_statements({'description': '''
