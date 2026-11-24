@@ -145,3 +145,14 @@ of all 4,307 existing job records.
    join validated evidence by job ID and source hash. Ignore stale or
    mismatched evidence and preserve the existing searchable-job eligibility
    rules and direct employer application URLs.
+
+
+## November 24 targeted follow-up (not independently validated)
+
+The extractor was updated on the same draft PR branch to recognize additional preferred and required section headings, including explicit licensing and credential headings, dash-delimited inline headings, and standalone must-hold/must-maintain credential language after a responsibility boundary. Three focused synthetic regression cases were added for section transitions, conditional licensing, and inline heading separators.
+
+These are **development changes, not a new accuracy benchmark**. The original development numbers above remain historical results for the earlier revision. The November 23 independent holdout reported approximately 82.2% statement precision, 53.5% overall recall, and 49.9% required recall, and found preferred-to-required promotions, missing hard requirements, and unsupported statements. Its adjudication/reference files were not available in this editing session, so those metrics have **not** been recalculated. The fresh human-adjudicated holdout and source-specific review remain mandatory before merge or integration.
+
+The GitHub Actions JavaScript workflow passed for commit `41a6a78bb153f4287d2297451cd4758020493524`. That workflow result does **not** establish that the expanded Python extraction tests or dataset validator passed on this revision. Those commands must be rerun in the repository's normal development environment before reviewing this change for merge.
+
+Remaining priority risks: preferred-to-required promotions in untested employer templates, incomplete conditional/state-specific licensure, generic heading ambiguity, table and flattened-text boundaries, and boilerplate false positives. No production feeds, job classifications, public job data, search, or resume-matching code were changed in this update.
