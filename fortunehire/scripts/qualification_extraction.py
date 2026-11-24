@@ -288,15 +288,27 @@ CONDITIONAL_ELIGIBILITY = re.compile(
 )
 CANDIDATE_AGE = re.compile(r'^candidates? must be (?:at least \d+ years? old|\d+ years? or older)\b', re.I)
 SUMMARY_REQUIREMENT = re.compile(
-    r'(?:^|(?<=[.!?])\s+)((?:you must be comfortable|to be successful,? you need to be)\b[^.!?]+[.!?]?)',
-    re.I,
+    r'^(?:you must be comfortable\b|to be successful,? you need to be\b'
+    r'|(?:in addition, )?you must possess\b.{0,100}\b(?:skills?|expertise|experience)\b'
+    r'|this (?:role|position) requires\b.{0,100}\b(?:skills?|expertise|experience)\b'
+    r'|(?:excellent|strong) .{1,180}\bskills?\b.*\b(?:is|are) (?:also )?required[.!?]?$'
+    r'|the desire and ability to .+\bis essential[.!?]?$'
+    r'|you will be responsible for having a reliable personal vehicle and (?:a )?valid driver[’\']s license\b)', re.I,
 )
 JOB_LOGISTICS = re.compile(
     r'^(?:(?:ability to|willingness to|candidates? must be able to) '
     r'(?:travel\b|commute\b|(?:temporarily )?work at (?:alternative|alternate|other) sites?\b'
-    r'|work in an environment that operates 24\s*/\s*7\b)'
-    r'|all physical requirements are expected with reasonable accommodations\b)', re.I,
+    r'|work in an environment that operates 24\s*/\s*7\b|participate in shift rotations\b)'
+    r'|(?:domestic and/or international |domestic |international )?travel up to \d+%'
+    r'|travel(?:ing|ling)? within\b|you will be required to work shift work\b'
+    r'|can (?:carry/lift|lift) (?:up to )?\d+ (?:lbs|pounds)\b'
+    r'|ability to train as [\w -]+ and adhere to standards\b'
+    r'|all physical requirements are expected with reasonable accommodations\b'
+    r'|willingness and demonstrated ability to work in the following physical conditions\b)', re.I,
 )
+SENTENCE_BOUNDARY = re.compile(r'(?<=[.!?])(?<!\b[A-Za-z]\.)\s+(?=[A-Z])')
+INLINE_APPLICATION_DEADLINE = re.compile(r'^application deadline\s*[:：]\s*\S', re.I)
+DUTY_LEAD = re.compile(r'\bwhile you\s*:$', re.I)
 TENURE_NUMBER = r'(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)'
 SHARED_SKILL_TENURE = (
     rf'must have (?:at least )?{TENURE_NUMBER}\s+(?:years?|months?) of '
@@ -332,6 +344,7 @@ QUALIFICATION_CUE = re.compile(
     r'|self-directed|existing network|strong account planning|employment visa|work authorization assistance'
     r'|you[’\']ve built|mechanical inclination'
     r'|intellectual curiosity|clear communicator|strong writer|self-starter|professional in human resources|data analysis'
+    r'|available online portfolio'
     r'|flexible (?:with scheduling|work schedule)|punctual attendance|written and verbal communication'
     r'|have (?:independently |successfully )?(?:led|built|delivered|turned)|you[’\']ve (?:designed|directed|been))\b', re.I,
 )
@@ -382,6 +395,8 @@ def heading_parts(line):
     # Normalize the heading for comparison while preserving the source wording.
     if FOOTER.search(line) or EQUAL_OPPORTUNITY.search(line):
         return 'stop', None, ''
+    if DUTY_LEAD.search(line):
+        return 'duties', None, ''
     parts = re.split(r'[:：]|(?<=\s)[–—-](?=\s)', line, maxsplit=1)
     candidates = [(line, '')]
     run_on = RUN_ON_HEADING.match(line)
@@ -467,6 +482,8 @@ def statement_blocks(blocks, default_kind):
             statement = ELIGIBILITY_DISCLOSURE.split(statement, maxsplit=1)[0]
         if not statement or SECTION_PLACEHOLDER.match(statement):
             continue
+        if kind is None and INLINE_APPLICATION_DEADLINE.match(statement):
+            continue
         next_kind, next_heading, text = heading_parts(statement)
         if is_heading and next_kind is None:
             next_kind, text = 'stop', ''
@@ -519,26 +536,51 @@ def statement_blocks(blocks, default_kind):
         yield pending
 
 
-def qualification_statements(blocks, default_kind):
-    for text, kind, heading, number, inherited_list in statement_blocks(blocks, default_kind):
-        text = REFERENCE_SUFFIX.sub('', text)
-        if kind in (None, 'duties'):
-            explicit = SUMMARY_REQUIREMENT.search(text)
-            if explicit:
-                yield explicit[1], 'required', heading, number, True
-                continue
-        if kind in KINDS:
-            criteria = INLINE_SKILL_TENURE.split(text, maxsplit=1)
-            if len(criteria) == 2 and TYPE_RULES['education'].search(criteria[0]):
-                for criterion in criteria:
-                    yield criterion, kind, heading, number, inherited_list
-                continue
-        mixed = MIXED_CREDENTIALS.fullmatch(text) if kind not in ('stop', 'duties', 'preferred') else None
-        if mixed:
-            yield mixed[1], 'required', heading, number, inherited_list
-            yield mixed[2], 'preferred', heading, number, inherited_list
+def without_job_logistics(text):
+    """Drop standalone logistics sentences while keeping adjacent criteria whole."""
+    parts = []
+    for sentence in SENTENCE_BOUNDARY.split(text):
+        if JOB_LOGISTICS.match(sentence):
+            if parts:
+                yield ' '.join(parts)
+                parts.clear()
         else:
-            yield text, kind, heading, number, inherited_list
+            parts.append(sentence)
+    if parts:
+        yield ' '.join(parts)
+
+
+def summary_requirements(text):
+    sentences = SENTENCE_BOUNDARY.split(text)
+    for i, sentence in enumerate(sentences):
+        if SUMMARY_REQUIREMENT.match(sentence):
+            following = sentences[i + 1:i + 2]
+            if following and ALTERNATIVE_START.match(following[0]):
+                sentence = f'{sentence} {following[0]}'
+            yield sentence
+
+
+def qualification_statements(blocks, default_kind):
+    for raw, kind, heading, number, inherited_list in statement_blocks(blocks, default_kind):
+        for text in without_job_logistics(REFERENCE_SUFFIX.sub('', raw)):
+            if kind in (None, 'duties'):
+                explicit = list(summary_requirements(text))
+                if explicit:
+                    for criterion in explicit:
+                        yield criterion, 'required', heading, number, True
+                    continue
+            if kind in KINDS:
+                criteria = INLINE_SKILL_TENURE.split(text, maxsplit=1)
+                if len(criteria) == 2 and TYPE_RULES['education'].search(criteria[0]):
+                    for criterion in criteria:
+                        yield criterion, kind, heading, number, inherited_list
+                    continue
+            mixed = MIXED_CREDENTIALS.fullmatch(text) if kind not in ('stop', 'duties', 'preferred') else None
+            if mixed:
+                yield mixed[1], 'required', heading, number, inherited_list
+                yield mixed[2], 'preferred', heading, number, inherited_list
+            else:
+                yield text, kind, heading, number, inherited_list
 
 
 def has_scoped_tenure_floor(text, heading):

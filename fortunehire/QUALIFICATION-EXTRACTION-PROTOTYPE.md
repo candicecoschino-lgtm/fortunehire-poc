@@ -321,3 +321,37 @@ several work logistics as qualifications, five required and six ambiguous
 matches became omissions because the corrected extractor leaves those
 logistics to the posting. Preferred counts were unchanged. The Amazon
 follow-up leaves production feeds and resume matching unchanged.
+
+### Second Amazon cohort follow-up
+
+The second 30-posting Amazon cohort used a new, frozen Gold workbook and was
+scored before these changes. That initial replay exposed six omitted applicant
+criteria, two complete criteria joined to work logistics, and eleven Required
+outputs containing work logistics, physical demands, training, or duties.
+The parser now retains explicit applicant sentences in mixed role prose,
+preserves a portfolio criterion, and separates standalone logistics sentences
+from the qualification text. An inline application deadline in the opening
+description no longer hides applicant criteria. A duty-list lead-in closes
+qualification scope before the listed actions.
+
+The corrected replay uses the same 30 postings, frozen Gold, and eligibility
+exclusions as the baseline. Both cap settings yield identical results.
+
+| Measure | Before | After |
+|---|---:|---:|
+| Required precision in matching scope | 105/119 (88.2%) | 113/114 (99.1%) |
+| Required recall in matching scope | 105/113 (92.9%) | 113/113 (100%) |
+| Preferred precision in matching scope | 116/116 (100%) | 116/116 (100%) |
+| Preferred recall in matching scope | 116/121 (95.9%) | 116/121 (95.9%) |
+
+All 51 in-scope mandatory alternatives and conditions survived, and there
+were zero preferred-to-required promotions. The remaining Required emission
+repeats UX experience without the stated tenure minimum. Five Preferred
+Gold units still lack strict matches. The original 21-case and archived
+136-case development benchmarks retained their previous scores.
+
+All 236 Python tests and 103 JavaScript tests passed, and the existing
+dataset validator passed for all 4,307 records. This cohort guided the
+second correction. Its post-fix score is development evidence. Keep PR #19
+in draft pending validation on another unused sample. Resume matching and
+production data are unchanged.

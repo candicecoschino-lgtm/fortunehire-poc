@@ -525,6 +525,81 @@ class QualificationExtractionTests(unittest.TestCase):
         ])
 
 
+    def test_inline_deadline_does_not_hide_explicit_applicant_criteria(self):
+        technical = 'Excellent implementation skills with a proven documentation method is also required.'
+        collaboration = 'The desire and ability to work in a collaborative environment is essential.'
+        self.assert_statements({'description': f'''
+            Description
+            Application deadline: Applications will be accepted on an ongoing basis
+            The ideal candidate should be independent. {technical} {collaboration} The team will install equipment.
+            Key responsibilities
+            Build production dashboards.
+            Basic Qualifications
+            Have an available online portfolio
+        '''}, [
+            ('required', technical),
+            ('required', collaboration),
+            ('required', 'Have an available online portfolio'),
+        ])
+
+    def test_explicit_skills_are_retained_in_mixed_role_prose(self):
+        construction = ('This role requires strong construction expertise, commercial acumen, '
+                        'and the ability to manage concurrent projects independently.')
+        analytical = 'In addition, you must possess strong analytical skills with demonstrated problem solving ability.'
+        self.assert_statements({'description': f'''
+            Description
+            {construction} You will manage budgets and coordinate the work.
+            Key responsibilities
+            To be successful you should be curious. {analytical} You will support the team.
+        '''}, [
+            ('required', construction),
+            ('required', analytical),
+        ])
+
+    def test_duty_lead_and_mixed_travel_do_not_hide_a_license_requirement(self):
+        license_requirement = ("You will be responsible for having a reliable personal vehicle and a valid driver's license "
+                               "to travel within the regional work area.")
+        self.assert_statements({'description': f'''
+            Work prioritization and communication are critical to success. Traveling within the regional work area is required.
+            Essential Requirements
+            As a technician, you have good technical abilities and demonstrate a breadth of knowledge while you:
+            -Take ownership of technical issues.
+            -Solve problems at their root.
+            -Maintain service level agreements.
+            You will be required to work shift work. Traveling within the regional work area is required. {license_requirement}
+            Basic Qualifications
+            High school diploma or equivalent
+        '''}, [
+            ('required', license_requirement),
+            ('required', 'High school diploma or equivalent'),
+        ])
+
+    def test_travel_sentence_stays_separate_from_shared_skills_requirement(self):
+        education = "Master's degree and one year of experience or bachelor's degree and five years of experience."
+        skills = ('Must have one year of experience in the following skill(s): '
+                  '(1) administering Linux or Windows; and (2) automating network operations.')
+        travel = 'Domestic and/or international travel up to 25% to perform role responsibilities may be required.'
+        self.assert_statements({'description': f'Basic Qualifications\n{education} {skills} {travel}#0000'}, [
+            ('required', education),
+            ('required', skills),
+        ])
+
+    def test_logistics_and_physical_demands_do_not_become_resume_qualifications(self):
+        self.assert_statements({'description': '''
+            Travel up to 50% may be required
+            Basic Qualifications
+            Can carry/lift up to 50 lbs, stand/walk during shifts, and frequently bend and reach
+            Can lift up to 49 pounds during shifts
+            Ability to train as a drone operator and adhere to standards.
+            Willingness to participate in shift rotations to support 24/7 data center operations
+            Experience designing shift scheduling systems.
+            Physical Requirements
+            Willingness and demonstrated ability to work in the following physical conditions with reasonable accommodations:
+        '''}, [
+            ('required', 'Experience designing shift scheduling systems.'),
+        ])
+
+
 class QualificationInputTests(unittest.TestCase):
     def test_apple_uses_matched_dedicated_fields(self):
         url = 'https://jobs.apple.com/en-us/details/123-5/example'
