@@ -162,6 +162,48 @@ class QualificationExtractionTests(unittest.TestCase):
                 extract_qualifications({}, invalid)
 
 
+    def test_preferred_credential_heading_after_required_remains_preferred(self):
+        result = extract_qualifications({'description': '''
+            Required Qualifications
+            Five years of experience in pharmacy operations.
+            Preferred Certifications:
+            Certified pharmacy technician credential.
+            Preferred Experience:
+            Experience with robotics and workflow automation.
+        '''}, URL)
+        self.assertEqual([(item.kind, item.text) for item in result.evidence], [
+            ('required', 'Five years of experience in pharmacy operations.'),
+            ('preferred', 'Certified pharmacy technician credential.'),
+            ('preferred', 'Experience with robotics and workflow automation.'),
+        ])
+
+    def test_required_license_section_and_explicit_outside_requirement(self):
+        result = extract_qualifications({'description': '''
+            Minimum Licenses
+            Active Pennsylvania pharmacist license.
+            Must maintain nonresident pharmacist licensure where required.
+            Responsibilities
+            Coordinate medicine fulfillment.
+            Must hold an active resident-state pharmacist license.
+        '''}, URL)
+        self.assertEqual([(item.kind, item.text) for item in result.evidence], [
+            ('required', 'Active Pennsylvania pharmacist license.'),
+            ('required', 'Must maintain nonresident pharmacist licensure where required.'),
+            ('required', 'Must hold an active resident-state pharmacist license.'),
+        ])
+
+    def test_dash_delimited_preferred_heading_does_not_inherit_required(self):
+        result = extract_qualifications({'description': '''
+            Required Qualifications - Three years of experience in healthcare operations.
+            Desired Experience - Experience with inventory management systems.
+        '''}, URL)
+        self.assertEqual([(item.kind, item.text) for item in result.evidence], [
+            ('required', 'Three years of experience in healthcare operations.'),
+            ('preferred', 'Experience with inventory management systems.'),
+        ])
+
+
+
 class QualificationInputTests(unittest.TestCase):
     def test_apple_uses_matched_dedicated_fields(self):
         url = 'https://jobs.apple.com/en-us/details/123-5/example'
