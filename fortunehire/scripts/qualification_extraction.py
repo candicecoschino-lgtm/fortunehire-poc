@@ -155,7 +155,7 @@ def field_blocks(value):
     return (text for text, _ in positioned_blocks(value))
 
 
-QUAL = r'(?:qualifications?|requirements?|(?:technical )?skills?(?:\s*(?:and|&|/)\s*(?:experience|abilities))?|education(?:\s+and\s+experience)?|experience)'
+QUAL = r'(?:qualifications?|requirements?|(?:technical )?skills?(?:\s*(?:and|&|/)\s*(?:experience|abilities))?|education(?:\s+and\s+experience)?|experience|licen[cs](?:e|ure)s?|certifications?|credentials?|clearance)'
 REQUIRED_HEADING = re.compile(
     rf'(?:(?:(?:additional|job|role|position) )?(?:required|minimum|basic|mandatory|essential|critical)(?: required)? {QUAL}'
     r'|(?:job|position|minimum) requirements?(?: we seek)?|minimum qualifications and requirements'
@@ -163,11 +163,14 @@ REQUIRED_HEADING = re.compile(
     r'|what(?:[’\']s| is) needed to succeed \(minimum qualifications\)'
     r'|(?:basic|minimum|required) (?:qualifications?|requirements?) \(required skills\s*(?:/| and )\s*experience\)'
     r'|what you(?:[’\']ll| will) need(?: to have)?|what you need to succeed'
+    r'|(?:required|minimum|mandatory|essential) (?:licenses?|licensures?|certifications?|credentials?|clearances?)'
     r'|you(?:[’\']ll| will) (?:have|need)(?: (?:the following|to have))?|required|requirements)', re.I,
 )
 PREFERRED_HEADING = re.compile(
     rf'(?:(?:additional )?(?:preferred|desired|desirable|optional) {QUAL}|preferred(?: qualifications?)?'
     r'|nice[- ]to[- ]have|desired|optional|bonus points|what sets you apart|desired characteristics(?: and eligibility| & eligibility)?'
+    r'|(?:additional |other )?(?:preferred|desired|optional) (?:technical |professional )?(?:background|experience|competencies|criteria|credentials|certifications|education|attributes|knowledge|skills)(?: (?:and|&) (?:experience|skills|qualifications))?'
+    r'|what we (?:prefer|would like)|what (?:else|we) (?:would love|love) to see|bonus if you have'
     r'|even better(?:,)? (?:if you have|you may have)|it[’\']d be great if you (?:also )?have'
     r'|preferred skills\s*/\s*certifications?|preferred qualifications \(desired skills\s*(?:/| and )\s*experience\)'
     r'|what will give you a competitive edge \(preferred (?:qualifications|skills)\)'
@@ -228,12 +231,14 @@ PREFERRED_LINE = re.compile(
 )
 REQUIRED_LINE = re.compile(
     r'^(?:required|mandatory|minimum)\s*:|\b(?:is|are) (?:required|mandatory)\b|'
-    r'^must (?:have|hold|possess|be|demonstrate|meet)\b|\b(?:license|certification|degree) required\b'
+    r'^must (?:have|hold|possess|be|demonstrate|meet|maintain|obtain|secure|carry|retain)\b|\b(?:license|certification|degree|licensure) required\b'
     r'|(?<!as )(?<!if )\brequired[. ]*$|\bmust be eligible to obtain\b', re.I,
 )
 EXPLICIT_OUTSIDE = re.compile(
     r'\b(?:degree|\d+\+? years?|certification|credential|license|licensure)\b.*\brequired[. ]*$'
     r'|\bmust be eligible to obtain\b'
+    r'|^must (?:have|hold|possess|maintain|obtain|secure|carry|retain)\b.{0,180}\b(?:licen[cs]\w*|certif\w*|credential|clearance)\b'
+    r'|^(?:an? )?active\b.{0,100}\b(?:licen[cs]\w*|certif\w*)\b.{0,50}\brequired\b'
     r'|^(?:(?:field )?experience\b|able and willing to work\b|strong .{1,50}\bskills?\b).+\b(?:required|preferred)[. ]*$', re.I,
 )
 
@@ -269,7 +274,7 @@ QUALIFICATION_LABEL = re.compile(r'(?:minimum education|required field of study|
 def heading_parts(line):
     # Only the comparison form is normalized. Stored evidence retains the source
     # words, capitalization and punctuation.
-    heading, separator, tail = re.split(r'([:：])', line, maxsplit=1) if re.search(r'[:：]', line) else (line, '', '')
+    heading, separator, tail = re.split(r'([:：]|(?<=\s)[–—-](?=\s))', line, maxsplit=1) if re.search(r'[:：]|\s[–—-]\s', line) else (line, '', '')
     key = normalize('NFKC', heading.translate(FORMAT_MARKS)).strip().rstrip(' .…–—-')
     if separator and QUALIFICATION_LABEL.fullmatch(key):
         if not tail.strip() or FOOTER.search(tail.strip()):
@@ -337,7 +342,7 @@ def classify_statement(text, kind, inherited_list, field, types):
     if kind == 'stop' and not EXPLICIT_OUTSIDE.search(text):
         return None
     preferred = bool(PREFERRED_LINE.search(text))
-    required = bool(REQUIRED_LINE.search(text)) and not re.search(r'\bnot required\b', text, re.I)
+    required = bool(REQUIRED_LINE.search(text) or (kind == 'stop' and EXPLICIT_OUTSIDE.search(text))) and not re.search(r'\bnot required\b', text, re.I)
     if field == 'educationRequirements' and 'education' not in types:
         return None
     if field == 'experienceRequirements' and not {'experience', 'specialized_experience'}.intersection(types):
