@@ -282,3 +282,42 @@ least 95%, preferred precision of at least 95% and recall of at least 90%,
 and zero audited preferred promotions or lost mandatory alternatives before
 considering integration. Keep source-limited methods out of hard eligibility
 decisions until their evidence supports those gates.
+
+## Amazon review follow-up
+
+The 30 Amazon postings were replayed against the same frozen Gold workbook
+after inspecting the first replay's required misses. This is a development
+replay used to guide fixes. Fresh postings and independent human adjudication
+remain necessary before a release decision.
+
+The extractor separates an education-and-tenure alternative from an
+independent skill minimum in a shared paragraph. A numbered list governed by
+one tenure minimum stays together, including plain-text lists. The parser also
+retains the explicit applicant clauses and short Basic Qualifications missed in
+the first replay. Recognizable travel, alternate-site training and related
+operational context stay outside offline resume qualification evidence.
+
+| Measure | Before | After |
+|---|---:|---:|
+| Required precision in matching scope | 105/114 (92.1%) | 118/118 (100%) |
+| Required recall in matching scope | 105/118 (89.0%) | 118/118 (100%) |
+| Preferred precision | 122/124 (98.4%) | 122/124 (98.4%) |
+| Preferred recall | 122/127 (96.1%) | 122/127 (96.1%) |
+| Required logic gaps in matching scope | 3/57 | 0/57 |
+| Preferred-to-required promotions | 0 | 0 |
+
+The matching-scope comparison excludes the same six Gold statements and two
+extractor statements involving citizenship, immigration status or clearance.
+The frozen reference and raw replay retain them. Before applying those
+exclusions, corrected required precision was 118/120 (98.3%) and recall
+was 118/124 (95.2%). The default cap of 24 and uncapped runs emitted the
+same evidence in both revisions. Five preferred omissions and two overlapping
+preferred outputs remain outside this required-extraction fix.
+
+All 231 Python tests and 103 JavaScript tests passed. The validator passed
+all 4,307 existing official job records. The original 21-case development
+replay was unchanged. Against the older 136-case reference, which counted
+several work logistics as qualifications, five required and six ambiguous
+matches became omissions because the corrected extractor leaves those
+logistics to the posting. Preferred counts were unchanged. The Amazon
+follow-up leaves production feeds and resume matching unchanged.

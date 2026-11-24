@@ -282,9 +282,30 @@ DUTY_SECTION_EVIDENCE = re.compile(
 )
 CONDITIONAL_ELIGIBILITY = re.compile(
     r'^(?:candidates(?: for .{1,90}? positions)? must be (?:a [\w.]+ citizen|legally authorized|eligible to work)'
-    r'|this position is subject to [^.]+ qualification requirements for\b)', re.I,
+    r'|this position is subject to [^.]+ qualification requirements for\b'
+    r'|(?:export control license\s*:\s*)?this (?:position|role) may require a deemed export control license\b'
+    r'.*\bplacement is contingent\b)', re.I,
+)
+CANDIDATE_AGE = re.compile(r'^candidates? must be (?:at least \d+ years? old|\d+ years? or older)\b', re.I)
+SUMMARY_REQUIREMENT = re.compile(
+    r'(?:^|(?<=[.!?])\s+)((?:you must be comfortable|to be successful,? you need to be)\b[^.!?]+[.!?]?)',
+    re.I,
+)
+JOB_LOGISTICS = re.compile(
+    r'^(?:(?:ability to|willingness to|candidates? must be able to) '
+    r'(?:travel\b|commute\b|(?:temporarily )?work at (?:alternative|alternate|other) sites?\b'
+    r'|work in an environment that operates 24\s*/\s*7\b)'
+    r'|all physical requirements are expected with reasonable accommodations\b)', re.I,
 )
 TENURE_NUMBER = r'(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)'
+SHARED_SKILL_TENURE = (
+    rf'must have (?:at least )?{TENURE_NUMBER}\s+(?:years?|months?) of '
+    r'(?:[\w-]+ ){0,5}experience in the following skills?(?:\(s\))?\s*:'
+)
+SHARED_SKILL_HEADING = re.compile(SHARED_SKILL_TENURE, re.I)
+INLINE_SKILL_TENURE = re.compile(rf'(?<=[.!?])\s+(?={SHARED_SKILL_TENURE})', re.I)
+NUMBERED_SKILL = re.compile(r'^\s*(?:\(\d+\)|\d+[.)])\s+')
+REFERENCE_SUFFIX = re.compile(r'(?<=[.!?])\s*#\d{4}$')
 TENURE_FLOOR = re.compile(
     rf'^(?:you (?:have|bring) )?(?:(?:a minimum of |minimum(?: of)? |at least ){TENURE_NUMBER}\s+'
     rf'|{TENURE_NUMBER}\s*(?:\+|(?:or|and) more|plus)\s*)(?:years?|months?)\b', re.I,
@@ -304,10 +325,10 @@ TYPE_RULES = {kind: re.compile(pattern, re.I) for kind, pattern in TYPE_RULES.it
 QUALIFICATION_CUE = re.compile(
     r'\b(?:experience|knowledge|skills?|ability to|familiarity|proficien\w*|'
     r'competenc\w*|understanding|track record|demonstrated|expertise|background in|certificat\w*|'
-    r'licen[cs]\w*|degree|diploma|eligible|fluency|fluent|bilingual|willingness|work flexible hours'
+    r'licen[cs]\w*|degree|diploma|eligible|fluency|fluent(?:ly)?|bilingual|willingness|work flexible hours'
     r'|exposure to|analytical mindset|attention to detail|comfort(?:able)? (?:with|managing|working|building)|collaborative and persuasive'
     r'|proven (?:record|success|ability)|skilled at|openness to|passion for|experienced in'
-    r'|financial acumen|collaborative mindset|tech-savvy mindset|commitment to continuous learning'
+    r'|financial acumen|functional specifications|collaborative mindset|tech-savvy mindset|commitment to continuous learning'
     r'|self-directed|existing network|strong account planning|employment visa|work authorization assistance'
     r'|you[’\']ve built|mechanical inclination'
     r'|intellectual curiosity|clear communicator|strong writer|self-starter|professional in human resources|data analysis'
@@ -394,13 +415,42 @@ def heading_parts(line):
     return None, None, line
 
 
+def grouped_skill_blocks(blocks):
+    """Keep a shared tenure threshold attached to its entire skills list."""
+    group = None
+    child_list = None
+    for number, (raw, path, is_heading) in enumerate(blocks, start=1):
+        if group:
+            first, lead, parent, members = group
+            nested = False
+            if path is not None and parent is not None and len(path) > len(parent) and path[:len(parent)] == parent:
+                root = path[:len(parent) + 1]
+                if child_list is None:
+                    child_list = root
+                nested = root == child_list
+            if not is_heading and (nested or path == parent and NUMBERED_SKILL.match(raw)):
+                members.append(raw.strip())
+                continue
+            yield first, ' '.join([lead, *members]), parent, False
+            group = None
+            child_list = None
+        intro = LIST_ITEM.sub('', SPACE.sub(' ', raw)).strip()
+        if not is_heading and SHARED_SKILL_HEADING.fullmatch(intro):
+            group = (number, intro, path, [])
+        else:
+            yield number, raw, path, is_heading
+    if group:
+        first, lead, parent, members = group
+        yield first, ' '.join([lead, *members]), parent, False
+
+
 def statement_blocks(blocks, default_kind):
     kind, heading = default_kind, None
     pending = None
     previous_path = None
     lead_in = None
     scoped_sections = []
-    for number, (raw, path, is_heading) in enumerate(blocks, start=1):
+    for number, raw, path, is_heading in grouped_skill_blocks(blocks):
         while scoped_sections:
             section_path, parent_kind, parent_heading = scoped_sections[-1]
             if path and path[:len(section_path)] == section_path:
@@ -471,6 +521,18 @@ def statement_blocks(blocks, default_kind):
 
 def qualification_statements(blocks, default_kind):
     for text, kind, heading, number, inherited_list in statement_blocks(blocks, default_kind):
+        text = REFERENCE_SUFFIX.sub('', text)
+        if kind in (None, 'duties'):
+            explicit = SUMMARY_REQUIREMENT.search(text)
+            if explicit:
+                yield explicit[1], 'required', heading, number, True
+                continue
+        if kind in KINDS:
+            criteria = INLINE_SKILL_TENURE.split(text, maxsplit=1)
+            if len(criteria) == 2 and TYPE_RULES['education'].search(criteria[0]):
+                for criterion in criteria:
+                    yield criterion, kind, heading, number, inherited_list
+                continue
         mixed = MIXED_CREDENTIALS.fullmatch(text) if kind not in ('stop', 'duties', 'preferred') else None
         if mixed:
             yield mixed[1], 'required', heading, number, inherited_list
@@ -486,14 +548,15 @@ def has_scoped_tenure_floor(text, heading):
 
 
 def classify_statement(text, kind, heading, inherited_list, field, types):
-    if EMPTY.fullmatch(text) or BOILERPLATE.search(text) or FOOTER.search(text):
+    if EMPTY.fullmatch(text) or BOILERPLATE.search(text) or FOOTER.search(text) or JOB_LOGISTICS.match(text):
         return None
     license_obligation = bool(LICENSE_OBLIGATION.search(text))
     credential_required = bool(EXPLICIT_CREDENTIAL.search(text))
     conditional_eligibility = bool(CONDITIONAL_ELIGIBILITY.search(text))
+    candidate_age = bool(CANDIDATE_AGE.match(text))
     if kind == 'stop' and not conditional_eligibility:
         return None
-    if kind == 'duties' and not (license_obligation or credential_required or conditional_eligibility
+    if kind == 'duties' and not (license_obligation or credential_required or conditional_eligibility or candidate_age
                                  or DUTY_SECTION_EVIDENCE.match(text)):
         return None
     content = text
@@ -502,7 +565,8 @@ def classify_statement(text, kind, heading, inherited_list, field, types):
         if label.strip() == heading:
             content = tail.strip()
     preferred = bool(PREFERRED_LINE.search(content))
-    required = bool(REQUIRED_LINE.search(content) or license_obligation or credential_required or conditional_eligibility)
+    required = bool(REQUIRED_LINE.search(content) or license_obligation or credential_required
+                    or conditional_eligibility or candidate_age)
     if heading and re.fullmatch(r'education\s*/\s*experience', heading, re.I):
         required |= bool(re.search(r'\brequires \d+\b', content, re.I))
     if re.search(r'\bnot (?:strictly )?required\b', text, re.I):

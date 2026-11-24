@@ -450,6 +450,79 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Minimum of 7 years in network operations or a related role.'),
             ('preferred', 'Language Skills: Preferred fluency in Spanish.'),
         ])
+    def test_education_paths_and_independent_skill_minimum_are_separate(self):
+        education = ("Master's degree plus one year of relevant experience. "
+                     "Employer will accept a bachelor's degree plus five years of experience.")
+        skills = ("Must have one year of research or work experience in the following skill(s): "
+                  "(1) programming in Java or Python; and (2) evaluating learning models.")
+        result = self.assert_statements({'description': f'Basic Qualifications\n{education} {skills}#0000'}, [
+            ('required', education),
+            ('required', skills),
+        ])
+        self.assertEqual([item.block for item in result.evidence], [2, 2])
+
+    def test_numbered_skills_keep_every_member_and_the_shared_minimum(self):
+        self.assert_statements({'description': '''
+            Basic Qualifications
+            Must have three years of experience in the following skill(s):
+            (1) defining product strategy;
+            (2) gathering product requirements;
+            (3) using data to improve processes; and
+            (4) planning and executing launches.
+            Preferred Qualifications
+            Experience working with external customers.
+        '''}, [
+            ('required', 'Must have three years of experience in the following skill(s): '
+                         '(1) defining product strategy; (2) gathering product requirements; '
+                         '(3) using data to improve processes; and (4) planning and executing launches.'),
+            ('preferred', 'Experience working with external customers.'),
+        ])
+
+    def test_shared_skill_minimum_applies_only_to_its_attached_html_list(self):
+        self.assert_statements({'description': '''
+            <h3>Basic Qualifications</h3>
+            <p>Must have 2 years of experience in the following skills:</p>
+            <ol><li>Forecasting demand</li><li>Maintaining dashboards</li></ol>
+            <ul><li>Knowledge of inventory methods.</li></ul>
+        '''}, [
+            ('required', 'Must have 2 years of experience in the following skills: Forecasting demand Maintaining dashboards'),
+            ('required', 'Knowledge of inventory methods.'),
+        ])
+
+    def test_explicit_applicant_criteria_survive_summary_and_duty_boundaries(self):
+        eligibility = ('Export Control License: This role may require a deemed export control license. '
+                       'Placement is contingent on the employer obtaining a license.')
+        self.assert_statements({'description': f'''
+            You must be comfortable managing remote delivery teams. This role has on-call duties.
+            Our technicians work on complex systems. To be successful you need to be detail oriented.
+            Responsibilities
+            Inspect components and maintain accurate test records.
+            Candidates must be 18 years or older and able to follow safety guidelines.
+            {eligibility}
+        '''}, [
+            ('required', 'You must be comfortable managing remote delivery teams.'),
+            ('required', 'To be successful you need to be detail oriented.'),
+            ('required', 'Candidates must be 18 years or older and able to follow safety guidelines.'),
+            ('required', eligibility),
+        ])
+
+    def test_basic_fluency_and_specifications_are_kept_without_logistics(self):
+        self.assert_statements({'description': '''
+            Basic Qualifications
+            Speak, write, and read fluently in English
+            Writes clear and detailed functional specifications.
+            Ability to travel to or commute between data center locations as needed
+            Willingness to temporarily work at alternative sites during training
+            Candidates must be able to travel (over 50 miles) to active data center sites.
+            Experience managing a travel booking platform.
+            Physical Requirements
+            All physical requirements are expected with reasonable accommodations:
+            Ability to work in an environment that operates 24/7
+        '''}, [
+            ('required', 'Speak, write, and read fluently in English'),
+            ('required', 'Writes clear and detailed functional specifications.'),
+            ('required', 'Experience managing a travel booking platform.'),
+        ])
 
 
 class QualificationInputTests(unittest.TestCase):
