@@ -1172,6 +1172,69 @@ class QualificationExtractionTests(unittest.TestCase):
         ])
 
 
+    def test_travel_with_transportation_and_remote_work_logistics_are_omitted(self):
+        self.assert_statements({'description': """
+            <h2>Required Skills and Competencies</h2><ul>
+              <li>Access to reliable transportation and valid US driver's license with the ability to travel up to 75% of the time.</li>
+              <li>Must be able and willing to travel.</li>
+              <li>High speed internet in place of residence.</li>
+              <li>Designated home office workspace with secure high-speed internet access via cable or DSL.</li>
+              <li>Experience with electronic health records.</li></ul>
+            <h2>Preferred Qualifications</h2><ul><li>Reside within commutable distance of assigned duties.</li>
+              <li>Experience designing high-speed internet systems.</li></ul>
+        """}, [
+            ('required', 'Experience with electronic health records.'),
+            ('preferred', 'Experience designing high-speed internet systems.'),
+        ])
+
+    def test_inline_education_inherits_preference_and_timed_credential_has_separate_evidence(self):
+        deadline = 'CCNP preferred; will be a requirement to obtain within 18 months of hire.'
+        self.assert_statements({'description': f"""
+            <h2>Preferred Qualifications</h2><ul>
+              <li>Education: Bachelor's degree in Computer Science or equivalent practical experience.</li>
+              <li>{deadline}</li>
+              <li>Experience designing enterprise networks.</li>
+            </ul>
+        """}, [
+            ('preferred', "Bachelor's degree in Computer Science or equivalent practical experience."),
+            ('preferred', 'CCNP preferred'),
+            ('required', deadline),
+            ('preferred', 'Experience designing enterprise networks.'),
+        ])
+
+    def test_candidate_license_in_duties_and_explicit_required_competencies(self):
+        self.assert_statements({'description': """
+            <h2>Essential Duties and Responsibilities</h2><ul>
+              <li>Obtain records of customer licenses and certifications.</li>
+              <li>Obtain a Life/A&amp;H license in state of residence and any other state that the incumbent conducts business.</li>
+            </ul>
+            <h2>Required Skills and Competencies</h2><ul>
+              <li>Bachelor Degree or in-lieu of degree equivalent education, training and work-related experience.</li>
+              <li>2+ years of sales related experience preferred, not required.</li>
+              <li>Must be able and willing to travel.</li>
+            </ul>
+            <p>In addition to a career opportunity, Example offers an excellent benefits package including:</p>
+            <ul><li>Paid training.</li></ul>
+        """}, [
+            ('required', 'Obtain a Life/A&H license in state of residence and any other state that the incumbent conducts business.'),
+            ('required', 'Bachelor Degree or in-lieu of degree equivalent education, training and work-related experience.'),
+            ('preferred', '2+ years of sales related experience preferred, not required.'),
+        ])
+
+    def test_education_equivalence_stays_separate_from_preferred_experience(self):
+        self.assert_statements({'description': """
+            <div>Experience:</div>
+            <div>• 0-2 years experience (Preferred)</div>
+            <div>• In lieu of the above education requirements, an equivalent combination of education and experience may be considered.</div>
+            <p>Education: High school education, undergraduate studies in business or finance preferred.</p>
+        """}, [
+            ('preferred', '0-2 years experience (Preferred)'),
+            ('ambiguous', 'In lieu of the above education requirements, an equivalent combination of education and experience may be considered.'),
+            ('ambiguous', 'High school education'),
+            ('preferred', 'undergraduate studies in business or finance preferred.'),
+        ])
+
+
 class QualificationInputTests(unittest.TestCase):
     def test_cisco_prefers_the_verified_matching_public_role_description(self):
         url = 'https://careers.cisco.com/global/en/job/CISCISGLOBAL123EXTERNALENGLOBAL/Engineer'
