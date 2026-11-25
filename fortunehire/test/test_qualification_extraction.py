@@ -328,6 +328,117 @@ class QualificationExtractionTests(unittest.TestCase):
         )
         self.assert_statements({'description': f'<p>{wording}</p>'}, [('preferred', wording)])
 
+    def test_required_skills_boundary_keeps_occupational_credentials(self):
+        self.assert_statements({'description': '''
+            <p>Responsibilities:</p>
+            <ul><li>Maintain all required certifications and licenses as required by policy.</li></ul>
+            <p>Skills and Experience required:</p>
+            <ul>
+                <li>Current valid CDL Class A or B (must be maintained).</li>
+                <li>Valid DOT medical card (must be maintained).</li>
+                <li>Comfortable with physical requirements, including repeated lifting up to 70 lbs.</li>
+                <li>Flexibility to adjust start/finish times daily.</li>
+            </ul>
+            <p>Required (Driving Record):</p>
+            <ul><li>No more than two violations in the past year.</li></ul>
+        '''}, [
+            ('required', 'Current valid CDL Class A or B (must be maintained).'),
+            ('required', 'Valid DOT medical card (must be maintained).'),
+        ])
+
+    def test_explicit_qualifications_recover_after_shift_details(self):
+        self.assert_statements({'description': '''
+            <p>Shift Details: Monday to Friday from 8:00 a.m. to 4:30 p.m.</p>
+            <ul><li>Maintains inventory across sites.</li><li>Must be able to work overtime.</li></ul>
+            <ul>
+                <li>Bachelor's degree in computer science required, or equivalent experience required.</li>
+                <li>Less than 2 years of experience in systems administration required.</li>
+                <li>Relevant entry-level certifications (e.g., CompTIA Server+) preferred.</li>
+            </ul>
+            <p>Compensation: Competitive pay.</p>
+            <p>Computer science degree required to qualify for the tuition program.</p>
+        '''}, [
+            ('required', "Bachelor's degree in computer science required, or equivalent experience required."),
+            ('required', 'Less than 2 years of experience in systems administration required.'),
+            ('preferred', 'Relevant entry-level certifications (e.g., CompTIA Server+) preferred.'),
+        ])
+
+    def test_summary_keeps_required_alternatives_and_separates_explicit_preferences(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: This is a remote position. Candidates must have an active Compact RN license
+            or Florida RN license, with a Compact license preferred. A minimum of 2+ years of acute care
+            experience is required, with ER or ICU experience preferred. The schedule is Monday through Friday.</p>
+            <p>Education and Work Experience:</p>
+            <p>Bachelor's degree required. Advanced degree preferred in behavioral science or a related field.</p>
+            <p>Knowledge of quality management systems (preferred), including audit tools.</p>
+            <p>License/Certification: Valid state clinical license preferred (i.e.- LPN, RN, etc.)</p>
+        '''}, [
+            ('required', 'Candidates must have an active Compact RN license or Florida RN license'),
+            ('preferred', 'with a Compact license preferred.'),
+            ('required', 'A minimum of 2+ years of acute care experience is required'),
+            ('preferred', 'with ER or ICU experience preferred.'),
+            ('required', "Bachelor's degree required."),
+            ('preferred', 'Advanced degree preferred in behavioral science or a related field.'),
+            ('preferred', 'Knowledge of quality management systems (preferred), including audit tools.'),
+            ('preferred', 'License/Certification: Valid state clinical license preferred (i.e.- LPN, RN, etc.)'),
+        ])
+
+    def test_explicit_sections_take_text_bullets_and_reset_at_unmarked_skills(self):
+        self.assert_statements({'description': '''
+            <p>Minimum Qualifications</p>
+            <p>No prior sales experience needed. If you are curious about technology, we want to hear from you.</p>
+            <p>· Are organized and able to manage multiple priorities</p>
+            <p>Preferred Qualifications</p>
+            <ul><li>Experience with account planning.</li></ul>
+            <p>Skills &amp; Capabilities:</p>
+            <ul><li>Strong analytical skills.</li><li>Ability to travel approximately 70%.</li></ul>
+        '''}, [
+            ('required', 'Are organized and able to manage multiple priorities'),
+            ('preferred', 'Experience with account planning.'),
+            ('ambiguous', 'Strong analytical skills.'),
+        ])
+
+    def test_mixed_format_boundaries_keep_requirements_without_schedule_or_pay(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: This position is remote with 75% travel required.
+            Candidates must reside in the state of Kansas. Ability to lift up to forty pounds is required.</p>
+            <p>This is a fully remote position with a work schedule of 8:00 a.m. to 5:00 p.m.
+            Experience with Epic and Excel is preferred.</p>
+            <p>Education/Experience: Requires Graduate from an Accredited School of Nursing or Bachelor's degree
+            in Nursing and 2 – 4 years of related experience. 2+ years of acute care experience required.</p>
+            <p>Experience: Experience in HEDIS or NCQA preferredPay Range: $60,000 annually</p>
+            <p>Required Qualifications:</p>
+            <ul>
+                <li>RN from accredited nursing program. Bachelor's degree in nursing or 4+ years of supervisory experience</li>
+                <li>PALS if supervising a pediatric department (within 6 months)</li>
+                <li>Willing/able to work at least three holidays per year</li>
+                <li>Dedicated remote workspace free from distractions</li>
+            </ul>
+        '''}, [
+            ('preferred', 'Experience with Epic and Excel is preferred.'),
+            ('required', "Education/Experience: Requires Graduate from an Accredited School of Nursing or Bachelor's "
+                         'degree in Nursing and 2 – 4 years of related experience.'),
+            ('required', '2+ years of acute care experience required.'),
+            ('preferred', 'Experience in HEDIS or NCQA preferred'),
+            ('required', 'RN from accredited nursing program.'),
+            ('required', "Bachelor's degree in nursing or 4+ years of supervisory experience"),
+            ('required', 'PALS if supervising a pediatric department (within 6 months)'),
+        ])
+
+    def test_text_bullets_keep_their_shared_experience_minimum(self):
+        self.assert_statements({'description': '''
+            <p>Minimum Qualifications:</p>
+            <p>Requires 5 years of experience in the following skills:</p>
+            <p>• Statistical analysis;</p>
+            <p>• Querying large datasets using SQL.</p>
+            <p>Preferred Qualifications:</p>
+            <p>• Strong presentation skills.</p>
+        '''}, [
+            ('required', 'Requires 5 years of experience in the following skills: '
+                         '• Statistical analysis; • Querying large datasets using SQL.'),
+            ('preferred', 'Strong presentation skills.'),
+        ])
+
     def test_cencora_warehouse_keeps_education_equivalence_and_tenure(self):
         self.assert_statements({'description': '''
             Responsibilities:
