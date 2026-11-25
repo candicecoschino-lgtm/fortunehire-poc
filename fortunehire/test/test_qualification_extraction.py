@@ -1014,8 +1014,102 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Experience designing shift scheduling systems.'),
         ])
 
+    def test_travel_and_work_conditions_do_not_inherit_qualification_labels(self):
+        self.assert_statements({'description': """
+            <p>This role requires the employee to work onsite at the main office.
+            Up to 10% of local and/or international travel may be required.</p>
+            <h2>Required Qualifications</h2>
+            <ul><li>Current driver's license, vehicle insurance, and reliable transportation or access to public transportation</li>
+            <li>Demonstrated ability to travel at least 25%-50% of the time</li>
+            <li>Ability to work a schedule that includes every Saturday and Sunday.
+            Work schedule can be 4 days per week. Some options may include Thursday through Sunday.</li>
+            <li>It may be necessary, given the business need, to work occasional overtime.</li>
+            <li>CDL Commercial Driver's License</li>
+            <li>Customer service or transportation delivery experience</li></ul>
+            <h2>Preferred Qualifications</h2><ul><li>Dispatch software experience</li></ul>
+            <p>Work Conditions and Physical Requirements:</p>
+            <ul><li>Ability to mobilize to and within sites within an assigned market, including car transport</li>
+            <li>Dedicated workspace with high-speed internet</li></ul>
+            <p>Overtime Eligibility: Eligible (Non Exempt)</p>
+        """}, [
+            ('ambiguous', 'It may be necessary, given the business need, to work occasional overtime.'),
+            ('required', "CDL Commercial Driver's License"),
+            ('required', 'Customer service or transportation delivery experience'),
+            ('preferred', 'Dispatch software experience'),
+        ])
+
+    def test_job_details_extract_explicit_mandatory_alternatives_and_preferred_credentials(self):
+        self.assert_statements({'description': """
+            <h2>Job Details</h2>
+            <p>Coordinate inventory and support customer service.</p>
+            <p>High School Diploma/GED or equivalent experience required.
+            2+ years of experience in pharmacy operations or a related field required.
+            Certification in pharmacy technician licensure or credentialing, or equivalent preferred.</p>
+            <h2>What we offer</h2><p>Experience in pharmacy operations determines the salary range.</p>
+        """}, [
+            ('required', 'High School Diploma/GED or equivalent experience required.'),
+            ('required', '2+ years of experience in pharmacy operations or a related field required.'),
+            ('preferred', 'Certification in pharmacy technician licensure or credentialing, or equivalent preferred.'),
+        ])
+
+    def test_accredited_pharmacy_degree_and_current_clinical_license_under_education(self):
+        self.assert_statements({'description': """
+            <p><b>Education:</b></p>
+            <ul><li>PharmD or Bachelor's Degree in Pharmacy from an accredited school of pharmacy</li>
+            <li>Unrestricted, current Pennsylvania pharmacist license and injectables license</li>
+            <li>Current RN license preferred</li></ul>
+            <p><b>Skills and Knowledge:</b></p><p>Spanish-language proficiency is a plus but is not required.</p>
+        """}, [
+            ('required', "PharmD or Bachelor's Degree in Pharmacy from an accredited school of pharmacy"),
+            ('required', 'Unrestricted, current Pennsylvania pharmacist license and injectables license'),
+            ('preferred', 'Current RN license preferred'),
+            ('preferred', 'Spanish-language proficiency is a plus but is not required.'),
+        ])
+
+    def test_topical_prose_separates_preference_obligation_and_condition(self):
+        self.assert_statements({'description': """
+            <p>License/Certification/Designation: ChFC and CLU designations desirable FINRA series 6 and/or 63
+            licenses preferred and may be required based on assigned product.</p>
+            <p>Associates must acquire the required federal and/or state licenses/registrations within the
+            time period designated by the business unit. Additional licenses/registrations may be required
+            when new products and services are implemented. If an associate fails to acquire required
+            licenses/registrations within the designated time period, the associate will be ineligible
+            to continue in the position. NOTE: A credit check may be required if a license is required.</p>
+            <p>Experience: 10+ years of insurance experience. Demonstrated experience with risk assessments.
+            Experience leading people required.</p>
+            <h2>Additional experience that’s valuable</h2><ul><li>Snowflake certifications</li></ul>
+            <h2>Why this opportunity</h2><p>This is an opportunity to lead teams.</p>
+        """}, [
+            ('preferred', 'License/Certification/Designation: ChFC and CLU designations desirable'),
+            ('ambiguous', 'FINRA series 6 and/or 63 licenses preferred and may be required based on assigned product.'),
+            ('required', 'Associates must acquire the required federal and/or state licenses/registrations within the time period designated by the business unit.'),
+            ('ambiguous', 'Additional licenses/registrations may be required when new products and services are implemented.'),
+            ('required', 'If an associate fails to acquire required licenses/registrations within the designated time period, the associate will be ineligible to continue in the position.'),
+            ('ambiguous', '10+ years of insurance experience.'),
+            ('ambiguous', 'Demonstrated experience with risk assessments.'),
+            ('required', 'Experience leading people required.'),
+            ('preferred', 'Snowflake certifications'),
+        ])
+
 
 class QualificationInputTests(unittest.TestCase):
+    def test_cisco_prefers_the_verified_matching_public_role_description(self):
+        url = 'https://careers.cisco.com/global/en/job/CISCISGLOBAL123EXTERNALENGLOBAL/Engineer'
+        source = {'identifier': {'value': '123'}, 'description': 'Minimum Qualifications\n7+ years of software experience'}
+        alternative = "Bachelor's plus 7 years, master's plus 4 years, or PhD plus 1 year."
+        job = {'reqId': '123', 'description': f'<h2>Minimum Qualifications</h2><ul><li>{alternative}</li></ul>'}
+        payload = {'jobDetail': {'data': {'job': job}}}
+        body = '<script>phApp.ddo = ' + json.dumps(payload) + ';</script>'
+        result = qualification_input(source, verified_body=body, source_url=url)
+        self.assertEqual([(q.kind, q.text) for q in extract_qualifications(result, url).evidence],
+                         [('required', alternative)])
+        for fallback_body, fallback_url in ((body + body, url),
+                                            (body.replace('"123"', '"456"'), url),
+                                            (body, url.replace('123', '456')),
+                                            (body, url.replace('careers.cisco.com', 'careers.example.com'))):
+            with self.subTest(body=fallback_body, url=fallback_url):
+                self.assertEqual(qualification_input(source, verified_body=fallback_body, source_url=fallback_url), source)
+
     def test_apple_uses_matched_dedicated_fields(self):
         url = 'https://jobs.apple.com/en-us/details/123-5/example'
         verified = {'identifier': '123-5', 'url': url, '_adapter': 'apple-public-location-posting', 'description': 'Original'}

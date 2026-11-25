@@ -202,6 +202,7 @@ PREFERRED_HEADING = re.compile(
     r'|preferred certifications include one or more of'
     r'|preferred skills\s*/\s*certifications?|preferred qualifications \(desired skills\s*(?:/| and )\s*experience\)'
     r'|what will give you a competitive edge \(preferred (?:qualifications|skills)\)'
+    r'|additional experience that[’\']s valuable'
     r'|your skills (?:and|&) abilities \(preferred qualifications\))', re.I,
 )
 AMBIGUOUS_HEADING = re.compile(
@@ -221,7 +222,8 @@ AMBIGUOUS_HEADING = re.compile(
 BOUNDARY = re.compile(
     r'^(?:(?:about (?:us|the company|the team|the role|the job|[A-Z][\w -]+)|who we are|company (?:overview|description)'
     r'|(?:key |primary |essential |position |job |role )*(?:responsibilities|duties|accountabilities)'
-    r'|(?:the )?role overview|job (?:description|summary)|position summary|work environment|working conditions'
+    r'|(?:the )?role overview|job (?:description|summary|conditions)|position summary|work environment|working conditions'
+    r'|telecommuting requirements|work conditions(?: and physical requirements)?|why this opportunity'
     r'|(?:physical|travel|location|worksite) requirements|compensation(?: (?:and benefits|range|details))?|pay(?: transparency| range| details)?'
     r'|(?:annual )?salary(?: range)?|benefits(?: and perks)?|total rewards|what (?:we|[\w .&-]+) offers?|why (?:join|work)|how to apply|after you apply'
     r'|equal (?:employment|opportunity)|accommodations?|legal (?:notice|disclaimer)|additional information'
@@ -267,8 +269,8 @@ RESPONSIBILITY = re.compile(
     r'|coordinate|implement|oversee|partner|ensure|drive|maintains?|collaborate|provides?|assists?|performs?|participate)\s)', re.I,
 )
 PREFERRED_LINE = re.compile(
-    r'\b(?:preferred|desired|strong plus|a plus|advantageous|nice[- ]to[- ]have|a bonus|helpful(?: but not required)?)'
-    r'(?:[.);!\s]*$|,?\s+but not required\b)'
+    r'\b(?:preferred|desired|desirable|strong plus|a plus|advantageous|nice[- ]to[- ]have|a bonus|helpful(?: but not required)?)'
+    r'(?:[.);!\s]*$|,?\s+but (?:is )?not required\b)'
     r'|^(?:[\w ]+:\s+)?(?:(?:highly )?preferred|desired|optional)(?:\s*:|\s+(?:\d|an?\b|fluency\b|experience\b))'
     r'|\bpreferred[;,.]\s*(?:or\s+)?equivalent\b|^while\b[^,]+\bis preferred,', re.I,
 )
@@ -283,7 +285,7 @@ PREFERENCE_SUFFIX = re.compile(
 PREFERENCE_MODIFIER = re.compile(r'^(?:ideally|preferably)\b', re.I)
 COORDINATED_PREFERENCE = re.compile(r',\s+and\s+([^.!?]+\b(?:is|are)\s+(?:(?:highly|strongly)\s+)?preferred[.!?]?)$', re.I)
 KEY_DETAILS = re.compile(r'^key details\s*:\s*', re.I)
-POSSIBLE_REQUIREMENT = re.compile(r'\bmay be required\s+(?:by|for|in|when|if|depending on)\b', re.I)
+POSSIBLE_REQUIREMENT = re.compile(r'\bmay be required\s+(?:by|for|in|when|if|depending on|based on)\b', re.I)
 REQUIRED_CLAUSE = re.compile(r'(?<!not )(?<!strictly )\brequired\s*[,;.]', re.I)
 REQUIRED_LINE = re.compile(
     r'^(?:required|mandatory|minimum)\s*:|^required\s+(?:\d|an?\b)|\b(?:is|are) (?:required|mandatory)\b|'
@@ -295,11 +297,16 @@ REQUIRED_LINE = re.compile(
     r'|(?<!as )(?<!if )(?<!when )(?<!where )\brequired[. ]*$|\bmust be eligible to obtain\b', re.I,
 )
 LICENSE_OBLIGATION = re.compile(
-    r'^(?:(?:candidates? |you )?must (?:have|hold|possess|maintain|(?:be willing to )?obtain|secure|carry|retain)|maintains?|requires?) '
-    r'(?:(?!records?\b|documentation\b|lists?\b)(?:[\w’\'-]+|\([\w -]+\)) ){0,7}'
+    r'^(?:(?:(?:candidates?|associates?|employees?|you) )?must '
+    r'(?:have|hold|possess|maintain|(?:be willing to )?obtain|acquire|secure|carry|retain)|maintains?|requires?) '
+    r'(?:(?!records?\b|documentation\b|lists?\b)(?:[\w’\'/-]+|\([\w -]+\)) ){0,7}'
     r'(?:licen[cs]\w*|certif\w*|credentials?|clearance)\b'
     r'|^(?:(?:candidates?|you) )?must be willing to obtain\b[^.!?]{0,100}'
     r'\b(?:licen[cs]e|licensure|certification|credential)\b', re.I,
+)
+LICENSE_CONSEQUENCE = re.compile(
+    r'^if\b[^,.!?]*\b(?:fails?|is unable) to (?:acquire|obtain) required licen[cs]\w*'
+    r'[^,.!?]*,\s*[^.!?]*\b(?:ineligible|not eligible)\b', re.I,
 )
 EXPLICIT_CREDENTIAL = re.compile(
     r'^(?:an? )?(?:active|current|valid|unrestricted)\b'
@@ -335,6 +342,7 @@ JOB_LOGISTICS = re.compile(
     r'|(?:overnight|frequent|occasional) travel\b|experience with extensive travel\b'
     r'|will be responsible to cover emergency service calls\b'
     r'|this is a (?:fully )?remote position(?=\s*(?:[.!?]|$|with a work schedule\b))'
+    r'|this (?:role|position) requires (?:the employee|you|candidates?) to work on[- ]?site\b'
     r'|this position is (?:fully )?(?:remote|on-?site|hybrid)(?: with \d+% travel required)?(?=\s*[.!?]?\s*$)'
     r'|(?:(?:the )?(?:typical |regular )?(?:work )?schedule is|hours are|'
     r'this position works (?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)|'
@@ -343,6 +351,15 @@ JOB_LOGISTICS = re.compile(
     r'field-based travel|dedicated remote workspace|'
     r'ability to work the designated schedule|flexibility to adjust start/finish times|'
     r'comfortable with physical requirements)\b'
+    r'|(?:this position is|ability to work) full[- ]time,\s*(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b'
+    r'|ability to work (?:the following schedule|a schedule that includes)\b'
+    r'|work schedule can be \d+ days? per week\b'
+    r'|some schedule options may include\b|some options may include (?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b'
+    r'|employees are required to have flexibility to work\b[^.!?]*\bshift schedules?\b'
+    r'|designated workspace and ability to install\b[^.!?]*\binternet\b'
+    r'|candidate hired will support specific locations?(?:\(s\))? for on[- ]?site (?:facility )?needs\b'
+    r'|reside within or near\b|overtime eligibility\s*:'
+    r'|(?:note:\s*)?a credit check may be required\b'
     r'|willing/able to (?:adhere to the schedule|work (?:at least [\w-]+ )?(?:evenings|weekends|holidays))\b'
     r'|all (?:employees working remotely|telecommuters) will be required to adhere to\b[^.!?]*\btelecommut\w* polic(?:y|ies)\b'
     r'|(?:access to a designated quiet workspace|live in a location that can receive|'
@@ -361,26 +378,28 @@ JOB_LOGISTICS = re.compile(
 )
 DRIVER_LICENSE = r'(?:an? )?(?:valid |current )?driver[’\']?s license'
 RELIABLE_TRANSPORTATION = r'(?:access to )?(?:a )?(?:reliable (?:means of )?|(?:their |your )?own )transportation'
+VEHICLE_INSURANCE = r'(?:required )?(?:automobile|vehicle|liability) insurance'
 TRAVEL_AND_TRANSPORTATION = re.compile(
     r'^(?:key details\s*:\s*)?(?:(?:(?:proven )?ability(?:/willing| and willingness)? to|'
-    r'willingness(?: and ability)? to|(?:candidates? |you )?must(?: be (?:able|willing) to)?|'
-    r'(?:be )?able to|willing/able to|requires?) )?'
+    r'demonstrated ability to|willingness(?: and ability)? to|(?:candidates? |you )?must(?: be (?:able|willing) to)?|'
+    r'(?:be )?(?:able|willing) to|willing/able to|requires?) )?'
     r'(?:(?:(?:domestic(?: and(?:/or)? international)?|international|overnight|frequent|occasional|local|field) )*travel\b'
     r'(?=\s*(?:[.!?,;:(]|$)|\s+up to(?=\s*\d)|\s+(?:to|within|across|throughout|up to|as needed|when required|approximately|'
-    r'as required|locally|domestically|internationally|extensively|required|may|is|will|in|between|every)\b'
+    r'as required|locally|domestically|internationally|extensively|required|may|is|will|in|between|every|at least)\b'
     r'|\s+(?:\d+\s*%|and (?:work overtime|(?:may )?require (?:overnight|local|field) travel)\b))'
-    r'|up to\s*\d+\s*%\s+(?:local |overnight |field )?travel\b'
+    r'|up to\s*\d+\s*%\s+(?:of )?(?:(?:local|domestic)(?: and(?:/or)? international)? |international |overnight |field )?travel\b'
     r'|travel(?:ing|ling) within\b|field-based travel\b|experience with extensive travel\b'
     r'|(?:this|the) (?:remote )?(?:position|role) requires (?:up to\s*\d+\s*%\s+)?'
     r'(?:(?:local|frequent|overnight|field) )*travel(?=\s*(?:[.!?]|$)|\s+(?:for|to|within|of|up to)\b)'
     r'|this position is (?:fully )?(?:remote|on-?site|hybrid) with \d+% travel required\b'
     r'|this is a field[- ]based position\s*[-–:]\s*(?:up to )?\d+\s*%\s+travel\b'
     r'|(?:ability to |willingness to |must be able to )commute\b'
+    r'|mobilize to and within (?:sites|locations)\b'
     r'|you will be responsible for having a reliable personal vehicle and '
     rf'{DRIVER_LICENSE} to travel\b'
     r'|(?:(?:you )?must (?:have|possess) |possess )?(?:'
-    rf'{DRIVER_LICENSE}(?: and |,\s*){RELIABLE_TRANSPORTATION}'
-    r'(?:,?\s+and (?:required )?(?:automobile|vehicle|liability) insurance)?'
+    rf'{DRIVER_LICENSE}(?:(?: and |,\s*){VEHICLE_INSURANCE})?(?:,?\s+and |,\s*){RELIABLE_TRANSPORTATION}'
+    rf'(?:,?\s+and {VEHICLE_INSURANCE})?(?: or (?:access to )?public transportation)?'
     rf'|{RELIABLE_TRANSPORTATION}(?: and {DRIVER_LICENSE})?'
     rf'|{DRIVER_LICENSE} and vehicle insurance,\s*(?:access to )?a (?:dependable|reliable) vehicle,?\s+or public transportation'
     r'|access to a (?:dependable|reliable)(?: personal)? vehicle'
@@ -389,7 +408,8 @@ TRAVEL_AND_TRANSPORTATION = re.compile(
 AMBIGUOUS_WORK_CONTEXT = re.compile(
     r'^(?:(?:able to|must be able to|willing/able to|ability to|willingness to) work\b[^.!?]*\bovertime\b'
     r'|work overtime\b|\(?overtime (?:is |may be )?(?:required|mandatory)\b'
-    r'|flexibility to adjust start/finish times\b[^.!?]*\bovertime\b)', re.I,
+    r'|flexibility to adjust start/finish times\b[^.!?]*\bovertime\b'
+    r'|it may be necessary\b[^.!?]*\bto work (?:occasional )?overtime\b)', re.I,
 )
 LOGISTICS_CLAUSE_BOUNDARY = re.compile(r',?\s+and\s+|;\s+', re.I)
 SENTENCE_BOUNDARY = re.compile(
@@ -477,7 +497,7 @@ RUN_ON_HEADING = re.compile(r'(?i:^((?:minimum|preferred|required|basic) qualifi
 INLINE_PAY = re.compile(r'(?<=[.!?])\s*(?=(?:pay|salary|compensation) range\s*:)|(?<=preferred)(?=Pay Range\s*:)', re.I)
 INLINE_VALUE_LABEL = re.compile(
     r'(?:minimum education|required field of study|education\s*/\s*experience|candidate experience'
-    r'|licen[cs]es?\s*/\s*certifications?)', re.I,
+    r'|licen[cs]es?\s*/\s*certifications?(?:\s*/\s*designation)?)', re.I,
 )
 PROCESS_SUFFIX = re.compile(r'(?<=[.!?])\s+for further information,? please consult\b[^.!?]*[.!?]?$', re.I)
 CONTINUATION_STUB = re.compile(r'\b(?:an?|the) (?:national|accredited|recognized)\s*$', re.I)
@@ -491,6 +511,22 @@ NO_PRIOR_EXPERIENCE = re.compile(r'^no (?:prior )?(?:[\w-]+ ){0,4}experience (?:
 GENERIC_CREDENTIAL_DUTY = re.compile(r'^maintain all required (?:certifications? and licenses?|licenses? and certifications?) as required\b', re.I)
 ACCREDITED_PROGRAM = re.compile(r'^(?:graduate|rn) from (?:an? )?accredited\b', re.I)
 DEGREE_PATH = re.compile(r'^(?:an? )?(?:bachelor|master|doctoral|associate)\b', re.I)
+ACCREDITED_PHARMACY_DEGREE = re.compile(
+    r'^(?:pharm\.?d\.?|doctor of pharmacy|bachelor[’\']s degree in pharmacy)\b'
+    r'[^.!?]*\baccredited (?:school|college|program) of pharmacy\b', re.I,
+)
+ACTIVE_CLINICAL_LICENSE = re.compile(
+    r'^(?:an? )?(?:active|current|valid|unrestricted)\b[^.!?]*'
+    r'\b(?:pharmacist|registered nurse|rn|lpn|lvn|physical therapist|occupational therapist)'
+    r' licen[cs](?:e|ure)\b', re.I,
+)
+EXPERIENCE_CRITERION = re.compile(
+    rf'^(?:(?:{TENURE_NUMBER})\+?\s+years? of\b|(?:demonstrated |proven )?experience\b)', re.I,
+)
+DESIGNATION_PREFERENCE_BOUNDARY = re.compile(
+    r'(?<=desirable)\s+(?=[A-Z]{2,}\b[^.!?]*\b(?:licen[cs]es?|certifications?) preferred\b)'
+)
+DESIGNATION_LABEL = re.compile(r'licen[cs]es?\s*/\s*certifications?\s*/\s*designation', re.I)
 HIGH_SCHOOL_DIPLOMA = (
     r'(?:a )?high school diploma(?:\s*(?:/|,|or)\s*'
     r'(?:ged|general education (?:development|degree)(?:\s*\(ged\))?))?'
@@ -523,6 +559,8 @@ def heading_parts(line):
         if SHIFT_HEADING.fullmatch(key):
             # A shift header can precede an unlabeled qualifications list.
             return 'logistics', label, ''
+        if key.casefold() == 'job details' and not tail:
+            return 'overview', label, ''
         if DRIVING_RECORD_HEADING.fullmatch(key):
             return 'stop', label, ''
         if SUBHEADING.fullmatch(key) and not tail:
@@ -734,7 +772,8 @@ def strength_content(text):
 def explicit_requirement(text):
     content = strength_content(text)
     direct = POSSIBLE_REQUIREMENT.sub('', SKILL_CONTEXT_REQUIREMENT.sub('', content))
-    return bool(REQUIRED_LINE.search(direct) or LICENSE_OBLIGATION.search(direct) or EXPLICIT_CREDENTIAL.search(direct))
+    return bool(REQUIRED_LINE.search(direct) or LICENSE_OBLIGATION.search(direct) or EXPLICIT_CREDENTIAL.search(direct)
+                or LICENSE_CONSEQUENCE.match(direct))
 
 
 def explicit_preference(text):
@@ -747,14 +786,18 @@ def has_strength_cue(text):
                 or POSSIBLE_REQUIREMENT.search(text))
 
 
-def independent_criteria(text, kind):
+def independent_criteria(text, kind, heading):
     """Separate independently labeled sentences and retain explanatory continuations."""
     parts = []
     for sentence in SENTENCE_BOUNDARY.split(text):
-        if parts and not (CHOICE_SENTENCE.search(parts[0]) or CONDITION_CONTINUATION.match(sentence)):
+        continuation = ((CONDITION_CONTINUATION.match(sentence) and not LICENSE_CONSEQUENCE.match(sentence))
+                        or ALTERNATIVE_START.match(sentence))
+        if parts and not (CHOICE_SENTENCE.search(parts[0]) or continuation):
             labeled = has_strength_cue(parts[0]) and has_strength_cue(sentence)
             education = kind == 'required' and ACCREDITED_PROGRAM.match(parts[0]) and DEGREE_PATH.match(sentence)
-            if labeled or education:
+            experience = (heading and heading.casefold() == 'experience'
+                          and EXPERIENCE_CRITERION.match(parts[-1]) and EXPERIENCE_CRITERION.match(sentence))
+            if labeled or education or experience:
                 yield ' '.join(parts)
                 parts.clear()
         parts.append(sentence)
@@ -762,6 +805,13 @@ def independent_criteria(text, kind):
 
 
 def split_preference(text, kind):
+    label, separator, _ = text.partition(':')
+    boundary = (DESIGNATION_PREFERENCE_BOUNDARY.search(text)
+                if separator and DESIGNATION_LABEL.fullmatch(label) else None)
+    if boundary:
+        yield text[:boundary.start()], 'preferred'
+        yield text[boundary.end():], kind
+        return
     preference = PREFERENCE_SUFFIX.search(text)
     if preference and (explicit_requirement(text[:preference.start()])
                        or kind == 'required' and PREFERENCE_MODIFIER.match(preference[1])):
@@ -779,9 +829,9 @@ def qualification_statements(blocks, default_kind):
                 if kind != 'stop':
                     yield text, 'work_context', heading, number, inherited_list
                 continue
-            if kind in (None, 'duties'):
-                include_explicit = key_details or (kind is None and explicit_preference(text)
-                                                   and SENTENCE_BOUNDARY.search(text))
+            if kind in (None, 'duties', 'overview'):
+                include_explicit = (key_details or kind == 'overview' or
+                                    (kind is None and explicit_preference(text) and SENTENCE_BOUNDARY.search(text)))
                 explicit = list(summary_requirements(text, include_explicit=include_explicit))
                 if explicit or key_details:
                     for criterion, strength in explicit:
@@ -798,7 +848,7 @@ def qualification_statements(blocks, default_kind):
                 yield mixed[1], 'required', heading, number, inherited_list
                 yield mixed[2], 'preferred', heading, number, inherited_list
             else:
-                criteria = independent_criteria(text, kind) if kind not in ('stop', 'duties') else (text,)
+                criteria = independent_criteria(text, kind, heading) if kind not in ('stop', 'duties') else (text,)
                 for criterion in criteria:
                     for fragment, strength in split_preference(criterion, kind):
                         yield fragment, strength, heading, number, inherited_list or strength != kind
@@ -853,6 +903,9 @@ def classify_statement(text, kind, heading, inherited_list, field, types):
             return 'preferred'
         return None
     if required:
+        return 'required'
+    if (kind == 'ambiguous' and heading and heading.casefold() == 'education'
+            and (ACCREDITED_PHARMACY_DEGREE.match(content) or ACTIVE_CLINICAL_LICENSE.match(content))):
         return 'required'
     if kind == 'ambiguous' and has_scoped_tenure_floor(text, heading):
         return 'required'
