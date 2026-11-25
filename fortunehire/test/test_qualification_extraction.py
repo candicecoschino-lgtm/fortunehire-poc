@@ -1092,6 +1092,86 @@ class QualificationExtractionTests(unittest.TestCase):
         ])
 
 
+    def test_bundled_transportation_is_omitted_without_removing_independent_evidence(self):
+        self.assert_statements({'description': """
+            <h2>Required Qualifications</h2>
+            <ul>
+              <li>Driver's license and reliable transportation and the ability to travel up to 50% of the time</li>
+              <li>Access to reliable transportation and valid US driver's license and the ability to travel within assigned territory</li>
+              <li>Current RN license required and access to reliable transportation and the ability to travel to patients.</li>
+              <li>Driver's license and reliable transportation and the ability to travel locally and must hold a current PALS certification.</li>
+              <li>Experience with community organizations providing non-emergent transportation.</li>
+              <li>Commercial Driver's License (CDL) required</li>
+              <li>Must be willing to work extended hours, take part in weekend on-call rotation, as needed.</li>
+            </ul>
+        """}, [
+            ('required', 'Current RN license required'),
+            ('required', 'must hold a current PALS certification.'),
+            ('required', 'Experience with community organizations providing non-emergent transportation.'),
+            ('required', "Commercial Driver's License (CDL) required"),
+        ])
+
+    def test_nested_unpunctuated_one_of_license_paths_stay_together(self):
+        self.assert_statements({'description': """
+            <h2>Required Qualifications</h2>
+            <ul><li>Must possess one of the following<ul>
+                <li>Current Registered Nurse licensure in Michigan</li>
+                <li>Master's degree and current independent social worker licensure</li>
+                <li>Bachelor's degree and current social worker licensure</li>
+            </ul></li><li>2+ years of community health experience</li></ul>
+            <h2>Preferred Qualifications</h2><ul><li>Case management certification</li></ul>
+        """}, [
+            ('required', 'Must possess one of the following Current Registered Nurse licensure in Michigan '
+             "Master's degree and current independent social worker licensure "
+             "Bachelor's degree and current social worker licensure"),
+            ('required', '2+ years of community health experience'),
+            ('preferred', 'Case management certification'),
+        ])
+
+    def test_education_semicolon_separates_required_experience_from_preferred_degree(self):
+        self.assert_statements({'description': """
+            <p>Education:</p>
+            <p>Requires 1+ year(s) of pharmacy experience; bachelor's degree program preferred.
+            Requires Pharmacy Technician License in the State of Pennsylvania. CPHT is preferred.</p>
+        """}, [
+            ('required', 'Requires 1+ year(s) of pharmacy experience'),
+            ('preferred', "bachelor's degree program preferred."),
+            ('required', 'Requires Pharmacy Technician License in the State of Pennsylvania.'),
+            ('preferred', 'CPHT is preferred.'),
+        ])
+
+    def test_topical_prose_preserves_explicit_labels_and_conditional_qualifiers(self):
+        self.assert_statements({'description': """
+            <p>Education: College degree preferred.</p>
+            <p>License/Certification/Designation: State licensing where required.
+            Successful completion of required and/or applicable claims certification training and/or classes.</p>
+            <p>Experience: Eight years commercial underwriting experience, excess and surplus lines experience preferred.</p>
+            <p>Experience: Typically, two to four years of claims handling experience.
+            Prior experience in directing defense counsel required.
+            Specific experience in a line of business may be required by the hiring unit.</p>
+            <p>Knowledge, Abilities, and Skills: Knowledge of local regulations may be required.
+            Familiarity with insurance policies preferred. Ability to evaluate evidence.</p>
+            <p>License/Certification/Designation: LOMA Level 1 Certificate preferred.
+            Participation in professional studies or attainment of a CLU designation preferred.
+            FALU preferred with CLU or advanced sales concept training.</p>
+        """}, [
+            ('preferred', 'College degree preferred.'),
+            ('ambiguous', 'License/Certification/Designation: State licensing where required.'),
+            ('ambiguous', 'Successful completion of required and/or applicable claims certification training and/or classes.'),
+            ('ambiguous', 'Eight years commercial underwriting experience'),
+            ('preferred', 'excess and surplus lines experience preferred.'),
+            ('ambiguous', 'Typically, two to four years of claims handling experience.'),
+            ('required', 'Prior experience in directing defense counsel required.'),
+            ('ambiguous', 'Specific experience in a line of business may be required by the hiring unit.'),
+            ('ambiguous', 'Knowledge, Abilities, and Skills: Knowledge of local regulations may be required.'),
+            ('preferred', 'Familiarity with insurance policies preferred.'),
+            ('ambiguous', 'Ability to evaluate evidence.'),
+            ('preferred', 'License/Certification/Designation: LOMA Level 1 Certificate preferred.'),
+            ('preferred', 'Participation in professional studies or attainment of a CLU designation preferred.'),
+            ('preferred', 'FALU preferred with CLU or advanced sales concept training.'),
+        ])
+
+
 class QualificationInputTests(unittest.TestCase):
     def test_cisco_prefers_the_verified_matching_public_role_description(self):
         url = 'https://careers.cisco.com/global/en/job/CISCISGLOBAL123EXTERNALENGLOBAL/Engineer'

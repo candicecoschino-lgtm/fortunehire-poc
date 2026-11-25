@@ -276,7 +276,7 @@ PREFERRED_LINE = re.compile(
 )
 INLINE_PREFERENCE = re.compile(
     r'\(preferred\)(?=\s*(?:[,.;]|$))|\bpreferred\s+\((?:i\.e\.|e\.g\.)'
-    r'|\b(?:degree|credential|certification|experience) preferred in\b', re.I,
+    r'|\b(?:degree|credential|certification|experience) preferred in\b|\bpreferred with\b', re.I,
 )
 PREFERENCE_SUFFIX = re.compile(
     r',\s+(with\b[^.!?]*\bpreferred[.!?]?|'
@@ -285,7 +285,10 @@ PREFERENCE_SUFFIX = re.compile(
 PREFERENCE_MODIFIER = re.compile(r'^(?:ideally|preferably)\b', re.I)
 COORDINATED_PREFERENCE = re.compile(r',\s+and\s+([^.!?]+\b(?:is|are)\s+(?:(?:highly|strongly)\s+)?preferred[.!?]?)$', re.I)
 KEY_DETAILS = re.compile(r'^key details\s*:\s*', re.I)
-POSSIBLE_REQUIREMENT = re.compile(r'\bmay be required\s+(?:by|for|in|when|if|depending on|based on)\b', re.I)
+POSSIBLE_REQUIREMENT = re.compile(
+    r'\bmay be required\b(?=\s+(?:by|for|in|when|if|depending on|based on)\b|\s*[.!?]?$)'
+    r'|\bwhere required(?=\s*[.!?]?$)', re.I,
+)
 REQUIRED_CLAUSE = re.compile(r'(?<!not )(?<!strictly )\brequired\s*[,;.]', re.I)
 REQUIRED_LINE = re.compile(
     r'^(?:required|mandatory|minimum)\s*:|^required\s+(?:\d|an?\b)|\b(?:is|are) (?:required|mandatory)\b|'
@@ -372,11 +375,12 @@ JOB_LOGISTICS = re.compile(
     r'|remote from [^.,;]+[.!?]?$'
     r'|(?:must be available for (?:an? )?on[- ]call (?:rotation|coverage)'
     r'|on[- ]call (?:rotation|coverage) (?:is )?required)\b'
+    r'|must be willing to work extended hours,?\s+(?:and )?take part in (?:a )?(?:weekend )?on[- ]call rotation\b'
     r'|ability to train as [\w -]+ and adhere to standards\b'
     r'|all physical requirements are expected with reasonable accommodations\b'
     r'|willingness and demonstrated ability to work in the following physical conditions\b)', re.I,
 )
-DRIVER_LICENSE = r'(?:an? )?(?:valid |current )?driver[’\']?s license'
+DRIVER_LICENSE = r'(?:an? )?(?:valid |current )?(?:U\.?S\.?\s+)?driver[’\']?s license'
 RELIABLE_TRANSPORTATION = r'(?:access to )?(?:a )?(?:reliable (?:means of )?|(?:their |your )?own )transportation'
 VEHICLE_INSURANCE = r'(?:required )?(?:automobile|vehicle|liability) insurance'
 TRAVEL_AND_TRANSPORTATION = re.compile(
@@ -403,7 +407,7 @@ TRAVEL_AND_TRANSPORTATION = re.compile(
     rf'|{RELIABLE_TRANSPORTATION}(?: and {DRIVER_LICENSE})?'
     rf'|{DRIVER_LICENSE} and vehicle insurance,\s*(?:access to )?a (?:dependable|reliable) vehicle,?\s+or public transportation'
     r'|access to a (?:dependable|reliable)(?: personal)? vehicle'
-    r')\b(?=\s*[.!?:]?$))', re.I,
+    r')\b(?:,?\s+and (?:the )?(?:ability|willingness) to travel\b[^.!?]*)?(?=\s*[.!?:]?$))', re.I,
 )
 AMBIGUOUS_WORK_CONTEXT = re.compile(
     r'^(?:(?:able to|must be able to|willing/able to|ability to|willingness to) work\b[^.!?]*\bovertime\b'
@@ -473,6 +477,9 @@ SUBHEADING = re.compile(
 TENURE_LABEL = re.compile(r'(?:(?:minimum|preferred) )?years of (?:\w+ )?experience|relevant work experience', re.I)
 BARE_TENURE = re.compile(r'\d+(?:\s*[-–+]\s*\d*)?(?:\s+(?:years?|months?))?\.?', re.I)
 CHOICE_INTRO = re.compile(r'\b(?:one of|one or more of|any of) the following\b[^:]*:$', re.I)
+NESTED_CHOICE_INTRO = re.compile(
+    r'(?:must (?:possess|have|hold|meet) )?(?:one|one or more|any) of the following[.!]?', re.I,
+)
 PREFERRED_CHOICE = re.compile(
     r'(?:one|one or more|any) of the following(?: \w+)? (?:is|are) (?:preferred|desired|optional)[.:]?', re.I,
 )
@@ -521,12 +528,17 @@ ACTIVE_CLINICAL_LICENSE = re.compile(
     r' licen[cs](?:e|ure)\b', re.I,
 )
 EXPERIENCE_CRITERION = re.compile(
-    rf'^(?:(?:{TENURE_NUMBER})\+?\s+years? of\b|(?:demonstrated |proven )?experience\b)', re.I,
+    rf'^(?:typically,\s*)?(?:(?:more than )?{TENURE_NUMBER}\+?\s+years?\b'
+    r'|(?:(?:demonstrated|proven|prior|significant|specific) )?experience\b)', re.I,
 )
 DESIGNATION_PREFERENCE_BOUNDARY = re.compile(
     r'(?<=desirable)\s+(?=[A-Z]{2,}\b[^.!?]*\b(?:licen[cs]es?|certifications?) preferred\b)'
 )
 DESIGNATION_LABEL = re.compile(r'licen[cs]es?\s*/\s*certifications?\s*/\s*designation', re.I)
+KNOWLEDGE_LABEL = re.compile(r'knowledge,\s*abilities,?\s+and skills', re.I)
+EXPERIENCE_PREFERENCE = re.compile(
+    r',\s+((?!(?:or|and/or|including)\b)[^,;:]+?\bexperience (?:is )?preferred[.!?]?)$', re.I,
+)
 HIGH_SCHOOL_DIPLOMA = (
     r'(?:a )?high school diploma(?:\s*(?:/|,|or)\s*'
     r'(?:ged|general education (?:development|degree)(?:\s*\(ged\))?))?'
@@ -675,7 +687,7 @@ def statement_blocks(blocks, default_kind):
             kind, heading, lead_in = default_kind, None, None
             continue
         preferred_choice = PREFERRED_CHOICE.fullmatch(text)
-        choice = preferred_choice or CHOICE_INTRO.search(text)
+        choice = preferred_choice or CHOICE_INTRO.search(text) or (path and NESTED_CHOICE_INTRO.fullmatch(text))
         if kind in KINDS and (LIST_INTRO.search(text) or choice):
             if pending:
                 yield pending
@@ -788,23 +800,30 @@ def has_strength_cue(text):
 
 def independent_criteria(text, kind, heading):
     """Separate independently labeled sentences and retain explanatory continuations."""
+    experience_topic = heading and heading.casefold() == 'experience'
+    label, _, _ = text.partition(':')
+    prose_topic = experience_topic or DESIGNATION_LABEL.fullmatch(label) or KNOWLEDGE_LABEL.fullmatch(label)
     parts = []
     for sentence in SENTENCE_BOUNDARY.split(text):
         continuation = ((CONDITION_CONTINUATION.match(sentence) and not LICENSE_CONSEQUENCE.match(sentence))
-                        or ALTERNATIVE_START.match(sentence))
+                        or ALTERNATIVE_START.match(sentence) or SUPPLEMENT.match(sentence))
         if parts and not (CHOICE_SENTENCE.search(parts[0]) or continuation):
-            labeled = has_strength_cue(parts[0]) and has_strength_cue(sentence)
+            previous = parts[-1]
+            previous_labeled = has_strength_cue(previous)
+            next_labeled = has_strength_cue(sentence)
+            labeled = previous_labeled and next_labeled
             education = kind == 'required' and ACCREDITED_PROGRAM.match(parts[0]) and DEGREE_PATH.match(sentence)
-            experience = (heading and heading.casefold() == 'experience'
-                          and EXPERIENCE_CRITERION.match(parts[-1]) and EXPERIENCE_CRITERION.match(sentence))
-            if labeled or education or experience:
+            experience = experience_topic and EXPERIENCE_CRITERION.match(previous) and EXPERIENCE_CRITERION.match(sentence)
+            topical = (prose_topic and (previous_labeled or next_labeled)
+                       and (next_labeled or QUALIFICATION_CUE.search(sentence) or TYPE_RULES['certification'].search(sentence)))
+            if labeled or education or experience or topical:
                 yield ' '.join(parts)
                 parts.clear()
         parts.append(sentence)
     yield ' '.join(parts)
 
 
-def split_preference(text, kind):
+def split_preference(text, kind, heading=None):
     label, separator, _ = text.partition(':')
     boundary = (DESIGNATION_PREFERENCE_BOUNDARY.search(text)
                 if separator and DESIGNATION_LABEL.fullmatch(label) else None)
@@ -812,6 +831,18 @@ def split_preference(text, kind):
         yield text[:boundary.start()], 'preferred'
         yield text[boundary.end():], kind
         return
+    first, separator, remainder = text.partition('; ')
+    if (separator and explicit_requirement(first) and explicit_preference(remainder)
+            and not (ALTERNATIVE_START.match(remainder) or CONDITION_CONTINUATION.match(remainder))):
+        yield first, kind
+        yield remainder, 'preferred'
+        return
+    if heading and heading.casefold() == 'experience' and EXPERIENCE_CRITERION.match(text):
+        preference = EXPERIENCE_PREFERENCE.search(text)
+        if preference:
+            yield text[:preference.start()], kind
+            yield preference[1], 'preferred'
+            return
     preference = PREFERENCE_SUFFIX.search(text)
     if preference and (explicit_requirement(text[:preference.start()])
                        or kind == 'required' and PREFERENCE_MODIFIER.match(preference[1])):
@@ -850,7 +881,7 @@ def qualification_statements(blocks, default_kind):
             else:
                 criteria = independent_criteria(text, kind, heading) if kind not in ('stop', 'duties') else (text,)
                 for criterion in criteria:
-                    for fragment, strength in split_preference(criterion, kind):
+                    for fragment, strength in split_preference(criterion, kind, heading):
                         yield fragment, strength, heading, number, inherited_list or strength != kind
 
 
