@@ -317,7 +317,6 @@ class QualificationExtractionTests(unittest.TestCase):
                 <li>Experience treating pediatric patients.</li>
             </ul>
         '''}, [
-            ('ambiguous', 'Ability to travel to the locations below:'),
             ('required', 'Graduate from an accredited Nurse Practitioner or Physician Assistant program.'),
             ('preferred', 'Experience treating pediatric patients.'),
         ])
@@ -398,7 +397,6 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Are organized and able to manage multiple priorities'),
             ('preferred', 'Experience with account planning.'),
             ('ambiguous', 'Strong analytical skills.'),
-            ('ambiguous', 'Ability to travel approximately 70%.'),
         ])
 
     def test_mixed_format_boundaries_keep_requirements_without_schedule_or_pay(self):
@@ -418,7 +416,6 @@ class QualificationExtractionTests(unittest.TestCase):
                 <li>Dedicated remote workspace free from distractions</li>
             </ul>
         '''}, [
-            ('ambiguous', 'Key Details: This position is remote with 75% travel required.'),
             ('preferred', 'Experience with Epic and Excel is preferred.'),
             ('required', "Education/Experience: Requires Graduate from an Accredited School of Nursing or Bachelor's "
                          'degree in Nursing and 2 – 4 years of related experience.'),
@@ -454,9 +451,7 @@ class QualificationExtractionTests(unittest.TestCase):
             <li>Able to work the shift hours listed above, plus overtime. (Overtime may be mandatory)</li>
             <li>Travel booking platform experience</li></ul>
         '''}, [
-            ('ambiguous', 'Key Details: This remote position requires up to 75% local travel for home visits.'),
             ('required', 'Candidates must hold an active New Jersey Registered Nurse (RN) license.'),
-            ('ambiguous', 'Ability/willing to travel approximately 25% of the time'),
             ('ambiguous', 'Able to work the shift hours listed above, plus overtime. (Overtime may be mandatory)'),
             ('required', 'Travel booking platform experience'),
         ])
@@ -495,7 +490,7 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Current state RN license or Compact RN license before starting work.'),
         ])
 
-    def test_local_travel_and_transportation_are_ambiguous_in_required_sections(self):
+    def test_local_travel_and_transportation_are_omitted_from_required_sections(self):
         self.assert_statements({'description': '''
             <p>Required Qualifications:</p><ul>
                 <li>Ability to travel locally 4 days a week</li>
@@ -505,9 +500,6 @@ class QualificationExtractionTests(unittest.TestCase):
                 <li>Must have CDL Class A and forklift experience.</li>
             </ul>
         '''}, [
-            ('ambiguous', 'Ability to travel locally 4 days a week'),
-            ('ambiguous', "Access to reliable transportation and valid driver's license"),
-            ('ambiguous', 'Valid driver’s license and reliable transportation'),
             ('required', 'Current pharmacist license in Maine'),
             ('required', 'Must have CDL Class A and forklift experience.'),
         ])
@@ -594,7 +586,7 @@ class QualificationExtractionTests(unittest.TestCase):
             ('preferred', 'Salesforce architecture or development certifications preferred, but not required'),
         ])
 
-    def test_transportation_and_overtime_are_ambiguous_and_admin_text_is_excluded(self):
+    def test_overtime_is_ambiguous_and_transportation_and_admin_text_are_omitted(self):
         self.assert_statements({'description': '''
             <p>Shift Details: 9 AM to 6 PM</p><p>(Overtime may be required)</p>
             <p>Required Qualifications:</p>
@@ -609,8 +601,6 @@ class QualificationExtractionTests(unittest.TestCase):
             <p>The employer is a drug - free workplace. Candidates are required to pass a drug test.</p>
         '''}, [
             ('ambiguous', '(Overtime may be required)'),
-            ('ambiguous', "Current driver's license and vehicle insurance, access to a dependable vehicle, or public transportation"),
-            ('ambiguous', 'Proven ability and willingness to travel up to10% of the time'),
             ('required', 'Active state pharmacist license'),
             ('preferred', 'Current CPR certification or ability to complete within 90 days of hire'),
         ])
@@ -922,8 +912,6 @@ class QualificationExtractionTests(unittest.TestCase):
         '''}, [
             ('required', 'Speak, write, and read fluently in English'),
             ('required', 'Writes clear and detailed functional specifications.'),
-            ('ambiguous', 'Ability to travel to or commute between data center locations as needed'),
-            ('ambiguous', 'Candidates must be able to travel (over 50 miles) to active data center sites.'),
             ('required', 'Experience managing a travel booking platform.'),
         ])
 
@@ -959,7 +947,7 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', analytical),
         ])
 
-    def test_duty_lead_and_mixed_travel_do_not_hide_a_license_requirement(self):
+    def test_duties_and_worksite_travel_are_omitted(self):
         license_requirement = ("You will be responsible for having a reliable personal vehicle and a valid driver's license "
                                "to travel within the regional work area.")
         self.assert_statements({'description': f'''
@@ -973,8 +961,6 @@ class QualificationExtractionTests(unittest.TestCase):
             Basic Qualifications
             High school diploma or equivalent
         '''}, [
-            ('ambiguous', 'Traveling within the regional work area is required.'),
-            ('required', license_requirement),
             ('required', 'High school diploma or equivalent'),
         ])
 
@@ -986,7 +972,31 @@ class QualificationExtractionTests(unittest.TestCase):
         self.assert_statements({'description': f'Basic Qualifications\n{education} {skills} {travel}#0000'}, [
             ('required', education),
             ('required', skills),
-            ('ambiguous', travel),
+        ])
+
+    def test_travel_and_transportation_are_omitted_without_losing_role_qualifications(self):
+        self.assert_statements({'description': """
+            <h2>Required Qualifications</h2>
+            <ul>
+              <li>Willingness and ability to travel within assigned territory to meet business and customer engagement requirements</li>
+              <li>Possess a valid driver's license, reliable transportation, and required automobile insurance</li>
+              <li>Must have reliable means of transportation.</li>
+              <li>Requires frequent field travel and may require overnight travel.</li>
+              <li>This is a field based position - up to 75% travel.</li>
+              <li>Must hold an active Texas RN license if working with Texas patients and be able to travel locally.</li>
+              <li>Ability to travel locally; current PALS certification required if treating children.</li>
+              <li>Transportation planning experience</li>
+            </ul>
+            <h2>Preferred Qualifications</h2>
+            <ul>
+              <li>Valid driver's license, reliable transportation, and liability insurance.</li>
+              <li>Travel and expense management software experience.</li>
+            </ul>
+        """}, [
+            ('required', 'Must hold an active Texas RN license if working with Texas patients'),
+            ('required', 'current PALS certification required if treating children.'),
+            ('required', 'Transportation planning experience'),
+            ('preferred', 'Travel and expense management software experience.'),
         ])
 
     def test_logistics_and_physical_demands_do_not_become_resume_qualifications(self):
@@ -1001,7 +1011,6 @@ class QualificationExtractionTests(unittest.TestCase):
             Physical Requirements
             Willingness and demonstrated ability to work in the following physical conditions with reasonable accommodations:
         '''}, [
-            ('ambiguous', 'Travel up to 50% may be required'),
             ('required', 'Experience designing shift scheduling systems.'),
         ])
 

@@ -323,8 +323,7 @@ SUMMARY_REQUIREMENT = re.compile(
     r'|(?:in addition, )?you must possess\b.{0,100}\b(?:skills?|expertise|experience)\b'
     r'|this (?:role|position) requires\b.{0,100}\b(?:skills?|expertise|experience)\b'
     r'|(?:excellent|strong) .{1,180}\bskills?\b.*\b(?:is|are) (?:also )?required[.!?]?$'
-    r'|the desire and ability to .+\bis essential[.!?]?$'
-    r'|you will be responsible for having a reliable personal vehicle and (?:a )?valid driver[’\']s license\b)', re.I,
+    r'|the desire and ability to .+\bis essential[.!?]?$)', re.I,
 )
 JOB_LOGISTICS = re.compile(
     r'^(?:key details\s*:\s*)?(?:(?:ability (?:and willingness )?to|willingness to|candidates? must be able to) '
@@ -360,24 +359,39 @@ JOB_LOGISTICS = re.compile(
     r'|all physical requirements are expected with reasonable accommodations\b'
     r'|willingness and demonstrated ability to work in the following physical conditions\b)', re.I,
 )
-DRIVER_LICENSE = r'(?:a )?(?:valid |current )?driver[’\']s license'
-RELIABLE_TRANSPORTATION = r'(?:access to )?(?:a )?reliable transportation'
-AMBIGUOUS_WORK_CONTEXT = re.compile(
-    r'^(?:key details\s*:\s*)?(?:(?:(?:(?:proven )?ability(?:/willing| and willingness)? to|willingness to|'
-    r'(?:candidates? )?must be able to|able to|willing/able to) )?'
-    r'(?:(?:domestic(?: and/or international)?|international|overnight|frequent|occasional|local) )?travel\b'
+DRIVER_LICENSE = r'(?:an? )?(?:valid |current )?driver[’\']?s license'
+RELIABLE_TRANSPORTATION = r'(?:access to )?(?:a )?(?:reliable (?:means of )?|(?:their |your )?own )transportation'
+TRAVEL_AND_TRANSPORTATION = re.compile(
+    r'^(?:key details\s*:\s*)?(?:(?:(?:proven )?ability(?:/willing| and willingness)? to|'
+    r'willingness(?: and ability)? to|(?:candidates? |you )?must(?: be (?:able|willing) to)?|'
+    r'(?:be )?able to|willing/able to|requires?) )?'
+    r'(?:(?:(?:domestic(?: and(?:/or)? international)?|international|overnight|frequent|occasional|local|field) )*travel\b'
     r'(?=\s*(?:[.!?,;:(]|$)|\s+up to(?=\s*\d)|\s+(?:to|within|across|throughout|up to|as needed|when required|approximately|'
-    r'locally|domestically|internationally|required|may|is|will|in|between|\d)\b)'
+    r'as required|locally|domestically|internationally|extensively|required|may|is|will|in|between|every)\b'
+    r'|\s+(?:\d+\s*%|and (?:work overtime|(?:may )?require (?:overnight|local|field) travel)\b))'
+    r'|up to\s*\d+\s*%\s+(?:local |overnight |field )?travel\b'
     r'|travel(?:ing|ling) within\b|field-based travel\b|experience with extensive travel\b'
-    r'|(?:this|the) (?:remote )?(?:position|role) requires\b[^.!?]*\btravel\b'
+    r'|(?:this|the) (?:remote )?(?:position|role) requires (?:up to\s*\d+\s*%\s+)?'
+    r'(?:(?:local|frequent|overnight|field) )*travel(?=\s*(?:[.!?]|$)|\s+(?:for|to|within|of|up to)\b)'
     r'|this position is (?:fully )?(?:remote|on-?site|hybrid) with \d+% travel required\b'
-    r'|(?:able to|must be able to|willing/able to|ability to|willingness to) work\b[^.!?]*\bovertime\b'
-    r'|work overtime\b|\(?overtime (?:is |may be )?(?:required|mandatory)\b'
-    r'|flexibility to adjust start/finish times\b[^.!?]*\bovertime\b'
-    rf'|(?:{DRIVER_LICENSE} and {RELIABLE_TRANSPORTATION}|{RELIABLE_TRANSPORTATION} and {DRIVER_LICENSE}'
-    rf'|{DRIVER_LICENSE} and vehicle insurance,\s*(?:access to )?a (?:dependable|reliable) vehicle,?\s+or public transportation)'
-    r'\b(?=\s*[.!?]?$))', re.I,
+    r'|this is a field[- ]based position\s*[-–:]\s*(?:up to )?\d+\s*%\s+travel\b'
+    r'|(?:ability to |willingness to |must be able to )commute\b'
+    r'|you will be responsible for having a reliable personal vehicle and '
+    rf'{DRIVER_LICENSE} to travel\b'
+    r'|(?:(?:you )?must (?:have|possess) |possess )?(?:'
+    rf'{DRIVER_LICENSE}(?: and |,\s*){RELIABLE_TRANSPORTATION}'
+    r'(?:,?\s+and (?:required )?(?:automobile|vehicle|liability) insurance)?'
+    rf'|{RELIABLE_TRANSPORTATION}(?: and {DRIVER_LICENSE})?'
+    rf'|{DRIVER_LICENSE} and vehicle insurance,\s*(?:access to )?a (?:dependable|reliable) vehicle,?\s+or public transportation'
+    r'|access to a (?:dependable|reliable)(?: personal)? vehicle'
+    r')\b(?=\s*[.!?:]?$))', re.I,
 )
+AMBIGUOUS_WORK_CONTEXT = re.compile(
+    r'^(?:(?:able to|must be able to|willing/able to|ability to|willingness to) work\b[^.!?]*\bovertime\b'
+    r'|work overtime\b|\(?overtime (?:is |may be )?(?:required|mandatory)\b'
+    r'|flexibility to adjust start/finish times\b[^.!?]*\bovertime\b)', re.I,
+)
+LOGISTICS_CLAUSE_BOUNDARY = re.compile(r',?\s+and\s+|;\s+', re.I)
 SENTENCE_BOUNDARY = re.compile(
     r'(?<=[.!?])(?<!\b[A-Za-z]\.)\s+(?=[A-Z]|\d+\s*\+?\s*(?:years?|months?)\b)'
     r'|(?<=[aApP]\.[mM]\.)\s+(?=[A-Z][a-z])|(?<=;)\s+(?=(?i:normally requires?)\b)',
@@ -593,7 +607,9 @@ def statement_blocks(blocks, default_kind):
             statement = ELIGIBILITY_DISCLOSURE.split(statement, maxsplit=1)[0]
         if not statement or SECTION_PLACEHOLDER.match(statement):
             continue
-        if path and statement.endswith(':') and (JOB_LOGISTICS.match(statement) or AMBIGUOUS_WORK_CONTEXT.match(statement)):
+        if path and statement.endswith(':') and (TRAVEL_AND_TRANSPORTATION.match(statement)
+                                                  or JOB_LOGISTICS.match(statement)
+                                                  or AMBIGUOUS_WORK_CONTEXT.match(statement)):
             logistics_path = path
         if kind is None and INLINE_APPLICATION_DEADLINE.match(statement):
             continue
@@ -659,19 +675,35 @@ def statement_blocks(blocks, default_kind):
         yield pending
 
 
+def split_travel_clause(sentence):
+    starts_with_travel = TRAVEL_AND_TRANSPORTATION.match(sentence)
+    for boundary in LOGISTICS_CLAUSE_BOUNDARY.finditer(sentence):
+        before = sentence[:boundary.start()]
+        after = sentence[boundary.end():]
+        if (not starts_with_travel and TRAVEL_AND_TRANSPORTATION.match(after)
+                and (QUALIFICATION_CUE.search(before) or AMBIGUOUS_WORK_CONTEXT.match(before))):
+            return before, after
+        if TRAVEL_AND_TRANSPORTATION.match(before) and (
+                explicit_requirement(after) or explicit_preference(after) or AMBIGUOUS_WORK_CONTEXT.match(after)):
+            return before, after
+    return (sentence,)
+
+
 def separate_work_context(text):
-    """Retain travel and overtime as context and discard other standalone logistics."""
+    """Keep overtime as context and discard travel and transportation logistics."""
     parts = []
     for sentence in SENTENCE_BOUNDARY.split(text):
-        context = AMBIGUOUS_WORK_CONTEXT.match(sentence)
-        if context or JOB_LOGISTICS.match(sentence) or NO_PRIOR_EXPERIENCE.match(sentence):
-            if parts:
-                yield ' '.join(parts), False
-                parts.clear()
-            if context:
-                yield sentence, True
-        else:
-            parts.append(sentence)
+        for clause in split_travel_clause(sentence):
+            context = AMBIGUOUS_WORK_CONTEXT.match(clause)
+            travel = TRAVEL_AND_TRANSPORTATION.match(clause)
+            if travel or context or JOB_LOGISTICS.match(clause) or NO_PRIOR_EXPERIENCE.match(clause):
+                if parts:
+                    yield ' '.join(parts), False
+                    parts.clear()
+                if context and not travel:
+                    yield clause, True
+            else:
+                parts.append(clause)
     if parts:
         yield ' '.join(parts), False
 
@@ -782,7 +814,8 @@ def classify_statement(text, kind, heading, inherited_list, field, types):
     if kind == 'work_context':
         return 'ambiguous'
     if (EMPTY.fullmatch(text) or BOILERPLATE.search(text) or FOOTER.search(text)
-            or JOB_LOGISTICS.match(text) or GENERIC_CREDENTIAL_DUTY.match(text)):
+            or TRAVEL_AND_TRANSPORTATION.match(text) or JOB_LOGISTICS.match(text)
+            or GENERIC_CREDENTIAL_DUTY.match(text)):
         return None
     license_obligation = bool(LICENSE_OBLIGATION.search(text))
     credential_required = bool(EXPLICIT_CREDENTIAL.search(text))
