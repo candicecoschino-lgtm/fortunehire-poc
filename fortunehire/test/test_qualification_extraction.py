@@ -555,6 +555,78 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Current RN license required, and a second license may be required by some plans.'),
         ])
 
+    def test_key_details_recover_explicit_licenses_experience_and_preferences(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: Must be licensed in the state of Texas. Pediatric experience required.
+            This team supports foster care youth. Previous foster care experience is strongly preferred.
+            The regular work schedule is Monday through Friday, with weekend work required.</p>
+            <p>License/Certification:</p>
+            <ul><li>RN state or compact licensure required or</li>
+            <li>Current nurse practitioner license required</li>
+            <li>Care management certification must be obtained within 90 days of hire required</li></ul>
+        '''}, [
+            ('required', 'Must be licensed in the state of Texas.'),
+            ('required', 'Pediatric experience required.'),
+            ('preferred', 'Previous foster care experience is strongly preferred.'),
+            ('required', 'RN state or compact licensure required or Current nurse practitioner license required'),
+            ('required', 'Care management certification must be obtained within 90 days of hire required'),
+        ])
+
+    def test_preference_in_role_summary_is_separate_from_general_prose(self):
+        self.assert_statements({'description': '''
+            <p>We are seeking a psychologist who will conduct assessments.
+            This remote role combines reviews with strategy work. Familiarity with the local market is important,
+            and health plan experience is highly preferred.</p>
+        '''}, [
+            ('preferred', 'health plan experience is highly preferred.'),
+        ])
+
+    def test_independent_preferred_certification_ends_a_desired_choice_list(self):
+        self.assert_statements({'description': '''
+            <p>Technical Skills:</p>
+            <p>One or more of the following skills are desired.</p>
+            <ul><li>Experience with application development</li>
+            <li>Experience with automated testing</li>
+            <li>Salesforce architecture or development certifications preferred, but not required</li></ul>
+        '''}, [
+            ('preferred', 'One or more of the following skills are desired. Experience with application development '
+                          'Experience with automated testing'),
+            ('preferred', 'Salesforce architecture or development certifications preferred, but not required'),
+        ])
+
+    def test_transportation_and_overtime_are_ambiguous_and_admin_text_is_excluded(self):
+        self.assert_statements({'description': '''
+            <p>Shift Details: 9 AM to 6 PM</p><p>(Overtime may be required)</p>
+            <p>Required Qualifications:</p>
+            <ul><li>Current driver's license and vehicle insurance, access to a dependable vehicle, or public transportation</li>
+            <li>Proven ability and willingness to travel up to10% of the time</li>
+            <li>Available to work a weekend rotation</li><li>Active state pharmacist license</li></ul>
+            <p>Preferred Qualifications:</p>
+            <ul><li>Current CPR certification or ability to complete within 90 days of hire</li>
+            <li>Ability to perform physical tasks required for patient care, including lifting and transferring</li>
+            <li>Remote from East Coast region</li></ul>
+            <p>All Telecommuters will be required to adhere to the employer's Telecommuter Policy.</p>
+            <p>The employer is a drug - free workplace. Candidates are required to pass a drug test.</p>
+        '''}, [
+            ('ambiguous', '(Overtime may be required)'),
+            ('ambiguous', "Current driver's license and vehicle insurance, access to a dependable vehicle, or public transportation"),
+            ('ambiguous', 'Proven ability and willingness to travel up to10% of the time'),
+            ('required', 'Active state pharmacist license'),
+            ('preferred', 'Current CPR certification or ability to complete within 90 days of hire'),
+        ])
+
+    def test_adjacent_education_restatement_keeps_the_explicit_equivalent(self):
+        self.assert_statements({'description': '''
+            <p>Experience and Educational Requirements:</p>
+            <p>Requires completion of a high school diploma, general education degree (GED)</p>
+            <p>Minimum Skills, Knowledge and Ability Requirements:</p>
+            <ul><li>High School Diploma/GED or equivalent experience required.</li>
+            <li>Warehouse inventory experience required.</li></ul>
+        '''}, [
+            ('required', 'High School Diploma/GED or equivalent experience required.'),
+            ('required', 'Warehouse inventory experience required.'),
+        ])
+
     def test_cencora_warehouse_keeps_education_equivalence_and_tenure(self):
         self.assert_statements({'description': '''
             Responsibilities:
