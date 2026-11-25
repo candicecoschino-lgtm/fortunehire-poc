@@ -42,6 +42,18 @@ const baseVerbs = {
   conducted: 'conduct', assessed: 'assess', implemented: 'implement',
 };
 
+const eligibilityOnly = /\b(?:citizen(?:ship)?|nationality|(?:u\.?s\.?|foreign) nationals?|nationals? of|permanent residen(?:ts?|cy)|green[- ]?card|immigration status|clearance|work authori[sz]ation|authori[sz]ed to work|eligible to work|visa sponsorship|export control)\b/i;
+const baselineOnly = /\b(?:driver[’']?s? licen[cs]e|reliable transportation|high school (?:diploma|education)|ged|microsoft (?:office|365)|fast[- ]paced team environment|work(?:ing)? with (?:your )?hands|read and write fluently|off[- ]?site training|overnight travel)\b/i;
+const logisticsOnly = /^(?:(?:must |(?:demonstrated |proven )?ability to |willingness (?:and ability )?to |be (?:able|willing) to |can )*(?:travel|commute|relocate|reside|lift|bend|twist|stand for|work (?:at heights|on[- ]call|overtime|off[- ]?site|weekends|from ladders)|walk (?:on |across )?(?:job sites|uneven terrain)|use (?:your )?hands|manipulate small|attend (?:off[- ]?site )?training|read and write|speak,? write,? and read)\b|up to \d+% (?:of )?travel|(?:off[- ]?site|out[- ]of[- ]town) training\b|(?:designated )?home[- ]office workspace\b|high[- ]speed internet (?:at home|in (?:the home|place of residence))\b)/i;
+const commercialDriving = /\b(?:cdl|commercial driver[’']?s? licen[cs]e)\b/i;
+const travelWork = /\btravel (?:booking|industry|management (?:software|system)|and expense management)\b/i;
+const travelAvailability = /\b(?:(?:ability|willingness) to travel|(?:must|expected to) travel|(?:frequent|occasional|overnight) travel|travel (?:up to|as required)|\d+\s*%\s+(?:of )?travel)\b/i;
+const degree = /\b(?:degree|bachelor|master|doctorate|phd|bs|ba|ms|mba)\b/i;
+const educationAlternative = /\b(?:or|in[- ]lieu of)\b[^.;]*\b(?:equivalent|comparable|substitute|(?:relevant|professional|work|practical) experience|\d+\s*(?:\+|or more)?\s*years?)\b|\bequivalent combination\b/i;
+const specificSkills = /\b(?:sql|python|rust|java(?:script)?|typescript|kubernetes|terraform|linux|aws|azure|gcp|salesforce|servicenow|sap|ccnp|ccna|pmp|cdl|autocad|workday|tableau|snowflake|epic|hris|devops|ci\/cd)\b|\bc\+\+/gi;
+const genericPhrases = new Set(['best practices', 'equivalent practical', 'equivalent professional',
+  'oral communication', 'written communication', 'attention detail', 'fast paced', 'high school']);
+
 function normalized(text) {
   return text.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}+#]+/gu, ' ').trim();
 }
@@ -98,6 +110,58 @@ function requirementStatus(posting, profile) {
   return fact ? {posting, status: 'Supported by your profile', fact: fact.fact} : {posting, status: 'Unverified'};
 }
 
+function inMatchScope(statement) {
+  return !eligibilityOnly.test(statement)
+    && (!travelAvailability.test(statement) || travelWork.test(statement))
+    && (!logisticsOnly.test(statement) || travelWork.test(statement))
+    && (!baselineOnly.test(statement) || commercialDriving.test(statement)
+      && !/\b(?:reliable transportation|ability to travel|willingness to travel)\b/i.test(statement));
+}
+
+export function qualificationIndex(payload, jobs) {
+  const result = new Map();
+  if (payload?.version !== 1 || !payload.jobs || typeof payload.jobs !== 'object') return result;
+  for (const job of jobs) {
+    const entry = Object.hasOwn(payload.jobs, job.id) ? payload.jobs[job.id] : undefined;
+    if (!job.sourceHash || entry?.catalogSourceHash !== job.sourceHash || !Array.isArray(entry.evidence)) continue;
+    const usable = entry.evidence.filter(item => item && ['required', 'preferred'].includes(item.kind)
+      && typeof item.text === 'string' && item.text.trim() && inMatchScope(item.text.trim()));
+    if (usable.length) result.set(job.id, usable);
+  }
+  return result;
+}
+
+function qualificationStatus({text, types = []}, profile) {
+  const alternative = degree.test(text) && educationAlternative.test(text);
+  const credential = Array.isArray(types) && (types.includes('license') || types.includes('certification'));
+  const criterion = text.replace(/\s*(?:\((?:required|preferred)\)|(?:is |are )?(?:required|preferred))\.?$/i, '').trim();
+  if (!alternative) {
+    const exact = requirementStatus(criterion, profile);
+    if (exact.status === 'Gap' || !credential && exact.status === 'Supported by your profile') {
+      return {...exact, posting: text};
+    }
+    if (degree.test(text)) {
+      const degreeFact = profile.facts.find(item => item.normalized === normalized(criterion));
+      return degreeFact ? {posting: text, status: 'Named in résumé', fact: degreeFact.fact}
+        : {posting: text, status: 'Unverified'};
+    }
+  }
+  const phrases = [...terms(text)].filter(value => !genericPhrases.has(value));
+  const skills = [...text.matchAll(specificSkills)].map(match => normalized(match[0]));
+  const fact = profile.facts.find(item => {
+    if (!item.demonstrated && !credential) return false;
+    // Related work can support an equivalency path without verifying the
+    // employer's duration, credential or other conditions.
+    const experience = alternative
+      ? item.normalized.split(/\b(?:earned|completed|received|graduated with)\b/, 1)[0]
+      : item.normalized;
+    const padded = ' ' + experience + ' ';
+    return [...skills, ...phrases].some(phrase => padded.includes(' ' + phrase + ' '));
+  });
+  return fact ? {posting: text, status: fact.demonstrated ? 'Related experience' : 'Named in résumé', fact: fact.fact}
+    : {posting: text, status: 'Unverified'};
+}
+
 function pairEvidence(postings, profile, frequency, catalogSize) {
   const found = [];
   for (const posting of postings) {
@@ -136,6 +200,7 @@ function eligible(job, options, today) {
 }
 
 export function rankMatches(jobs, profile, options = {}, today = todayInNewYork()) {
+  const qualificationMode = options.qualifications instanceof Map;
   const candidates = [...new Map(jobs.filter(job => eligible(job, options, today)).map(job => [job.id, job])).values()];
   const frequency = new Map();
   for (const job of candidates) {
@@ -145,6 +210,23 @@ export function rankMatches(jobs, profile, options = {}, today = todayInNewYork(
   const matches = [];
   for (const job of candidates) {
     const context = job.functionContext;
+    if (qualificationMode) {
+      const evidence = options.qualifications.get(job.id) || [];
+      const requirements = evidence.filter(item => item.kind === 'required')
+        .map(item => qualificationStatus(item, profile));
+      const preferred = evidence.filter(item => item.kind === 'preferred')
+        .map(item => qualificationStatus(item, profile)).filter(item => item.fact);
+      const supported = requirements.filter(item => item.status === 'Supported by your profile').length;
+      const related = requirements.filter(item => ['Related experience', 'Named in résumé'].includes(item.status)).length;
+      const gaps = requirements.filter(item => item.status === 'Gap').length;
+      if (!supported && !related && !preferred.length) continue;
+      const category = requirements.length > 0 && supported === requirements.length
+        ? 'Strong evidence' : 'Needs verification';
+      const strength = Math.min(3, supported) * 4 + Math.min(3, related) * 2 + Math.min(2, preferred.length);
+      const duties = pairEvidence(context?.duties || [], profile, frequency, candidates.length);
+      matches.push({job, duties, requirements, preferred, category, gaps, strength});
+      continue;
+    }
     if (!context) continue;
     const duties = pairEvidence(context.duties, profile, frequency, candidates.length);
     const requirements = (context.requiredSkills || []).map(item => requirementStatus(item, profile));

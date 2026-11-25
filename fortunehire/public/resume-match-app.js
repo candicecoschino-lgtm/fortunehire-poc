@@ -1,7 +1,7 @@
 import {ARRANGEMENTS, US_STATES, validateJobs} from './jobs.js';
 import {locationSummary} from './job-presentation.js';
 import {extractResume, ResumeFileError} from './resume-files.js';
-import {FEEDBACK_LABELS, MAX_PROFILE_LENGTH, rankMatches, readProfile, summarizeFeedback} from './resume-match.js';
+import {FEEDBACK_LABELS, MAX_PROFILE_LENGTH, qualificationIndex, rankMatches, readProfile, summarizeFeedback} from './resume-match.js';
 
 const get = id => document.getElementById(id);
 const create = (tag, text) => {
@@ -30,7 +30,14 @@ async function loadCatalog() {
     const response = await fetch(new URL(`./data/${name}.json`, import.meta.url), {credentials: 'omit'});
     if (!response.ok) throw new Error('Catalog unavailable');
     return response.json();
-  })).then(([jobs, companies]) => validateJobs(jobs, companies.companies)).catch(error => {
+  })).then(async ([payload, companies]) => {
+    const jobs = validateJobs(payload, companies.companies);
+    const response = await fetch(new URL('./data/resume-qualifications.json', import.meta.url), {credentials: 'omit'});
+    if (!response.ok) throw new Error('Qualification evidence unavailable');
+    const qualifications = qualificationIndex(await response.json(), jobs);
+    if (!qualifications.size) throw new Error('Qualification evidence unavailable');
+    return {jobs, qualifications};
+  }).catch(error => {
     catalog = undefined;
     throw error;
   });
@@ -110,7 +117,7 @@ function matchCard({job, category, duties, requirements, preferred}) {
         create('span', `Employer duty — ${pair.posting}`));
     }));
   } else {
-    card.append(create('p', 'A listed skill is supported by your profile. The available duties do not establish a broader match.'));
+    card.append(create('p', 'See the qualifications below for the résumé evidence found.'));
   }
   const details = create('details');
   details.append(create('summary', 'Qualifications to review'));
@@ -123,7 +130,7 @@ function matchCard({job, category, duties, requirements, preferred}) {
     details.append(create('p', 'Employer requirements are unclear in the available listing data.'));
   }
   if (preferred.length) {
-    details.append(create('h4', 'Preferred skills supported by your profile'),
+    details.append(create('h4', 'Relevant preferred qualifications'),
       evidenceList(preferred, (item, li) => li.append(item.posting, create('span', `Your profile — ${item.fact}`))));
   }
   details.append(create('p', 'Review the official posting for the full requirements.'));
@@ -204,13 +211,13 @@ findButton.addEventListener('click', async () => {
   findButton.disabled = true;
   get('match-status').textContent = 'Checking the verified job catalog…';
   try {
-    const jobs = await loadCatalog();
+    const {jobs, qualifications} = await loadCatalog();
     if (current !== run) return;
     matches = rankMatches(jobs, readProfile(profileInput.value), {
-      state: stateInput.value, arrangement: arrangementInput.value,
+      state: stateInput.value, arrangement: arrangementInput.value, qualifications,
     });
     if (!matches.length) {
-      get('match-status').textContent = 'No current jobs had enough matching evidence. Try adding concrete duties or widening your location preferences.';
+      get('match-status').textContent = 'No current jobs with available qualification evidence matched your résumé and filters.';
       return;
     }
     get('match-status').textContent = matches.length < 20
@@ -220,7 +227,7 @@ findButton.addEventListener('click', async () => {
     get('match-results').hidden = false;
     get('results-heading').focus();
   } catch {
-    if (current === run) get('match-status').textContent = 'The jobs could not be loaded or matched. Try again.';
+    if (current === run) get('match-status').textContent = 'The local job catalog or qualification evidence could not be loaded. Try again.';
   } finally {
     if (current === run) findButton.disabled = Boolean(extraction);
   }

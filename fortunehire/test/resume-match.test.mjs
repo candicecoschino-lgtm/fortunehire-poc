@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {deflateRawSync} from 'node:zlib';
 import {docxXml, fileKind, ResumeFileError} from '../public/resume-files.js';
-import {rankMatches, readProfile, summarizeFeedback} from '../public/resume-match.js';
+import {qualificationIndex, rankMatches, readProfile, summarizeFeedback} from '../public/resume-match.js';
 
 const today = '2026-11-22';
 const job = (id, duties, overrides = {}) => ({
@@ -10,6 +10,54 @@ const job = (id, duties, overrides = {}) => ({
   arrangement: 'on-site', locations: [{state: 'Washington'}],
   functionContext: {version: 2, duties, requiredSkills: [], preferredSkills: []},
   ...overrides,
+});
+
+test('qualification mode ranks demonstrated work on an Amazon equivalency path and skips stale or missing evidence', () => {
+  const amazon = job('amazon-123', [], {sourceHash: 'current'});
+  const stale = job('stale', ['Develop Python tools for data pipelines.'], {sourceHash: 'changed'});
+  const uncovered = job('uncovered', ['Develop Python tools for data pipelines.']);
+  const jobs = [amazon, stale, uncovered];
+  const degree = 'Bachelor’s degree in computer science or equivalent professional experience building data pipelines.';
+  const evidence = [
+    {kind: 'required', text: degree},
+    {kind: 'required', text: '5 years of enterprise experience'},
+    {kind: 'preferred', text: 'Python'},
+    {kind: 'ambiguous', text: 'Data pipelines'},
+  ];
+  const qualifications = qualificationIndex({version: 1, jobs: {
+    [amazon.id]: {catalogSourceHash: 'current', evidence},
+    [stale.id]: {catalogSourceHash: 'old', evidence},
+  }}, jobs);
+  const [match, ...others] = rankMatches(jobs, readProfile('Built data pipelines using Python.'), {qualifications}, today);
+  assert.deepEqual(others, []);
+  assert.equal(match.job.id, amazon.id);
+  assert.deepEqual(match.requirements.map(({status}) => status), ['Related experience', 'Unverified']);
+  assert.equal(match.requirements[0].posting, degree);
+  assert.equal(match.preferred[0].posting, 'Python');
+  assert.equal(match.category, 'Needs verification');
+  assert.deepEqual(rankMatches(jobs, readProfile('Earned a Bachelor’s degree in computer science.'), {qualifications}, today), []);
+});
+
+test('baseline logistics and eligibility do not count as qualifications while role-specific transportation skills do', () => {
+  const posting = job('amazon-456', [], {sourceHash: 'current'});
+  const statements = [
+    'Valid driver’s license', 'High school diploma or equivalent', 'Microsoft Office products and applications',
+    'Can read and write fluently', 'Can bend or twist the body into unusual positions',
+    'Can use hands to manipulate small wires', 'Can walk on uneven terrain',
+    'Can work at heights and from ladders', 'Ability to lift 50 pounds', 'Fast-paced team environment',
+    'Ability to travel up to 40%', 'Current RN license and ability to travel', 'Offsite training', 'U.S. citizen or permanent resident',
+    'U.S. national or green card holder', 'Active Top Secret clearance', 'Reliable transportation',
+    'Transportation planning experience', 'Commercial Driver’s License (CDL)',
+  ];
+  const qualifications = qualificationIndex({version: 1, jobs: {
+    [posting.id]: {catalogSourceHash: 'current', evidence: statements.map(text => ({kind: 'required', text}))},
+  }}, [posting]);
+  assert.deepEqual(qualifications.get(posting.id).map(({text}) => text), statements.slice(-2));
+  const profile = readProfile('Led transportation planning for regional distribution.\nDo not have: Valid driver’s license.');
+  const [match] = rankMatches([posting], profile, {qualifications}, today);
+  assert.equal(match.gaps, 0);
+  assert.equal(match.requirements[0].status, 'Related experience');
+  assert.equal(match.requirements[1].status, 'Unverified');
 });
 
 test('shared work across industries outranks a familiar title with unrelated duties', () => {
