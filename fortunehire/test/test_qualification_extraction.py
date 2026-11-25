@@ -222,8 +222,399 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Maintains active pharmacist license in home state and obtains/maintains required '
                          'non-resident state licenses as business needs dictate to support multi-state operations.'),
             ('required', 'Requires Pennsylvania active pharmacist license.'),
-            ('required', 'Requires a Degree in Pharmacy from an accredited College of Pharmacy. '
-                         'Unrestricted, current state license as a Registered Pharmacist in resident state is required.'),
+            ('required', 'Requires a Degree in Pharmacy from an accredited College of Pharmacy.'),
+            ('required', 'Unrestricted, current state license as a Registered Pharmacist in resident state is required.'),
+        ])
+
+    def test_soft_skills_reset_strength_and_explicit_degree_preference_wins(self):
+        self.assert_statements({'description': '''
+            <p>Minimum Qualifications</p>
+            <p>Juris Doctor degree preferred, or equivalent compliance experience.</p>
+            <p>Preferred Qualifications</p>
+            <p>Experience presenting to agency staff.</p>
+            <p>Soft Skills:</p>
+            <ul><li>Ability to work independently.</li><li>Strong communication skills.</li></ul>
+        '''}, [
+            ('preferred', 'Juris Doctor degree preferred, or equivalent compliance experience.'),
+            ('preferred', 'Experience presenting to agency staff.'),
+            ('ambiguous', 'Ability to work independently.'),
+            ('ambiguous', 'Strong communication skills.'),
+        ])
+
+    def test_typical_tenure_is_ambiguous_and_a_wrapped_preference_is_complete(self):
+        self.assert_statements({'description': '''
+            <p>Education:</p>
+            <ul>
+                <li>Normally requires a minimum of two years of pharmacy experience.
+                Technician certification from a national</li>
+                <li>certification provider or another comparable credential is preferred.</li>
+                <li>An active technician or trainee license is required.
+                For further information, please consult the state board.</li>
+            </ul>
+        '''}, [
+            ('ambiguous', 'Normally requires a minimum of two years of pharmacy experience.'),
+            ('preferred', 'Technician certification from a national certification provider or another '
+                          'comparable credential is preferred.'),
+            ('required', 'An active technician or trainee license is required.'),
+        ])
+
+    def test_topical_sections_read_strength_labels_and_keep_or_clause(self):
+        self.assert_statements({'description': '''
+            <p>Responsibilities:</p><p>Prepare billing records.</p>
+            <p>Education and Work Experience</p>
+            <ul>
+                <li>Requires broad training in accounting, generally obtained through an associate degree.</li>
+                <li>Minimum 5 years of accounting software experience.</li>
+                <li>Must have advanced Excel skills. Writing formulas and pivot tables.</li>
+            </ul>
+            <p>Education/Experience:</p>
+            <p>Required A High School diploma</p><p>Required or equivalent work experience</p>
+            <p>Preferred A Bachelor's Degree in a related field</p>
+            <p>Candidate Experience: Required 2+ years of outreach experience</p>
+            <p>Required 4+ years of experience in Event Planning</p>
+        '''}, [
+            ('required', 'Requires broad training in accounting, generally obtained through an associate degree.'),
+            ('required', 'Minimum 5 years of accounting software experience.'),
+            ('required', 'Must have advanced Excel skills. Writing formulas and pivot tables.'),
+            ('required', 'Required A High School diploma Required or equivalent work experience'),
+            ('preferred', "Preferred A Bachelor's Degree in a related field"),
+            ('required', 'Candidate Experience: Required 2+ years of outreach experience'),
+            ('required', 'Required 4+ years of experience in Event Planning'),
+        ])
+
+    def test_timed_credentials_and_license_conditions_keep_their_complete_wording(self):
+        self.assert_statements({'description': '''
+            <p>Work Experience</p>
+            <ul>
+                <li>Candidates must be willing to obtain a Pharmacy Operations (PO) credential within six months.</li>
+                <li>An active state license is required. If you live outside the state, a second license is required.</li>
+                <li>Experience with medical billing helpful.</li>
+                <li>Requires computer skills. A current driver's license is required.</li>
+            </ul>
+        '''}, [
+            ('required', 'Candidates must be willing to obtain a Pharmacy Operations (PO) credential within six months.'),
+            ('required', 'An active state license is required. If you live outside the state, a second license is required.'),
+            ('preferred', 'Experience with medical billing helpful.'),
+            ('required', 'Requires computer skills.'),
+            ('required', "A current driver's license is required."),
+        ])
+
+    def test_nested_travel_addresses_are_skipped_and_sibling_requirements_survive(self):
+        self.assert_statements({'description': '''
+            <p>Required Qualifications</p>
+            <ul>
+                <li>Ability to travel to the locations below:
+                    <ul><li>25 Main Street, Austin 78701</li></ul>
+                </li>
+                <li>Graduate from an accredited Nurse Practitioner or Physician Assistant program.</li>
+                <li>Reside within a commutable distance of the clinic.</li>
+                <li>Ability to lift up to forty pounds is required.</li>
+                <li>Must be able to lift 100 lbs</li>
+            </ul>
+            <p>Preferred Qualifications</p>
+            <ul>
+                <li>Ability and willingness to provide coverage at other locations as needed.</li>
+                <li>Experience treating pediatric patients.</li>
+            </ul>
+        '''}, [
+            ('required', 'Graduate from an accredited Nurse Practitioner or Physician Assistant program.'),
+            ('preferred', 'Experience treating pediatric patients.'),
+        ])
+
+    def test_choice_lead_in_stays_attached_to_credential_options(self):
+        wording = (
+            'License/Certification: One of the following is preferred. Licensed Practical Nurse (LPN); '
+            'Licensed Social Worker (LSW); Registered Nurse (RN) preferred.'
+        )
+        self.assert_statements({'description': f'<p>{wording}</p>'}, [('preferred', wording)])
+
+    def test_required_skills_boundary_keeps_occupational_credentials(self):
+        self.assert_statements({'description': '''
+            <p>Responsibilities:</p>
+            <ul><li>Maintain all required certifications and licenses as required by policy.</li></ul>
+            <p>Skills and Experience required:</p>
+            <ul>
+                <li>Current valid CDL Class A or B (must be maintained).</li>
+                <li>Valid DOT medical card (must be maintained).</li>
+                <li>Comfortable with physical requirements, including repeated lifting up to 70 lbs.</li>
+                <li>Flexibility to adjust start/finish times daily.</li>
+            </ul>
+            <p>Required (Driving Record):</p>
+            <ul><li>No more than two violations in the past year.</li></ul>
+        '''}, [
+            ('required', 'Current valid CDL Class A or B (must be maintained).'),
+            ('required', 'Valid DOT medical card (must be maintained).'),
+        ])
+
+    def test_explicit_qualifications_recover_after_shift_details(self):
+        self.assert_statements({'description': '''
+            <p>Shift Details: Monday to Friday from 8:00 a.m. to 4:30 p.m.</p>
+            <ul><li>Maintains inventory across sites.</li><li>Must be able to work overtime.</li></ul>
+            <ul>
+                <li>Bachelor's degree in computer science required, or equivalent experience required.</li>
+                <li>Less than 2 years of experience in systems administration required.</li>
+                <li>Relevant entry-level certifications (e.g., CompTIA Server+) preferred.</li>
+            </ul>
+            <p>Compensation: Competitive pay.</p>
+            <p>Computer science degree required to qualify for the tuition program.</p>
+        '''}, [
+            ('ambiguous', 'Must be able to work overtime.'),
+            ('required', "Bachelor's degree in computer science required, or equivalent experience required."),
+            ('required', 'Less than 2 years of experience in systems administration required.'),
+            ('preferred', 'Relevant entry-level certifications (e.g., CompTIA Server+) preferred.'),
+        ])
+
+    def test_summary_keeps_required_alternatives_and_separates_explicit_preferences(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: This is a remote position. Candidates must have an active Compact RN license
+            or Florida RN license, with a Compact license preferred. A minimum of 2+ years of acute care
+            experience is required, with ER or ICU experience preferred. The schedule is Monday through Friday.</p>
+            <p>Education and Work Experience:</p>
+            <p>Bachelor's degree required. Advanced degree preferred in behavioral science or a related field.</p>
+            <p>Knowledge of quality management systems (preferred), including audit tools.</p>
+            <p>License/Certification: Valid state clinical license preferred (i.e.- LPN, RN, etc.)</p>
+        '''}, [
+            ('required', 'Candidates must have an active Compact RN license or Florida RN license'),
+            ('preferred', 'with a Compact license preferred.'),
+            ('required', 'A minimum of 2+ years of acute care experience is required'),
+            ('preferred', 'with ER or ICU experience preferred.'),
+            ('required', "Bachelor's degree required."),
+            ('preferred', 'Advanced degree preferred in behavioral science or a related field.'),
+            ('preferred', 'Knowledge of quality management systems (preferred), including audit tools.'),
+            ('preferred', 'License/Certification: Valid state clinical license preferred (i.e.- LPN, RN, etc.)'),
+        ])
+
+    def test_explicit_sections_take_text_bullets_and_reset_at_unmarked_skills(self):
+        self.assert_statements({'description': '''
+            <p>Minimum Qualifications</p>
+            <p>No prior sales experience needed. If you are curious about technology, we want to hear from you.</p>
+            <p>· Are organized and able to manage multiple priorities</p>
+            <p>Preferred Qualifications</p>
+            <ul><li>Experience with account planning.</li></ul>
+            <p>Skills &amp; Capabilities:</p>
+            <ul><li>Strong analytical skills.</li><li>Ability to travel approximately 70%.</li></ul>
+        '''}, [
+            ('required', 'Are organized and able to manage multiple priorities'),
+            ('preferred', 'Experience with account planning.'),
+            ('ambiguous', 'Strong analytical skills.'),
+        ])
+
+    def test_mixed_format_boundaries_keep_requirements_without_schedule_or_pay(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: This position is remote with 75% travel required.
+            Candidates must reside in the state of Kansas. Ability to lift up to forty pounds is required.</p>
+            <p>This is a fully remote position with a work schedule of 8:00 a.m. to 5:00 p.m.
+            Experience with Epic and Excel is preferred.</p>
+            <p>Education/Experience: Requires Graduate from an Accredited School of Nursing or Bachelor's degree
+            in Nursing and 2 – 4 years of related experience. 2+ years of acute care experience required.</p>
+            <p>Experience: Experience in HEDIS or NCQA preferredPay Range: $60,000 annually</p>
+            <p>Required Qualifications:</p>
+            <ul>
+                <li>RN from accredited nursing program. Bachelor's degree in nursing or 4+ years of supervisory experience</li>
+                <li>PALS if supervising a pediatric department (within 6 months)</li>
+                <li>Willing/able to work at least three holidays per year</li>
+                <li>Dedicated remote workspace free from distractions</li>
+            </ul>
+        '''}, [
+            ('preferred', 'Experience with Epic and Excel is preferred.'),
+            ('required', "Education/Experience: Requires Graduate from an Accredited School of Nursing or Bachelor's "
+                         'degree in Nursing and 2 – 4 years of related experience.'),
+            ('required', '2+ years of acute care experience required.'),
+            ('preferred', 'Experience in HEDIS or NCQA preferred'),
+            ('required', 'RN from accredited nursing program.'),
+            ('required', "Bachelor's degree in nursing or 4+ years of supervisory experience"),
+            ('required', 'PALS if supervising a pediatric department (within 6 months)'),
+        ])
+
+    def test_text_bullets_keep_their_shared_experience_minimum(self):
+        self.assert_statements({'description': '''
+            <p>Minimum Qualifications:</p>
+            <p>Requires 5 years of experience in the following skills:</p>
+            <p>• Statistical analysis;</p>
+            <p>• Querying large datasets using SQL.</p>
+            <p>Preferred Qualifications:</p>
+            <p>• Strong presentation skills.</p>
+        '''}, [
+            ('required', 'Requires 5 years of experience in the following skills: '
+                         '• Statistical analysis; • Querying large datasets using SQL.'),
+            ('preferred', 'Strong presentation skills.'),
+        ])
+
+    def test_state_rn_license_is_separate_from_travel_and_schedule(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: This remote position requires up to 75% local travel for home visits.
+            Candidates must hold an active New Jersey Registered Nurse (RN) license.
+            Strong preference will be given to candidates who reside in Bergen County.
+            The typical schedule is Monday through Friday.</p>
+            <p>Required Qualifications:</p>
+            <ul><li>Ability/willing to travel approximately 25% of the time</li>
+            <li>Able to work the shift hours listed above, plus overtime. (Overtime may be mandatory)</li>
+            <li>Travel booking platform experience</li></ul>
+        '''}, [
+            ('required', 'Candidates must hold an active New Jersey Registered Nurse (RN) license.'),
+            ('ambiguous', 'Able to work the shift hours listed above, plus overtime. (Overtime may be mandatory)'),
+            ('required', 'Travel booking platform experience'),
+        ])
+
+    def test_neutral_education_reopens_scope_and_distinguishes_explicit_tenure(self):
+        self.assert_statements({'description': '''
+            <h2>Job Details</h2><p>Lead business operations.</p>
+            <p>Education and Experience:</p>
+            <p>A graduate degree in a relevant discipline preferred.
+            Position requires at least 8+ years of experience in enterprise sales.
+            Experience in healthcare sales preferred.</p>
+            <p>5+ years of account planning experience.</p>
+            <p>Requires broad training in accounting; normally requires a minimum of three years of experience.</p>
+            <p>Skills and Knowledge:</p>
+            <p>Strong problem-solving skills and the ability to recognize when escalation is required.</p>
+        '''}, [
+            ('preferred', 'A graduate degree in a relevant discipline preferred.'),
+            ('required', 'Position requires at least 8+ years of experience in enterprise sales.'),
+            ('preferred', 'Experience in healthcare sales preferred.'),
+            ('ambiguous', '5+ years of account planning experience.'),
+            ('required', 'Requires broad training in accounting;'),
+            ('ambiguous', 'normally requires a minimum of three years of experience.'),
+            ('ambiguous', 'Strong problem-solving skills and the ability to recognize when escalation is required.'),
+        ])
+
+    def test_line_break_starts_a_labeled_criterion_without_splitting_alternatives(self):
+        self.assert_statements({'description': '''
+            <p>Required Qualifications:</p><ul>
+            <li><span>Demonstrated programming skills in Python or Java</span><br>
+            <span>Cloud development: Hands-on experience building and deploying applications.</span></li>
+            <li>Current state RN license or<br>Compact RN license before starting work.</li>
+            </ul>
+        '''}, [
+            ('required', 'Demonstrated programming skills in Python or Java'),
+            ('required', 'Cloud development: Hands-on experience building and deploying applications.'),
+            ('required', 'Current state RN license or Compact RN license before starting work.'),
+        ])
+
+    def test_local_travel_and_transportation_are_omitted_from_required_sections(self):
+        self.assert_statements({'description': '''
+            <p>Required Qualifications:</p><ul>
+                <li>Ability to travel locally 4 days a week</li>
+                <li>Access to reliable transportation and valid driver's license</li>
+                <li>Valid driver’s license and reliable transportation</li>
+                <li>Current pharmacist license in Maine</li>
+                <li>Must have CDL Class A and forklift experience.</li>
+            </ul>
+        '''}, [
+            ('required', 'Current pharmacist license in Maine'),
+            ('required', 'Must have CDL Class A and forklift experience.'),
+        ])
+
+    def test_mobility_and_on_call_scheduling_are_excluded_while_skills_survive(self):
+        self.assert_statements({'description': '''
+            <p>Required Qualifications:</p>
+            <ul>
+                <li>Adequate mobility to walk, stand, and lift up to 35 lbs regularly is required.</li>
+                <li>Must be available for on-call rotation.</li>
+                <li>On-call coverage is required.</li>
+                <li>Experience managing on-call scheduling systems.</li>
+            </ul>
+        '''}, [
+            ('required', 'Experience managing on-call scheduling systems.'),
+        ])
+
+    def test_ideally_separates_preferred_industry_from_required_experience(self):
+        self.assert_statements({'description': '''
+            <p>Minimum Qualifications:</p>
+            <p>12+ years of experience in pricing strategy or revenue management, ideally within technology or consulting.</p>
+            <p>Education/Experience:</p>
+            <p>5+ years of experience in billing, preferably in healthcare.</p>
+        '''}, [
+            ('required', '12+ years of experience in pricing strategy or revenue management'),
+            ('preferred', 'ideally within technology or consulting.'),
+            ('ambiguous', '5+ years of experience in billing, preferably in healthcare.'),
+        ])
+
+    def test_plan_dependent_requirements_and_relocation_do_not_absorb_preferences(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: Must reside within Oklahoma or be willing to relocate to Oklahoma.
+            Foster care experience is preferred.</p>
+            <p>Education/Experience: Minimum 1 year of customer service experience preferred.
+            Driver's license may be required by some plans.
+            Specific language skills may be required by some plans.</p>
+            <p>Current state license may be required by certain contracts.</p>
+            <p>Current RN license required, and a second license may be required by some plans.</p>
+        '''}, [
+            ('preferred', 'Foster care experience is preferred.'),
+            ('preferred', 'Education/Experience: Minimum 1 year of customer service experience preferred.'),
+            ('ambiguous', "Driver's license may be required by some plans."),
+            ('ambiguous', 'Specific language skills may be required by some plans.'),
+            ('ambiguous', 'Current state license may be required by certain contracts.'),
+            ('required', 'Current RN license required, and a second license may be required by some plans.'),
+        ])
+
+    def test_key_details_recover_explicit_licenses_experience_and_preferences(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: Must be licensed in the state of Texas. Pediatric experience required.
+            This team supports foster care youth. Previous foster care experience is strongly preferred.
+            The regular work schedule is Monday through Friday, with weekend work required.</p>
+            <p>License/Certification:</p>
+            <ul><li>RN state or compact licensure required or</li>
+            <li>Current nurse practitioner license required</li>
+            <li>Care management certification must be obtained within 90 days of hire required</li></ul>
+        '''}, [
+            ('required', 'Must be licensed in the state of Texas.'),
+            ('required', 'Pediatric experience required.'),
+            ('preferred', 'Previous foster care experience is strongly preferred.'),
+            ('required', 'RN state or compact licensure required or Current nurse practitioner license required'),
+            ('required', 'Care management certification must be obtained within 90 days of hire required'),
+        ])
+
+    def test_preference_in_role_summary_is_separate_from_general_prose(self):
+        self.assert_statements({'description': '''
+            <p>We are seeking a psychologist who will conduct assessments.
+            This remote role combines reviews with strategy work. Familiarity with the local market is important,
+            and health plan experience is highly preferred.</p>
+        '''}, [
+            ('preferred', 'health plan experience is highly preferred.'),
+        ])
+
+    def test_independent_preferred_certification_ends_a_desired_choice_list(self):
+        self.assert_statements({'description': '''
+            <p>Technical Skills:</p>
+            <p>One or more of the following skills are desired.</p>
+            <ul><li>Experience with application development</li>
+            <li>Experience with automated testing</li>
+            <li>Salesforce architecture or development certifications preferred, but not required</li></ul>
+        '''}, [
+            ('preferred', 'One or more of the following skills are desired. Experience with application development '
+                          'Experience with automated testing'),
+            ('preferred', 'Salesforce architecture or development certifications preferred, but not required'),
+        ])
+
+    def test_overtime_is_ambiguous_and_transportation_and_admin_text_are_omitted(self):
+        self.assert_statements({'description': '''
+            <p>Shift Details: 9 AM to 6 PM</p><p>(Overtime may be required)</p>
+            <p>Required Qualifications:</p>
+            <ul><li>Current driver's license and vehicle insurance, access to a dependable vehicle, or public transportation</li>
+            <li>Proven ability and willingness to travel up to10% of the time</li>
+            <li>Available to work a weekend rotation</li><li>Active state pharmacist license</li></ul>
+            <p>Preferred Qualifications:</p>
+            <ul><li>Current CPR certification or ability to complete within 90 days of hire</li>
+            <li>Ability to perform physical tasks required for patient care, including lifting and transferring</li>
+            <li>Remote from East Coast region</li></ul>
+            <p>All Telecommuters will be required to adhere to the employer's Telecommuter Policy.</p>
+            <p>The employer is a drug - free workplace. Candidates are required to pass a drug test.</p>
+        '''}, [
+            ('ambiguous', '(Overtime may be required)'),
+            ('required', 'Active state pharmacist license'),
+            ('preferred', 'Current CPR certification or ability to complete within 90 days of hire'),
+        ])
+
+    def test_adjacent_education_restatement_keeps_the_explicit_equivalent(self):
+        self.assert_statements({'description': '''
+            <p>Experience and Educational Requirements:</p>
+            <p>Requires completion of a high school diploma, general education degree (GED)</p>
+            <p>Minimum Skills, Knowledge and Ability Requirements:</p>
+            <ul><li>High School Diploma/GED or equivalent experience required.</li>
+            <li>Warehouse inventory experience required.</li></ul>
+        '''}, [
+            ('required', 'High School Diploma/GED or equivalent experience required.'),
+            ('required', 'Warehouse inventory experience required.'),
         ])
 
     def test_cencora_warehouse_keeps_education_equivalence_and_tenure(self):
@@ -308,7 +699,7 @@ class QualificationExtractionTests(unittest.TestCase):
             ('ambiguous', '2–5 Years'),
         ])
 
-    def test_intuit_and_servicenow_only_promote_clear_numeric_floors(self):
+    def test_tenure_in_neutral_sections_requires_explicit_minimum_wording(self):
         result = self.assert_statements({'description': '''
             Qualifications
             BA/BS required, MBA preferred
@@ -321,7 +712,7 @@ class QualificationExtractionTests(unittest.TestCase):
         '''}, [
             ('required', 'BA/BS required'),
             ('preferred', 'MBA preferred'),
-            ('required', '8+ years of experience in product marketing or lifecycle management.'),
+            ('ambiguous', '8+ years of experience in product marketing or lifecycle management.'),
             ('required', 'At least four years of experience developing software.'),
             ('ambiguous', '5+ years of sales experience, preferably in analytics.'),
             ('ambiguous', 'Experience with data structures.'),
@@ -506,7 +897,7 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', eligibility),
         ])
 
-    def test_basic_fluency_and_specifications_are_kept_without_logistics(self):
+    def test_basic_fluency_and_specifications_are_kept_apart_from_travel(self):
         self.assert_statements({'description': '''
             Basic Qualifications
             Speak, write, and read fluently in English
@@ -556,7 +947,7 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', analytical),
         ])
 
-    def test_duty_lead_and_mixed_travel_do_not_hide_a_license_requirement(self):
+    def test_duties_and_worksite_travel_are_omitted(self):
         license_requirement = ("You will be responsible for having a reliable personal vehicle and a valid driver's license "
                                "to travel within the regional work area.")
         self.assert_statements({'description': f'''
@@ -570,7 +961,6 @@ class QualificationExtractionTests(unittest.TestCase):
             Basic Qualifications
             High school diploma or equivalent
         '''}, [
-            ('required', license_requirement),
             ('required', 'High school diploma or equivalent'),
         ])
 
@@ -582,6 +972,31 @@ class QualificationExtractionTests(unittest.TestCase):
         self.assert_statements({'description': f'Basic Qualifications\n{education} {skills} {travel}#0000'}, [
             ('required', education),
             ('required', skills),
+        ])
+
+    def test_travel_and_transportation_are_omitted_without_losing_role_qualifications(self):
+        self.assert_statements({'description': """
+            <h2>Required Qualifications</h2>
+            <ul>
+              <li>Willingness and ability to travel within assigned territory to meet business and customer engagement requirements</li>
+              <li>Possess a valid driver's license, reliable transportation, and required automobile insurance</li>
+              <li>Must have reliable means of transportation.</li>
+              <li>Requires frequent field travel and may require overnight travel.</li>
+              <li>This is a field based position - up to 75% travel.</li>
+              <li>Must hold an active Texas RN license if working with Texas patients and be able to travel locally.</li>
+              <li>Ability to travel locally; current PALS certification required if treating children.</li>
+              <li>Transportation planning experience</li>
+            </ul>
+            <h2>Preferred Qualifications</h2>
+            <ul>
+              <li>Valid driver's license, reliable transportation, and liability insurance.</li>
+              <li>Travel and expense management software experience.</li>
+            </ul>
+        """}, [
+            ('required', 'Must hold an active Texas RN license if working with Texas patients'),
+            ('required', 'current PALS certification required if treating children.'),
+            ('required', 'Transportation planning experience'),
+            ('preferred', 'Travel and expense management software experience.'),
         ])
 
     def test_logistics_and_physical_demands_do_not_become_resume_qualifications(self):
@@ -599,8 +1014,245 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Experience designing shift scheduling systems.'),
         ])
 
+    def test_travel_and_work_conditions_do_not_inherit_qualification_labels(self):
+        self.assert_statements({'description': """
+            <p>This role requires the employee to work onsite at the main office.
+            Up to 10% of local and/or international travel may be required.</p>
+            <h2>Required Qualifications</h2>
+            <ul><li>Current driver's license, vehicle insurance, and reliable transportation or access to public transportation</li>
+            <li>Demonstrated ability to travel at least 25%-50% of the time</li>
+            <li>Ability to work a schedule that includes every Saturday and Sunday.
+            Work schedule can be 4 days per week. Some options may include Thursday through Sunday.</li>
+            <li>It may be necessary, given the business need, to work occasional overtime.</li>
+            <li>CDL Commercial Driver's License</li>
+            <li>Customer service or transportation delivery experience</li></ul>
+            <h2>Preferred Qualifications</h2><ul><li>Dispatch software experience</li></ul>
+            <p>Work Conditions and Physical Requirements:</p>
+            <ul><li>Ability to mobilize to and within sites within an assigned market, including car transport</li>
+            <li>Dedicated workspace with high-speed internet</li></ul>
+            <p>Overtime Eligibility: Eligible (Non Exempt)</p>
+        """}, [
+            ('ambiguous', 'It may be necessary, given the business need, to work occasional overtime.'),
+            ('required', "CDL Commercial Driver's License"),
+            ('required', 'Customer service or transportation delivery experience'),
+            ('preferred', 'Dispatch software experience'),
+        ])
+
+    def test_job_details_extract_explicit_mandatory_alternatives_and_preferred_credentials(self):
+        self.assert_statements({'description': """
+            <h2>Job Details</h2>
+            <p>Coordinate inventory and support customer service.</p>
+            <p>High School Diploma/GED or equivalent experience required.
+            2+ years of experience in pharmacy operations or a related field required.
+            Certification in pharmacy technician licensure or credentialing, or equivalent preferred.</p>
+            <h2>What we offer</h2><p>Experience in pharmacy operations determines the salary range.</p>
+        """}, [
+            ('required', 'High School Diploma/GED or equivalent experience required.'),
+            ('required', '2+ years of experience in pharmacy operations or a related field required.'),
+            ('preferred', 'Certification in pharmacy technician licensure or credentialing, or equivalent preferred.'),
+        ])
+
+    def test_accredited_pharmacy_degree_and_current_clinical_license_under_education(self):
+        self.assert_statements({'description': """
+            <p><b>Education:</b></p>
+            <ul><li>PharmD or Bachelor's Degree in Pharmacy from an accredited school of pharmacy</li>
+            <li>Unrestricted, current Pennsylvania pharmacist license and injectables license</li>
+            <li>Current RN license preferred</li></ul>
+            <p><b>Skills and Knowledge:</b></p><p>Spanish-language proficiency is a plus but is not required.</p>
+        """}, [
+            ('required', "PharmD or Bachelor's Degree in Pharmacy from an accredited school of pharmacy"),
+            ('required', 'Unrestricted, current Pennsylvania pharmacist license and injectables license'),
+            ('preferred', 'Current RN license preferred'),
+            ('preferred', 'Spanish-language proficiency is a plus but is not required.'),
+        ])
+
+    def test_topical_prose_separates_preference_obligation_and_condition(self):
+        self.assert_statements({'description': """
+            <p>License/Certification/Designation: ChFC and CLU designations desirable FINRA series 6 and/or 63
+            licenses preferred and may be required based on assigned product.</p>
+            <p>Associates must acquire the required federal and/or state licenses/registrations within the
+            time period designated by the business unit. Additional licenses/registrations may be required
+            when new products and services are implemented. If an associate fails to acquire required
+            licenses/registrations within the designated time period, the associate will be ineligible
+            to continue in the position. NOTE: A credit check may be required if a license is required.</p>
+            <p>Experience: 10+ years of insurance experience. Demonstrated experience with risk assessments.
+            Experience leading people required.</p>
+            <h2>Additional experience that’s valuable</h2><ul><li>Snowflake certifications</li></ul>
+            <h2>Why this opportunity</h2><p>This is an opportunity to lead teams.</p>
+        """}, [
+            ('preferred', 'License/Certification/Designation: ChFC and CLU designations desirable'),
+            ('ambiguous', 'FINRA series 6 and/or 63 licenses preferred and may be required based on assigned product.'),
+            ('required', 'Associates must acquire the required federal and/or state licenses/registrations within the time period designated by the business unit.'),
+            ('ambiguous', 'Additional licenses/registrations may be required when new products and services are implemented.'),
+            ('required', 'If an associate fails to acquire required licenses/registrations within the designated time period, the associate will be ineligible to continue in the position.'),
+            ('ambiguous', '10+ years of insurance experience.'),
+            ('ambiguous', 'Demonstrated experience with risk assessments.'),
+            ('required', 'Experience leading people required.'),
+            ('preferred', 'Snowflake certifications'),
+        ])
+
+
+    def test_bundled_transportation_is_omitted_without_removing_independent_evidence(self):
+        self.assert_statements({'description': """
+            <h2>Required Qualifications</h2>
+            <ul>
+              <li>Driver's license and reliable transportation and the ability to travel up to 50% of the time</li>
+              <li>Access to reliable transportation and valid US driver's license and the ability to travel within assigned territory</li>
+              <li>Current RN license required and access to reliable transportation and the ability to travel to patients.</li>
+              <li>Driver's license and reliable transportation and the ability to travel locally and must hold a current PALS certification.</li>
+              <li>Experience with community organizations providing non-emergent transportation.</li>
+              <li>Commercial Driver's License (CDL) required</li>
+              <li>Must be willing to work extended hours, take part in weekend on-call rotation, as needed.</li>
+            </ul>
+        """}, [
+            ('required', 'Current RN license required'),
+            ('required', 'must hold a current PALS certification.'),
+            ('required', 'Experience with community organizations providing non-emergent transportation.'),
+            ('required', "Commercial Driver's License (CDL) required"),
+        ])
+
+    def test_nested_unpunctuated_one_of_license_paths_stay_together(self):
+        self.assert_statements({'description': """
+            <h2>Required Qualifications</h2>
+            <ul><li>Must possess one of the following<ul>
+                <li>Current Registered Nurse licensure in Michigan</li>
+                <li>Master's degree and current independent social worker licensure</li>
+                <li>Bachelor's degree and current social worker licensure</li>
+            </ul></li><li>2+ years of community health experience</li></ul>
+            <h2>Preferred Qualifications</h2><ul><li>Case management certification</li></ul>
+        """}, [
+            ('required', 'Must possess one of the following Current Registered Nurse licensure in Michigan '
+             "Master's degree and current independent social worker licensure "
+             "Bachelor's degree and current social worker licensure"),
+            ('required', '2+ years of community health experience'),
+            ('preferred', 'Case management certification'),
+        ])
+
+    def test_education_semicolon_separates_required_experience_from_preferred_degree(self):
+        self.assert_statements({'description': """
+            <p>Education:</p>
+            <p>Requires 1+ year(s) of pharmacy experience; bachelor's degree program preferred.
+            Requires Pharmacy Technician License in the State of Pennsylvania. CPHT is preferred.</p>
+        """}, [
+            ('required', 'Requires 1+ year(s) of pharmacy experience'),
+            ('preferred', "bachelor's degree program preferred."),
+            ('required', 'Requires Pharmacy Technician License in the State of Pennsylvania.'),
+            ('preferred', 'CPHT is preferred.'),
+        ])
+
+    def test_topical_prose_preserves_explicit_labels_and_conditional_qualifiers(self):
+        self.assert_statements({'description': """
+            <p>Education: College degree preferred.</p>
+            <p>License/Certification/Designation: State licensing where required.
+            Successful completion of required and/or applicable claims certification training and/or classes.</p>
+            <p>Experience: Eight years commercial underwriting experience, excess and surplus lines experience preferred.</p>
+            <p>Experience: Typically, two to four years of claims handling experience.
+            Prior experience in directing defense counsel required.
+            Specific experience in a line of business may be required by the hiring unit.</p>
+            <p>Knowledge, Abilities, and Skills: Knowledge of local regulations may be required.
+            Familiarity with insurance policies preferred. Ability to evaluate evidence.</p>
+            <p>License/Certification/Designation: LOMA Level 1 Certificate preferred.
+            Participation in professional studies or attainment of a CLU designation preferred.
+            FALU preferred with CLU or advanced sales concept training.</p>
+        """}, [
+            ('preferred', 'College degree preferred.'),
+            ('ambiguous', 'License/Certification/Designation: State licensing where required.'),
+            ('ambiguous', 'Successful completion of required and/or applicable claims certification training and/or classes.'),
+            ('ambiguous', 'Eight years commercial underwriting experience'),
+            ('preferred', 'excess and surplus lines experience preferred.'),
+            ('ambiguous', 'Typically, two to four years of claims handling experience.'),
+            ('required', 'Prior experience in directing defense counsel required.'),
+            ('ambiguous', 'Specific experience in a line of business may be required by the hiring unit.'),
+            ('ambiguous', 'Knowledge, Abilities, and Skills: Knowledge of local regulations may be required.'),
+            ('preferred', 'Familiarity with insurance policies preferred.'),
+            ('ambiguous', 'Ability to evaluate evidence.'),
+            ('preferred', 'License/Certification/Designation: LOMA Level 1 Certificate preferred.'),
+            ('preferred', 'Participation in professional studies or attainment of a CLU designation preferred.'),
+            ('preferred', 'FALU preferred with CLU or advanced sales concept training.'),
+        ])
+
+
+    def test_travel_with_transportation_and_remote_work_logistics_are_omitted(self):
+        self.assert_statements({'description': """
+            <h2>Required Skills and Competencies</h2><ul>
+              <li>Access to reliable transportation and valid US driver's license with the ability to travel up to 75% of the time.</li>
+              <li>Must be able and willing to travel.</li>
+              <li>High speed internet in place of residence.</li>
+              <li>Designated home office workspace with secure high-speed internet access via cable or DSL.</li>
+              <li>Experience with electronic health records.</li></ul>
+            <h2>Preferred Qualifications</h2><ul><li>Reside within commutable distance of assigned duties.</li>
+              <li>Experience designing high-speed internet systems.</li></ul>
+        """}, [
+            ('required', 'Experience with electronic health records.'),
+            ('preferred', 'Experience designing high-speed internet systems.'),
+        ])
+
+    def test_inline_education_inherits_preference_and_timed_credential_has_separate_evidence(self):
+        deadline = 'CCNP preferred; will be a requirement to obtain within 18 months of hire.'
+        self.assert_statements({'description': f"""
+            <h2>Preferred Qualifications</h2><ul>
+              <li>Education: Bachelor's degree in Computer Science or equivalent practical experience.</li>
+              <li>{deadline}</li>
+              <li>Experience designing enterprise networks.</li>
+            </ul>
+        """}, [
+            ('preferred', "Bachelor's degree in Computer Science or equivalent practical experience."),
+            ('preferred', 'CCNP preferred'),
+            ('required', deadline),
+            ('preferred', 'Experience designing enterprise networks.'),
+        ])
+
+    def test_candidate_license_in_duties_and_explicit_required_competencies(self):
+        self.assert_statements({'description': """
+            <h2>Essential Duties and Responsibilities</h2><ul>
+              <li>Obtain records of customer licenses and certifications.</li>
+              <li>Obtain a Life/A&amp;H license in state of residence and any other state that the incumbent conducts business.</li>
+            </ul>
+            <h2>Required Skills and Competencies</h2><ul>
+              <li>Bachelor Degree or in-lieu of degree equivalent education, training and work-related experience.</li>
+              <li>2+ years of sales related experience preferred, not required.</li>
+              <li>Must be able and willing to travel.</li>
+            </ul>
+            <p>In addition to a career opportunity, Example offers an excellent benefits package including:</p>
+            <ul><li>Paid training.</li></ul>
+        """}, [
+            ('required', 'Obtain a Life/A&H license in state of residence and any other state that the incumbent conducts business.'),
+            ('required', 'Bachelor Degree or in-lieu of degree equivalent education, training and work-related experience.'),
+            ('preferred', '2+ years of sales related experience preferred, not required.'),
+        ])
+
+    def test_education_equivalence_stays_separate_from_preferred_experience(self):
+        self.assert_statements({'description': """
+            <div>Experience:</div>
+            <div>• 0-2 years experience (Preferred)</div>
+            <div>• In lieu of the above education requirements, an equivalent combination of education and experience may be considered.</div>
+            <p>Education: High school education, undergraduate studies in business or finance preferred.</p>
+        """}, [
+            ('preferred', '0-2 years experience (Preferred)'),
+            ('ambiguous', 'In lieu of the above education requirements, an equivalent combination of education and experience may be considered.'),
+            ('ambiguous', 'High school education'),
+            ('preferred', 'undergraduate studies in business or finance preferred.'),
+        ])
+
 
 class QualificationInputTests(unittest.TestCase):
+    def test_cisco_prefers_the_verified_matching_public_role_description(self):
+        url = 'https://careers.cisco.com/global/en/job/CISCISGLOBAL123EXTERNALENGLOBAL/Engineer'
+        source = {'identifier': {'value': '123'}, 'description': 'Minimum Qualifications\n7+ years of software experience'}
+        alternative = "Bachelor's plus 7 years, master's plus 4 years, or PhD plus 1 year."
+        job = {'reqId': '123', 'description': f'<h2>Minimum Qualifications</h2><ul><li>{alternative}</li></ul>'}
+        payload = {'jobDetail': {'data': {'job': job}}}
+        body = '<script>phApp.ddo = ' + json.dumps(payload) + ';</script>'
+        result = qualification_input(source, verified_body=body, source_url=url)
+        self.assertEqual([(q.kind, q.text) for q in extract_qualifications(result, url).evidence],
+                         [('required', alternative)])
+        for fallback_body, fallback_url in ((body + body, url),
+                                            (body.replace('"123"', '"456"'), url),
+                                            (body, url.replace('123', '456')),
+                                            (body, url.replace('careers.cisco.com', 'careers.example.com'))):
+            with self.subTest(body=fallback_body, url=fallback_url):
+                self.assertEqual(qualification_input(source, verified_body=fallback_body, source_url=fallback_url), source)
+
     def test_apple_uses_matched_dedicated_fields(self):
         url = 'https://jobs.apple.com/en-us/details/123-5/example'
         verified = {'identifier': '123-5', 'url': url, '_adapter': 'apple-public-location-posting', 'description': 'Original'}

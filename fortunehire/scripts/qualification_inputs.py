@@ -44,6 +44,26 @@ def matching_oracle_record(body, requisition):
     return items[0] if str(items[0].get('Id')) == requisition else None
 
 
+def matching_cisco_description(body, requisition):
+    descriptions = []
+    for node in Document(body).nodes:
+        if node['tag'] != 'script':
+            continue
+        script = ''.join(part for part in node['children'] if isinstance(part, str))
+        assignment = re.search(r'\bphApp\.ddo\s*=\s*(?=\{)', script)
+        if not assignment:
+            continue
+        payload, _ = json.JSONDecoder().raw_decode(script[assignment.end():])
+        try:
+            job = payload['jobDetail']['data']['job']
+            description = job['description']
+            if str(job['reqId']) == requisition and isinstance(description, str) and description.strip():
+                descriptions.append(description)
+        except (KeyError, TypeError):
+            continue
+    return descriptions[0] if len(descriptions) == 1 else None
+
+
 def matching_taleo_record(body, requisition):
     history = Document(body).find('input', id='initialHistory')
     mapping = re.search(r'descRequisition:\s*\{\s*_size:\s*1,.*?_hlid:\s*(\[[^\]]+\])', body, re.S)
@@ -59,24 +79,31 @@ def matching_taleo_record(body, requisition):
     return values if values.get('reqlistitem.contestnumber') == requisition else None
 
 
-def qualification_input(source, *, verified_body=None):
+def qualification_input(source, *, verified_body=None, source_url=None):
     """Keep employer qualification fields intact without editing feed adapters.
 
     Call only after the existing collector validates employer, URL and posting
     identity. `verified_body` is the same response used for normalization, not
-    an independently fetched or unverified replacement.
+    an independently fetched or unverified replacement. Pass the verified
+    posting URL when the normalized source omits it.
     """
     result = dict(source)
     if not isinstance(verified_body, str):
         return result
     identifier = source.get('identifier')
     requisition = str((identifier.get('value') if isinstance(identifier, dict) else identifier) or '')
-    url = urlsplit(source.get('url') or '')
+    url = urlsplit(source_url or source.get('url') or '')
     adapter = source.get('_adapter')
     if not requisition:
         return result
     try:
-        if adapter == 'apple-public-location-posting' and url.hostname == 'jobs.apple.com':
+        if url.hostname == 'careers.cisco.com' and url.scheme == 'https':
+            posting = re.match(r'^/global/en/job/(?:CISCISGLOBAL)?(\d+)(?:EXTERNALENGLOBAL)?(?:/|$)', url.path)
+            if posting and posting[1] == requisition:
+                description = matching_cisco_description(verified_body, requisition)
+                if description:
+                    result['description'] = description
+        elif adapter == 'apple-public-location-posting' and url.hostname == 'jobs.apple.com':
             row = matching_apple_record(verified_body, requisition)
             if row:
                 result.update({field: row[field] for field in ('minimumQualifications', 'preferredQualifications')
