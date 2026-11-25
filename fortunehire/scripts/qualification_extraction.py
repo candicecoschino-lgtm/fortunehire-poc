@@ -274,7 +274,12 @@ INLINE_PREFERENCE = re.compile(
     r'\(preferred\)(?=\s*(?:[,.;]|$))|\bpreferred\s+\((?:i\.e\.|e\.g\.)'
     r'|\b(?:degree|credential|certification|experience) preferred in\b', re.I,
 )
-PREFERENCE_SUFFIX = re.compile(r',\s+(with\b[^.!?]*\bpreferred[.!?]?)$', re.I)
+PREFERENCE_SUFFIX = re.compile(
+    r',\s+(with\b[^.!?]*\bpreferred[.!?]?|'
+    r'(?:ideally|preferably)\s+(?:within|in|with|from)\b[^.!?]+[.!?]?)$', re.I,
+)
+PREFERENCE_MODIFIER = re.compile(r'^(?:ideally|preferably)\b', re.I)
+POSSIBLE_REQUIREMENT = re.compile(r'\bmay be required\s+(?:by|for|in|when|if|depending on)\b', re.I)
 REQUIRED_CLAUSE = re.compile(r'(?<!not )(?<!strictly )\brequired\s*[,;.]', re.I)
 REQUIRED_LINE = re.compile(
     r'^(?:required|mandatory|minimum)\s*:|^required\s+(?:\d|an?\b)|\b(?:is|are) (?:required|mandatory)\b|'
@@ -330,7 +335,8 @@ JOB_LOGISTICS = re.compile(
     r'|this position is (?:fully )?(?:remote|on-?site|hybrid)(?: with \d+% travel required)?(?=\s*[.!?]?\s*$)'
     r'|(?:(?:the )?(?:typical )?schedule is|hours are|'
     r'this position works (?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)|'
-    r'candidates? must reside in|strong preference will be given to candidates who reside in|'
+    r'(?:candidates? )?must (?:reside (?:in|within)|be willing to relocate)|'
+    r'strong preference will be given to candidates who reside in|'
     r'field-based travel|dedicated remote workspace|'
     r'ability to work the designated schedule|flexibility to adjust start/finish times|'
     r'comfortable with physical requirements)\b'
@@ -340,23 +346,29 @@ JOB_LOGISTICS = re.compile(
     r'(?:live|reside) within (?:a reasonable commuting|a commutable) distance)\b'
     r'|(?:ability to|must be able to) lift (?:up to )?[\w-]+(?: [\w-]+)? (?:lbs|pounds)\b'
     r'|can (?:carry/lift|lift) (?:up to )?\d+ (?:lbs|pounds)\b'
+    r'|(?:adequate|sufficient) mobility (?:to|for)\b'
+    r'|(?:must be available for (?:an? )?on[- ]call (?:rotation|coverage)'
+    r'|on[- ]call (?:rotation|coverage) (?:is )?required)\b'
     r'|ability to train as [\w -]+ and adhere to standards\b'
     r'|all physical requirements are expected with reasonable accommodations\b'
     r'|willingness and demonstrated ability to work in the following physical conditions\b)', re.I,
 )
+DRIVER_LICENSE = r'(?:a )?(?:valid )?driver[’\']s license'
+RELIABLE_TRANSPORTATION = r'(?:access to )?(?:a )?reliable transportation'
 AMBIGUOUS_WORK_CONTEXT = re.compile(
     r'^(?:key details\s*:\s*)?(?:(?:(?:ability(?:/willing| and willingness)? to|willingness to|'
     r'(?:candidates? )?must be able to|able to|willing/able to) )?'
     r'(?:(?:domestic(?: and/or international)?|international|overnight|frequent|occasional|local) )?travel\b'
     r'(?=\s*(?:[.!?,;:(]|$)|\s+(?:to|within|across|throughout|up to|as needed|when required|approximately|'
-    r'domestically|internationally|required|may|is|will|in|between|\d)\b)'
+    r'locally|domestically|internationally|required|may|is|will|in|between|\d)\b)'
     r'|travel(?:ing|ling) within\b|field-based travel\b|experience with extensive travel\b'
     r'|(?:this|the) (?:remote )?(?:position|role) requires\b[^.!?]*\btravel\b'
     r'|this position is (?:fully )?(?:remote|on-?site|hybrid) with \d+% travel required\b'
     r'|(?:able to|must be able to|willing/able to|ability to|willingness to) work\b[^.!?]*\bovertime\b'
     r'|work overtime\b|overtime (?:is |may be )?(?:required|mandatory)\b'
     r'|flexibility to adjust start/finish times\b[^.!?]*\bovertime\b'
-    r'|(?:valid )?driver[’\']s license and access to (?:a )?reliable transportation\b)', re.I,
+    rf'|(?:{DRIVER_LICENSE} and {RELIABLE_TRANSPORTATION}|{RELIABLE_TRANSPORTATION} and {DRIVER_LICENSE})'
+    r'\b(?=\s*[.!?]?$))', re.I,
 )
 SENTENCE_BOUNDARY = re.compile(
     r'(?<=[.!?])(?<!\b[A-Za-z]\.)\s+(?=[A-Z]|\d+\s*\+?\s*(?:years?|months?)\b)'
@@ -661,8 +673,8 @@ def strength_content(text):
 
 def explicit_requirement(text):
     content = strength_content(text)
-    direct = SKILL_CONTEXT_REQUIREMENT.sub('', content)
-    return bool(REQUIRED_LINE.search(direct) or LICENSE_OBLIGATION.search(content) or EXPLICIT_CREDENTIAL.search(content))
+    direct = POSSIBLE_REQUIREMENT.sub('', SKILL_CONTEXT_REQUIREMENT.sub('', content))
+    return bool(REQUIRED_LINE.search(direct) or LICENSE_OBLIGATION.search(direct) or EXPLICIT_CREDENTIAL.search(direct))
 
 
 def explicit_preference(text):
@@ -670,14 +682,17 @@ def explicit_preference(text):
     return bool(PREFERRED_LINE.search(content) or INLINE_PREFERENCE.search(content))
 
 
+def has_strength_cue(text):
+    return bool(explicit_requirement(text) or explicit_preference(text) or NORMALLY_REQUIRED.match(text)
+                or POSSIBLE_REQUIREMENT.search(text))
+
+
 def independent_criteria(text, kind):
     """Separate independently labeled sentences and retain explanatory continuations."""
     parts = []
     for sentence in SENTENCE_BOUNDARY.split(text):
         if parts and not (CHOICE_SENTENCE.search(parts[0]) or CONDITION_CONTINUATION.match(sentence)):
-            labeled = (explicit_requirement(parts[0]) or NORMALLY_REQUIRED.match(parts[0])
-                       or explicit_preference(parts[0])) and (explicit_requirement(sentence) or explicit_preference(sentence)
-                                                             or NORMALLY_REQUIRED.match(sentence))
+            labeled = has_strength_cue(parts[0]) and has_strength_cue(sentence)
             education = kind == 'required' and ACCREDITED_PROGRAM.match(parts[0]) and DEGREE_PATH.match(sentence)
             if labeled or education:
                 yield ' '.join(parts)
@@ -713,9 +728,10 @@ def qualification_statements(blocks, default_kind):
                 criteria = independent_criteria(text, kind) if kind not in ('stop', 'duties') else (text,)
                 for criterion in criteria:
                     preference = PREFERENCE_SUFFIX.search(criterion)
-                    if preference and explicit_requirement(criterion[:preference.start()]):
+                    if preference and (explicit_requirement(criterion[:preference.start()])
+                                       or kind == 'required' and PREFERENCE_MODIFIER.match(preference[1])):
                         yield criterion[:preference.start()], kind, heading, number, inherited_list
-                        yield preference[1], 'preferred', heading, number, inherited_list
+                        yield preference[1], 'preferred', heading, number, True
                     else:
                         yield criterion, kind, heading, number, inherited_list
 
@@ -745,10 +761,10 @@ def classify_statement(text, kind, heading, inherited_list, field, types):
     if kind == 'logistics' and not ((types or QUALIFICATION_CUE.search(content))
                                     and (explicit_requirement(content) or explicit_preference(content))):
         return None
-    if NORMALLY_REQUIRED.match(content):
-        return 'ambiguous'
     preferred = explicit_preference(content)
     required = explicit_requirement(content) or conditional_eligibility or candidate_age
+    if NORMALLY_REQUIRED.match(content) or (POSSIBLE_REQUIREMENT.search(content) and not required):
+        return 'ambiguous'
     if heading and re.fullmatch(r'education\s*/\s*experience', heading, re.I):
         required |= bool(re.search(r'\brequires \d+\b', content, re.I))
     if re.search(r'\bnot (?:strictly )?required\b', text, re.I):

@@ -495,6 +495,66 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Current state RN license or Compact RN license before starting work.'),
         ])
 
+    def test_local_travel_and_transportation_are_ambiguous_in_required_sections(self):
+        self.assert_statements({'description': '''
+            <p>Required Qualifications:</p><ul>
+                <li>Ability to travel locally 4 days a week</li>
+                <li>Access to reliable transportation and valid driver's license</li>
+                <li>Valid driver’s license and reliable transportation</li>
+                <li>Current pharmacist license in Maine</li>
+                <li>Must have CDL Class A and forklift experience.</li>
+            </ul>
+        '''}, [
+            ('ambiguous', 'Ability to travel locally 4 days a week'),
+            ('ambiguous', "Access to reliable transportation and valid driver's license"),
+            ('ambiguous', 'Valid driver’s license and reliable transportation'),
+            ('required', 'Current pharmacist license in Maine'),
+            ('required', 'Must have CDL Class A and forklift experience.'),
+        ])
+
+    def test_mobility_and_on_call_scheduling_are_excluded_while_skills_survive(self):
+        self.assert_statements({'description': '''
+            <p>Required Qualifications:</p>
+            <ul>
+                <li>Adequate mobility to walk, stand, and lift up to 35 lbs regularly is required.</li>
+                <li>Must be available for on-call rotation.</li>
+                <li>On-call coverage is required.</li>
+                <li>Experience managing on-call scheduling systems.</li>
+            </ul>
+        '''}, [
+            ('required', 'Experience managing on-call scheduling systems.'),
+        ])
+
+    def test_ideally_separates_preferred_industry_from_required_experience(self):
+        self.assert_statements({'description': '''
+            <p>Minimum Qualifications:</p>
+            <p>12+ years of experience in pricing strategy or revenue management, ideally within technology or consulting.</p>
+            <p>Education/Experience:</p>
+            <p>5+ years of experience in billing, preferably in healthcare.</p>
+        '''}, [
+            ('required', '12+ years of experience in pricing strategy or revenue management'),
+            ('preferred', 'ideally within technology or consulting.'),
+            ('ambiguous', '5+ years of experience in billing, preferably in healthcare.'),
+        ])
+
+    def test_plan_dependent_requirements_and_relocation_do_not_absorb_preferences(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: Must reside within Oklahoma or be willing to relocate to Oklahoma.
+            Foster care experience is preferred.</p>
+            <p>Education/Experience: Minimum 1 year of customer service experience preferred.
+            Driver's license may be required by some plans.
+            Specific language skills may be required by some plans.</p>
+            <p>Current state license may be required by certain contracts.</p>
+            <p>Current RN license required, and a second license may be required by some plans.</p>
+        '''}, [
+            ('preferred', 'Foster care experience is preferred.'),
+            ('preferred', 'Education/Experience: Minimum 1 year of customer service experience preferred.'),
+            ('ambiguous', "Driver's license may be required by some plans."),
+            ('ambiguous', 'Specific language skills may be required by some plans.'),
+            ('ambiguous', 'Current state license may be required by certain contracts.'),
+            ('required', 'Current RN license required, and a second license may be required by some plans.'),
+        ])
+
     def test_cencora_warehouse_keeps_education_equivalence_and_tenure(self):
         self.assert_statements({'description': '''
             Responsibilities:
