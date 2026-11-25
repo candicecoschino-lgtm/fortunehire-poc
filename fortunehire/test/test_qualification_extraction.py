@@ -317,6 +317,7 @@ class QualificationExtractionTests(unittest.TestCase):
                 <li>Experience treating pediatric patients.</li>
             </ul>
         '''}, [
+            ('ambiguous', 'Ability to travel to the locations below:'),
             ('required', 'Graduate from an accredited Nurse Practitioner or Physician Assistant program.'),
             ('preferred', 'Experience treating pediatric patients.'),
         ])
@@ -358,6 +359,7 @@ class QualificationExtractionTests(unittest.TestCase):
             <p>Compensation: Competitive pay.</p>
             <p>Computer science degree required to qualify for the tuition program.</p>
         '''}, [
+            ('ambiguous', 'Must be able to work overtime.'),
             ('required', "Bachelor's degree in computer science required, or equivalent experience required."),
             ('required', 'Less than 2 years of experience in systems administration required.'),
             ('preferred', 'Relevant entry-level certifications (e.g., CompTIA Server+) preferred.'),
@@ -396,6 +398,7 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Are organized and able to manage multiple priorities'),
             ('preferred', 'Experience with account planning.'),
             ('ambiguous', 'Strong analytical skills.'),
+            ('ambiguous', 'Ability to travel approximately 70%.'),
         ])
 
     def test_mixed_format_boundaries_keep_requirements_without_schedule_or_pay(self):
@@ -415,6 +418,7 @@ class QualificationExtractionTests(unittest.TestCase):
                 <li>Dedicated remote workspace free from distractions</li>
             </ul>
         '''}, [
+            ('ambiguous', 'Key Details: This position is remote with 75% travel required.'),
             ('preferred', 'Experience with Epic and Excel is preferred.'),
             ('required', "Education/Experience: Requires Graduate from an Accredited School of Nursing or Bachelor's "
                          'degree in Nursing and 2 – 4 years of related experience.'),
@@ -437,6 +441,58 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', 'Requires 5 years of experience in the following skills: '
                          '• Statistical analysis; • Querying large datasets using SQL.'),
             ('preferred', 'Strong presentation skills.'),
+        ])
+
+    def test_state_rn_license_is_separate_from_travel_and_schedule(self):
+        self.assert_statements({'description': '''
+            <p>Key Details: This remote position requires up to 75% local travel for home visits.
+            Candidates must hold an active New Jersey Registered Nurse (RN) license.
+            Strong preference will be given to candidates who reside in Bergen County.
+            The typical schedule is Monday through Friday.</p>
+            <p>Required Qualifications:</p>
+            <ul><li>Ability/willing to travel approximately 25% of the time</li>
+            <li>Able to work the shift hours listed above, plus overtime. (Overtime may be mandatory)</li>
+            <li>Travel booking platform experience</li></ul>
+        '''}, [
+            ('ambiguous', 'Key Details: This remote position requires up to 75% local travel for home visits.'),
+            ('required', 'Candidates must hold an active New Jersey Registered Nurse (RN) license.'),
+            ('ambiguous', 'Ability/willing to travel approximately 25% of the time'),
+            ('ambiguous', 'Able to work the shift hours listed above, plus overtime. (Overtime may be mandatory)'),
+            ('required', 'Travel booking platform experience'),
+        ])
+
+    def test_neutral_education_reopens_scope_and_distinguishes_explicit_tenure(self):
+        self.assert_statements({'description': '''
+            <h2>Job Details</h2><p>Lead business operations.</p>
+            <p>Education and Experience:</p>
+            <p>A graduate degree in a relevant discipline preferred.
+            Position requires at least 8+ years of experience in enterprise sales.
+            Experience in healthcare sales preferred.</p>
+            <p>5+ years of account planning experience.</p>
+            <p>Requires broad training in accounting; normally requires a minimum of three years of experience.</p>
+            <p>Skills and Knowledge:</p>
+            <p>Strong problem-solving skills and the ability to recognize when escalation is required.</p>
+        '''}, [
+            ('preferred', 'A graduate degree in a relevant discipline preferred.'),
+            ('required', 'Position requires at least 8+ years of experience in enterprise sales.'),
+            ('preferred', 'Experience in healthcare sales preferred.'),
+            ('ambiguous', '5+ years of account planning experience.'),
+            ('required', 'Requires broad training in accounting;'),
+            ('ambiguous', 'normally requires a minimum of three years of experience.'),
+            ('ambiguous', 'Strong problem-solving skills and the ability to recognize when escalation is required.'),
+        ])
+
+    def test_line_break_starts_a_labeled_criterion_without_splitting_alternatives(self):
+        self.assert_statements({'description': '''
+            <p>Required Qualifications:</p><ul>
+            <li><span>Demonstrated programming skills in Python or Java</span><br>
+            <span>Cloud development: Hands-on experience building and deploying applications.</span></li>
+            <li>Current state RN license or<br>Compact RN license before starting work.</li>
+            </ul>
+        '''}, [
+            ('required', 'Demonstrated programming skills in Python or Java'),
+            ('required', 'Cloud development: Hands-on experience building and deploying applications.'),
+            ('required', 'Current state RN license or Compact RN license before starting work.'),
         ])
 
     def test_cencora_warehouse_keeps_education_equivalence_and_tenure(self):
@@ -521,7 +577,7 @@ class QualificationExtractionTests(unittest.TestCase):
             ('ambiguous', '2–5 Years'),
         ])
 
-    def test_intuit_and_servicenow_only_promote_clear_numeric_floors(self):
+    def test_tenure_in_neutral_sections_requires_explicit_minimum_wording(self):
         result = self.assert_statements({'description': '''
             Qualifications
             BA/BS required, MBA preferred
@@ -534,7 +590,7 @@ class QualificationExtractionTests(unittest.TestCase):
         '''}, [
             ('required', 'BA/BS required'),
             ('preferred', 'MBA preferred'),
-            ('required', '8+ years of experience in product marketing or lifecycle management.'),
+            ('ambiguous', '8+ years of experience in product marketing or lifecycle management.'),
             ('required', 'At least four years of experience developing software.'),
             ('ambiguous', '5+ years of sales experience, preferably in analytics.'),
             ('ambiguous', 'Experience with data structures.'),
@@ -719,7 +775,7 @@ class QualificationExtractionTests(unittest.TestCase):
             ('required', eligibility),
         ])
 
-    def test_basic_fluency_and_specifications_are_kept_without_logistics(self):
+    def test_basic_fluency_and_specifications_are_kept_apart_from_travel(self):
         self.assert_statements({'description': '''
             Basic Qualifications
             Speak, write, and read fluently in English
@@ -734,6 +790,8 @@ class QualificationExtractionTests(unittest.TestCase):
         '''}, [
             ('required', 'Speak, write, and read fluently in English'),
             ('required', 'Writes clear and detailed functional specifications.'),
+            ('ambiguous', 'Ability to travel to or commute between data center locations as needed'),
+            ('ambiguous', 'Candidates must be able to travel (over 50 miles) to active data center sites.'),
             ('required', 'Experience managing a travel booking platform.'),
         ])
 
@@ -783,6 +841,7 @@ class QualificationExtractionTests(unittest.TestCase):
             Basic Qualifications
             High school diploma or equivalent
         '''}, [
+            ('ambiguous', 'Traveling within the regional work area is required.'),
             ('required', license_requirement),
             ('required', 'High school diploma or equivalent'),
         ])
@@ -795,6 +854,7 @@ class QualificationExtractionTests(unittest.TestCase):
         self.assert_statements({'description': f'Basic Qualifications\n{education} {skills} {travel}#0000'}, [
             ('required', education),
             ('required', skills),
+            ('ambiguous', travel),
         ])
 
     def test_logistics_and_physical_demands_do_not_become_resume_qualifications(self):
@@ -809,6 +869,7 @@ class QualificationExtractionTests(unittest.TestCase):
             Physical Requirements
             Willingness and demonstrated ability to work in the following physical conditions with reasonable accommodations:
         '''}, [
+            ('ambiguous', 'Travel up to 50% may be required'),
             ('required', 'Experience designing shift scheduling systems.'),
         ])
 

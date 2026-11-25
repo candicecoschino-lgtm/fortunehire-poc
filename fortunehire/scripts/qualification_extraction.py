@@ -64,6 +64,10 @@ HEADING_TAGS = {'h1', 'h2', 'h3', 'h4', 'h5', 'h6'}
 LIST_ITEM = re.compile(r'^\s*(?:[•●▪◦‣·*]|[-–—](?=\s)|\d+[.)](?=\s))\s*')
 SPACE = re.compile(r'\s+')
 FORMAT_MARKS = str.maketrans('', '', '\u200b\u200c\u200d\ufeff\u200e\u200f')
+LABELED_LIST_CRITERION = re.compile(
+    r'^(?:[\w/&+#-]+\s+){0,5}[\w/&+#-]+:\s+'
+    r'(?:(?:hands-on|proven|demonstrated)\s+)?(?:experience|proficiency|knowledge|skills)\b', re.I,
+)
 
 
 class DescriptionBlocks(HTMLParser):
@@ -76,6 +80,7 @@ class DescriptionBlocks(HTMLParser):
         self.list_path = []
         self.next_list = 0
         self.in_heading = False
+        self.list_line_break = False
         self.feed(html)
         self.close()
         self.flush()
@@ -85,6 +90,7 @@ class DescriptionBlocks(HTMLParser):
         if value:
             self.blocks.append((value, tuple(self.list_path), self.in_heading))
         self.parts.clear()
+        self.list_line_break = False
 
     def handle_starttag(self, tag, attrs):
         if tag in HIDDEN_TAGS:
@@ -104,6 +110,8 @@ class DescriptionBlocks(HTMLParser):
         elif tag in BLOCK_TAGS and not self.list_depth:
             self.flush()
         elif tag == 'br' or self.list_depth and tag in BLOCK_TAGS:
+            if tag == 'br':
+                self.list_line_break = True
             self.parts.append(' ')
 
     def handle_endtag(self, tag):
@@ -128,6 +136,10 @@ class DescriptionBlocks(HTMLParser):
 
     def handle_data(self, data):
         if not self.hidden:
+            if self.list_line_break and data.strip():
+                if LABELED_LIST_CRITERION.match(data.strip()):
+                    self.flush()
+                self.list_line_break = False
             self.parts.append(data)
 
 
@@ -269,12 +281,13 @@ REQUIRED_LINE = re.compile(
     r'^must (?:have|hold|possess|be|demonstrate|meet|maintain|obtain|secure|carry|retain)\b|\b(?:license|certification|degree|licensure) required\b'
     r'|^requires? (?:completion|graduation|graduate|\d+|broad training|(?:[\w-]+ ){0,3}skills|'
     r'(?:an? )?(?:(?:bachelor|master)[’\']s |doctoral )?(?:degree|diploma|certification|licen[cs]\w*))\b'
+    r'|^(?:this )?(?:position|role) requires (?:at least|a minimum of)\b'
     r'|\brequired, (?:demonstrated|including|unless|subject to)\b'
     r'|(?<!as )(?<!if )(?<!when )(?<!where )\brequired[. ]*$|\bmust be eligible to obtain\b', re.I,
 )
 LICENSE_OBLIGATION = re.compile(
     r'^(?:(?:candidates? |you )?must (?:have|hold|possess|maintain|(?:be willing to )?obtain|secure|carry|retain)|maintains?|requires?) '
-    r'(?:(?!records?\b|documentation\b|lists?\b)[\w’\'-]+ ){0,7}'
+    r'(?:(?!records?\b|documentation\b|lists?\b)(?:[\w’\'-]+|\([\w -]+\)) ){0,7}'
     r'(?:licen[cs]\w*|certif\w*|credentials?|clearance)\b'
     r'|^(?:(?:candidates?|you) )?must be willing to obtain\b[^.!?]{0,100}'
     r'\b(?:licen[cs]e|licensure|certification|credential)\b', re.I,
@@ -315,9 +328,10 @@ JOB_LOGISTICS = re.compile(
     r'|will be responsible to cover emergency service calls\b'
     r'|this is a (?:fully )?remote position(?=\s*(?:[.!?]|$|with a work schedule\b))'
     r'|this position is (?:fully )?(?:remote|on-?site|hybrid)(?: with \d+% travel required)?(?=\s*[.!?]?\s*$)'
-    r'|(?:(?:the )?schedule is|hours are|'
+    r'|(?:(?:the )?(?:typical )?schedule is|hours are|'
     r'this position works (?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)|'
-    r'candidates? must reside in|field-based travel|dedicated remote workspace|'
+    r'candidates? must reside in|strong preference will be given to candidates who reside in|'
+    r'field-based travel|dedicated remote workspace|'
     r'ability to work the designated schedule|flexibility to adjust start/finish times|'
     r'comfortable with physical requirements)\b'
     r'|willing/able to (?:adhere to the schedule|work (?:at least [\w-]+ )?(?:evenings|weekends|holidays))\b'
@@ -330,9 +344,23 @@ JOB_LOGISTICS = re.compile(
     r'|all physical requirements are expected with reasonable accommodations\b'
     r'|willingness and demonstrated ability to work in the following physical conditions\b)', re.I,
 )
+AMBIGUOUS_WORK_CONTEXT = re.compile(
+    r'^(?:key details\s*:\s*)?(?:(?:(?:ability(?:/willing| and willingness)? to|willingness to|'
+    r'(?:candidates? )?must be able to|able to|willing/able to) )?'
+    r'(?:(?:domestic(?: and/or international)?|international|overnight|frequent|occasional|local) )?travel\b'
+    r'(?=\s*(?:[.!?,;:(]|$)|\s+(?:to|within|across|throughout|up to|as needed|when required|approximately|'
+    r'domestically|internationally|required|may|is|will|in|between|\d)\b)'
+    r'|travel(?:ing|ling) within\b|field-based travel\b|experience with extensive travel\b'
+    r'|(?:this|the) (?:remote )?(?:position|role) requires\b[^.!?]*\btravel\b'
+    r'|this position is (?:fully )?(?:remote|on-?site|hybrid) with \d+% travel required\b'
+    r'|(?:able to|must be able to|willing/able to|ability to|willingness to) work\b[^.!?]*\bovertime\b'
+    r'|work overtime\b|overtime (?:is |may be )?(?:required|mandatory)\b'
+    r'|flexibility to adjust start/finish times\b[^.!?]*\bovertime\b'
+    r'|(?:valid )?driver[’\']s license and access to (?:a )?reliable transportation\b)', re.I,
+)
 SENTENCE_BOUNDARY = re.compile(
     r'(?<=[.!?])(?<!\b[A-Za-z]\.)\s+(?=[A-Z]|\d+\s*\+?\s*(?:years?|months?)\b)'
-    r'|(?<=[aApP]\.[mM]\.)\s+(?=[A-Z][a-z])',
+    r'|(?<=[aApP]\.[mM]\.)\s+(?=[A-Z][a-z])|(?<=;)\s+(?=(?i:normally requires?)\b)',
 )
 INLINE_APPLICATION_DEADLINE = re.compile(r'^application deadline\s*[:：]\s*\S', re.I)
 DUTY_LEAD = re.compile(r'\bwhile you\s*:$', re.I)
@@ -346,8 +374,8 @@ INLINE_SKILL_TENURE = re.compile(rf'(?<=[.!?])\s+(?={SHARED_SKILL_TENURE})', re.
 NUMBERED_SKILL = re.compile(r'^\s*(?:\(\d+\)|\d+[.)])\s+')
 REFERENCE_SUFFIX = re.compile(r'(?<=[.!?])\s*#\d{4}$')
 TENURE_FLOOR = re.compile(
-    rf'^(?:you (?:have|bring) )?(?:(?:a minimum of |minimum(?: of)? |at least ){TENURE_NUMBER}\s+'
-    rf'|{TENURE_NUMBER}\s*(?:\+|(?:or|and) more|plus)\s*)(?:years?|months?)\b', re.I,
+    rf'^(?:you (?:have|bring) )?(?:a minimum of |minimum(?: of)? |at least ){TENURE_NUMBER}\s*'
+    r'\+?\s*(?:years?|months?)\b', re.I,
 )
 
 TYPE_RULES = {
@@ -429,6 +457,9 @@ NO_PRIOR_EXPERIENCE = re.compile(r'^no (?:prior )?(?:[\w-]+ ){0,4}experience (?:
 GENERIC_CREDENTIAL_DUTY = re.compile(r'^maintain all required (?:certifications? and licenses?|licenses? and certifications?) as required\b', re.I)
 ACCREDITED_PROGRAM = re.compile(r'^(?:graduate|rn) from (?:an? )?accredited\b', re.I)
 DEGREE_PATH = re.compile(r'^(?:an? )?(?:bachelor|master|doctoral|associate)\b', re.I)
+SKILL_CONTEXT_REQUIREMENT = re.compile(
+    r'\b(?:recognize|determine|understand|know)\s+(?:when|where|if)\b[^.!?]{0,60}\b(?:is|are) required\b', re.I,
+)
 
 
 def heading_parts(line):
@@ -534,7 +565,7 @@ def statement_blocks(blocks, default_kind):
             statement = ELIGIBILITY_DISCLOSURE.split(statement, maxsplit=1)[0]
         if not statement or SECTION_PLACEHOLDER.match(statement):
             continue
-        if path and statement.endswith(':') and JOB_LOGISTICS.match(statement):
+        if path and statement.endswith(':') and (JOB_LOGISTICS.match(statement) or AMBIGUOUS_WORK_CONTEXT.match(statement)):
             logistics_path = path
         if kind is None and INLINE_APPLICATION_DEADLINE.match(statement):
             continue
@@ -547,6 +578,8 @@ def statement_blocks(blocks, default_kind):
                 pending = None
             if next_kind == 'subheading':
                 lead_in = None
+                if kind not in KINDS and re.fullmatch(r'education (?:and|&) experience', next_heading, re.I):
+                    kind, heading = 'ambiguous', next_heading
             else:
                 if path and (not scoped_sections or scoped_sections[-1][0] != path):
                     scoped_sections.append((path, kind, heading))
@@ -594,18 +627,21 @@ def statement_blocks(blocks, default_kind):
         yield pending
 
 
-def without_job_logistics(text):
-    """Drop standalone logistics sentences while keeping adjacent criteria whole."""
+def separate_work_context(text):
+    """Retain travel and overtime as context and discard other standalone logistics."""
     parts = []
     for sentence in SENTENCE_BOUNDARY.split(text):
-        if JOB_LOGISTICS.match(sentence) or NO_PRIOR_EXPERIENCE.match(sentence):
+        context = AMBIGUOUS_WORK_CONTEXT.match(sentence)
+        if context or JOB_LOGISTICS.match(sentence) or NO_PRIOR_EXPERIENCE.match(sentence):
             if parts:
-                yield ' '.join(parts)
+                yield ' '.join(parts), False
                 parts.clear()
+            if context:
+                yield sentence, True
         else:
             parts.append(sentence)
     if parts:
-        yield ' '.join(parts)
+        yield ' '.join(parts), False
 
 
 def summary_requirements(text):
@@ -625,7 +661,8 @@ def strength_content(text):
 
 def explicit_requirement(text):
     content = strength_content(text)
-    return bool(REQUIRED_LINE.search(content) or LICENSE_OBLIGATION.search(content) or EXPLICIT_CREDENTIAL.search(content))
+    direct = SKILL_CONTEXT_REQUIREMENT.sub('', content)
+    return bool(REQUIRED_LINE.search(direct) or LICENSE_OBLIGATION.search(content) or EXPLICIT_CREDENTIAL.search(content))
 
 
 def explicit_preference(text):
@@ -639,7 +676,8 @@ def independent_criteria(text, kind):
     for sentence in SENTENCE_BOUNDARY.split(text):
         if parts and not (CHOICE_SENTENCE.search(parts[0]) or CONDITION_CONTINUATION.match(sentence)):
             labeled = (explicit_requirement(parts[0]) or NORMALLY_REQUIRED.match(parts[0])
-                       or explicit_preference(parts[0])) and (explicit_requirement(sentence) or explicit_preference(sentence))
+                       or explicit_preference(parts[0])) and (explicit_requirement(sentence) or explicit_preference(sentence)
+                                                             or NORMALLY_REQUIRED.match(sentence))
             education = kind == 'required' and ACCREDITED_PROGRAM.match(parts[0]) and DEGREE_PATH.match(sentence)
             if labeled or education:
                 yield ' '.join(parts)
@@ -650,7 +688,11 @@ def independent_criteria(text, kind):
 
 def qualification_statements(blocks, default_kind):
     for raw, kind, heading, number, inherited_list in statement_blocks(blocks, default_kind):
-        for text in without_job_logistics(REFERENCE_SUFFIX.sub('', raw)):
+        for text, work_context in separate_work_context(REFERENCE_SUFFIX.sub('', raw)):
+            if work_context:
+                if kind != 'stop':
+                    yield text, 'work_context', heading, number, inherited_list
+                continue
             if kind in (None, 'duties'):
                 explicit = list(summary_requirements(text))
                 if explicit:
@@ -685,6 +727,8 @@ def has_scoped_tenure_floor(text, heading):
 
 
 def classify_statement(text, kind, heading, inherited_list, field, types):
+    if kind == 'work_context':
+        return 'ambiguous'
     if (EMPTY.fullmatch(text) or BOILERPLATE.search(text) or FOOTER.search(text)
             or JOB_LOGISTICS.match(text) or GENERIC_CREDENTIAL_DUTY.match(text)):
         return None
