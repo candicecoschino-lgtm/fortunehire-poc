@@ -58,6 +58,16 @@ def greenhouse_detail(**fields):
 
 
 class RequestedAtsFeedTests(TestCase):
+    def test_matching_unlisted_ashby_posting_skips_application(self):
+        client = Mock(host=ats.ASHBY, ats_company="openai")
+        client.get.return_value = (200, ashby_page("openai", isListed=False))
+        self.assertEqual(public_fetch(client, ASHBY_ROLE, Mock()), (404, ""))
+        client.get.assert_called_once_with(ASHBY_ROLE)
+        for fields in ({"id": "another"}, {"isConfidential": True}):
+            client.get.return_value = (200, ashby_page("openai", isListed=False, **fields))
+            with self.assertRaisesRegex(ValueError, "listed public"):
+                public_fetch(client, ASHBY_ROLE, Mock())
+
     def test_ashby_checks_listed_identity_and_application_for_both_tenants(self):
         for company in ("openai", "perplexity"):
             with self.subTest(company=company):

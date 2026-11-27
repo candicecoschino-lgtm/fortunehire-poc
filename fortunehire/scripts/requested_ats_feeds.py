@@ -160,6 +160,9 @@ def greenhouse_source(body, row, company, req, url):
 def ashby_source(body, company, req, url):
     _, _, name, corporate = BOARDS[company]
     posting = (ashby_data(body, company).get("posting") or {})
+    if (posting.get("id") == req and posting.get("isListed") is False
+            and posting.get("isConfidential") is False):
+        return None
     if (posting.get("id") != req or posting.get("isListed") is not True
             or posting.get("isConfidential") is not False):
         raise ValueError("Missing listed public Ashby posting")
@@ -204,6 +207,8 @@ def fetch(client, url, body):
         source = greenhouse_source(body, row, company, req, url)
     else:
         source = ashby_source(body, company, req, url)
+        if source is None:
+            return 404, ""  # A matching posting explicitly marked unlisted.
         status, application = client.get(url.rstrip("/") + "/application")
         if status != 200:
             raise ValueError("Public Ashby application unavailable")

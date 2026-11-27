@@ -11,12 +11,14 @@ from test_collector import URL,NOW,body
 
 SF='https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Texas---Remote/Example_JR12345'
 COKE='https://coke.wd1.myworkdayjobs.com/en-US/coca-cola-careers/job/Example_R-12345'
+FANNIE='https://fanniemae.wd1.myworkdayjobs.com/en-US/FannieMaeCareers/job/Example_JR2555'
 def shell(url,tenant='salesforce',site='External_Career_Site',available='false'):
  return '<meta property="og:url" content="'+url+'"><script>window.workday = window.workday || {tenant: "'+tenant+'",siteId: "'+site+'",appName: "cxs",isExternal: true,postingAvailable: '+available+',allowedFileTypes: []};</script><div id="root"></div>'
 
 class RefreshRepairTests(unittest.TestCase):
  def test_reviewed_workday_unavailable_is_missing_without_calling_details_api(self):
-  for url,tenant,site in [(SF,'salesforce','External_Career_Site'),(COKE,'coke','coca-cola-careers')]:
+  for url,tenant,site in [(SF,'salesforce','External_Career_Site'),(COKE,'coke','coca-cola-careers'),
+                         (FANNIE,'fanniemae','FannieMaeCareers')]:
    client=Mock(host=c.urllib.parse.urlsplit(url).hostname);client.get.return_value=(200,shell(url,tenant,site))
    self.assertEqual(public_fetch(client,url,Mock()),(404,''));client.get.assert_called_once_with(url)
  def test_ambiguous_or_mismatched_shell_cannot_establish_missing_job(self):
@@ -25,6 +27,18 @@ class RefreshRepairTests(unittest.TestCase):
    self.assertFalse(workday_unavailable(invalid,SF))
   self.assertFalse(workday_unavailable(good,SF+'?redirect=other'))
   self.assertFalse(workday_unavailable(good.replace('salesforce.wd12.myworkdayjobs.com','unreviewed.myworkdayjobs.com'),SF.replace('salesforce.wd12.myworkdayjobs.com','unreviewed.myworkdayjobs.com')))
+ def test_oracle_apply_enabled_but_unposted_requires_exact_id_and_explicit_null_dates(self):
+  host='enterpriseplatform.dell.com'
+  url='https://'+host+'/hcmUI/CandidateExperience/en/sites/CX_1001/job/301040'
+  row={'Id':'301040','ApplyWhenNotPostedFlag':True,'ExternalPostedStartDate':None,'ExternalPostedEndDate':None}
+  for variant, expected in [(row,404),({**row,'Id':'301041'},200),
+      ({**row,'ApplyWhenNotPostedFlag':False},200),
+      ({**row,'ExternalPostedStartDate':'2026-11-27'},200),
+      ({**row,'ExternalPostedEndDate':'2026-12-01'},200),
+      ({key:value for key,value in row.items() if key!='ExternalPostedEndDate'},200)]:
+   client=Mock(host=host,oracle_data_client=None)
+   client.get.side_effect=[(200,'<title>Dell</title>'),(200,json.dumps({'items':[variant]}))]
+   self.assertEqual(public_fetch(client,url,Mock())[0],expected)
  def test_missing_signal_preserves_date_and_requires_two_checks_six_hours_apart(self):
   old=c.normalize_posting(body(),URL,'boeing',NOW)
   jobs,state,r=c.reconcile('boeing',[old],{}, {},lambda u:(404,''),NOW)

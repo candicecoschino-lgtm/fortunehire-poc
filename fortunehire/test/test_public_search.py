@@ -44,6 +44,33 @@ class PublicSearchTests(unittest.TestCase):
  def test_amazon_search_is_bounded_us_only_and_uses_real_posting_dates(self):
   cl=Mock(host='www.amazon.jobs');cl.get.return_value=(200,json.dumps({'error':None,'hits':200,'jobs':[record(),record(id_icims='999',job_path='/en/jobs/999/foreign',country_code='IND'),record(id_icims='OTHER')]}))
   self.assertEqual(public_search(cl,Mock()),{'12345':URL});self.assertEqual(cl.discovery_dates['12345'],'2026-11-14');self.assertTrue(cl.discovery_limited)
+  self.assertEqual(c.urllib.parse.parse_qs(c.urllib.parse.urlsplit(cl.get.call_args.args[0]).query),
+                   {'sort':['recent'],'result_limit':['20'],'country':['USA']})
+ def test_oracle_company_limits_search_to_us_before_pagination(self):
+  cl=Mock(host='careers.oracle.com')
+  details=Mock()
+  details.get.return_value=(200,json.dumps({'items':[{
+      'SiteNumber':'CX_45001','TotalJobsCount':2,
+      'requisitionList':[{'Id':'123','PrimaryLocationCountry':'US','PostedDate':'2026-11-14'},
+                         {'Id':'999','PrimaryLocationCountry':'CA'}],
+  }]}))
+  self.assertEqual(public_search(cl,Mock(return_value=details)),
+                   {'123':'https://careers.oracle.com/en/sites/jobsearch/job/123'})
+  query=c.urllib.parse.parse_qs(c.urllib.parse.urlsplit(details.get.call_args.args[0]).query)
+  self.assertEqual(query['finder'],
+                   ['findReqs;siteNumber=CX_45001,limit=20,offset=0,sortBy=POSTING_DATES_DESC,location=United States'])
+ def test_bank_of_america_uses_same_host_search_when_sitemap_has_no_job_links(self):
+  base='https://careers.bankofamerica.com'
+  cl=Mock(host='careers.bankofamerica.com')
+  cl.robots.site_maps.return_value=[base+'/sitemap_index.xml']
+  cl.get.side_effect=[
+      (200,'<sitemapindex><sitemap><loc>https://careers-sit1.bankofamerica.com/sitemap_main.xml</loc></sitemap></sitemapindex>'),
+      (200,'<a href="/en-us/job-detail/26043991/example">Synthetic role</a>'
+           '<a href="https://example.com/en-us/job-detail/26043992/other">Unverified role</a>'),
+  ]
+  self.assertEqual(c.discover(cl),{'26043991':base+'/en-us/job-detail/26043991/example'})
+  self.assertTrue(cl.discovery_limited)
+  self.assertEqual(cl.get.call_args.args[0],base+'/en-us/job-search.html?ref=search&search=getAllJobs&rows=10&start=0')
  def test_amazon_existing_job_id_lookup_and_page_identity_are_verified(self):
   cl=Mock(host='www.amazon.jobs');cl.amazon_records={};cl.get.side_effect=[(200,page()),(200,json.dumps({'jobs':[record()],'error':None}))]
   status,body=public_fetch(cl,URL,Mock());self.assertIn('base_query=12345',cl.get.call_args.args[0])

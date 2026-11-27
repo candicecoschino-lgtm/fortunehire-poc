@@ -750,8 +750,14 @@ def discover(client):
                 modified=entry.findtext(ns+'lastmod') or ''
                 dates[key]=max(dates.get(key,''),modified)
         else: raise SourceError('Unexpected sitemap format; manual adapter review required')
+    used_bank_search=False
     if not found and client.host in ('jobs.cardinalhealth.com','careers.bankofamerica.com','careers.homedepot.com'):
         landing='https://'+client.host+'/'
+        if client.host=='careers.bankofamerica.com':
+            # The employer landing page links this public search. Its sitemap
+            # currently points to a separate host outside the reviewed scope.
+            landing+='en-us/job-search.html?ref=search&search=getAllJobs&rows=10&start=0'
+            used_bank_search=True
         status,body=client.get(landing)
         if status==200:
             for node in Document(body).nodes:
@@ -761,7 +767,7 @@ def discover(client):
                 found[posting_key(url)]=url
     if not found: raise SourceError('Reviewed discovery contains no individual job URLs')
     client.discovery_dates=dates
-    client.discovery_limited=bool(queue)
+    client.discovery_limited=bool(queue) or used_bank_search
     return found
 
 

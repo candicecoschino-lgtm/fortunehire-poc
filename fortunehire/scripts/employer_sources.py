@@ -93,7 +93,7 @@ def public_search(client, client_factory):
         client.discovery_dates=dates;client.discovery_limited=data.get('totalHits',0)>len(found);client.discovery_warnings=[]
         return found
     if client.host=='www.amazon.jobs':
-        status,body=client.get('https://www.amazon.jobs/en/search.json?'+urlencode({'sort':'recent','result_limit':20,'country[]':'USA'}))
+        status,body=client.get('https://www.amazon.jobs/en/search.json?'+urlencode({'sort':'recent','result_limit':20,'country':'USA'}))
         if status!=200:raise ValueError('Amazon public search unavailable')
         data=amazon_rows(body);found={};dates={};records={}
         for row in data['jobs'][:20]:
@@ -136,7 +136,10 @@ def public_search(client, client_factory):
     client.oracle_data_client=data_client
     found={};dates={};limited=False
     for offset in (0,20,40):
-        params={'onlyData':'true','expand':'requisitionList','finder':f'findReqs;siteNumber={site},limit=20,offset={offset},sortBy=POSTING_DATES_DESC'}
+        finder=f'findReqs;siteNumber={site},limit=20,offset={offset},sortBy=POSTING_DATES_DESC'
+        if client.host=='careers.oracle.com':
+            finder+=',location=United States'
+        params={'onlyData':'true','expand':'requisitionList','finder':finder}
         status,body=data_client.get('https://'+datahost+API+'recruitingCEJobRequisitions?'+urlencode(params))
         if status!=200:raise ValueError('Public Oracle search is unavailable')
         items=json.loads(body).get('items',[])
@@ -156,7 +159,8 @@ def public_search(client, client_factory):
 def workday_unavailable(body,url):
     """Exact employer unavailable flag; ambiguous shells are never closure evidence."""
     config={'salesforce.wd12.myworkdayjobs.com':('salesforce','External_Career_Site'),
-            'coke.wd1.myworkdayjobs.com':('coke','coca-cola-careers')}
+            'coke.wd1.myworkdayjobs.com':('coke','coca-cola-careers'),
+            'fanniemae.wd1.myworkdayjobs.com':('fanniemae','FannieMaeCareers')}
     parsed=urlsplit(url);scope=config.get(parsed.hostname)
     if not scope or parsed.scheme!='https' or parsed.netloc!=parsed.hostname or parsed.query or parsed.fragment:return False
     tenant,site=scope
@@ -248,4 +252,11 @@ def public_fetch(client, url, client_factory):
     data=json.loads(body)
     if data.get('items')==[] and data.get('count')==0 and data.get('hasMore') is False and not data.get('error'):
         return 404,'' # Exact per-ID lookup has no posting; the normal repeated-missing guard applies.
+    rows=data.get('items')
+    if not data.get('error') and isinstance(rows,list) and len(rows)==1 and isinstance(rows[0],dict):
+        row=rows[0]
+        # Oracle can keep an apply-enabled requisition accessible after removing its external posting.
+        if (str(row.get('Id'))==req and row.get('ApplyWhenNotPostedFlag') is True
+                and all(key in row and row[key] is None for key in ('ExternalPostedStartDate','ExternalPostedEndDate'))):
+            return 404,''
     return status,body
