@@ -135,7 +135,7 @@
       ]
     },
     "abbott-31159541": {
-      "catalogSourceHash": "9b7fbab2136f4b93e2a318978414468f0e07c0a3432e464a28d28f454f4a3455",
+      "catalogSourceHash": "2996c4c15d66653b78d2f5e180f95ee4cc09540047d4442de6a9c86e12902a78",
       "evidence": [
         {
           "kind": "required",
@@ -680,7 +680,7 @@
       ]
     },
     "abbott-31165883": {
-      "catalogSourceHash": "9695de5803ae33b6dbcc2d786a53453dddaac5a72e802b361879760fe6daac63",
+      "catalogSourceHash": "b39c0ae09b03257193490bf643d77c69ecafd8732519eeaead2c901e872c85c0",
       "evidence": [
         {
           "kind": "required",
@@ -812,7 +812,7 @@
       ]
     },
     "abbott-31166803": {
-      "catalogSourceHash": "1fdc661ac993d6348a67d761f56895f0a2c72e602e97fe8fcf8ca8f2e0d10a4e",
+      "catalogSourceHash": "9a910733896a82203636ab1da1c60af212e099aad99fe56b28c6d147d09258c6",
       "evidence": [
         {
           "kind": "required",
@@ -977,7 +977,7 @@
       ]
     },
     "abbott-31166842": {
-      "catalogSourceHash": "f6ad35278f71ae2e325e6b6a24b53dc8f6d1cc17a765a519f390c835fe450da1",
+      "catalogSourceHash": "2e7c1f1868c09f36f347a517e5efd67cf4599befd94b14befd89679191bdde41",
       "evidence": [
         {
           "kind": "preferred",
@@ -1011,7 +1011,7 @@
       ]
     },
     "abbott-31166963": {
-      "catalogSourceHash": "8c0be1951ab6b00c1402fb80c66c09358c25b248739a9d58542bf8899c986f75",
+      "catalogSourceHash": "0c0d382067e4ad325a2423ca872a3e96350a491a19e960b45759e83236827a68",
       "evidence": [
         {
           "kind": "required",
@@ -1411,7 +1411,7 @@
       ]
     },
     "abbott-31167474": {
-      "catalogSourceHash": "5d35697e7307e8d1e1ca61a87e807a542b6ecf23e636a70ed1f85321e61337cc",
+      "catalogSourceHash": "5e37f37a0824a4d7920727730ce7717cd2cb7d001cb52b131c922077c879e30c",
       "evidence": [
         {
           "kind": "required",
@@ -1530,7 +1530,7 @@
       ]
     },
     "abbott-31167482": {
-      "catalogSourceHash": "fefa00b6d74e75af1b093c87375f969a4a5438c612144c56e03e8e83628956ec",
+      "catalogSourceHash": "1cbdda5ba7d42b16c22105d6cc95ee4829fd2ebb5779bee01b69ba1d045d7b81",
       "evidence": [
         {
           "kind": "required",
@@ -2251,7 +2251,7 @@
       ]
     },
     "abbott-31167720": {
-      "catalogSourceHash": "03b0d8177e9b1aece85f36a7162d3ca1c1b912dfe6378e62d4ac966194fa7562",
+      "catalogSourceHash": "7b705ac025da6044fcfa1792b463baf78c77fef0ae843a3f278f95be26767bc8",
       "evidence": [
         {
           "kind": "required",
@@ -2529,7 +2529,7 @@
       ]
     },
     "abbott-31167912": {
-      "catalogSourceHash": "a6f7e38f58afd559437d6533d343539bdcf4e140c60042f4d68c11f9b96523b9",
+      "catalogSourceHash": "224dc69493332c5a66f87100585d0bf19438da5f42bde8e511eb5e54cb958ddb",
       "evidence": [
         {
           "kind": "required",
@@ -2860,7 +2860,7 @@
       ]
     },
     "abbott-31167984": {
-      "catalogSourceHash": "b84ce7381d1eb7dccb4155cb96036371efbe8033f59a95fd81089841ec6726af",
+      "catalogSourceHash": "3a48cabf96c20beb8fabaaabe903dde4170808e3d75bc17a95f599d6abe7d3ba",
       "evidence": [
         {
           "kind": "required",
@@ -2916,7 +2916,7 @@
       ]
     },
     "abbott-31168049": {
-      "catalogSourceHash": "52ad3a8d11f5d334a724ed3d96119249c0137e02e73c20cf309a3388d709354b",
+      "catalogSourceHash": "691aac1a87c5870933fbb0e4183085b012d51f492f560724d066e6bec160dcc4",
       "evidence": [
         {
           "kind": "required",
@@ -2952,7 +2952,7 @@
       ]
     },
     "abbott-31168052": {
-      "catalogSourceHash": "9e7aeab533eb0736531bd83de890167881e913aa0c482b73b1d16906b81c9d23",
+      "catalogSourceHash": "338bff3371af2030ee7ef3e7d217a17e7080ebf89e3b37e234f9a3f06a583aa5",
       "evidence": [
         {
           "kind": "preferred",
@@ -3157,7 +3157,7 @@
       ]
     },
     "abbott-31168059": {
-      "catalogSourceHash": "7da50c387a493629cfc91dbf26ba9c9a95ff2d5e483b6594d3b8dfa7482b5af3",
+      "catalogSourceHash": "871cf6f3497eeb16bdd604375b11b0c3038ac9727bba805731fa01a670969273",
       "evidence": [
         {
           "kind": "required",
@@ -3313,7 +3313,7 @@
       ]
     },
     "abbott-31168177": {
-      "catalogSourceHash": "bb5897a0eb67f10a9ea7931ec41e966cd6aeb2cd96e96dde44f3cbc02a74b0f2",
+      "catalogSourceHash": "0f5501644133167f2ceec524194098723dca65104ac2bd88894e7785f871038e",
       "evidence": [
         {
           "kind": "required",
@@ -3369,7 +3369,7 @@
       ]
     },
     "abbott-31168185": {
-      "catalogSourceHash": "172e5c77ae912931df09378f92533a85c1f0961d8ec75b1637809a76c9c28bb7",
+      "catalogSourceHash": "31156dca88395ff0f77f6e90a448ebb14692223d1df1dcb77337501c8d85adf2",
       "evidence": [
         {
           "kind": "required",
@@ -25288,38 +25288,6 @@
         }
       ]
     },
-    "cencora-r2611554": {
-      "catalogSourceHash": "e683e070d5e936dc4c51e86d0fe6a412a83ce36021455510cace6337f7c64750",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "High School Diploma/GED required.",
-          "types": [
-            "education"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Bachelor's degree or relevant practice management experience preferred.",
-          "types": [
-            "education"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Previous experience as Field Reimbursement Manager/Specialist preferred.",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Candidates must be willing to obtain a Prior Authorization Certified Specialist (PACS) certification within the first six months of employment.",
-          "types": [
-            "experience",
-            "certification"
-          ]
-        }
-      ]
-    },
     "cencora-r2612652": {
       "catalogSourceHash": "c46caa23f55837ec66ddf9b061d45d40eac61c5e6d636421ee0fcfcf9a788435",
       "evidence": [
@@ -25378,39 +25346,6 @@
           "text": "Certification in logistics operations, or equivalent preferred.",
           "types": [
             "certification"
-          ]
-        }
-      ]
-    },
-    "cencora-r2613180": {
-      "catalogSourceHash": "318ef1708218c3f5454fc44ace0e9d1a81699e750b2b5170e5efaca83089e680",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "Maintains active pharmacist license in home state and obtains/maintains required non-resident state licenses as business needs dictate to support multi-state operations and customer service.",
-          "types": [
-            "license"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Requires Pennsylvania active pharmacist license.",
-          "types": [
-            "license"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Requires a Degree in Pharmacy from an accredited College of Pharmacy.",
-          "types": [
-            "education"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Unrestricted, current state license as a Registered Pharmacist in resident state is required.",
-          "types": [
-            "license"
           ]
         }
       ]
@@ -25559,58 +25494,6 @@
           "types": [
             "certification"
           ]
-        }
-      ]
-    },
-    "cencora-r2615326": {
-      "catalogSourceHash": "ac6e9f809536416f24d9793db411e3da3fa8eb92182a6d2a13f67be5e9de7bce",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "Bachelor's degree in finance, accounting, economics, business administration, or a related field, or equivalent experience required.",
-          "types": [
-            "education",
-            "experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "2+ years of experience in budgeting, forecasting, financial analysis, financial modeling, management reporting, or a related field required.",
-          "types": [
-            "experience",
-            "specialized_experience"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Knowledge of SmartView, Hyperion, Databricks, SAP BusinessObjects (BOBJ), SQL and/or Power BI preferred",
-          "types": [
-            "technical_competency"
-          ]
-        }
-      ]
-    },
-    "cencora-r2615339": {
-      "catalogSourceHash": "f4244219d120b3f01da2f7ced3e3e3fe069d92d1c4145979603c94896078638a",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "Requires completion of a high school diploma OR GED",
-          "types": [
-            "education"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Minimum 2 years of manufacturing experience preferred.",
-          "types": [
-            "experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Must possess basic mathematical skills.",
-          "types": []
         }
       ]
     },
@@ -25786,61 +25669,6 @@
           "types": [
             "specialized_experience"
           ]
-        }
-      ]
-    },
-    "cencora-r2615874": {
-      "catalogSourceHash": "c9e548493e6ecbdfe4a1eb07ea1c6dd9aa175dbc67a6e888b41cd339405d5b6c",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "High School Diploma/GED or equivalent experience required",
-          "types": [
-            "education",
-            "experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Skills & Knowledge: 3+ years of experience in production operations, manufacturing, supply chain operations, production planning, or a related field required.",
-          "types": [
-            "experience",
-            "specialized_experience"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Skills & Knowledge: Certified Supply Chain Professional (CSCP), ISO 9001 Internal Auditor, ISO 9001 Lead Auditor, or equivalent certifications preferred.",
-          "types": [
-            "certification"
-          ]
-        }
-      ]
-    },
-    "cencora-r2616251": {
-      "catalogSourceHash": "6ddc67ad2aef44299c33a0e554368b4542a27ad8a23ad76b5672997d9a17d4ef",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "Requires completion of a high school diploma or general education degree (GED).",
-          "types": [
-            "education"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Must possess basic mathematical skills.",
-          "types": []
-        },
-        {
-          "kind": "preferred",
-          "text": "Basic computer knowledge preferred.",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Must be a team player and demonstrate effective communication and problem-solving skills",
-          "types": []
         }
       ]
     },
@@ -26244,83 +26072,6 @@
         }
       ]
     },
-    "cencora-r2618294": {
-      "catalogSourceHash": "45823d211a3cb4908ef00d37cc9e2704bad51e0eff8b490066b0074a57e89ad4",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "Requires completion of a high school diploma, general education degree (GED) or equivalent combination of experience and education; two (2) plus years of work experience.",
-          "types": [
-            "education",
-            "experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Ability to read and understand the English language to compare and read product descriptions, names and shelf labels.",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Must possess basic mathematical skills.",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Strong interpersonal skills; ability to develop and maintain cooperative working relationships with others.",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Strong organizational skills; detail oriented.",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Have a good overall understanding of DC workflow and can work with minimal guidance",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Ability to use good judgment to carry out detailed instructions.",
-          "types": []
-        },
-        {
-          "kind": "preferred",
-          "text": "Basic computer knowledge preferred.",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Must be a team player and demonstrate effective communication and problem-solving skills",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Must have proficiency to operate reach truck, picker machines, pallet jack, forklift, etc.",
-          "types": [
-            "technical_competency"
-          ]
-        }
-      ]
-    },
-    "cencora-r2618520": {
-      "catalogSourceHash": "ac04867d6f27dcf0ee1f562435df07c706309ecbaeed803e7c6d3ffcb6353d76",
-      "evidence": [
-        {
-          "kind": "preferred",
-          "text": "Warehouse or Distribution experience preferred (1 year or less)",
-          "types": [
-            "experience"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Able to work with RF scanning equipment",
-          "types": []
-        }
-      ]
-    },
     "cencora-r2618699": {
       "catalogSourceHash": "eebc992de7145354230e397688c9a1632155345782569f59b3361c0f79aefca8",
       "evidence": [
@@ -26382,16 +26133,6 @@
         }
       ]
     },
-    "cencora-r2618863": {
-      "catalogSourceHash": "7ec0fe2d624435fe9011754176c2fdce13c2a819e9d2fdbb49cfbb1f2bc4ca1a",
-      "evidence": [
-        {
-          "kind": "preferred",
-          "text": "Rising Junior or Senior at the time of the internship preferred",
-          "types": []
-        }
-      ]
-    },
     "cencora-r2618883": {
       "catalogSourceHash": "5340d2fc1ff571ab217a4f381105fd3d6106572125328859136090b3fe05a9cc",
       "evidence": [
@@ -26428,118 +26169,8 @@
         }
       ]
     },
-    "cencora-r2619022": {
-      "catalogSourceHash": "b4e940235b0e9819d87d616bed5c0f0aa87db5ec76420dad316ffdd433246d1b",
-      "evidence": [
-        {
-          "kind": "preferred",
-          "text": "Warehouse or Distribution experience preferred (1 year or less)",
-          "types": [
-            "experience"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Able to work with RF scanning equipment",
-          "types": []
-        }
-      ]
-    },
-    "cencora-r2619033": {
-      "catalogSourceHash": "69ceb12a462f74a54df88ed6d05f82c8be703dc7bd59b3e6efbc843f78b4567c",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "High School Diploma/GED or equivalent experience required.",
-          "types": [
-            "education",
-            "experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Less than 2 years of experience in logistics, transportation, shipment coordination, order fulfillment, customer service operations, or a related field required.",
-          "types": [
-            "experience",
-            "specialized_experience"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Certification in logistics operations, or equivalent preferred.",
-          "types": [
-            "certification"
-          ]
-        }
-      ]
-    },
-    "cencora-r2619042": {
-      "catalogSourceHash": "3cd77ffd5e5d6f1ca03fa2a3e637a1ac23b2eaec52ca5a366d90098fb571f39d",
-      "evidence": [
-        {
-          "kind": "preferred",
-          "text": "3+ years of experience in a management capacity highly preferred.",
-          "types": [
-            "experience",
-            "specialized_experience"
-          ]
-        }
-      ]
-    },
-    "cencora-r2619118": {
-      "catalogSourceHash": "6ca429b56bffb3cc8c226290cff87363d31aa3f0275555e32238051d84b9cc04",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "Requires completion of a high school diploma, general education degree (GED) or equivalent combination of experience and education; two (2) plus years of work experience.",
-          "types": [
-            "education",
-            "experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Must possess basic mathematical skills.",
-          "types": []
-        },
-        {
-          "kind": "preferred",
-          "text": "Basic computer knowledge preferred.",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Must be a team player and demonstrate effective communication and problem-solving skills",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Must have proficiency to operate reach truck, picker machines, pallet jack, forklift, etc.",
-          "types": [
-            "technical_competency"
-          ]
-        }
-      ]
-    },
-    "cencora-r2619158": {
-      "catalogSourceHash": "17c6fab622f8b6548d6dc348eecf93b00ba9094eaef5c8ac5e2f4ea56ad54142",
-      "evidence": [
-        {
-          "kind": "preferred",
-          "text": "Warehouse or Distribution experience preferred (1 year or less)",
-          "types": [
-            "experience"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Able to work with RF scanning equipment",
-          "types": []
-        }
-      ]
-    },
     "cencora-r2619201": {
-      "catalogSourceHash": "c86c0734a0dbceeba9e2e2d06ed916b11943bcbc9a76f03f4c097fb2a80ac03c",
+      "catalogSourceHash": "9b5876f3457e2d09036bcba2d147189e90882ded7124ba0a3578d79fa82bacba",
       "evidence": [
         {
           "kind": "required",
@@ -26590,26 +26221,6 @@
           "text": "Certified Public Accountant (CPA) preferred.",
           "types": [
             "certification"
-          ]
-        }
-      ]
-    },
-    "cencora-r2619305": {
-      "catalogSourceHash": "27bb34647bcd2cf3930d433669caa41898e94e5308f91485fae3adea32b86097",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "Minimum of one year experience (1 year) in warehouse or distribution operations in a fast-paced supply chain environment",
-          "types": [
-            "experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Minimum of one year experience (1 year) in experience operating RF Scanning equipment",
-          "types": [
-            "experience",
-            "specialized_experience"
           ]
         }
       ]
@@ -26716,32 +26327,6 @@
         {
           "kind": "preferred",
           "text": "Certification in quality management or process improvement preferred.",
-          "types": [
-            "certification"
-          ]
-        }
-      ]
-    },
-    "cencora-r2619593": {
-      "catalogSourceHash": "469fafdc789c3f3fd81f833aa97e47dbbe42f21d746621e10be6fcc1346c41b6",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "Bachelors degree required.",
-          "types": [
-            "education"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Advanced degree preferred in behavioral science, organizational or industrial-organizational psychology, human factors, data science, or a related field.",
-          "types": [
-            "education"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "PMP-aligned standards and artifacts (preferred), including scheduling, budgeting, forecasting, and delivery governance.",
           "types": [
             "certification"
           ]
@@ -26871,33 +26456,6 @@
           "text": "Experience with organizational transitions from waterfall to agile and product models is a bonus.",
           "types": [
             "specialized_experience"
-          ]
-        }
-      ]
-    },
-    "cencora-r2619740": {
-      "catalogSourceHash": "f44bf4ef755660dc2ac448df9ba05d4e1bf4fb86977172ece93e622e80ba0b1b",
-      "evidence": [
-        {
-          "kind": "required",
-          "text": "High School Diploma/GED or equivalent experience required.",
-          "types": [
-            "education",
-            "experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Experience in distribution operations, shipping, receiving, inventory control, material handling, or a related field required.",
-          "types": [
-            "specialized_experience"
-          ]
-        },
-        {
-          "kind": "preferred",
-          "text": "Certified Supply Chain Professional (CSCP), or equivalent certification preferred.",
-          "types": [
-            "certification"
           ]
         }
       ]
