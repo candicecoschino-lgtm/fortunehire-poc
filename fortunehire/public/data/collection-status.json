@@ -1,155 +1,121 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-26T19:39:06.259317+00:00",
+  "attemptedAt": "2026-11-27T13:03:08.462309+00:00",
   "postingWindowDays": 14,
   "coverage": "U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.",
   "sources": {
     "citigroup": {
-      "discovered": 3190,
-      "checked": 65,
+      "discovered": 3146,
+      "checked": 28,
       "added": 0,
-      "changed": 1,
-      "closed": 11,
+      "changed": 0,
+      "closed": 12,
       "skipped": 0,
-      "outsidePostingWindow": 4,
+      "outsidePostingWindow": 32,
       "warnings": [],
       "errors": [],
-      "activeTracked": 34,
+      "activeTracked": 16,
       "pendingClosureChecks": 1,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "boeing": {
-      "discovered": 1160,
-      "checked": 100,
-      "added": 3,
-      "changed": 1,
-      "closed": 10,
-      "skipped": 6,
-      "outsidePostingWindow": 15,
-      "warnings": [
-        {
-          "url": "https://jobs.boeing.com/job/amberley/reliability-analyst/185/103822131456",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/amberley/acea-senior-technical-officer-environmental-degradation-management/185/103822131440",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/edinburgh/aerospace-worker/185/103805255888",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/brisbane/systems-engineer/185/103805255808",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://jobs.boeing.com/job/townsville/ah-64-apache-repair-parts-store-supervisor/185/103805255584",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        }
-      ],
-      "errors": [],
-      "activeTracked": 79,
-      "pendingClosureChecks": 10,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "unitedhealth-group": {
-      "discovered": 6487,
-      "checked": 100,
+      "discovered": 6483,
+      "checked": 48,
       "added": 0,
       "changed": 3,
-      "closed": 13,
+      "closed": 1,
       "skipped": 0,
-      "outsidePostingWindow": 3,
+      "outsidePostingWindow": 53,
       "warnings": [],
       "errors": [],
-      "activeTracked": 87,
-      "pendingClosureChecks": 2,
+      "activeTracked": 47,
+      "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "boeing": {
+      "discovered": 1151,
+      "checked": 60,
+      "added": 0,
+      "changed": 0,
+      "closed": 7,
+      "skipped": 0,
+      "outsidePostingWindow": 32,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 53,
+      "pendingClosureChecks": 6,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "chevron": {
       "discovered": 141,
-      "checked": 41,
+      "checked": 20,
       "added": 0,
       "changed": 0,
       "closed": 1,
-      "skipped": 16,
-      "outsidePostingWindow": 7,
-      "warnings": [
-        {
-          "url": "https://careers.chevron.com/job/houston/senior-events-activation-advisor/38138/103489288368",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://careers.chevron.com/job/houston/senior-corporate-negotiator/38138/103171230288",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://careers.chevron.com/job/houston/senior-corporate-negotiator/38138/103171230240",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        }
-      ],
-      "errors": [],
-      "activeTracked": 20,
-      "pendingClosureChecks": 1,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "att": {
-      "discovered": 2172,
-      "checked": 100,
-      "added": 0,
-      "changed": 0,
-      "closed": 9,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
-      "activeTracked": 91,
-      "pendingClosureChecks": 7,
+      "activeTracked": 19,
+      "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "att": {
+      "discovered": 2151,
+      "checked": 58,
+      "added": 0,
+      "changed": 0,
+      "closed": 3,
+      "skipped": 0,
+      "outsidePostingWindow": 48,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 55,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "cigna": {
-      "discovered": 494,
-      "checked": 53,
-      "added": 4,
-      "changed": 10,
-      "closed": 1,
-      "skipped": 16,
-      "outsidePostingWindow": 4,
+      "discovered": 488,
+      "checked": 36,
+      "added": 0,
+      "changed": 5,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 36,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "comcast": {
-      "discovered": 629,
-      "checked": 97,
-      "added": 13,
-      "changed": 2,
-      "closed": 10,
-      "skipped": 7,
-      "outsidePostingWindow": 31,
+      "discovered": 614,
+      "checked": 62,
+      "added": 0,
+      "changed": 0,
+      "closed": 3,
+      "skipped": 0,
+      "outsidePostingWindow": 22,
       "warnings": [],
       "errors": [],
-      "activeTracked": 80,
-      "pendingClosureChecks": 3,
+      "activeTracked": 59,
+      "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "fedex": {
-      "discovered": 3638,
-      "checked": 58,
-      "added": 1,
+      "discovered": 3630,
+      "checked": 39,
+      "added": 0,
       "changed": 2,
       "closed": 0,
-      "skipped": 19,
+      "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [
@@ -163,58 +129,58 @@
       "lastSuccessfulAt": "2026-11-25T04:54:36.646401+00:00"
     },
     "elevance-health": {
-      "discovered": 258,
-      "checked": 100,
-      "added": 17,
-      "changed": 2,
-      "closed": 8,
+      "discovered": 233,
+      "checked": 86,
+      "added": 0,
+      "changed": 0,
+      "closed": 7,
       "skipped": 0,
-      "outsidePostingWindow": 32,
+      "outsidePostingWindow": 16,
       "warnings": [],
       "errors": [],
-      "activeTracked": 92,
-      "pendingClosureChecks": 7,
+      "activeTracked": 79,
+      "pendingClosureChecks": 8,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "ford": {
-      "discovered": 895,
-      "checked": 99,
-      "added": 8,
-      "changed": 2,
-      "closed": 6,
-      "skipped": 11,
-      "outsidePostingWindow": 30,
+      "discovered": 870,
+      "checked": 69,
+      "added": 0,
+      "changed": 0,
+      "closed": 3,
+      "skipped": 0,
+      "outsidePostingWindow": 23,
       "warnings": [],
       "errors": [],
-      "activeTracked": 82,
-      "pendingClosureChecks": 4,
+      "activeTracked": 66,
+      "pendingClosureChecks": 2,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "mckesson": {
-      "discovered": 680,
-      "checked": 98,
-      "added": 11,
-      "changed": 1,
-      "closed": 6,
-      "skipped": 9,
-      "outsidePostingWindow": 25,
+      "discovered": 676,
+      "checked": 78,
+      "added": 0,
+      "changed": 0,
+      "closed": 4,
+      "skipped": 0,
+      "outsidePostingWindow": 5,
       "warnings": [],
       "errors": [],
-      "activeTracked": 83,
-      "pendingClosureChecks": 4,
+      "activeTracked": 74,
+      "pendingClosureChecks": 2,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "lowes": {
-      "discovered": 4077,
-      "checked": 89,
-      "added": 12,
-      "changed": 10,
-      "closed": 3,
-      "skipped": 1,
-      "outsidePostingWindow": 13,
+      "discovered": 3584,
+      "checked": 77,
+      "added": 0,
+      "changed": 1,
+      "closed": 1,
+      "skipped": 0,
+      "outsidePostingWindow": 1,
       "warnings": [],
       "errors": [
         {
@@ -234,252 +200,224 @@
           "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
         }
       ],
-      "activeTracked": 78,
+      "activeTracked": 76,
       "pendingClosureChecks": 1,
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-17T20:29:28.131493+00:00"
     },
     "united-airlines": {
-      "discovered": 137,
-      "checked": 28,
-      "added": 16,
-      "changed": 7,
-      "closed": 1,
-      "skipped": 4,
-      "outsidePostingWindow": 0,
+      "discovered": 132,
+      "checked": 23,
+      "added": 0,
+      "changed": 15,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 1,
       "warnings": [],
       "errors": [],
       "activeTracked": 23,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "nike": {
-      "discovered": 1031,
-      "checked": 100,
+      "discovered": 1017,
+      "checked": 75,
       "added": 0,
-      "changed": 1,
-      "closed": 6,
-      "skipped": 15,
-      "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 79,
-      "pendingClosureChecks": 4,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "target": {
-      "discovered": 14203,
-      "checked": 100,
-      "added": 3,
-      "changed": 22,
-      "closed": 5,
-      "skipped": 0,
-      "outsidePostingWindow": 2,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 95,
-      "pendingClosureChecks": 3,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "general-motors": {
-      "discovered": 613,
-      "checked": 100,
-      "added": 0,
-      "changed": 3,
-      "closed": 12,
+      "changed": 0,
+      "closed": 4,
       "skipped": 0,
       "outsidePostingWindow": 4,
       "warnings": [],
       "errors": [],
-      "activeTracked": 88,
-      "pendingClosureChecks": 2,
+      "activeTracked": 71,
+      "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
-    "centene": {
-      "discovered": 434,
-      "checked": 98,
-      "added": 18,
-      "changed": 3,
-      "closed": 10,
+    "general-motors": {
+      "discovered": 600,
+      "checked": 62,
+      "added": 0,
+      "changed": 0,
+      "closed": 1,
       "skipped": 0,
-      "outsidePostingWindow": 33,
+      "outsidePostingWindow": 37,
       "warnings": [],
       "errors": [],
-      "activeTracked": 88,
+      "activeTracked": 61,
       "pendingClosureChecks": 4,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "target": {
+      "discovered": 14207,
+      "checked": 87,
+      "added": 0,
+      "changed": 1,
+      "closed": 2,
+      "skipped": 0,
+      "outsidePostingWindow": 10,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 85,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "centene": {
+      "discovered": 432,
+      "checked": 77,
+      "added": 0,
+      "changed": 0,
+      "closed": 2,
+      "skipped": 0,
+      "outsidePostingWindow": 25,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 75,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "walmart": {
       "discovered": 15564,
-      "checked": 100,
+      "checked": 54,
       "added": 0,
-      "changed": 1,
-      "closed": 6,
+      "changed": 0,
+      "closed": 1,
+      "skipped": 0,
+      "outsidePostingWindow": 54,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 53,
+      "pendingClosureChecks": 1,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "disney": {
+      "discovered": 615,
+      "checked": 54,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 3,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 54,
+      "pendingClosureChecks": 1,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "caterpillar": {
+      "discovered": 984,
+      "checked": 86,
+      "added": 0,
+      "changed": 76,
+      "closed": 4,
+      "skipped": 0,
+      "outsidePostingWindow": 7,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 82,
+      "pendingClosureChecks": 6,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "abbott": {
+      "discovered": 2206,
+      "checked": 58,
+      "added": 0,
+      "changed": 26,
+      "closed": 1,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
-      "activeTracked": 94,
+      "activeTracked": 57,
       "pendingClosureChecks": 2,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "disney": {
-      "discovered": 623,
-      "checked": 80,
-      "added": 4,
-      "changed": 1,
-      "closed": 8,
-      "skipped": 16,
-      "outsidePostingWindow": 45,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 56,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "caterpillar": {
-      "discovered": 1009,
-      "checked": 100,
-      "added": 0,
-      "changed": 85,
-      "closed": 7,
-      "skipped": 4,
-      "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 87,
-      "pendingClosureChecks": 4,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "cisco": {
-      "discovered": 1387,
-      "checked": 100,
-      "added": 6,
-      "changed": 13,
+      "discovered": 1360,
+      "checked": 97,
+      "added": 0,
+      "changed": 7,
       "closed": 0,
-      "skipped": 1,
-      "outsidePostingWindow": 4,
+      "skipped": 0,
+      "outsidePostingWindow": 2,
       "warnings": [],
       "errors": [
-        {
-          "url": "https://careers.cisco.com/ca/fr/job/CISCISGLOBAL2028269EXTERNALFRCA/Lead-Technical-Marketing-Engineer-Network-Platform-APIs-Enterprise-Integrations-Agentic-Automation-Remote",
-          "error": "Previously published job no longer has verified US geography"
-        },
         {
           "error": "Bulk closure guard: previous records retained"
         }
       ],
-      "activeTracked": 98,
-      "pendingClosureChecks": 33,
+      "activeTracked": 97,
+      "pendingClosureChecks": 32,
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-25T04:54:36.646401+00:00"
     },
-    "abbott": {
-      "discovered": 2203,
-      "checked": 81,
-      "added": 0,
-      "changed": 14,
-      "closed": 3,
-      "skipped": 18,
-      "outsidePostingWindow": 3,
-      "warnings": [
-        {
-          "url": "https://www.jobs.abbott/global/fr/job/31168461/Representante-de-ventas",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://www.jobs.abbott/global/fr/job/31168427/Representante-de-Ventas",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        }
-      ],
-      "errors": [],
-      "activeTracked": 58,
-      "pendingClosureChecks": 1,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
     "cencora": {
-      "discovered": 1058,
-      "checked": 87,
+      "discovered": 1035,
+      "checked": 65,
       "added": 0,
-      "changed": 26,
-      "closed": 1,
-      "skipped": 20,
-      "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 66,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "coca-cola": {
-      "discovered": 100,
-      "checked": 85,
-      "added": 5,
-      "changed": 0,
-      "closed": 5,
-      "skipped": 15,
-      "outsidePostingWindow": 20,
+      "changed": 15,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 1,
       "warnings": [],
       "errors": [],
       "activeTracked": 65,
-      "pendingClosureChecks": 6,
+      "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
-    "cvs-health": {
-      "discovered": 8070,
-      "checked": 100,
-      "added": 16,
-      "changed": 15,
-      "closed": 7,
-      "skipped": 0,
-      "outsidePostingWindow": 6,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 92,
-      "pendingClosureChecks": 5,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "cardinal-health": {
-      "discovered": 833,
-      "checked": 93,
-      "added": 5,
-      "changed": 1,
-      "closed": 7,
-      "skipped": 15,
-      "outsidePostingWindow": 33,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 71,
-      "pendingClosureChecks": 2,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "phillips-66": {
-      "discovered": 64,
-      "checked": 53,
-      "added": 1,
+    "coca-cola": {
+      "discovered": 100,
+      "checked": 61,
+      "added": 0,
       "changed": 0,
-      "closed": 3,
-      "skipped": 3,
-      "outsidePostingWindow": 9,
+      "closed": 6,
+      "skipped": 0,
+      "outsidePostingWindow": 5,
       "warnings": [],
       "errors": [],
-      "activeTracked": 44,
+      "activeTracked": 55,
+      "pendingClosureChecks": 4,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "pepsico": {
+      "discovered": 2802,
+      "checked": 5,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 5,
       "pendingClosureChecks": 1,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "phillips-66": {
+      "discovered": 60,
+      "checked": 30,
+      "added": 0,
+      "changed": 0,
+      "closed": 1,
+      "skipped": 0,
+      "outsidePostingWindow": 20,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 29,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "bank-of-america": {
       "errors": [
@@ -489,102 +427,89 @@
       ],
       "lastSuccessfulAt": "2026-11-16T13:22:07.027637+00:00"
     },
-    "pepsico": {
-      "discovered": 2825,
-      "checked": 27,
+    "cardinal-health": {
+      "discovered": 834,
+      "checked": 52,
       "added": 0,
-      "changed": 0,
-      "closed": 2,
-      "skipped": 18,
-      "outsidePostingWindow": 2,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 5,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "verizon": {
-      "discovered": 1226,
-      "checked": 76,
-      "added": 20,
       "changed": 0,
       "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 46,
+      "outsidePostingWindow": 30,
       "warnings": [],
       "errors": [],
-      "activeTracked": 76,
+      "activeTracked": 52,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "cvs-health": {
+      "discovered": 7926,
+      "checked": 92,
+      "added": 0,
+      "changed": 10,
+      "closed": 5,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 87,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "verizon": {
+      "discovered": 1199,
+      "checked": 62,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 14,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 62,
+      "pendingClosureChecks": 4,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "humana": {
-      "discovered": 2068,
+      "discovered": 1861,
       "checked": 100,
-      "added": 10,
-      "changed": 15,
+      "added": 0,
+      "changed": 17,
+      "closed": 1,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 99,
+      "pendingClosureChecks": 2,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "valero": {
+      "discovered": 6,
+      "checked": 1,
+      "added": 0,
+      "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 1,
       "warnings": [],
       "errors": [],
-      "activeTracked": 100,
-      "pendingClosureChecks": 1,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "valero": {
-      "discovered": 6,
-      "checked": 3,
-      "added": 0,
-      "changed": 0,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 2,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 2,
+      "activeTracked": 1,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "amazon": {
-      "errors": [
-        {
-          "error": "Public employer search contains no verified U.S. job URLs"
-        }
-      ],
-      "lastSuccessfulAt": "2026-11-25T04:54:36.646401+00:00"
-    },
-    "kroger": {
-      "discovered": 20,
-      "checked": 100,
-      "added": 2,
-      "changed": 0,
-      "closed": 3,
-      "skipped": 0,
-      "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [
-        {
-          "url": "https://www.krogerfamilycareers.com/en/sites/CX_2001/job/245437",
-          "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        }
-      ],
-      "activeTracked": 97,
-      "pendingClosureChecks": 4,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-23T00:57:02.246974+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "dell": {
-      "discovered": 19,
-      "checked": 81,
-      "added": 5,
+      "discovered": 20,
+      "checked": 74,
+      "added": 0,
       "changed": 0,
-      "closed": 1,
+      "closed": 2,
       "skipped": 0,
-      "outsidePostingWindow": 0,
+      "outsidePostingWindow": 7,
       "warnings": [],
       "errors": [
         {
@@ -596,19 +521,58 @@
           "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
         }
       ],
-      "activeTracked": 80,
-      "pendingClosureChecks": 2,
+      "activeTracked": 72,
+      "pendingClosureChecks": 6,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-21T03:14:26.776165+00:00"
     },
+    "kroger": {
+      "discovered": 20,
+      "checked": 97,
+      "added": 0,
+      "changed": 0,
+      "closed": 4,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [
+        {
+          "url": "https://www.krogerfamilycareers.com/en/sites/CX_2001/job/245437",
+          "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        }
+      ],
+      "activeTracked": 93,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-23T00:57:02.246974+00:00"
+    },
+    "ups": {
+      "discovered": 10,
+      "checked": 33,
+      "added": 0,
+      "changed": 7,
+      "closed": 0,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [
+        {
+          "error": "Bulk closure guard: previous records retained"
+        }
+      ],
+      "activeTracked": 33,
+      "pendingClosureChecks": 15,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-18T00:09:59.620147+00:00"
+    },
     "fannie-mae": {
       "discovered": 52,
-      "checked": 21,
+      "checked": 16,
       "added": 0,
       "changed": 0,
       "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 8,
+      "outsidePostingWindow": 1,
       "warnings": [],
       "errors": [
         {
@@ -644,34 +608,15 @@
           "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
         }
       ],
-      "activeTracked": 17,
+      "activeTracked": 16,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-16T13:22:07.027637+00:00"
     },
-    "ups": {
-      "discovered": 10,
-      "checked": 33,
-      "added": 3,
-      "changed": 7,
-      "closed": 0,
-      "skipped": 0,
-      "outsidePostingWindow": 5,
-      "warnings": [],
-      "errors": [
-        {
-          "error": "Bulk closure guard: previous records retained"
-        }
-      ],
-      "activeTracked": 33,
-      "pendingClosureChecks": 15,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-18T00:09:59.620147+00:00"
-    },
     "costco": {
       "discovered": 20,
       "checked": 22,
-      "added": 1,
+      "added": 0,
       "changed": 0,
       "closed": 0,
       "skipped": 0,
@@ -681,56 +626,77 @@
       "activeTracked": 22,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
-    "salesforce": {
-      "discovered": 481,
+    "amazon": {
+      "discovered": 1,
       "checked": 100,
-      "added": 18,
-      "changed": 2,
-      "closed": 7,
+      "added": 0,
+      "changed": 5,
+      "closed": 10,
       "skipped": 0,
-      "outsidePostingWindow": 29,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
-      "activeTracked": 92,
+      "activeTracked": 90,
       "pendingClosureChecks": 1,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "salesforce": {
+      "discovered": 478,
+      "checked": 76,
+      "added": 0,
+      "changed": 0,
+      "closed": 1,
+      "skipped": 0,
+      "outsidePostingWindow": 17,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 75,
+      "pendingClosureChecks": 0,
       "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "nvidia": {
       "discovered": 20,
-      "checked": 100,
+      "checked": 97,
       "added": 0,
-      "changed": 95,
-      "closed": 3,
+      "changed": 0,
+      "closed": 2,
+      "skipped": 0,
+      "outsidePostingWindow": 0,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 95,
+      "pendingClosureChecks": 0,
+      "discoveryLimited": true,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "home-depot": {
+      "discovered": 20,
+      "checked": 97,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 97,
-      "pendingClosureChecks": 2,
+      "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "apple": {
       "discovered": 20,
-      "checked": 72,
-      "added": 1,
+      "checked": 70,
+      "added": 0,
       "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
-      "warnings": [
-        {
-          "url": "https://jobs.apple.com/en-us/details/114438158/us-specialist",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://jobs.apple.com/en-us/details/200696562-1025/us-senior-manager",
-          "error": "Candidate quarantined: Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        }
-      ],
+      "warnings": [],
       "errors": [
         {
           "url": "https://jobs.apple.com/en-us/details/200694950-0157/system-integration-lead",
@@ -747,19 +713,15 @@
       "lastSuccessfulAt": "2026-11-16T13:22:07.027637+00:00"
     },
     "meta": {
-      "discovered": 1389,
-      "checked": 96,
-      "added": 9,
+      "discovered": 1384,
+      "checked": 84,
+      "added": 0,
       "changed": 0,
       "closed": 0,
-      "skipped": 3,
-      "outsidePostingWindow": 14,
+      "skipped": 0,
+      "outsidePostingWindow": 1,
       "warnings": [],
       "errors": [
-        {
-          "url": "https://www.metacareers.com/profile/job_details/1664197148587471",
-          "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
         {
           "url": "https://www.metacareers.com/profile/job_details/1727440505572625",
           "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
@@ -793,32 +755,41 @@
           "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
         }
       ],
-      "activeTracked": 85,
+      "activeTracked": 84,
       "pendingClosureChecks": 0,
       "discoveryLimited": false,
       "lastSuccessfulAt": "2026-11-19T03:33:12.151908+00:00"
     },
-    "home-depot": {
-      "discovered": 20,
-      "checked": 100,
+    "jpmorgan-chase": {
+      "discovered": 9,
+      "checked": 20,
       "added": 0,
-      "changed": 3,
-      "closed": 3,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
-      "errors": [],
-      "activeTracked": 97,
+      "errors": [
+        {
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790952",
+          "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        },
+        {
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210806014",
+          "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
+        }
+      ],
+      "activeTracked": 20,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-17T20:29:28.131493+00:00"
     },
     "oracle": {
-      "discovered": 14,
-      "checked": 100,
+      "discovered": 3,
+      "checked": 98,
       "added": 0,
       "changed": 0,
-      "closed": 2,
+      "closed": 1,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
@@ -852,185 +823,139 @@
           "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
         }
       ],
-      "activeTracked": 98,
-      "pendingClosureChecks": 1,
+      "activeTracked": 97,
+      "pendingClosureChecks": 0,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-16T20:31:25.737939+00:00"
     },
-    "jpmorgan-chase": {
-      "discovered": 6,
-      "checked": 20,
+    "intuit": {
+      "discovered": 15,
+      "checked": 14,
       "added": 0,
       "changed": 0,
       "closed": 0,
       "skipped": 0,
       "outsidePostingWindow": 0,
-      "warnings": [],
-      "errors": [
-        {
-          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790952",
-          "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        },
-        {
-          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210806014",
-          "error": "Missing or ambiguous matching JobPosting data; 0 structured candidates found"
-        }
-      ],
-      "activeTracked": 20,
-      "pendingClosureChecks": 0,
-      "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-17T20:29:28.131493+00:00"
-    },
-    "intuit": {
-      "discovered": 15,
-      "checked": 16,
-      "added": 0,
-      "changed": 0,
-      "closed": 1,
-      "skipped": 1,
-      "outsidePostingWindow": 1,
       "warnings": [],
       "errors": [],
       "activeTracked": 14,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "charter-communications": {
       "discovered": 15,
-      "checked": 25,
-      "added": 12,
-      "changed": 1,
-      "closed": 1,
+      "checked": 22,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 3,
+      "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 22,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
-    },
-    "nationwide": {
-      "discovered": 153,
-      "checked": 100,
-      "added": 9,
-      "changed": 1,
-      "closed": 6,
-      "skipped": 0,
-      "outsidePostingWindow": 9,
-      "warnings": [],
-      "errors": [],
-      "activeTracked": 94,
-      "pendingClosureChecks": 1,
-      "discoveryLimited": false,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "uber-technologies": {
-      "discovered": 853,
-      "checked": 47,
-      "added": 5,
+      "discovered": 852,
+      "checked": 31,
+      "added": 0,
       "changed": 0,
-      "closed": 1,
-      "skipped": 15,
+      "closed": 0,
+      "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
-      "errors": [
-        {
-          "url": "https://jobs.uber.com/en/jobs/304922/",
-          "error": "Missing or ambiguous matching JobPosting data; 1 structured candidates found"
-        },
-        {
-          "url": "https://jobs.uber.com/en/jobs/304981/",
-          "error": "Missing or ambiguous matching JobPosting data; 1 structured candidates found"
-        }
-      ],
+      "errors": [],
       "activeTracked": 31,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-25T04:54:36.646401+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
+    },
+    "nationwide": {
+      "discovered": 151,
+      "checked": 87,
+      "added": 0,
+      "changed": 0,
+      "closed": 1,
+      "skipped": 0,
+      "outsidePostingWindow": 7,
+      "warnings": [],
+      "errors": [],
+      "activeTracked": 86,
+      "pendingClosureChecks": 1,
+      "discoveryLimited": false,
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "anthropic": {
       "discovered": 634,
-      "checked": 40,
-      "added": 2,
+      "checked": 36,
+      "added": 0,
       "changed": 0,
       "closed": 0,
-      "skipped": 1,
+      "skipped": 0,
       "outsidePostingWindow": 0,
-      "warnings": [
-        {
-          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490978008",
-          "error": "Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job."
-        },
-        {
-          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490976008",
-          "error": "Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job."
-        },
-        {
-          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5490974008",
-          "error": "Conflicting employer identifier on distinct posting URLs; candidate quarantined without replacing the existing job."
-        }
-      ],
+      "warnings": [],
       "errors": [],
       "activeTracked": 36,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "openai": {
       "discovered": 637,
-      "checked": 40,
-      "added": 7,
+      "checked": 30,
+      "added": 0,
       "changed": 0,
       "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 9,
+      "outsidePostingWindow": 2,
       "warnings": [],
       "errors": [],
-      "activeTracked": 32,
+      "activeTracked": 30,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "ge-vernova": {
       "discovered": 20,
       "checked": 50,
-      "added": 11,
+      "added": 0,
       "changed": 0,
-      "closed": 0,
+      "closed": 2,
       "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
-      "activeTracked": 50,
-      "pendingClosureChecks": 2,
+      "activeTracked": 48,
+      "pendingClosureChecks": 1,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "servicenow": {
-      "discovered": 968,
-      "checked": 50,
+      "discovered": 967,
+      "checked": 30,
       "added": 0,
       "changed": 0,
       "closed": 0,
-      "skipped": 20,
+      "skipped": 0,
       "outsidePostingWindow": 0,
       "warnings": [],
       "errors": [],
       "activeTracked": 30,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
-      "lastSuccessfulAt": "2026-11-26T19:39:06.259317+00:00"
+      "lastSuccessfulAt": "2026-11-27T13:03:08.462309+00:00"
     },
     "perplexity": {
       "discovered": 129,
-      "checked": 34,
-      "added": 4,
-      "changed": 2,
-      "closed": 1,
+      "checked": 15,
+      "added": 0,
+      "changed": 0,
+      "closed": 0,
       "skipped": 0,
-      "outsidePostingWindow": 19,
+      "outsidePostingWindow": 2,
       "warnings": [],
       "errors": [
         {
@@ -1038,7 +963,7 @@
           "error": "Missing listed public Ashby posting"
         }
       ],
-      "activeTracked": 18,
+      "activeTracked": 16,
       "pendingClosureChecks": 0,
       "discoveryLimited": true,
       "lastSuccessfulAt": "2026-11-23T02:50:00.740802+00:00"
