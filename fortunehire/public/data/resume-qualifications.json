@@ -135,7 +135,7 @@
       ]
     },
     "abbott-31159541": {
-      "catalogSourceHash": "9b7fbab2136f4b93e2a318978414468f0e07c0a3432e464a28d28f454f4a3455",
+      "catalogSourceHash": "2996c4c15d66653b78d2f5e180f95ee4cc09540047d4442de6a9c86e12902a78",
       "evidence": [
         {
           "kind": "required",
@@ -179,7 +179,7 @@
       ]
     },
     "abbott-31161086": {
-      "catalogSourceHash": "bcb029480b986a895bcf620563873f15fe28541eaeb325c7e5005d017d56868b",
+      "catalogSourceHash": "68c4d651949d4b90e6d54608776d25261f8f901113708af96819622a70e73c19",
       "evidence": [
         {
           "kind": "required",
@@ -680,7 +680,7 @@
       ]
     },
     "abbott-31165883": {
-      "catalogSourceHash": "9695de5803ae33b6dbcc2d786a53453dddaac5a72e802b361879760fe6daac63",
+      "catalogSourceHash": "b39c0ae09b03257193490bf643d77c69ecafd8732519eeaead2c901e872c85c0",
       "evidence": [
         {
           "kind": "required",
@@ -1011,7 +1011,7 @@
       ]
     },
     "abbott-31166963": {
-      "catalogSourceHash": "8c0be1951ab6b00c1402fb80c66c09358c25b248739a9d58542bf8899c986f75",
+      "catalogSourceHash": "0c0d382067e4ad325a2423ca872a3e96350a491a19e960b45759e83236827a68",
       "evidence": [
         {
           "kind": "required",
@@ -1091,7 +1091,7 @@
       ]
     },
     "abbott-31167093": {
-      "catalogSourceHash": "0724140aa4bd20f884273e88de7903afc32df1142a41b0ffa2d6aa503d412fd6",
+      "catalogSourceHash": "ce91fdba843a3f0879e171f93898dd424d2a5ddb40b6587f03191d9ddee25f05",
       "evidence": [
         {
           "kind": "required",
@@ -1530,7 +1530,7 @@
       ]
     },
     "abbott-31167482": {
-      "catalogSourceHash": "1cbdda5ba7d42b16c22105d6cc95ee4829fd2ebb5779bee01b69ba1d045d7b81",
+      "catalogSourceHash": "fefa00b6d74e75af1b093c87375f969a4a5438c612144c56e03e8e83628956ec",
       "evidence": [
         {
           "kind": "required",
@@ -1707,77 +1707,8 @@
       ]
     },
     "abbott-31167497": {
-      "catalogSourceHash": "31a76e042caa02b5966111034f64e3e7180372a41808e4fc0fdd87962627ffdf",
+      "catalogSourceHash": "9acc49c9cc12bbe6f3059d6090f95f705daaf488e1d2074f1b5db8fd5a3b707c",
       "evidence": [
-        {
-          "kind": "required",
-          "text": "Bachelor's degree in Computer Science, Software Engineering, or a related field, or equivalent practical experience",
-          "types": [
-            "education",
-            "technical_competency"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "8+ years of professional software engineering experience, mostly on backend or full-stack systems",
-          "types": [
-            "experience",
-            "technical_competency"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Proven track record leading technical initiatives across teams, from defining the problem through delivery",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Strong backend experience with TypeScript/Node.js, including API design (REST and/or GraphQL), data modeling, and service architecture",
-          "types": [
-            "specialized_experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Experience designing distributed or event-driven systems (queues, pub/sub, async workflows) with attention to idempotency, retries, and failure handling",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Hands-on experience with payment systems, including third-party integrations, fraud prevention, and PCI compliance",
-          "types": [
-            "specialized_experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Experience building and operating serverless or cloud-native applications (Azure Functions, AWS Lambda, or similar)",
-          "types": [
-            "technical_competency"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Experience owning production systems, including monitoring, on-call, and incident response",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Working experience with React and Next.js",
-          "types": [
-            "specialized_experience"
-          ]
-        },
-        {
-          "kind": "required",
-          "text": "Experience mentoring engineers and influencing technical decisions across teams",
-          "types": []
-        },
-        {
-          "kind": "required",
-          "text": "Strong written and verbal communication skills",
-          "types": []
-        },
         {
           "kind": "preferred",
           "text": "Experience building or scaling e-commerce platforms, especially Direct-to-Consumer",
@@ -1841,7 +1772,7 @@
       ]
     },
     "abbott-31167525": {
-      "catalogSourceHash": "a82bf602b053f100fcf40bf18347032744cef847474beff99482d59c10a898c3",
+      "catalogSourceHash": "6585e7a15bf35bb33a4fd75c93f6a8d1ac60a42361c5b78cd15ca3a4348c0f17",
       "evidence": [
         {
           "kind": "required",
@@ -2529,7 +2460,7 @@
       ]
     },
     "abbott-31167912": {
-      "catalogSourceHash": "a6f7e38f58afd559437d6533d343539bdcf4e140c60042f4d68c11f9b96523b9",
+      "catalogSourceHash": "15db25712f52efa4b09f3a262d8230f089f19217874dd5feaa71ba4a6ae039ad",
       "evidence": [
         {
           "kind": "required",
@@ -3157,7 +3088,7 @@
       ]
     },
     "abbott-31168059": {
-      "catalogSourceHash": "7da50c387a493629cfc91dbf26ba9c9a95ff2d5e483b6594d3b8dfa7482b5af3",
+      "catalogSourceHash": "871cf6f3497eeb16bdd604375b11b0c3038ac9727bba805731fa01a670969273",
       "evidence": [
         {
           "kind": "required",
@@ -3369,7 +3300,7 @@
       ]
     },
     "abbott-31168185": {
-      "catalogSourceHash": "cf7d4ac88aaa2d53b884c431bc58667e3127598d8b5614d6247d4f25ee1c9be4",
+      "catalogSourceHash": "31156dca88395ff0f77f6e90a448ebb14692223d1df1dcb77337501c8d85adf2",
       "evidence": [
         {
           "kind": "required",
@@ -17704,6 +17635,4938 @@
         }
       ]
     },
+    "bank-of-america-26041996": {
+      "catalogSourceHash": "44aae41ededdb0e63e206e5c7cf7c49a603f09c39885e1affb4926f9d1521b0a",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "2 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Credit and Risk Assessment",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Financial Analysis",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Understanding of Financial Accounting Principles",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Credit Documentation Requirements",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Critical Thinking",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Prioritization",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Attention to Detail",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Business Acumen",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Decision Making",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Written Communications",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Client Management",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Recording/Organizing Information",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Analytical Thinking",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Financial Forecasting and Modeling",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Collateral Management",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Underwriting",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Financial Ratio Analysis",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "BA/BS Degree in Finance, Accounting, or Business Administration preferred or 1-3 years of relevant work experience.",
+          "types": [
+            "education",
+            "experience"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042001": {
+      "catalogSourceHash": "d6a5bb4de44bb3969700a86c3d1e8fdc27c4ba76b90e81eb4a3e0bc787ad6182",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042002": {
+      "catalogSourceHash": "6dddf6502bc06d337f1131e4f379b5fa3399d48a0344d56cc6f9756569db779a",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042004": {
+      "catalogSourceHash": "e3f320f684303082fff4b2003f8205eec63cc84c6f8f0fd49b5664a0d57b1f43",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042006": {
+      "catalogSourceHash": "b4b4d499b582464f3e9a409dbe610e28c055dcf035ad485e33abf22407179339",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042008": {
+      "catalogSourceHash": "d709b662bca4f50f29606c057d338e621ebf39be9dba5107004fc1072ca03013",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042209": {
+      "catalogSourceHash": "2cd518fd67a6c896950d8f8a0bb8add621bae97b90ab749c7815143766e50ff5",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "2 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Has proven success in consultative sales in financial services and/or business-to-business sales",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrated success improving business financial outcomes by interpreting financial statements and recommending specific levers",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is passionate about outside sales and enjoys spending time prospecting",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is motivated to enhance existing relationships and exceed sales goals",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Can analyze financial conditions of clients and industry trends",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Can understand and interpret financial statements and cash flow analysis",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has excellent communication skills and demonstrated leadership ability",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Enjoys partnering and negotiating with a team of bank employees to solve client issues",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrated management of a client portfolio with focus on relationship development and deepening",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Thorough knowledge of small business financial products and services",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Familiarity with CRM platforms and other banking systems",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Community leadership experience",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer skills with an ability to multitask in a demanding environment",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s Degree in business, finance, economics or related field or seven years of relevant work experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042220": {
+      "catalogSourceHash": "81b0b2cda7956987cd0483af06b8284a1a50d05fcfad9f30778a97890ab74765",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "10+ years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "15+ years of experience delivering data science, software engineering, analytics, automation, platform engineering, risk analytics, cloud engineering, SRE, or infrastructure technology solutions",
+          "types": [
+            "experience",
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "7+ years of hands-on experience applying AI/ML, NLP, statistical modeling, predictive analytics, optimization, or quantitative methods to enterprise business, risk, technology, or operational problems",
+          "types": [
+            "experience",
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Strong Python programming skills and practical experience with data science, machine learning, or NLP libraries such as pandas, NumPy, scikit-learn, TensorFlow, PyTorch, spaCy, Hugging Face Transformers, Gensim, or equivalent tools",
+          "types": [
+            "specialized_experience",
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Experience with the end-to-end model lifecycle, including model ideation, data preparation, training, selection, validation, deployment, ongoing monitoring, performance review, and governance documentation",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Experience developing NLP, text analytics, classification, embeddings, recommendation, key driver analysis, network analysis, anomaly detection, or predictive modeling solutions",
+          "types": [
+            "specialized_experience",
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Experience creating model documentation, validation evidence, implementation procedures, monitoring plans, governance artifacts, or peer review materials in a large enterprise environment",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Working knowledge of APIs, data pipelines, relational databases, SQL, dashboards, visualization tools, automation frameworks, version control, CI/CD, observability, and production support practices",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Ability to analyze complex structured and unstructured data, identify patterns, convert insights into engineering action, and quantify business or operational impact through metrics and reporting",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrated experience working in Agile delivery environments using tools such as Jira, Kanban boards, Confluence, and related delivery or documentation platforms",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Excellent written and verbal communication skills, with the ability to explain model behavior, technical findings, operational risks, governance requirements, and implementation tradeoffs to technical and executive audiences",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Highly motivated, self-directed, and comfortable operating across multiple initiatives in a large, matrixed, geographically distributed technology organization",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "BA or BS in Computer Science, Data Science, Engineering, Mathematics, Statistics, Information Systems, Artificial Intelligence, Business Analytics, Business Administration, or a related quantitative or technical field; advanced Masters degree preferred",
+          "types": [
+            "education",
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience developing AI/ML solutions for infrastructure operations, capacity forecasting, incident prediction, anomaly detection, root-cause analysis, configuration intelligence, automated remediation, or operational excellence",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience with generative AI, large language models, prompt engineering, reusable prompt libraries, AI-assisted workflows, model validation guidance, or GenAI governance practices",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience leading or managing data science, NLP, model governance, or AI enablement initiatives across multiple stakeholders or teams",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience with enterprise AI infrastructure platforms, model-serving frameworks, GPU or accelerated compute environments, Red Hat OpenShift AI, NVIDIA AI platforms, or comparable AI/ML infrastructure technologies",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience integrating AI solutions with enterprise monitoring, observability, workflow orchestration, API, dashboarding, or automation platforms such as Tableau, Streamlit, Shiny, Jupyter, or equivalent tools",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience working in regulated environments with model risk management, validation, peer review, data governance, privacy, security, audit, and compliance requirements",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Ability to influence technical direction, establish reusable processes, develop best practices, and communicate effectively with geographically dispersed engineering, operations, architecture, risk, and business partners",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042230": {
+      "catalogSourceHash": "9ca2478de5194908d9cbff5d3b3ebc2d003202e354984a1ae73f23d150633744",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and an intense focus on results",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a client-centric mindset, always acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Currently holds or is pursuing FINRA Securities Industry Essentials (SIE), Series 7, and/or Series 66 (63 and 65 accepted in lieu of 66)",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Possesses industry knowledge and an understanding of investment products",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Has experience working with clients, quickly fulfilling their needs, delivering complex solutions, and providing an excellent client experience",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Is comfortable operating in a fast-paced environment with changing and evolving responsibilities",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Is detail oriented",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates a commitment to continuous learning and professional growth",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Exhibits sound judgment and discretion when handling sensitive information",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer application skills, including proficiency with Microsoft Word, Excel, PowerPoint, and Salesforce",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates professional verbal and written communication skills",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042254": {
+      "catalogSourceHash": "8e54827067ca18f0954700a2391745edaab659ef4e9666d66b03e9f5105bf4bd",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and an intense focus on results",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a client-centric mindset, always acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Currently holds or is pursuing FINRA Securities Industry Essentials (SIE), Series 7, and/or Series 66 (63 and 65 accepted in lieu of 66)",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Possesses industry knowledge and an understanding of investment products",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Has experience working with clients, quickly fulfilling their needs, delivering complex solutions, and providing an excellent client experience",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Is comfortable operating in a fast-paced environment with changing and evolving responsibilities",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Is detail oriented",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates a commitment to continuous learning and professional growth",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Exhibits sound judgment and discretion when handling sensitive information",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer application skills, including proficiency with Microsoft Word, Excel, PowerPoint, and Salesforce",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates professional verbal and written communication skills",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042265": {
+      "catalogSourceHash": "21b1261e2b313b16b7e314ad82e7072c6e93e31b4896b9706c736a9885bee983",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 & 66 (63 & 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to engage with and influence others",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Exceptional interpersonal and relationship building skills",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Effective communication skills (written and verbal) - Proven ability to quickly build trust and credibility",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to assess needs and recommend appropriate solutions/interventions",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to work collaboratively on a team and with key partners",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to listen and probe for clarity and understanding",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Goal and results oriented",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Entrepreneurial mindset with a proven ability to source clients through extensive prospecting and networking",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Ability to work in an environment where the majority of your compensation is tied to your performance",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Strong follow-through skills",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Computer/technical literacy and proficiency in Microsoft Word, PowerPoint, Excel",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Learns and adapts to new technology or applications",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Executes multiple tasks simultaneously",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042267": {
+      "catalogSourceHash": "a3676e0b408ef21b00cee90e6eadbf2456ffb1853774e91f610ddbfc4688fae2",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Aptitude in obtaining required industry licenses.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be self-disciplined in managing time and capacity.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Experience in cultivating client relationships, accessing needs and recommending solutions.",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Success creating strong peer relationships through effective communication and collaboration.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a results-driven mindset while prioritizing client’s interest in a complex, fast-paced environment.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Executes multiple tasks simultaneously.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Learns and adapts to new technology or applications.",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "SIE (Securities Industry Essentials)",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042271": {
+      "catalogSourceHash": "462768d7368e9743429389dd5667b5119537857214afe82cb61d48fd8457a928",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Sets and accomplishes goals, achieving whatever one sets their mind to",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Builds and nurtures strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively with others to get things done",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Manages goals, navigates complexity, prioritizes tasks and executes in a fast-paced environment",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Likes to learn, adapts to new information and seeks the right solutions for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Thorough and thoughtful in incorporating relevant regulatory due diligence into daily activities and long-term strategies for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work Monday through Friday and rotating Saturdays",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer skills with an ability to multitask in a demanding environment",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Three or more years of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Achieved additional professional designations such as Certified Financial Planner (CFP) and/or Chartered Retirement Planning Counselor (CRPC)",
+          "types": [
+            "certification"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Obtained insurance licenses",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042279": {
+      "catalogSourceHash": "832ad529a5d00a1bc3bc76b63988835eaeaa4559686cc19f65b1850c0d4871b6",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Aptitude in obtaining required industry licenses.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be self-disciplined in managing time and capacity.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Experience in cultivating client relationships, accessing needs and recommending solutions.",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Success creating strong peer relationships through effective communication and collaboration.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a results-driven mindset while prioritizing client’s interest in a complex, fast-paced environment.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Executes multiple tasks simultaneously.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Learns and adapts to new technology or applications.",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "SIE (Securities Industry Essentials)",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042284": {
+      "catalogSourceHash": "b0e52d2af2a54b58e1cec0578f0aed217e0ecf5ac7041ac2e5f38909c5d17d19",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Sets and accomplishes goals, achieving whatever one sets their mind to",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Builds and nurtures strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively with others to get things done",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Manages goals, navigates complexity, prioritizes tasks and executes in a fast-paced environment",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Likes to learn, adapts to new information and seeks the right solutions for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Thorough and thoughtful in incorporating relevant regulatory due diligence into daily activities and long-term strategies for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work Monday through Friday and rotating Saturdays",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer skills with an ability to multitask in a demanding environment",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Three or more years of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Achieved additional professional designations such as Certified Financial Planner (CFP) and/or Chartered Retirement Planning Counselor (CRPC)",
+          "types": [
+            "certification"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Obtained insurance licenses",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042287": {
+      "catalogSourceHash": "7afa539e7705af2828cba55a1a189d8a0db6d3a6b55862b697e3bf1be3aa2181",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Sets and accomplishes goals, achieving whatever one sets their mind to",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Builds and nurtures strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively with others to get things done",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Manages goals, navigates complexity, prioritizes tasks and executes in a fast-paced environment",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Likes to learn, adapts to new information and seeks the right solutions for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Thorough and thoughtful in incorporating relevant regulatory due diligence into daily activities and long-term strategies for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work Monday through Friday and rotating Saturdays",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer skills with an ability to multitask in a demanding environment",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Three or more years of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Achieved additional professional designations such as Certified Financial Planner (CFP) and/or Chartered Retirement Planning Counselor (CRPC)",
+          "types": [
+            "certification"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Obtained insurance licenses",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042294": {
+      "catalogSourceHash": "96c33025cccde276251aed78b22a979254ef87cbf1bc00ea920ef1c3564b3f43",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Currently holds FINRA Securities Industry Essentials (SIE), Series 7, and Series 66 (63 and 65 accepted in lieu of 66)",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "* If these licenses are not currently held, they must be obtained within a specified timeframe if being hired into a registered job code.**",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses advanced industry knowledge and an understanding of investment products",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and an intense focus on results",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a client-centric mindset, always acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Has experience working with clients, quickly fulfilling their needs, delivering complex solutions, and providing an excellent client experience",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Is comfortable operating in a fast-paced environment with changing and evolving responsibilities",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Is detail oriented",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates a commitment to continuous learning and professional growth",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Exhibits sound judgment and discretion when handling sensitive information",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer application skills, including proficiency with Microsoft Word, Excel, PowerPoint, and Salesforce",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates professional verbal and written communication skills",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042307": {
+      "catalogSourceHash": "a2f0ed2812b5efea731d54277d84a80ab5fc501e2d9ab46c975b200c6acaadde",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Sets and accomplishes goals, achieving whatever one sets their mind to",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Builds and nurtures strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively with others to get things done",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Manages goals, navigates complexity, prioritizes tasks and executes in a fast-paced environment",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Likes to learn, adapts to new information and seeks the right solutions for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Thorough and thoughtful in incorporating relevant regulatory due diligence into daily activities and long-term strategies for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work Monday through Friday and rotating Saturdays",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer skills with an ability to multitask in a demanding environment",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Three or more years of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Achieved additional professional designations such as Certified Financial Planner (CFP) and/or Chartered Retirement Planning Counselor (CRPC)",
+          "types": [
+            "certification"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Obtained insurance licenses",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042308": {
+      "catalogSourceHash": "0460c3ab3b7ff69661c03a192e756142cadd0299160acb791c7ca22aaac92d1b",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Currently holds FINRA Securities Industry Essentials (SIE), Series 7, and Series 66 (63 and 65 accepted in lieu of 66)",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "* If these licenses are not currently held, they must be obtained within a specified timeframe if being hired into a registered job code.**",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses advanced industry knowledge and an understanding of investment products",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and an intense focus on results",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a client-centric mindset, always acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Has experience working with clients, quickly fulfilling their needs, delivering complex solutions, and providing an excellent client experience",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Is comfortable operating in a fast-paced environment with changing and evolving responsibilities",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Is detail oriented",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates a commitment to continuous learning and professional growth",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Exhibits sound judgment and discretion when handling sensitive information",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer application skills, including proficiency with Microsoft Word, Excel, PowerPoint, and Salesforce",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates professional verbal and written communication skills",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042312": {
+      "catalogSourceHash": "dd99d6638ecf554a794a5d7cfaa4b27c429cd7906077a39afc2c49f2210df5b8",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours and travel to any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042316": {
+      "catalogSourceHash": "c48da77870f3cfaa52605358548804c4f31e936697bc81e9fa25a27fff77db17",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "5 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of five years of experience in commercial lending, business development, commercial credit and portfolio management in business banking or middle market sector",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Experience managing an extensive portfolio of clients with annual revenues of $20-$50 million",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Proven track record of sales, prospecting new business and enhancing existing relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Ability to understand and interpret financial statements and cash flow analysis to assess and analyze financial conditions of companies and industry trends",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's degree in business, finance, economics or related field or equivalent relevant work experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042318": {
+      "catalogSourceHash": "9703a49258ca3f05540d54641d8590a7fdc43286c1e89e8da3d46f77e5e0b508",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042325": {
+      "catalogSourceHash": "f6855d232ea5d0aef8463a98e611566ff787df8d77a7a16f6b55d7c4fb9208bc",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Sets and accomplishes goals, achieving whatever one sets their mind to",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Builds and nurtures strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively with others to get things done",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Manages goals, navigates complexity, prioritizes tasks and executes in a fast-paced environment",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Likes to learn, adapts to new information and seeks the right solutions for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Thorough and thoughtful in incorporating relevant regulatory due diligence into daily activities and long-term strategies for clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work Monday through Friday and rotating Saturdays",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer skills with an ability to multitask in a demanding environment",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Three or more years of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Achieved additional professional designations such as Certified Financial Planner (CFP) and/or Chartered Retirement Planning Counselor (CRPC)",
+          "types": [
+            "certification"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Obtained insurance licenses",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042327": {
+      "catalogSourceHash": "06f85820f7be28a3edb0db7d8f698cda0a488189b5b94eaceae4e96ff04275a9",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Aptitude in obtaining required industry licenses.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be self-disciplined in managing time and capacity.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Experience in cultivating client relationships, accessing needs and recommending solutions.",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Success creating strong peer relationships through effective communication and collaboration.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a results-driven mindset while prioritizing client’s interest in a complex, fast-paced environment.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Executes multiple tasks simultaneously.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Learns and adapts to new technology or applications.",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "SIE (Securities Industry Essentials)",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042365": {
+      "catalogSourceHash": "d3c9de967f1fabcb83ac02b88f78cbb4a72b0b9591ff87dbb5917639d1357344",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042366": {
+      "catalogSourceHash": "d4bff974e77a86b807ec8ebd26ce92efa92fc9ed5738f5725b339bcc24971734",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Currently holds FINRA Securities Industry Essentials (SIE), Series 7, and Series 66 (63 and 65 accepted in lieu of 66)",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "* If these licenses are not currently held, they must be obtained within a specified timeframe if being hired into a registered job code.**",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses advanced industry knowledge and an understanding of investment products",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and an intense focus on results",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a client-centric mindset, always acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Has experience working with clients, quickly fulfilling their needs, delivering complex solutions, and providing an excellent client experience",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Is comfortable operating in a fast-paced environment with changing and evolving responsibilities",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Is detail oriented",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates a commitment to continuous learning and professional growth",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Exhibits sound judgment and discretion when handling sensitive information",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer application skills, including proficiency with Microsoft Word, Excel, PowerPoint, and Salesforce",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates professional verbal and written communication skills",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042367": {
+      "catalogSourceHash": "74b132f67c3172816862ef85c98171a7ce8e0eddb1062b04afb0e49359dd7cd7",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042368": {
+      "catalogSourceHash": "e55c9a82b367724d5a3f02ff069feccb17ae7afa1075b29c9ca133d32e6e969e",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Series 7, and 66 or equivalent (if not currently held, Series 66 must be obtained within 90 days)",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is comfortable in a sales role, finding ways to nurture strong client relationships.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates clearly and confidently with clients from all walks of life.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Works well with others and collaborates productively to get things done.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Can manage complexity, prioritize tasks and execute in a fast-paced environment.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Likes to learn on your feet, adapting to new information and seeking the right solutions for clients.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages your time and capacity.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is thorough, and will incorporate relevant regulatory due diligence into daily to-do’s and long-term strategies for clients.",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "A bachelor’s degree, and 0-2 years of experience working in the financial service industry and/or a metrics-based sales environment where goals were met or exceeded.",
+          "types": [
+            "education",
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience assessing client needs, identifying/recommending solutions, and building/managing client relationships.",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer skills with an ability to multitask in a demanding environment.",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042369": {
+      "catalogSourceHash": "45694acb37ec8f5bc01607ed1d8fbf7d3856b66dc16f15ae0a59c7f98570f6ad",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042372": {
+      "catalogSourceHash": "741c5333ac678b209ecf8f29a58297ade92a0cb3c5dfe8f7d94fa775dce4eb5c",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042375": {
+      "catalogSourceHash": "28751a95b7fd1a5f66f12a4c8ae4786b0b41c7c0a20a764829c5588ba8b35836",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042379": {
+      "catalogSourceHash": "c0046c253297adea6b48dd323953de7278fb4b45bd3be60af0cbe54e4b10715d",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042384": {
+      "catalogSourceHash": "bd2dae6bf61080057eebcdb5e64da1e9409fd7140bf63803838172f816a7ca45",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042385": {
+      "catalogSourceHash": "885c045afc011db4c58ec2ead05aaa96772a8382165422a1e6215517af62022d",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours which may include being scheduled at any financial center location within a reasonable distance.",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042389": {
+      "catalogSourceHash": "d2864b3e56b1017115295a6d22538b4270f67b7cc85a3e69a67b7868b78c92e4",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Currently holds FINRA Securities Industry Essentials (SIE), Series 7, and Series 66 (63 and 65 accepted in lieu of 66)",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "* If these licenses are not currently held, they must be obtained within a specified timeframe if being hired into a registered job code.**",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses advanced industry knowledge and an understanding of investment products",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and an intense focus on results",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a client-centric mindset, always acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Has experience working with clients, quickly fulfilling their needs, delivering complex solutions, and providing an excellent client experience",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Is comfortable operating in a fast-paced environment with changing and evolving responsibilities",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Is detail oriented",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates a commitment to continuous learning and professional growth",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Exhibits sound judgment and discretion when handling sensitive information",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer application skills, including proficiency with Microsoft Word, Excel, PowerPoint, and Salesforce",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates professional verbal and written communication skills",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042392": {
+      "catalogSourceHash": "0b7decaa2b31c21c44519d0f743a25bf4863ca208d7660eaec4b9d870dfd2997",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to engage with and influence others",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Exceptional interpersonal and relationship building skills with a proven ability to quickly build trust and credibility",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Effective communication skills (written and verbal)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to listen and probe for clarity and understanding; assess needs; and recommend appropriate solutions/interventions",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to work collaboratively on a team and with key partners",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Goal and results oriented with strong follow-through skills",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Entrepreneurial mindset with a proven ability to source clients through extensive prospecting and networking",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Ability to work in an environment where the majority of your compensation is tied to your performance",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses computer/technical literacy and is proficient in Microsoft Word, PowerPoint, and Excel",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Track record of quickly learning and adapting to new technologies, systems, and digital tools",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Proven ability to effectively manage multiple priorities simultaneously in a dynamic, deadline-driven environment",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042400": {
+      "catalogSourceHash": "bbcd55d20303c18baceded6868ab1a0040c822078e87ca7d11c753c1e4faf4e3",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours and travel to any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Bilingual Required",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042402": {
+      "catalogSourceHash": "97b12001c5c47e85d673a7116e65e7d0d4f9432fac87ffdd6e902ed75fbfacad",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Bilingual in English and Spanish required",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042404": {
+      "catalogSourceHash": "c2254df03488cf5130b58b189b54cb37bc140cacfe487a0af73ca31d56240184",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours which may include being scheduled at any financial center location within a reasonable distance.",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042405": {
+      "catalogSourceHash": "6b7bd9305c0eb6fa2711bc52fee35b246a76a85d4db7f8e942214ee183348c0e",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042421": {
+      "catalogSourceHash": "ff00c1da29f38827a9c9451a3baaa0094c4332120af1c81a7d5a87d0518955d1",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to engage with and influence others",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Exceptional interpersonal and relationship building skills with a proven ability to quickly build trust and credibility",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Effective communication skills (written and verbal)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to listen and probe for clarity and understanding; assess needs; and recommend appropriate solutions/interventions",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to work collaboratively on a team and with key partners",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Goal and results oriented with strong follow-through skills",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Entrepreneurial mindset with a proven ability to source clients through extensive prospecting and networking",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Ability to work in an environment where the majority of your compensation is tied to your performance",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses computer/technical literacy and is proficient in Microsoft Word, PowerPoint, and Excel",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Track record of quickly learning and adapting to new technologies, systems, and digital tools",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Proven ability to effectively manage multiple priorities simultaneously in a dynamic, deadline-driven environment",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042423": {
+      "catalogSourceHash": "a5f2754d39b514e6c82ee224054da9daf582b9d0a11c0401384478cc5aba0c1e",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042425": {
+      "catalogSourceHash": "7336675ef3ec528aec45c84f4f3bc3ed0fb4d4fd41b869c934d0d4ac39c2670b",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042426": {
+      "catalogSourceHash": "e150d9a6b386f8489470aef39dee90e7754a543ff339843775406f76de4cdebc",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042432": {
+      "catalogSourceHash": "88025d44da951b529fa021d28c26e5b63765fd05addf1eaf1d618d64f5a9d427",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042435": {
+      "catalogSourceHash": "a776a930117486e3f29a1db0ba9ac1d19a4fa812c51419ff14a5fd1c89ddaa2a",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042438": {
+      "catalogSourceHash": "51eedc9997e8fb624f8d262a185aba793b1a2f316951ea14c4b5d38ae352ea2b",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment and drive to deliver an experience that improves our clients' financial lives",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients' needs",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results while acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Must be able to work weekends and/or extended hours, which may include being scheduled at any financial center location within a reasonable distance",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor's Degree or business-relevant Associate’s Degree such as business management, business administration or finance",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042447": {
+      "catalogSourceHash": "fc5f1fc727a3a1b4c3d90668d81d959836884b2241b05c5045128c93a84f1e8b",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to engage with and influence others",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Exceptional interpersonal and relationship building skills with a proven ability to quickly build trust and credibility",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Effective communication skills (written and verbal)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to listen and probe for clarity and understanding; assess needs; and recommend appropriate solutions/interventions",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to work collaboratively on a team and with key partners",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Goal and results oriented with strong follow-through skills",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Entrepreneurial mindset with a proven ability to source clients through extensive prospecting and networking",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Ability to work in an environment where the majority of your compensation is tied to your performance",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses computer/technical literacy and is proficient in Microsoft Word, PowerPoint, and Excel",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Track record of quickly learning and adapting to new technologies, systems, and digital tools",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Proven ability to effectively manage multiple priorities simultaneously in a dynamic, deadline-driven environment",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042453": {
+      "catalogSourceHash": "18d597729a6ca0247e2c7c7233d937c3b302f7dd8570316c98a052fcd6aaa9bf",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and an intense focus on results",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Demonstrates a client-centric mindset, always acting in the best interest of the client",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Currently holds or is pursuing FINRA Securities Industry Essentials (SIE), Series 7, and/or Series 66 (63 and 65 accepted in lieu of 66)",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Possesses industry knowledge and an understanding of investment products",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Has experience working with clients, quickly fulfilling their needs, delivering complex solutions, and providing an excellent client experience",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Is comfortable operating in a fast-paced environment with changing and evolving responsibilities",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Is detail oriented",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates a commitment to continuous learning and professional growth",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Exhibits sound judgment and discretion when handling sensitive information",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Strong computer application skills, including proficiency with Microsoft Word, Excel, PowerPoint, and Salesforce",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Demonstrates professional verbal and written communication skills",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042455": {
+      "catalogSourceHash": "0953a6133dfa9705f01ab567c623db24d5e614037ecef854519d042ef0df537b",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to engage with and influence others",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Exceptional interpersonal and relationship building skills with a proven ability to quickly build trust and credibility",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Effective communication skills (written and verbal)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to listen and probe for clarity and understanding; assess needs; and recommend appropriate solutions/interventions",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to work collaboratively on a team and with key partners",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Goal and results oriented with strong follow-through skills",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Entrepreneurial mindset with a proven ability to source clients through extensive prospecting and networking",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Ability to work in an environment where the majority of your compensation is tied to your performance",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses computer/technical literacy and is proficient in Microsoft Word, PowerPoint, and Excel",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Track record of quickly learning and adapting to new technologies, systems, and digital tools",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Proven ability to effectively manage multiple priorities simultaneously in a dynamic, deadline-driven environment",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042459": {
+      "catalogSourceHash": "1d95b294c298c7dfbb31a6ee5ef1371f21226815cdf5b96475244275691cdfe0",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "Is an enthusiastic, highly motivated self-starter with a strong work ethic and intense focus on results, acting in the best interest of the client.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Collaborates effectively to get things done, building and nurturing strong relationships.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Displays passion, commitment, and drive to deliver an experience that improves our clients’ financial lives.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in identifying solutions for new and existing clients based on their needs.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Communicates effectively and confidently and is comfortable engaging all clients.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Has the ability to learn and adapt to new information and technology platforms.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Is confident in educating clients on how to conduct simple banking transactions through self-service technologies (for example, ATM, online banking, mobile banking).",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Applies strong critical thinking and problem-solving skills to meet clients’ needs.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Will follow established processes and guidelines in daily activities to do what is right for clients and the bank, adhering to all applicable laws and regulations.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Efficiently manages time and capacity.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Focuses on results, while acting in the best interest of the client.",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Can be flexible to work weekends and/or extended hours as needed.",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Experience in financial services and knowledge of financial services industry, products and solutions.",
+          "types": [
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "One year of demonstrated successful sales experience in a salary plus incentive environment with individual sales goals.",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Six months of cash handling experience. Vietnamese or Spanish Preferred",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree or business relevant associate degree such as business management, business administration, or finance.",
+          "types": [
+            "education"
+          ]
+        }
+      ]
+    },
+    "bank-of-america-26042463": {
+      "catalogSourceHash": "731928c3446e55f9c6e1535451244ceb86059c9f77d25945b8fa35a90b7b370a",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to engage with and influence others",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Exceptional interpersonal and relationship building skills with a proven ability to quickly build trust and credibility",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Effective communication skills (written and verbal)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to listen and probe for clarity and understanding; assess needs; and recommend appropriate solutions/interventions",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to work collaboratively on a team and with key partners",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Goal and results oriented with strong follow-through skills",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Entrepreneurial mindset with a proven ability to source clients through extensive prospecting and networking",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Ability to work in an environment where the majority of your compensation is tied to your performance",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses computer/technical literacy and is proficient in Microsoft Word, PowerPoint, and Excel",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Track record of quickly learning and adapting to new technologies, systems, and digital tools",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Proven ability to effectively manage multiple priorities simultaneously in a dynamic, deadline-driven environment",
+          "types": []
+        }
+      ]
+    },
+    "bank-of-america-26042492": {
+      "catalogSourceHash": "fa3621eb9c496f6959bb50914a05af970db2d42e9e57cb48017c87586ca15a9a",
+      "evidence": [
+        {
+          "kind": "required",
+          "text": "1 years experience",
+          "types": [
+            "experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Currently holds Series 7 and 66 (or the equivalent 63 and 65 in lieu of 66) licenses",
+          "types": [
+            "license"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience in the investments industry, including investment training and in-depth knowledge of investment products and services",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Minimum of one year of experience working in the financial service industry and/or a sales environment where goals were met or exceeded",
+          "types": [
+            "experience",
+            "specialized_experience"
+          ]
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to engage with and influence others",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Exceptional interpersonal and relationship building skills with a proven ability to quickly build trust and credibility",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Effective communication skills (written and verbal)",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to listen and probe for clarity and understanding; assess needs; and recommend appropriate solutions/interventions",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Proven ability to work collaboratively on a team and with key partners",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Goal and results oriented with strong follow-through skills",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Entrepreneurial mindset with a proven ability to source clients through extensive prospecting and networking",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Ability to work in an environment where the majority of your compensation is tied to your performance",
+          "types": []
+        },
+        {
+          "kind": "required",
+          "text": "Possesses computer/technical literacy and is proficient in Microsoft Word, PowerPoint, and Excel",
+          "types": [
+            "technical_competency"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Bachelor’s degree and/or a minimum of one year of financial services industry or sales experience",
+          "types": [
+            "education",
+            "experience"
+          ]
+        },
+        {
+          "kind": "preferred",
+          "text": "Track record of quickly learning and adapting to new technologies, systems, and digital tools",
+          "types": []
+        },
+        {
+          "kind": "preferred",
+          "text": "Proven ability to effectively manage multiple priorities simultaneously in a dynamic, deadline-driven environment",
+          "types": []
+        }
+      ]
+    },
     "boeing-2026-17988": {
       "catalogSourceHash": "4a6368a38ce6c95b3be38c4cd7d0f7e2785aff55d5b5b7d38b939989dcd8c61b",
       "evidence": [
@@ -25585,7 +30448,7 @@
       ]
     },
     "cencora-r2615715": {
-      "catalogSourceHash": "bc0bfe272e51990afe3fc36088ee9efe161dd24fd6dea67afdabc311cffb53dc",
+      "catalogSourceHash": "0a5b09ca94ba05733114755ccdc18b8ed5ff6ddebc84b57aa80cc3eb782a3a8f",
       "evidence": [
         {
           "kind": "required",
@@ -26005,7 +30868,7 @@
       ]
     },
     "cencora-r2618136": {
-      "catalogSourceHash": "8ea218d106d70fe4481c5c0684d401393ff0eeb0d05c797abf75e921349faf23",
+      "catalogSourceHash": "bc243cc2eafb6295a574234400fea320e59c36b86e82c2862ee22146c2dc6947",
       "evidence": [
         {
           "kind": "required",
@@ -26778,7 +31641,7 @@
       ]
     },
     "cencora-r2620110": {
-      "catalogSourceHash": "b0d3b79c1e6a87bf5903b51c135bf12f35b9b41191fa617b12ff64a9dd939745",
+      "catalogSourceHash": "a673a87e0c56f7e4866f0139ee3ff2260af69fb8dfadb7d00197ad02eec5e6ca",
       "evidence": [
         {
           "kind": "preferred",
@@ -26972,7 +31835,7 @@
       ]
     },
     "cencora-r2620272": {
-      "catalogSourceHash": "5b42ba2dbf7a738e7f723e945fab63fcbaa26427dd5588e0284b87a1db319967",
+      "catalogSourceHash": "ca416de07b8dd8a9aed6c2b4db4dc3aad62a8dea16d112f91de72256f3e8c528",
       "evidence": [
         {
           "kind": "required",
@@ -32157,7 +37020,7 @@
       ]
     },
     "cigna-26014339": {
-      "catalogSourceHash": "5056287c87b7bbfa48c3dd18d4d6527e7b02718c77de7049ed12f54905543c7d",
+      "catalogSourceHash": "0db8ade46557e2a1ef258dc60cccadabc7931dd82ada131a0f87c7f5bc6f516f",
       "evidence": [
         {
           "kind": "required",
@@ -34100,7 +38963,7 @@
       ]
     },
     "cisco-2029037": {
-      "catalogSourceHash": "0153fa0abf774c6145159cda38c3002397d03862c3e64718a2daefbe9eec0091",
+      "catalogSourceHash": "6d2f5346c5c9a998fb536ff79604522602b33e0485329f6437f8386e8756865d",
       "evidence": [
         {
           "kind": "required",
@@ -36114,7 +40977,7 @@
       ]
     },
     "cisco-2031365": {
-      "catalogSourceHash": "48ba2efa6adce1a2ba3db12fce89c2d7f02ecd15201f2a58477252dda55d4894",
+      "catalogSourceHash": "01989ba16a63ced9416a2a70cabca544aee49ed10ccfc4098a98eef193b24ba7",
       "evidence": [
         {
           "kind": "required",
@@ -36235,7 +41098,7 @@
       ]
     },
     "cisco-2031405": {
-      "catalogSourceHash": "5dfa3f3b1da966fd90aebd5d3c6b6dfbbb679802c4240d6142afcc706a522153",
+      "catalogSourceHash": "d500dcf88b50d15dd4eccd58e261a322831a525d400832c43f4df941b235be2a",
       "evidence": [
         {
           "kind": "required",
@@ -42522,7 +47385,7 @@
       ]
     },
     "cvs-health-r1104124": {
-      "catalogSourceHash": "212ba426c582bbf09be2176f00ac883adcb5a9da8ebce4dc6a71834061ab9b79",
+      "catalogSourceHash": "7aba9206fbfbe84d7352636054b8a9ab799d7520d235a22adc8eb4fedb751a97",
       "evidence": [
         {
           "kind": "required",
@@ -42649,7 +47512,7 @@
       ]
     },
     "cvs-health-r1104132": {
-      "catalogSourceHash": "4698da725c252511cd56603e4f0f52b6310109eac6b49122e8ae782f13700e70",
+      "catalogSourceHash": "619474a7707f5e475638525e9ce89059f9177ef8f38fbee58c509eb58a72a6c5",
       "evidence": [
         {
           "kind": "required",
@@ -42776,7 +47639,7 @@
       ]
     },
     "cvs-health-r1104138": {
-      "catalogSourceHash": "b3d6fc5e1917b9791379acf1fd0d71556a4b7149a937f0aeff3844129e606e24",
+      "catalogSourceHash": "e0a3eeba159e6a8d5a14e2d30fd24783e66953e9e705b776c1c808c8550cc913",
       "evidence": [
         {
           "kind": "required",
@@ -42903,7 +47766,7 @@
       ]
     },
     "cvs-health-r1104149": {
-      "catalogSourceHash": "6978a88b9c7be604fcdde560a93ea2573071828f3320e134dec3c10405b7321a",
+      "catalogSourceHash": "a52121630926814e46c0d2632afa7fe22b2a0c450b77e874e4aa533b5425b22e",
       "evidence": [
         {
           "kind": "required",
@@ -43311,7 +48174,7 @@
       ]
     },
     "cvs-health-r1104171": {
-      "catalogSourceHash": "ba6356b1d50983f0848ae31db9e74dbda5acb4f6ca7660155599899e5d02cf92",
+      "catalogSourceHash": "a95a2d04de9299c46833c21bbf1eb9add7db6ae436eb6ee915ef736e1864134a",
       "evidence": [
         {
           "kind": "required",
@@ -45071,7 +49934,7 @@
       ]
     },
     "cvs-health-r1108921": {
-      "catalogSourceHash": "f692e1eb098ff1468e68c3041acbd889537d0033a51c509dbb4b1f8679b6ac56",
+      "catalogSourceHash": "80d4edb924542e1589793a9ba6efd67bed1ca85240691a66cbee32a3c085db7f",
       "evidence": [
         {
           "kind": "required",
@@ -45274,7 +50137,7 @@
       ]
     },
     "cvs-health-r1109087": {
-      "catalogSourceHash": "134ac2cac508f6a695259da6ccfa0f801e41c50edf2021d854c3d456195eb262",
+      "catalogSourceHash": "288e2c2dfd93aa76cb8f35a4f508b0dde1f2fd9ce24f933173d83b802b58230d",
       "evidence": [
         {
           "kind": "required",
@@ -83968,7 +88831,7 @@
       ]
     },
     "humana-r-438352": {
-      "catalogSourceHash": "294b44662ccbf50a048d9d18ee1e3c3636996176891539534cd77bfeec3c8180",
+      "catalogSourceHash": "5751c855512ea42a0bee7c7c77e804dddef029c2abd2876349593e30dccaafa7",
       "evidence": [
         {
           "kind": "required",
@@ -84013,7 +88876,7 @@
       ]
     },
     "humana-r-438401": {
-      "catalogSourceHash": "ed0db8ac98c945b205e85a03d683b909a43178d9347d4bffa3a5dd9856486e2a",
+      "catalogSourceHash": "de014bb3d4448451cc9b9aa7fcad398d5168bd8f19712ed8bc4a77c101baf493",
       "evidence": [
         {
           "kind": "required",
@@ -86974,7 +91837,7 @@
       ]
     },
     "lowes-jr-02676692": {
-      "catalogSourceHash": "3d7e8010a7dccd97c5c28db447d161168ee06bbb78ba83bea3428aef92736dbf",
+      "catalogSourceHash": "86c316f15b0c4ccd57508e15b81f4b2b1cadd6a4836ccf3d96e87b2c736874a3",
       "evidence": [
         {
           "kind": "required",
@@ -88468,7 +93331,7 @@
       ]
     },
     "lowes-jr-02700165": {
-      "catalogSourceHash": "6c4424e1b3971c0a95c5f7cdbb6e586fb39d60303f981659bfdb6598401a2138",
+      "catalogSourceHash": "734a900a4729eb82b67d7ab56aac0475b0bc112a7f4a3af3019b3360d92553fa",
       "evidence": [
         {
           "kind": "required",
@@ -113642,7 +118505,7 @@
       ]
     },
     "united-airlines-dca00000364": {
-      "catalogSourceHash": "ab890354d75d5070163057425d4ae2fa45d6fac9ec31bf7cc9f4c1e6fbeea59b",
+      "catalogSourceHash": "f84326e1c588cc00724e5c108982f2e586eebe9a68631d0b0e0c587f80a1f4aa",
       "evidence": [
         {
           "kind": "required",
@@ -113929,7 +118792,7 @@
       ]
     },
     "united-airlines-den00006965": {
-      "catalogSourceHash": "efc5af96da45d146149dc61893449b524ac0c995b15076813f617c797ed6d149",
+      "catalogSourceHash": "e77252f7b9ad326f247350f9fd58ee8ed644c75264180ef132f4b064dd585263",
       "evidence": [
         {
           "kind": "required",
@@ -114190,7 +119053,7 @@
       ]
     },
     "united-airlines-iah00005726": {
-      "catalogSourceHash": "1c6f716c4a4e87594cf03eefcdb13ca37e5815f0373233a2c19dc689672f4c4a",
+      "catalogSourceHash": "154295b9041554adbd8584f3bbb762ecf55c58e728804f2cac14726a5586adfd",
       "evidence": [
         {
           "kind": "required",
@@ -117189,7 +122052,7 @@
       ]
     },
     "unitedhealth-group-2399881": {
-      "catalogSourceHash": "ca90f9330dcd4566f70b56c9bf64b7664bcf7e9006d7e3be84fdf29d654b2f6a",
+      "catalogSourceHash": "34947d4c2360f0521b61acd2962c3dbc456b4873d92ce47808bc7c241e1ab110",
       "evidence": [
         {
           "kind": "required",
@@ -117480,7 +122343,7 @@
       ]
     },
     "unitedhealth-group-2401738": {
-      "catalogSourceHash": "e3a0b29645edd883b5b469a4b31dc1b97a10ea40f22bf4545d2790e81c62345b",
+      "catalogSourceHash": "d817dfa809cf2bdb3045a8607d0e575916b423bf6afdd7818e84699fb4d9cf54",
       "evidence": [
         {
           "kind": "required",
