@@ -315,6 +315,21 @@ def extract_published_pay(description, locations, company, nationwide=False):
     return salary,published
 
 
+def cencora_posting_date(body, requisition):
+    from qualification_inputs import matching_phenom_job
+    detail = matching_phenom_job(body, requisition)
+    value = detail.get('postedDate') if detail else None
+    if not isinstance(value, str):
+        return None
+    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+        return date_only(value)
+    try:
+        timestamp = datetime.fromisoformat(value)
+    except ValueError:
+        return None
+    return timestamp.astimezone(ZoneInfo('America/New_York')).date().isoformat() if timestamp.tzinfo else None
+
+
 def normalize_posting(body, url, company, now, *, include_source=False):
     """Only explicit evidence populates filters; uncertainty is preserved."""
     host, sector = SOURCES[company]
@@ -576,6 +591,10 @@ def normalize_posting(body, url, company, now, *, include_source=False):
             except ValueError: pass
     deadline = min(deadlines) if deadlines else None
     posted = date_only(source.get('datePosted'))
+    if company=='cencora':
+        original = cencora_posting_date(body, req)
+        if original:
+            posted = min(posted, original) if posted else original
     if host=='jobs.spectrum.com':
         visible_date = spectrum_posting_date(body)
         posted = min(posted, visible_date) if posted else visible_date
@@ -799,6 +818,9 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
             job=apply_location_policy(job, assume_on_site=host not in EVIDENCE_ONLY_HOSTS)
             # Requisition identity is stable across title/slug changes.
             if old and old['requisitionId'] != job['requisitionId']: raise ValueError('Requisition identity changed')
+            if company=='cencora' and old and old['status']=='reviewed' and old.get('postedAt') and job.get('postedAt'):
+                # Cencora's structured date can advance on an unchanged active requisition.
+                job['postedAt'] = min(old['postedAt'], job['postedAt'])
             if not recent_posting(job,now):
                 by_id.pop(job['id'],None)
                 rejected[posting_key(url)]=now.isoformat()

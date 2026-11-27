@@ -20,6 +20,25 @@ def body(**changes):
 
 
 class CollectorTests(unittest.TestCase):
+    def test_cencora_uses_matching_original_post_date_and_keeps_it_on_refresh(self):
+        url = 'https://careers.cencora.com/us/en/job/R2617265/example'
+        now = datetime(2026, 11, 27, 15, tzinfo=timezone.utc)
+        structured = body(url=url, identifier={'value':'R2617265'}, datePosted='2026-11-27')
+        detail = {'jobDetail':{'data':{'job':{
+            'jobRequisitionId':'R2617265', 'postedDate':'2026-11-19T00:00:00.000+0000',
+            'dateCreated':'2026-10-21T16:37:57.578+0000',
+        }}}}
+        raw = structured + '<script>phApp.ddo = ' + json.dumps(detail) + ';</script>'
+        previous = c.normalize_posting(raw, url, 'cencora', now)
+        self.assertEqual(previous['postedAt'], '2026-11-18')
+        self.assertEqual(previous['reviewedAt'], '2026-11-27')
+        refreshed, _, report = c.reconcile('cencora', [previous], {}, {},
+                                           lambda _: (200, structured), now)
+        self.assertFalse(report['errors'])
+        self.assertEqual(refreshed[0]['postedAt'], '2026-11-18')
+        unrelated = raw.replace('"jobRequisitionId": "R2617265"', '"jobRequisitionId": "R0000000"')
+        self.assertEqual(c.normalize_posting(unrelated, url, 'cencora', now)['postedAt'], '2026-11-27')
+
     def test_fetch_error_never_reuses_previous_unavailable_job_body(self):
         a=c.normalize_posting(body(),URL,'boeing',NOW)
         other=URL.replace('12345','12346');b=c.normalize_posting(body(url=other,identifier={'value':'TEST-2'}),other,'boeing',NOW)

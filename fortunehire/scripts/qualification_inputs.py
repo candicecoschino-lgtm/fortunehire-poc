@@ -44,8 +44,8 @@ def matching_oracle_record(body, requisition):
     return items[0] if str(items[0].get('Id')) == requisition else None
 
 
-def matching_cisco_description(body, requisition):
-    descriptions = []
+def matching_phenom_job(body, requisition):
+    matches = []
     for node in Document(body).nodes:
         if node['tag'] != 'script':
             continue
@@ -53,15 +53,21 @@ def matching_cisco_description(body, requisition):
         assignment = re.search(r'\bphApp\.ddo\s*=\s*(?=\{)', script)
         if not assignment:
             continue
-        payload, _ = json.JSONDecoder().raw_decode(script[assignment.end():])
         try:
+            payload, _ = json.JSONDecoder().raw_decode(script[assignment.end():])
             job = payload['jobDetail']['data']['job']
-            description = job['description']
-            if str(job['reqId']) == requisition and isinstance(description, str) and description.strip():
-                descriptions.append(description)
-        except (KeyError, TypeError):
+            identifier = job.get('reqId') or job.get('jobRequisitionId')
+            if str(identifier) == requisition:
+                matches.append(job)
+        except (AttributeError, KeyError, TypeError, ValueError):
             continue
-    return descriptions[0] if len(descriptions) == 1 else None
+    return matches[0] if len(matches) == 1 else None
+
+
+def matching_cisco_description(body, requisition):
+    job = matching_phenom_job(body, requisition)
+    description = job.get('description') if job else None
+    return description if isinstance(description, str) and description.strip() else None
 
 
 def matching_taleo_record(body, requisition):
