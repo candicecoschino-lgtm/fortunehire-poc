@@ -2,7 +2,8 @@
 from pathlib import Path
 import subprocess
 
-DATA_PATHS=('public/data/jobs.json','public/data/collection-status.json','automation/state.json')
+DATA_PATHS=('public/data/jobs.json','public/data/collection-status.json','automation/state.json',
+            'public/data/resume-qualifications.json')
 
 def publish(root,runner=subprocess.run):
  def git(*args,check=True):

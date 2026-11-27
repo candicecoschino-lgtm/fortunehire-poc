@@ -11,6 +11,23 @@ from qualification_extraction import extract_qualifications
 from qualification_inputs import qualification_input
 
 
+def qualification_record(job, source, verified_body=None, source_url=None):
+    url = source_url or job['url']
+    source = qualification_input(source, verified_body=verified_body, source_url=url)
+    extracted = extract_qualifications(source, url, limit_per_kind=None)
+    evidence = [{'kind': row.kind, 'text': row.text, 'types': list(row.types)}
+                for row in extracted.evidence if row.kind in ('required', 'preferred')]
+    return {'catalogSourceHash': job['sourceHash'], 'evidence': evidence}
+
+
+def matching_records(jobs, records):
+    return {job['id']: entry for job in jobs
+            if job.get('status') == 'reviewed' and job.get('sourceHash')
+            and isinstance(entry := records.get(job['id']), dict)
+            and entry.get('catalogSourceHash') == job['sourceHash']
+            and entry.get('evidence')}
+
+
 def title_key(value):
     return ' '.join(normalize('NFKC', value).casefold().split())
 
@@ -39,12 +56,9 @@ def build(catalog, cases):
         job = jobs.get(case['id'])
         if not job or not job.get('sourceHash') or not matches_posting(job, case):
             continue
-        source = qualification_input(case['source'], verified_body=case.get('verifiedBody'), source_url=case['url'])
-        extracted = extract_qualifications(source, case['url'], limit_per_kind=None)
-        evidence = [{'kind': row.kind, 'text': row.text, 'types': list(row.types)}
-                    for row in extracted.evidence if row.kind in ('required', 'preferred')]
-        if evidence:
-            result[job['id']] = {'catalogSourceHash': job['sourceHash'], 'evidence': evidence}
+        record = qualification_record(job, case['source'], case.get('verifiedBody'), case['url'])
+        if record['evidence']:
+            result[job['id']] = record
     return {'version': 1, 'jobs': result}
 
 

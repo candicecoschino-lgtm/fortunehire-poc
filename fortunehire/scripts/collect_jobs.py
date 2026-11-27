@@ -315,7 +315,7 @@ def extract_published_pay(description, locations, company, nationwide=False):
     return salary,published
 
 
-def normalize_posting(body, url, company, now):
+def normalize_posting(body, url, company, now, *, include_source=False):
     """Only explicit evidence populates filters; uncertainty is preserved."""
     host, sector = SOURCES[company]
     url = job_url(url, host)
@@ -592,7 +592,7 @@ def normalize_posting(body, url, company, now):
     if remote_scope=='nationwide':location_note='Remote within the U.S.'+(' · Employer-listed locations: '+listed_locations if listed_locations else '')
     elif arrangement=='remote' and remote_scope=='unknown':location_note='Remote · Eligible states not verified'+(' · Employer-listed locations: '+listed_locations if listed_locations else '')
     else:location_note=listed_locations or 'Employer specifies eligible states: '+', '.join(eligible)
-    return {
+    job = {
         'id':company+'-'+key, 'companyId':company, 'requisitionId':req, 'identifierType':identifier_type, 'title':title, 'url':url,
         'arrangement':arrangement, 'locations':locations,
         **({'arrangementReviewRequired':True} if unresolved_worksite else {}),
@@ -610,6 +610,7 @@ def normalize_posting(body, url, company, now):
         'sourceHash':hashlib.sha256(json.dumps({'structured':source,'locations':locations,'arrangement':arrangement_evidence,'remoteScope':remote_scope,'travel':travel_evidence,'employmentType':employment,'deadline':deadline,'publishedPay':published_pay},sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
         'evidence':{'arrangement':arrangement_evidence,'travel':travel_evidence,'salary':salary_evidence,'deadline':deadline_note,**({'location':location_evidence} if location_evidence else {}),**({'employmentType':employment_evidence} if employment_evidence else {})},
     }
+    return (job, source) if include_source else job
 
 
 class SourceError(RuntimeError): pass
@@ -745,7 +746,8 @@ def discover(client):
     return found
 
 
-def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=100, discovery_dates=None):
+def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=100, discovery_dates=None,
+              *, capture_qualification=None):
     """Never close by absence from a sitemap or partial crawl."""
     host = SOURCES[company][0]
     previous = [j for j in old_jobs if j['companyId']==company]
@@ -787,11 +789,12 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                     elif not first: missing[old['id']] = now.isoformat()
                 continue
             if status != 200: raise SourceError('Unexpected HTTP '+str(status))
-            job = normalize_posting(body,url,company,now)
-            if job is None:
+            normalized = normalize_posting(body,url,company,now,include_source=capture_qualification is not None)
+            if normalized is None:
                 if old: raise ValueError('Previously published job no longer has verified US geography')
                 rejected[posting_key(url)] = now.isoformat(); report['skipped'] += 1
                 continue
+            job, source = normalized if capture_qualification is not None else (normalized, None)
             from location_worksite import apply_location_policy
             job=apply_location_policy(job, assume_on_site=host not in EVIDENCE_ONLY_HOSTS)
             # Requisition identity is stable across title/slug changes.
@@ -811,6 +814,8 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
                 if existing.get('sourceHash') != job['sourceHash'] or any(existing.get(key)!=job.get(key) for key in ('arrangement','arrangementBasis','functionContext')): report['changed'] += 1
             else: report['added'] += 1
             by_id[job['id']] = job
+            if capture_qualification is not None and job['status']=='reviewed':
+                capture_qualification(job, source, body)
             if job['status']=='closed' and (not existing or existing['status']!='closed'): report['closed'] += 1
         except (ValueError,SourceError,urllib.error.URLError,TimeoutError) as error:
             if old is not None and isinstance(error,ValueError) and re.search(r'\b(?:Sorry[,!]?\s+(?:this|the)\s+(?:job|position)\s+is\s+no longer available|This\s+(?:job|position)\s+(?:has expired|has been filled|is no longer available))\b',Page(body).text,re.I):
@@ -850,6 +855,27 @@ def run(root=ROOT, now=None, max_new=20):
     now = now or datetime.now(timezone.utc)
     path = root/'public/data/jobs.json'
     data = json.loads(path.read_text(encoding='utf-8'))
+    from build_resume_qualifications import matching_records, qualification_record
+    qualification_path = root/'public/data/resume-qualifications.json'
+    try:
+        existing_qualifications = json.loads(qualification_path.read_text(encoding='utf-8'))
+    except (FileNotFoundError, ValueError):
+        existing_qualifications = {}
+    qualified = (existing_qualifications.get('jobs', {})
+                 if isinstance(existing_qualifications, dict) and existing_qualifications.get('version') == 1 else {})
+    if not isinstance(qualified, dict):
+        qualified = {}
+    qualification_lock = Lock()
+
+    def capture_qualification(job, source, body):
+        try:
+            record = qualification_record(job, source, body)
+        except Exception as error:
+            # A qualification parser failure must not alter job collection or search.
+            print(f"Qualification capture failed for {job['id']}: {type(error).__name__}", flush=True)
+            return
+        with qualification_lock:
+            qualified[job['id']] = record
     state_path = root/'automation/state.json'
     state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {}
     report = {'schemaVersion':1,'attemptedAt':now.isoformat(),'postingWindowDays':POSTING_MAX_AGE_DAYS,'coverage':'U.S. postings published within the past 14 days. Bounded pilot: at most 100 tracked active postings per employer; up to 20 new candidates per employer per scheduled/manual run. Not a complete feed.','sources':{}}
@@ -886,7 +912,9 @@ def run(root=ROOT, now=None, max_new=20):
             if company=='meta' or host==ats.ASHBY:
                 from meta_public import discovery_order
                 client.discovery_dates=discovery_order(discovered,state.get(company,{}).get('discoveryFirstSeen',{}),now)
-            refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,lambda url:public_fetch(client,url,Client),now,max_new=source_max_new,cap=source_cap,discovery_dates=client.discovery_dates)
+            refreshed, source_state, result = reconcile(company,data['jobs'],state.get(company,{}),discovered,
+                lambda url:public_fetch(client,url,Client),now,max_new=source_max_new,cap=source_cap,
+                discovery_dates=client.discovery_dates,capture_qualification=capture_qualification)
             if company=='meta' or host==ats.ASHBY:source_state['discoveryFirstSeen']=client.discovery_dates
             result['discoveryLimited']=client.discovery_limited
             if client.discovery_warnings:result['discoveryWarnings']=client.discovery_warnings
@@ -933,6 +961,7 @@ def run(root=ROOT, now=None, max_new=20):
     if successes: data['updatedAt']=now.astimezone(ZoneInfo('America/New_York')).date().isoformat()
     atomic_json(path,data)
     subprocess.run(['node',str(ROOT/'scripts/classify-jobs.mjs'),'--write','--root',str(root)],cwd=ROOT,check=True,capture_output=True,text=True)
+    atomic_json(qualification_path, {'version': 1, 'jobs': matching_records(data['jobs'], qualified)})
     atomic_json(state_path,state)
     atomic_json(root/'public/data/collection-status.json',report)
     print(json.dumps(report,indent=2))
