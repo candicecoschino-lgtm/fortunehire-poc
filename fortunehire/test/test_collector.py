@@ -20,6 +20,23 @@ def body(**changes):
 
 
 class CollectorTests(unittest.TestCase):
+    def test_abbott_locale_switch_keeps_original_date_with_same_role(self):
+        prefix = 'https://www.jobs.abbott'
+        role = '/job/31160508/Clinical-Associate'
+        prior = {'companyId':'abbott', 'id':'abbott-31160508', 'requisitionId':'31160508',
+                 'status':'reviewed', 'title':'Clinical Associate', 'locations':[{'state':'Florida'}],
+                 'postedAt':'2026-11-24', 'originalPostedAt':'2026-11-20',
+                 'url':prefix+'/global/fr'+role, 'functionContext':{'duties':['French copy']}}
+        latest = {key:value for key,value in prior.items() if key != 'originalPostedAt'}
+        latest.update(url=prefix+'/us/en'+role, functionContext={'duties':['English copy']})
+        c.preserve_original_search_date(prior, latest)
+        self.assertEqual(latest.pop('originalPostedAt'), '2026-11-20')
+        other = {**latest, 'url':prefix+'/us/en/job/31160509/Clinical-Associate'}
+        c.preserve_original_search_date(prior, other)
+        self.assertNotIn('originalPostedAt', other)
+        c.preserve_original_search_date({**prior, 'status':'closed'}, latest)
+        self.assertNotIn('originalPostedAt', latest)
+
     def test_refresh_preserves_earlier_search_date_for_the_same_active_role(self):
         previous = c.normalize_posting(body(datePosted='2026-11-06'), URL, 'boeing', NOW)
         refreshed = body(datePosted='2026-11-12')

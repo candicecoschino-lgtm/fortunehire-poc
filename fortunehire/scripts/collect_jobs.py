@@ -768,11 +768,24 @@ def discover(client):
 def preserve_original_search_date(previous, job):
     if not previous or previous['status'] != 'reviewed' or job['status'] != 'reviewed':
         return
-    if any(previous.get(key) != job.get(key) for key in ('id', 'url', 'title', 'requisitionId', 'functionContext')):
+    if any(previous.get(key) != job.get(key) for key in ('companyId', 'id', 'title', 'requisitionId')):
+        return
+    same_listing = previous['url'] == job['url'] and previous.get('functionContext') == job.get('functionContext')
+    if not same_listing and not same_abbott_posting_in_another_locale(previous, job):
         return
     original = previous.get('originalPostedAt') or previous.get('postedAt')
     if original and job.get('postedAt') and original < job['postedAt']:
         job['originalPostedAt'] = original
+
+
+def same_abbott_posting_in_another_locale(previous, job):
+    if job['companyId'] != 'abbott' or previous['url'] == job['url']:
+        return False
+    old, new = (urllib.parse.urlsplit(item['url']) for item in (previous, job))
+    route = re.compile(r'^/(?:global|us)/[a-z]{2}(/job/\d+/[^/]+)$', re.I)
+    a, b = (route.fullmatch(url.path.rstrip('/')) for url in (old, new))
+    return bool(a and b and a[1] == b[1] and old.hostname == new.hostname == 'www.jobs.abbott'
+                and old.query == new.query and previous.get('locations') == job.get('locations'))
 
 
 def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=100, discovery_dates=None,
