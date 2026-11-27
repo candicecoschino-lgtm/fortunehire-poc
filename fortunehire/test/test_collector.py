@@ -20,6 +20,19 @@ def body(**changes):
 
 
 class CollectorTests(unittest.TestCase):
+    def test_refresh_preserves_earlier_search_date_for_the_same_active_role(self):
+        previous = c.normalize_posting(body(datePosted='2026-11-06'), URL, 'boeing', NOW)
+        refreshed = body(datePosted='2026-11-12')
+        jobs, state, report = c.reconcile('boeing', [previous], {}, {}, lambda _: (200, refreshed), NOW)
+        self.assertFalse(report['errors'])
+        self.assertEqual(jobs[0]['postedAt'], '2026-11-12')
+        self.assertEqual(jobs[0]['originalPostedAt'], '2026-11-06')
+        next_jobs, _, _ = c.reconcile('boeing', jobs, state, {}, lambda _: (200, refreshed), NOW)
+        self.assertEqual(next_jobs[0]['originalPostedAt'], '2026-11-06')
+        revived, _, _ = c.reconcile('boeing', [{**jobs[0], 'status':'closed'}], state,
+                                     {c.posting_key(URL):URL}, lambda _: (200, refreshed), NOW)
+        self.assertNotIn('originalPostedAt', revived[0])
+
     def test_cencora_uses_matching_original_post_date_and_keeps_it_on_refresh(self):
         url = 'https://careers.cencora.com/us/en/job/R2617265/example'
         now = datetime(2026, 11, 27, 15, tzinfo=timezone.utc)

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {readJobFilters,serializeJobFilters,filterJobs,validateJobs,matchesState,matchesPay,isCurrent,todayInNewYork,paginateJobs,salaryText} from '../public/jobs.js';
+import {readJobFilters,serializeJobFilters,filterJobs,validateJobs,matchesState,matchesPay,isCurrent,isSearchCurrent,searchPostingDate,todayInNewYork,paginateJobs,salaryText} from '../public/jobs.js';
 const companies=JSON.parse(await readFile(new URL('../public/data/companies.json',import.meta.url),'utf8')).companies;
 const data=JSON.parse(await readFile(new URL('./fixtures/reviewed-jobs.json',import.meta.url),'utf8'));
 const jobs=validateJobs(data,companies),today='2026-11-13';
@@ -60,6 +60,18 @@ test('publication date window is independent of last successful check date',()=>
   const j={...jobs[0],reviewedAt:today,closesAt:null};
   assert.ok(isCurrent({...j,postedAt:'2026-10-30'},today));
   for(const postedAt of ['2026-10-29','2026-10-23','2026-11-14',null])assert.equal(isCurrent({...j,postedAt},today),false);
+});
+
+test('job search uses the original posting date when an active job date advances',()=>{
+  const older={...jobs[0],reviewedAt:today,closesAt:null,postedAt:today,originalPostedAt:'2026-11-06'};
+  const newer={...jobs[0],id:'newer',reviewedAt:today,closesAt:null,postedAt:'2026-11-12'};
+  assert.equal(searchPostingDate(older),'2026-11-06');
+  assert.deepEqual(filterJobs([older,newer],filters({posted:'3'}),today),[newer]);
+  assert.deepEqual(filterJobs([older,newer],filters({}),today),[newer,older]);
+  const outside={...older,originalPostedAt:'2026-10-29'};
+  assert.equal(isSearchCurrent(outside,today),false);
+  assert.equal(isCurrent(outside,today),true);
+  assert.throws(()=>validateJobs({schemaVersion:1,jobs:[{...data.jobs[0],originalPostedAt:'2026-12-01'}]},companies));
 });
 
 test('reviewed Valero query-based application links require one exact job identifier',()=>{

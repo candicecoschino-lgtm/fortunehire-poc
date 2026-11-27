@@ -1,7 +1,7 @@
 import {JOB_FUNCTIONS,JOB_FUNCTION_OPTIONS} from './job-functions.js';
 import {mountSavedSearches} from './saved-searches.js';
 import {ACTIVITY_KEY,readJobActivity,setJobActivity,activityFlags,activityView,trackedJobs} from './job-activity.js';
-import { JOB_KEYS, MULTI_FILTER_KEYS, US_STATES, ARRANGEMENTS, todayInNewYork, readJobFilters, serializeJobFilters, isCurrent, filterJobs, paginateJobs, salaryText, validateJobs } from './jobs.js';
+import { JOB_KEYS, MULTI_FILTER_KEYS, US_STATES, ARRANGEMENTS, todayInNewYork, readJobFilters, serializeJobFilters, isSearchCurrent, searchPostingDate, filterJobs, paginateJobs, salaryText, validateJobs } from './jobs.js';
 import {postedLabel,locationSummary,paySummary,todayPostingNote} from './job-presentation.js';
 import {installMultiFilterBehavior} from './multi-filter-behavior.js';
 const $=id=>document.getElementById(id);
@@ -28,7 +28,7 @@ function card(j,f){
     img.addEventListener('error',()=>{img.remove();monogram.hidden=false;},{once:true});mark.append(img);img.src=new URL(logo.src,import.meta.url).href;
   }
   const identity=e('div');const title=e('h3',undefined,'job-title');const titleLink=link(j.title,j.url);titleLink.setAttribute('aria-label',`${j.title} at ${j.companyName} (opens employer posting in a new tab)`);title.append(titleLink);
-  const byline=e('div',undefined,'job-byline');const posted=e('time',postedLabel(j.postedAt,todayInNewYork()),'job-posted');posted.dateTime=j.postedAt;posted.title=`Employer posting date: ${labelDate(j.postedAt)}`;byline.append(e('span',j.companyName,'job-company'),e('span','\u00b7'),posted);identity.append(title,byline);top.append(mark,identity);
+  const byline=e('div',undefined,'job-byline');const date=searchPostingDate(j);const posted=e('time',postedLabel(date,todayInNewYork()),'job-posted');posted.dateTime=date;posted.title=`Employer posting date: ${labelDate(date)}`;byline.append(e('span',j.companyName,'job-company'),e('span','\u00b7'),posted);identity.append(title,byline);top.append(mark,identity);
   const meta=e('div',undefined,'job-meta');const badges=e('div',undefined,'job-badges');
   badges.append(e('span',j.arrangement==='remote'&&j.remoteScope==='states'?'Remote \u00b7 State restricted':j.arrangement==='unknown'?'Work arrangement not specified':ARRANGEMENTS[j.arrangement],`job-badge ${j.arrangement}`));
   if(j.employmentType!=='Not specified')badges.append(e('span',j.employmentType+(j.employmentTypeBasis==='assumed-full-time'?' (assumed)':''),'job-badge'));
@@ -38,7 +38,7 @@ function card(j,f){
   const details=e('details',undefined,'job-details');const summary=e('summary','Job details & sources');const body=e('div',undefined,'job-detail-body');
   const fn={primaryFunction:j.primaryJobFunction,basis:j.jobFunctionBasis,confidence:j.jobFunctionConfidence,evidence:j.jobFunctionEvidence||[],reviewRequired:j.jobFunctionReviewRequired};
   const fnSource=`Primary job function (${fn.basis} · ${fn.confidence} confidence${fn.reviewRequired?'; review suggested':''})`;
-  const dl=e('dl');for(const [key,val]of [['Posted',labelDate(j.postedAt)],['Last successfully checked',labelDate(j.reviewedAt)],['Employment type',j.employmentType],['Industry',j.industry],[fnSource,JOB_FUNCTIONS[fn.primaryFunction]],[j.identifierType==='posting-id'?'Employer posting ID':'Employer requisition',j.requisitionId],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
+  const dl=e('dl');for(const [key,val]of [['Posted',labelDate(searchPostingDate(j))],['Last successfully checked',labelDate(j.reviewedAt)],['Employment type',j.employmentType],['Industry',j.industry],[fnSource,JOB_FUNCTIONS[fn.primaryFunction]],[j.identifierType==='posting-id'?'Employer posting ID':'Employer requisition',j.requisitionId],['Employer deadline',j.closesAt?labelDate(j.closesAt):'Not specified']])dl.append(e('dt',key),e('dd',val));
   if(j.arrangement==='remote'&&j.remoteScope==='states')dl.append(e('dt','Eligible remote states'),e('dd',j.eligibleStates.join(', ')));
   const payScope=j.salary?.scopeStates||j.publishedPay?.scopeStates||[];const payApplies=!cardState||!payScope.length||payScope.includes(cardState);
   for(const excerpt of fn.evidence)body.append(e('p','Function evidence: '+excerpt));
@@ -146,7 +146,7 @@ function applyFilterValues(f){
 function selected(){return {...Object.fromEntries(FILTER_CONTROLS.map(k=>[k,MULTI_FILTER_KEYS.includes(k)?multiValues(k):$(k).value])),payPosted:$('pay-posted').checked?'1':'',travel:$('include-travel').checked?'include':'exclude',page:currentPage};}
 function render(sync=true){
   if(!ready)return;
-  const f=selected();const today=todayInNewYork();renderedDay=today;const visible=jobs.filter(j=>isCurrent(j,today));
+  const f=selected();const today=todayInNewYork();renderedDay=today;const visible=jobs.filter(j=>isSearchCurrent(j,today));
   const library=f.view?trackedJobs(jobs,activity,snapshot=>validateJobs({schemaVersion:1,jobs:[snapshot]},companyDirectory)[0],today):jobs;
   const candidates=activityView(library,activity,f.view),matches=filterJobs(candidates,f,today,!!f.view);const page=paginateJobs(matches,currentPage);currentPage=String(page.page);f.page=currentPage;
   $('results').replaceChildren(...page.items.map(j=>card(j,f)));

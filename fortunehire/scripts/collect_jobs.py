@@ -765,6 +765,16 @@ def discover(client):
     return found
 
 
+def preserve_original_search_date(previous, job):
+    if not previous or previous['status'] != 'reviewed' or job['status'] != 'reviewed':
+        return
+    if any(previous.get(key) != job.get(key) for key in ('id', 'url', 'title', 'requisitionId', 'functionContext')):
+        return
+    original = previous.get('originalPostedAt') or previous.get('postedAt')
+    if original and job.get('postedAt') and original < job['postedAt']:
+        job['originalPostedAt'] = original
+
+
 def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=100, discovery_dates=None,
               *, capture_qualification=None):
     """Never close by absence from a sitemap or partial crawl."""
@@ -821,6 +831,7 @@ def reconcile(company, old_jobs, state, discovered, fetch, now, max_new=20, cap=
             if company=='cencora' and old and old['status']=='reviewed' and old.get('postedAt') and job.get('postedAt'):
                 # Cencora's structured date can advance on an unchanged active requisition.
                 job['postedAt'] = min(old['postedAt'], job['postedAt'])
+            preserve_original_search_date(old, job)
             if not recent_posting(job,now):
                 by_id.pop(job['id'],None)
                 rejected[posting_key(url)]=now.isoformat()

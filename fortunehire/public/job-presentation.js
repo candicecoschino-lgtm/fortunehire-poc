@@ -1,6 +1,8 @@
+import {searchPostingDate} from './jobs.js';
+
 const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:value%1?2:0,maximumFractionDigits:2}).format(value);
 export function todayPostingNote(jobs,today){
- return jobs.some(job=>job.postedAt===today)?'':'No employer-dated postings for today are in our current collection yet. Try Past 3 days or check again after the next refresh. This does not mean employers have no new openings.';
+ return jobs.some(job=>searchPostingDate(job)===today)?'':'No employer-dated postings for today are in our current collection yet. Try Past 3 days or check again after the next refresh. This does not mean employers have no new openings.';
 }
 function publishedRanges(text){
  const ranges=[];

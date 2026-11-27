@@ -1,4 +1,4 @@
-import {isCurrent} from './jobs.js';
+import {isSearchCurrent} from './jobs.js';
 export const ACTIVITY_KEY='fortunehire.job-activity.v1';
 export const MAX_TRACKED_JOBS=500;
 const FLAGS=['saved','hidden','applied'];
@@ -36,5 +36,5 @@ export function trackedJobs(liveJobs,records,validateSnapshot,today){
   if(byId.has(row.id)||!row.job)continue;
   try{const job=validateSnapshot(row.job);if(job?.id===row.id)byId.set(row.id,job);}catch{/* Untrusted or obsolete snapshots cannot create job links. */}
  }
- return [...byId.values()].map(job=>({...job,organizerUnavailable:!liveIds.has(job.id)||!isCurrent(job,today)}));
+ return [...byId.values()].map(job=>({...job,organizerUnavailable:!liveIds.has(job.id)||!isSearchCurrent(job,today)}));
 }
